@@ -1,0 +1,13 @@
+{
+  "name": "generador-examenes-daw",
+  "version": "1.0.0",
+  "description": "Simulador de exámenes para el Grado Superior DAW",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

@@ -1,0 +1,79 @@
+PREGUNTA: El SID es:
+A: Un código que da acceso al sistema.
+B: Un sistema de autenticación de Windows.
+C: Un identificador único asociado a un usuario.
+D: Es lo mismo que el SAT.
+RESPUESTA: C
+EXPLICACION: El SID (Security Identifier) es un identificador único que Windows asigna a cada cuenta de usuario, grupo o equipo en el momento de su creación. Windows usa el SID internamente para controlar el acceso a recursos, no el nombre de usuario, por lo que dos cuentas con el mismo nombre en equipos distintos tienen SIDs diferentes. El SAT es el token de acceso que contiene el SID, no es lo mismo.
+
+PREGUNTA: La administración remota es:
+A: El término que define la acción de administrar y asegurar la seguridad del sistema a distancia.
+B: La técnica para el cifrado de archivos.
+C: Un dispositivo destinado al análisis del tráfico entrante.
+D: Ninguna es correcta.
+RESPUESTA: A
+EXPLICACION: La administración remota permite gestionar un equipo desde otra ubicación a través de la red, realizando tareas de configuración, mantenimiento y seguridad sin presencia física. El cifrado de archivos y el análisis de tráfico son funciones específicas de seguridad, no la definición de administración remota.
+
+PREGUNTA: La administración remota:
+A: Solo se puede usar con una herramienta.
+B: Viene incorporada en Windows mediante tres herramientas.
+C: No permite gestionar el equipo en temas de seguridad.
+D: Todas las anteriores son correctas.
+RESPUESTA: B
+EXPLICACION: Windows incorpora tres herramientas nativas de administración remota: el Escritorio Remoto (RDP), la Administración remota de Windows (WinRM) y el MMC con consolas remotas. No se limita a una sola herramienta ni excluye la gestión de seguridad; de hecho, administrar políticas y permisos de forma remota es uno de sus usos principales.
+
+PREGUNTA: La herencia se deshabilita desde:
+A: Las propiedades del usuario.
+B: Las propiedades del recurso.
+C: No se puede deshabilitar.
+D: Desde el cmd.
+RESPUESTA: B
+EXPLICACION: En Windows, la herencia de permisos se configura en las propiedades de seguridad del recurso (fichero o carpeta), desde la pestaña Seguridad > Opciones avanzadas. Allí se puede deshabilitar la herencia para que el recurso tenga sus propios permisos independientes. No se gestiona desde el perfil del usuario ni desde la línea de comandos directamente.
+
+PREGUNTA: Las directivas de seguridad del sistema se dividen en:
+A: Directivas de seguridad de dominio y de red.
+B: Directivas de seguridad locales y de red.
+C: A y B son correctas.
+D: Ninguna es correcta.
+RESPUESTA: D
+EXPLICACION: Las directivas de seguridad en Windows se dividen en directivas de seguridad locales (que afectan al equipo local) y directivas de grupo o de dominio (que se aplican a través de Active Directory en entornos de red). Ninguna de las opciones A ni B describe correctamente esta división, por lo que la respuesta es ninguna.
+
+PREGUNTA: Marca qué elementos son parte del SAT:
+A: La lista de los derechos del usuario.
+B: El SID del usuario.
+C: La lista de los SID de los grupos de los que el usuario es miembro.
+D: Todas son correctas.
+RESPUESTA: D
+EXPLICACION: El SAT (Security Access Token) es el token que Windows crea al iniciar sesión un usuario y que acompaña a todos sus procesos. Contiene el SID del usuario, los SIDs de todos los grupos a los que pertenece, y la lista de derechos y privilegios asignados. Con él, el sistema decide qué puede y qué no puede hacer el usuario en cada recurso.
+
+PREGUNTA: Un algoritmo de clave pública es:
+A: RSA.
+B: DSA.
+C: ECC.
+D: Todas son correctas.
+RESPUESTA: D
+EXPLICACION: RSA, DSA y ECC son los tres algoritmos de criptografía asimétrica (clave pública/privada) más utilizados. RSA se basa en la factorización de números primos, DSA en el problema del logaritmo discreto para firmas digitales, y ECC en curvas elípticas, ofreciendo la misma seguridad que RSA con claves más cortas.
+
+PREGUNTA: Un ejemplo de herramienta para administración remota sería:
+A: Teams.
+B: Skype.
+C: Servicios de gestión de usuarios.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: D
+EXPLICACION: Teams y Skype son herramientas de comunicación y videoconferencia, no de administración remota de sistemas. Los servicios de gestión de usuarios son una función del SO, no una herramienta de acceso remoto. Las herramientas reales de administración remota son RDP, SSH, WinRM, TeamViewer o VNC.
+
+PREGUNTA: Un privilegio es:
+A: Un apartado de los derechos que indican acciones que no se indican con los demás derechos.
+B: Una identificación única usada por Windows.
+C: Una lista de los permisos que regulan un recurso.
+D: El permiso de control total.
+RESPUESTA: A
+EXPLICACION: En Windows, los privilegios son un tipo especial de derecho de usuario que permite realizar acciones del sistema que van más allá de los permisos sobre recursos concretos, como apagar el sistema, depurar programas o cambiar la hora del sistema. Se distinguen de los permisos (que regulan el acceso a ficheros o carpetas) y de la identificación (que es el SID).
+
+PREGUNTA: Un servidor debe cumplir con estos tres aspectos:
+A: Disponibilidad, calidad y mantenimiento.
+B: Escalabilidad, mantenimiento y disponibilidad.
+C: Mantenimiento, disponibilidad y automatismo.
+D: Disponibilidad, escalabilidad y gestión avanzada.
+RESPUESTA: B
+EXPLICACION: Los tres pilares que debe cumplir un servidor son disponibilidad (estar operativo cuando se necesita, con alta tolerancia a fallos), escalabilidad (capacidad de crecer en recursos para atender más demanda) y mantenimiento (facilidad para actualizarse y repararse sin interrumpir el servicio). Calidad, automatismo y gestión avanzada son conceptos deseables pero no los tres pilares definitorios.

@@ -1,0 +1,79 @@
+PREGUNTA: Componente que conecta diferentes redes:
+A: Repetidor.
+B: Hub.
+C: Switch.
+D: Router.
+RESPUESTA: D
+EXPLICACION: El router opera en la capa 3 (red) del modelo OSI y su función específica es interconectar redes distintas, enrutando paquetes entre ellas mediante tablas de enrutamiento y la dirección IP. El switch conecta dispositivos dentro de la misma red (capa 2), el hub es un switch sin inteligencia, y el repetidor solo amplifica la señal.
+
+PREGUNTA: El más dañino de todos los tipos de malware. Se usa para cifrar todo el sistema y quitarles el acceso a los usuarios ya que no poseen la correspondiente clave:
+A: Scumware.
+B: Exploit.
+C: Ransomware.
+D: Adware.
+RESPUESTA: C
+EXPLICACION: El ransomware cifra los ficheros o el disco completo de la víctima con una clave que solo posee el atacante, exigiendo un rescate (ransom) para restaurar el acceso. Es especialmente destructivo porque puede inutilizar sistemas enteros. El adware muestra publicidad, el exploit aprovecha vulnerabilidades y scumware es un término genérico para software molesto.
+
+PREGUNTA: El protocolo IP:
+A: Está orientado a la conexión.
+B: No es fiable.
+C: Requiere de cableado.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: B
+EXPLICACION: IP (Internet Protocol) es un protocolo no orientado a la conexión y no fiable: envía paquetes de forma independiente sin garantizar que lleguen, sin confirmar la entrega ni el orden. La fiabilidad la añade TCP en la capa superior. IP funciona tanto sobre redes cableadas como inalámbricas.
+
+PREGUNTA: El tipo de red coaxial se basa en:
+A: El espacio.
+B: La distribución.
+C: El cableado.
+D: El diseño.
+RESPUESTA: C
+EXPLICACION: La clasificación de redes coaxiales hace referencia al medio de transmisión físico utilizado: el cable coaxial, compuesto por un conductor central, aislante dieléctrico, malla metálica y cubierta exterior. Es una clasificación por tipo de cableado, no por topología ni distribución geográfica.
+
+PREGUNTA: Es un tipo de dirección IP:
+A: Estática.
+B: Dinámica.
+C: Alternativa.
+D: Todas las anteriores son correctas.
+RESPUESTA: D
+EXPLICACION: Las direcciones IP se clasifican por su método de asignación: estática (configurada manualmente, no cambia), dinámica (asignada por un servidor DHCP, puede cambiar) y alternativa (configuración de reserva que Windows aplica automáticamente si no encuentra servidor DHCP). Las tres son tipos reconocidos en la configuración TCP/IP.
+
+PREGUNTA: Existen comandos para modificar y monitorizar las redes en Linux, uno de ellos es:
+A: lshw.
+B: lsdc.
+C: lswr.
+D: lswd.
+RESPUESTA: A
+EXPLICACION: lshw (list hardware) es una herramienta de Linux que muestra información detallada sobre el hardware del sistema, incluyendo las interfaces de red. Los comandos lsdc, lswr y lswd no existen en Linux; son opciones inventadas. Para monitorizar redes también se usan ifconfig, ip, netstat o ss.
+
+PREGUNTA: La cabecera en IPv6 posee:
+A: 20 bytes.
+B: 30 bytes.
+C: 40 bytes.
+D: 50 bytes.
+RESPUESTA: C
+EXPLICACION: La cabecera fija de IPv6 ocupa exactamente 40 bytes, el doble que la cabecera mínima de IPv4 (20 bytes). Este tamaño mayor se debe principalmente al espacio requerido por las direcciones de 128 bits (16 bytes cada una para origen y destino). A cambio, la cabecera de IPv6 es más simple y elimina campos como el checksum.
+
+PREGUNTA: Mediante esta tecnología podemos crear una red inalámbrica con un smartphone:
+A: Coaxial.
+B: TCP/IP.
+C: Wi-Fi Direct.
+D: WPA.
+RESPUESTA: C
+EXPLICACION: Wi-Fi Direct permite a dos dispositivos conectarse entre sí directamente mediante Wi-Fi sin necesidad de un router o punto de acceso intermedio. Es la tecnología que usan los smartphones para compartir conexión o archivos de forma inalámbrica. WPA es un protocolo de seguridad, TCP/IP es una pila de protocolos y el coaxial es un medio físico de cableado.
+
+PREGUNTA: No es un diseño de una topología de red:
+A: Estrella.
+B: Árbol.
+C: Malla.
+D: Todas las anteriores son correctas.
+RESPUESTA: D
+EXPLICACION: Estrella, árbol y malla son todas topologías de red reconocidas. La estrella conecta todos los nodos a un punto central (switch), el árbol es una jerarquía de estrellas, y la malla conecta cada nodo con varios otros para máxima redundancia. La pregunta es negativa, y como las tres son topologías válidas, la respuesta es que todas son correctas (es decir, ninguna "no es" una topología).
+
+PREGUNTA: No es uno de los protocolos principales de red:
+A: Ethernet.
+B: UDP.
+C: TCP/IP.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: D
+EXPLICACION: Ethernet, UDP y TCP/IP son todos protocolos de red fundamentales y ampliamente utilizados: Ethernet opera en la capa de enlace, UDP en la capa de transporte (sin conexión) y TCP/IP es la suite de protocolos base de Internet. La pregunta es negativa, y como los tres son protocolos reales, la respuesta correcta es que ninguna afirmación es incorrecta.

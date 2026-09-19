@@ -1,0 +1,319 @@
+PREGUNTA: ¿Cómo se llama la consola de Windows que permite administrar usuarios?
+A: Lusmerger.msc
+B: Lusrmgr.mcs
+C: Lusrmgr.msc
+D: No se pueden administrar usuarios en Windows mediante consolas.
+RESPUESTA: C
+EXPLICACION: Lusrmgr.msc es el complemento de la Consola de administración de Microsoft (MMC) que permite gestionar usuarios y grupos locales en Windows. La extensión .msc identifica ficheros de consola MMC. Las opciones A y B tienen errores tipográficos deliberados en el nombre o la extensión.
+
+PREGUNTA: ¿En qué fichero de Linux se almacenan las contraseñas encriptadas de los usuarios?
+A: /etc/passwd
+B: /etc/shadow
+C: /etc/password
+D: /etc/users
+RESPUESTA: B
+EXPLICACION: /etc/shadow almacena los hashes de las contraseñas con permisos restringidos (solo accesible por root), separado de /etc/passwd precisamente por seguridad. /etc/passwd es legible por todos los usuarios y solo contiene metadatos de cuenta como el nombre, UID, GID, directorio home y shell, pero no las contraseñas reales.
+
+PREGUNTA: ¿Se puede instalar Debian de manera gráfica?
+A: No.
+B: Depende de si se instala en VirtualBox o en VMware.
+C: Depende de qué versión se instale.
+D: Sí.
+RESPUESTA: D
+EXPLICACION: Debian ofrece dos modos de instalación: el instalador gráfico (Graphical Install) con interfaz visual basada en GTK y el instalador en modo texto. Ambos están disponibles en la imagen de instalación estándar y funcionan tanto en hardware real como en cualquier hipervisor. La elección de VirtualBox o VMware no condiciona el modo de instalación.
+
+PREGUNTA: ¿Se pueden restaurar copias de seguridad incrementales y diferenciales al mismo tiempo?
+A: Sí y debe de hacerse.
+B: No se debe.
+C: No.
+D: No se pueden restaurar este tipo de copias bajo ningún concepto.
+RESPUESTA: B
+EXPLICACION: Las copias incrementales y diferenciales responden a estrategias de backup distintas y no deben mezclarse en la misma restauración. La incremental requiere la copia completa más cada incremental en orden; la diferencial requiere solo la completa más la última diferencial. Combinarlas genera inconsistencias en los datos restaurados.
+
+PREGUNTA: El comando cat hola > alumnos.txt añade contenido a un fichero y además...
+A: Lo borra.
+B: Lo ejecuta.
+C: Reescribe el contenido si ya tiene algo.
+D: Lo añade a continuación si ya existe contenido en el fichero.
+RESPUESTA: C
+EXPLICACION: El operador > redirige la salida estándar hacia un fichero sobreescribiéndolo completamente si ya existía. Para añadir contenido sin borrar lo existente se usa >>, el operador de redirección con append. Por tanto, cat hola > alumnos.txt volcará el contenido de hola en alumnos.txt destruyendo cualquier dato previo.
+
+PREGUNTA: El directorio C:\system32 pertenece a:
+A: Windows.
+B: Linux.
+C: GNU.
+D: Todas las anteriores son correctas.
+RESPUESTA: A
+EXPLICACION: C:\system32 es un directorio exclusivo de Windows que contiene las DLLs y ejecutables críticos del sistema operativo, como el kernel ntoskrnl.exe y herramientas administrativas. En Linux la estructura de directorios parte de la raíz / y no usa letras de unidad; GNU es el proyecto de software libre, no un sistema de archivos.
+
+PREGUNTA: El más dañino de todos los tipos de malware. Se usa para cifrar todo el sistema y quitarles el acceso a los usuarios ya que no poseen la correspondiente clave:
+A: Scumware.
+B: Exploit.
+C: Ransomware.
+D: Adware.
+RESPUESTA: C
+EXPLICACION: El ransomware cifra los ficheros o el disco completo de la víctima con una clave que solo posee el atacante, exigiendo un rescate para restaurar el acceso. Es especialmente destructivo porque puede inutilizar sistemas enteros. El adware muestra publicidad, el exploit aprovecha vulnerabilidades y scumware es un término genérico para software molesto.
+
+PREGUNTA: El procesador se describe como:
+A: Un conjunto software del sistema operativo que debido a su gran importancia en la gestión del sistema no puede abandonar la memoria principal.
+B: La selección del orden de importancia de cada solicitud y de quien quiera hacer uso de esos recursos.
+C: Un recurso que posee varios núcleos con los que puede ejecutar varios procesos a la vez.
+D: El facilitador de la gestión de manera adecuada de los trabajos de impresión.
+RESPUESTA: C
+EXPLICACION: Un procesador moderno integra múltiples núcleos físicos, cada uno capaz de ejecutar un hilo de instrucciones de forma independiente, permitiendo el paralelismo real. La opción A describe el kernel del SO, la B describe el planificador de procesos, y la D describe el spooler de impresión.
+
+PREGUNTA: El protocolo POP3 es empleado en:
+A: El correo electrónico.
+B: Mensajería instantánea.
+C: Transferencia de ficheros.
+D: Software antimalware.
+RESPUESTA: A
+EXPLICACION: POP3 (Post Office Protocol v3) es un protocolo de la capa de aplicación que permite a los clientes de correo descargar mensajes desde un servidor. A diferencia de IMAP, descarga los mensajes al dispositivo local y los elimina del servidor por defecto. No tiene relación con mensajería instantánea ni transferencia de ficheros.
+
+PREGUNTA: El SID es:
+A: Un código que da acceso al sistema.
+B: Un sistema de autenticación de Windows.
+C: Un identificador único asociado a un usuario.
+D: Es lo mismo que el SAT.
+RESPUESTA: C
+EXPLICACION: El SID (Security Identifier) es un identificador único que Windows asigna a cada cuenta de usuario, grupo o equipo al crearse. Windows usa el SID internamente para controlar el acceso a recursos, no el nombre de usuario. El SAT es el token de acceso que contiene el SID, no son lo mismo.
+
+PREGUNTA: El sistema de archivos estándar de Microsoft Windows:
+A: FAT.
+B: NTFS.
+C: APFS.
+D: Todas las anteriores son correctas.
+RESPUESTA: B
+EXPLICACION: NTFS es el sistema de archivos nativo de Windows desde la familia NT, con soporte para permisos ACL granulares, journaling y ficheros superiores a 4 GB. FAT32 carece de permisos de seguridad y tiene el límite de 4 GB por fichero; APFS es exclusivo de Apple.
+
+PREGUNTA: El tipo de red coaxial se basa en:
+A: El espacio.
+B: La distribución.
+C: El cableado.
+D: El diseño.
+RESPUESTA: C
+EXPLICACION: La clasificación de redes coaxiales hace referencia al medio de transmisión físico: el cable coaxial, compuesto por un conductor central, aislante dieléctrico, malla metálica y cubierta exterior. Es una clasificación por tipo de cableado, no por topología ni distribución geográfica.
+
+PREGUNTA: En Linux la opción "l" del comando ls:
+A: Muestra el contenido en formato largo.
+B: Ordena el contenido por fecha de modificación.
+C: Invierte el orden de la salida.
+D: Muestra el contenido oculto.
+RESPUESTA: A
+EXPLICACION: ls -l activa el formato largo, mostrando para cada fichero sus permisos, número de enlaces, propietario, grupo, tamaño y fecha de modificación. La opción -t ordena por fecha, -r invierte el orden y -a muestra los ficheros ocultos (los que empiezan por punto).
+
+PREGUNTA: Es importante que un antivirus...
+A: Consuma mucha CPU.
+B: No se actualice.
+C: Consuma poca memoria.
+D: Ocupe mucho espacio en disco.
+RESPUESTA: C
+EXPLICACION: Un antivirus debe ser eficiente en el uso de recursos del sistema para no degradar el rendimiento del equipo mientras trabaja en segundo plano. Consumir poca memoria es esencial. Al contrario, consumir mucha CPU ralentiza el sistema, no actualizarse lo deja obsoleto frente a nuevas amenazas, y ocupar mucho espacio es un inconveniente innecesario.
+
+PREGUNTA: exFAT suele usarse en dispositivos:
+A: Extraíbles.
+B: Fijos.
+C: De Microsoft únicamente.
+D: De Linux únicamente.
+RESPUESTA: A
+EXPLICACION: exFAT (Extended FAT) fue diseñado específicamente para dispositivos de almacenamiento extraíbles como memorias USB y tarjetas SD, ofreciendo soporte para ficheros mayores de 4 GB sin la complejidad de NTFS ni sus restricciones de permisos. Es compatible con Windows, macOS y Linux, no exclusivo de ninguno.
+
+PREGUNTA: FTP hace referencia a...
+A: File Transfer Protocol.
+B: Found Transfer Protocol.
+C: File Transport Protocol.
+D: File Transfer Premium.
+RESPUESTA: A
+EXPLICACION: FTP (File Transfer Protocol) es el protocolo estándar de Internet para la transferencia de ficheros entre un cliente y un servidor, definido en el RFC 959. Opera en los puertos 20 y 21. Las otras opciones son variaciones inventadas que no corresponden a ningún protocolo real.
+
+PREGUNTA: Indica cuál de los siguientes es un dispositivo de interconexión de red:
+A: RJ-45.
+B: Ordenador.
+C: Switch.
+D: BIOS.
+RESPUESTA: C
+EXPLICACION: Un switch es un dispositivo de red activo que opera en la capa 2 del modelo OSI, conectando múltiples dispositivos dentro de la misma red local y enrutando tramas MAC de forma inteligente. RJ-45 es un conector físico, el ordenador es un equipo terminal y la BIOS es el firmware del hardware.
+
+PREGUNTA: Indica qué tipo de software es VMware Workstation:
+A: Software libre.
+B: Software propietario.
+C: Software totalmente gratuito.
+D: Software incremental.
+RESPUESTA: B
+EXPLICACION: VMware Workstation es un software propietario desarrollado por VMware (ahora parte de Broadcom), lo que significa que su código fuente no es público y su uso requiere licencia de pago. Existen versiones gratuitas con funcionalidad limitada (Player), pero el producto en sí no es software libre ni de código abierto.
+
+PREGUNTA: La administración remota:
+A: Solo se puede usar con una herramienta.
+B: Viene incorporada en Windows mediante tres herramientas.
+C: No permite gestionar el equipo en temas de seguridad.
+D: Todas las anteriores son correctas.
+RESPUESTA: B
+EXPLICACION: Windows incorpora tres herramientas nativas de administración remota: el Escritorio Remoto (RDP), la Administración remota de Windows (WinRM) y el MMC con consolas remotas. No se limita a una sola herramienta ni excluye la gestión de seguridad.
+
+PREGUNTA: La cabecera en IPv6 posee:
+A: 20 bytes.
+B: 30 bytes.
+C: 40 bytes.
+D: 50 bytes.
+RESPUESTA: C
+EXPLICACION: La cabecera fija de IPv6 ocupa exactamente 40 bytes, el doble que la cabecera mínima de IPv4 (20 bytes). Este tamaño se debe principalmente al espacio requerido por las direcciones de 128 bits (16 bytes por dirección de origen y destino). A cambio, la cabecera de IPv6 es más simple y elimina campos como el checksum.
+
+PREGUNTA: Las placas base se guían por los:
+A: Factores de forma.
+B: Zócalos del microprocesador.
+C: Conectores internos.
+D: Conectores externos.
+RESPUESTA: A
+EXPLICACION: El factor de forma (ATX, Micro-ATX, Mini-ITX...) define las dimensiones físicas de la placa base, la disposición de los componentes y los puntos de anclaje a la caja. Es el estándar que determina la compatibilidad entre la placa, la caja y la fuente de alimentación.
+
+PREGUNTA: Las redes P2P hacen referencia a...
+A: Pair top pair.
+B: Peer to peer.
+C: Point to point.
+D: Poe to poe.
+RESPUESTA: B
+EXPLICACION: P2P significa Peer to Peer (par a par), una arquitectura de red descentralizada donde cada nodo puede actuar simultáneamente como cliente y servidor. Se usa en aplicaciones de compartición de ficheros, criptomonedas y comunicaciones. Las otras opciones son términos inventados o incorrectos.
+
+PREGUNTA: Las tarjetas de red pueden ser:
+A: Solo de Windows.
+B: Solo de Linux.
+C: Cableadas únicamente.
+D: Cableadas e inalámbricas.
+RESPUESTA: D
+EXPLICACION: Las NIC (Network Interface Card) existen en dos variantes según el medio de transmisión: cableadas (Ethernet, conectadas mediante cable RJ-45) e inalámbricas (Wi-Fi, que usan radiofrecuencia). Ambas son independientes del sistema operativo y compatibles con Windows, Linux y otros sistemas.
+
+PREGUNTA: Los permisos 0666 y 0777 son:
+A: Los permisos originales y por defecto de un archivo y un directorio respectivamente.
+B: Los permisos originales y por defecto de un directorio y un archivo respectivamente.
+C: Los permisos no otorgables y por defecto de un archivo y un directorio respectivamente.
+D: Los permisos no otorgables y por defecto de un directorio y un archivo respectivamente.
+RESPUESTA: A
+EXPLICACION: En Linux, los permisos de partida antes de aplicar umask son 0666 para ficheros (rw-rw-rw-, sin ejecución por defecto) y 0777 para directorios (rwxrwxrwx, con ejecución necesaria para acceder al contenido). La umask resta permisos a estos valores de origen.
+
+PREGUNTA: Los sistemas operativos distribuidos son una clasificación de un sistema operativo que responde a:
+A: El interfaz utilizado.
+B: Cómo ofrecen los servicios.
+C: El tipo de procesamiento.
+D: El número de usuarios.
+RESPUESTA: B
+EXPLICACION: Los sistemas operativos se clasifican según cómo ofrecen sus servicios: centralizados (todos los recursos en un nodo) o distribuidos (recursos repartidos en varios nodos interconectados que se presentan como un sistema único). No es una clasificación por interfaz ni por número de usuarios.
+
+PREGUNTA: Para crear un directorio alumnos en Linux en la ruta actual usamos el comando...
+A: mkdir -r alumnos.
+B: mkdir alumnos.
+C: rmdir alumnos.
+D: rmdir -r alumnos.
+RESPUESTA: B
+EXPLICACION: mkdir (make directory) crea un directorio en la ruta especificada. Sin opciones, mkdir alumnos crea el directorio en el directorio de trabajo actual. rmdir elimina directorios vacíos. La opción -r no existe en mkdir estándar (en su lugar se usa -p para crear directorios padre); sí existe en rm para eliminar de forma recursiva.
+
+PREGUNTA: Pro, Player y Fusion son versiones del siguiente software privativo de virtualización:
+A: VMWare Workstation.
+B: VirtualBox.
+C: KVM.
+D: Aviat Design.
+RESPUESTA: A
+EXPLICACION: VMware comercializa su hipervisor de escritorio en tres ediciones: Workstation Pro (uso profesional), Workstation Player (uso personal, más limitado) y Fusion (versión para macOS). VirtualBox es gratuito y de Oracle; KVM es el hipervisor integrado en el kernel Linux.
+
+PREGUNTA: Puede que sea importante realizar esta acción antes de instalar un sistema operativo:
+A: Copia de seguridad.
+B: Instalación nativa.
+C: Instalación por red.
+D: Instalación dual.
+RESPUESTA: A
+EXPLICACION: Antes de instalar o reinstalar un sistema operativo es fundamental hacer una copia de seguridad de los datos existentes, ya que el proceso puede formatear el disco o sobrescribir particiones. Las opciones B, C y D son tipos de instalación, no acciones previas de protección de datos.
+
+PREGUNTA: Qué tipo de aplicación es MySQL:
+A: Procesador de texto.
+B: Base de datos.
+C: Presentación gráfica.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: B
+EXPLICACION: MySQL es un sistema gestor de bases de datos relacionales (SGBD) de código abierto, uno de los más utilizados para aplicaciones web. Almacena datos en tablas relacionadas y se consulta mediante SQL. No tiene relación con procesamiento de texto ni presentaciones gráficas.
+
+PREGUNTA: Si una BIOS enciende una luz LED para indicar un problema, es una señal...
+A: Sonora.
+B: Visual.
+C: Depende del color de la luz.
+D: Una BIOS no puede emitir señales mediante LEDs.
+RESPUESTA: B
+EXPLICACION: La BIOS/UEFI puede comunicar errores durante el POST mediante tres tipos de señales: sonoras (pitidos beep), visuales (códigos de LEDs o mensajes en pantalla) y, en placas modernas, mediante pantallas de 7 segmentos. Una luz LED es inequívocamente una señal visual, independientemente de su color.
+
+PREGUNTA: Un algoritmo simétrico es:
+A: RCA2.
+B: ASES.
+C: ICMP.
+D: AES.
+RESPUESTA: D
+EXPLICACION: AES (Advanced Encryption Standard) es el algoritmo de cifrado simétrico más utilizado actualmente, adoptado como estándar por el NIST en 2001. Usa la misma clave para cifrar y descifrar. ICMP es un protocolo de red (ping), RCA2 y ASES son nombres inventados que no corresponden a algoritmos criptográficos reales.
+
+PREGUNTA: Un ejemplo de buen nombre para una máquina virtual es:
+A: VRSTFVM.
+B: VirtualBox.
+C: Windows 10 - Cliente.
+D: Linux.
+RESPUESTA: C
+EXPLICACION: Un buen nombre para una máquina virtual debe ser descriptivo e identificativo: indicar el sistema operativo y su rol, como "Windows 10 - Cliente". VRSTFVM es una sigla críptica sin significado claro, VirtualBox es el nombre del hipervisor, y "Linux" es demasiado genérico para identificar una VM concreta en un entorno con varias.
+
+PREGUNTA: Un hardware está formado, entre otros componentes, por:
+A: Bus de datos.
+B: Microprocesador.
+C: Host.
+D: VirtualBox.
+RESPUESTA: B
+EXPLICACION: El microprocesador es el componente central del hardware, encargado de ejecutar las instrucciones del software. El bus de datos también es hardware, pero la pregunta pide identificar un componente concreto representativo. Host y VirtualBox son conceptos de software o virtualización, no hardware físico.
+
+PREGUNTA: Un servidor debe cumplir con estos tres aspectos:
+A: Disponibilidad, calidad y mantenimiento.
+B: Escalabilidad, mantenimiento y disponibilidad.
+C: Mantenimiento, disponibilidad y automatismo.
+D: Disponibilidad, escalabilidad y gestión avanzada.
+RESPUESTA: B
+EXPLICACION: Los tres pilares de un servidor son disponibilidad (estar operativo cuando se necesita), escalabilidad (crecer en recursos para atender más demanda) y mantenimiento (actualizarse y repararse sin interrumpir el servicio). Calidad, automatismo y gestión avanzada son conceptos deseables pero no los tres pilares definitorios.
+
+PREGUNTA: Un sistema multitarea:
+A: Trabaja con un solo proceso al mismo tiempo.
+B: Trabaja con un solo proceso por usuario al mismo tiempo.
+C: Trabaja con varios procesos al mismo tiempo.
+D: No gestiona más de dos procesos al mismo tiempo.
+RESPUESTA: C
+EXPLICACION: Un sistema multitarea gestiona la ejecución de varios procesos simultáneamente, alternando entre ellos tan rápido que el usuario percibe paralelismo aunque en un sistema monoprocesador la CPU ejecuta uno a la vez. Es la base de cualquier SO moderno, donde corren a la vez el navegador, el reproductor de música y los procesos del sistema.
+
+PREGUNTA: Una de las distribuciones que se emplean de manera específica en los sistemas Linux es:
+A: Windows Pro.
+B: MacOS X.
+C: Ubuntu Desktop.
+D: FreeBSD.
+RESPUESTA: C
+EXPLICACION: Ubuntu Desktop es una distribución GNU/Linux basada en Debian, orientada al usuario de escritorio. Windows Pro es un sistema operativo de Microsoft y macOS X es de Apple; ninguno es Linux. FreeBSD no es Linux, es un sistema BSD independiente con un kernel distinto al de Linux.
+
+PREGUNTA: Una NIC también se puede llamar:
+A: Adaptador de video.
+B: Adaptador de internet.
+C: Tarjeta de sonido.
+D: Adaptador de pantalla.
+RESPUESTA: B
+EXPLICACION: NIC son las siglas de Network Interface Card (tarjeta de interfaz de red), cuya función es conectar el equipo a una red, por lo que también se denomina adaptador de red o adaptador de internet. No tiene ninguna relación con el procesamiento de vídeo, sonido o señal de pantalla.
+
+PREGUNTA: Usaremos este comando para cambiar los permisos en Linux:
+A: chmod.
+B: umask.
+C: umod.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: A
+EXPLICACION: chmod (change mode) modifica los permisos de un fichero o directorio, tanto en notación simbólica (chmod u+x fichero) como octal (chmod 755 fichero). umask define la máscara de permisos por defecto para nuevos ficheros, no modifica los existentes. umod no es un comando real de Linux.
+
+PREGUNTA: Usuario que tiene el privilegio necesario para efectuar cambios en los ficheros de configuración:
+A: Gestor.
+B: Administrador.
+C: Usuario.
+D: Usuario avanzado.
+RESPUESTA: B
+EXPLICACION: El Administrador (root en Linux, Administrador en Windows) tiene acceso total al sistema, incluyendo los ficheros de configuración del SO ubicados en /etc en Linux o en el registro y System32 en Windows. Los usuarios estándar y avanzados tienen acceso restringido a sus propios ficheros.
+
+PREGUNTA: Versión de Microsoft Windows para dispositivos móviles:
+A: Server.
+B: Enterprise.
+C: IoT.
+D: Mobile.
+RESPUESTA: D
+EXPLICACION: Windows Mobile fue la edición de Microsoft diseñada específicamente para smartphones y PDAs. Windows Server es para servidores, Enterprise es una edición corporativa de escritorio, e IoT es la edición para dispositivos embebidos e Internet of Things, que aunque compacta no está orientada a móviles de consumo.

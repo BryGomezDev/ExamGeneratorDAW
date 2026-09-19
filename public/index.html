@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generador de Exámenes DAW</title>
+<style>
+  :root {
+    --primary: #1E3A5F;
+    --primary-light: #2a4f80;
+    --accent: #4a90d9;
+    --bg: #f4f7fb;
+    --card-bg: #ffffff;
+    --text: #1a2535;
+    --text-muted: #5a6a7e;
+    --border: #d0dbe8;
+    --green: #16a34a;
+    --green-bg: #dcfce7;
+    --red: #dc2626;
+    --red-bg: #fee2e2;
+    --yellow: #d97706;
+    --yellow-bg: #fef3c7;
+    --purple: #7c3aed;
+    --purple-bg: #ede9fe;
+    --radius: 12px;
+    --shadow: 0 2px 12px rgba(30,58,95,0.10);
+    --shadow-lg: 0 6px 28px rgba(30,58,95,0.14);
+    --transition: 0.2s ease;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── Header ─────────────────────────────────────── */
+  header {
+    background: var(--primary);
+    color: #fff;
+    padding: 0 20px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  header h1 { font-size: 1.05rem; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap; }
+  header .breadcrumb {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    min-width: 0;
+    overflow: hidden;
+  }
+  header .breadcrumb span { cursor: pointer; white-space: nowrap; }
+  header .breadcrumb span:hover { opacity: 1; text-decoration: underline; }
+  .sep { opacity: 0.5; }
+  .header-right { margin-left: auto; flex-shrink: 0; }
+  .btn-ghost {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
+    border-radius: 7px;
+    padding: 6px 14px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition);
+    white-space: nowrap;
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,0.22); }
+
+  /* ── Screens ─────────────────────────────────────── */
+  .screen { display: none; animation: fadeIn 0.25s ease; }
+  .screen.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 32px 20px; }
+
+  /* ── Typography ──────────────────────────────────── */
+  .section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+  .section-subtitle {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin-bottom: 28px;
+  }
+
+  /* ── Cards grid ──────────────────────────────────── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    cursor: pointer;
+    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .card:hover { border-color: var(--accent); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .card .card-icon { font-size: 2rem; }
+  .card .card-title { font-weight: 600; font-size: 1rem; color: var(--primary); }
+  .card .card-meta { font-size: 0.82rem; color: var(--text-muted); }
+
+  /* ── Mode cards ──────────────────────────────────── */
+  .mode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .mode-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 22px;
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mode-card:hover { border-color: var(--accent); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .mode-card .mode-icon { font-size: 2.2rem; }
+  .mode-card .mode-title { font-size: 1.05rem; font-weight: 700; color: var(--primary); }
+  .mode-card .mode-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+  .mode-card.disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+
+  /* ── Unit grid ───────────────────────────────────── */
+  .unit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+  .unit-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 16px;
+    cursor: pointer;
+    transition: all var(--transition);
+    text-align: center;
+  }
+  .unit-card:hover { border-color: var(--accent); box-shadow: var(--shadow); transform: translateY(-1px); }
+  .unit-card .unit-num { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+  .unit-card .unit-label { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
+  .unit-card .unit-count {
+    margin-top: 8px;
+    display: inline-block;
+    background: var(--bg);
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+  }
+  /* ── PS card (prueba semestral) ──────────────────── */
+  .unit-card.unit-ps {
+    border-color: var(--purple);
+    background: var(--purple-bg);
+  }
+  .unit-card.unit-ps .unit-num { color: var(--purple); }
+  .unit-card.unit-ps .unit-label { color: var(--purple); opacity: 0.8; }
+  .unit-card.unit-ps .unit-count { background: #fff; border-color: var(--purple); color: var(--purple); }
+  .unit-card.unit-ps:hover { border-color: #5b21b6; box-shadow: 0 4px 16px rgba(124,58,237,0.2); }
+
+  /* ── Exam screen ─────────────────────────────────── */
+  #exam-screen .container { max-width: 700px; }
+
+  .progress-bar-wrap {
+    height: 6px;
+    background: var(--border);
+    border-radius: 99px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .progress-bar {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 99px;
+    transition: width 0.4s ease;
+  }
+
+  .exam-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .exam-counter { font-size: 0.88rem; color: var(--text-muted); font-weight: 500; }
+  .score-badge {
+    background: var(--primary);
+    color: #fff;
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .question-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 28px 24px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+  }
+  .question-text {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: var(--text);
+  }
+
+  .options-list { display: flex; flex-direction: column; gap: 10px; }
+
+  .option-btn {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 18px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    cursor: pointer;
+    transition: all var(--transition);
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text);
+    width: 100%;
+  }
+  .option-btn:hover:not(:disabled) { border-color: var(--accent); background: #eaf3ff; }
+
+  .option-label {
+    min-width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+    transition: background var(--transition);
+  }
+
+  .option-btn.correct { border-color: var(--green); background: var(--green-bg); }
+  .option-btn.correct .option-label { background: var(--green); }
+  .option-btn.wrong { border-color: var(--red); background: var(--red-bg); }
+  .option-btn.wrong .option-label { background: var(--red); }
+  .option-btn:disabled { cursor: not-allowed; }
+
+  .feedback-box {
+    margin-top: 20px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    background: #f0f7ff;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--text);
+    display: none;
+  }
+  .feedback-box.visible { display: block; animation: fadeIn 0.2s ease; }
+  .feedback-box strong { color: var(--primary); }
+
+  .exam-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all var(--transition);
+  }
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-primary:hover { background: var(--primary-light); }
+  .btn-secondary { background: var(--card-bg); color: var(--text-muted); border: 1.5px solid var(--border); }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--primary); }
+  .btn-blank { background: var(--yellow-bg); color: var(--yellow); border: 1.5px solid var(--yellow); }
+  .btn-blank:hover { background: #fde68a; }
+  .btn-danger { background: #fff; color: var(--red); border: 1.5px solid var(--red); }
+  .btn-danger:hover { background: var(--red-bg); }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  /* ── Results screen ──────────────────────────────── */
+  #results-screen .container { max-width: 700px; }
+
+  .result-score-box {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 36px 28px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    border: 2px solid var(--border);
+  }
+  .result-nota {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .result-nota.red { color: var(--red); }
+  .result-nota.orange { color: var(--yellow); }
+  .result-nota.green { color: var(--green); }
+  .result-label { font-size: 1rem; color: var(--text-muted); margin-bottom: 16px; }
+
+  .stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  .stat { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .stat-val { font-size: 1.4rem; font-weight: 700; }
+  .stat-lbl { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  .stat.correct .stat-val { color: var(--green); }
+  .stat.wrong .stat-val { color: var(--red); }
+  .stat.blank .stat-val { color: var(--yellow); }
+
+  .dot-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 20px 0;
+    justify-content: center;
+  }
+  .dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform var(--transition);
+  }
+  .dot:hover { transform: scale(1.3); }
+  .dot.correct { background: var(--green); }
+  .dot.wrong { background: var(--red); }
+  .dot.blank { background: var(--yellow); }
+
+  /* ── Scoring badge ───────────────────────────────── */
+  .scoring-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin-top: 12px;
+    border: 1.5px solid transparent;
+  }
+  .scoring-badge.penalty    { background: var(--red-bg);    color: var(--red);    border-color: var(--red); }
+  .scoring-badge.no-penalty { background: var(--green-bg);  color: var(--green);  border-color: var(--green); }
+
+
+  .result-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+
+  /* ── Review screen ───────────────────────────────── */
+  #review-screen .container { max-width: 700px; }
+
+  .review-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow);
+  }
+  .review-q-num { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 10px; }
+  .review-q-text { font-size: 1rem; font-weight: 500; line-height: 1.6; margin-bottom: 16px; }
+
+  .review-option {
+    padding: 10px 14px;
+    border-radius: 7px;
+    margin-bottom: 7px;
+    font-size: 0.9rem;
+    border: 1.5px solid transparent;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+  .review-option.correct { background: var(--green-bg); border-color: var(--green); color: var(--green); }
+  .review-option.wrong { background: var(--red-bg); border-color: var(--red); color: var(--red); }
+  .review-option.neutral { background: var(--bg); border-color: var(--border); color: var(--text-muted); }
+
+  .review-feedback {
+    margin-top: 12px;
+    padding: 12px 14px;
+    background: #f0f7ff;
+    border-radius: 7px;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--text);
+    border-left: 3px solid var(--accent);
+  }
+
+  /* ── History screen ──────────────────────────────── */
+  #history-screen .container { max-width: 800px; }
+
+  .history-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .history-stat-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 16px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .history-stat-val {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1.1;
+  }
+  .history-stat-val.red { color: var(--red); }
+  .history-stat-val.orange { color: var(--yellow); }
+  .history-stat-val.green { color: var(--green); }
+  .history-stat-val.small { font-size: 1rem; }
+  .history-stat-lbl { font-size: 0.75rem; color: var(--text-muted); margin-top: 5px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  .history-entry {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: box-shadow var(--transition);
+  }
+  .history-entry:hover { box-shadow: var(--shadow); }
+  .history-entry-left { flex: 1; min-width: 0; }
+  .history-entry-date { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 3px; }
+  .history-entry-meta { font-size: 0.92rem; font-weight: 600; color: var(--text); margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .history-entry-breakdown { display: flex; gap: 10px; font-size: 0.8rem; font-weight: 600; }
+  .history-entry-breakdown .c { color: var(--green); }
+  .history-entry-breakdown .w { color: var(--red); }
+  .history-entry-breakdown .b { color: var(--yellow); }
+  .history-entry-breakdown .t { color: var(--text-muted); }
+  .history-entry-nota {
+    font-size: 1.6rem;
+    font-weight: 800;
+    min-width: 56px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .history-entry-nota.red { color: var(--red); }
+  .history-entry-nota.orange { color: var(--yellow); }
+  .history-entry-nota.green { color: var(--green); }
+
+  .empty-state {
+    text-align: center;
+    padding: 56px 0;
+    color: var(--text-muted);
+  }
+  .empty-state .empty-icon { font-size: 3rem; margin-bottom: 14px; }
+  .empty-state .empty-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
+  .empty-state .empty-sub { font-size: 0.88rem; }
+
+  /* ── Loading ─────────────────────────────────────── */
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    flex-direction: column;
+    gap: 16px;
+    color: var(--text-muted);
+  }
+  .spinner {
+    width: 36px; height: 36px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── Responsive ──────────────────────────────────── */
+  @media (max-width: 600px) {
+    .container { padding: 20px 14px; }
+    .question-card { padding: 20px 16px; }
+    .result-nota { font-size: 3rem; }
+    .stats-row { gap: 18px; }
+    .history-entry-meta { font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Exámenes DAW</h1>
+  <nav class="breadcrumb" id="breadcrumb"></nav>
+  <div class="header-right">
+    <button class="btn-ghost" id="btn-history-nav">📊 Histórico</button>
+  </div>
+</header>
+
+<!-- ── Screen: Subject selection ───────────────────── -->
+<div class="screen active" id="home-screen">
+  <div class="container">
+    <div class="section-title">Asignaturas</div>
+    <div class="section-subtitle">Selecciona una asignatura para empezar</div>
+    <div class="cards-grid" id="subject-grid">
+      <div class="loading"><div class="spinner"></div><span>Cargando asignaturas…</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Screen: Mode selection ──────────────────────── -->
+<div class="screen" id="mode-screen">
+  <div class="container">
+    <div class="section-title" id="mode-title">Modo de examen</div>
+    <div class="section-subtitle">¿Cómo quieres estudiar hoy?</div>
+    <div class="mode-grid" id="mode-grid"></div>
+    <div id="unit-section" style="display:none">
+      <div class="section-title" style="font-size:1.1rem;margin-bottom:16px">Selecciona una unidad</div>
+      <div class="unit-grid" id="unit-grid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Screen: Exam ────────────────────────────────── -->
+<div class="screen" id="exam-screen">
+  <div class="container">
+    <div class="progress-bar-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+    <div class="exam-header">
+      <span class="exam-counter" id="exam-counter"></span>
+      <span class="score-badge" id="score-badge">Nota: —</span>
+    </div>
+    <div class="question-card">
+      <div class="question-text" id="question-text"></div>
+      <div class="options-list" id="options-list"></div>
+      <div class="feedback-box" id="feedback-box"></div>
+    </div>
+    <div class="exam-actions">
+      <button class="btn btn-blank" id="btn-blank">En blanco</button>
+      <button class="btn btn-primary" id="btn-next" disabled>Siguiente →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Screen: Results ────────────────────────────── -->
+<div class="screen" id="results-screen">
+  <div class="container">
+    <div class="result-score-box">
+      <div class="result-nota" id="result-nota"></div>
+      <div class="result-label">sobre 10</div>
+      <div class="stats-row">
+        <div class="stat correct">
+          <div class="stat-val" id="stat-correct">0</div>
+          <div class="stat-lbl">Correctas</div>
+        </div>
+        <div class="stat wrong">
+          <div class="stat-val" id="stat-wrong">0</div>
+          <div class="stat-lbl">Erróneas</div>
+        </div>
+        <div class="stat blank">
+          <div class="stat-val" id="stat-blank">0</div>
+          <div class="stat-lbl">En blanco</div>
+        </div>
+      </div>
+      <div class="dot-bar" id="dot-bar"></div>
+      <div><span id="scoring-badge" class="scoring-badge"></span></div>
+    </div>
+    <div class="result-actions">
+      <button class="btn btn-secondary" id="btn-review">Repasar respuestas</button>
+      <button class="btn btn-secondary" id="btn-restart">Reiniciar examen</button>
+      <button class="btn btn-primary" id="btn-home">Volver al menú</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Screen: Review ────────────────────────────── -->
+<div class="screen" id="review-screen">
+  <div class="container">
+    <div class="section-title" style="margin-bottom:20px">Repaso de respuestas</div>
+    <div id="review-list"></div>
+    <div style="margin-top:8px;display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn btn-primary" id="btn-review-back">← Volver a resultados</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Screen: History ────────────────────────────── -->
+<div class="screen" id="history-screen">
+  <div class="container">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;gap:12px;flex-wrap:wrap">
+      <div>
+        <div class="section-title">Histórico de intentos</div>
+        <div class="section-subtitle" style="margin-bottom:0">Registro de todos los exámenes completados</div>
+      </div>
+      <button class="btn btn-danger" id="btn-clear-history">Borrar histórico</button>
+    </div>
+    <div id="history-stats"></div>
+    <div id="history-list"></div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// State
+// ═══════════════════════════════════════════════════════════════════
+const state = {
+  subjects: [],
+  currentSubject: null,
+  currentMode: null,      // 'unit' | 'mixed' | 'final'
+  currentUnit: null,      // filename e.g. 'u3.txt' or 'ps.txt'
+  penaltyMode: false,     // false = sin penalización (unit sin ps), true = con penalización
+  questions: [],
+  answers: [],            // {chosen: idx|null, correct: idx}
+  qi: 0,
+  answered: false,
+  lastQuestions: null,
+};
+
+const SCORE_CORRECT = 0.25;
+const SCORE_WRONG = -(0.25 / 3);
+const HISTORY_KEY = 'daw_exam_history';
+
+// ═══════════════════════════════════════════════════════════════════
+// Utilities
+// ═══════════════════════════════════════════════════════════════════
+function $(id) { return document.getElementById(id); }
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  $(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function clamp(v, min, max) { return Math.min(max, Math.max(min, v)); }
+
+function isPenaltyMode() {
+  // Unit exam with a regular unit file (u1.txt … uN.txt) → no penalty
+  if (state.currentMode === 'unit' && state.currentUnit &&
+      state.currentUnit.toLowerCase() !== 'ps.txt') return false;
+  return true;
+}
+
+function calcNota(answers) {
+  if (!state.penaltyMode) {
+    // Simple: +1 per correct, /total *10
+    const correct = answers.filter(a => a.chosen !== null && a.chosen === a.correct).length;
+    return { pts: correct, nota: answers.length > 0 ? (correct / answers.length) * 10 : 0 };
+  }
+  // Penalty: +0.25 correct, -(0.25/3) wrong, 0 blank
+  let pts = 0;
+  for (const a of answers) {
+    if (a.chosen === null) {}
+    else if (a.chosen === a.correct) pts += SCORE_CORRECT;
+    else pts += SCORE_WRONG;
+  }
+  const maxPts = answers.length * SCORE_CORRECT;
+  return { pts, nota: clamp((pts / maxPts) * 10, 0, 10) };
+}
+
+function notaClass(n) {
+  if (n < 5) return 'red';
+  if (n < 7) return 'orange';
+  return 'green';
+}
+
+const SUBJECT_NAMES = {
+  si: 'Sistemas Informáticos',
+  ed: 'Entornos de Desarrollo',
+  bd: 'Bases de Datos',
+  prog: 'Programación',
+  lm: 'Lenguajes de Marcas',
+  dwec: 'Desarrollo Web en Entorno Cliente',
+  dwes: 'Desarrollo Web en Entorno Servidor',
+  daw: 'Proyecto DAW',
+};
+function subjectName(code) {
+  return SUBJECT_NAMES[code.toLowerCase()] || code.toUpperCase();
+}
+const SUBJECT_ICONS = { si: '🖥️', ed: '🛠️', bd: '🗄️', prog: '💻', lm: '📄', dwec: '🌐', dwes: '⚙️' };
+function subjectIcon(code) { return SUBJECT_ICONS[code.toLowerCase()] || '📚'; }
+
+// ═══════════════════════════════════════════════════════════════════
+// Breadcrumb
+// ═══════════════════════════════════════════════════════════════════
+function setBreadcrumb(...parts) {
+  const bc = $('breadcrumb');
+  bc.innerHTML = '';
+  parts.forEach((p, i) => {
+    const sp = document.createElement('span');
+    sp.textContent = p.label;
+    if (p.onClick) sp.addEventListener('click', p.onClick);
+    bc.appendChild(sp);
+    if (i < parts.length - 1) {
+      const sep = document.createElement('span');
+      sep.className = 'sep';
+      sep.textContent = '›';
+      bc.appendChild(sep);
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// API
+// ═══════════════════════════════════════════════════════════════════
+async function fetchSubjects() {
+  const r = await fetch('/api/subjects');
+  if (!r.ok) throw new Error('Error cargando asignaturas');
+  return r.json();
+}
+async function fetchUnitQuestions(subject, filename) {
+  const r = await fetch(`/api/questions/${subject}/${filename}`);
+  if (!r.ok) throw new Error('Error cargando preguntas');
+  return r.json();
+}
+async function fetchAllQuestions(subject) {
+  const r = await fetch(`/api/questions/${subject}`);
+  if (!r.ok) throw new Error('Error cargando preguntas');
+  return r.json();
+}
+async function fetchFinalQuestions(subject) {
+  const r = await fetch(`/api/final/${subject}`);
+  if (!r.ok) {
+    let msg = `Error ${r.status} cargando simulacro`;
+    try { const d = await r.json(); if (d.error) msg = d.error; } catch {}
+    throw new Error(msg);
+  }
+  return r.json();
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Screen: Home
+// ═══════════════════════════════════════════════════════════════════
+async function loadHome() {
+  showScreen('home-screen');
+  setBreadcrumb({ label: 'Inicio' });
+  const grid = $('subject-grid');
+  grid.innerHTML = '<div class="loading"><div class="spinner"></div><span>Cargando…</span></div>';
+  try {
+    state.subjects = await fetchSubjects();
+    grid.innerHTML = '';
+    if (state.subjects.length === 0) {
+      grid.innerHTML = '<p style="color:var(--text-muted)">No se encontraron asignaturas. Añade carpetas con ficheros .txt.</p>';
+      return;
+    }
+    state.subjects.forEach(subj => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="card-icon">${subjectIcon(subj.name)}</div>
+        <div class="card-title">${subjectName(subj.name)}</div>
+        <div class="card-meta">${subj.units.length} unidad${subj.units.length !== 1 ? 'es' : ''}${subj.hasPs ? ' · Prueba semestral' : ''}</div>
+      `;
+      card.addEventListener('click', () => loadModeScreen(subj));
+      grid.appendChild(card);
+    });
+  } catch (e) {
+    grid.innerHTML = `<p style="color:var(--red)">${e.message}</p>`;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Screen: Mode selection
+// ═══════════════════════════════════════════════════════════════════
+function loadModeScreen(subj) {
+  state.currentSubject = subj;
+  showScreen('mode-screen');
+  setBreadcrumb(
+    { label: 'Inicio', onClick: loadHome },
+    { label: subjectName(subj.name) }
+  );
+  $('mode-title').textContent = subjectName(subj.name);
+  $('unit-section').style.display = 'none';
+  $('unit-grid').innerHTML = '';
+
+  const modeGrid = $('mode-grid');
+  modeGrid.innerHTML = '';
+
+  const m1 = document.createElement('div');
+  m1.className = 'mode-card';
+  m1.innerHTML = `
+    <div class="mode-icon">📖</div>
+    <div class="mode-title">Examen por unidad</div>
+    <div class="mode-desc">Estudia una unidad concreta con todas sus preguntas en orden aleatorio.</div>
+  `;
+  m1.addEventListener('click', () => showUnitSelector(subj));
+  modeGrid.appendChild(m1);
+
+  const m2 = document.createElement('div');
+  m2.className = 'mode-card';
+  m2.innerHTML = `
+    <div class="mode-icon">🔀</div>
+    <div class="mode-title">Examen conjunto</div>
+    <div class="mode-desc">Mezcla preguntas de todas las unidades disponibles de forma aleatoria.</div>
+  `;
+  m2.addEventListener('click', () => startMixedExam(subj));
+  modeGrid.appendChild(m2);
+
+  const m3 = document.createElement('div');
+  m3.className = `mode-card${subj.hasPs ? '' : ' disabled'}`;
+  m3.innerHTML = `
+    <div class="mode-icon">🏆</div>
+    <div class="mode-title">Simulacro final</div>
+    <div class="mode-desc">40 preguntas: 25 de la prueba semestral + 15 de unidades.${subj.hasPs ? '' : ' <em>(Requiere ps.txt)</em>'}</div>
+  `;
+  if (subj.hasPs) m3.addEventListener('click', () => startFinalExam(subj));
+  modeGrid.appendChild(m3);
+}
+
+function showUnitSelector(subj) {
+  $('unit-section').style.display = 'block';
+  const grid = $('unit-grid');
+  grid.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
+
+  // Fetch unit counts; if ps.txt exists fetch it in parallel
+  const unitFetches = subj.units.map(u => fetchUnitQuestions(subj.name, u));
+  const psFetch = subj.hasPs ? fetchUnitQuestions(subj.name, 'ps.txt') : Promise.resolve(null);
+
+  Promise.all([Promise.all(unitFetches), psFetch]).then(([unitResults, psResults]) => {
+    grid.innerHTML = '';
+
+    subj.units.forEach((u, i) => {
+      const num = u.match(/\d+/)[0];
+      const count = unitResults[i].length;
+      const card = document.createElement('div');
+      card.className = 'unit-card';
+      card.innerHTML = `
+        <div class="unit-num">U${num}</div>
+        <div class="unit-label">Unidad ${num}</div>
+        <div class="unit-count">${count} preguntas</div>
+      `;
+      card.addEventListener('click', () => startUnitExam(subj, u, unitResults[i]));
+      grid.appendChild(card);
+    });
+
+    // PS card at the end if ps.txt exists
+    if (subj.hasPs && psResults) {
+      const psCard = document.createElement('div');
+      psCard.className = 'unit-card unit-ps';
+      psCard.innerHTML = `
+        <div class="unit-num">★</div>
+        <div class="unit-label">Prueba Semestral</div>
+        <div class="unit-count">${psResults.length} preguntas</div>
+      `;
+      psCard.addEventListener('click', () => startUnitExam(subj, 'ps.txt', psResults));
+      grid.appendChild(psCard);
+    }
+  }).catch(e => {
+    grid.innerHTML = `<p style="color:var(--red)">${e.message}</p>`;
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Start exam variants
+// ═══════════════════════════════════════════════════════════════════
+function startUnitExam(subj, unitFile, questions) {
+  const isPs = unitFile.toLowerCase() === 'ps.txt';
+  const label = isPs ? 'Prueba Semestral' : `Unidad ${unitFile.match(/\d+/)[0]}`;
+  state.currentMode = 'unit';
+  state.currentUnit = unitFile;
+  setBreadcrumb(
+    { label: 'Inicio', onClick: loadHome },
+    { label: subjectName(subj.name), onClick: () => loadModeScreen(subj) },
+    { label }
+  );
+  beginExam(shuffle(questions));
+}
+
+async function startMixedExam(subj) {
+  state.currentMode = 'mixed';
+  state.currentUnit = null;
+  setBreadcrumb(
+    { label: 'Inicio', onClick: loadHome },
+    { label: subjectName(subj.name), onClick: () => loadModeScreen(subj) },
+    { label: 'Examen conjunto' }
+  );
+  showScreen('exam-screen');
+  $('question-text').textContent = 'Cargando preguntas…';
+  try {
+    const all = await fetchAllQuestions(subj.name);
+    beginExam(shuffle(all));
+  } catch (e) {
+    $('question-text').textContent = 'Error: ' + e.message;
+  }
+}
+
+async function startFinalExam(subj) {
+  state.currentMode = 'final';
+  state.currentUnit = null;
+  setBreadcrumb(
+    { label: 'Inicio', onClick: loadHome },
+    { label: subjectName(subj.name), onClick: () => loadModeScreen(subj) },
+    { label: 'Simulacro final' }
+  );
+  showScreen('exam-screen');
+  $('question-text').textContent = 'Cargando preguntas…';
+  try {
+    const finalQs = await fetchFinalQuestions(subj.name);
+    beginExam(finalQs);
+  } catch (e) {
+    $('question-text').textContent = 'Error: ' + e.message;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Exam logic
+// ═══════════════════════════════════════════════════════════════════
+function beginExam(questions) {
+  state.questions = questions;
+  state.lastQuestions = questions;
+  state.answers = [];
+  state.qi = 0;
+  state.answered = false;
+  state.penaltyMode = isPenaltyMode();
+  console.log(`[beginExam] mode=${state.currentMode} unit=${state.currentUnit} penaltyMode=${state.penaltyMode}`);
+  showScreen('exam-screen');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = state.questions[state.qi];
+  const total = state.questions.length;
+
+  $('progress-bar').style.width = (state.qi / total * 100) + '%';
+  $('exam-counter').textContent = `Pregunta ${state.qi + 1} de ${total}`;
+  updateScoreBadge();
+  $('question-text').textContent = q.question;
+
+  const optIndices = shuffle(q.options.map((_, i) => i));
+  q._shuffledIndices = optIndices;
+  q._shuffledCorrect = optIndices.indexOf(q.correct);
+
+  const labels = ['A', 'B', 'C', 'D'];
+  const list = $('options-list');
+  list.innerHTML = '';
+
+  optIndices.forEach((origIdx, displayIdx) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.innerHTML = `<span class="option-label">${labels[displayIdx]}</span><span>${q.options[origIdx]}</span>`;
+    btn.addEventListener('click', () => chooseAnswer(displayIdx));
+    list.appendChild(btn);
+  });
+
+  $('feedback-box').className = 'feedback-box';
+  $('feedback-box').innerHTML = '';
+  $('btn-blank').disabled = false;
+  $('btn-next').disabled = true;
+  state.answered = false;
+}
+
+function updateScoreBadge() {
+  if (!state.penaltyMode) {
+    const correct = state.answers.filter(a => a.chosen !== null && a.chosen === a.correct).length;
+    $('score-badge').textContent = `${correct} ✓`;
+    return;
+  }
+  if (state.answers.length === 0) { $('score-badge').textContent = 'Nota: —'; return; }
+  const { nota } = calcNota(state.answers);
+  $('score-badge').textContent = `Nota: ${nota.toFixed(2)}`;
+}
+
+function chooseAnswer(displayIdx) {
+  if (state.answered) return;
+  state.answered = true;
+  const q = state.questions[state.qi];
+  const correctDisplay = q._shuffledCorrect;
+  const isCorrect = displayIdx === correctDisplay;
+
+  state.answers.push({ chosen: displayIdx, correct: correctDisplay });
+
+  document.querySelectorAll('.option-btn').forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === correctDisplay) btn.classList.add('correct');
+    else if (i === displayIdx && !isCorrect) btn.classList.add('wrong');
+  });
+
+  showFeedback(q, isCorrect);
+  $('btn-blank').disabled = true;
+  $('btn-next').disabled = false;
+  updateScoreBadge();
+}
+
+function blankAnswer() {
+  if (state.answered) return;
+  state.answered = true;
+  const q = state.questions[state.qi];
+  const correctDisplay = q._shuffledCorrect;
+
+  state.answers.push({ chosen: null, correct: correctDisplay });
+
+  document.querySelectorAll('.option-btn').forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === correctDisplay) btn.classList.add('correct');
+  });
+
+  showFeedback(q, null);
+  $('btn-blank').disabled = true;
+  $('btn-next').disabled = false;
+  updateScoreBadge();
+}
+
+function showFeedback(q, isCorrect) {
+  const fb = $('feedback-box');
+  fb.className = 'feedback-box visible';
+  const correctText = q.options[q.correct];
+  const prefix = isCorrect === null ? '⬜ <strong>En blanco.</strong>'
+    : isCorrect ? '✅ <strong>¡Correcto!</strong>'
+    : '❌ <strong>Incorrecto.</strong>';
+  const explanation = q.explanation || 'Explicación no disponible.';
+  fb.innerHTML = `${prefix} <strong>${correctText}</strong><br><br>${explanation}`;
+}
+
+function nextQuestion() {
+  state.qi++;
+  if (state.qi >= state.questions.length) showResults();
+  else renderQuestion();
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Results
+// ═══════════════════════════════════════════════════════════════════
+function showResults() {
+  showScreen('results-screen');
+  const { nota } = calcNota(state.answers);
+  const correct = state.answers.filter(a => a.chosen !== null && a.chosen === a.correct).length;
+  const wrong   = state.answers.filter(a => a.chosen !== null && a.chosen !== a.correct).length;
+  const blank   = state.answers.filter(a => a.chosen === null).length;
+
+  const notaEl = $('result-nota');
+  notaEl.textContent = nota.toFixed(2);
+  notaEl.className = 'result-nota ' + notaClass(nota);
+  $('stat-correct').textContent = correct;
+  $('stat-wrong').textContent = wrong;
+  $('stat-blank').textContent = blank;
+
+  const dotBar = $('dot-bar');
+  dotBar.innerHTML = '';
+  state.answers.forEach((a, i) => {
+    const dot = document.createElement('div');
+    const cls = a.chosen === null ? 'blank' : a.chosen === a.correct ? 'correct' : 'wrong';
+    dot.className = `dot ${cls}`;
+    dot.title = `P${i + 1}: ${cls === 'correct' ? 'Correcta' : cls === 'wrong' ? 'Errónea' : 'En blanco'}`;
+    dotBar.appendChild(dot);
+  });
+
+  // Scoring badge
+  const scoringEl = $('scoring-badge');
+  if (state.penaltyMode) {
+    scoringEl.textContent = '⚖️ Sistema con penalización';
+    scoringEl.className = 'scoring-badge penalty';
+  } else {
+    scoringEl.textContent = '✅ Sistema sin penalización';
+    scoringEl.className = 'scoring-badge no-penalty';
+  }
+
+  setBreadcrumb({ label: 'Inicio', onClick: loadHome }, { label: 'Resultados' });
+
+  saveToHistory(nota, correct, wrong, blank);
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Review
+// ═══════════════════════════════════════════════════════════════════
+function showReview() {
+  showScreen('review-screen');
+  setBreadcrumb(
+    { label: 'Inicio', onClick: loadHome },
+    { label: 'Resultados', onClick: showResults },
+    { label: 'Repaso' }
+  );
+
+  const list = $('review-list');
+  list.innerHTML = '';
+  const labels = ['A', 'B', 'C', 'D'];
+
+  state.questions.forEach((q, qi) => {
+    const a = state.answers[qi];
+    if (!a) return;
+
+    const card = document.createElement('div');
+    card.className = 'review-card';
+    const statusLabel = a.chosen === null ? '⬜ En blanco' : a.chosen === a.correct ? '✅ Correcta' : '❌ Errónea';
+
+    card.innerHTML = `
+      <div class="review-q-num">Pregunta ${qi + 1} · ${statusLabel}</div>
+      <div class="review-q-text">${q.question}</div>
+    `;
+
+    const indices = q._shuffledIndices || q.options.map((_, i) => i);
+    indices.forEach((origIdx, displayIdx) => {
+      const isCorrect = displayIdx === a.correct;
+      const isChosen  = displayIdx === a.chosen;
+      let cls = 'neutral';
+      if (isCorrect) cls = 'correct';
+      else if (isChosen && !isCorrect) cls = 'wrong';
+      const icon = isCorrect ? '✓' : isChosen && !isCorrect ? '✗' : labels[displayIdx];
+      const optDiv = document.createElement('div');
+      optDiv.className = `review-option ${cls}`;
+      optDiv.innerHTML = `<strong>${icon}</strong> ${q.options[origIdx]}`;
+      card.appendChild(optDiv);
+    });
+
+    const fb = document.createElement('div');
+    fb.className = 'review-feedback';
+    fb.textContent = q.explanation || 'Explicación no disponible.';
+    card.appendChild(fb);
+
+    list.appendChild(card);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// History — localStorage
+// ═══════════════════════════════════════════════════════════════════
+function getHistory() {
+  try { return JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]'); }
+  catch { return []; }
+}
+
+function saveToHistory(nota, correct, wrong, blank) {
+  const history = getHistory();
+  const modeLabels = { unit: 'Por unidad', mixed: 'Examen conjunto', final: 'Simulacro final' };
+  let unitLabel = null;
+  if (state.currentMode === 'unit' && state.currentUnit) {
+    unitLabel = state.currentUnit.toLowerCase() === 'ps.txt'
+      ? 'Prueba Semestral'
+      : `Unidad ${state.currentUnit.match(/\d+/)?.[0] ?? '?'}`;
+  }
+  history.unshift({
+    id: Date.now(),
+    date: new Date().toISOString(),
+    subject: state.currentSubject?.name || '?',
+    mode: state.currentMode,
+    modeLabel: modeLabels[state.currentMode] || state.currentMode,
+    unit: unitLabel,
+    total: state.answers.length,
+    correct, wrong, blank,
+    nota: parseFloat(nota.toFixed(2)),
+    penaltyMode: state.penaltyMode,
+  });
+  localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+}
+
+function loadHistoryScreen() {
+  showScreen('history-screen');
+  setBreadcrumb({ label: 'Inicio', onClick: loadHome }, { label: 'Histórico' });
+
+  const history = getHistory();
+  const statsEl = $('history-stats');
+  const listEl  = $('history-list');
+
+  if (history.length === 0) {
+    statsEl.innerHTML = '';
+    listEl.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">📭</div>
+        <div class="empty-title">Aún no has completado ningún examen</div>
+        <div class="empty-sub">Tus intentos aparecerán aquí automáticamente al terminar cada examen</div>
+      </div>`;
+    return;
+  }
+
+  // Aggregate stats
+  const avgNota  = history.reduce((s, e) => s + e.nota, 0) / history.length;
+  const bestNota = Math.max(...history.map(e => e.nota));
+
+  const subjectCounts = {};
+  history.forEach(e => { subjectCounts[e.subject] = (subjectCounts[e.subject] || 0) + 1; });
+  const topSubject = Object.entries(subjectCounts).sort((a, b) => b[1] - a[1])[0];
+
+  statsEl.innerHTML = `
+    <div class="history-stats-grid">
+      <div class="history-stat-card">
+        <div class="history-stat-val">${history.length}</div>
+        <div class="history-stat-lbl">Exámenes realizados</div>
+      </div>
+      <div class="history-stat-card">
+        <div class="history-stat-val ${notaClass(avgNota)}">${avgNota.toFixed(2)}</div>
+        <div class="history-stat-lbl">Nota media</div>
+      </div>
+      <div class="history-stat-card">
+        <div class="history-stat-val ${notaClass(bestNota)}">${bestNota.toFixed(2)}</div>
+        <div class="history-stat-lbl">Mejor nota</div>
+      </div>
+      <div class="history-stat-card">
+        <div class="history-stat-val small">${topSubject ? subjectName(topSubject[0]) : '—'}</div>
+        <div class="history-stat-lbl">Más practicada</div>
+      </div>
+    </div>`;
+
+  listEl.innerHTML = '';
+  history.forEach(entry => {
+    const date = new Date(entry.date);
+    const dateStr = date.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    const timeStr = date.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+    const modeStr = entry.unit ? `${entry.modeLabel} · ${entry.unit}` : entry.modeLabel;
+
+    const penaltyLabel = entry.penaltyMode === false
+      ? '<span style="color:var(--green);font-size:0.72rem;font-weight:600">sin penalización</span>'
+      : entry.penaltyMode === true
+        ? '<span style="color:var(--red);font-size:0.72rem;font-weight:600">con penalización</span>'
+        : '';
+
+    const div = document.createElement('div');
+    div.className = 'history-entry';
+    div.innerHTML = `
+      <div class="history-entry-left">
+        <div class="history-entry-date">${dateStr} a las ${timeStr}</div>
+        <div class="history-entry-meta">${subjectName(entry.subject)} · ${modeStr}</div>
+        <div class="history-entry-breakdown">
+          <span class="c">${entry.correct}✓</span>
+          <span class="w">${entry.wrong}✗</span>
+          <span class="b">${entry.blank}—</span>
+          <span class="t">de ${entry.total}</span>
+          ${penaltyLabel}
+        </div>
+      </div>
+      <div class="history-entry-nota ${notaClass(entry.nota)}">${entry.nota.toFixed(2)}</div>
+    `;
+    listEl.appendChild(div);
+  });
+}
+
+function clearHistory() {
+  if (!confirm('¿Seguro que quieres borrar todo el histórico? Esta acción no se puede deshacer.')) return;
+  localStorage.removeItem(HISTORY_KEY);
+  loadHistoryScreen();
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// Event wiring
+// ═══════════════════════════════════════════════════════════════════
+$('btn-blank').addEventListener('click', blankAnswer);
+$('btn-next').addEventListener('click', nextQuestion);
+$('btn-review').addEventListener('click', showReview);
+$('btn-review-back').addEventListener('click', showResults);
+$('btn-restart').addEventListener('click', () => { if (state.lastQuestions) beginExam(shuffle(state.lastQuestions)); });
+$('btn-home').addEventListener('click', loadHome);
+$('btn-history-nav').addEventListener('click', loadHistoryScreen);
+$('btn-clear-history').addEventListener('click', clearHistory);
+
+// ═══════════════════════════════════════════════════════════════════
+// Init
+// ═══════════════════════════════════════════════════════════════════
+loadHome();
+</script>
+</body>
+</html>

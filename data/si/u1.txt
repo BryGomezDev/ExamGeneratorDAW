@@ -1,0 +1,79 @@
+PREGUNTA: ¿Cuál de los siguientes no es un riesgo laboral de un Técnico de Desarrollo de Aplicaciones?
+A: Superficie de trabajo.
+B: Entorno.
+C: Asiento.
+D: Maquinaria pesada.
+RESPUESTA: D
+EXPLICACION: Los riesgos laborales de un técnico informático están relacionados con su entorno de trabajo sedentario: mobiliario inadecuado, iluminación deficiente, temperatura o ruido. La maquinaria pesada pertenece a entornos industriales o de construcción, completamente ajenos al perfil de un desarrollador.
+
+PREGUNTA: El tercer paso para crear una máquina virtual de Windows 10 es:
+A: Seleccionar iso de Windows 10 como nuevo cd.
+B: Instalar Windows 10 configurando ciertos aspectos que nos piden con lo más básico.
+C: Instalar las guest additions.
+D: Darle un nombre a la máquina virtual.
+RESPUESTA: B
+EXPLICACION: El proceso de creación de una máquina virtual sigue un orden: primero se crea y nombra la VM, luego se selecciona la ISO como medio de arranque, y en tercer lugar se ejecuta la instalación del sistema operativo configurando los parámetros básicos. Las guest additions se instalan al final, una vez el sistema está operativo.
+
+PREGUNTA: En una instalación exprofeso, el primer paso del procedimiento es:
+A: Reiniciar el equipo.
+B: Conectar el componente o periférico al conector correspondiente.
+C: Leer el manual de instalación del fabricante.
+D: Comprobar los ajustes de las especificaciones del equipo.
+RESPUESTA: C
+EXPLICACION: Antes de manipular cualquier componente hardware, leer el manual del fabricante es imprescindible: cada dispositivo tiene requisitos específicos de instalación, compatibilidades y advertencias de seguridad. Actuar sin leer la documentación puede dañar el componente o el equipo.
+
+PREGUNTA: Las placas base se guían por los:
+A: Factores de forma.
+B: Zócalos del microprocesador.
+C: Conectores internos.
+D: Conectores externos.
+RESPUESTA: A
+EXPLICACION: El factor de forma (ATX, Micro-ATX, Mini-ITX...) define las dimensiones físicas de la placa base, la disposición de los componentes y los puntos de anclaje a la caja. Es el estándar que determina la compatibilidad entre la placa, la caja y la fuente de alimentación.
+
+PREGUNTA: Los medios de almacenamiento Flash son:
+A: Fuentes de alimentación ópticas.
+B: Discos duros mecánicos y cintas.
+C: Discos duros SSD y tarjetas de memoria.
+D: Ninguna es correcta.
+RESPUESTA: C
+EXPLICACION: La tecnología Flash almacena datos en celdas de memoria sin partes móviles, lo que la hace más rápida y resistente a golpes que los discos mecánicos. Los SSD y las tarjetas de memoria (SD, USB) son sus representantes más comunes. Los discos mecánicos y las cintas usan tecnología magnética.
+
+PREGUNTA: Los principales voltajes de corriente en un dispositivo electrónico son:
+A: 3.3 V
+B: 12 V
+C: 5 V
+D: Todas son correctas.
+RESPUESTA: D
+EXPLICACION: Las fuentes de alimentación ATX suministran tres líneas de voltaje: 3.3 V para la memoria y algunos circuitos lógicos, 5 V para componentes de la placa y periféricos USB, y 12 V principalmente para motores de discos y la CPU. Los tres son necesarios simultáneamente en cualquier equipo de sobremesa.
+
+PREGUNTA: Los tipos de dispositivos periféricos son:
+A: Dispositivos de entrada.
+B: Dispositivos de salida.
+C: Dispositivos de entrada y salida.
+D: Todas son correctas.
+RESPUESTA: D
+EXPLICACION: Los periféricos se clasifican según el sentido del flujo de datos respecto al sistema. Los de entrada (teclado, ratón) envían datos al equipo; los de salida (monitor, impresora) reciben datos del equipo; y los de entrada/salida (pantallas táctiles, discos externos) hacen ambas cosas. Las tres categorías coexisten.
+
+PREGUNTA: Pro, Player y Fusion son versiones del siguiente software privativo de virtualización:
+A: VMWare Workstation.
+B: VritualBox.
+C: KVM.
+D: Aviat Design.
+RESPUESTA: A
+EXPLICACION: VMware comercializa su hipervisor de escritorio en tres ediciones: Workstation Pro (uso profesional completo), Workstation Player (uso personal o educativo, más limitado) y Fusion (versión para macOS). VirtualBox es gratuito y de Oracle; KVM es el hipervisor integrado en el kernel Linux.
+
+PREGUNTA: Un hardware está formado, entre otros componentes, por:
+A: Bus de datos.
+B: Microprocesador.
+C: Host.
+D: VirtualBox.
+RESPUESTA: B
+EXPLICACION: El microprocesador es el componente central del hardware, encargado de ejecutar las instrucciones del software. El bus de datos también es hardware, pero la pregunta pide identificar un componente concreto representativo. Host y VirtualBox son conceptos de software o virtualización, no hardware físico.
+
+PREGUNTA: Un tipo de software es:
+A: Software de aplicación.
+B: Software de comunicación.
+C: Software de almacenamiento.
+D: Ninguna es correcta.
+RESPUESTA: A
+EXPLICACION: El software se clasifica en tres grandes categorías: software de sistema (SO y drivers), software de programación (compiladores, IDEs) y software de aplicación (programas que el usuario utiliza directamente, como un navegador o un procesador de texto). Las categorías "de comunicación" y "de almacenamiento" no son clasificaciones estándar reconocidas.

@@ -1,0 +1,79 @@
+PREGUNTA: Algunos gestores que permiten que un sistema operativo administre los recursos hardware son:
+A: Procesos.
+B: Comunicación.
+C: Memoria.
+D: Todas son correctas.
+RESPUESTA: D
+EXPLICACION: El sistema operativo gestiona los recursos hardware a través de múltiples gestores especializados: el gestor de procesos controla la ejecución de programas, el gestor de memoria administra la RAM, y el gestor de comunicación coordina el intercambio de datos entre componentes y redes. Los tres son subsistemas reales del SO.
+
+PREGUNTA: El procesador se describe como:
+A: Un conjunto software del sistema operativo que debido a su gran importancia en la gestión del sistema no puede abandonar la memoria principal.
+B: La selección del orden de importancia de cada solicitud y de quien quiera hacer uso de esos recursos.
+C: Un recurso que posee varios núcleos con los que puede ejecutar varios procesos a la vez.
+D: El facilitador de la gestión de manera adecuada de los trabajos de impresión.
+RESPUESTA: C
+EXPLICACION: Un procesador moderno integra múltiples núcleos físicos, cada uno capaz de ejecutar un hilo de instrucciones de forma independiente, lo que permite el paralelismo real. La opción A describe el kernel del SO, la B describe el planificador de procesos, y la D describe el spooler de impresión.
+
+PREGUNTA: El programa de Windows que permite crear un USB de arranque es:
+A: Rufus.
+B: Debian.
+C: Windows 11.
+D: BIOS.
+RESPUESTA: A
+EXPLICACION: Rufus es una herramienta gratuita para Windows que formatea unidades USB y escribe imágenes ISO de forma que el resultado sea arrancable. Debian es una distribución Linux, Windows 11 es un sistema operativo, y la BIOS es el firmware del hardware, ninguno de ellos cumple esta función.
+
+PREGUNTA: El tipo de sistema operativo que atiende al número de procesos que puede ejecutar a la vez puede ser:
+A: Monoprogramado.
+B: Monousuario.
+C: Textual.
+D: Gráfico.
+RESPUESTA: A
+EXPLICACION: La clasificación por número de procesos simultáneos distingue entre monoprogramado (ejecuta un solo proceso a la vez) y multiprogramado (gestiona varios procesos en paralelo). Monousuario hace referencia al número de usuarios, y textual/gráfico al tipo de interfaz; son criterios de clasificación distintos.
+
+PREGUNTA: Las herramientas que permiten a los programas utilizar recursos hardware hacen referencia a:
+A: Interfaz operativo.
+B: Interfaz de usuario.
+C: Interfaz para aplicaciones.
+D: Interfaz gráfico.
+RESPUESTA: C
+EXPLICACION: La API del sistema operativo (Interfaz para aplicaciones) expone llamadas al sistema que permiten a los programas acceder al hardware de forma controlada, sin necesidad de comunicarse directamente con los dispositivos. La interfaz de usuario (UI) y la interfaz gráfica (GUI) son capas de interacción para personas, no para programas.
+
+PREGUNTA: Los sistemas operativos distribuidos son una clasificación de un sistema operativo que responde a:
+A: El interfaz utilizado.
+B: Cómo ofrecen los servicios.
+C: El tipo de procesamiento.
+D: El número de usuarios.
+RESPUESTA: B
+EXPLICACION: Los sistemas operativos se pueden clasificar según cómo ofrecen sus servicios: centralizados (todos los recursos en un nodo) o distribuidos (los recursos están repartidos en varios nodos interconectados que se presentan como un sistema único). No es una clasificación por interfaz ni por número de usuarios.
+
+PREGUNTA: Microsoft Windows 10 fue implementado en el año:
+A: 2010.
+B: 2015.
+C: 2019.
+D: 2021.
+RESPUESTA: B
+EXPLICACION: Windows 10 fue lanzado oficialmente el 29 de julio de 2015, sustituyendo a Windows 8.1. Saltó directamente del número 8 al 10, omitiendo el 9. Windows 11 llegó en 2021, y las fechas de 2010 y 2019 no corresponden a ningún lanzamiento relevante de Windows de escritorio.
+
+PREGUNTA: Para el funcionamiento de un sistema operativo, son de gran importancia:
+A: Las instalaciones desatendidas.
+B: Los gestores de arranque.
+C: Los almacenamientos secundarios.
+D: Las interfaces de usuario.
+RESPUESTA: B
+EXPLICACION: El gestor de arranque (GRUB en Linux, Windows Boot Manager en Windows) es el primer software que ejecuta el hardware tras el POST. Su función es localizar el kernel del sistema operativo en el disco y cargarlo en memoria. Sin él, el SO no puede iniciarse independientemente de que existan discos, interfaces o instalaciones desatendidas.
+
+PREGUNTA: Un tipo de arquitectura de un sistema operativo es:
+A: Microkernel.
+B: Sistema monolítico.
+C: Sistema con capas.
+D: Todas son correctas.
+RESPUESTA: D
+EXPLICACION: Las arquitecturas de SO más relevantes son tres: monolítica (todo el SO en un único bloque en espacio de kernel, como Linux), microkernel (solo las funciones esenciales en el kernel, el resto en espacio de usuario, como Minix) y por capas (cada nivel solo interactúa con los adyacentes). Las tres son arquitecturas reales y reconocidas.
+
+PREGUNTA: Una de las distribuciones que se emplean de manera específica en los sistemas Linux es:
+A: CentOS.
+B: Debian.
+C: Ubuntu Desktop.
+D: FreeBSD.
+RESPUESTA: C
+EXPLICACION: Ubuntu Desktop es una distribución GNU/Linux basada en Debian, orientada al usuario de escritorio. CentOS y Debian también son distribuciones Linux válidas, pero la pregunta busca la opción que identifica explícitamente un uso específico de escritorio. FreeBSD no es Linux, es un sistema BSD independiente con un kernel distinto.

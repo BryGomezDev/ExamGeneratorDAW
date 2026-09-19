@@ -1,0 +1,79 @@
+PREGUNTA: El grupo predefinido nobody:
+A: No posee privilegios.
+B: Posee privilegios sobre dispositivos.
+C: Grupo de todos los usuarios estándar.
+D: No existe tal grupo.
+RESPUESTA: A
+EXPLICACION: El grupo nobody en Linux es un grupo especial sin privilegios de ningún tipo, usado por servicios y daemons que necesitan ejecutarse con los mínimos permisos posibles por razones de seguridad. No tiene acceso a dispositivos ni es el grupo de usuarios estándar, que sería users.
+
+PREGUNTA: En Linux el comando usermod permite:
+A: Crear un usuario.
+B: Modificar un usuario.
+C: Eliminar un usuario.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: B
+EXPLICACION: usermod edita los atributos de un usuario existente: cambiar su nombre, directorio home, shell, grupos, fecha de expiración, etc. useradd crea nuevos usuarios, userdel los elimina y passwd gestiona contraseñas. Cada operación tiene su propio comando específico.
+
+PREGUNTA: Es uno de los niveles de permisos en Linux:
+A: Permisos del propietario.
+B: Permisos del grupo.
+C: Permisos del resto de usuarios.
+D: Todas las anteriores son correctas.
+RESPUESTA: D
+EXPLICACION: El modelo de permisos de Linux se estructura en tres niveles: propietario (user), grupo (group) y otros (others). Para cada nivel se definen tres bits: lectura (r), escritura (w) y ejecución (x). Los tres niveles coexisten y se muestran en la salida de ls -l como rwxrwxrwx.
+
+PREGUNTA: La opción -g grupo del comando useradd:
+A: Asigna el grupo principal del usuario.
+B: Lista todos los grupos secundarios.
+C: Establece el directorio home del usuario.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: A
+EXPLICACION: La opción -g de useradd especifica el grupo primario (GID) al que pertenecerá el usuario. Para asignar grupos secundarios adicionales se usa -G (en mayúscula). El directorio home se establece con -d, y para listar grupos se usa el comando groups, no useradd.
+
+PREGUNTA: Los permisos 0666 y 0777 son:
+A: Los permisos originales y por defecto de un archivo y un directorio respectivamente.
+B: Los permisos originales y por defecto de un directorio y un archivo respectivamente.
+C: Los permisos no otorgables y por defecto de un archivo y un directorio respectivamente.
+D: Los permisos no otorgables y por defecto de un directorio y un archivo respectivamente.
+RESPUESTA: A
+EXPLICACION: En Linux, los permisos de partida antes de aplicar la máscara umask son 0666 para ficheros (rw-rw-rw-, sin ejecución por defecto) y 0777 para directorios (rwxrwxrwx, con ejecución necesaria para poder acceder al contenido). La umask resta permisos a estos valores de origen.
+
+PREGUNTA: No es un grupo del sistema operativo por defecto:
+A: Gestor.
+B: Administrador.
+C: Usuario.
+D: Usuario avanzado.
+RESPUESTA: A
+EXPLICACION: Windows define por defecto los grupos Administradores, Usuarios y Usuarios avanzados (Power Users), entre otros. El grupo "Gestor" no existe como grupo predefinido en ninguna versión estándar de Windows; es un término genérico que no corresponde a ningún grupo del sistema.
+
+PREGUNTA: Para asignar las contraseñas a los usuarios deberemos usar el comando:
+A: passwd.
+B: openssl passwd.
+C: Las dos anteriores son correctas.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: C
+EXPLICACION: passwd es el comando estándar para cambiar la contraseña de un usuario en Linux, modificando directamente /etc/shadow. openssl passwd genera hashes de contraseña compatibles con el formato de shadow, útil en scripts de automatización. Ambos son válidos para gestionar contraseñas de usuario.
+
+PREGUNTA: Usaremos este comando para cambiar los permisos en Linux:
+A: chmod.
+B: umask.
+C: umod.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: A
+EXPLICACION: chmod (change mode) modifica los permisos de un fichero o directorio, tanto en notación simbólica (chmod u+x fichero) como octal (chmod 755 fichero). umask define la máscara de permisos por defecto para nuevos ficheros, no modifica los existentes. umod no es un comando real de Linux.
+
+PREGUNTA: Usuario que tiene el privilegio necesario para efectuar cambios en los ficheros de configuración:
+A: Gestor.
+B: Administrador.
+C: Usuario.
+D: Usuario avanzado.
+RESPUESTA: B
+EXPLICACION: El Administrador (root en Linux, Administrador en Windows) tiene acceso total al sistema, incluyendo los ficheros de configuración del SO ubicados en /etc en Linux o en el registro y System32 en Windows. Los usuarios estándar y avanzados tienen acceso restringido a sus propios ficheros.
+
+PREGUNTA: Usuarios que iniciarán sesión en el equipo de manera ocasional y cuentan con los permisos justos:
+A: Gestor.
+B: Administrador.
+C: Usuario.
+D: Ninguno de los anteriores.
+RESPUESTA: D
+EXPLICACION: La descripción corresponde al perfil de "Invitado" (Guest), un tipo de cuenta con permisos mínimos pensada para accesos puntuales sin dejar rastro persistente. El usuario estándar tiene más permisos y un perfil propio; el Administrador tiene acceso total; y Gestor no es una categoría estándar del sistema.

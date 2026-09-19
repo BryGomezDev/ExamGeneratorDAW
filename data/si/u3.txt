@@ -1,0 +1,79 @@
+PREGUNTA: El directorio C:\system32 pertenece a:
+A: Windows.
+B: Linux.
+C: GNU.
+D: Todas las anteriores son correctas.
+RESPUESTA: A
+EXPLICACION: C:\system32 es un directorio exclusivo de Windows que contiene las DLLs y ejecutables críticos del sistema operativo, como el kernel ntoskrnl.exe y herramientas administrativas. En Linux la estructura de directorios parte de la raíz / y no usa letras de unidad; GNU es el proyecto de software libre, no un sistema de archivos.
+
+PREGUNTA: El sistema de archivos estándar de Microsoft Windows:
+A: FAT.
+B: NTFS.
+C: APFS.
+D: Todas las anteriores son correctas.
+RESPUESTA: B
+EXPLICACION: NTFS (New Technology File System) es el sistema de archivos nativo de Windows desde la familia NT, con soporte para permisos ACL granulares, journaling y ficheros superiores a 4 GB. FAT32 carece de permisos de seguridad y tiene ese límite de 4 GB por fichero; APFS es exclusivo de Apple.
+
+PREGUNTA: En Linux la opción "l" del comando ls:
+A: Muestra el contenido en formato largo.
+B: Ordena el contenido por fecha de modificación.
+C: Invierte el orden de la salida.
+D: Muestra el contenido oculto.
+RESPUESTA: A
+EXPLICACION: ls -l activa el formato largo, mostrando para cada fichero sus permisos, número de enlaces, propietario, grupo, tamaño y fecha de modificación. La opción -t ordena por fecha, -r invierte el orden y -a muestra los ficheros ocultos (los que empiezan por punto).
+
+PREGUNTA: En Windows podemos realizar la gestión de archivos:
+A: Con comandos.
+B: Con el Explorador de archivos.
+C: Con el Administrador de discos.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: B
+EXPLICACION: El Explorador de archivos es la herramienta gráfica estándar de Windows para navegar, copiar, mover y eliminar ficheros y carpetas. El Administrador de discos gestiona particiones y volúmenes, no ficheros individuales. La gestión mediante comandos también es posible (cmd/PowerShell), pero la pregunta busca la herramienta gráfica principal.
+
+PREGUNTA: Enlaces que reutilizan el nombre de un i-nodo asignándole nombres distintos y localizándose en diferentes directorios o en el mismo:
+A: Enlaces duros.
+B: Enlaces simbólicos.
+C: Enlaces blandos.
+D: Ninguna de las anteriores es correcta.
+RESPUESTA: A
+EXPLICACION: Un enlace duro (hard link) apunta directamente al i-nodo del fichero, por lo que el fichero persiste mientras exista al menos un enlace duro. Pueden estar en distintos directorios y el sistema no distingue cuál es el "original". Los enlaces simbólicos (o blandos) apuntan a una ruta, no al i-nodo, y se rompen si se borra el fichero original.
+
+PREGUNTA: Es el único RAID sin redundancia:
+A: RAID 0.
+B: RAID 1.
+C: RAID 5.
+D: Ninguna de las anteriores.
+RESPUESTA: A
+EXPLICACION: RAID 0 divide los datos en bloques distribuidos entre varios discos (striping) para maximizar el rendimiento y la capacidad, pero sin ningún mecanismo de redundancia. Si un disco falla, se pierden todos los datos. RAID 1 es espejo completo y RAID 5 usa paridad distribuida, ambos con tolerancia a fallos.
+
+PREGUNTA: Es un sistema RAID anidado:
+A: RAID 0.
+B: RAID 1.
+C: RAID 5.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: D
+EXPLICACION: Los RAID anidados combinan dos niveles RAID, como RAID 10 (espejo de conjuntos en stripe) o RAID 50. RAID 0, 1 y 5 son niveles RAID simples o estándar, no anidados. La respuesta correcta es que ninguno de los listados es un RAID anidado.
+
+PREGUNTA: Este tipo de fichero no existe en Linux:
+A: Regulares.
+B: Enlaces.
+C: Dispositivos.
+D: Ninguna de las anteriores.
+RESPUESTA: D
+EXPLICACION: En Linux existen varios tipos de ficheros: regulares (datos), directorios, enlaces (duros y simbólicos), dispositivos de bloque, dispositivos de caracteres, sockets y pipes. Los tres tipos mencionados en las opciones A, B y C existen perfectamente en Linux, por lo que la respuesta correcta es que ninguna afirmación es correcta.
+
+PREGUNTA: Indica la ruta desde el directorio de trabajo actual:
+A: Ruta directa.
+B: Ruta relativa.
+C: Ruta indirecta.
+D: Ruta absoluta.
+RESPUESTA: B
+EXPLICACION: Una ruta relativa se construye tomando como punto de partida el directorio de trabajo actual, sin empezar desde la raíz. Por ejemplo, si estás en /home/usuario, escribir documentos/archivo.txt es una ruta relativa. La ruta absoluta siempre empieza desde / independientemente de dónde estés. "Ruta directa" e "indirecta" no son términos del sistema de ficheros.
+
+PREGUNTA: Windows nos permite crear diferentes tipos de volúmenes, el volumen reflejado hace referencia al RAID:
+A: 0.
+B: 1.
+C: 5.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: B
+EXPLICACION: RAID 1 se llama también "espejo" o "mirroring" porque copia exactamente los mismos datos en dos discos simultáneamente. Windows llama a esta configuración "volumen reflejado" en su Administrador de discos. RAID 0 es el volumen distribuido (sin redundancia) y RAID 5 requiere al menos tres discos con paridad.

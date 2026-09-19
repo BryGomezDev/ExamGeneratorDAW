@@ -1,0 +1,79 @@
+PREGUNTA: Conjunto de normas donde todos los derechos de la obra son del propietario de esta:
+A: Copyright.
+B: Copyleft.
+C: Creative Commons.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: A
+EXPLICACION: El Copyright reserva todos los derechos de la obra exclusivamente a su autor o titular: nadie puede copiar, distribuir o modificar la obra sin permiso expreso. El Copyleft permite la distribución y modificación pero exige que las obras derivadas mantengan la misma licencia. Creative Commons ofrece un espectro de licencias intermedias configurables por el autor.
+
+PREGUNTA: El protocolo POP3 es empleado en:
+A: El correo electrónico.
+B: Mensajería instantánea.
+C: Transferencia de ficheros.
+D: Software antimalware.
+RESPUESTA: A
+EXPLICACION: POP3 (Post Office Protocol v3) es un protocolo de la capa de aplicación que permite a los clientes de correo descargar mensajes desde un servidor de correo. A diferencia de IMAP, POP3 descarga los mensajes al dispositivo local y los elimina del servidor por defecto. No tiene relación con mensajería instantánea ni transferencia de ficheros.
+
+PREGUNTA: En la clonación de un equipo:
+A: Solo podemos clonar una partición.
+B: Solo podemos clonar el disco entero.
+C: Podemos clonar tanto una partición como el disco entero.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: C
+EXPLICACION: Las herramientas de clonación como Clonezilla o Acronis permiten clonar tanto una partición concreta (útil para copiar solo el SO sin los datos) como el disco completo (incluyendo tabla de particiones, MBR/GPT y todas las particiones). La elección depende del objetivo de la copia.
+
+PREGUNTA: La escalabilidad, el anonimato y la descentralización son características de:
+A: El correo electrónico.
+B: Mensajería instantánea.
+C: Transferencia de ficheros.
+D: Software antimalware.
+RESPUESTA: C
+EXPLICACION: Estas tres características describen las redes P2P de transferencia de ficheros: son escalables porque más usuarios mejoran la red, descentralizadas porque no dependen de un servidor central, y pueden ofrecer anonimato al no requerir identificación. El correo y la mensajería instantánea dependen de servidores centrales y requieren autenticación.
+
+PREGUNTA: Las aplicaciones médicas:
+A: Nunca serán consideradas de ofimática.
+B: Ya que no son domésticas no pueden considerarse ofimáticas.
+C: Sí son ofimáticas, aunque especializadas a un ámbito profesional.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: C
+EXPLICACION: La ofimática no se limita al uso doméstico; engloba cualquier aplicación que automatice o mejore las tareas de oficina o trabajo profesional, incluyendo sectores especializados como la medicina, el derecho o la ingeniería. Un software de gestión de historiales clínicos es una herramienta ofimática especializada.
+
+PREGUNTA: Las herramientas ofimáticas:
+A: Están destinadas a uso doméstico.
+B: Siempre son de propósito general.
+C: Existen tanto de propósito general como específicas.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: C
+EXPLICACION: Existen herramientas ofimáticas de propósito general (Microsoft Office, LibreOffice) que sirven para cualquier ámbito, y herramientas ofimáticas específicas diseñadas para sectores concretos como contabilidad, arquitectura o sanidad. No están limitadas al uso doméstico ni son todas de propósito general.
+
+PREGUNTA: No es un tipo de copia:
+A: Completa.
+B: Decreciente.
+C: Incremental.
+D: Diferencial.
+RESPUESTA: B
+EXPLICACION: Los tres tipos estándar de copia de seguridad son completa (copia todo), incremental (copia solo los cambios desde la última copia, sea del tipo que sea) y diferencial (copia los cambios desde la última copia completa). La copia "decreciente" no existe como categoría en ningún estándar de backup.
+
+PREGUNTA: No es un tipo de licencia:
+A: Copyright.
+B: Copyleft.
+C: Creative Commons.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: D
+EXPLICACION: Copyright, Copyleft y Creative Commons son los tres grandes marcos de licenciamiento de software y obras intelectuales. Los tres existen y son ampliamente utilizados. La pregunta es negativa, y como todos son tipos de licencia reales, la respuesta es que ninguna afirmación es correcta (todos son tipos de licencia válidos).
+
+PREGUNTA: No es una función del antivirus:
+A: Prevención de infección.
+B: Análisis del equipo.
+C: Detección de virus.
+D: Recuperación de archivos dañados.
+RESPUESTA: D
+EXPLICACION: Un antivirus previene infecciones bloqueando amenazas antes de que actúen, analiza el sistema en busca de malware y detecta y elimina virus conocidos. La recuperación de archivos dañados o cifrados por malware es una función de herramientas de recuperación de datos o backups, no del antivirus, que actúa antes o durante la infección, no después del daño.
+
+PREGUNTA: Qué tipo de aplicación es MySQL:
+A: Procesador de texto.
+B: Base de datos.
+C: Presentación gráfica.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: B
+EXPLICACION: MySQL es un sistema gestor de bases de datos relacionales (SGBD) de código abierto, uno de los más utilizados en el mundo para aplicaciones web. Almacena datos en tablas relacionadas y se consulta mediante SQL. No tiene ninguna relación con el procesamiento de texto ni con presentaciones gráficas.
