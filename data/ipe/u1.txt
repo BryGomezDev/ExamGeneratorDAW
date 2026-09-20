@@ -1,0 +1,79 @@
+PREGUNTA: ¿Cuál de las siguientes no es una característica del préstamo hipotecario?
+A: La cuantía concedida dependerá del valor de la vivienda.
+B: Habitualmente la cuantía concedida no superará el 80% del valor de tasación.
+C: Su plazo máximo de amortización no suele exceder de 8 años.
+D: Suele utilizarse para la compra de bienes inmuebles.
+RESPUESTA: C
+EXPLICACION: Los préstamos hipotecarios se caracterizan precisamente por sus largos plazos de amortización, habitualmente entre 20 y 30 años, no de 8. Esto los diferencia de los préstamos personales, que sí tienen plazos más cortos. El resto de características (dependencia del valor de tasación, límite del 80% y uso para inmuebles) son correctas.
+
+PREGUNTA: ¿Cuál de los siguientes es un agente que actúa en la economía?
+A: Familias.
+B: Empresas.
+C: Estado.
+D: Todas son correctas.
+RESPUESTA: D
+EXPLICACION: Los tres grandes agentes económicos son las familias (que ofrecen trabajo y demandan bienes), las empresas (que producen bienes y demandan trabajo) y el Estado (que regula, recauda impuestos y provee servicios públicos). Los tres interactúan en los mercados de bienes, servicios y factores productivos.
+
+PREGUNTA: ¿En qué se basa la decisión que se toma para cubrir necesidades?
+A: En un impulso.
+B: En una comparativa.
+C: En una encuesta.
+D: En una imitación de lo que hace la sociedad.
+RESPUESTA: B
+EXPLICACION: La toma de decisiones racional para cubrir necesidades se basa en una comparativa entre las alternativas disponibles, evaluando costes, beneficios y oportunidades de cada opción. Actuar por impulso, imitación o encuesta son enfoques que no maximizan el bienestar del individuo desde el punto de vista económico.
+
+PREGUNTA: Cuando se toma una decisión, los costes del pasado que no deben influir en la decisión futura se denominan:
+A: El coste operacional.
+B: El coste duplicado.
+C: El coste irrecuperable.
+D: El coste de ahorro.
+RESPUESTA: C
+EXPLICACION: El coste irrecuperable (o coste hundido) es aquel que ya se ha producido y no puede recuperarse independientemente de la decisión que se tome. Incluirlo en la toma de decisiones futuras es un error económico habitual: solo deben considerarse los costes y beneficios futuros, no los pasados.
+
+PREGUNTA: El coste total de un préstamo será la suma de:
+A: Capital inicial e intereses.
+B: Interés fijo e interés variable.
+C: Nominal, amortización, comisiones y tasas.
+D: Nominal, intereses, comisiones y gastos.
+RESPUESTA: D
+EXPLICACION: El coste total de un préstamo incluye el capital nominal (dinero prestado), los intereses (precio del dinero), las comisiones (apertura, estudio, cancelación) y otros gastos asociados (notaría, tasación, seguros obligatorios). La Tasa Anual Equivalente (TAE) recoge todos estos conceptos para facilitar la comparación entre préstamos.
+
+PREGUNTA: El presupuesto familiar se compone de:
+A: Gastos fijos.
+B: Gastos corrientes.
+C: Gastos ocasionales.
+D: Todas son correctas.
+RESPUESTA: D
+EXPLICACION: El presupuesto familiar recoge los tres tipos de gastos: fijos (alquiler, hipoteca, seguros — invariables mes a mes), corrientes (alimentación, suministros — variables pero recurrentes) y ocasionales (reparaciones, vacaciones — imprevistos o esporádicos). Planificar los tres tipos es esencial para una gestión financiera saludable.
+
+PREGUNTA: La capacidad de endeudamiento:
+A: Será como máximo del 35% de los ingresos netos.
+B: Será como máximo del 45% de los ingresos netos.
+C: Es equivalente al límite de endeudamiento.
+D: Es el total de los ingresos netos.
+RESPUESTA: A
+EXPLICACION: La regla general de finanzas personales establece que las deudas no deben superar el 35% de los ingresos netos mensuales. Superar este umbral compromete la capacidad de hacer frente a imprevistos y otros gastos básicos. El Banco de España también usa este criterio como referencia para evaluar la solvencia de los solicitantes de préstamos.
+
+PREGUNTA: La cuantía recomendada para el fondo de emergencia es aquella que permite mantener todos los gastos durante:
+A: 6 meses.
+B: 3 meses.
+C: 12 meses.
+D: Toda la vida del individuo.
+RESPUESTA: A
+EXPLICACION: La recomendación estándar en planificación financiera personal es mantener un fondo de emergencia equivalente a entre 3 y 6 meses de gastos, siendo 6 meses el objetivo recomendado para mayor seguridad. Este colchón permite afrontar situaciones como la pérdida de empleo sin caer en deudas.
+
+PREGUNTA: Las tarjetas revolving:
+A: Son las que emiten las empresas comerciales.
+B: Se consideran una deuda eterna.
+C: Realizan el cargo de manera inmediata en la cuenta bancaria.
+D: Todas son correctas.
+RESPUESTA: B
+EXPLICACION: Las tarjetas revolving permiten aplazar el pago en cuotas, pero los intereses (habitualmente entre el 20% y el 30% TAE) se aplican sobre el saldo pendiente. Si solo se paga la cuota mínima, el saldo apenas disminuye y la deuda puede prolongarse indefinidamente, de ahí que se las considere una deuda eterna. El cargo inmediato en cuenta es propio de las tarjetas de débito.
+
+PREGUNTA: Renunciar a consumir hoy para consumir más en el futuro, ¿a qué concepto hace referencia?
+A: Consumo.
+B: Financiación.
+C: Planificación.
+D: Ahorro.
+RESPUESTA: D
+EXPLICACION: El ahorro es, por definición, la parte de la renta que no se destina al consumo presente con el objetivo de disponer de más recursos en el futuro. Se diferencia de la financiación (obtener recursos ajenos) y de la planificación (organizar ingresos y gastos), aunque el ahorro es un componente clave de cualquier plan financiero personal.
