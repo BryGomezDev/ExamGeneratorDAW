@@ -1,0 +1,79 @@
+PREGUNTA: Choose the correct option to complete the sentence: "Please be quiet, the baby ________."
+A: sleep
+B: slept
+C: is sleeping
+D: sleeping
+RESPUESTA: C
+EXPLICACION: El Present Continuous se forma con el verbo auxiliar "to be" conjugado + verbo en -ing. La frase describe una acción que ocurre en este momento, que es precisamente el uso principal de este tiempo verbal. "Sleep" es infinitivo, "slept" es pasado simple y "sleeping" sin auxiliar es incorrecto gramaticalmente.
+
+PREGUNTA: Choose the INCORRECT use of the Present Continuous:
+A: To talk about temporary situations.
+B: To describe things happening at the moment of speaking.
+C: To talk about finished actions in the past.
+D: To talk about fixed arrangements in the near future.
+RESPUESTA: C
+EXPLICACION: Las acciones terminadas en el pasado se expresan con el Past Simple (ej. "I worked yesterday"), nunca con el Present Continuous. Los usos correctos del Present Continuous son: acciones en curso ahora mismo, situaciones temporales y planes futuros ya concretados.
+
+PREGUNTA: Choose the right answer with the verb "To be":
+A: My parents is teachers.
+B: My parents are teachers.
+C: My parents am teachers.
+D: My parents be teachers.
+RESPUESTA: B
+EXPLICACION: El verbo "to be" tiene tres formas en presente: am (I), is (he/she/it) y are (you/we/they). "Parents" es un sujeto plural de tercera persona, por lo que le corresponde "are". Las otras opciones usan formas del singular (is, am) o el infinitivo (be), ninguna válida para sujeto plural.
+
+PREGUNTA: Choose the right answer.
+A: She have got two brothers.
+B: She hasn't got no brothers.
+C: She has get two brothers.
+D: She has got two brothers.
+RESPUESTA: D
+EXPLICACION: La estructura correcta de "have got" en tercera persona del singular es "has got". La opción A usa "have" en lugar de "has"; la C usa el infinitivo "get" en lugar del participio "got"; la B contiene una doble negación incorrecta en inglés estándar ("hasn't got no" equivale a "hasn't got any").
+
+PREGUNTA: Choose the sentence where the adverb of frequency is in the CORRECT position:
+A: He is often tired after a long day.
+B: He often is tired after a long day.
+C: He is tired often after a long day.
+D: Often he is tired after a long day.
+RESPUESTA: A
+EXPLICACION: Los adverbios de frecuencia (always, often, usually, never...) van después del verbo "to be" y de los verbos auxiliares, pero antes de los verbos principales. En "He is often tired", "often" va correctamente después de "is". Colocarlo antes del auxiliar o al final de la frase es incorrecto en inglés estándar.
+
+PREGUNTA: Which gerund form is spelled correctly?
+A: Lieing
+B: Swiming
+C: Sitting
+D: Makeing
+RESPUESTA: C
+EXPLICACION: "Sit" termina en consonante-vocal-consonante (CVC) con sílaba tónica final, por lo que se dobla la consonante final antes de añadir -ing: sit → sitting. "Lie" forma "lying" (la -ie cambia a -y); "swim" forma "swimming" (doble m); "make" termina en -e muda y forma "making" (se elimina la -e antes del -ing).
+
+PREGUNTA: Which of the following sentences correctly uses a stative verb?
+A: I am needing some water right now.
+B: This laptop belongs to my sister.
+C: We are liking the new English teacher.
+D: She is preferring to stay at home today.
+RESPUESTA: B
+EXPLICACION: Los verbos estativos (stative verbs) expresan estados, no acciones, y no se usan normalmente en tiempos continuos. "Belong", "like", "prefer", "need" son estativos y deben ir en Simple, no en Continuous. Solo "belongs" está correctamente en Present Simple; las demás opciones los usan incorrectamente en Present Continuous.
+
+PREGUNTA: Which of the following sentences means exactly the same as "She doesn't have a car"?
+A: She hasn't got a car.
+B: She don't have got a car.
+C: She doesn't has a car.
+D: She haven't got a car.
+RESPUESTA: A
+EXPLICACION: "Have got" y "have" son equivalentes para expresar posesión en inglés. La negación de "has got" en tercera persona del singular es "hasn't got". La opción B usa "don't" con sujeto de tercera persona (incorrecto); la C usa "has" en lugar de "have" tras "doesn't"; la D usa "haven't" que corresponde a I/you/we/they, no a she.
+
+PREGUNTA: Which sentence is CORRECT in the Present Simple?
+A: My brother don't play basketball.
+B: My brother doesn't plays basketball.
+C: My brother doesn't play basketball.
+D: My brother not play basketball.
+RESPUESTA: C
+EXPLICACION: En la negación del Present Simple con tercera persona del singular (he/she/it) se usa "doesn't" seguido del infinitivo sin "to", sin añadir -s al verbo principal. La opción A usa "don't" que es para I/you/we/they; la B añade incorrectamente -s a "play" después de "doesn't"; la D omite el auxiliar.
+
+PREGUNTA: Which verb follows the spelling rules for third-person singular in Present Simple?
+A: He watchs
+B: He crys
+C: He gos
+D: He flies
+RESPUESTA: D
+EXPLICACION: Los verbos terminados en consonante + -y cambian la -y por -ies en tercera persona del singular: fly → flies, cry → cries. "Watch" termina en -ch y forma "watches" (no "watchs"); "cry" forma "cries" (no "crys"); "go" forma "goes" (no "gos"). Solo "flies" aplica correctamente la regla ortográfica.
