@@ -1,0 +1,79 @@
+PREGUNTA: Acoplamiento patológico:
+A: Se produce siempre que entre dos o más módulos se usen las mismas fuentes externas de datos.
+B: Se produce siempre que los módulos usen los mismos datos globales.
+C: Se produce siempre que un módulo acceda a otro para leer o modificar los datos internos del último.
+D: Todas las anteriores son correctas.
+RESPUESTA: C
+EXPLICACION: El acoplamiento patológico es el tipo más perjudicial: ocurre cuando un módulo viola la encapsulación de otro accediendo directamente a sus datos internos. Rompe el principio de ocultación de información y hace el sistema muy frágil ante cambios. El acceso a datos globales compartidos es acoplamiento común, y compartir fuentes externas es acoplamiento externo, ambos distintos del patológico.
+
+PREGUNTA: Dentro de la simbología de los diagramas de flujo cuál de estas afirmaciones es falsa:
+A: Las operaciones que se vayan realizando deben de seguir un orden en concreto, y este orden se indica con flechas.
+B: Las decisiones se indican en un rombo donde pondremos tantas líneas de flujo como alternativas finales tengamos.
+C: Las operaciones de cálculo interno del programa se describen con una bandera.
+D: Cada uno de los diagramas de flujo comienzan y terminan con terminal que se representa con un óvalo o elipse.
+RESPUESTA: C
+EXPLICACION: En la simbología estándar de diagramas de flujo, las operaciones de cálculo o procesamiento se representan con un rectángulo, no con una bandera. La bandera no es un símbolo estándar ISO en diagramas de flujo. El rombo representa decisiones, el óvalo/elipse el inicio y fin, y las flechas indican el flujo de ejecución.
+
+PREGUNTA: El valor Booleano:
+A: Es numérico.
+B: Es secuencial.
+C: Es modular.
+D: Ninguna de las anteriores.
+RESPUESTA: D
+EXPLICACION: El tipo booleano es un tipo de dato lógico que solo admite dos valores: verdadero (true) o falso (false). No es numérico (aunque internamente se represente como 0 y 1), ni secuencial ni modular. Fue nombrado así en honor al matemático George Boole, creador del álgebra booleana.
+
+PREGUNTA: En la cohesión comunicacional:
+A: Los elementos software que constituyen el módulo tienen una sola tarea definida.
+B: La salida de una instrucción debe de coincidir de manera estricta con la entrada.
+C: Conviven varias actividades paralelas que no siguen un orden específico y que comparten los mismos datos de entrada y salida.
+D: Ninguna de las anteriores es correcta.
+RESPUESTA: C
+EXPLICACION: La cohesión comunicacional agrupa en un mismo módulo varias actividades que trabajan sobre los mismos datos de entrada y salida, aunque no tengan un orden de ejecución obligatorio entre ellas. Es un tipo de cohesión fuerte. La opción A describe cohesión funcional (la más deseable) y la B no corresponde a ningún tipo de cohesión estándar.
+
+PREGUNTA: En la cohesión lógica:
+A: Los elementos software que constituyen el módulo tienen una sola tarea definida.
+B: La salida de una instrucción debe de coincidir de manera estricta con la entrada.
+C: Conviven varias actividades paralelas que no siguen un orden específico y que comparten los mismos datos de entrada y salida.
+D: Ninguna de las anteriores es correcta.
+RESPUESTA: D
+EXPLICACION: La cohesión lógica agrupa en un módulo funciones similares o relacionadas lógicamente, donde el módulo realiza una tarea u otra según un parámetro de control externo (por ejemplo, un módulo que gestiona todas las operaciones de E/S). Ninguna de las opciones A, B ni C describe correctamente este concepto, por lo que la respuesta es ninguna.
+
+PREGUNTA: Es una representación gráfica de elementos y sus relaciones:
+A: Paradigma.
+B: Diagrama.
+C: Iteración.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: B
+EXPLICACION: Un diagrama es por definición una representación gráfica que muestra elementos y las relaciones entre ellos de forma visual y estructurada. Un paradigma es un modelo o enfoque de programación (como OOP o funcional); una iteración es la repetición de un proceso. Solo el diagrama corresponde a la definición dada.
+
+PREGUNTA: La cohesión es una cualidad de la estructura:
+A: Secuencial.
+B: Alternativa.
+C: Iterativa.
+D: Ninguna de las anteriores.
+RESPUESTA: D
+EXPLICACION: La cohesión es una cualidad de los módulos, no de las estructuras de control. Mide el grado en que los elementos de un módulo están relacionados entre sí y trabajan hacia un objetivo común. Las estructuras secuencial, alternativa e iterativa son conceptos del flujo de control de un programa, un nivel de abstracción completamente distinto.
+
+PREGUNTA: La cohesión funcional, secuencial y comunicacional son cohesiones:
+A: Procedurales.
+B: Fuertes.
+C: Débiles.
+D: Ninguna de las anteriores.
+RESPUESTA: B
+EXPLICACION: Los tipos de cohesión se clasifican de más débil a más fuerte. Las cohesiones fuertes (deseables) son la funcional, la secuencial y la comunicacional. Las débiles (no deseables) son la casual, la lógica, la temporal y la procedural. Cuanto más fuerte la cohesión, mejor diseñado está el módulo y más fácil es su mantenimiento.
+
+PREGUNTA: La estructura basada en bucles es:
+A: Secuencial.
+B: Alternativa.
+C: Iterativa.
+D: Ninguna de las anteriores.
+RESPUESTA: C
+EXPLICACION: La estructura iterativa (o repetitiva) es la que implementa bucles: repite un bloque de instrucciones mientras se cumpla una condición (while, for, do-while). La estructura secuencial ejecuta instrucciones una tras otra sin bifurcaciones, y la alternativa (if/else, switch) toma decisiones entre distintos caminos de ejecución.
+
+PREGUNTA: La programación surgió como un intento para:
+A: Automatizar procesos.
+B: Dividir problemas en subproblemas más simples.
+C: Con paradigmas resolver otros problemas.
+D: Ninguno de los anteriores.
+RESPUESTA: A
+EXPLICACION: La programación nació con el objetivo de automatizar procesos que de otro modo requerirían intervención humana continua, aprovechando la capacidad de las máquinas para ejecutar instrucciones repetitivas de forma rápida y precisa. La descomposición en subproblemas y el uso de paradigmas son técnicas posteriores de ingeniería del software, no el origen de la programación.
