@@ -1,0 +1,79 @@
+PREGUNTA: El intercambio de datos entre diferentes aplicaciones es posible gracias a:
+A: Los lenguajes de marcado.
+B: El texto plano.
+C: Los editores.
+D: Windows.
+RESPUESTA: A
+EXPLICACION: Los lenguajes de marcado como XML o JSON proporcionan una estructura común y estandarizada que permite a aplicaciones distintas (independientemente de su plataforma o lenguaje de programación) intercambiar y entender los mismos datos. El texto plano no tiene estructura semántica, y los editores son herramientas, no protocolos de intercambio.
+
+PREGUNTA: Elige la respuesta que describe el texto plano (plain text) en el contexto de lenguajes de marcas:
+A: Un formato de texto que permite almacenar información con formato.
+B: Documentos que pueden contener elementos de programación.
+C: Documentos formados exclusivamente por caracteres sin formato adicional.
+D: Documentos que incluyen automáticamente elementos multimedia como imágenes y videos.
+RESPUESTA: C
+EXPLICACION: El texto plano (plain text) contiene únicamente caracteres legibles sin ningún tipo de formato, estilo, metadatos ni marcado adicional. Es la base sobre la que se construyen los lenguajes de marcas: un fichero XML o HTML es texto plano al que se añaden etiquetas que le dan estructura y significado.
+
+PREGUNTA: El tipo de lenguaje de marca que se usa para describir datos de manera estructurada y semántica en documentos y aplicaciones web es:
+A: Tipo 1 o de procedimiento.
+B: Tipo 2 o de presentación.
+C: Tipo 3 o descriptivos o semánticos.
+D: En todos los anteriores.
+RESPUESTA: C
+EXPLICACION: Los lenguajes de marcas de Tipo 3 o descriptivos/semánticos describen el significado y la estructura del contenido, no su apariencia ni los procedimientos para procesarlo. XML y HTML son los ejemplos más representativos: definen qué es cada elemento (un título, un párrafo, un dato) sin determinar cómo debe mostrarse visualmente.
+
+PREGUNTA: La década en la que se empezaron a utilizar los lenguajes de marcado es:
+A: 1950.
+B: 1960.
+C: 1970.
+D: 1980.
+RESPUESTA: B
+EXPLICACION: Los lenguajes de marcado tienen su origen en los años 60, cuando IBM desarrolló GML (Generalized Markup Language) en 1969 para estructurar documentos. Este trabajo evolucionó posteriormente en los años 80 hacia SGML (Standard Generalized Markup Language), del que derivan HTML y XML.
+
+PREGUNTA: Las dos principales organizaciones desarrolladoras de los lenguajes de marcas son:
+A: DTD y XML Esquema.
+B: ISO y W3C.
+C: ISO y Relax NG.
+D: W3C y DTD.
+RESPUESTA: B
+EXPLICACION: ISO (International Organization for Standardization) estandarizó SGML y otros lenguajes de marcas a nivel internacional. W3C (World Wide Web Consortium) es el organismo que desarrolla y mantiene los estándares web como HTML, XML, CSS y SVG. DTD y Relax NG son tecnologías de validación de documentos, no organizaciones.
+
+PREGUNTA: Los lenguajes de marcas se pueden utilizar en:
+A: Páginas web.
+B: Mensajería instantánea.
+C: Sindicación de contenidos.
+D: Todas son correctas.
+RESPUESTA: D
+EXPLICACION: Los lenguajes de marcas tienen un ámbito de aplicación muy amplio: HTML para páginas web, XMPP (basado en XML) para mensajería instantánea, y RSS/Atom (también XML) para sindicación de contenidos. Su flexibilidad y carácter estándar los hace útiles en cualquier contexto donde se necesite estructurar e intercambiar información.
+
+PREGUNTA: XML se incluye en el tipo de lenguaje:
+A: Tipo 1 o de procedimiento.
+B: Tipo 2 o de presentación.
+C: Tipo 3 o descriptivos o semánticos.
+D: En todos los anteriores.
+RESPUESTA: C
+EXPLICACION: XML (eXtensible Markup Language) es un lenguaje descriptivo o semántico (Tipo 3): describe la estructura y el significado de los datos sin definir cómo deben procesarse ni mostrarse. Es el desarrollador o la aplicación quien decide qué hacer con cada elemento. Esto lo diferencia de lenguajes de presentación como CSS o de procedimiento como PostScript.
+
+PREGUNTA: El nombre de un elemento que se encuentra entre un símbolo menor que (<) y otro símbolo mayor que (>) se denomina:
+A: Clase.
+B: Gramática.
+C: Etiqueta.
+D: Atributo.
+RESPUESTA: C
+EXPLICACION: Una etiqueta (tag) es el nombre del elemento encerrado entre los signos < y >, como <p>, <div> o <nombre>. Las etiquetas pueden ser de apertura (<p>), de cierre (</p>) o autocerrantes (<br/>). Los atributos son propiedades adicionales dentro de una etiqueta (class="ejemplo"), y la clase es un tipo de atributo en HTML.
+
+PREGUNTA: Una de las características comunes de los lenguajes de marcas es:
+A: Ineficacia.
+B: Complejidad.
+C: Interactividad.
+D: Flexibilidad.
+RESPUESTA: D
+EXPLICACION: La flexibilidad es una característica definitoria de los lenguajes de marcas: permiten describir prácticamente cualquier tipo de información y adaptarse a múltiples contextos y aplicaciones. XML, por ejemplo, permite crear vocabularios de etiquetas personalizados para cualquier dominio. La ineficacia y la complejidad son desventajas puntuales, no características definitorias.
+
+PREGUNTA: La función de una gramática en un documento de lenguaje de marcas es:
+A: Definir el lenguaje de programación utilizado.
+B: Definir el marcado permitido en el documento, el marcado requerido y cómo debe ser utilizado dicho marcado.
+C: Definir la ortografía en lenguajes de marcas.
+D: Establecer las reglas para la numeración de páginas en el documento.
+RESPUESTA: B
+EXPLICACION: En el contexto de lenguajes de marcas, la gramática (definida mediante DTD, XML Schema o Relax NG) especifica qué etiquetas son válidas, cuáles son obligatorias, en qué orden pueden aparecer y qué atributos admiten. Es el contrato que permite validar si un documento está correctamente estructurado según las reglas del vocabulario definido.
