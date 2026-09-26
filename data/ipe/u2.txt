@@ -1,0 +1,79 @@
+PREGUNTA: ¿Cómo se crea valor en un producto?
+A: Incrementando la cuota de mercado.
+B: Mediante una buena cadena de proveedores en el aprovisionamiento.
+C: Utilizando nuevas tecnologías y personal de élite.
+D: Añadiéndole utilidad para que satisfaga necesidades.
+RESPUESTA: D
+EXPLICACION: El valor de un producto se crea cuando este es capaz de satisfacer una necesidad del consumidor, es decir, cuando tiene utilidad para alguien. Incrementar la cuota de mercado o mejorar la cadena de proveedores son estrategias empresariales, pero no son la definición de creación de valor en sí misma.
+
+PREGUNTA: ¿Qué tipo de tributo es aquel que no conlleva contraprestación directa y que se dedica a la financiación general del gasto público?
+A: Impuestos.
+B: Contribuciones especiales.
+C: Tasas.
+D: Sablazos.
+RESPUESTA: A
+EXPLICACION: Los impuestos son tributos sin contraprestación directa: el contribuyente paga pero no recibe un servicio específico a cambio, sino que financia el gasto público en general (sanidad, educación, infraestructuras). Las tasas sí tienen contraprestación directa (pagar por usar un servicio público concreto) y las contribuciones especiales financian obras que benefician a un colectivo determinado.
+
+PREGUNTA: Cuando el vendedor quiere dejar constancia de la oferta de un determinado bien o servicio y sus condiciones de entrega, utilizará:
+A: La factura.
+B: El presupuesto.
+C: El albarán.
+D: El pedido.
+RESPUESTA: B
+EXPLICACION: El presupuesto es el documento mediante el cual el vendedor detalla los bienes o servicios que ofrece, su precio y las condiciones de entrega, sin que exista aún obligación de compra. La factura acredita una venta ya realizada, el albarán certifica la entrega de mercancía y el pedido es la orden de compra emitida por el comprador.
+
+PREGUNTA: El documento formal que incorpora una orden de pago, por la que una persona ordena pagar una determinada cantidad de dinero al poseedor de esta a su vencimiento:
+A: Cheque.
+B: Letra de cambio.
+C: Recibo normalizado.
+D: Transferencia bancaria.
+RESPUESTA: B
+EXPLICACION: La letra de cambio es un título-valor mediante el cual el librador ordena al librado que pague una cantidad determinada al tenedor en una fecha futura (vencimiento). A diferencia del cheque, que es un instrumento de pago inmediato, la letra de cambio implica un aplazamiento del pago y tiene efectos jurídicos en caso de impago.
+
+PREGUNTA: El documento que recoge los cobros y pagos que tiene previstos la empresa, en base a las operaciones que va a realizar a corto plazo, se denomina:
+A: Plan de marketing.
+B: Plan de tesorería.
+C: Plan contable.
+D: Sistema tributario.
+RESPUESTA: B
+EXPLICACION: El plan de tesorería (o presupuesto de caja) es el instrumento de planificación financiera a corto plazo que recoge todas las entradas y salidas de dinero previstas en un período. Permite anticipar posibles déficits de liquidez y tomar decisiones antes de que se produzcan problemas de pago.
+
+PREGUNTA: El Estado puede conseguir los ingresos públicos de:
+A: Las donaciones y la deuda pública.
+B: La extracción o expropiación.
+C: Los ingresos contractuales.
+D: Todas son correctas.
+RESPUESTA: D
+EXPLICACION: Los ingresos públicos del Estado tienen múltiples fuentes: los tributos (impuestos, tasas, contribuciones), la deuda pública (emisión de bonos y obligaciones), los ingresos patrimoniales (rendimientos de bienes del Estado), las donaciones y transferencias, y en casos excepcionales las expropiaciones con indemnización. Todas las opciones son vías reconocidas de financiación pública.
+
+PREGUNTA: El impuesto que se encarga de gravar el consumo es:
+A: El IVA.
+B: El IRPF.
+C: El Impuesto sobre Sociedades.
+D: La declaración censal.
+RESPUESTA: A
+EXPLICACION: El IVA (Impuesto sobre el Valor Añadido) grava el consumo de bienes y servicios en cada fase de la cadena productiva. Es un impuesto indirecto porque recae sobre el consumo, no sobre la renta. El IRPF grava la renta de las personas físicas, el Impuesto sobre Sociedades grava el beneficio de las empresas, y la declaración censal es un trámite administrativo, no un impuesto.
+
+PREGUNTA: El impuesto que se encarga de gravar las rentas de cada persona física es:
+A: El IVA.
+B: El IRPF.
+C: El Impuesto sobre Sociedades.
+D: La declaración censal.
+RESPUESTA: B
+EXPLICACION: El IRPF (Impuesto sobre la Renta de las Personas Físicas) es un impuesto directo y progresivo que grava los rendimientos obtenidos por los individuos: trabajo, capital, actividades económicas, ganancias patrimoniales e imputaciones de renta. Es progresivo porque el tipo impositivo aumenta a medida que aumenta la renta.
+
+PREGUNTA: La base liquidable del IRPF es:
+A: Igual a la base imponible.
+B: La parte que queda exenta de la aplicación del tributo.
+C: La cantidad que finalmente es sometida al gravamen.
+D: El tipo impositivo progresivo.
+RESPUESTA: C
+EXPLICACION: La base liquidable es el resultado de restar a la base imponible las reducciones legalmente aplicables (por planes de pensiones, mínimo personal y familiar, etc.). Es la cantidad sobre la que efectivamente se aplica el tipo impositivo para calcular la cuota tributaria. La base imponible es el punto de partida antes de aplicar esas reducciones.
+
+PREGUNTA: Según el análisis PESTEL, el factor ecológico del macroentorno hace referencia a:
+A: Inflación, política monetaria, desempleo...
+B: Demografía, educación, estilo de vida...
+C: Contabilidad, legislación, salubridad...
+D: Energía, concienciación ambiental, restricción de emisiones...
+RESPUESTA: D
+EXPLICACION: El análisis PESTEL descompone el macroentorno en seis factores: Político, Económico, Social, Tecnológico, Ecológico y Legal. El factor Ecológico abarca todo lo relacionado con el medioambiente: consumo energético, emisiones de CO2, normativas ambientales y concienciación ecológica. La inflación y el desempleo son factores Económicos; la demografía es un factor Social.
