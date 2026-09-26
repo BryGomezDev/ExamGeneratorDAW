@@ -1,0 +1,79 @@
+PREGUNTA: De una clase podemos extraer las … que necesitemos:
+A: Instancias.
+B: Abstracciones.
+C: Propiedades.
+D: Ninguna de las anteriores.
+RESPUESTA: A
+EXPLICACION: Una clase es una plantilla o molde que define la estructura y el comportamiento de sus objetos. Cada vez que se crea un objeto a partir de una clase se dice que se instancia, y el objeto resultante es una instancia de esa clase. De una misma clase se pueden crear tantas instancias como sean necesarias, cada una con sus propios valores de atributos.
+
+PREGUNTA: De una clase podemos obtener la cantidad de objetos instanciados que se requieran:
+A: Es cierto.
+B: Es falso.
+C: Es cierto, pero el número de las instancias es limitado.
+D: Ninguno de los anteriores, las clases no se instancian.
+RESPUESTA: A
+EXPLICACION: No existe un límite inherente al número de instancias que se pueden crear a partir de una clase, más allá de los recursos disponibles en memoria. La excepción es el patrón de diseño Singleton, que deliberadamente limita a una sola instancia, pero no es el comportamiento estándar de una clase.
+
+PREGUNTA: El encapsulamiento:
+A: Agrupación en un mismo elemento de los datos y las operaciones relacionadas con estos.
+B: Mecanismo que permite reducir la complejidad de los objetos minimizando la información a representar, dejando solo los aspectos más relevantes.
+C: Permite reutilizar el código de forma sencilla.
+D: Ninguna de las anteriores.
+RESPUESTA: A
+EXPLICACION: El encapsulamiento es el principio POO que agrupa los datos (atributos) y los métodos que los manipulan en una misma unidad (la clase), ocultando los detalles internos al exterior. La opción B describe la abstracción, y la C describe la herencia. El encapsulamiento se implementa mediante modificadores de acceso (private, public, protected).
+
+PREGUNTA: Elementos que actúan como variables propias de cada instancia de una clase y que definen un atributo de un objeto:
+A: Propiedad.
+B: Método.
+C: Constructor.
+D: Ninguna de las anteriores.
+RESPUESTA: D
+EXPLICACION: La descripción corresponde a los campos (fields) o atributos de instancia, no a las propiedades. En POO, las propiedades son mecanismos de acceso controlado a los campos (getters/setters), los métodos son las operaciones que puede realizar el objeto, y los constructores inicializan el objeto al crearlo. Los campos son las variables propias de cada instancia.
+
+PREGUNTA: En el área intermedia de los diagramas de clase:
+A: Se encuentra el nombre de la clase.
+B: Se encuentran los campos de la clase.
+C: Se encuentran los métodos de la clase.
+D: Ninguna de las anteriores.
+RESPUESTA: B
+EXPLICACION: Un diagrama de clases UML se divide en tres secciones: la superior contiene el nombre de la clase, la intermedia lista los campos o atributos (con su tipo y visibilidad), y la inferior contiene los métodos (con sus parámetros y tipo de retorno). Esta estructura estandarizada permite representar visualmente la estructura de cualquier clase.
+
+PREGUNTA: Es el elemento principal de POO:
+A: Clase.
+B: Campo.
+C: Objeto.
+D: Ninguna de las anteriores es correcta.
+RESPUESTA: A
+EXPLICACION: La clase es el elemento central de la Programación Orientada a Objetos: es la plantilla que define qué atributos y métodos tendrán sus objetos. Los objetos son instancias de las clases, pero sin la clase no pueden existir. Todo en POO gira en torno a la definición de clases y sus relaciones (herencia, composición, asociación).
+
+PREGUNTA: Están formados por datos primitivos:
+A: Objetos primitivos.
+B: Objetos instanciados.
+C: Objetos simples y compuestos.
+D: Ninguna de las anteriores es correcta.
+RESPUESTA: C
+EXPLICACION: Los objetos simples contienen un único dato primitivo (un número, un carácter, un booleano), mientras que los objetos compuestos agrupan varios datos primitivos en su interior. Ambos tipos están formados en última instancia por datos primitivos. Los datos primitivos son los tipos básicos del lenguaje (int, float, char, boolean) que no son objetos en sí mismos.
+
+PREGUNTA: La forma de declarar las propiedades en Java:
+A: Es sencilla y permite reutilizar el código.
+B: No es sencilla, pero permite reutilizar el código.
+C: No es sencilla ni permite reutilizar el código.
+D: Todas las anteriores son incorrectas, Java no ofrece mecanismos para declararlas.
+RESPUESTA: D
+EXPLICACION: A diferencia de C# o Kotlin, Java no tiene un mecanismo nativo de propiedades (properties) como concepto del lenguaje. En Java se accede a los campos mediante métodos getter y setter escritos manualmente. Por tanto, la afirmación de que Java ofrece mecanismos para declarar propiedades como tal es incorrecta, de ahí que todas las opciones anteriores sean falsas.
+
+PREGUNTA: La visión pública se representa con el símbolo:
+A: +.
+B: -.
+C: #.
+D: &.
+RESPUESTA: A
+EXPLICACION: En los diagramas de clases UML, los modificadores de visibilidad se representan con símbolos: + para public (accesible desde cualquier clase), - para private (solo accesible desde la propia clase) y # para protected (accesible desde la clase y sus subclases). El símbolo & no forma parte de la notación UML estándar.
+
+PREGUNTA: No es una forma de polimorfismo:
+A: Asignación polimorfa.
+B: Ejecución polimorfa.
+C: Herencia polimorfa.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: C
+EXPLICACION: Las formas reconocidas de polimorfismo en POO son la asignación polimorfa (una variable de tipo padre puede apuntar a objetos de subclases) y la ejecución polimorfa (el método que se ejecuta se determina en tiempo de ejecución según el tipo real del objeto, también llamado dynamic dispatch). La "herencia polimorfa" no es una categoría estándar del polimorfismo.
