@@ -7,11 +7,10 @@
 <title>Generador de Exámenes DAW</title>
 <style>
   :root {
-    /* Aliases so existing CSS rules keep working */
-    --primary:   var(--accent-light);
-    --primary-light: var(--accent);
-    --card-bg:   var(--surface);
-    --green:     var(--success);
+    /* Aliases so existing CSS rules keep working — --primary inherited from style.css */
+    --primary-light:  var(--primary-container);
+    --card-bg:        var(--surface-container);
+    --green:          var(--success);
     --green-bg:  var(--success-bg);
     --red:       var(--error);
     --red-bg:    var(--error-bg);
@@ -26,14 +25,14 @@
 
   /* ── Header ─────────────────────────────────────── */
   header {
-    background: var(--surface);
-    color: var(--text);
+    background: var(--surface-container-low);
+    color: var(--on-surface);
     padding: 0 20px;
     height: 56px;
     display: flex;
     align-items: center;
     gap: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border-bottom: 1px solid var(--outline-variant);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -53,18 +52,18 @@
   .sep { opacity: 0.5; }
   .header-right { margin-left: auto; flex-shrink: 0; }
   .btn-ghost {
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.25);
-    color: #fff;
+    background: transparent;
+    border: 1px solid var(--outline-variant);
+    color: var(--secondary);
     border-radius: 7px;
     padding: 6px 14px;
     font-size: 0.82rem;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
-    transition: background var(--transition);
+    transition: background var(--transition), color var(--transition);
     white-space: nowrap;
   }
-  .btn-ghost:hover { background: rgba(255,255,255,0.22); }
+  .btn-ghost:hover { background: var(--surface-container); color: var(--primary); }
 
   /* ── Screens ─────────────────────────────────────── */
   .screen { display: none; animation: fadeIn 0.25s ease; }
@@ -182,7 +181,7 @@
   }
   .progress-bar {
     height: 100%;
-    background: var(--accent);
+    background: var(--primary-container);
     border-radius: 99px;
     transition: width 0.4s ease;
   }
@@ -501,8 +500,8 @@
   }
   .spinner {
     width: 36px; height: 36px;
-    border: 3px solid var(--border);
-    border-top-color: var(--accent);
+    border: 3px solid var(--outline-variant);
+    border-top-color: var(--primary-container);
     border-radius: 50%;
     animation: spin 0.7s linear infinite;
   }
