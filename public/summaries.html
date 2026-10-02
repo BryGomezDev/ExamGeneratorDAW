@@ -6,19 +6,293 @@
 <title>Resúmenes Interactivos — DAW</title>
 <link rel="stylesheet" href="style.css">
 <style>
-  .container { max-width: 900px; margin: 0 auto; padding: 48px 20px; }
-  h1 { color: var(--accent-light); margin-bottom: 16px; }
-  p { color: var(--text-body); }
-  a { display: inline-block; margin-top: 24px; }
+  /* ── Layout ──────────────────────────────────────── */
+  header {
+    background: var(--surface);
+    color: var(--text);
+    padding: 0 20px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  header h1 { font-size: 1.05rem; font-weight: 600; }
+  .btn-ghost {
+    margin-left: auto;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--text);
+    border-radius: var(--radius);
+    padding: 6px 14px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,0.15); }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 32px 20px; }
+  .section-title { font-size: 1.4rem; font-weight: 700; color: var(--accent-light); margin-bottom: 8px; }
+  .section-subtitle { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 28px; }
+
+  /* ── Cards ───────────────────────────────────────── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .card:hover, .card:focus-visible {
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    transform: translateY(-2px);
+    outline: none;
+  }
+  .card-icon { font-size: 2rem; }
+  .card-title { font-size: 1.05rem; font-weight: 600; color: var(--text); }
+  .card-meta { font-size: 0.85rem; color: var(--text-muted); }
+
+  /* ── Loading ──────────────────────────────────────── */
+  .loading { display: flex; align-items: center; justify-content: center;
+    padding: 60px 0; flex-direction: column; gap: 16px; color: var(--text-muted); }
+  .spinner { width: 36px; height: 36px; border: 3px solid var(--border);
+    border-top-color: var(--accent); border-radius: 50%;
+    animation: spin 0.7s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── Error ────────────────────────────────────────── */
+  .error-msg { color: var(--error); padding: 24px 0; }
 </style>
 </head>
 <body>
+<header>
+  <h1>📖 Resúmenes Interactivos</h1>
+  <a href="index.html" class="btn-ghost">← Volver</a>
+</header>
 <div id="app">
-  <div class="container">
-    <h1>📖 Resúmenes Interactivos</h1>
-    <p>Próximamente — el viewer se implementa en Fase 2.</p>
-    <a href="index.html">← Volver</a>
-  </div>
+  <div class="loading"><div class="spinner"></div><span>Cargando…</span></div>
 </div>
+<script>
+'use strict';
+
+const SUBJECT_NAMES = {
+  si: 'Sistemas Informáticos', ed: 'Entornos de Desarrollo',
+  bd: 'Bases de Datos', prog: 'Programación', lm: 'Lenguajes de Marcas',
+  ip: 'Inglés Profesional', ipe: 'Itinerario Profesional para la Empleabilidad',
+  dwec: 'Desarrollo Web en Entorno Cliente', dwes: 'Desarrollo Web en Entorno Servidor',
+};
+const SUBJECT_ICONS = {
+  si: '🖥️', ed: '🛠️', bd: '🗄️', prog: '💻', lm: '📄',
+  dwec: '🌐', dwes: '⚙️', ip: '🇬🇧', ipe: '💼',
+};
+function subjectName(code) { return SUBJECT_NAMES[code] || code.toUpperCase(); }
+function subjectIcon(code) { return SUBJECT_ICONS[code] || '📚'; }
+
+function esc(str) {
+  return String(str)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+const state = {
+  screen:    'subjects',
+  subjects:  [],
+  subject:   null,
+  unitNum:   null,
+  summary:   null,
+  section:   'intro',
+  open:      {},
+  flipped:   {},
+  search:    '',
+  answers:   {},
+  submitted: false,
+};
+
+function render() {
+  document.getElementById('app').innerHTML =
+    state.screen === 'subjects' ? renderSubjects() :
+    state.screen === 'units'    ? renderUnits()    :
+                                  renderSummary();
+  bindEvents();
+}
+
+function renderSubjects() {
+  const withSummaries = state.subjects.filter(s => s.summaryUnits && s.summaryUnits.length > 0);
+  if (withSummaries.length === 0) {
+    return `<div class="container"><p class="error-msg">No hay resúmenes disponibles aún.</p></div>`;
+  }
+  const cards = withSummaries.map(s => `
+    <div class="card" data-action="select-subject" data-subject="${esc(s.name)}"
+         tabindex="0" role="button" aria-label="${esc(subjectName(s.name))}">
+      <div class="card-icon">${esc(subjectIcon(s.name))}</div>
+      <div class="card-title">${esc(subjectName(s.name))}</div>
+      <div class="card-meta">${s.summaryUnits.length} unidad${s.summaryUnits.length !== 1 ? 'es' : ''}</div>
+    </div>
+  `).join('');
+  return `
+    <div class="container">
+      <div class="section-title">Resúmenes por asignatura</div>
+      <div class="section-subtitle">Selecciona una asignatura para ver sus resúmenes</div>
+      <div class="cards-grid">${cards}</div>
+    </div>
+  `;
+}
+
+function renderUnits() {
+  const s = state.subject;
+  const cards = s.summaryUnits.map(u => {
+    const num = u.slice(1);
+    return `
+      <div class="card" data-action="select-unit" data-unit="${esc(num)}"
+           tabindex="0" role="button" aria-label="Unidad ${esc(num)}">
+        <div class="card-icon">📄</div>
+        <div class="card-title">Unidad ${esc(num)}</div>
+        <div class="card-meta">${esc(subjectName(s.name))}</div>
+      </div>
+    `;
+  }).join('');
+  return `
+    <div class="container">
+      <div style="margin-bottom:16px">
+        <button class="btn-ghost" data-action="back-subjects" style="margin-left:0">← Asignaturas</button>
+      </div>
+      <div class="section-title">${esc(subjectName(s.name))}</div>
+      <div class="section-subtitle">Selecciona una unidad</div>
+      <div class="cards-grid">${cards}</div>
+    </div>
+  `;
+}
+
+function renderSummary() {
+  // Stub — full renderer implemented in Task 8
+  return `<div class="container"><div class="loading"><div class="spinner"></div><span>Cargando resumen…</span></div></div>`;
+}
+
+function bindEvents() {
+  const app = document.getElementById('app');
+  app.onclick = handleClick;
+  app.onkeydown = e => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    if (e.target.closest('button, a')) return; // nativos ya generan click — evita doble ejecución
+    e.preventDefault();                        // evita scroll con Espacio
+    handleClick(e);
+  };
+  const searchEl = document.getElementById('glossary-search');
+  if (searchEl) {
+    searchEl.oninput = e => {
+      state.search = e.target.value;
+      const list = document.getElementById('glossary-list');
+      if (list) list.innerHTML = renderGlossaryItems();
+    };
+  }
+}
+
+function handleClick(e) {
+  const el = e.target.closest('[data-action]');
+  if (!el) return;
+  const action = el.dataset.action;
+
+  if (action === 'select-subject') {
+    const subj = state.subjects.find(s => s.name === el.dataset.subject);
+    if (!subj) return;
+    state.subject = subj;
+    state.screen = 'units';
+    render();
+  } else if (action === 'back-subjects') {
+    state.screen = 'subjects';
+    state.subject = null;
+    render();
+  } else if (action === 'select-unit') {
+    const num = parseInt(el.dataset.unit, 10);
+    state.unitNum = num;
+    state.screen = 'summary';
+    state.section = 'intro';
+    state.open = {}; state.flipped = {};
+    state.search = ''; state.answers = {}; state.submitted = false;
+    render();
+    loadSummary(state.subject.name, num);
+  } else if (action === 'nav-section') {
+    state.section = el.dataset.section;
+    document.getElementById('summary-main').innerHTML = renderActiveSection();
+    bindEvents();
+  } else if (action === 'toggle-open') {
+    const key = el.dataset.key;
+    state.open[key] = !state.open[key];
+    const body = document.getElementById(`body-${key}`);
+    if (body) { body.hidden = !state.open[key]; }
+    el.querySelector('.toggle-icon') && (el.querySelector('.toggle-icon').textContent = state.open[key] ? '▲' : '▼');
+  } else if (action === 'flip') {
+    const key = el.dataset.key;
+    state.flipped[key] = !state.flipped[key];
+    const inner = document.getElementById(`flip-inner-${key}`);
+    if (inner) inner.classList.toggle('is-flipped', state.flipped[key]);
+  } else if (action === 'select-answer') {
+    if (state.submitted) return;
+    const qi = parseInt(el.dataset.qi, 10), oi = parseInt(el.dataset.oi, 10);
+    state.answers[qi] = oi;
+    const section = document.getElementById('quiz-section');
+    if (section) section.innerHTML = renderQuizSection();
+    bindEvents();
+  } else if (action === 'submit-quiz') {
+    state.submitted = true;
+    const section = document.getElementById('quiz-section');
+    if (section) section.innerHTML = renderQuizSection();
+    bindEvents();
+  } else if (action === 'retry-quiz') {
+    state.answers = {}; state.submitted = false;
+    const section = document.getElementById('quiz-section');
+    if (section) section.innerHTML = renderQuizSection();
+    bindEvents();
+  } else if (action === 'back-units') {
+    state.screen = 'units'; state.summary = null;
+    render();
+  }
+}
+
+async function loadSummary(subject, unitNum) {
+  try {
+    const r = await fetch(`/api/summary/${subject}/${unitNum}`);
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    state.summary = await r.json();
+    const main = document.getElementById('summary-main');
+    if (main) main.innerHTML = renderActiveSection();
+    bindEvents();
+  } catch (err) {
+    const main = document.getElementById('summary-main');
+    if (main) main.innerHTML = `<p class="error-msg">Error cargando resumen: ${esc(err.message)}</p>`;
+  }
+}
+
+function renderGlossaryItems() { return ''; } // stub, overridden in Task 8
+function renderActiveSection() { return ''; }  // stub, overridden in Task 8
+
+// ── Init ──────────────────────────────────────────────────────────────
+(async () => {
+  try {
+    const r = await fetch('/api/subjects');
+    if (!r.ok) throw new Error('Error cargando asignaturas');
+    state.subjects = await r.json();
+    render();
+  } catch (err) {
+    document.getElementById('app').innerHTML =
+      `<div class="container"><p class="error-msg">Error: ${esc(err.message)}</p></div>`;
+  }
+})();
+</script>
 </body>
 </html>
