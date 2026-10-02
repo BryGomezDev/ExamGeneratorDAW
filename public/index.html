@@ -526,8 +526,30 @@
   </div>
 </header>
 
+<!-- ── Screen: Landing ─────────────────────────────── -->
+<div class="screen active" id="landing-screen">
+  <div class="container">
+    <div class="section-title" style="margin-bottom:8px">Generador de Exámenes DAW</div>
+    <div class="section-subtitle">¿Qué quieres hacer hoy?</div>
+    <div class="cards-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px,1fr))">
+      <div class="card" id="card-test" tabindex="0" role="button" aria-label="Ir a Pruebas Test">
+        <div class="card-icon">📝</div>
+        <div class="card-title">Pruebas Test</div>
+        <div class="card-meta">Pon a prueba tus conocimientos con preguntas tipo test.</div>
+        <div style="margin-top:12px;font-size:0.85rem;color:var(--accent-light)">Empezar →</div>
+      </div>
+      <div class="card" id="card-summaries" tabindex="0" role="button" aria-label="Ir a Resúmenes Interactivos">
+        <div class="card-icon">📖</div>
+        <div class="card-title">Resúmenes Interactivos</div>
+        <div class="card-meta">Repasa el temario con resúmenes visuales e interactivos.</div>
+        <div style="margin-top:12px;font-size:0.85rem;color:var(--accent-light)">Explorar →</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ── Screen: Subject selection ───────────────────── -->
-<div class="screen active" id="home-screen">
+<div class="screen" id="home-screen">
   <div class="container">
     <div class="section-title">Asignaturas</div>
     <div class="section-subtitle">Selecciona una asignatura para empezar</div>
@@ -771,7 +793,7 @@ async function fetchFinalQuestions(subject) {
 // ═══════════════════════════════════════════════════════════════════
 async function loadHome() {
   showScreen('home-screen');
-  setBreadcrumb({ label: 'Inicio' });
+  setBreadcrumb({ label: 'Inicio', onClick: loadLanding }, { label: 'Pruebas Test' });
   const grid = $('subject-grid');
   grid.innerHTML = '<div class="loading"><div class="spinner"></div><span>Cargando…</span></div>';
   try {
@@ -797,6 +819,17 @@ async function loadHome() {
   }
 }
 
+function loadLanding() {
+  showScreen('landing-screen');
+  setBreadcrumb({ label: 'Inicio' });
+  $('card-test').onclick = loadHome;
+  $('card-test').onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') loadHome(); };
+  $('card-summaries').onclick = () => { location.href = 'summaries.html'; };
+  $('card-summaries').onkeydown = e => {
+    if (e.key === 'Enter' || e.key === ' ') location.href = 'summaries.html';
+  };
+}
+
 // ═══════════════════════════════════════════════════════════════════
 // Screen: Mode selection
 // ═══════════════════════════════════════════════════════════════════
@@ -804,7 +837,7 @@ function loadModeScreen(subj) {
   state.currentSubject = subj;
   showScreen('mode-screen');
   setBreadcrumb(
-    { label: 'Inicio', onClick: loadHome },
+    { label: 'Inicio', onClick: loadLanding },
     { label: subjectName(subj.name) }
   );
   $('mode-title').textContent = subjectName(subj.name);
@@ -897,7 +930,7 @@ function startUnitExam(subj, unitFile, questions) {
   state.currentMode = 'unit';
   state.currentUnit = unitFile;
   setBreadcrumb(
-    { label: 'Inicio', onClick: loadHome },
+    { label: 'Inicio', onClick: loadLanding },
     { label: subjectName(subj.name), onClick: () => loadModeScreen(subj) },
     { label }
   );
@@ -1274,14 +1307,14 @@ $('btn-next').addEventListener('click', nextQuestion);
 $('btn-review').addEventListener('click', showReview);
 $('btn-review-back').addEventListener('click', showResults);
 $('btn-restart').addEventListener('click', () => { if (state.lastQuestions) beginExam(shuffle(state.lastQuestions)); });
-$('btn-home').addEventListener('click', loadHome);
+$('btn-home').addEventListener('click', loadLanding);
 $('btn-history-nav').addEventListener('click', loadHistoryScreen);
 $('btn-clear-history').addEventListener('click', clearHistory);
 
 // ═══════════════════════════════════════════════════════════════════
 // Init
 // ═══════════════════════════════════════════════════════════════════
-loadHome();
+loadLanding();
 </script>
 </body>
 </html>
