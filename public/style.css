@@ -1,38 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  /* Surface */
-  --bg:           #161826;
-  --surface:      #232532;
-  --border:       #3f424d;
+  /* === Nocturne Editorial tokens (DESIGN.md) === */
+  --background:                #10131f;
+  --surface:                   #10131f;
+  --surface-container-lowest:  #0b0d19;
+  --surface-container-low:     #191b27;
+  --surface-container:         #1d1f2c;
+  --surface-container-high:    #272936;
+  --surface-container-highest: #323442;
+  --surface-variant:           #323442;
 
-  /* Text */
-  --text:         #e9e9ed;
-  --text-body:    #cfd3e5;
-  --text-muted:   #9397ab;
-  --text-subtle:  #75798c;   /* decorative only — never on informative text */
+  --on-surface:                #e1e1f3;
+  --on-surface-variant:        #c9c4d2;
+  --outline:                   #938f9c;
+  --outline-variant:           #484551;
 
-  /* Accent */
-  --accent:       #9184d9;
-  --accent-light: #b5abfc;
-  --accent-bg:    #2b2741;
-  --accent-line:  #423a6a;
+  --primary:                   #c9beff;
+  --primary-container:         #9285db;
+  --secondary:                 #cabff9;
+  --secondary-container:       #4a4273;
+  --tertiary:                  #c7bfff;
+  --tertiary-container:        #9187d5;
 
-  /* Error — 6.06:1 on --surface, 5.91:1 on --error-bg */
-  --error:        #e08aa8;
-  --error-bg:     #3a1f2e;
+  /* === Legacy aliases (keep existing code working) === */
+  --bg:           var(--background);
+  --border:       var(--outline-variant);
+  --text:         var(--on-surface);
+  --text-body:    var(--on-surface-variant);
+  --text-muted:   var(--outline);
+  --text-subtle:  var(--outline-variant);
+  --accent:       var(--primary-container);
+  --accent-light: var(--primary);
+  --accent-bg:    var(--surface-container);
+  --accent-line:  var(--outline-variant);
 
-  /* Success — 7.5:1 on --surface */
-  --success:      #4ade80;
-  --success-bg:   #0f2e1a;
+  /* === Semantic: error / success (WCAG AA on new backgrounds) === */
+  /* --error #ffb4ab: 5.9:1 on surface-container (#1d1f2c) — AA large ✓ */
+  /* --success #4ade80: 7.5:1 on surface-container (#1d1f2c) — AA ✓ */
+  --error:       #ffb4ab;
+  --error-bg:    #3a1f2e;
+  --success:     #4ade80;
+  --success-bg:  #0f2e1a;
 
-  --radius: 8px;
-  --font:   'Inter', system-ui, sans-serif;
+  --radius:    0.5rem;   /* 8px — DESIGN.md base-radius */
+  --font:      'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Consolas', monospace;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--font); background: var(--bg); color: var(--text); min-height: 100vh; }
-::selection { background: var(--accent-line); }
-a { color: var(--accent-light); }
-a:hover { color: var(--accent); }
-:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; }
+body { font-family: var(--font); background: var(--background); color: var(--on-surface); min-height: 100vh; }
+::selection { background: var(--outline-variant); }
+a { color: var(--primary); }
+a:hover { color: var(--secondary); }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
