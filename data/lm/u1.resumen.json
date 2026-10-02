@@ -1,0 +1,261 @@
+{
+  "subject": "lm",
+  "unit": 1,
+  "title": "Reconocimiento de las características de los lenguajes de marcas",
+  "intro": "Los lenguajes de marcas dan forma a la información detrás de casi todo lo que consumimos en la web y en el software de escritorio. No son lenguajes de programación, aunque conviven con ellos en un mismo código. Esta unidad cubre su clasificación, evolución histórica, terminología (etiquetas, elementos, atributos), las organizaciones que los estandarizan y las gramáticas que validan su estructura.",
+  "objectives": [
+    "Clasificar los lenguajes de marcas según sus características y ventajas.",
+    "Conocer los orígenes y evolución: SGML → HTML → XML.",
+    "Identificar las organizaciones desarrolladoras (ISO, W3C).",
+    "Distinguir las gramáticas de validación: DTD, XML Schema, RELAX NG."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "1.1 Clasificación y tipos",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los lenguajes de marcas se clasifican en tres tipos según su propósito y visibilidad. Tienen uso muy diverso: mensajería (XMPP), documentación (RTF), web (HTML), sindicación (RSS)."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Tipo 1",
+              "title": "De procedimiento",
+              "desc": "Visible para el usuario; se usa para presentación del texto (negrita, alineación...).",
+              "example": "Nroff"
+            },
+            {
+              "kicker": "Tipo 2",
+              "title": "De presentación",
+              "desc": "Da formato al texto (espaciados, saltos de línea). Invisible para el usuario; difícil de mantener.",
+              "example": "Maquetación en Word"
+            },
+            {
+              "kicker": "Tipo 3",
+              "title": "Descriptivo o semántico",
+              "desc": "El más flexible: sin orden específico ni forma de representación fija.",
+              "example": "XML, HTML"
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Texto plano",
+              "content": "Sin formato (tamaño, color...), solo caracteres en formato estándar. Editores: Notepad (Windows), Gedit/Vi/Nano (Linux). Usa codificaciones como UTF-16; espacios, tabulaciones y retornos de carro también son caracteres."
+            },
+            {
+              "title": "Interoperabilidad / independencia",
+              "content": "El texto plano es formato universal: se abre y edita desde cualquier máquina (atendiendo a la codificación). Independiente de plataforma y sistema de representación."
+            },
+            {
+              "title": "Flexibles y fáciles de crear",
+              "content": "Solo requieren un editor de texto. Algunos se combinan con otros lenguajes para ampliar su funcionalidad."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "1.2 Ámbitos de uso",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los lenguajes de marcas tienen un ámbito muy diverso: permiten el intercambio de datos entre aplicaciones con independencia de plataforma y tecnología. Un mismo XML puede generar vistas HTML, WML o PDF."
+        },
+        {
+          "type": "chips",
+          "items": [
+            "XML → HTML / WML / PDF",
+            "Java EE (configuración)",
+            "Visual Studio (servicios web)",
+            "Windows Phone (vistas)",
+            "Android Studio (vistas)",
+            "Bases de datos",
+            "Frameworks de desarrollo",
+            "Definición de interfaces gráficas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "1.3 Evolución histórica",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La historia de los lenguajes de marcas arranca con las primeras anotaciones en documentos electrónicos y culmina con los estándares modernos XML y HTML5."
+        },
+        {
+          "type": "timeline",
+          "items": [
+            {
+              "year": "Finales años 60",
+              "label": "Anotaciones en documentos electrónicos",
+              "detail": "Se empiezan a introducir marcas dentro de documentos electrónicos, igual que se hacía en papel. De ahí el nombre \"lenguajes de marcas\"."
+            },
+            {
+              "year": "1986 (ISO 8879)",
+              "label": "SGML — Standard Generalized Markup Language",
+              "detail": "Descendiente directo de GML (IBM). Gran aceptación pero no se asentó del todo por su complejidad: el software que lo usaba resultaba extenso y complejo."
+            },
+            {
+              "year": "Finales años 80",
+              "label": "HTML — Hyper-text Markup Language",
+              "detail": "Creado en el CERN, basado en principios de SGML, para compartir información en redes de computadores. Su sencillez provocó una rápida expansión, en ocasiones descontrolada."
+            },
+            {
+              "year": "Mediados años 90",
+              "label": "W3C inicia el proyecto XML",
+              "detail": "El W3C busca un lenguaje más potente y semánticamente estructurado, basado en SGML pero tan sencillo como HTML."
+            },
+            {
+              "year": "1998",
+              "label": "XML — eXtended Markup Language",
+              "detail": "El W3C publica el estándar XML: más sencillo que SGML y más potente que HTML."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "1.4 Terminología",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Todo documento XML se construye con tres conceptos básicos: etiquetas, elementos y atributos. Comprender sus diferencias es esencial para trabajar con cualquier lenguaje de marcas."
+        },
+        {
+          "type": "flipcards",
+          "items": [
+            {
+              "term": "Etiqueta",
+              "def": "Texto entre < y >. Existen etiquetas de inicio (<nombre>) y de fin (</nombre>)."
+            },
+            {
+              "term": "Elemento",
+              "def": "Estructura el contenido: etiqueta de inicio + etiqueta de fin + todo lo que hay entre ambas. Los vacíos no llevan etiqueta de fin."
+            },
+            {
+              "term": "Atributo",
+              "def": "Par nombre-valor dentro de la etiqueta de inicio; indica propiedades asociadas al elemento."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "1.5 Organismos y gramáticas",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los lenguajes de marcas son desarrollados y estandarizados por organismos internacionales. Las gramáticas definen el marcado permitido, el requerido y cómo se utiliza en la instancia del documento."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Fundada: 1947",
+              "title": "ISO",
+              "desc": "Organismo no gubernamental que promueve normas internacionales de fabricación, comercio y comunicación. Red de institutos nacionales de 163 países, secretaría en Ginebra. Sus normas son voluntarias y sus estándares están protegidos por copyright.",
+              "example": "Publicó SGML en 1986 como Estándar Internacional (ISO 8879)."
+            },
+            {
+              "kicker": "Fundada: 1994",
+              "title": "W3C",
+              "desc": "Creado por Tim Berners-Lee en el MIT; se unieron INRIA/ERCIM (Francia/Europa) y la Universidad de Keiō (Japón). Tutela el crecimiento y organización de la web.",
+              "example": "Normalizó HTML y publicó la primera versión de XML en 1998."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Gramática", "Sintaxis", "Tipos de datos", "Puntos clave"],
+          "rows": [
+            ["DTD", "No-XML (heredada de SGML)", "Limitados", "Formato más antiguo. Define elementos, atributos, entidades y notaciones. HTML 4.0 tiene 3 DTD: Estricta, Transicional y Frameset."],
+            ["XML Schema (XSD)", "XML", "Completos y extensibles", "Evolución de la DTD, definida por el W3C. Más potente y expresiva. Produce PSVI tras la validación."],
+            ["RELAX NG", "Basada en gramática", "Flexibles", "Más sencillo e intuitivo que XSD. Permite validar elementos en cualquier orden. Estándar ISO (DSDL parte 2)."]
+          ]
+        },
+        {
+          "type": "code",
+          "language": "xml",
+          "content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<libro isbn=\"978-3-16-148410-0\">\n  <titulo>Introducción a XML</titulo>\n  <autor>Juan García</autor>\n  <anio>2024</anio>\n  <editorial nombre=\"TechBooks\" />\n</libro>"
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "SGML", "def": "Standard Generalized Markup Language. Estándar ISO 8879 (1986), descendiente de GML (IBM)." },
+    { "term": "HTML", "def": "Hyper-text Markup Language. Creado en el CERN a finales de los 80, basado en SGML." },
+    { "term": "XML", "def": "eXtended Markup Language. Publicado por el W3C en 1998: más sencillo que SGML y más potente que HTML." },
+    { "term": "DTD", "def": "Definición de Tipo de Documento. Gramática nativa de XML/SGML, sintaxis no-XML." },
+    { "term": "XSD", "def": "XML Schema Definition. Evolución de la DTD con sintaxis XML y mayor potencia expresiva." },
+    { "term": "RELAX NG", "def": "Lenguaje de esquema basado en gramática, más simple e intuitivo que XSD. Estándar ISO (DSDL parte 2)." },
+    { "term": "ISO", "def": "International Organization for Standardization. Organismo no gubernamental fundado en 1947." },
+    { "term": "W3C", "def": "World Wide Web Consortium. Fundado en 1994 por Tim Berners-Lee." },
+    { "term": "Etiqueta", "def": "Texto entre < y >; de inicio o de fin." },
+    { "term": "Elemento", "def": "Etiqueta de inicio + etiqueta de fin + contenido entre ambas." },
+    { "term": "Atributo", "def": "Par nombre-valor dentro de la etiqueta de inicio." },
+    { "term": "Texto plano", "def": "Documento sin formato: solo caracteres en un formato estándar." },
+    { "term": "PSVI", "def": "Post-Schema-Validation Infoset: estructura resultante de validar con XML Schema." },
+    { "term": "GML", "def": "Generalized Markup Language, propuesto por IBM; antecesor directo de SGML." }
+  ],
+  "quiz": [
+    {
+      "question": "¿En qué tipo de clasificación se incluyen XML y HTML?",
+      "options": ["Tipo 1 o de procedimiento", "Tipo 2 o de presentación", "Tipo 3 o descriptivo/semántico"],
+      "correct": 2,
+      "explanation": "XML y HTML son lenguajes descriptivos o semánticos (Tipo 3): el más flexible, sin orden específico ni forma de representación fija."
+    },
+    {
+      "question": "¿Qué codificación se menciona como la más usada actualmente para texto plano?",
+      "options": ["ASCII", "UTF-16", "ISO-8859-1"],
+      "correct": 1,
+      "explanation": "UTF-16 es la codificación indicada en los apuntes como la más usada actualmente para texto plano."
+    },
+    {
+      "question": "¿Qué estándar es descendiente directo del GML de IBM?",
+      "options": ["HTML", "SGML", "XML"],
+      "correct": 1,
+      "explanation": "SGML (ISO 8879, 1986) es el descendiente directo del GML propuesto por IBM."
+    },
+    {
+      "question": "¿En qué año publicó el W3C la primera versión de XML?",
+      "options": ["1986", "1994", "1998"],
+      "correct": 2,
+      "explanation": "El W3C publicó la primera versión de XML en 1998, como resultado del proyecto iniciado a mediados de los años 90."
+    },
+    {
+      "question": "¿Qué es un elemento vacío?",
+      "options": ["Un elemento sin atributos", "Un elemento sin contenido, que no lleva etiqueta de fin", "Un elemento mal formado"],
+      "correct": 1,
+      "explanation": "Un elemento vacío no tiene contenido y por tanto no lleva etiqueta de fin."
+    },
+    {
+      "question": "¿Cuál de estas gramáticas usa sintaxis XML?",
+      "options": ["DTD", "XML Schema (XSD)", "RELAX NG"],
+      "correct": 1,
+      "explanation": "XML Schema (XSD) es la única gramática que usa sintaxis XML; la DTD hereda la sintaxis no-XML de SGML."
+    },
+    {
+      "question": "¿Quién fundó el W3C?",
+      "options": ["ISO", "Tim Berners-Lee", "IBM"],
+      "correct": 1,
+      "explanation": "Tim Berners-Lee fundó el W3C en 1994 en el MIT, con la incorporación posterior de INRIA/ERCIM y la Universidad de Keiō."
+    },
+    {
+      "question": "¿Qué son los atributos en un lenguaje de marcas?",
+      "options": ["Etiquetas de cierre", "Pares nombre-valor dentro de la etiqueta de inicio", "Comentarios dentro del documento"],
+      "correct": 1,
+      "explanation": "Los atributos son pares nombre-valor que aparecen dentro de la etiqueta de inicio e indican propiedades asociadas al elemento."
+    }
+  ]
+}
