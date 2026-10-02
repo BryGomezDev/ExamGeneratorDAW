@@ -3,44 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 <title>Generador de Exámenes DAW</title>
 <style>
   :root {
-    --primary: #1E3A5F;
-    --primary-light: #2a4f80;
-    --accent: #4a90d9;
-    --bg: #f4f7fb;
-    --card-bg: #ffffff;
-    --text: #1a2535;
-    --text-muted: #5a6a7e;
-    --border: #d0dbe8;
-    --green: #16a34a;
-    --green-bg: #dcfce7;
-    --red: #dc2626;
-    --red-bg: #fee2e2;
-    --yellow: #d97706;
-    --yellow-bg: #fef3c7;
-    --purple: #7c3aed;
-    --purple-bg: #ede9fe;
-    --radius: 12px;
-    --shadow: 0 2px 12px rgba(30,58,95,0.10);
-    --shadow-lg: 0 6px 28px rgba(30,58,95,0.14);
+    /* Aliases so existing CSS rules keep working */
+    --primary:   var(--accent-light);
+    --primary-light: var(--accent);
+    --card-bg:   var(--surface);
+    --green:     var(--success);
+    --green-bg:  var(--success-bg);
+    --red:       var(--error);
+    --red-bg:    var(--error-bg);
+    --yellow:    #fbbf24;
+    --yellow-bg: #2d2611;
+    --purple:    var(--accent);
+    --purple-bg: var(--accent-bg);
+    --shadow:    0 2px 8px rgba(0,0,0,0.30);
+    --shadow-lg: 0 4px 20px rgba(0,0,0,0.40);
     --transition: 0.2s ease;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
   }
 
   /* ── Header ─────────────────────────────────────── */
   header {
-    background: var(--primary);
-    color: #fff;
+    background: var(--surface);
+    color: var(--text);
     padding: 0 20px;
     height: 56px;
     display: flex;
