@@ -79,7 +79,13 @@
   .error-msg { color: var(--error); padding: 24px 0; }
 
 /* ── Summary viewer layout ───────────────────────────── */
-.summary-wrap { display: grid; grid-template-columns: 220px 1fr; min-height: calc(100vh - 56px); }
+.summary-wrap {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 56px);
+}
 .summary-nav {
   background: var(--surface); border-right: 1px solid var(--border);
   padding: 24px 0; position: sticky; top: 56px; align-self: start;
@@ -93,7 +99,7 @@
 }
 .nav-item:hover { color: var(--text); background: var(--accent-bg); }
 .nav-item.active { color: var(--accent-light); border-left-color: var(--accent-light); background: var(--accent-bg); }
-.summary-main { padding: 32px 28px; max-width: 720px; }
+.summary-main { padding: 32px 28px; min-width: 0; }
 
 /* ── Summary header ───────────────────────────────────── */
 .summary-header { margin-bottom: 32px; }
@@ -110,13 +116,17 @@
 .block + .block { margin-top: 24px; }
 
 /* text */
-.block-text { color: var(--text-body); line-height: 1.65; }
+.block-text { color: var(--text-body); line-height: 1.65; max-width: 75ch; }
 
 /* cards */
-.block-cards { display: flex; flex-wrap: wrap; gap: 12px; }
+.block-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
 .block-card {
   background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 16px; flex: 1 1 180px; min-width: 160px;
+  border-radius: var(--radius); padding: 16px;
 }
 .block-card .kicker { font-size: 0.72rem; font-weight: 600; color: var(--accent-light);
   text-transform: uppercase; letter-spacing: 0.05em; }
@@ -147,25 +157,33 @@
 .timeline-detail { font-size: 0.88rem; color: var(--text-body); margin-top: 2px; }
 
 /* flipcards */
-.flipcards-grid { display: flex; flex-wrap: wrap; gap: 14px; }
-.flipcard { flex: 1 1 200px; min-width: 200px; height: 170px; perspective: 1000px; cursor: pointer; }
+.flipcards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+.flipcard { perspective: 1000px; cursor: pointer; }
 .flipcard-inner {
-  position: relative; width: 100%; height: 100%;
-  transition: transform 0.5s; transform-style: preserve-3d;
+  display: grid;
+  transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
+  transition: transform 0.5s;
 }
 .flipcard-inner.is-flipped { transform: rotateY(180deg); }
-.flipcard-front, .flipcard-back {
-  position: absolute; inset: 0;
-  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+.flipcard-front,
+.flipcard-back {
+  grid-area: 1 / 1;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border-radius: var(--radius);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  padding: 18px; text-align: center; overflow-y: auto;
+  padding: 20px 18px; text-align: center;
 }
 .flipcard-front { background: var(--accent-bg); color: var(--text); box-shadow: 0 0 0 1px var(--accent-line); }
-.flipcard-front .fc-term { font-size: 1rem; font-weight: 600; }
-.flipcard-front .fc-hint { font-size: 0.72rem; margin-top: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent-light); }
-.flipcard-back { background: var(--surface); color: var(--text-body); font-size: 0.88rem; line-height: 1.5; box-shadow: 0 0 0 1px var(--border); transform: rotateY(180deg); }
+.flipcard-back { transform: rotateY(180deg); background: var(--surface); color: var(--text-body); font-size: 0.88rem; line-height: 1.5; box-shadow: 0 0 0 1px var(--border); }
+.fc-term { font-size: 1rem; font-weight: 600; }
+.fc-hint { font-size: 0.72rem; margin-top: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent-light); }
+.fc-hint-back { font-size: 0.65rem; margin-top: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-subtle); }
 
 /* chips */
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -227,6 +245,7 @@
   transition: border-color 0.15s, background 0.15s;
 }
 .quiz-option:hover:not(.submitted) { border-color: var(--accent); background: var(--accent-bg); }
+.quiz-option.submitted:not(.correct):not(.wrong) { opacity: 0.6; }
 .quiz-option.selected { border-color: var(--accent); background: var(--accent-bg); color: var(--text); }
 .quiz-option.correct  { border-color: var(--success); background: var(--success-bg); color: var(--text); }
 .quiz-option.wrong    { border-color: var(--error);   background: var(--error-bg);   color: var(--text); }
@@ -261,7 +280,7 @@
 @media (max-width: 640px) {
   .summary-wrap { grid-template-columns: 1fr; }
   .summary-nav { position: static; display: flex; overflow-x: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 8px 0; }
-  .nav-item { white-space: nowrap; border-left: none; border-bottom: 3px solid transparent; }
+  .nav-item { white-space: nowrap; border-left: none; border-bottom: 3px solid transparent; flex-shrink: 0; }
   .nav-item.active { border-bottom-color: var(--accent-light); border-left-color: transparent; }
   .summary-main { padding: 20px 16px; }
 }
@@ -316,6 +335,10 @@ function render() {
     state.screen === 'subjects' ? renderSubjects() :
     state.screen === 'units'    ? renderUnits()    :
                                   renderSummary();
+  const hdr = document.querySelector('header');
+  if (hdr) hdr.style.display = state.screen === 'summary' ? 'none' : '';
+  const wrap = document.querySelector('.summary-wrap');
+  if (wrap) wrap.style.minHeight = state.screen === 'summary' ? '100vh' : 'calc(100vh - 56px)';
   bindEvents();
 }
 
@@ -373,7 +396,7 @@ function renderSummary() {
         <nav class="summary-nav">
           <button class="back-btn" data-action="back-units" style="padding:10px 20px;display:block">← Unidades</button>
         </nav>
-        <main class="summary-main" id="summary-main">
+        <main class="summary-main" id="summary-main" aria-live="polite">
           <div class="loading"><div class="spinner"></div><span>Cargando…</span></div>
         </main>
       </div>`;
@@ -387,6 +410,7 @@ function renderSummary() {
   ];
   const navHtml = navItems.map(n => `
     <button class="nav-item${state.section === n.id ? ' active' : ''}"
+      ${state.section === n.id ? 'aria-current="page"' : ''}
       data-action="nav-section" data-section="${esc(n.id)}">${esc(n.label)}</button>
   `).join('');
 
@@ -396,7 +420,7 @@ function renderSummary() {
         <button class="back-btn" data-action="back-units" style="padding:10px 20px 8px;display:block">← Unidades</button>
         ${navHtml}
       </nav>
-      <main class="summary-main" id="summary-main">
+      <main class="summary-main" id="summary-main" aria-live="polite">
         ${renderActiveSection()}
       </main>
     </div>`;
@@ -451,6 +475,7 @@ function handleClick(e) {
     document.querySelectorAll('.nav-item').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.section === state.section);
     });
+    window.scrollTo({ top: 0, behavior: 'instant' });
     bindEvents();
   } else if (action === 'toggle-open') {
     const key = el.dataset.key;
@@ -458,6 +483,7 @@ function handleClick(e) {
     const body = document.getElementById(`body-${key}`);
     if (body) { body.hidden = !state.open[key]; }
     el.querySelector('.toggle-icon') && (el.querySelector('.toggle-icon').textContent = state.open[key] ? '▲' : '▼');
+    el.setAttribute('aria-expanded', state.open[key] ? 'true' : 'false');
   } else if (action === 'flip') {
     const key = el.dataset.key;
     state.flipped[key] = !state.flipped[key];
@@ -537,7 +563,8 @@ function renderActiveSection() {
     return `
       <h2 class="section-h">Glosario</h2>
       <input type="search" id="glossary-search" class="glossary-search"
-        placeholder="Buscar término…" value="${esc(state.search)}" autocomplete="off">
+        placeholder="Buscar término…" value="${esc(state.search)}" autocomplete="off"
+        aria-label="Buscar en el glosario">
       <div id="glossary-list">${renderGlossaryItems()}</div>`;
   }
 
@@ -570,7 +597,9 @@ function renderQuizSection() {
       } else if (state.answers[qi] === oi) {
         cls += ' selected';
       }
-      const clickAttr = state.submitted ? '' : `data-action="select-answer" data-qi="${qi}" data-oi="${oi}"`;
+      const clickAttr = state.submitted
+        ? ''
+        : `data-action="select-answer" data-qi="${qi}" data-oi="${oi}" tabindex="0" role="button"`;
       return `<div class="${cls}" ${clickAttr}>${esc(opt)}</div>`;
     }).join('');
     const expl = state.submitted && q.explanation
@@ -628,7 +657,8 @@ function renderBlock(block, sectionId, blockIdx) {
         const key = `${sectionId}-${blockIdx}-${i}`;
         return `
           <div class="accordion-row">
-            <button class="accordion-header" data-action="toggle-open" data-key="${esc(key)}">
+            <button class="accordion-header" data-action="toggle-open" data-key="${esc(key)}"
+              aria-expanded="${state.open[key] ? 'true' : 'false'}">
               <span>${esc(item.title)}</span>
               <span class="toggle-icon">${state.open[key] ? '▲' : '▼'}</span>
             </button>
@@ -659,7 +689,10 @@ function renderBlock(block, sectionId, blockIdx) {
                 <span class="fc-term">${esc(item.term)}</span>
                 <span class="fc-hint">Clic para ver definición</span>
               </div>
-              <div class="flipcard-back">${esc(item.def)}</div>
+              <div class="flipcard-back">
+                ${esc(item.def)}
+                <span class="fc-hint-back" aria-hidden="true">Clic para ocultar</span>
+              </div>
             </div>
           </div>`;
       }).join('')}</div>`;
