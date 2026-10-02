@@ -1,0 +1,79 @@
+PREGUNTA: Choose the correct logical order of events using connectors:
+A: Finally, we went home. Next, we ate dinner. First, we arrived at the restaurant.
+B: First, we arrived at the restaurant. Next, we ate dinner. Finally, we went home.
+C: Next, we arrived at the restaurant. First, we ate dinner. Finally, we went home.
+D: First, we went home. Finally, we arrived at the restaurant. Next, we ate dinner.
+RESPUESTA: B
+EXPLICACION: Los conectores de secuencia temporal siguen un orden lógico: First (primero) introduce el punto de partida, Next (a continuación) enlaza el segundo evento, y Finally (finalmente) cierra la secuencia. Mezclar estos conectores rompe la coherencia narrativa del texto y es uno de los errores más comunes en escritura en inglés.
+
+PREGUNTA: Choose the correct sentence to express preference:
+A: She enjoys to read novels before bedtime.
+B: She hates eating vegetables.
+C: She likes read novels before bedtime.
+D: She doesn't mind to wake up early.
+RESPUESTA: B
+EXPLICACION: Los verbos de preferencia y emoción (enjoy, hate, like, love, mind, prefer) van seguidos de gerundio (-ing), no de infinitivo con "to". La opción B es la única gramaticalmente correcta: "hates eating". Las opciones A y D usan infinitivo tras enjoy y mind incorrectamente; la C omite la terminación -ing tras like.
+
+PREGUNTA: Choose the correct sentence with some/any/no:
+A: There is any water in the bottle.
+B: Is there some water in the bottle?
+C: There isn't any water in the bottle.
+D: There aren't no water in the bottle.
+RESPUESTA: C
+EXPLICACION: "Any" se usa en oraciones negativas e interrogativas con sustantivos contables e incontables. "There isn't any water" es la negación correcta. "Some" en preguntas se usa solo cuando se espera respuesta afirmativa (ofrecimiento o petición), no en preguntas neutras. La opción D tiene doble negación (isn't + no), que es incorrecta en inglés estándar.
+
+PREGUNTA: Choose the correct wh-question.
+A: Why is she crying?
+B: Why she is crying?
+C: Is she why crying?
+D: Why crying is she?
+RESPUESTA: A
+EXPLICACION: Las wh-questions en inglés requieren inversión sujeto-auxiliar: la palabra interrogativa va primero, seguida del auxiliar (is/are/do/does) y luego el sujeto. La estructura correcta es Why + auxiliar + sujeto + verbo: "Why is she crying?" Las opciones B, C y D no aplican la inversión o colocan los elementos en orden incorrecto.
+
+PREGUNTA: Complete the sentence: "My birthday is _____ December."
+A: on
+B: in
+C: at
+D: by
+RESPUESTA: B
+EXPLICACION: Las preposiciones de tiempo en inglés siguen una regla de precisión: "at" para horas y momentos exactos (at 3pm, at night), "on" para días y fechas concretas (on Monday, on 5th December), e "in" para períodos más amplios como meses, años, estaciones y siglos (in December, in 2024, in summer). Un mes es un período amplio, por tanto se usa "in".
+
+PREGUNTA: Find the CORRECT question.
+A: What time the movie starts?
+B: What time do the movie start?
+C: What time does the movie start?
+D: What time is the movie start?
+RESPUESTA: C
+EXPLICACION: Para preguntar por la hora de inicio de algo en Present Simple con sujeto de tercera persona del singular (the movie), el auxiliar correcto es "does" seguido del infinitivo sin "to". La opción A omite el auxiliar; la B usa "do" con sujeto singular (incorrecto) y añade -s al verbo; la D usa "is" como si fuera una pregunta de estado, no de acción.
+
+PREGUNTA: Find the INCORRECT sentence.
+A: I have no time to finish this.
+B: I don't have no time to finish this.
+C: I don't have any time to finish this.
+D: Do you have any time to finish this?
+RESPUESTA: B
+EXPLICACION: En inglés estándar está prohibida la doble negación: "don't have no" combina dos negativos (don't y no), lo que gramaticalmente equivaldría a una afirmación. Las formas correctas son "I have no time" (negación con "no" sin auxiliar negativo) o "I don't have any time" (negación con auxiliar + any). La doble negación es habitual en español pero incorrecta en inglés formal.
+
+PREGUNTA: What is an appropriate connector for adding information?
+A: However
+B: In addition
+C: Therefore
+D: Instead
+RESPUESTA: B
+EXPLICACION: Los conectores se clasifican según su función: "In addition" (además) añade información complementaria; "However" (sin embargo) introduce un contraste; "Therefore" (por tanto) expresa consecuencia o conclusión; "Instead" (en cambio) indica una alternativa o sustitución. Para añadir información nueva que refuerza lo anterior, el conector adecuado es "In addition".
+
+PREGUNTA: What is the correct question to express quantity for uncountable nouns?
+A: How many sugar do you need?
+B: How often sugar do you need?
+C: How much sugar do you need?
+D: How sugar do you need?
+RESPUESTA: C
+EXPLICACION: En inglés, "how many" se usa con sustantivos contables (how many apples) y "how much" con sustantivos incontables (how much sugar, water, money, time). El azúcar (sugar) es un sustantivo incontable porque no se puede enumerar individualmente, por lo que la pregunta correcta es "How much sugar do you need?".
+
+PREGUNTA: Which of these words is a possessive pronoun?
+A: My
+B: He
+C: Us
+D: Mine
+RESPUESTA: D
+EXPLICACION: Los pronombres posesivos sustituyen a un sustantivo ya mencionado indicando posesión: mine, yours, his, hers, ours, theirs. "My" es adjetivo posesivo (va antes del sustantivo: my book), no un pronombre. "He" es pronombre personal sujeto y "us" es pronombre personal objeto. Solo "mine" puede usarse solo como pronombre: "This book is mine."
