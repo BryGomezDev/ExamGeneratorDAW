@@ -339,6 +339,8 @@ function render() {
   if (hdr) hdr.style.display = state.screen === 'summary' ? 'none' : '';
   const wrap = document.querySelector('.summary-wrap');
   if (wrap) wrap.style.minHeight = state.screen === 'summary' ? '100vh' : 'calc(100vh - 56px)';
+  const nav = document.querySelector('.summary-nav');
+  if (nav) { nav.style.top = '0'; nav.style.maxHeight = '100vh'; }
   bindEvents();
 }
 
