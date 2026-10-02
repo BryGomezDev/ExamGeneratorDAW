@@ -77,6 +77,187 @@
 
   /* ── Error ────────────────────────────────────────── */
   .error-msg { color: var(--error); padding: 24px 0; }
+
+/* ── Summary viewer layout ───────────────────────────── */
+.summary-wrap { display: grid; grid-template-columns: 220px 1fr; min-height: calc(100vh - 56px); }
+.summary-nav {
+  background: var(--surface); border-right: 1px solid var(--border);
+  padding: 24px 0; position: sticky; top: 56px; align-self: start;
+  max-height: calc(100vh - 56px); overflow-y: auto;
+}
+.nav-item {
+  display: block; padding: 10px 20px; font-size: 0.88rem; color: var(--text-muted);
+  cursor: pointer; border-left: 3px solid transparent; transition: all 0.15s ease;
+  background: none; border-right: none; border-top: none; border-bottom: none;
+  width: 100%; text-align: left;
+}
+.nav-item:hover { color: var(--text); background: var(--accent-bg); }
+.nav-item.active { color: var(--accent-light); border-left-color: var(--accent-light); background: var(--accent-bg); }
+.summary-main { padding: 32px 28px; max-width: 720px; }
+
+/* ── Summary header ───────────────────────────────────── */
+.summary-header { margin-bottom: 32px; }
+.summary-kicker { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em;
+  color: var(--accent-light); text-transform: uppercase; margin-bottom: 6px; }
+.summary-title { font-size: 1.5rem; font-weight: 700; color: var(--text); line-height: 1.3; }
+.summary-intro { color: var(--text-body); margin-top: 12px; line-height: 1.65; }
+
+/* ── Blocks ──────────────────────────────────────────── */
+.block + .block { margin-top: 24px; }
+
+/* text */
+.block-text { color: var(--text-body); line-height: 1.65; }
+
+/* cards */
+.block-cards { display: flex; flex-wrap: wrap; gap: 12px; }
+.block-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px; flex: 1 1 180px; min-width: 160px;
+}
+.block-card .kicker { font-size: 0.72rem; font-weight: 600; color: var(--accent-light);
+  text-transform: uppercase; letter-spacing: 0.05em; }
+.block-card .card-h { font-weight: 600; color: var(--text); margin: 4px 0 6px; }
+.block-card .card-d { font-size: 0.88rem; color: var(--text-body); }
+.block-card .card-ex { font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; font-style: italic; }
+
+/* accordion */
+.accordion-row { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 6px; }
+.accordion-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 16px; cursor: pointer; font-weight: 500; color: var(--text);
+  background: none; border: none; width: 100%; text-align: left;
+}
+.accordion-header:hover { background: var(--accent-bg); }
+.toggle-icon { color: var(--text-muted); font-size: 0.8rem; }
+.accordion-body { padding: 12px 16px; color: var(--text-body); line-height: 1.6; border-top: 1px solid var(--border); }
+
+/* timeline */
+.timeline { padding-left: 20px; border-left: 2px solid var(--accent-line); }
+.timeline-item { position: relative; padding: 0 0 20px 20px; }
+.timeline-item::before {
+  content: ''; position: absolute; left: -7px; top: 4px;
+  width: 12px; height: 12px; background: var(--accent); border-radius: 50%;
+}
+.timeline-year { font-size: 0.78rem; font-weight: 700; color: var(--accent-light); }
+.timeline-label { font-weight: 600; color: var(--text); }
+.timeline-detail { font-size: 0.88rem; color: var(--text-body); margin-top: 2px; }
+
+/* flipcards */
+.flipcards-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+.flipcard { width: 160px; height: 100px; perspective: 600px; cursor: pointer; }
+.flipcard-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.45s; transform-style: preserve-3d;
+}
+.flipcard-inner.is-flipped { transform: rotateY(180deg); }
+.flipcard-front, .flipcard-back {
+  position: absolute; width: 100%; height: 100%;
+  backface-visibility: hidden; border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  padding: 12px; text-align: center; font-size: 0.88rem;
+  border: 1px solid var(--border);
+}
+.flipcard-front { background: var(--surface); color: var(--text); font-weight: 600; }
+.flipcard-back { background: var(--accent-bg); color: var(--accent-light); transform: rotateY(180deg); }
+
+/* chips */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  background: var(--accent-bg); color: var(--accent-light);
+  border-radius: 99px; padding: 5px 14px; font-size: 0.83rem; font-weight: 500;
+}
+
+/* table */
+.block-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.block-table th {
+  background: var(--accent-bg); color: var(--accent-light);
+  padding: 10px 14px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border);
+}
+.block-table td { padding: 10px 14px; color: var(--text-body); border-bottom: 1px solid var(--border); }
+.block-table tr:last-child td { border-bottom: none; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+
+/* code */
+.code-block {
+  background: var(--surface); border: 1px solid var(--accent-line);
+  border-radius: var(--radius); padding: 16px; overflow-x: auto;
+}
+.code-block pre { margin: 0; }
+.code-block code { font-family: 'Consolas','Courier New',monospace; font-size: 0.85rem; color: var(--text-body); }
+
+/* objectives */
+.objectives { padding: 16px 20px; background: var(--accent-bg); border-radius: var(--radius);
+  border-left: 3px solid var(--accent-light); margin-bottom: 24px; }
+.objectives h3 { font-size: 0.82rem; font-weight: 700; color: var(--accent-light);
+  text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
+.objectives ul { padding-left: 18px; }
+.objectives li { color: var(--text-body); font-size: 0.9rem; line-height: 1.6; }
+
+/* section heading */
+.section-h { font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+
+/* glossary */
+.glossary-search {
+  width: 100%; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 10px 14px; color: var(--text);
+  font-size: 0.9rem; margin-bottom: 16px;
+}
+.glossary-search::placeholder { color: var(--text-subtle); }
+.glossary-search:focus { border-color: var(--accent); outline: none; }
+.glossary-item { padding: 12px 0; border-bottom: 1px solid var(--border); }
+.glossary-item:last-child { border-bottom: none; }
+.glossary-term { font-weight: 600; color: var(--accent-light); }
+.glossary-def { color: var(--text-body); font-size: 0.9rem; margin-top: 3px; }
+
+/* quiz */
+.quiz-item { margin-bottom: 28px; }
+.quiz-q { font-weight: 600; color: var(--text); margin-bottom: 10px; }
+.quiz-option {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border-radius: var(--radius); margin-bottom: 6px;
+  border: 1.5px solid var(--border); background: var(--surface);
+  cursor: pointer; font-size: 0.9rem; color: var(--text-body);
+  transition: border-color 0.15s, background 0.15s;
+}
+.quiz-option:hover:not(.submitted) { border-color: var(--accent); background: var(--accent-bg); }
+.quiz-option.selected { border-color: var(--accent); background: var(--accent-bg); color: var(--text); }
+.quiz-option.correct  { border-color: var(--success); background: var(--success-bg); color: var(--text); }
+.quiz-option.wrong    { border-color: var(--error);   background: var(--error-bg);   color: var(--text); }
+.quiz-badge { font-size: 0.78rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-bottom: 6px; }
+.quiz-badge.correct-badge { background: var(--success-bg); color: var(--success); }
+.quiz-badge.wrong-badge   { background: var(--error-bg);   color: var(--error); }
+.quiz-explanation { font-size: 0.85rem; color: var(--text-muted); margin-top: 6px; padding-left: 4px; }
+.quiz-footer { display: flex; align-items: center; gap: 16px; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); }
+.quiz-score { font-size: 1rem; font-weight: 600; color: var(--text); }
+.btn-primary {
+  background: var(--accent); color: var(--bg); border: none; border-radius: var(--radius);
+  padding: 10px 20px; font-weight: 600; cursor: pointer; font-size: 0.9rem;
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: var(--accent-light); }
+.btn-secondary {
+  background: var(--surface); color: var(--text-muted); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 10px 20px; font-weight: 600; cursor: pointer;
+  font-size: 0.9rem; transition: border-color 0.15s;
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--text); }
+
+/* back button */
+.back-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--text-muted); font-size: 0.88rem; cursor: pointer;
+  background: none; border: none; margin-bottom: 16px; padding: 0;
+}
+.back-btn:hover { color: var(--accent-light); }
+
+/* mobile */
+@media (max-width: 640px) {
+  .summary-wrap { grid-template-columns: 1fr; }
+  .summary-nav { position: static; display: flex; overflow-x: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 8px 0; }
+  .nav-item { white-space: nowrap; border-left: none; border-bottom: 3px solid transparent; }
+  .nav-item.active { border-bottom-color: var(--accent-light); border-left-color: transparent; }
+  .summary-main { padding: 20px 16px; }
+}
 </style>
 </head>
 <body>
@@ -179,8 +360,34 @@ function renderUnits() {
 }
 
 function renderSummary() {
-  // Stub — full renderer implemented in Task 8
-  return `<div class="container"><div class="loading"><div class="spinner"></div><span>Cargando resumen…</span></div></div>`;
+  if (!state.summary) {
+    return `
+      <div class="summary-wrap">
+        <nav class="summary-nav"></nav>
+        <main class="summary-main" id="summary-main">
+          <div class="loading"><div class="spinner"></div><span>Cargando…</span></div>
+        </main>
+      </div>`;
+  }
+  const d = state.summary;
+  const navItems = [
+    { id: 'intro', label: 'Introducción' },
+    ...d.sections.map(s => ({ id: s.id, label: s.label })),
+    { id: 'glossary', label: 'Glosario' },
+    { id: 'quiz', label: 'Quiz' },
+  ];
+  const navHtml = navItems.map(n => `
+    <button class="nav-item${state.section === n.id ? ' active' : ''}"
+      data-action="nav-section" data-section="${esc(n.id)}">${esc(n.label)}</button>
+  `).join('');
+
+  return `
+    <div class="summary-wrap">
+      <nav class="summary-nav">${navHtml}</nav>
+      <main class="summary-main" id="summary-main">
+        ${renderActiveSection()}
+      </main>
+    </div>`;
 }
 
 function bindEvents() {
@@ -278,8 +485,185 @@ async function loadSummary(subject, unitNum) {
   }
 }
 
-function renderGlossaryItems() { return ''; } // stub, overridden in Task 8
-function renderActiveSection() { return ''; }  // stub, overridden in Task 8
+function renderGlossaryItems() {
+  const q = state.search.toLowerCase().trim();
+  const items = q
+    ? state.summary.glossary.filter(g =>
+        g.term.toLowerCase().includes(q) || g.def.toLowerCase().includes(q))
+    : state.summary.glossary;
+  if (items.length === 0) return `<p style="color:var(--text-muted)">Sin resultados.</p>`;
+  return items.map(g => `
+    <div class="glossary-item">
+      <div class="glossary-term">${esc(g.term)}</div>
+      <div class="glossary-def">${esc(g.def)}</div>
+    </div>`).join('');
+}
+
+function renderActiveSection() {
+  const d = state.summary;
+  if (!d) return '';
+
+  if (state.section === 'intro') {
+    const objItems = d.objectives.map(o => `<li>${esc(o)}</li>`).join('');
+    const objHtml = d.objectives.length ? `
+      <div class="objectives">
+        <h3>Objetivos</h3>
+        <ul>${objItems}</ul>
+      </div>` : '';
+    return `
+      <div class="summary-header">
+        <div class="summary-kicker">${esc(SUBJECT_NAMES[d.subject] || d.subject.toUpperCase())} · Unidad ${esc(String(d.unit))}</div>
+        <div class="summary-title">${esc(d.title)}</div>
+        <p class="summary-intro">${esc(d.intro)}</p>
+      </div>
+      ${objHtml}`;
+  }
+
+  if (state.section === 'glossary') {
+    return `
+      <h2 class="section-h">Glosario</h2>
+      <input type="search" id="glossary-search" class="glossary-search"
+        placeholder="Buscar término…" value="${esc(state.search)}" autocomplete="off">
+      <div id="glossary-list">${renderGlossaryItems()}</div>`;
+  }
+
+  if (state.section === 'quiz') {
+    return `<div id="quiz-section">${renderQuizSection()}</div>`;
+  }
+
+  const sec = state.summary.sections.find(s => s.id === state.section);
+  if (!sec) return '<p class="error-msg">Sección no encontrada.</p>';
+  const blocks = sec.blocks.map((b, i) =>
+    `<div class="block">${renderBlock(b, sec.id, i)}</div>`
+  ).join('');
+  return `<h2 class="section-h">${esc(sec.label)}</h2>${blocks}`;
+}
+
+function renderQuizSection() {
+  const d = state.summary;
+  const items = d.quiz.map((q, qi) => {
+    const badge = state.submitted
+      ? (state.answers[qi] === q.correct
+          ? `<div class="quiz-badge correct-badge">✓ Acertada</div>`
+          : `<div class="quiz-badge wrong-badge">✗ Fallida</div>`)
+      : '';
+    const opts = q.options.map((opt, oi) => {
+      let cls = 'quiz-option';
+      if (state.submitted) {
+        if (oi === q.correct) cls += ' correct';
+        else if (oi === state.answers[qi]) cls += ' wrong';
+        cls += ' submitted';
+      } else if (state.answers[qi] === oi) {
+        cls += ' selected';
+      }
+      const clickAttr = state.submitted ? '' : `data-action="select-answer" data-qi="${qi}" data-oi="${oi}"`;
+      return `<div class="${cls}" ${clickAttr}>${esc(opt)}</div>`;
+    }).join('');
+    const expl = state.submitted && q.explanation
+      ? `<div class="quiz-explanation">${esc(q.explanation)}</div>` : '';
+    return `
+      <div class="quiz-item">
+        ${badge}
+        <div class="quiz-q">${qi + 1}. ${esc(q.question)}</div>
+        ${opts}
+        ${expl}
+      </div>`;
+  }).join('');
+
+  let footer = '';
+  if (state.submitted) {
+    const correct = d.quiz.filter((q, qi) => state.answers[qi] === q.correct).length;
+    const testLink = state.subject && state.unitNum !== null
+      ? `<a href="index.html?subject=${esc(state.subject.name)}&unit=${esc(String(state.unitNum))}"
+           class="btn-primary" style="text-decoration:none">Hacer el test →</a>`
+      : '';
+    footer = `
+      <div class="quiz-footer">
+        <span class="quiz-score">Resultado: ${correct} / ${d.quiz.length}</span>
+        <button class="btn-secondary" data-action="retry-quiz">Reintentar</button>
+        ${testLink}
+      </div>`;
+  } else {
+    const answered = Object.keys(state.answers).length;
+    footer = `
+      <div class="quiz-footer">
+        <span style="color:var(--text-muted);font-size:0.88rem">${answered} / ${d.quiz.length} respondidas</span>
+        <button class="btn-primary" data-action="submit-quiz"
+          ${answered === 0 ? 'disabled' : ''}>Comprobar respuestas</button>
+      </div>`;
+  }
+  return `<h2 class="section-h">Quiz de autoevaluación</h2>${items}${footer}`;
+}
+
+function renderBlock(block, sectionId, blockIdx) {
+  switch (block.type) {
+    case 'text':
+      return `<p class="block-text">${esc(block.content)}</p>`;
+
+    case 'cards':
+      return `<div class="block-cards">${block.items.map(item => `
+        <div class="block-card">
+          ${item.kicker ? `<div class="kicker">${esc(item.kicker)}</div>` : ''}
+          <div class="card-h">${esc(item.title)}</div>
+          ${item.desc ? `<div class="card-d">${esc(item.desc)}</div>` : ''}
+          ${item.example ? `<div class="card-ex">Ej: ${esc(item.example)}</div>` : ''}
+        </div>`).join('')}</div>`;
+
+    case 'accordion':
+      return block.items.map((item, i) => {
+        const key = `${sectionId}-${blockIdx}-${i}`;
+        return `
+          <div class="accordion-row">
+            <button class="accordion-header" data-action="toggle-open" data-key="${esc(key)}">
+              <span>${esc(item.title)}</span>
+              <span class="toggle-icon">${state.open[key] ? '▲' : '▼'}</span>
+            </button>
+            <div class="accordion-body" id="body-${esc(key)}" ${state.open[key] ? '' : 'hidden'}>
+              ${esc(item.content)}
+            </div>
+          </div>`;
+      }).join('');
+
+    case 'timeline':
+      return `<div class="timeline">${block.items.map(item => `
+        <div class="timeline-item">
+          <div class="timeline-year">${esc(item.year)}</div>
+          <div class="timeline-label">${esc(item.label)}</div>
+          ${item.detail ? `<div class="timeline-detail">${esc(item.detail)}</div>` : ''}
+        </div>`).join('')}</div>`;
+
+    case 'flipcards':
+      return `<div class="flipcards-grid">${block.items.map((item, i) => {
+        const key = `${sectionId}-${blockIdx}-${i}`;
+        return `
+          <div class="flipcard" data-action="flip" data-key="${esc(key)}"
+               tabindex="0" role="button" aria-label="Voltear: ${esc(item.term)}">
+            <div class="flipcard-inner" id="flip-inner-${esc(key)}">
+              <div class="flipcard-front">${esc(item.term)}</div>
+              <div class="flipcard-back">${esc(item.def)}</div>
+            </div>
+          </div>`;
+      }).join('')}</div>`;
+
+    case 'chips':
+      return `<div class="chips">${block.items.map(c =>
+        `<span class="chip">${esc(c)}</span>`).join('')}</div>`;
+
+    case 'table':
+      return `<div class="table-wrap"><table class="block-table">
+        <thead><tr>${block.headers.map(h => `<th>${esc(h)}</th>`).join('')}</tr></thead>
+        <tbody>${block.rows.map(row =>
+          `<tr>${row.map(cell => `<td>${esc(cell)}</td>`).join('')}</tr>`
+        ).join('')}</tbody>
+      </table></div>`;
+
+    case 'code':
+      return `<div class="code-block"><pre><code>${esc(block.content)}</code></pre></div>`;
+
+    default:
+      return `<p class="error-msg">Bloque desconocido: ${esc(block.type)}</p>`;
+  }
+}
 
 // ── Init ──────────────────────────────────────────────────────────────
 (async () => {
