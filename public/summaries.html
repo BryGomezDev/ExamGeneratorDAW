@@ -97,10 +97,14 @@
 
 /* ── Summary header ───────────────────────────────────── */
 .summary-header { margin-bottom: 32px; }
-.summary-kicker { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em;
-  color: var(--accent-light); text-transform: uppercase; margin-bottom: 6px; }
-.summary-title { font-size: 1.5rem; font-weight: 700; color: var(--text); line-height: 1.3; }
-.summary-intro { color: var(--text-body); margin-top: 12px; line-height: 1.65; }
+.summary-kicker { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+  color: var(--accent-light); text-transform: uppercase; margin-bottom: 8px; }
+.summary-unit { font-size: 2rem; font-weight: 700; color: var(--text); line-height: 1.1; margin-bottom: 6px; }
+.summary-title { font-size: 1.05rem; font-weight: 500; color: var(--text-muted); line-height: 1.4; }
+.summary-intro { color: var(--text-body); margin-top: 14px; line-height: 1.65; }
+
+/* ── Block hint ───────────────────────────────────────── */
+.block-hint { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 10px; font-style: italic; }
 
 /* ── Blocks ──────────────────────────────────────────── */
 .block + .block { margin-top: 24px; }
@@ -143,22 +147,25 @@
 .timeline-detail { font-size: 0.88rem; color: var(--text-body); margin-top: 2px; }
 
 /* flipcards */
-.flipcards-grid { display: flex; flex-wrap: wrap; gap: 12px; }
-.flipcard { width: 160px; height: 100px; perspective: 600px; cursor: pointer; }
+.flipcards-grid { display: flex; flex-wrap: wrap; gap: 14px; }
+.flipcard { flex: 1 1 200px; min-width: 200px; height: 170px; perspective: 1000px; cursor: pointer; }
 .flipcard-inner {
   position: relative; width: 100%; height: 100%;
-  transition: transform 0.45s; transform-style: preserve-3d;
+  transition: transform 0.5s; transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
 }
 .flipcard-inner.is-flipped { transform: rotateY(180deg); }
 .flipcard-front, .flipcard-back {
-  position: absolute; width: 100%; height: 100%;
-  backface-visibility: hidden; border-radius: var(--radius);
-  display: flex; align-items: center; justify-content: center;
-  padding: 12px; text-align: center; font-size: 0.88rem;
-  border: 1px solid var(--border);
+  position: absolute; inset: 0;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  border-radius: var(--radius);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 18px; text-align: center; overflow-y: auto;
 }
-.flipcard-front { background: var(--surface); color: var(--text); font-weight: 600; }
-.flipcard-back { background: var(--accent-bg); color: var(--accent-light); transform: rotateY(180deg); }
+.flipcard-front { background: var(--accent-bg); color: var(--text); box-shadow: 0 0 0 1px var(--accent-line); }
+.flipcard-front .fc-term { font-size: 1rem; font-weight: 600; }
+.flipcard-front .fc-hint { font-size: 0.72rem; margin-top: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent-light); }
+.flipcard-back { background: var(--surface); color: var(--text-body); font-size: 0.88rem; line-height: 1.5; box-shadow: 0 0 0 1px var(--border); transform: rotateY(180deg); }
 
 /* chips */
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -376,7 +383,7 @@ function renderSummary() {
     { id: 'intro', label: 'Introducción' },
     ...d.sections.map(s => ({ id: s.id, label: s.label })),
     { id: 'glossary', label: 'Glosario' },
-    { id: 'quiz', label: 'Quiz' },
+    { id: 'quiz', label: 'Autoevaluación' },
   ];
   const navHtml = navItems.map(n => `
     <button class="nav-item${state.section === n.id ? ' active' : ''}"
@@ -441,6 +448,9 @@ function handleClick(e) {
   } else if (action === 'nav-section') {
     state.section = el.dataset.section;
     document.getElementById('summary-main').innerHTML = renderActiveSection();
+    document.querySelectorAll('.nav-item').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.section === state.section);
+    });
     bindEvents();
   } else if (action === 'toggle-open') {
     const key = el.dataset.key;
@@ -515,7 +525,8 @@ function renderActiveSection() {
       </div>` : '';
     return `
       <div class="summary-header">
-        <div class="summary-kicker">${esc(SUBJECT_NAMES[d.subject] || d.subject.toUpperCase())} · Unidad ${esc(String(d.unit))}</div>
+        <div class="summary-kicker">${esc((SUBJECT_NAMES[d.subject] || d.subject).toUpperCase())}</div>
+        <div class="summary-unit">Unidad ${esc(String(d.unit))}</div>
         <div class="summary-title">${esc(d.title)}</div>
         <p class="summary-intro">${esc(d.intro)}</p>
       </div>
@@ -628,7 +639,8 @@ function renderBlock(block, sectionId, blockIdx) {
       }).join('');
 
     case 'timeline':
-      return `<div class="timeline">${block.items.map(item => `
+      return `<p class="block-hint">Línea cronológica de evolución.</p>
+      <div class="timeline">${block.items.map(item => `
         <div class="timeline-item">
           <div class="timeline-year">${esc(item.year)}</div>
           <div class="timeline-label">${esc(item.label)}</div>
@@ -636,13 +648,17 @@ function renderBlock(block, sectionId, blockIdx) {
         </div>`).join('')}</div>`;
 
     case 'flipcards':
-      return `<div class="flipcards-grid">${block.items.map((item, i) => {
+      return `<p class="block-hint">Clic en cada tarjeta para ver la definición.</p>
+      <div class="flipcards-grid">${block.items.map((item, i) => {
         const key = `${sectionId}-${blockIdx}-${i}`;
         return `
           <div class="flipcard" data-action="flip" data-key="${esc(key)}"
                tabindex="0" role="button" aria-label="Voltear: ${esc(item.term)}">
             <div class="flipcard-inner" id="flip-inner-${esc(key)}">
-              <div class="flipcard-front">${esc(item.term)}</div>
+              <div class="flipcard-front">
+                <span class="fc-term">${esc(item.term)}</span>
+                <span class="fc-hint">Clic para ver definición</span>
+              </div>
               <div class="flipcard-back">${esc(item.def)}</div>
             </div>
           </div>`;

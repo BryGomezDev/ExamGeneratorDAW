@@ -167,7 +167,7 @@
   }
   .unit-card.unit-ps .unit-num { color: var(--purple); }
   .unit-card.unit-ps .unit-label { color: var(--purple); opacity: 0.8; }
-  .unit-card.unit-ps .unit-count { background: #fff; border-color: var(--purple); color: var(--purple); }
+  .unit-card.unit-ps .unit-count { background: var(--bg); border-color: var(--purple); color: var(--purple); }
   .unit-card.unit-ps:hover { border-color: #5b21b6; box-shadow: 0 4px 16px rgba(124,58,237,0.2); }
 
   /* ── Exam screen ─────────────────────────────────── */
@@ -239,14 +239,14 @@
     color: var(--text);
     width: 100%;
   }
-  .option-btn:hover:not(:disabled) { border-color: var(--accent); background: #eaf3ff; }
+  .option-btn:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-bg); }
 
   .option-label {
     min-width: 28px;
     height: 28px;
     border-radius: 50%;
     background: var(--primary);
-    color: #fff;
+    color: var(--bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -268,14 +268,17 @@
     padding: 14px 18px;
     border-radius: 8px;
     border: 1.5px solid var(--border);
-    background: #f0f7ff;
+    background: var(--surface);
+    border-color: var(--accent);
     font-size: 0.88rem;
     line-height: 1.7;
-    color: var(--text);
+    color: var(--text-body);
     display: none;
   }
   .feedback-box.visible { display: block; animation: fadeIn 0.2s ease; }
-  .feedback-box strong { color: var(--primary); }
+  .feedback-box.correct { border-color: var(--success); }
+  .feedback-box.wrong   { border-color: var(--error); }
+  .feedback-box strong { color: var(--text); }
 
   .exam-actions {
     display: flex;
@@ -293,13 +296,13 @@
     border: none;
     transition: all var(--transition);
   }
-  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-primary { background: var(--primary); color: var(--bg); }
   .btn-primary:hover { background: var(--primary-light); }
   .btn-secondary { background: var(--card-bg); color: var(--text-muted); border: 1.5px solid var(--border); }
   .btn-secondary:hover { border-color: var(--accent); color: var(--primary); }
   .btn-blank { background: var(--yellow-bg); color: var(--yellow); border: 1.5px solid var(--yellow); }
-  .btn-blank:hover { background: #fde68a; }
-  .btn-danger { background: #fff; color: var(--red); border: 1.5px solid var(--red); }
+  .btn-blank:hover { background: #3d3214; }
+  .btn-danger { background: var(--surface); color: var(--red); border: 1.5px solid var(--red); }
   .btn-danger:hover { background: var(--red-bg); }
   .btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
@@ -410,11 +413,11 @@
   .review-feedback {
     margin-top: 12px;
     padding: 12px 14px;
-    background: #f0f7ff;
+    background: var(--surface);
     border-radius: 7px;
     font-size: 0.85rem;
     line-height: 1.7;
-    color: var(--text);
+    color: var(--text-body);
     border-left: 3px solid var(--accent);
   }
 
@@ -1073,7 +1076,8 @@ function blankAnswer() {
 
 function showFeedback(q, isCorrect) {
   const fb = $('feedback-box');
-  fb.className = 'feedback-box visible';
+  const stateClass = isCorrect === null ? '' : isCorrect ? ' correct' : ' wrong';
+  fb.className = 'feedback-box visible' + stateClass;
   const correctText = q.options[q.correct];
   const prefix = isCorrect === null ? '⬜ <strong>En blanco.</strong>'
     : isCorrect ? '✅ <strong>¡Correcto!</strong>'
