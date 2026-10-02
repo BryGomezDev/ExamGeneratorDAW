@@ -12,7 +12,7 @@
   "sections": [
     {
       "id": "s1",
-      "label": "1.1 Clasificación y características comunes",
+      "label": "1.1 Clasificación y características comunes de los lenguajes de marcas",
       "blocks": [
         {
           "type": "text",
@@ -42,10 +42,6 @@
           ]
         },
         {
-          "type": "text",
-          "content": "⚠ Ojo: El temario usa 'eXtended Markup Language'; el nombre oficial es 'Extensible Markup Language'."
-        },
-        {
           "type": "accordion",
           "items": [
             {
@@ -70,7 +66,7 @@
     },
     {
       "id": "s2",
-      "label": "1.2 Ámbitos de uso",
+      "label": "1.2 Identificación de ámbitos de aplicación",
       "blocks": [
         {
           "type": "text",
@@ -94,7 +90,7 @@
     },
     {
       "id": "s3",
-      "label": "1.3 Evolución histórica",
+      "label": "1.3 Evolución de los lenguajes de marcas",
       "blocks": [
         {
           "type": "text",
@@ -129,12 +125,16 @@
               "detail": "El W3C hizo público el estándar XML: más sencillo que SGML y más potente que HTML."
             }
           ]
+        },
+        {
+          "type": "text",
+          "content": "⚠ Ojo: El temario usa 'eXtended Markup Language'; el nombre oficial es 'Extensible Markup Language'."
         }
       ]
     },
     {
       "id": "s4",
-      "label": "1.4 Terminología básica",
+      "label": "1.4 Etiquetas, elementos y atributos",
       "blocks": [
         {
           "type": "text",
@@ -161,7 +161,7 @@
     },
     {
       "id": "s5",
-      "label": "1.5 Organismos de normalización",
+      "label": "1.5 Organizaciones desarrolladoras",
       "blocks": [
         {
           "type": "text",
@@ -173,7 +173,7 @@
             {
               "kicker": "Fundada: 23 feb. 1947",
               "title": "ISO — International Organization for Standardization",
-              "desc": "Organismo encargado de promover el desarrollo de normas internacionales de fabricación, comercio y comunicación para todas las ramas industriales a excepción de la eléctrica y la electrónica (que cubre la IEC). Red de institutos nacionales de 163 países, con Secretaría Central en Ginebra (Suiza). Sus normas son voluntarias; el contenido de los estándares está protegido por copyright y ha de comprarse.",
+              "desc": "Organismo encargado de promover el desarrollo de normas internacionales de fabricación, comercio y comunicación para todas las ramas industriales a excepción de la eléctrica y la electrónica. Red de institutos nacionales de 163 países, con Secretaría Central en Ginebra (Suiza). Sus normas son voluntarias; el contenido de los estándares está protegido por copyright y ha de comprarse.",
               "example": "Publicó SGML en 1986 como Estándar Internacional con el código ISO 8879."
             },
             {
@@ -183,7 +183,13 @@
               "example": "Normalizó HTML y publicó la primera versión de XML en 1998. Decidió que la solución al crecimiento de la web no era ampliar HTML, sino crear XML."
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "1.6 Gramáticas",
+      "blocks": [
         {
           "type": "table",
           "headers": ["Gramática", "Sintaxis", "Puntos clave"],
@@ -192,13 +198,7 @@
             ["XML Schema (XSD)", "XML", "Evolución de la DTD definida por el W3C. Más complejo y potente; gran consumo de recursos y tiempo en la validación. Produce PSVI → jerarquía de objetos accesible mediante OOP."],
             ["RELAX NG", "Basada en gramática", "Más intuitivo y fácil de entender que XSD. Alto poder expresivo: valida elementos intercalados en cualquier orden. Estándar ISO (DSDL parte 2)."]
           ]
-        }
-      ]
-    },
-    {
-      "id": "s6",
-      "label": "1.6 Gramáticas",
-      "blocks": [
+        },
         {
           "type": "text",
           "content": "Todo documento de un lenguaje de marcas tiene en común una gramática que define el marcado permitido en esa clase, el marcado requerido y cómo debe ser utilizado dicho marcado en la instancia del documento."
@@ -217,25 +217,17 @@
             {
               "title": "RELAX NG",
               "content": "Lenguaje de esquema basado en la gramática, muy intuitivo y más fácil de entender que XML Schema. Tiene un alto poder expresivo: por ejemplo, permite validar elementos intercalados que pueden aparecer en cualquier orden. Las aplicaciones de definición y validación para RELAX NG son más sencillas que las de XML Schema. Se ha convertido en estándar ISO como la parte 2 de DSDL (Document Schema Definition Language)."
+            },
+            {
+              "title": "Los 3 DTD de HTML 4.0",
+              "content": "HTML 4.0 define tres DTD: Estricta (solo elementos vigentes, sin elementos obsoletos), Transicional (incluye elementos en desuso para compatibilidad) y Frameset (para páginas con marcos). El temario recomienda usar la DTD Estricta."
             }
-          ]
-        },
-        {
-          "type": "chips",
-          "items": [
-            "DTD: interna / externa / ambas",
-            "DTD: la especificación recomienda la estricta",
-            "XSD: gran consumo de recursos",
-            "XSD: PSVI → jerarquía de objetos OOP",
-            "RELAX NG: valida elementos en cualquier orden",
-            "RELAX NG: estándar ISO DSDL parte 2"
           ]
         }
       ]
     }
   ],
   "glossary": [
-    { "term": "Lenguaje de marcas", "def": "Forma de codificar un documento que, junto con el texto, incorpora etiquetas o marcas con información adicional sobre la estructura del texto o su presentación." },
     { "term": "GML", "def": "Generalized Markup Language. Propuesto por IBM; antecesor directo de SGML." },
     { "term": "SGML", "def": "Standard Generalized Markup Language. Estándar ISO 8879 (1986), descendiente de GML (IBM). Surgió para permitir compartir información entre sistemas informáticos." },
     { "term": "HTML", "def": "Hyper-text Markup Language. Creado en el CERN a finales de los 80, basado en principios de SGML, para compartir información en redes de computadores." },
@@ -243,7 +235,7 @@
     { "term": "DTD", "def": "Definición de Tipo de Documento. Gramática nativa de XML/SGML, con sintaxis no-XML. Es el formato de esquema más antiguo y sencillo para validar documentos XML." },
     { "term": "XSD", "def": "XML Schema Definition. Evolución de la DTD con sintaxis XML y mayor potencia expresiva. Produce PSVI tras la validación." },
     { "term": "RELAX NG", "def": "Lenguaje de esquema basado en la gramática, más simple e intuitivo que XSD. Estándar ISO (DSDL parte 2)." },
-    { "term": "ISO", "def": "International Organization for Standardization. Fundada el 23 de febrero de 1947. Promueve normas de todas las ramas industriales excepto la eléctrica y electrónica (IEC)." },
+    { "term": "ISO", "def": "International Organization for Standardization. Fundada el 23 de febrero de 1947. Promueve normas de todas las ramas industriales excepto la eléctrica y electrónica." },
     { "term": "W3C", "def": "World Wide Web Consortium. Fundado en 1994 por Tim Berners-Lee en el MIT. Tutela el crecimiento y organización de la web." },
     { "term": "Etiqueta (tag)", "def": "Texto entre < y >. Hay etiquetas de inicio (<nombre>) y de fin (</nombre>)." },
     { "term": "Elemento", "def": "Etiqueta de inicio + etiqueta de fin + todo el contenido entre ambas. Los elementos vacíos no llevan etiqueta de fin." },
@@ -290,10 +282,10 @@
       "explanation": "XML Schema (XSD) utiliza sintaxis XML, cosa que le permite especificar un extenso sistema de tipos de datos. La DTD hereda la sintaxis no-XML de SGML."
     },
     {
-      "question": "¿Qué organismo NO incluye el sector eléctrico y electrónico en su ámbito?",
-      "options": ["W3C", "ISO", "IEC"],
-      "correct": 1,
-      "explanation": "La ISO promueve normas para todas las ramas industriales a excepción de la eléctrica y la electrónica, que cubre la IEC."
+      "question": "¿Cuántas organizaciones nacionales miembro tiene la ISO según el temario?",
+      "options": ["163", "180", "195", "120"],
+      "correct": 0,
+      "explanation": "El PDF de LM U1 indica que la ISO cuenta con 163 países miembro."
     },
     {
       "question": "¿En qué fecha se unió el INRIA al W3C como huésped europeo?",
