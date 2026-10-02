@@ -727,7 +727,12 @@ function renderSummary() {
 function bindEvents() {
   const app = document.getElementById('app');
   app.onclick = handleClick;
-  app.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') handleClick(e); };
+  app.onkeydown = e => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    if (e.target.closest('button, a')) return; // nativos ya generan click — evita doble ejecución
+    e.preventDefault();                        // evita scroll con Espacio
+    handleClick(e);
+  };
   const searchEl = document.getElementById('glossary-search');
   if (searchEl) {
     searchEl.oninput = e => {
