@@ -1314,7 +1314,25 @@ $('btn-clear-history').addEventListener('click', clearHistory);
 // ═══════════════════════════════════════════════════════════════════
 // Init
 // ═══════════════════════════════════════════════════════════════════
-loadLanding();
+(async () => {
+  const p = new URLSearchParams(location.search);
+  const subj = p.get('subject'), unit = p.get('unit');
+  if (subj && unit) {
+    history.replaceState({}, '', location.pathname);
+    try {
+      const subjects = await fetchSubjects();
+      const obj = subjects.find(s => s.name === subj);
+      if (!obj) { loadLanding(); return; }
+      const file = `u${unit}.txt`;
+      const questions = await fetchUnitQuestions(obj.name, file);
+      startUnitExam(obj, file, questions);
+    } catch {
+      loadLanding();
+    }
+    return;
+  }
+  loadLanding();
+})();
 </script>
 </body>
 </html>
