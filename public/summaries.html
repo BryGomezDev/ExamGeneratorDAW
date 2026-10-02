@@ -234,7 +234,7 @@
 
 /* cards */
 .block-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
-.block-card { background: var(--surface-variant); border: none; border-radius: var(--radius); padding: 16px; }
+.block-card { background: var(--surface-variant); border: 1px solid var(--outline-variant); border-radius: var(--radius); padding: 16px; }
 .block-card .kicker { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; }
 .block-card .card-h { font-weight: 600; color: var(--on-surface); margin: 4px 0 6px; }
 .block-card .card-d { font-size: 0.88rem; color: var(--on-surface-variant); }
@@ -301,6 +301,7 @@
 .block-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
 .block-table th { background: var(--surface-container); color: var(--primary); font-family: var(--font-mono); font-size: 0.82rem; padding: 10px 14px; text-align: left; font-weight: 500; border-bottom: 1px solid var(--outline-variant); }
 .block-table td { padding: 10px 14px; color: var(--on-surface-variant); border-bottom: 1px solid var(--outline-variant); }
+.block-table td:first-child { color: var(--on-surface); font-weight: 600; }
 .block-table tr:last-child td { border-bottom: none; }
 .table-wrap { overflow-x: auto; border: 1px solid var(--outline-variant); border-radius: var(--radius); }
 
