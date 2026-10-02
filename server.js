@@ -176,6 +176,14 @@ function getSubjectFiles(subject) {
   return { units, hasPs };
 }
 
+function getSummaryUnits(subject) {
+  const dir = path.join(DATA_DIR, subject);
+  return fs.readdirSync(dir)
+    .filter(f => /^u\d+\.resumen\.json$/i.test(f))
+    .map(f => f.replace('.resumen.json', ''))
+    .sort((a, b) => parseInt(a.slice(1)) - parseInt(b.slice(1)));
+}
+
 function loadQuestions(subject, filename) {
   const filePath = path.join(DATA_DIR, subject, filename);
   console.log('[path]', path.resolve(filePath));
@@ -222,7 +230,7 @@ app.get('/api/subjects', (req, res) => {
     const subjects = getSubjects()
       .map(name => {
         const { units, hasPs } = getSubjectFiles(name);
-        return { name, units, hasPs };
+        return { name, units, hasPs, summaryUnits: getSummaryUnits(name) };
       })
       .filter(s => s.units.length > 0 || s.hasPs);
     res.json(subjects);
@@ -293,6 +301,21 @@ app.get('/api/final/:subject', (req, res) => {
   } catch (e) {
     console.error(`[/api/final] Error:`, e);
     res.status(500).json({ error: e.message });
+  }
+});
+
+app.get('/api/summary/:subject/:unit', (req, res) => {
+  const { subject, unit } = req.params;
+  if (!/^[\w.]+$/.test(subject) || !/^\d+$/.test(unit)) {
+    return res.status(400).json({ error: 'Invalid params' });
+  }
+  try {
+    const raw = fs.readFileSync(
+      path.join(DATA_DIR, subject, `u${unit}.resumen.json`), 'utf-8'
+    );
+    res.json(JSON.parse(raw));
+  } catch {
+    res.status(404).json({ error: 'Summary not found' });
   }
 });
 
