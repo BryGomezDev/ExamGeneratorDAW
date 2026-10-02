@@ -76,7 +76,7 @@ Solo tokens, reset y foco de teclado. Ningún componente ni clase de layout. ~50
   --accent-line:  #423a6a;
 
   /* Error */
-  --error:        #c96a8e;
+  --error:        #e08aa8;   /* 6.06:1 sobre --surface, 5.91:1 sobre --error-bg */
   --error-bg:     #3a1f2e;
 
   /* Acierto — ~7.5:1 sobre --surface (WCAG AA) */
@@ -104,7 +104,8 @@ a:hover { color: var(--accent); }
 | `--text-muted #9397ab` | `--bg` | ~5.2:1 | AA ✓ |
 | `--accent-light #b5abfc` | `--bg` | ~7.1:1 | AAA ✓ |
 | `--success #4ade80` | `--surface` | ~7.5:1 | AAA ✓ |
-| `--error #c96a8e` | `--surface` | ~4.6:1 | AA ✓ |
+| `--error #e08aa8` | `--surface` | ~6.1:1 | AA ✓ |
+| `--error #e08aa8` | `--error-bg` | ~5.9:1 | AA ✓ |
 | `--text-subtle #75798c` | `--bg` | ~3.8:1 | ⚠ solo decorativo |
 
 ### Uso de colores en estados de test y quiz
@@ -138,21 +139,32 @@ Sustituir la grid de asignaturas por dos tarjetas grandes:
 "Empezar" → screen de selección de asignatura (flujo actual).  
 "Explorar" → `summaries.html`.
 
-### 5b. Deep-link init (~12 líneas al inicio del `<script>`)
+### 5b. Deep-link init (al inicio del `<script>`)
+
+`startUnitExam(subjectObj, file, questions)` espera el objeto asignatura completo y las preguntas ya cargadas. El deep-link debe resolver ambos antes de llamarla:
 
 ```js
 (function () {
   const p = new URLSearchParams(location.search);
   const subj = p.get('subject'), unit = p.get('unit');
-  if (subj && unit) {
-    history.replaceState({}, '', location.pathname);
-    document.addEventListener('DOMContentLoaded', () =>
-      startUnitExam(subj, `u${unit}.txt`));
-  }
+  if (!subj || !unit) return;
+  history.replaceState({}, '', location.pathname);
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      const subjects = await fetchSubjects();          // ya existente
+      const obj = subjects.find(s => s.name === subj);
+      if (!obj) return loadHome();
+      const file = `u${unit}.txt`;
+      const questions = await fetchUnitQuestions(obj.name, file); // ya existente
+      startUnitExam(obj, file, questions);
+    } catch {
+      loadHome();
+    }
+  });
 })();
 ```
 
-`startUnitExam(subject, file)` es la función existente que hace fetch a `/api/questions/:subject/:file` y lanza el examen en modo 1. Si no existe con ese nombre, se renombra al exponer.
+Si `fetchSubjects()` o `fetchUnitQuestions()` fallan, o el subject no existe, cae silenciosamente a `loadHome()`.
 
 ### 5c. Restyle (sin cambios funcionales)
 
@@ -300,7 +312,14 @@ const state = {
 };
 ```
 
-### 8b. Ciclo render
+### 8b. Ciclo render y actualizaciones parciales
+
+`render()` reemplaza `#app` completo solo en cambios de screen (subjects → units → summary). Las interacciones dentro del viewer **no re-renderizan `#app`**:
+
+- **Acordeón / timeline:** `toggle-open` añade/quita la clase `is-open` sobre el elemento existente. El contenido oculto vive en el DOM desde el render inicial con `hidden`; el toggle cambia `hidden` y rota el icono. La transición CSS funciona porque el elemento no se destruye.
+- **Flipcards:** `flip` añade/quita la clase `is-flipped` sobre `.flipcard-inner` existente. `transform: rotateY(180deg)` está en CSS; JS solo togglea la clase.
+- **Buscador del glosario:** `search-input` actualiza `state.search` y re-renderiza **solo** `#glossary-list` (`document.getElementById('glossary-list').innerHTML = renderGlossaryItems()`), dejando el `<input>` intacto para no perder el foco ni el cursor.
+- **Quiz:** selección de respuesta y submit sí re-renderizan el bloque quiz completo (estado cambia visualmente en todos los ítems).
 
 ```js
 function render() {
@@ -312,7 +331,24 @@ function render() {
 }
 ```
 
-`bindEvents()` usa event delegation sobre `#app` — un único listener `click`/`input` que despacha por `data-action`. Sin `onclick="..."` en HTML generado.
+`bindEvents()` usa event delegation sobre `#app` — un único listener `click`/`input` que despacha por `data-action` y `data-key`. Sin `onclick="..."` en HTML generado.
+
+### 8b2. Seguridad: función `esc()`
+
+Todo texto proveniente del JSON se pasa por `esc()` antes de insertarse en `innerHTML`:
+
+```js
+function esc(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+```
+
+**Alcance obligatorio:** `block.content`, `item.title`, `item.desc`, `item.def`, `item.detail`, `item.term`, celdas de tabla, chips, el contenido de bloques `code` (que ya va dentro de `<pre><code>` pero igualmente se escapa). No hay excepción: si un campo va a `innerHTML`, pasa por `esc()`.
 
 ### 8c. Layout del viewer (`renderSummary`)
 
@@ -379,10 +415,12 @@ Footer:
 | prog | U0 | PDF principal (descartar duplicado `(1)` si idéntico) |
 | prog | U1 | PDF principal + PDF `RESUMEN` + `U1 Diagrama de flujo.pdf` (comparar duplicados `(1)`) |
 | prog | U2 | PDF principal + PDF `RESUMEN` |
-| ip | U1 | `U1 Living in the Present.pdf` + `Summary U1….pdf` + `Present Simple.pdf` + `U1 Adverbs of frequency.pdf` + `Verb To Be….pdf` + `Verb Have got….pdf` + `U1 RESUMEN Present Simple….pdf` |
+| ip | U1 | `U1 Living in the Present.pdf` + `Summary U1….pdf` + `Present Simple.pdf` + `U1 Adverbs of frequency.pdf` + `Verb To Be….pdf` + `Verb Have got….pdf` + `U1 RESUMEN Present Simple….pdf` + `U1 Vocabulary Living in the Present.pdf` |
 | ip | U2 | `U2 What do you like.pdf` + `Summary U2….pdf` + gramáticas U2 (`Like and dislike verbs`, `Prepositions of time`, `Pronouns and Possessive forms`, `There is and there are`, `Connectors`, `WH-Question`, `U2 Prepositions of time.pdf`, `U2 Vocabulary….pdf`) |
 | ipe | U1 | `U1 Economía y administración nociones básicas.pdf` + `U1 Síntesis….pdf` + `U1 DIAPOSITIVAS….pdf` + `Infografía - U1 Personas jurídicas.pdf` |
 | ipe | U2 | `U2 El sistema fiscal.pdf` + `U2 Síntesis….pdf` + `U2 DIAPOSITIVAS….pdf` + `Resumen_IRPF. Preguntas más comunes.pdf` |
+
+**Duplicados `(1)` en prog:** afectan a U1 y U2 (no a U0). Los ficheros `(1)` tienen tamaño distinto al original, por lo que pueden contener contenido diferente. El agente debe **leer ambos** y fusionar lo que aporte cada uno, anotando en el informe si hay contradicción entre versiones.
 
 **Ignorados:** Temporalización PDFs, `(práctica).pdf` lm/U0, `Grammar exercises Answer key`, `How to write an essay…docx`, `.docx` de resúmenes, `pseint-w64-*`, `MSTeamsSetup.exe`.
 
@@ -417,15 +455,19 @@ Agentes en paralelo (uno por asignatura) generan los 9 JSONs restantes:
 - `agente-ip` → `u1`, `u2`
 - `agente-ipe` → `u1`, `u2`
 
-### Fase 4 — Revisión y despliegue
-**Commit:** `fix: revisión accesibilidad, docs y despliegue`
+### Fase 4 — Revisión y preparación de despliegue
+**Commit:** `fix: revisión accesibilidad y docs`
 
 - Accessibility Auditor: contraste WCAG + foco teclado
 - API Tester: endpoints summary + coherencia
 - Code Reviewer: over-engineering check
 - Actualizar `CLAUDE.md` + `README.md`
-- Verificar config Vercel (git remote + `.vercel/`) y desplegar
+- Verificar config Vercel (git remote + `.vercel/`)
 - Informe final: unidades generadas, fuentes, notas ⚠, huecos
+
+**→ PARAR. NO hacer push. Avisar al usuario para que pase la auditoría externa antes del despliegue.**
+
+El push y el despliegue a Vercel se ejecutan solo con aprobación explícita tras la auditoría.
 
 ---
 
@@ -433,10 +475,10 @@ Agentes en paralelo (uno por asignatura) generan los 9 JSONs restantes:
 
 - [ ] `npm run dev` arranca sin errores tras cada fase
 - [ ] Todos los modos de test (por unidad, conjunto, simulacro, histórico) funcionan igual
-- [ ] `summaries.html` renderiza los 10 tipos de bloque sin errores de consola
+- [ ] `summaries.html` renderiza los 8 tipos de bloque sin errores de consola
 - [ ] Quiz muestra ✓/✗ por pregunta con explicación; verde/rojo distintos del morado de selección
 - [ ] "Hacer el test" desde quiz lanza el examen directamente (modo 1, unidad correcta)
 - [ ] Unidad 0 se muestra como "Unidad 0" sin caso especial en el código
 - [ ] Contraste WCAG AA en todos los textos informativos
 - [ ] Foco de teclado visible en todos los elementos interactivos
-- [ ] Vercel desplegado y accesible en `exam-generator-daw.vercel.app`
+- [ ] Vercel desplegado y accesible en `exam-generator-daw.vercel.app` *(tras auditoría externa y aprobación explícita)*
