@@ -198,7 +198,7 @@
   .exam-counter { font-size: 0.88rem; color: var(--text-muted); font-weight: 500; }
   .score-badge {
     background: var(--primary);
-    color: #fff;
+    color: var(--bg);
     border-radius: 20px;
     padding: 4px 14px;
     font-size: 0.85rem;
@@ -269,7 +269,6 @@
     border-radius: 8px;
     border: 1.5px solid var(--border);
     background: var(--surface);
-    border-color: var(--accent);
     font-size: 0.88rem;
     line-height: 1.7;
     color: var(--text-body);
@@ -586,7 +585,7 @@
     <div class="question-card">
       <div class="question-text" id="question-text"></div>
       <div class="options-list" id="options-list"></div>
-      <div class="feedback-box" id="feedback-box"></div>
+      <div class="feedback-box" id="feedback-box" aria-live="polite"></div>
     </div>
     <div class="exam-actions">
       <button class="btn btn-blank" id="btn-blank">En blanco</button>
@@ -809,12 +808,15 @@ async function loadHome() {
     state.subjects.forEach(subj => {
       const card = document.createElement('div');
       card.className = 'card';
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
       card.innerHTML = `
         <div class="card-icon">${subjectIcon(subj.name)}</div>
         <div class="card-title">${subjectName(subj.name)}</div>
         <div class="card-meta">${subj.units.length} unidad${subj.units.length !== 1 ? 'es' : ''}${subj.hasPs ? ' · Prueba semestral' : ''}</div>
       `;
       card.addEventListener('click', () => loadModeScreen(subj));
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); } });
       grid.appendChild(card);
     });
   } catch (e) {
@@ -852,32 +854,44 @@ function loadModeScreen(subj) {
 
   const m1 = document.createElement('div');
   m1.className = 'mode-card';
+  m1.setAttribute('role', 'button');
+  m1.setAttribute('tabindex', '0');
   m1.innerHTML = `
     <div class="mode-icon">📖</div>
     <div class="mode-title">Examen por unidad</div>
     <div class="mode-desc">Estudia una unidad concreta con todas sus preguntas en orden aleatorio.</div>
   `;
   m1.addEventListener('click', () => showUnitSelector(subj));
+  m1.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); m1.click(); } });
   modeGrid.appendChild(m1);
 
   const m2 = document.createElement('div');
   m2.className = 'mode-card';
+  m2.setAttribute('role', 'button');
+  m2.setAttribute('tabindex', '0');
   m2.innerHTML = `
     <div class="mode-icon">🔀</div>
     <div class="mode-title">Examen conjunto</div>
     <div class="mode-desc">Mezcla preguntas de todas las unidades disponibles de forma aleatoria.</div>
   `;
   m2.addEventListener('click', () => startMixedExam(subj));
+  m2.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); m2.click(); } });
   modeGrid.appendChild(m2);
 
   const m3 = document.createElement('div');
   m3.className = `mode-card${subj.hasPs ? '' : ' disabled'}`;
+  m3.setAttribute('role', 'button');
+  m3.setAttribute('tabindex', subj.hasPs ? '0' : '-1');
+  m3.setAttribute('aria-disabled', subj.hasPs ? 'false' : 'true');
   m3.innerHTML = `
     <div class="mode-icon">🏆</div>
     <div class="mode-title">Simulacro final</div>
     <div class="mode-desc">40 preguntas: 25 de la prueba semestral + 15 de unidades.${subj.hasPs ? '' : ' <em>(Requiere ps.txt)</em>'}</div>
   `;
-  if (subj.hasPs) m3.addEventListener('click', () => startFinalExam(subj));
+  if (subj.hasPs) {
+    m3.addEventListener('click', () => startFinalExam(subj));
+    m3.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); m3.click(); } });
+  }
   modeGrid.appendChild(m3);
 }
 
@@ -898,12 +912,15 @@ function showUnitSelector(subj) {
       const count = unitResults[i].length;
       const card = document.createElement('div');
       card.className = 'unit-card';
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
       card.innerHTML = `
         <div class="unit-num">U${num}</div>
         <div class="unit-label">Unidad ${num}</div>
         <div class="unit-count">${count} preguntas</div>
       `;
       card.addEventListener('click', () => startUnitExam(subj, u, unitResults[i]));
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); } });
       grid.appendChild(card);
     });
 
@@ -911,12 +928,15 @@ function showUnitSelector(subj) {
     if (subj.hasPs && psResults) {
       const psCard = document.createElement('div');
       psCard.className = 'unit-card unit-ps';
+      psCard.setAttribute('role', 'button');
+      psCard.setAttribute('tabindex', '0');
       psCard.innerHTML = `
         <div class="unit-num">★</div>
         <div class="unit-label">Prueba Semestral</div>
         <div class="unit-count">${psResults.length} preguntas</div>
       `;
       psCard.addEventListener('click', () => startUnitExam(subj, 'ps.txt', psResults));
+      psCard.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); psCard.click(); } });
       grid.appendChild(psCard);
     }
   }).catch(e => {
@@ -944,7 +964,7 @@ async function startMixedExam(subj) {
   state.currentMode = 'mixed';
   state.currentUnit = null;
   setBreadcrumb(
-    { label: 'Inicio', onClick: loadHome },
+    { label: 'Inicio', onClick: loadLanding },
     { label: subjectName(subj.name), onClick: () => loadModeScreen(subj) },
     { label: 'Examen conjunto' }
   );
@@ -962,7 +982,7 @@ async function startFinalExam(subj) {
   state.currentMode = 'final';
   state.currentUnit = null;
   setBreadcrumb(
-    { label: 'Inicio', onClick: loadHome },
+    { label: 'Inicio', onClick: loadLanding },
     { label: subjectName(subj.name), onClick: () => loadModeScreen(subj) },
     { label: 'Simulacro final' }
   );
@@ -995,7 +1015,7 @@ function renderQuestion() {
   const q = state.questions[state.qi];
   const total = state.questions.length;
 
-  $('progress-bar').style.width = (state.qi / total * 100) + '%';
+  $('progress-bar').style.width = ((state.qi + 1) / total * 100) + '%';
   $('exam-counter').textContent = `Pregunta ${state.qi + 1} de ${total}`;
   updateScoreBadge();
   $('question-text').textContent = q.question;
@@ -1082,8 +1102,8 @@ function showFeedback(q, isCorrect) {
   const prefix = isCorrect === null ? '⬜ <strong>En blanco.</strong>'
     : isCorrect ? '✅ <strong>¡Correcto!</strong>'
     : '❌ <strong>Incorrecto.</strong>';
-  const explanation = q.explanation || 'Explicación no disponible.';
-  fb.innerHTML = `${prefix} <strong>${correctText}</strong><br><br>${explanation}`;
+  const explPart = q.explanation ? `<br><br>${q.explanation}` : '';
+  fb.innerHTML = `${prefix} <strong>${correctText}</strong>${explPart}`;
 }
 
 function nextQuestion() {
@@ -1129,7 +1149,7 @@ function showResults() {
     scoringEl.className = 'scoring-badge no-penalty';
   }
 
-  setBreadcrumb({ label: 'Inicio', onClick: loadHome }, { label: 'Resultados' });
+  setBreadcrumb({ label: 'Inicio', onClick: loadLanding }, { label: 'Resultados' });
 
   saveToHistory(nota, correct, wrong, blank);
 }
@@ -1140,7 +1160,7 @@ function showResults() {
 function showReview() {
   showScreen('review-screen');
   setBreadcrumb(
-    { label: 'Inicio', onClick: loadHome },
+    { label: 'Inicio', onClick: loadLanding },
     { label: 'Resultados', onClick: showResults },
     { label: 'Repaso' }
   );
@@ -1219,7 +1239,7 @@ function saveToHistory(nota, correct, wrong, blank) {
 
 function loadHistoryScreen() {
   showScreen('history-screen');
-  setBreadcrumb({ label: 'Inicio', onClick: loadHome }, { label: 'Histórico' });
+  setBreadcrumb({ label: 'Inicio', onClick: loadLanding }, { label: 'Histórico' });
 
   const history = getHistory();
   const statsEl = $('history-stats');
