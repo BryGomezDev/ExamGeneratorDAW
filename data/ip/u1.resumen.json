@@ -1,0 +1,737 @@
+{
+  "subject": "ip",
+  "unit": 1,
+  "title": "Living in the Present",
+  "intro": "Esta unidad cubre los tiempos verbales del presente en inglés: Present Simple y Present Continuous, así como los verbos esenciales To Be y Have/Have Got, y los adverbios de frecuencia.",
+  "objectives": [
+    "Distinguir y usar correctamente el Present Simple y el Present Continuous",
+    "Conjugar el verbo To Be en presente (afirmativa, negativa e interrogativa)",
+    "Usar Have y Have Got para expresar posesión",
+    "Aplicar los adverbios de frecuencia con la posición correcta en la oración"
+  ],
+  "sections": [
+    {
+      "id": "verb-to-be",
+      "short": "Verb To Be",
+      "label": "Verb To Be — Presente",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El verbo **To Be** (ser/estar) es el verbo más fundamental del inglés. En presente tiene formas propias para cada persona y no usa auxiliar en afirmativa. Se contrae en el habla informal."
+        },
+        {
+          "type": "table",
+          "caption": "Verb To Be — Present Tense",
+          "headers": [
+            "Pronombre",
+            "Afirmativa",
+            "Contracción",
+            "Negativa",
+            "Interrogativa"
+          ],
+          "rows": [
+            [
+              "I",
+              "I am",
+              "I'm",
+              "I am not / I'm not",
+              "Am I?"
+            ],
+            [
+              "You",
+              "You are",
+              "You're",
+              "You are not / You aren't",
+              "Are you?"
+            ],
+            [
+              "He",
+              "He is",
+              "He's",
+              "He is not / He isn't",
+              "Is he?"
+            ],
+            [
+              "She",
+              "She is",
+              "She's",
+              "She is not / She isn't",
+              "Is she?"
+            ],
+            [
+              "It",
+              "It is",
+              "It's",
+              "It is not / It isn't",
+              "Is it?"
+            ],
+            [
+              "We",
+              "We are",
+              "We're",
+              "We are not / We aren't",
+              "Are we?"
+            ],
+            [
+              "You",
+              "You are",
+              "You're",
+              "You are not / You aren't",
+              "Are you?"
+            ],
+            [
+              "They",
+              "They are",
+              "They're",
+              "They are not / They aren't",
+              "Are they?"
+            ]
+          ]
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Afirmativa",
+              "desc": "Sujeto + am/is/are",
+              "example": "She is a doctor. They are happy."
+            },
+            {
+              "kicker": "Negativa",
+              "desc": "Sujeto + am/is/are + not",
+              "example": "He is not tired. We aren't late."
+            },
+            {
+              "kicker": "Interrogativa",
+              "desc": "Am/Is/Are + sujeto?",
+              "example": "Is she at home? Are they your friends?"
+            }
+          ]
+        }
+      ],
+      "_sources": [
+        {
+          "file": "Verb To Be in the present tense.pdf",
+          "pages": "2"
+        }
+      ]
+    },
+    {
+      "id": "have-have-got",
+      "short": "Have / Have Got",
+      "label": "Have / Have Got",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "**Have** y **Have Got** se usan para expresar posesión. Son intercambiables en el habla cotidiana, aunque **Have Got** es más informal y frecuente en inglés británico. En la forma interrogativa difieren: Have Got invierte el orden (Have you got...?), mientras que Have usa el auxiliar Do (Do you have...?)."
+        },
+        {
+          "type": "table",
+          "caption": "Have Got — Presente",
+          "headers": [
+            "Forma",
+            "Afirmativa",
+            "Negativa",
+            "Interrogativa"
+          ],
+          "rows": [
+            [
+              "I / You / We / They",
+              "have got",
+              "haven't got",
+              "Have … got?"
+            ],
+            [
+              "He / She / It",
+              "has got",
+              "hasn't got",
+              "Has … got?"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Have — Presente",
+          "headers": [
+            "Forma",
+            "Afirmativa",
+            "Negativa",
+            "Interrogativa"
+          ],
+          "rows": [
+            [
+              "I / You / We / They",
+              "have",
+              "don't have",
+              "Do … have?"
+            ],
+            [
+              "He / She / It",
+              "has",
+              "doesn't have",
+              "Does … have?"
+            ]
+          ]
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Posesión",
+              "desc": "Indica que algo pertenece al sujeto",
+              "example": "I have got a new laptop. She has a red car."
+            },
+            {
+              "kicker": "Descripción física",
+              "desc": "Describe características de personas o cosas",
+              "example": "He has got blue eyes. The house has a big garden."
+            },
+            {
+              "kicker": "Relaciones",
+              "desc": "Indica vínculos familiares o sociales",
+              "example": "They have got two children. Do you have any brothers?"
+            }
+          ]
+        }
+      ],
+      "_sources": [
+        {
+          "file": "Verb Have got and Have.pdf",
+          "pages": "2-3"
+        }
+      ]
+    },
+    {
+      "id": "present-simple",
+      "short": "Present Simple",
+      "label": "Present Simple",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El **Present Simple** se usa para hablar de rutinas, hechos generales, hábitos y verdades universales. La tercera persona del singular (he/she/it) añade **-s** o **-es** al verbo. El auxiliar es **do/does**."
+        },
+        {
+          "type": "table",
+          "caption": "Present Simple — Paradigma",
+          "headers": [
+            "Forma",
+            "Afirmativa",
+            "Negativa",
+            "Interrogativa"
+          ],
+          "rows": [
+            [
+              "I / You / We / They",
+              "work",
+              "don't work",
+              "Do … work?"
+            ],
+            [
+              "He / She / It",
+              "works",
+              "doesn't work",
+              "Does … work?"
+            ]
+          ]
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Rutinas y hábitos",
+              "desc": "Acciones que se repiten con regularidad",
+              "example": "I go to the gym every Monday. She checks her emails in the morning."
+            },
+            {
+              "kicker": "Hechos y verdades generales",
+              "desc": "Cosas que son siempre verdaderas",
+              "example": "Water boils at 100°C. The sun rises in the east."
+            },
+            {
+              "kicker": "Estados permanentes",
+              "desc": "Situaciones que no cambian en el corto plazo",
+              "example": "He works at a hospital. They live in Madrid."
+            },
+            {
+              "kicker": "Horarios y programas",
+              "desc": "Eventos fijados oficialmente",
+              "example": "The train leaves at 8:00. The shop opens at 9."
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "title": "Reglas de ortografía — 3ª persona singular",
+          "items": [
+            {
+              "heading": "Regla general: añadir -s",
+              "body": "La mayoría de verbos simplemente añaden -s.\nEjemplos: work → works, play → plays, read → reads"
+            },
+            {
+              "heading": "Verbos acabados en -s, -sh, -ch, -x, -o: añadir -es",
+              "body": "Ejemplos: go → goes, do → does, watch → watches, fix → fixes, wash → washes"
+            },
+            {
+              "heading": "Verbos acabados en consonante + y: cambiar -y por -ies",
+              "body": "Ejemplos: study → studies, fly → flies, try → tries\nExcepción: si va precedida de vocal → stays, plays"
+            }
+          ]
+        }
+      ],
+      "_sources": [
+        {
+          "file": "Present Simple.pdf",
+          "pages": "2-4"
+        },
+        {
+          "file": "U1 RESUMEN Present Simple and Present Continuous.pdf",
+          "pages": "2"
+        }
+      ]
+    },
+    {
+      "id": "present-continuous",
+      "short": "Present Continuous",
+      "label": "Present Continuous",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El **Present Continuous** se forma con **To Be (presente) + verbo-ing**. Se usa para acciones que están ocurriendo en este momento o para planes futuros ya acordados."
+        },
+        {
+          "type": "table",
+          "caption": "Present Continuous — Paradigma",
+          "headers": [
+            "Forma",
+            "Afirmativa",
+            "Negativa",
+            "Interrogativa"
+          ],
+          "rows": [
+            [
+              "I",
+              "am working",
+              "am not working",
+              "Am I working?"
+            ],
+            [
+              "You / We / They",
+              "are working",
+              "are not working / aren't working",
+              "Are you/we/they working?"
+            ],
+            [
+              "He / She / It",
+              "is working",
+              "is not working / isn't working",
+              "Is he/she/it working?"
+            ]
+          ]
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Acción en progreso ahora",
+              "desc": "Lo que ocurre en este preciso momento",
+              "example": "She is talking on the phone right now."
+            },
+            {
+              "kicker": "Situación temporal",
+              "desc": "Una situación que dura un período limitado",
+              "example": "I am staying at a hotel this week."
+            },
+            {
+              "kicker": "Futuro acordado",
+              "desc": "Planes o citas confirmadas para el futuro próximo",
+              "example": "We are meeting the client tomorrow at 10."
+            },
+            {
+              "kicker": "Cambio o tendencia",
+              "desc": "Algo que está cambiando de forma gradual",
+              "example": "Prices are rising every month."
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "title": "Reglas de ortografía — forma -ing",
+          "items": [
+            {
+              "heading": "Regla general: añadir -ing",
+              "body": "Ejemplos: work → working, read → reading, play → playing"
+            },
+            {
+              "heading": "Verbos acabados en -e muda: eliminar la -e y añadir -ing",
+              "body": "Ejemplos: make → making, write → writing, dance → dancing"
+            },
+            {
+              "heading": "Verbos cortos con CVC (consonante-vocal-consonante): doblar la consonante final",
+              "body": "Ejemplos: run → running, sit → sitting, swim → swimming\nExcepción: no se dobla -w, -x, -y → row → rowing"
+            },
+            {
+              "heading": "Verbos acabados en -ie: cambiar -ie por -y",
+              "body": "Ejemplos: lie → lying, die → dying, tie → tying"
+            }
+          ]
+        }
+      ],
+      "_sources": [
+        {
+          "file": "U1 RESUMEN Present Simple and Present Continuous.pdf",
+          "pages": "3"
+        },
+        {
+          "file": "U1 Living in the Present.pdf",
+          "pages": "3-4"
+        }
+      ]
+    },
+    {
+      "id": "ps-vs-pc",
+      "short": "Simple vs Continuous",
+      "label": "Present Simple vs Present Continuous",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La diferencia clave: el **Present Simple** describe lo habitual o permanente; el **Present Continuous** describe lo que ocurre ahora o es temporal. Algunos verbos (**stative verbs**) no se usan en Continuous: like, love, hate, know, believe, want, need, understand."
+        },
+        {
+          "type": "table",
+          "caption": "Señales de tiempo (time markers)",
+          "headers": [
+            "Present Simple",
+            "Present Continuous"
+          ],
+          "rows": [
+            [
+              "always, usually, often, sometimes, rarely, never",
+              "now, right now, at the moment, currently"
+            ],
+            [
+              "every day / week / month",
+              "today, this week, this month"
+            ],
+            [
+              "on Mondays, in the morning",
+              "look! listen!"
+            ]
+          ]
+        }
+      ],
+      "_sources": [
+        {
+          "file": "Summary U1 Living in the present.pdf",
+          "pages": "2"
+        },
+        {
+          "file": "U1 RESUMEN Present Simple and Present Continuous.pdf",
+          "pages": "4"
+        }
+      ]
+    },
+    {
+      "id": "adverbs-frequency",
+      "short": "Adverbios de Frecuencia",
+      "label": "Adverbios de Frecuencia",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los **adverbios de frecuencia** indican con qué regularidad sucede una acción. Se colocan **antes del verbo principal** pero **después del verbo To Be o auxiliares**."
+        },
+        {
+          "type": "chips",
+          "label": "De mayor a menor frecuencia",
+          "items": [
+            "always (100%)",
+            "usually (80%)",
+            "often (60%)",
+            "sometimes (40%)",
+            "rarely / seldom (20%)",
+            "never (0%)"
+          ]
+        },
+        {
+          "type": "accordion",
+          "title": "Posición en la oración",
+          "items": [
+            {
+              "heading": "Antes del verbo principal",
+              "body": "I always have coffee in the morning.\nShe never eats meat."
+            },
+            {
+              "heading": "Después de To Be",
+              "body": "He is always late.\nThey are usually at the office by 9."
+            },
+            {
+              "heading": "Al principio o final de la oración (énfasis)",
+              "body": "Sometimes I work from home. (inicio)\nI work from home sometimes. (final)"
+            }
+          ]
+        }
+      ],
+      "_sources": [
+        {
+          "file": "U1 Adverbs of frequency.pdf",
+          "pages": "2"
+        }
+      ]
+    },
+    {
+      "id": "vocabulary-u1",
+      "short": "Vocabulario U1",
+      "label": "Vocabulario — Unit 1",
+      "blocks": [
+        {
+          "type": "flipcards",
+          "items": [
+            {
+              "term": "to commute",
+              "def": "desplazarse al trabajo — She commutes to the office by train every day."
+            },
+            {
+              "term": "schedule",
+              "def": "horario / agenda — His schedule is very busy this week."
+            },
+            {
+              "term": "routine",
+              "def": "rutina — My morning routine starts at 7 a.m."
+            },
+            {
+              "term": "freelancer",
+              "def": "trabajador autónomo — She works as a freelancer from home."
+            },
+            {
+              "term": "colleague",
+              "def": "compañero de trabajo — My colleagues are very helpful."
+            },
+            {
+              "term": "deadline",
+              "def": "fecha límite / plazo — We have a deadline on Friday."
+            },
+            {
+              "term": "remote work",
+              "def": "trabajo remoto / teletrabajo — Remote work is becoming very common."
+            },
+            {
+              "term": "to manage",
+              "def": "gestionar / administrar — He manages a team of ten people."
+            },
+            {
+              "term": "shift",
+              "def": "turno (de trabajo) — She works the night shift at the hospital."
+            },
+            {
+              "term": "to attend",
+              "def": "asistir — They attend meetings every Monday morning."
+            },
+            {
+              "term": "overtime",
+              "def": "horas extra — He often does overtime to finish the project."
+            },
+            {
+              "term": "to deal with",
+              "def": "tratar con / gestionar — She deals with customer complaints daily."
+            },
+            {
+              "term": "workshop",
+              "def": "taller / curso práctico — We attended a digital marketing workshop."
+            },
+            {
+              "term": "headquarters",
+              "def": "sede central — The company's headquarters is in London."
+            },
+            {
+              "term": "to hire",
+              "def": "contratar — They are hiring new developers this month."
+            },
+            {
+              "term": "promotion",
+              "def": "ascenso — He got a promotion last month."
+            },
+            {
+              "term": "task",
+              "def": "tarea — My main task is to coordinate the team."
+            },
+            {
+              "term": "to resign",
+              "def": "dimitir / renunciar — She resigned from her position yesterday."
+            },
+            {
+              "term": "salary",
+              "def": "salario — The salary is paid monthly."
+            },
+            {
+              "term": "department",
+              "def": "departamento — She works in the IT department."
+            }
+          ]
+        }
+      ],
+      "_sources": [
+        {
+          "file": "U1 Vocabulary Living in the Present.pdf",
+          "pages": "2-4"
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Present Simple",
+      "def": "Tiempo verbal para rutinas, hechos generales y estados permanentes. Forma: sujeto + verbo base (+ -s en 3ª persona)."
+    },
+    {
+      "term": "Present Continuous",
+      "def": "Tiempo verbal para acciones en progreso ahora o planes futuros. Forma: To Be + verbo-ing."
+    },
+    {
+      "term": "To Be",
+      "def": "Verbo auxiliar y principal. Formas en presente: am (I), is (he/she/it), are (you/we/they)."
+    },
+    {
+      "term": "Have Got",
+      "def": "Expresión para indicar posesión. Equivalente a 'have' en uso informal. Ej.: I have got a car."
+    },
+    {
+      "term": "Stative verb",
+      "def": "Verbo que describe un estado (no una acción) y que normalmente no se usa en tiempos continuos. Ej.: know, like, want."
+    },
+    {
+      "term": "Adverbio de frecuencia",
+      "def": "Palabra que indica la regularidad de una acción: always, usually, often, sometimes, rarely, never."
+    },
+    {
+      "term": "Auxiliar",
+      "def": "Verbo de apoyo usado para formar negaciones e interrogaciones. Do/Does en Present Simple; To Be en Present Continuous."
+    },
+    {
+      "term": "Contracción",
+      "def": "Forma abreviada de dos palabras unidas por apóstrofo. Ej.: I am → I'm, he is → he's."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "¿Cuál es la forma correcta del Present Simple para 'she / study'?",
+      "options": [
+        "she study",
+        "she studies",
+        "she studys",
+        "she is study"
+      ],
+      "answer": 1,
+      "explanation": "Los verbos acabados en consonante + y cambian la -y por -ies en la 3ª persona del singular."
+    },
+    {
+      "q": "¿Qué oración usa correctamente el Present Continuous?",
+      "options": [
+        "She is work right now.",
+        "I am usually going to the gym.",
+        "They are having a meeting at the moment.",
+        "He is having a car."
+      ],
+      "answer": 2,
+      "explanation": "El Present Continuous se forma con To Be + verbo-ing. 'Have' en el sentido de posesión es un stative verb y no se usa en continuous."
+    },
+    {
+      "q": "¿Cuándo se usa 'at' como preposición de tiempo?",
+      "options": [
+        "Con meses y estaciones",
+        "Con días de la semana y fechas",
+        "Con horas concretas y momentos del día como midnight o Christmas",
+        "Con décadas y siglos"
+      ],
+      "answer": 2,
+      "explanation": "'At' se usa para momentos muy específicos: horas (at 3 o'clock), comidas (at lunchtime), festivos (at Christmas) y expresiones fijas (at night, at the moment)."
+    },
+    {
+      "q": "¿Dónde se coloca normalmente un adverbio de frecuencia?",
+      "options": [
+        "Siempre al principio de la oración",
+        "Siempre al final de la oración",
+        "Antes del verbo principal, pero después de To Be o auxiliares",
+        "Después del objeto directo"
+      ],
+      "answer": 2,
+      "explanation": "Los adverbios de frecuencia van antes del verbo principal (I always work late) pero después de To Be (She is always busy)."
+    },
+    {
+      "q": "¿Cuál es la negación correcta de 'She has got a dog'?",
+      "options": [
+        "She don't has got a dog.",
+        "She hasn't got a dog.",
+        "She doesn't has got a dog.",
+        "She not has got a dog."
+      ],
+      "answer": 1,
+      "explanation": "Con Have Got, la negación se forma con haven't/hasn't got, sin usar el auxiliar do/does."
+    },
+    {
+      "q": "¿Qué word es una señal típica del Present Continuous?",
+      "options": [
+        "always",
+        "every day",
+        "at the moment",
+        "usually"
+      ],
+      "answer": 2,
+      "explanation": "'At the moment' indica una acción que está sucediendo ahora, señal característica del Present Continuous."
+    },
+    {
+      "q": "¿Cuál de estos verbos es un 'stative verb' que NO se usa en Present Continuous?",
+      "options": [
+        "run",
+        "write",
+        "understand",
+        "work"
+      ],
+      "answer": 2,
+      "explanation": "'Understand' describe un estado mental, no una acción, por lo que no se usa en tiempos continuos. Correcto: I understand (no 'I am understanding')."
+    },
+    {
+      "q": "¿Cuál es la forma interrogativa correcta de To Be para 'they'?",
+      "options": [
+        "Do they are?",
+        "They are?",
+        "Are they?",
+        "Is they?"
+      ],
+      "answer": 2,
+      "explanation": "Con To Be, la interrogativa se forma invirtiendo el orden: Are + they...?"
+    }
+  ],
+  "_sources": [
+    {
+      "file": "U1 Living in the Present.pdf",
+      "pages": "1-8"
+    },
+    {
+      "file": "Summary U1 Living in the present.pdf",
+      "pages": "1-4"
+    },
+    {
+      "file": "U1 RESUMEN Present Simple and Present Continuous.pdf",
+      "pages": "1-5"
+    },
+    {
+      "file": "U1 Vocabulary Living in the Present.pdf",
+      "pages": "1-4"
+    },
+    {
+      "file": "Present Simple.pdf",
+      "pages": "1-5"
+    },
+    {
+      "file": "U1 Adverbs of frequency.pdf",
+      "pages": "1-3"
+    },
+    {
+      "file": "Verb Have got and Have.pdf",
+      "pages": "1-4"
+    },
+    {
+      "file": "Verb To Be in the present tense.pdf",
+      "pages": "1-3"
+    }
+  ]
+}

@@ -1,0 +1,698 @@
+{
+  "subject": "ip",
+  "unit": 2,
+  "title": "What Do You Like?",
+  "intro": "Esta unidad trabaja el vocabulario y la gramática necesarios para hablar sobre gustos y preferencias, la existencia de cosas, cómo ubicar eventos en el tiempo, los pronombres y las formas posesivas, y cómo formular preguntas en inglés.",
+  "objectives": [
+    "Expresar gustos y disgustos usando verbos seguidos de gerundio o infinitivo",
+    "Usar There is / There are para hablar sobre la existencia de personas o cosas",
+    "Aplicar correctamente las preposiciones de tiempo In, On y At",
+    "Distinguir y usar pronombres personales, de objeto y formas posesivas",
+    "Formar preguntas correctas con partículas WH-",
+    "Usar conectores para enlazar ideas de forma fluida y natural"
+  ],
+  "sections": [
+    {
+      "id": "like-dislike",
+      "short": "Gustos/Disgustos",
+      "label": "Verbos para expresar gustos y disgustos",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En inglés, los verbos que expresan gustos y preferencias van seguidos de un **gerundio (-ing)** o un **infinitivo (to + verbo)** según el verbo principal. Algunos admiten ambas formas sin cambio de significado; otros cambian de significado según la estructura."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Verbo + gerundio (-ing)",
+              "desc": "Verbos que expresan gusto, disfrute o aversión: enjoy, love, like, don't mind, dislike, hate, can't stand, avoid",
+              "example": "I enjoy swimming. She loves cooking. He can't stand waiting."
+            },
+            {
+              "kicker": "Verbo + infinitivo (to + verb)",
+              "desc": "Verbos que expresan deseo, intención o decisión: want, would like, hope, decide, plan, prefer (en comparaciones)",
+              "example": "I want to learn English. She would like to travel. They plan to study abroad."
+            },
+            {
+              "kicker": "Verbo + gerundio o infinitivo (sin cambio de significado)",
+              "desc": "like, love, hate, prefer pueden ir seguidos de -ing o to + infinitivo con significado prácticamente igual",
+              "example": "I like swimming. / I like to swim. She hates waking up early. / She hates to wake up early."
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "title": "Escala de gustos y preferencias",
+          "items": [
+            {
+              "heading": "Expresiones positivas (de mayor a menor intensidad)",
+              "body": "love → really like → like → enjoy → don't mind\n\nExample: \"I love playing football. I enjoy reading but I don't mind watching TV.\""
+            },
+            {
+              "heading": "Expresiones negativas (de menor a mayor intensidad)",
+              "body": "don't like → dislike → hate → can't stand\n\nExample: \"I don't like cold weather. I hate queuing. I can't stand loud noise.\""
+            }
+          ]
+        }
+      ],
+      "_sources": [
+        {
+          "file": "Like and dislike verbs.pdf",
+          "pages": "2-4"
+        }
+      ]
+    },
+    {
+      "id": "there-is-are",
+      "short": "There is / There are",
+      "label": "There is / There are",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Se usan **There is** y **There are** para indicar la existencia o presencia de algo o alguien. **There is** (singular) y **There are** (plural). Estas estructuras pueden aparecer en otros tiempos verbales: There was, There were, There will be."
+        },
+        {
+          "type": "table",
+          "caption": "There is / There are — Paradigma",
+          "headers": [
+            "",
+            "Afirmativa",
+            "Negativa",
+            "Interrogativa"
+          ],
+          "rows": [
+            [
+              "Singular",
+              "There is a book on the table.",
+              "There isn't a book on the table.",
+              "Is there a book on the table?"
+            ],
+            [
+              "Plural",
+              "There are some books on the table.",
+              "There aren't books on the table.",
+              "Are there books on the table?"
+            ]
+          ]
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "There is (singular)",
+              "desc": "Para hablar de una sola persona, cosa o lugar",
+              "example": "There is a new café on my street. Is there a problem? No, there isn't."
+            },
+            {
+              "kicker": "There are (plural)",
+              "desc": "Para hablar de más de una persona, cosa o lugar",
+              "example": "There are three meetings today. Are there any messages for me? Yes, there are."
+            },
+            {
+              "kicker": "Otros tiempos",
+              "desc": "La estructura se adapta a distintos tiempos verbales",
+              "example": "There was a student who didn't do the exam. There will be more students in the future."
+            }
+          ]
+        }
+      ],
+      "_sources": [
+        {
+          "file": "There is and there are.pdf",
+          "pages": "2-3"
+        }
+      ]
+    },
+    {
+      "id": "prepositions-time",
+      "short": "Preposiciones de Tiempo",
+      "label": "Preposiciones de Tiempo: In, On, At",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las preposiciones de tiempo **In**, **On** y **At** siguen una lógica de especificidad: IN es la más general, ON es más específica y AT es la más concreta. Como regla mnemotécnica: cuanto más específico el momento, más pequeña la preposición en el embudo."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "IN — General",
+              "desc": "Meses, estaciones, décadas, siglos, años, períodos largos, partes del día (morning/afternoon/evening)",
+              "example": "in June / in winter / in the 90s / in the 19th century / in 2021 / in the morning"
+            },
+            {
+              "kicker": "ON — Más específico",
+              "desc": "Días de la semana, fechas concretas, partes específicas de un día",
+              "example": "on Monday / on 16th April / on Tuesday mornings / on my birthday"
+            },
+            {
+              "kicker": "AT — Muy específico",
+              "desc": "Horas concretas, momentos de comidas, festivos, expresiones fijas",
+              "example": "at 8 o'clock / at lunchtime / at Christmas / at night / at the moment / at present"
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "title": "Excepciones y casos especiales",
+          "items": [
+            {
+              "heading": "Last y Next no necesitan preposición",
+              "body": "Las expresiones con last y next nunca llevan preposición ni artículo.\nEjemplo: I'll go next week. (NO: in the next week) / She called last Monday."
+            },
+            {
+              "heading": "At the weekend / On the weekend",
+              "body": "En inglés británico: at the weekend.\nEn inglés americano: on the weekend."
+            }
+          ]
+        }
+      ],
+      "_sources": [
+        {
+          "file": "Prepositions of time.pdf",
+          "pages": "2"
+        },
+        {
+          "file": "U2 Prepositions of time.pdf",
+          "pages": "1"
+        }
+      ]
+    },
+    {
+      "id": "pronouns-possessives",
+      "short": "Pronombres y Posesivos",
+      "label": "Pronombres y Formas Posesivas",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El inglés distingue cuatro categorías de pronombres y determinantes relacionados con la persona: **pronombres personales** (sujeto), **pronombres de objeto**, **adjetivos posesivos** y **pronombres posesivos**. Cada uno tiene una función sintáctica distinta."
+        },
+        {
+          "type": "table",
+          "caption": "Tabla completa de pronombres y posesivos",
+          "headers": [
+            "Pronombre personal",
+            "Pronombre de objeto",
+            "Adjetivo posesivo",
+            "Pronombre posesivo"
+          ],
+          "rows": [
+            [
+              "I (yo)",
+              "me (a mí)",
+              "my (mi/mis)",
+              "mine (mío/-a/-os/-as)"
+            ],
+            [
+              "You (tú)",
+              "you (a ti)",
+              "your (tu/tus)",
+              "yours (tuyo/-a/-os/-as)"
+            ],
+            [
+              "He (él)",
+              "him (a él)",
+              "his (su/sus de él)",
+              "his (suyo de él)"
+            ],
+            [
+              "She (ella)",
+              "her (a ella)",
+              "her (su/sus de ella)",
+              "hers (suyo de ella)"
+            ],
+            [
+              "It (ello)",
+              "it (a ello)",
+              "its (su/sus de ello)",
+              "its (suyo de ello)"
+            ],
+            [
+              "We (nosotros)",
+              "us (a nosotros)",
+              "our (nuestro/-a)",
+              "ours (nuestro/-a/-os/-as)"
+            ],
+            [
+              "You (vosotros)",
+              "you (a vosotros)",
+              "your (vuestro/-a)",
+              "yours (vuestro/-a/-os/-as)"
+            ],
+            [
+              "They (ellos)",
+              "them (a ellos)",
+              "their (su/sus de ellos)",
+              "theirs (suyo de ellos)"
+            ]
+          ]
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Pronombre personal (sujeto)",
+              "desc": "Va siempre antes del verbo. Es el sujeto de la acción.",
+              "example": "I send the emails. They work in this factory."
+            },
+            {
+              "kicker": "Pronombre de objeto",
+              "desc": "Va después del verbo. Recibe la acción.",
+              "example": "I send them the parcels. She invites me to the party."
+            },
+            {
+              "kicker": "Adjetivo posesivo",
+              "desc": "Indica posesión y siempre va seguido de un sustantivo.",
+              "example": "This is my car. She is his sister. Where are your friends?"
+            },
+            {
+              "kicker": "Pronombre posesivo",
+              "desc": "Indica posesión pero NUNCA va seguido de un sustantivo.",
+              "example": "A: This is my bag. B: No, it's mine. This house is theirs."
+            }
+          ]
+        }
+      ],
+      "_sources": [
+        {
+          "file": "Pronouns and Possessive forms.pdf",
+          "pages": "2-8"
+        }
+      ]
+    },
+    {
+      "id": "wh-questions",
+      "short": "WH-Questions",
+      "label": "Preguntas WH- (Question Words)",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las **partículas interrogativas** (WH-questions) se usan para pedir información específica, no para preguntas de sí/no. Se colocan al principio de la pregunta, seguidas del auxiliar y el sujeto."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "What — ¿qué?",
+              "desc": "Para preguntas generales con respuesta abierta y amplia",
+              "example": "What is your name? What do you have for lunch?"
+            },
+            {
+              "kicker": "Which — ¿cuál?",
+              "desc": "Para elegir entre opciones limitadas o conocidas",
+              "example": "Which is your favourite colour, red or pink?"
+            },
+            {
+              "kicker": "When — ¿cuándo?",
+              "desc": "Para saber el momento en que ocurre una acción",
+              "example": "When did you go? I went yesterday."
+            },
+            {
+              "kicker": "Where — ¿dónde?",
+              "desc": "Para saber el lugar en que ocurre una acción",
+              "example": "Where do you live? I live in Barcelona."
+            },
+            {
+              "kicker": "Who — ¿quién?",
+              "desc": "Para saber quién realiza o recibe la acción",
+              "example": "Who are you? I'm Mary. Who bought the tickets?"
+            },
+            {
+              "kicker": "Why — ¿por qué?",
+              "desc": "Para preguntar la razón o causa de una acción",
+              "example": "Why did you go? Because I wanted to see Mary."
+            },
+            {
+              "kicker": "How — ¿cómo?",
+              "desc": "Para preguntar el modo o la manera en que se realiza una acción",
+              "example": "How did you go? By bus."
+            },
+            {
+              "kicker": "How much / How many — ¿cuánto/-a?",
+              "desc": "How much para incontables; How many para contables",
+              "example": "How much money do you have? How many chairs are there?"
+            },
+            {
+              "kicker": "How often — ¿con qué frecuencia?",
+              "desc": "Para preguntar la regularidad de una acción",
+              "example": "How often do you visit your family? Twice a week."
+            }
+          ]
+        }
+      ],
+      "_sources": [
+        {
+          "file": "WH-Question.pdf",
+          "pages": "2-6"
+        }
+      ]
+    },
+    {
+      "id": "connectors",
+      "short": "Conectores",
+      "label": "Conectores",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los **conectores** son palabras o expresiones que enlazan ideas en una conversación o texto. Su uso correcto hace el discurso más claro, fluido y natural. Se clasifican según su función."
+        },
+        {
+          "type": "accordion",
+          "title": "Tipos de conectores por función",
+          "items": [
+            {
+              "heading": "Adición (añadir información)",
+              "body": "Also (también) — Besides (además, informal) — Moreover (además, formal)\n\nExample: She speaks French. Moreover, she is learning Japanese."
+            },
+            {
+              "heading": "Contraste",
+              "body": "But (pero) — However (sin embargo) — Although (aunque) — On the one hand… on the other hand (por un lado… por otro)\n\nExample: I like the job. However, the salary is low."
+            },
+            {
+              "heading": "Causa y consecuencia",
+              "body": "Because (porque) — So (así que) — Therefore (por lo tanto)\n\nExample: She was tired, so she went to bed early."
+            },
+            {
+              "heading": "Dar ejemplos",
+              "body": "For example (por ejemplo) — For instance (por ejemplo, más formal)\n\nExample: I enjoy outdoor activities, for example, hiking and cycling."
+            },
+            {
+              "heading": "Secuenciar ideas",
+              "body": "First / Firstly (en primer lugar) — Then (luego) — After that (después de eso) — Finally (finalmente)\n\nExample: First, read the instructions. Then, click on the button."
+            },
+            {
+              "heading": "Expresar opinión",
+              "body": "In my opinion (en mi opinión) — From my point of view (desde mi punto de vista) — I think that (creo que)\n\nExample: In my opinion, remote work has many advantages."
+            },
+            {
+              "heading": "Conclusión",
+              "body": "To sum up (para resumir) — In conclusion (en conclusión)\n\nExample: To sum up, learning English opens many professional doors."
+            }
+          ]
+        },
+        {
+          "type": "chips",
+          "label": "Conectores clave para recordar",
+          "items": [
+            "also",
+            "however",
+            "although",
+            "because",
+            "therefore",
+            "for example",
+            "first",
+            "finally",
+            "in my opinion",
+            "to sum up"
+          ]
+        }
+      ],
+      "_sources": [
+        {
+          "file": "U.2 Connectors_GS.pdf",
+          "pages": "2-4"
+        }
+      ]
+    },
+    {
+      "id": "vocabulary-u2",
+      "short": "Vocabulario U2",
+      "label": "Vocabulario — Unit 2",
+      "blocks": [
+        {
+          "type": "flipcards",
+          "items": [
+            {
+              "term": "hobby",
+              "def": "afición / pasatiempo — My favourite hobby is playing the guitar."
+            },
+            {
+              "term": "to prefer",
+              "def": "preferir — I prefer tea to coffee."
+            },
+            {
+              "term": "leisure",
+              "def": "ocio / tiempo libre — What do you do in your leisure time?"
+            },
+            {
+              "term": "outdoor",
+              "def": "al aire libre — She loves outdoor activities like hiking."
+            },
+            {
+              "term": "indoor",
+              "def": "bajo techo / en interior — Board games are great indoor activities."
+            },
+            {
+              "term": "cooking",
+              "def": "cocina / cocinar — Cooking is a very relaxing hobby."
+            },
+            {
+              "term": "to collect",
+              "def": "coleccionar — He collects vintage stamps."
+            },
+            {
+              "term": "to practice",
+              "def": "practicar — She practices yoga every morning."
+            },
+            {
+              "term": "to volunteer",
+              "def": "hacer voluntariado — They volunteer at the local food bank."
+            },
+            {
+              "term": "neighborhood",
+              "def": "vecindario / barrio — There is a park in my neighborhood."
+            },
+            {
+              "term": "facilities",
+              "def": "instalaciones — The sports facilities are excellent."
+            },
+            {
+              "term": "exhibition",
+              "def": "exposición — We visited a photography exhibition last weekend."
+            },
+            {
+              "term": "entertainment",
+              "def": "entretenimiento — There is a lot of entertainment in the city centre."
+            },
+            {
+              "term": "to socialise",
+              "def": "socializar — I like to socialise with my colleagues after work."
+            },
+            {
+              "term": "bored",
+              "def": "aburrido (sentimiento) — I feel bored when I have nothing to do."
+            },
+            {
+              "term": "boring",
+              "def": "aburrido (descripción de algo) — The film was very boring."
+            },
+            {
+              "term": "excited",
+              "def": "emocionado / ilusionado — She is excited about the trip."
+            },
+            {
+              "term": "relaxing",
+              "def": "relajante — Reading is a relaxing activity."
+            },
+            {
+              "term": "membership",
+              "def": "membresía / socio — He has a gym membership."
+            },
+            {
+              "term": "to explore",
+              "def": "explorar — They like to explore new cities on weekends."
+            }
+          ]
+        }
+      ],
+      "_sources": [
+        {
+          "file": "U2 Vocabulary What do you like.pdf",
+          "pages": "2-4"
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Gerundio (-ing)",
+      "def": "Forma verbal que termina en -ing y actúa como sustantivo. Obligatorio tras verbos como enjoy, hate, can't stand. Ej.: I enjoy swimming."
+    },
+    {
+      "term": "Infinitivo (to + verb)",
+      "def": "Forma base del verbo precedida de 'to'. Obligatorio tras verbos como want, would like, decide. Ej.: I want to travel."
+    },
+    {
+      "term": "There is / There are",
+      "def": "Estructura para indicar la existencia de algo. There is para singular, there are para plural."
+    },
+    {
+      "term": "Preposición de tiempo",
+      "def": "Palabra que indica cuándo ocurre algo: IN (general), ON (días/fechas), AT (horas/momentos específicos)."
+    },
+    {
+      "term": "Adjetivo posesivo",
+      "def": "Determina a quién pertenece algo y va antes del sustantivo: my, your, his, her, its, our, their."
+    },
+    {
+      "term": "Pronombre posesivo",
+      "def": "Sustituye a un nombre indicando posesión. No va seguido de sustantivo: mine, yours, his, hers, ours, theirs."
+    },
+    {
+      "term": "Pronombre de objeto",
+      "def": "Recibe la acción del verbo y va después de él: me, you, him, her, it, us, them."
+    },
+    {
+      "term": "WH-question",
+      "def": "Pregunta formada con una partícula interrogativa (what, where, when, who, why, which, how) para pedir información específica."
+    },
+    {
+      "term": "Conector",
+      "def": "Palabra o expresión que une ideas. Se clasifican por función: adición, contraste, causa, secuencia, opinión, conclusión."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "¿Qué estructura es correcta para expresar que algo te gusta?",
+      "options": [
+        "I enjoy to swim.",
+        "I enjoy swimming.",
+        "I enjoy swim.",
+        "I enjoy swims."
+      ],
+      "answer": 1,
+      "explanation": "El verbo 'enjoy' siempre va seguido de gerundio (-ing). Nunca de infinitivo."
+    },
+    {
+      "q": "¿Cuál es la forma correcta de 'There are' en negativa?",
+      "options": [
+        "There is not books.",
+        "There don't are books.",
+        "There aren't any books.",
+        "There not are books."
+      ],
+      "answer": 2,
+      "explanation": "La negación de 'there are' es 'there aren't'. En oraciones negativas es habitual usar 'any'."
+    },
+    {
+      "q": "¿Qué preposición de tiempo usas con 'Monday'?",
+      "options": [
+        "in",
+        "at",
+        "on",
+        "by"
+      ],
+      "answer": 2,
+      "explanation": "'On' se usa con días de la semana, fechas y partes específicas de un día: on Monday, on 5th May, on Sunday morning."
+    },
+    {
+      "q": "¿Cuál es el pronombre de objeto de 'she'?",
+      "options": [
+        "her",
+        "hers",
+        "she",
+        "his"
+      ],
+      "answer": 0,
+      "explanation": "El pronombre de objeto de 'she' es 'her'. Va detrás del verbo: I called her."
+    },
+    {
+      "q": "Elige el adjetivo posesivo correcto: 'That is ___ bag.' (referring to Mary)",
+      "options": [
+        "her",
+        "hers",
+        "she",
+        "him"
+      ],
+      "answer": 0,
+      "explanation": "'Her' es el adjetivo posesivo y va seguido de sustantivo (her bag). 'Hers' es el pronombre posesivo y no va seguido de sustantivo."
+    },
+    {
+      "q": "¿Qué partícula WH- usarías para preguntar el motivo de una acción?",
+      "options": [
+        "Where",
+        "When",
+        "Why",
+        "Who"
+      ],
+      "answer": 2,
+      "explanation": "'Why' significa '¿por qué?' y se usa para preguntar la razón o causa. La respuesta habitual empieza con 'Because'."
+    },
+    {
+      "q": "¿Cuál de estos conectores expresa contraste?",
+      "options": [
+        "also",
+        "therefore",
+        "however",
+        "firstly"
+      ],
+      "answer": 2,
+      "explanation": "'However' significa 'sin embargo' y se usa para introducir una idea contraria a la anterior."
+    },
+    {
+      "q": "¿Cuál es el uso correcto de 'at' como preposición de tiempo?",
+      "options": [
+        "at Monday",
+        "at summer",
+        "at Christmas",
+        "at April"
+      ],
+      "answer": 2,
+      "explanation": "'At' se usa con festivos (at Christmas, at Easter), horas (at 6 o'clock) y expresiones fijas (at night, at the moment)."
+    },
+    {
+      "q": "¿Qué pregunta WH- usarías para preguntar '¿Cuántas personas hay?'",
+      "options": [
+        "How much",
+        "How many",
+        "How often",
+        "How"
+      ],
+      "answer": 1,
+      "explanation": "'How many' se usa con sustantivos contables (people, chairs, books). 'How much' es para sustantivos incontables (money, water)."
+    }
+  ],
+  "_sources": [
+    {
+      "file": "U2 What do you like.pdf",
+      "pages": "1-8"
+    },
+    {
+      "file": "Summary U2 What do you like.pdf",
+      "pages": "1-4"
+    },
+    {
+      "file": "U2 Vocabulary What do you like.pdf",
+      "pages": "1-4"
+    },
+    {
+      "file": "Like and dislike verbs.pdf",
+      "pages": "1-5"
+    },
+    {
+      "file": "Prepositions of time.pdf",
+      "pages": "1-4"
+    },
+    {
+      "file": "U2 Prepositions of time.pdf",
+      "pages": "1"
+    },
+    {
+      "file": "Pronouns and Possessive forms.pdf",
+      "pages": "1-9"
+    },
+    {
+      "file": "There is and there are.pdf",
+      "pages": "1-4"
+    },
+    {
+      "file": "U.2 Connectors_GS.pdf",
+      "pages": "1-4"
+    },
+    {
+      "file": "WH-Question.pdf",
+      "pages": "1-7"
+    }
+  ]
+}
