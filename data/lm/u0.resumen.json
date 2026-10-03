@@ -1,0 +1,252 @@
+{
+  "subject": "lm",
+  "unit": 0,
+  "title": "Introducción a los lenguajes de marcas",
+  "intro": "La información es un recurso estratégico cuya estructura y presentación determinan su utilidad en ámbitos como el diseño web y los sistemas de información. Los lenguajes de marcas son el mecanismo estándar para anotar documentos indicando su estructura o cómo deben ser procesados. Esta unidad introductoria sienta las bases conceptuales para todo el módulo: qué son, para qué sirven y cuáles son sus elementos fundamentales.",
+  "objectives": [
+    "Comprender qué es un lenguaje de marcas y distinguirlo de un lenguaje de programación.",
+    "Conocer el concepto de página web y cómo el navegador la interpreta.",
+    "Identificar la función de HTML como lenguaje de estructura y CSS como lenguaje de presentación.",
+    "Reconocer los elementos clave de los lenguajes de marcas: etiqueta, elemento y atributo."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "short": "Conceptos fundamentales",
+      "label": "Conceptos fundamentales antes de empezar",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Antes de profundizar en el módulo conviene aclarar tres conceptos esenciales: qué son los lenguajes de marcas, qué son las páginas web, y cuál es la diferencia entre HTML y CSS."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Lenguaje de marcas",
+              "title": "¿Qué son los lenguajes de marcas?",
+              "desc": "Sistema para anotar un documento de manera sintácticamente distinguible del texto. Usan etiquetas (tags) para encerrar y definir partes del documento, indicando su estructura o cómo deben procesarse. No son lenguajes de programación: no ejecutan algoritmos complejos, sino que describen los datos.",
+              "example": "HTML y XML son los ejemplos clave."
+            },
+            {
+              "kicker": "Página web",
+              "title": "¿Qué son las páginas web?",
+              "desc": "Documento electrónico típicamente escrito en HTML, accesible a través de Internet mediante un navegador web. El navegador interpreta el código HTML (y otros como CSS y JavaScript) para mostrar el contenido de forma visual e interactiva.",
+              "example": "Una página con texto, imágenes, vídeos y enlaces que el navegador renderiza."
+            },
+            {
+              "kicker": "HTML",
+              "title": "HTML. El lenguaje de la estructura web",
+              "desc": "HyperText Markup Language. Lenguaje de marcas estándar para crear páginas web. Define la estructura del contenido: títulos, párrafos, imágenes, enlaces.",
+              "example": "<h1> para títulos, <p> para párrafos, <img> para imágenes, <a> para enlaces."
+            },
+            {
+              "kicker": "CSS",
+              "title": "CSS. El lenguaje del estilo web",
+              "desc": "Cascading Style Sheets. Lenguaje que describe la presentación visual de un documento HTML: colores, fuentes, tamaños, márgenes, posicionamiento. Separa contenido (HTML) de presentación (CSS).",
+              "example": "Definir que todos los párrafos tengan fuente Arial y color gris, sin tocar el HTML."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "short": "Elementos clave",
+      "label": "Elementos clave en los lenguajes de marcas",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Aunque se verán en detalle en la Unidad 1, conviene conocer estos tres términos básicos que aparecen en todos los lenguajes de marcas."
+        },
+        {
+          "type": "flipcards",
+          "items": [
+            {
+              "term": "Etiqueta (Tag)",
+              "def": "Marca encerrada entre los símbolos < y >. Suelen venir en pares: etiqueta de apertura (<p>) y de cierre (</p>). Algunas etiquetas vacías no necesitan cierre o se cierran a sí mismas (<img>, <br />)."
+            },
+            {
+              "term": "Elemento (Element)",
+              "def": "Conjunto completo formado por la etiqueta de apertura, el contenido y la etiqueta de cierre. Ejemplo: <p>Este es el contenido.</p> es un elemento párrafo."
+            },
+            {
+              "term": "Atributo (Attribute)",
+              "def": "Información adicional dentro de la etiqueta de apertura que modifica el comportamiento o características del elemento. Consiste en un par nombre-valor. Ejemplo: en <img src=\"logo.png\" alt=\"Logotipo\">, src y alt son atributos."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Concepto", "Símbolo / Sintaxis", "Ejemplo"],
+          "rows": [
+            ["Etiqueta de apertura", "<nombre>", "<p>"],
+            ["Etiqueta de cierre", "</nombre>", "</p>"],
+            ["Etiqueta vacía / autocerrada", "<nombre />", "<br />"],
+            ["Atributo", "nombre=\"valor\"", "src=\"logo.png\""],
+            ["Elemento completo", "<nombre atrib>contenido</nombre>", "<a href=\"url\">texto</a>"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "short": "Panorama del módulo",
+      "label": "Introducción",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El módulo «Lenguajes de marcas y sistemas de gestión de información» abarca desde los fundamentos hasta las aplicaciones empresariales de la información estructurada. A lo largo del curso se estudiarán los siguientes bloques temáticos."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "HTML y CSS — presentación de información en la web",
+              "content": "HTML define la estructura de las páginas web; CSS controla su apariencia visual. Son el núcleo del desarrollo web front-end."
+            },
+            {
+              "title": "XML y esquemas (DTD, XML Schema)",
+              "content": "XML permite estructurar y transmitir datos de forma organizada. Los esquemas como DTD y XML Schema definen reglas claras para validar esos datos."
+            },
+            {
+              "title": "Transformación de documentos XML",
+              "content": "Mediante tecnologías de transformación (XSLT) es posible convertir documentos XML a otros formatos, reutilizando la misma información en diferentes contextos."
+            },
+            {
+              "title": "Almacenamiento de información",
+              "content": "La información puede almacenarse en archivos o en bases de datos especializadas (bases de datos nativas XML, relacionales, etc.)."
+            },
+            {
+              "title": "Sindicación de contenidos: RSS y ATOM",
+              "content": "Aplicación muy común en internet para distribuir contenidos actualizados de sitios web de forma estandarizada."
+            },
+            {
+              "title": "Sistemas de gestión empresarial: CRM, ERP",
+              "content": "Los datos bien estructurados ayudan a tomar decisiones en entornos empresariales a través de sistemas como CRM (gestión de clientes) o ERP (planificación de recursos)."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Lenguaje de marcas (Markup Language)",
+      "def": "Sistema para anotar documentos usando etiquetas sintácticamente distinguibles del texto. Describe datos; no ejecuta algoritmos. Ejemplos: HTML, XML."
+    },
+    {
+      "term": "HTML (HyperText Markup Language)",
+      "def": "Lenguaje de marcas estándar para crear páginas web. Define la estructura del contenido: títulos, párrafos, imágenes, enlaces."
+    },
+    {
+      "term": "CSS (Cascading Style Sheets)",
+      "def": "Lenguaje que describe la presentación visual de documentos HTML o XHTML: colores, fuentes, márgenes, posicionamiento."
+    },
+    {
+      "term": "Tag (etiqueta)",
+      "def": "Marca encerrada entre < y > que delimita elementos en un lenguaje de marcas."
+    },
+    {
+      "term": "Elemento",
+      "def": "Unidad completa de un lenguaje de marcas: etiqueta de apertura + contenido + etiqueta de cierre."
+    },
+    {
+      "term": "Atributo",
+      "def": "Par nombre-valor dentro de una etiqueta de apertura que añade información adicional al elemento."
+    },
+    {
+      "term": "Navegador web",
+      "def": "Aplicación que interpreta HTML, CSS y JavaScript para mostrar páginas web de forma visual e interactiva."
+    },
+    {
+      "term": "XML (eXtensible Markup Language)",
+      "def": "Lenguaje de marcas extensible para estructurar y transmitir datos de forma organizada y portable."
+    },
+    {
+      "term": "DTD (Document Type Definition)",
+      "def": "Conjunto de reglas que define la estructura y los atributos válidos de un documento XML o HTML."
+    },
+    {
+      "term": "RSS / ATOM",
+      "def": "Formatos basados en XML para la sindicación de contenidos en internet, permitiendo distribuir actualizaciones de sitios web."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "¿En qué se diferencia un lenguaje de marcas de un lenguaje de programación?",
+      "options": [
+        "El lenguaje de marcas no ejecuta algoritmos complejos: describe datos mediante etiquetas.",
+        "El lenguaje de marcas sí ejecuta algoritmos pero no usa variables.",
+        "No hay diferencia; HTML y JavaScript son equivalentes."
+      ],
+      "correct": 0,
+      "explanation": "Los lenguajes de marcas (HTML, XML) se centran en describir y estructurar datos mediante etiquetas. No ejecutan lógica algorítmica como sí lo hacen los lenguajes de programación."
+    },
+    {
+      "question": "¿Cuál es la función principal de HTML en una página web?",
+      "options": [
+        "Definir los colores, fuentes y márgenes de la página.",
+        "Definir la estructura del contenido: títulos, párrafos, imágenes, enlaces.",
+        "Ejecutar la lógica de negocio en el servidor."
+      ],
+      "correct": 1,
+      "explanation": "HTML (HyperText Markup Language) define la estructura del contenido. CSS se encarga de la presentación y JavaScript de la interactividad."
+    },
+    {
+      "question": "¿Qué es un atributo en un lenguaje de marcas?",
+      "options": [
+        "El texto visible entre las etiquetas de apertura y cierre.",
+        "Información adicional dentro de la etiqueta de apertura, en forma de par nombre-valor.",
+        "Una etiqueta que no tiene etiqueta de cierre."
+      ],
+      "correct": 1,
+      "explanation": "Los atributos se colocan dentro de la etiqueta de apertura y modifican el comportamiento o características del elemento. Ejemplo: src=\"logo.png\" en la etiqueta <img>."
+    },
+    {
+      "question": "¿Cuál es la principal ventaja de separar HTML y CSS?",
+      "options": [
+        "Permite que el navegador cargue la página más rápido al reducir el número de ficheros.",
+        "Facilita el mantenimiento y la flexibilidad del diseño, ya que contenido y presentación son independientes.",
+        "Hace que el código HTML sea más corto porque no hay que escribir etiquetas de cierre."
+      ],
+      "correct": 1,
+      "explanation": "La separación entre estructura (HTML) y presentación (CSS) es una práctica fundamental: permite modificar el aspecto visual sin tocar el contenido, y viceversa."
+    },
+    {
+      "question": "¿Qué es un elemento en HTML?",
+      "options": [
+        "Solo la etiqueta de apertura, como <p>.",
+        "El conjunto formado por la etiqueta de apertura, el contenido y la etiqueta de cierre.",
+        "Cualquier atributo dentro de una etiqueta."
+      ],
+      "correct": 1,
+      "explanation": "Un elemento es la unidad completa: etiqueta de apertura + contenido + etiqueta de cierre. Por ejemplo, <p>Texto</p> es un elemento párrafo."
+    },
+    {
+      "question": "¿Cuál de los siguientes es un ejemplo de etiqueta vacía (sin etiqueta de cierre)?",
+      "options": [
+        "<p>",
+        "<div>",
+        "<br />"
+      ],
+      "correct": 2,
+      "explanation": "<br /> es una etiqueta vacía que representa un salto de línea y se cierra a sí misma. No necesita etiqueta de cierre separada."
+    },
+    {
+      "question": "¿Qué tecnología permite distribuir actualizaciones de sitios web de forma estandarizada (sindicación)?",
+      "options": [
+        "CSS y JavaScript",
+        "CRM y ERP",
+        "RSS y ATOM"
+      ],
+      "correct": 2,
+      "explanation": "RSS y ATOM son formatos XML para la sindicación de contenidos, muy utilizados en internet para distribuir noticias y actualizaciones de sitios web."
+    }
+  ],
+  "_sources": {
+    "s1": "U0 Introducción a los lenguajes de marcas.txt, pp. 4 (Página 4)",
+    "s2": "U0 Introducción a los lenguajes de marcas.txt, pp. 5 (Página 5)",
+    "s3": "U0 Introducción a los lenguajes de marcas.txt, pp. 3 (Página 3)"
+  }
+}

@@ -1,0 +1,511 @@
+{
+  "subject": "lm",
+  "unit": 2,
+  "title": "Lenguajes para la visualización de información",
+  "intro": "HTML es el componente básico de la web desde 1991, complementado por CSS para la presentación visual. Esta unidad estudia las herramientas de diseño web, la estructura y sintaxis de HTML (incluyendo HTML5), las hojas de estilo CSS (incluyendo CSS3) y XHTML como adaptación de HTML a XML. Al finalizar, el estudiante sabrá crear y dar formato a documentos web válidos y semánticamente correctos.",
+  "objectives": [
+    "Conocer las principales herramientas de diseño web (KompoZer, Dreamweaver, Bluefish, HTML Online Editor).",
+    "Identificar las versiones de HTML y la estructura de un documento HTML.",
+    "Describir las etiquetas y atributos HTML más usados: texto, listas, enlaces, imágenes, tablas y formularios.",
+    "Explicar las novedades de HTML5: elementos semánticos, multimedia y gráficos.",
+    "Aplicar hojas de estilo CSS: sintaxis, selectores, propiedades y formas de vinculación.",
+    "Conocer las nuevas propiedades de CSS3.",
+    "Identificar XHTML, sus versiones y diferencias sintácticas con HTML."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "short": "Herramientas diseño web",
+      "label": "2.1. Herramientas de diseño web",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Para crear documentos HTML se necesita un editor de texto plano. Existen herramientas de escritorio (gratuitas y comerciales) y herramientas online. El fichero debe guardarse con extensión .html."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Código abierto",
+              "title": "KompoZer",
+              "desc": "Software de diseño web de código abierto y fácil uso. Permite administrar un sitio FTP, personalizar la barra de herramientas, e incluye editor de CSS y validador HTML. Disponible para Windows, Linux, OS/2 y MacOSX.",
+              "example": "Herramienta gratuita multiplataforma con editor visual integrado."
+            },
+            {
+              "kicker": "Comercial",
+              "title": "Adobe Dreamweaver CC",
+              "desc": "Software comercial para diseñar y desarrollar sitios web basados en estándares. Permite previsualización en varios dispositivos, arquitectura 64 bits, compatible con PHP 7, JavaScript, GIT, SASS, LESS y SCSS. Desarrollado originalmente por Macromedia, ahora propiedad de Adobe Systems.",
+              "example": "IDE profesional con espacio de trabajo para desarrolladores."
+            },
+            {
+              "kicker": "Código abierto",
+              "title": "Bluefish",
+              "desc": "Editor web open source multiplataforma con licencia GNU. Las versiones actuales son una alternativa fiable a las plataformas de pago.",
+              "example": "Opción gratuita y robusta para desarrollo web multiplataforma."
+            },
+            {
+              "kicker": "Online",
+              "title": "HTML Online Editor",
+              "desc": "Editor HTML WYSIWYG gratuito que no requiere instalación. En el panel derecho se introduce el código HTML y en el panel izquierdo aparece el resultado de forma concurrente. También permite trabajar visualmente y ver el código generado. Permite trabajar con documentos HTML, CSS y JS.",
+              "example": "Herramienta accesible desde el navegador sin instalar nada."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "short": "HTML: etiquetas/atributos",
+      "label": "2.2. Identificación de etiquetas y atributos de HTML",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "HTML (HyperText Markup Language) nació en 1991 desarrollado por Tim Berners-Lee. Las versiones están definidas por el W3C (World Wide Web Consortium). La estructura de un documento HTML se compone de elementos con etiquetas y atributos que el navegador interpreta para mostrar el resultado final."
+        },
+        {
+          "type": "timeline",
+          "items": [
+            {
+              "year": "1991",
+              "label": "HTML Tags",
+              "detail": "Primera versión, creada por Tim Berners-Lee (padre de la web)."
+            },
+            {
+              "year": "1995",
+              "label": "HTML 2.0",
+              "detail": "Primer estándar oficial, creado por el IETF. Desde 1996 el W3C publica los estándares."
+            },
+            {
+              "year": "1997",
+              "label": "HTML 3.2",
+              "detail": "Publicada por el W3C. Incluye applets de Java, entre otras mejoras."
+            },
+            {
+              "year": "1998",
+              "label": "HTML 4.0",
+              "detail": "Publicada el 24 de abril de 1998. Novedades: tablas complejas, mejoras en formularios, hojas de estilo, scripts y mejora de accesibilidad."
+            },
+            {
+              "year": "1999",
+              "label": "HTML 4.01",
+              "detail": "Actualización y revisión de HTML 4.0 sin novedades relevantes."
+            },
+            {
+              "year": "2014",
+              "label": "HTML 5",
+              "detail": "Publicada a finales de 2014. Establece nuevos elementos con significado semántico."
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Estructura de un documento HTML",
+              "content": "La primera etiqueta es <html> (inicio del fichero; la última es </html>). Dentro encontramos <head> con metadatos: <title> (título en la barra del navegador), <meta> (metadatos/SEO), <style> (estilos), <link> (vincula hojas de estilo externas). El cuerpo <body> contiene el contenido visible. Los comentarios van entre <!-- y -->."
+            },
+            {
+              "title": "Declaración de tipo de documento (DTD)",
+              "content": "El DTD añade reglas sintácticas al documento, define sus reglas y atributos, y permite comprobar si es válido. Debe declararse al principio. En HTML 4.01 existen tres DTD: Estricto (solo etiquetas HTML 4.01 sin marcado de presentación), Transicional (permite todos los elementos incluyendo los en desuso) y Marcos o frames (similar al transicional pero para frames, actualmente obsoleto). Los campos de la declaración son: !DOCTYPE, HTML, PUBLIC/SYSTEM, identificador formal (organización, tipo, versión, idioma) y URL del DTD."
+            },
+            {
+              "title": "Atributos HTML y colores",
+              "content": "Los atributos tienen dos partes: nombre y valor, separados por =. El valor puede ir entre comillas dobles, simples o sin comillas. El atributo bgcolor asigna color de tres formas: hexadecimal (#RRGGBB, donde 00 es mínima intensidad y FF máxima), por nombre (red, yellow, blue...) y RGB (valores 0-255 para rojo, verde y azul; 256³ = 16 millones de combinaciones). Combinaciones secundarias: verde+azul=cian, rojo+azul=magenta, rojo+verde=amarillo, los tres=blanco."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Grupo de etiquetas", "Etiquetas principales", "Uso"],
+          "rows": [
+            ["Formato de texto", "<b>, <u>, <i>, <s>, <big>, <small>, <font>", "Negrita, subrayado, cursiva, tachado, tamaño de fuente"],
+            ["Salto / línea horizontal", "<br>, <hr>", "Salto de línea, línea horizontal (con atributos align y width)"],
+            ["Índices y subíndices", "<SUP>, <SUB>", "Superíndice y subíndice"],
+            ["Párrafos", "<p align=''>", "Párrafo con alineación: left, center, justify, right"],
+            ["Encabezamientos", "<h1> a <h6>", "Títulos; h1 es el mayor, h6 el menor. Usados para SEO"],
+            ["Listas ordenadas", "<ol type=''> + <li>", "Listas numéricas; atributos type (1,a,i,I,A) y start"],
+            ["Listas desordenadas", "<ul type=''> + <li>", "Listas con viñetas; atributos type (disc, square, circle)"],
+            ["Listas de definición", "<dl>, <dt>, <dd>", "Lista de términos con sus definiciones"],
+            ["Enlaces", "<a href='' target=''>", "Hipervínculos absolutos, relativos o internos a la misma página"],
+            ["Imágenes", "<img src='' width='' height='' alt='' align=''>", "Insertar imágenes (jpg, bmp, png, gif)"],
+            ["Tablas", "<table>, <caption>, <th>, <tr>, <td>", "Tablas con filas, columnas, cabeceras y combinaciones (colspan, rowspan)"],
+            ["Formularios", "<form action='' method=''>, <input>, <textarea>, <select>", "Interacción usuario-servidor: texto, radio, checkbox, combo, botones"]
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Tipos de enlaces",
+              "content": "Absolutos: URL completa con protocolo http:// + dominio, para páginas de otros servidores. Relativos: para URLs del mismo servidor; se indica el nombre del fichero o la ruta relativa ('../' para subir un directorio). Internos a la misma página: se crean marcadores con el atributo name de <a> y se enlaza con href='#nombre_marcador'."
+            },
+            {
+              "title": "Formularios: estructura y controles",
+              "content": "El elemento <form> actúa de contenedor. Atributos: action (URI del programa que procesa), method (GET: datos en URI; POST: datos en el cuerpo), enctype, target. Controles de texto: <input type='text'> (una línea), <textarea> (varias líneas), <input type='password'> (texto oculto), <input type='file'> (subir archivos). Controles de selección: <input type='radio'> (una opción), <input type='checkbox'> (varias opciones), <select>+<option> (combo/lista desplegable). Controles de botones: <input type='submit'> (enviar), <input type='reset'> (limpiar)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "short": "HTML5",
+      "label": "2.2.5. HMTL5",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El objetivo del W3C con HTML5 es modernizar las páginas web añadiendo nuevos elementos y eliminando los obsoletos. HTML4 no podía validar datos en formularios sin JavaScript, ni arrastrar objetos, ni tenía etiquetas para la web semántica. Las mejoras se agrupan en cuatro bloques. La declaración DOCTYPE simplifica a <!DOCTYPE html> y la codificación a <meta charset='UTF-8'>."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Multimedia",
+              "title": "Elementos multimedia",
+              "desc": "Nuevas etiquetas <audio> y <video> que permiten incluir contenido multimedia directamente sin reproductores externos. Atributos: controls, loop, autoplay.",
+              "example": "<audio controls autoplay loop src='audio.mp3'></audio>"
+            },
+            {
+              "kicker": "Semántica",
+              "title": "Elementos semánticos",
+              "desc": "Etiquetas que dan significado a la estructura: <header>, <footer>, <nav>, <section>, <article>, <aside>, <figure>, <mark>, <time>, <dialog>.",
+              "example": "<header>, <nav>, <section>, <footer> en lugar de <div id='header'>."
+            },
+            {
+              "kicker": "Formularios",
+              "title": "Nuevos tipos en formularios",
+              "desc": "Nuevos atributos type: email, number, date, time, range, calendar. Validación sin JavaScript. Nueva etiqueta <datalist> para listas predefinidas. <output> para campos calculados.",
+              "example": "<input type='email'> valida automáticamente el formato de email."
+            },
+            {
+              "kicker": "Gráficos",
+              "title": "Elementos gráficos",
+              "desc": "La etiqueta <canvas> proporciona un lienzo sin borde ni contenido para dibujar gráficos (círculos, líneas, texto) mediante scripts JavaScript.",
+              "example": "<canvas id='miLienzo' width='300' height='300'></canvas>"
+            }
+          ]
+        },
+        {
+          "type": "chips",
+          "items": [
+            "<article>", "<aside>", "<audio>", "<canvas>", "<datalist>",
+            "<details>", "<dialog>", "<embed>", "<figure>", "<footer>",
+            "<header>", "<mark>", "<meter>", "<nav>", "<output>",
+            "<progress>", "<section>", "<source>", "<time>", "<video>"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "short": "CSS: hojas de estilo",
+      "label": "2.3. Hojas de estilo CSS",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "CSS (Cascading Style Sheets) es un lenguaje creado por el W3C para añadir estilos y formato a documentos HTML o XHTML. Separa contenido de presentación, permitiendo documentos mejor estructurados. Puede aplicarse a todo un documento, a una parte o a una etiqueta concreta."
+        },
+        {
+          "type": "timeline",
+          "items": [
+            {
+              "year": "1996",
+              "label": "CSS 1",
+              "detail": "Primera versión. Describe formato, alineación, atributos de texto y propiedades de fuentes. Actualmente en desuso."
+            },
+            {
+              "year": "1998",
+              "label": "CSS 2",
+              "detail": "Segunda recomendación oficial del W3C. Incluye casi todo CSS1 y añade posicionamiento de capas."
+            },
+            {
+              "year": "CSS 2.1",
+              "label": "CSS 2.1",
+              "detail": "Elimina errores y funcionalidades en desuso de versiones anteriores."
+            },
+            {
+              "year": "2011",
+              "label": "CSS 3",
+              "detail": "Usa módulos que añaden nueva funcionalidad preservando compatibilidad con versiones anteriores."
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Sintaxis básica: regla CSS",
+              "content": "Una regla CSS se compone de selector y declaración. La declaración contiene propiedad y valor separados por ':'. Varias declaraciones se separan por ';'. Ejemplo: h2 { color: #0099FE; font-family: Verdana; }. Los comentarios van entre /* y */."
+            },
+            {
+              "title": "Selectores CSS",
+              "content": "De tipo: aplica la regla a todos los elementos de ese tipo (h2 {...}). Universal (*): aplica a todos los elementos. Descendiente (h3 i): aplica a elementos i dentro de h3, en cualquier nivel de anidamiento. De clase (.nombre): aplica a elementos con class='nombre'; prefijo '.'. Por ID (#nombre): aplica a un único elemento con id='nombre'; prefijo '#'. Hijo (h3>i): solo hijos directos. Adyacente (h1+h3): elementos hermanos consecutivos, usando '+'."
+            },
+            {
+              "title": "Agrupamiento y herencia",
+              "content": "Agrupamiento: aplicar la misma declaración a varios selectores separándolos con coma: h1, h2, h3 { color: red; }. Herencia: los selectores anidados heredan las declaraciones del padre. Si se aplica un estilo a <body>, afecta a todos los elementos hijos. Un selector de clase o ID específico prevalece sobre el heredado."
+            },
+            {
+              "title": "Formas de aplicar estilos a un documento HTML",
+              "content": "1. Documento externo (mejor práctica): crear un fichero .css y vincularlo con <link rel='stylesheet' type='text/css' href='archivo.css'> dentro de <head>. 2. En el mismo documento: usar la etiqueta <style> dentro de <head> con las reglas CSS. 3. En línea (inline): usar el atributo style en cada etiqueta HTML concreta: <h3 style='color: red'>Título</h3>."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Grupo", "Propiedad", "Valores principales", "Descripción"],
+          "rows": [
+            ["Texto", "text-decoration", "none, underline, overline, line-through, blink", "Decoración del texto"],
+            ["Texto", "color", "RGB o nombre de color", "Color del texto"],
+            ["Texto", "text-align", "center, justify, left, right", "Alineación horizontal"],
+            ["Texto", "text-transform", "none, capitalize, lowercase, uppercase", "Conversión de mayúsculas/minúsculas"],
+            ["Fuente", "font-size", "xx-small … xx-large", "Tamaño de fuente"],
+            ["Fuente", "font-family", "nombre de fuente", "Tipo de letra"],
+            ["Fuente", "font-style", "normal, italic, oblique", "Estilo de fuente"],
+            ["Fondo", "background-color", "transparent, color", "Color de fondo"],
+            ["Fondo", "background-image", "none, uri", "Imagen de fondo"],
+            ["Posición", "float", "none, left, right", "Posicionamiento flotante"],
+            ["Posición", "position", "absolute, fixed, relative, static", "Modo de posicionamiento"],
+            ["Tamaño", "width / height", "auto, distancia, porcentaje", "Anchura / Altura del elemento"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "short": "CSS3: nuevas propiedades",
+      "label": "2.3.4. CSS3",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "CSS3 añade nuevos selectores de atributos, pseudoclases y numerosas propiedades que permiten mayor control visual sin necesidad de imágenes o JavaScript."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Nuevos selectores de atributos",
+              "content": "[atrib^='val'] selecciona elementos cuyo atributo empieza por val. [atrib$='val'] selecciona los que terminan por val. [atrib*='val'] selecciona los que contienen val. Nuevas pseudoclases: :nth-child(), :empty, :not, :invalid, :optional."
+            },
+            {
+              "title": "Opacidad y transparencia",
+              "content": "Se añade el canal Alpha al modelo RGB (RGBA). Rango [0,1]: 0 es completamente transparente, 1 es completamente opaco. También disponible HSL/HSLA (tono 0-360, saturación %, luminosidad %). La propiedad opacity aplica transparencia al elemento completo."
+            },
+            {
+              "title": "Gradientes",
+              "content": "Para background-image: linear-gradient() (degradado lineal con al menos dos colores), radial-gradient() (degradado radial del centro a los extremos), repeating-linear-gradient() y repeating-radial-gradient()."
+            },
+            {
+              "title": "Esquinas redondeadas (border-radius)",
+              "content": "1 valor: las 4 esquinas iguales. 2 valores: primero afecta a esquina inf. derecha y sup. izquierda; segundo a las otras dos. 3 valores: sup. izquierda / sup. derecha e inf. izquierda / inf. derecha. 4 valores: sup. izquierda, sup. derecha, inf. derecha, inf. izquierda."
+            },
+            {
+              "title": "Sombras (box-shadow)",
+              "content": "Sintaxis: box-shadow: none | h-offset v-offset blur spread color inset. h-offset y v-offset son obligatorios (positivo=derecha/abajo, negativo=izquierda/arriba). blur, spread, color e inset son opcionales. inset mueve la sombra al interior."
+            },
+            {
+              "title": "Transiciones (transition)",
+              "content": "Propiedad abreviada para animar cambios de propiedades CSS. Sintaxis: transition: property duration timing-function delay. timing-function: linear, ease (por defecto), ease-in (inicio lento), ease-out (final lento), ease-in-out."
+            },
+            {
+              "title": "Otras propiedades CSS3 destacadas",
+              "content": "Columnas: columns (= column-width + column-count), column-gap, column-rule-color/style/fill. Animaciones: animation (abreviatura de animation-name, -duration, -iteration-count, -direction, -timing-function, -fill-mode, -delay, -play-state). box-sizing: content-box (por defecto) | border-box (ancho/alto incluyen borde y relleno). transform: scale(), scale3d(), rotate(), rotate3d(), skewX()."
+            }
+          ]
+        },
+        {
+          "type": "chips",
+          "items": [
+            "background", "border-image", "border-radius", "box-shadow",
+            "box-sizing", "DataURI", "FlexBox", "Generated Content",
+            "hsla()", "Media Queries", "Multiple backgrounds", "opacity",
+            "overflow-scrolling", "pointer-events", "rgba()", "text-shadow",
+            "CSS Reflections", "CSS Transitions", "CSS 2D Transforms",
+            "CSS 3D Transforms", "CSS Animations", "CSS Columns", "CSS Gradients"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "short": "XHTML",
+      "label": "2.4. XHTML",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "XHTML (eXtensible HyperText Markup Language) es la adaptación de HTML en XML: mantiene las características de HTML e incorpora las normas de XML. Hereda de SGML (como HTML) pero aplica la sintaxis estricta de XML. Jerarquía: SGML → HTML / XML → XHTML."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Versiones de XHTML",
+              "content": "XHTML 1.0 (2000): primera versión, similar a HTML 4.0 reformulado. Presenta tres DTD (estricto, transitorio, frameset) y es compatible con algunas versiones de HTML. XHTML 1.1: no compatible con versiones anteriores de HTML. Basada en módulos (lista, formularios, estructura, tablas, imagen...) para futuros documentos extendidos. XHTML Básico: para dispositivos con acceso web (teléfonos, televisiones, relojes, navegación GPS). Versión simplificada con módulos reducidos."
+            },
+            {
+              "title": "Diferencias sintácticas con HTML",
+              "content": "XHTML es sensible a mayúsculas/minúsculas: todos los elementos y atributos deben escribirse en minúsculas. Todos los valores de atributos deben ir entrecomillados. Todas las etiquetas deben cerrarse (incluyendo las vacías: <br />, <img />). No puede haber solapamiento de etiquetas (deben cerrarse en orden inverso). Los atributos minimizados deben indicar nombre=valor. La declaración DTD es obligatoria. El elemento raíz <html> debe incluir el atributo xmlns='http://www.w3.org/1999/xhtml'."
+            },
+            {
+              "title": "Ventajas de XHTML sobre HTML",
+              "content": "Se pueden agregar distintas aplicaciones (scripts y applets). Validable con herramientas XML estándar. Compatible con navegadores antiguos. Mayor rendimiento potencial. Formato abierto. Facilidad de mantenimiento y edición."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Tipo DTD", "Declaración DOCTYPE"],
+          "rows": [
+            ["Estricto", "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">"],
+            ["Transitorio", "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"],
+            ["Frameset", "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Frameset//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd\">"]
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "HTML (HyperText Markup Language)",
+      "def": "Lenguaje de marcas estándar para crear páginas web. Nació en 1991 y su última versión es HTML5 (2014)."
+    },
+    {
+      "term": "W3C (World Wide Web Consortium)",
+      "def": "Comunidad internacional encargada de definir y publicar los estándares de HTML, CSS y otras tecnologías web."
+    },
+    {
+      "term": "Tim Berners-Lee",
+      "def": "Científico conocido como el padre de la web. Desarrolló HTML en 1991."
+    },
+    {
+      "term": "DTD (Document Type Definition)",
+      "def": "Declaración al inicio de un documento que define las reglas sintácticas y atributos válidos, permitiendo comprobar si el documento es válido."
+    },
+    {
+      "term": "CSS (Cascading Style Sheets)",
+      "def": "Lenguaje creado por el W3C para añadir estilos y formato a documentos HTML o XHTML. Separa contenido de presentación."
+    },
+    {
+      "term": "Selector CSS",
+      "def": "Identificador de uno o varios elementos HTML a los que se aplica una regla de estilo. Tipos: de tipo, universal, descendiente, de clase, por ID, hijo, adyacente."
+    },
+    {
+      "term": "XHTML (eXtensible HyperText Markup Language)",
+      "def": "Adaptación de HTML en XML. Mantiene características HTML e incorpora las normas estrictas de XML."
+    },
+    {
+      "term": "WYSIWYG",
+      "def": "What You See Is What You Get. Tipo de editor que muestra el resultado visual mientras se edita el código."
+    },
+    {
+      "term": "Canvas",
+      "def": "Etiqueta HTML5 que proporciona un lienzo para dibujar gráficos mediante scripts JavaScript."
+    },
+    {
+      "term": "Etiquetas semánticas HTML5",
+      "def": "Etiquetas que describen el significado del contenido: <header>, <footer>, <nav>, <section>, <article>, <aside>."
+    },
+    {
+      "term": "box-shadow",
+      "def": "Propiedad CSS3 que añade una sombra a un elemento con parámetros de desplazamiento horizontal, vertical, desenfoque, propagación y color."
+    },
+    {
+      "term": "border-radius",
+      "def": "Propiedad CSS3 para redondear las esquinas de un elemento. Acepta 1, 2, 3 o 4 valores."
+    },
+    {
+      "term": "transition (CSS)",
+      "def": "Propiedad abreviada CSS3 para animar el cambio de propiedades. Parámetros: propiedad, duración, función de tiempo y retardo."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "¿En qué año publicó el W3C HTML 5?",
+      "options": [
+        "1998",
+        "2011",
+        "2014"
+      ],
+      "correct": 2,
+      "explanation": "HTML5 fue publicada a finales de 2014 por el W3C. Establece nuevos elementos con significado semántico y mejoras multimedia."
+    },
+    {
+      "question": "¿Cuál de las siguientes herramientas de diseño web es online y no requiere instalación?",
+      "options": [
+        "KompoZer",
+        "HTML Online Editor",
+        "Adobe Dreamweaver CC"
+      ],
+      "correct": 1,
+      "explanation": "HTML Online Editor es un editor HTML WYSIWYG gratuito que permite editar código fuente en línea sin descargar ninguna aplicación."
+    },
+    {
+      "question": "¿Cuál es la diferencia principal entre el selector hijo (>) y el selector descendiente (espacio) en CSS?",
+      "options": [
+        "El selector hijo afecta solo a hijos directos; el descendiente afecta a cualquier nivel de anidamiento.",
+        "El selector descendiente afecta solo a hijos directos; el hijo afecta a cualquier nivel.",
+        "Ambos son equivalentes; solo difieren en rendimiento."
+      ],
+      "correct": 0,
+      "explanation": "El selector hijo (h3>i) aplica el estilo únicamente a los hijos directos de h3. El selector descendiente (h3 i) aplica a cualquier i que descienda de h3, sin importar el nivel de anidamiento."
+    },
+    {
+      "question": "¿Cuáles son las tres formas de aplicar estilos CSS a un documento HTML?",
+      "options": [
+        "Inline (atributo style), en el mismo documento (etiqueta <style>) y en fichero externo (etiqueta <link>).",
+        "Solo en fichero externo o en la etiqueta <body>.",
+        "Solo inline y en fichero externo, nunca en el mismo documento."
+      ],
+      "correct": 0,
+      "explanation": "CSS puede aplicarse de tres formas: en fichero externo (.css vinculado con <link>), dentro del propio HTML mediante <style> en <head>, o directamente en cada etiqueta con el atributo style."
+    },
+    {
+      "question": "¿Qué significa que XHTML es 'sensible a mayúsculas y minúsculas'?",
+      "options": [
+        "Que el texto visible en la página debe estar en mayúsculas.",
+        "Que todos los elementos y atributos deben escribirse en minúsculas.",
+        "Que los comentarios no pueden contener letras mayúsculas."
+      ],
+      "correct": 1,
+      "explanation": "Al heredar de XML, XHTML distingue entre mayúsculas y minúsculas. Los elementos y atributos deben escribirse en minúsculas: <HTML> sería incorrecto; debe ser <html>."
+    },
+    {
+      "question": "¿Qué propiedad CSS3 permite redondear las esquinas de un elemento?",
+      "options": [
+        "box-shadow",
+        "border-radius",
+        "border-image"
+      ],
+      "correct": 1,
+      "explanation": "La propiedad border-radius se usa para redondear esquinas. Puede aceptar 1 valor (las 4 iguales), 2, 3 o 4 valores para controlar cada esquina individualmente."
+    },
+    {
+      "question": "¿Cuál es la función de la etiqueta <canvas> en HTML5?",
+      "options": [
+        "Reproducir vídeo directamente en el navegador sin plugins.",
+        "Proporcionar un lienzo para dibujar gráficos mediante scripts JavaScript.",
+        "Definir el área de navegación principal de la página."
+      ],
+      "correct": 1,
+      "explanation": "<canvas> proporciona un lienzo (sin borde ni contenido por defecto) sobre el que se pueden dibujar gráficos como círculos, líneas o texto usando JavaScript."
+    },
+    {
+      "question": "¿Qué versión de XHTML NO es compatible con versiones anteriores de HTML?",
+      "options": [
+        "XHTML 1.0",
+        "XHTML 1.1",
+        "XHTML Básico"
+      ],
+      "correct": 1,
+      "explanation": "XHTML 1.1 no es compatible con versiones anteriores de HTML. Está basada en módulos y elimina características en desuso. XHTML 1.0 sí es compatible con algunas versiones de HTML."
+    }
+  ],
+  "_sources": {
+    "s1": "U2 Lenguajes para la visualización de información.txt, pp. 4 (Página 4); U2 DIAPOSITIVAS Lenguajes para la visualización de la información.txt, p. 3",
+    "s2": "U2 Lenguajes para la visualización de información.txt, pp. 5-18 (Páginas 5-18); U2 Síntesis (6).txt, pp. 1-2",
+    "s3": "U2 Lenguajes para la visualización de información.txt, pp. 19-23 (Páginas 19-23)",
+    "s4": "U2 Lenguajes para la visualización de información.txt, pp. 24-34 (Páginas 24-34); U2 DIAPOSITIVAS Lenguajes para la visualización de la información.txt, pp. 7-17",
+    "s5": "U2 Lenguajes para la visualización de información.txt, pp. 34-38 (Páginas 34-38); U2 DIAPOSITIVAS Lenguajes para la visualización de la información.txt, p. 18",
+    "s6": "U2 Lenguajes para la visualización de información.txt, pp. 39-42 (Páginas 39-42)"
+  }
+}
