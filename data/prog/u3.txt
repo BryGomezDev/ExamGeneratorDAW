@@ -1,0 +1,79 @@
+PREGUNTA: .war es una extensión que:
+A: Almacena texto plano.
+B: Almacena bytecode.
+C: Es un archivo comprimido con ZIP.
+D: Ninguna de las anteriores es correcta.
+RESPUESTA: D
+EXPLICACION: Un fichero .war (Web Application Archive) es un paquete de despliegue para aplicaciones web Java que contiene servlets, JSPs, HTML, CSS, JavaScript y librerías. Aunque internamente usa el formato ZIP para comprimir, su propósito específico es empaquetar aplicaciones web completas para servidores como Tomcat, no almacenar texto plano ni bytecode directamente. Por eso ninguna de las opciones lo describe correctamente.
+
+PREGUNTA: Código traducido para que pueda ser interpretado por el microprocesador:
+A: Código fuente.
+B: Código máquina.
+C: Código intermedio.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: B
+EXPLICACION: El código máquina es el único que el microprocesador puede ejecutar directamente, ya que está compuesto por instrucciones binarias específicas para una arquitectura de hardware concreta (x86, ARM, etc.). El código fuente es el escrito por el programador en lenguaje de alto nivel, y el código intermedio (como el bytecode de Java) requiere una máquina virtual para su ejecución.
+
+PREGUNTA: CIL o MSIL es una forma de .NET de llamar a:
+A: El código fuente.
+B: El código intermedio.
+C: El código máquina.
+D: Ninguno de los anteriores es correcto.
+RESPUESTA: B
+EXPLICACION: CIL (Common Intermediate Language), también llamado MSIL (Microsoft Intermediate Language), es el código intermedio al que compilan los lenguajes de la plataforma .NET (C#, VB.NET, F#). Es equivalente al bytecode de Java: no es código máquina nativo, sino una representación independiente de la plataforma que el CLR (Common Language Runtime) compila a código máquina en tiempo de ejecución mediante JIT.
+
+PREGUNTA: El compilador de basura se ejecuta en varios pasos, el último de ellos es:
+A: Compilar el código.
+B: Borrar los objetos no referenciados.
+C: Compactar el espacio usado.
+D: Marcar los objetos de eliminación.
+RESPUESTA: C
+EXPLICACION: El recolector de basura (Garbage Collector) sigue tres fases: primero marca los objetos que ya no tienen referencias activas, después los elimina liberando la memoria que ocupaban, y finalmente compacta el heap moviendo los objetos supervivientes para eliminar la fragmentación y dejar el espacio libre contiguo. La compactación es el último paso y el más costoso en recursos.
+
+PREGUNTA: El lenguaje informático de alto nivel es aquel que:
+A: El microprocesador lee.
+B: Es semejante al humano.
+C: Se encuentra compilado.
+D: Ninguna de las anteriores.
+RESPUESTA: B
+EXPLICACION: Los lenguajes de alto nivel están diseñados para ser comprensibles por humanos, usando una sintaxis cercana al lenguaje natural o a las matemáticas (Python, Java, C#). Se contraponen a los lenguajes de bajo nivel (ensamblador, código máquina) que están más próximos al hardware. El hecho de estar compilado o no no define el nivel del lenguaje.
+
+PREGUNTA: En la configuración de NetBeans Keymap permite:
+A: Podremos elegir el tipo de simbología y la tipografía que utiliza el editor.
+B: Permite establecer shortcuts.
+C: Permite configurar como se comportará el depurador.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: B
+EXPLICACION: La sección Keymap de la configuración de NetBeans permite personalizar los atajos de teclado (shortcuts) del IDE, asignando combinaciones de teclas a las distintas acciones del entorno. La tipografía y el esquema de colores se configuran en la sección Fonts & Colors, y el comportamiento del depurador en la sección Java Debugger o similar.
+
+PREGUNTA: Es una versión de Java:
+A: J2ME.
+B: J2SE.
+C: J2EE.
+D: Todas las anteriores son correctas.
+RESPUESTA: D
+EXPLICACION: Java se distribuye en tres ediciones principales: J2ME (Java 2 Micro Edition) para dispositivos con recursos limitados como móviles o embebidos; J2SE (Java 2 Standard Edition) para aplicaciones de escritorio y de propósito general; y J2EE (Java 2 Enterprise Edition) para aplicaciones empresariales distribuidas con soporte para servlets, EJBs y servicios web. Las tres son versiones oficiales de la plataforma Java.
+
+PREGUNTA: GNU General Public License, version 2 es la licencia de:
+A: JDK.
+B: Java.
+C: OpenJDK.
+D: JRE.
+RESPUESTA: C
+EXPLICACION: OpenJDK es la implementación de referencia de código abierto de la plataforma Java, distribuida bajo la licencia GPLv2. El JDK (Java Development Kit) y el JRE (Java Runtime Environment) de Oracle tienen su propia licencia comercial (Oracle Technology Network License), más restrictiva para uso en producción. OpenJDK es la base sobre la que Oracle y otros construyen sus distribuciones.
+
+PREGUNTA: Un compilador JIT:
+A: Permite compilar directamente lenguaje de alto nivel.
+B: Nos permite ahorrar tiempo al evitar que traduzcamos varias veces el mismo código.
+C: Permite codificar código intermedio.
+D: Ninguna de las anteriores.
+RESPUESTA: B
+EXPLICACION: El compilador JIT (Just-In-Time) compila el código intermedio (bytecode) a código máquina nativo en tiempo de ejecución, y almacena el resultado en caché para no recompilarlo si se vuelve a ejecutar. Esto evita la traducción repetida del mismo fragmento de código, mejorando significativamente el rendimiento respecto a la interpretación pura. Es el mecanismo central de la JVM de Java y el CLR de .NET.
+
+PREGUNTA: Una de las desventajas del recolector de basura es:
+A: No se puede ejecutar a intervalos regulares.
+B: Consume recursos mientras se ejecuta.
+C: Solo se puede ejecutar cuando no queda memoria libre.
+D: Ninguna de las anteriores.
+RESPUESTA: B
+EXPLICACION: El Garbage Collector consume CPU y puede provocar pausas en la ejecución del programa mientras analiza y libera memoria, lo que es una desventaja en aplicaciones de tiempo real o con requisitos estrictos de latencia. Sí puede ejecutarse a intervalos regulares o ante condiciones de memoria (no solo cuando está llena), y precisamente esa automatización es su ventaja frente a la gestión manual de memoria.

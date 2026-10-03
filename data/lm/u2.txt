@@ -1,0 +1,79 @@
+PREGUNTA: Con qué programa podemos crear un documento HTML:
+A: Kompozer
+B: Bloc de Notas.
+C: HTML Online Editor.
+D: Todas las anteriores son correctas.
+RESPUESTA: D
+EXPLICACION: Un documento HTML es texto plano, por lo que puede crearse con cualquier editor de texto. El Bloc de Notas es el ejemplo más básico; Kompozer es un editor WYSIWYG de código abierto orientado a web; y HTML Online Editor es una herramienta en línea. Todos son válidos, aunque los editores especializados como VS Code o Kompozer añaden resaltado de sintaxis y ayudas al desarrollo.
+
+PREGUNTA: CSS son las siglas de:
+A: Code Sheets Style.
+B: Code Style Sheets.
+C: Cascading Style Sheets.
+D: Cascading Sheets Style.
+RESPUESTA: C
+EXPLICACION: CSS significa Cascading Style Sheets (Hojas de Estilo en Cascada). El término "cascada" hace referencia al mecanismo por el que se resuelven los conflictos entre reglas: cuando varias reglas afectan al mismo elemento, se aplica un orden de prioridad basado en especificidad, origen y orden de aparición. Es el lenguaje estándar para dar estilo visual a documentos HTML.
+
+PREGUNTA: Documento que permite validar un documento XML:
+A: DTD.
+B: OS/2.
+C: SASS.
+D: Ninguna de las anteriores es correcta.
+RESPUESTA: A
+EXPLICACION: DTD (Document Type Definition) es un esquema que define la estructura válida de un documento XML: qué etiquetas están permitidas, en qué orden pueden aparecer y qué atributos admiten. Un documento XML puede validarse contra su DTD para comprobar que cumple las reglas definidas. SASS es un preprocesador CSS y OS/2 es un sistema operativo, ninguno relacionado con la validación XML.
+
+PREGUNTA: Dreamweaver es:
+A: Una herramienta de diseño web de código abierto.
+B: Una herramienta de diseño web comercial.
+C: No es una herramienta de diseño web, sino de edición.
+D: Ninguna de las anteriores es correcta.
+RESPUESTA: B
+EXPLICACION: Adobe Dreamweaver es una herramienta comercial de diseño y desarrollo web que combina un editor de código con una vista de diseño visual (WYSIWYG). Pertenece a la suite de Adobe y requiere licencia de pago. No es de código abierto como Kompozer o Bluefish; y sí es una herramienta de diseño web, no solo de edición de texto plano.
+
+PREGUNTA: En HTML la etiqueta <link> determina:
+A: La versión.
+B: Estándar empleado.
+C: Recursos externos, hojas de estilo.
+D: Estilos empleados.
+RESPUESTA: C
+EXPLICACION: La etiqueta <link> se coloca en el <head> del documento y sirve para enlazar recursos externos, siendo su uso más habitual la vinculación de hojas de estilo CSS mediante el atributo rel="stylesheet". También puede enlazar iconos (favicon), fuentes web o manifiestos. No define la versión del documento ni el estándar, que corresponde a la declaración <!DOCTYPE html>.
+
+PREGUNTA: HTML 5 surgió en el año:
+A: 1998.
+B: 2001.
+C: 2014.
+D: 2020.
+RESPUESTA: C
+EXPLICACION: HTML5 fue publicado como recomendación oficial del W3C en octubre de 2014, aunque el borrador de trabajo estaba disponible desde 2008 y muchos navegadores ya implementaban sus características antes de la publicación oficial. HTML5 introdujo etiquetas semánticas (<article>, <section>, <nav>), APIs como Canvas y el elemento <video>, eliminando la dependencia de plugins como Flash.
+
+PREGUNTA: Las esquinas redondeadas se pueden crear introduciendo:
+A: Solamente con un valor.
+B: Con uno o dos valores.
+C: Con uno, dos o tres valores.
+D: Con uno, dos, tres o cuatro valores.
+RESPUESTA: D
+EXPLICACION: La propiedad CSS border-radius acepta entre 1 y 4 valores: un valor aplica el mismo radio a las cuatro esquinas; dos valores afectan a esquinas opuestas (superior-izquierda/inferior-derecha y superior-derecha/inferior-izquierda); tres valores diferencian tres grupos de esquinas; y cuatro valores permiten configurar individualmente cada esquina en el sentido de las agujas del reloj.
+
+PREGUNTA: ¿Cómo se asigna un valor a un atributo HTML?
+A: Mediante el signo +.
+B: Usando comillas dobles.
+C: Con un guion bajo.
+D: Usando el signo igual (=).
+RESPUESTA: D
+EXPLICACION: En HTML, los atributos se asignan con el signo igual (=) entre el nombre del atributo y su valor: por ejemplo, class="contenedor" o href="https://ejemplo.com". Las comillas dobles envuelven el valor pero no son el operador de asignación en sí; el signo + no tiene función de asignación en HTML, y el guion bajo forma parte de nombres de atributos o clases, no de la asignación.
+
+PREGUNTA: Los enlaces absolutos:
+A: Emplean una URL.
+B: Emplean archivos en el mismo servidor.
+C: Emplean archivos en la misma página.
+D: Ninguna de las anteriores es correcta.
+RESPUESTA: A
+EXPLICACION: Un enlace absoluto especifica la dirección completa del recurso mediante una URL que incluye el protocolo, el dominio y la ruta (por ejemplo, https://www.ejemplo.com/pagina.html). Los enlaces relativos, en cambio, referencian recursos en el mismo servidor usando rutas parciales. Los anclajes (#) enlazan a secciones dentro de la misma página, no son absolutos ni relativos en el sentido habitual.
+
+PREGUNTA: No es una de las nuevas etiquetas HTML 5:
+A: dialog.
+B: figure.
+C: progress.
+D: form.
+RESPUESTA: D
+EXPLICACION: La etiqueta <form> existe desde las primeras versiones de HTML y no es una novedad de HTML5. En cambio, <dialog> (ventana de diálogo modal nativa), <figure> (contenido ilustrativo con pie de figura) y <progress> (barra de progreso) son etiquetas semánticas introducidas en HTML5 para mejorar la accesibilidad y la estructura del contenido sin depender de soluciones JavaScript o de terceros.
