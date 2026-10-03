@@ -143,10 +143,22 @@
         },
         {
           "type": "table",
-          "headers": ["Concepto", "Porcentaje sobre ingresos netos", "Significado"],
+          "headers": [
+            "Concepto",
+            "Porcentaje sobre ingresos netos",
+            "Significado"
+          ],
           "rows": [
-            ["Capacidad de endeudamiento", "35%", "Cuota máxima recomendada sin alto riesgo"],
-            ["Límite de endeudamiento", "40%", "Umbral máximo absoluto; superarlo implica alto riesgo"]
+            [
+              "Capacidad de endeudamiento",
+              "35%",
+              "Cuota máxima recomendada sin alto riesgo"
+            ],
+            [
+              "Límite de endeudamiento",
+              "40%",
+              "Umbral máximo absoluto; superarlo implica alto riesgo"
+            ]
           ]
         }
       ]
@@ -295,17 +307,67 @@
         },
         {
           "type": "table",
-          "headers": ["Forma jurídica", "Nº de socios", "Capital mínimo", "Responsabilidad"],
+          "headers": [
+            "Forma jurídica",
+            "Nº de socios",
+            "Capital mínimo",
+            "Responsabilidad"
+          ],
           "rows": [
-            ["Empresario individual", "1", "Sin mínimo legal", "Todo su patrimonio"],
-            ["Comunidad de bienes", "Mín. 2", "Sin mínimo legal", "Todo su patrimonio"],
-            ["Sociedad Anónima (S.A.)", "Mín. 1", "60.000 €", "Limitada al capital aportado"],
-            ["Sociedad de Responsabilidad Limitada (S.R.L.)", "Mín. 1", "1 €", "Limitada al capital aportado"],
-            ["Sociedad Colectiva", "Mín. 2", "Sin mínimo legal", "Todo su patrimonio"],
-            ["Sociedad Comanditaria por acciones", "Mín. 2", "30.000 €", "Socios colectivos: ilimitada; Socios comanditarios: limitada"],
-            ["Sociedad Anónima Laboral (S.A.L.)", "Mín. 3", "30.000 €", "Limitada al capital aportado"],
-            ["Sociedad Laboral Limitada (S.R.L.L.)", "Mín. 3", "3.000 €", "Limitada al capital aportado"],
-            ["Sociedad Cooperativa", "Mín. 3", "Fijado en estatutos", "Limitada al capital aportado"]
+            [
+              "Empresario individual",
+              "1",
+              "Sin mínimo legal",
+              "Todo su patrimonio"
+            ],
+            [
+              "Comunidad de bienes",
+              "Mín. 2",
+              "Sin mínimo legal",
+              "Todo su patrimonio"
+            ],
+            [
+              "Sociedad Anónima (S.A.)",
+              "Mín. 1",
+              "60.000 €",
+              "Limitada al capital aportado"
+            ],
+            [
+              "Sociedad de Responsabilidad Limitada (S.R.L.)",
+              "Mín. 1",
+              "1 €",
+              "Limitada al capital aportado"
+            ],
+            [
+              "Sociedad Colectiva",
+              "Mín. 2",
+              "Sin mínimo legal",
+              "Todo su patrimonio"
+            ],
+            [
+              "Sociedad Comanditaria por acciones",
+              "Mín. 2",
+              "30.000 €",
+              "Socios colectivos: ilimitada; Socios comanditarios: limitada"
+            ],
+            [
+              "Sociedad Anónima Laboral (S.A.L.)",
+              "Mín. 3",
+              "30.000 €",
+              "Limitada al capital aportado"
+            ],
+            [
+              "Sociedad Laboral Limitada (S.R.L.L.)",
+              "Mín. 3",
+              "3.000 €",
+              "Limitada al capital aportado"
+            ],
+            [
+              "Sociedad Cooperativa",
+              "Mín. 3",
+              "Fijado en estatutos",
+              "Limitada al capital aportado"
+            ]
           ]
         },
         {
@@ -316,28 +378,124 @@
             "Por titularidad del capital: públicas, privadas y mixtas",
             "Por actividad: productoras, comerciales y de servicios"
           ]
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "S.A.",
+              "title": "Sociedad Anonima",
+              "desc": "Capital minimo 60.000 EUR dividido en acciones libremente transmisibles. Responsabilidad limitada al capital aportado. Apta para grandes empresas y cotizacion en bolsa."
+            },
+            {
+              "kicker": "S.L.",
+              "title": "Sociedad de Responsabilidad Limitada",
+              "desc": "Capital minimo 1 EUR dividido en participaciones (no acciones). Transmision restringida. La forma mas usada por PYMES en Espana."
+            },
+            {
+              "kicker": "S.L.N.E.",
+              "title": "Sociedad Limitada Nueva Empresa",
+              "desc": "Variante simplificada de la S.L. para emprendedores. Constitucion rapida telematica. Capital minimo 1 EUR, maximo 120.202 EUR."
+            },
+            {
+              "kicker": "S.Coop.",
+              "title": "Sociedad Cooperativa",
+              "desc": "Agrupacion de personas con actividad empresarial comun. Los socios participan en la gestion y reparten los resultados segun su actividad. Puede ser de primero o segundo grado."
+            },
+            {
+              "kicker": "S.C.",
+              "title": "Sociedad Colectiva",
+              "desc": "Todos los socios responden ilimitada y solidariamente de las deudas sociales con su patrimonio personal. Poco usada por el alto riesgo personal."
+            },
+            {
+              "kicker": "S.Com.",
+              "title": "Sociedad Comanditaria",
+              "desc": "Dos tipos de socios: colectivos (gestion y responsabilidad ilimitada) y comanditarios (solo aportan capital y su responsabilidad es limitada)."
+            },
+            {
+              "kicker": "S.A.L./S.L.L.",
+              "title": "Sociedad Laboral",
+              "desc": "S.A. o S.L. en la que la mayoria del capital pertenece a trabajadores con contrato indefinido. Fomenta la participacion de los empleados en la empresa."
+            },
+            {
+              "kicker": "S.A.T.",
+              "title": "Sociedad Agraria de Transformacion",
+              "desc": "Entidad para la produccion, transformacion y comercializacion de productos agricolas, ganaderos o forestales. Sin animo de lucro predominante."
+            }
+          ]
         }
       ]
     }
   ],
   "glossary": [
-    { "term": "Coste de oportunidad", "def": "Valor de la mejor alternativa a la que se renuncia al tomar una decisión." },
-    { "term": "Coste irrecuperable", "def": "Costes del pasado que ya no pueden modificarse y no deben influir en decisiones futuras." },
-    { "term": "Incentivos", "def": "Factores positivos o negativos que motivan a actuar de una manera concreta, modificando la conducta." },
-    { "term": "Consumo", "def": "Compra y utilización de bienes y servicios. Está condicionado por ingresos, necesidades, preferencias y precios." },
-    { "term": "Ahorro", "def": "Parte de los ingresos que no se gastan en consumo inmediato, sino que se reservan para uso futuro." },
-    { "term": "Presupuesto familiar", "def": "Herramienta de planificación financiera que prevé ingresos y gastos (fijos, corrientes y ocasionales)." },
-    { "term": "Agentes económicos", "def": "Personas físicas o jurídicas que participan en un sistema económico: familias, empresas, Estado y sector bancario." },
-    { "term": "Flujo circular de la renta", "def": "Representación esquemática de las relaciones de intercambio entre los agentes económicos." },
-    { "term": "Capacidad de endeudamiento", "def": "35% de los ingresos netos. Cuota máxima recomendada para compromisos de pago." },
-    { "term": "Límite de endeudamiento", "def": "40% de los ingresos netos. Umbral máximo absoluto de endeudamiento." },
-    { "term": "TAE", "def": "Tasa Anual Equivalente. Coste real anual de un préstamo: incluye tipo de interés nominal, comisiones y gastos." },
-    { "term": "Tarjeta revolving", "def": "Tarjeta que permite aplazar el pago mediante cuotas fijas o porcentaje del crédito; genera 'deuda eterna' por sus elevados intereses." },
-    { "term": "RSC / RSE", "def": "Responsabilidad Social Corporativa/Empresarial. Integración voluntaria de preocupaciones sociales y medioambientales en las operaciones de la empresa." },
-    { "term": "Indicadores GRI", "def": "KPI estandarizados por la Global Reporting Initiative para medir la sostenibilidad (GRI 200 económico, GRI 300 ambiental, GRI 400 social)." },
-    { "term": "Balance social", "def": "Herramienta de gestión que evalúa la acción social de la empresa mediante un área interna y un área externa." },
-    { "term": "Stakeholders", "def": "Grupos de interés que interactúan con la empresa y a quienes la RSC dirige sus principios y valores." },
-    { "term": "Compensación ambiental", "def": "Acciones orientadas a equilibrar los impactos negativos inevitables de una organización en el medio ambiente con impactos positivos." }
+    {
+      "term": "Coste de oportunidad",
+      "def": "Valor de la mejor alternativa a la que se renuncia al tomar una decisión."
+    },
+    {
+      "term": "Coste irrecuperable",
+      "def": "Costes del pasado que ya no pueden modificarse y no deben influir en decisiones futuras."
+    },
+    {
+      "term": "Incentivos",
+      "def": "Factores positivos o negativos que motivan a actuar de una manera concreta, modificando la conducta."
+    },
+    {
+      "term": "Consumo",
+      "def": "Compra y utilización de bienes y servicios. Está condicionado por ingresos, necesidades, preferencias y precios."
+    },
+    {
+      "term": "Ahorro",
+      "def": "Parte de los ingresos que no se gastan en consumo inmediato, sino que se reservan para uso futuro."
+    },
+    {
+      "term": "Presupuesto familiar",
+      "def": "Herramienta de planificación financiera que prevé ingresos y gastos (fijos, corrientes y ocasionales)."
+    },
+    {
+      "term": "Agentes económicos",
+      "def": "Personas físicas o jurídicas que participan en un sistema económico: familias, empresas, Estado y sector bancario."
+    },
+    {
+      "term": "Flujo circular de la renta",
+      "def": "Representación esquemática de las relaciones de intercambio entre los agentes económicos."
+    },
+    {
+      "term": "Capacidad de endeudamiento",
+      "def": "35% de los ingresos netos. Cuota máxima recomendada para compromisos de pago."
+    },
+    {
+      "term": "Límite de endeudamiento",
+      "def": "40% de los ingresos netos. Umbral máximo absoluto de endeudamiento."
+    },
+    {
+      "term": "TAE",
+      "def": "Tasa Anual Equivalente. Coste real anual de un préstamo: incluye tipo de interés nominal, comisiones y gastos."
+    },
+    {
+      "term": "Tarjeta revolving",
+      "def": "Tarjeta que permite aplazar el pago mediante cuotas fijas o porcentaje del crédito; genera 'deuda eterna' por sus elevados intereses."
+    },
+    {
+      "term": "RSC / RSE",
+      "def": "Responsabilidad Social Corporativa/Empresarial. Integración voluntaria de preocupaciones sociales y medioambientales en las operaciones de la empresa."
+    },
+    {
+      "term": "Indicadores GRI",
+      "def": "KPI estandarizados por la Global Reporting Initiative para medir la sostenibilidad (GRI 200 económico, GRI 300 ambiental, GRI 400 social)."
+    },
+    {
+      "term": "Balance social",
+      "def": "Herramienta de gestión que evalúa la acción social de la empresa mediante un área interna y un área externa."
+    },
+    {
+      "term": "Stakeholders",
+      "def": "Grupos de interés que interactúan con la empresa y a quienes la RSC dirige sus principios y valores."
+    },
+    {
+      "term": "Compensación ambiental",
+      "def": "Acciones orientadas a equilibrar los impactos negativos inevitables de una organización en el medio ambiente con impactos positivos."
+    }
   ],
   "quiz": [
     {
@@ -438,6 +596,6 @@
     "s6": "U1 Economía y administración nociones básicas.txt pp. 12-16; U1 Síntesis Economía y Administración. Nociones básicas.txt pp. 2",
     "s7": "U1 Economía y administración nociones básicas.txt pp. 17-18",
     "s8": "U1 Economía y administración nociones básicas.txt pp. 19-23; U1 DIAPOSITIVAS Economía y administración, nociones básicas.txt pp. 8-9",
-    "s9": "U1 Economía y administración nociones básicas.txt pp. 24-26; U1 Síntesis Economía y Administración. Nociones básicas.txt pp. 1"
+    "s9": "Infografia - U1 Personas juridicas.pdf (tipos de sociedades mercantiles)"
   }
 }

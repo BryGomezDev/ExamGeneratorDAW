@@ -192,11 +192,27 @@
         },
         {
           "type": "table",
-          "headers": ["Tipo de tributo", "Descripción", "Ejemplo"],
+          "headers": [
+            "Tipo de tributo",
+            "Descripción",
+            "Ejemplo"
+          ],
           "rows": [
-            ["Impuestos", "Pagos sin contraprestación directa dedicados a la financiación general del gasto público.", "Pago del IVA al comprar un producto."],
-            ["Contribuciones especiales", "Pagos con contraprestación directa y comunitaria. Derivan del aprovechamiento especial del dominio público o de un beneficio o mayor valor de los bienes causado por una obra pública.", "Mejora del alumbrado de una calle que beneficia a los propietarios de las viviendas."],
-            ["Tasas", "Pagos por una contraprestación directa y personal: servicios y trámites obligatorios o prestados en exclusiva por la administración.", "Pago para renovar el DNI."]
+            [
+              "Impuestos",
+              "Pagos sin contraprestación directa dedicados a la financiación general del gasto público.",
+              "Pago del IVA al comprar un producto."
+            ],
+            [
+              "Contribuciones especiales",
+              "Pagos con contraprestación directa y comunitaria. Derivan del aprovechamiento especial del dominio público o de un beneficio o mayor valor de los bienes causado por una obra pública.",
+              "Mejora del alumbrado de una calle que beneficia a los propietarios de las viviendas."
+            ],
+            [
+              "Tasas",
+              "Pagos por una contraprestación directa y personal: servicios y trámites obligatorios o prestados en exclusiva por la administración.",
+              "Pago para renovar el DNI."
+            ]
           ]
         }
       ]
@@ -244,45 +260,147 @@
       "blocks": [
         {
           "type": "text",
+          "content": "El IRPF es el impuesto que mas ingresos aporta al Estado, por encima del IVA y del Impuesto sobre Sociedades. Grava la renta obtenida durante el ano natural por las personas fisicas residentes en Espana."
+        },
+        {
+          "type": "text",
           "content": "Los tipos del IRPF son progresivos: gravan en mayor porcentaje las cuantías más altas. A modo de ejemplo, se muestran los tramos de la Región de Murcia para 2024."
         },
         {
           "type": "table",
-          "headers": ["Tramo de renta", "Tipo autonómico", "Tipo estatal", "Tipo total"],
+          "headers": [
+            "Tramo de renta",
+            "Tipo autonómico",
+            "Tipo estatal",
+            "Tipo total"
+          ],
           "rows": [
-            ["0 – 12.450 €", "9,5%", "9,5%", "19%"],
-            ["12.450 – 20.199 €", "11,2%", "12%", "23,2%"],
-            ["20.200 – 35.199 €", "13,3%", "15%", "28,3%"],
-            ["35.200 – 59.999 €", "17,9%", "18,5%", "36,4%"],
-            ["60.000 – 299.999 €", "22,5%", "22,5%", "45%"],
-            ["A partir de 300.000 €", "24,5%", "22,5%", "47%"]
+            [
+              "0 – 12.450 €",
+              "9,5%",
+              "9,5%",
+              "19%"
+            ],
+            [
+              "12.450 – 20.199 €",
+              "11,2%",
+              "12%",
+              "23,2%"
+            ],
+            [
+              "20.200 – 35.199 €",
+              "13,3%",
+              "15%",
+              "28,3%"
+            ],
+            [
+              "35.200 – 59.999 €",
+              "17,9%",
+              "18,5%",
+              "36,4%"
+            ],
+            [
+              "60.000 – 299.999 €",
+              "22,5%",
+              "22,5%",
+              "45%"
+            ],
+            [
+              "A partir de 300.000 €",
+              "24,5%",
+              "22,5%",
+              "47%"
+            ]
           ]
         }
       ]
     }
   ],
   "glossary": [
-    { "term": "Tributo", "def": "Prestación pecuniaria exigida por una Administración pública como consecuencia de la realización de un hecho imponible, para sostener el gasto público." },
-    { "term": "Impuesto", "def": "Tributo sin contraprestación directa dedicado a la financiación general del gasto público." },
-    { "term": "Tasa", "def": "Tributo por una contraprestación directa y personal: servicios o trámites obligatorios o prestados en exclusiva por la Administración." },
-    { "term": "Contribución especial", "def": "Tributo con contraprestación directa y comunitaria, derivado del aprovechamiento especial del dominio público o de un beneficio causado por una obra pública." },
-    { "term": "Agencia Tributaria", "def": "Entidad de derecho público adscrita al Ministerio de Hacienda, creada en 1992 para aplicar el sistema tributario español." },
-    { "term": "Presupuesto (documento)", "def": "Expedido por el vendedor para dejar constancia de la oferta y condiciones de entrega de un bien o servicio. Vinculante para el comprador al aceptarlo." },
-    { "term": "Pedido", "def": "Documento emitido por el comprador para solicitar bienes o servicios a un proveedor. El precio se indica sin IVA." },
-    { "term": "Albarán", "def": "Nota de entrega emitida por el vendedor para acreditar la descripción de las mercancías entregadas. El comprador lo firma al recibirlas." },
-    { "term": "Factura", "def": "Documento obligatorio de carácter mercantil que acredita legalmente la compraventa de un bien o la prestación de un servicio. Contenido regulado legalmente." },
-    { "term": "Letra de cambio", "def": "Documento formal con orden de pago cuyo derecho de cobro puede transmitirse a un tercero." },
-    { "term": "Pagaré", "def": "Compromiso escrito de pagar un importe a otra persona en una fecha de vencimiento determinada." },
-    { "term": "Plan de tesorería", "def": "Documento que recoge los cobros y pagos previstos por la empresa a corto plazo, permitiendo anticipar déficits o superávits." },
-    { "term": "IVA repercutido", "def": "IVA que la empresa cobra a sus clientes." },
-    { "term": "IVA soportado", "def": "IVA que la empresa paga a sus proveedores." },
-    { "term": "Base imponible (IRPF)", "def": "Rentas totales del contribuyente sobre las que se calcula el impuesto." },
-    { "term": "Base liquidable (IRPF)", "def": "Resultado de aplicar a la base imponible las deducciones o reducciones correspondientes. Es la cantidad sometida al gravamen." },
-    { "term": "Retenciones (IRPF)", "def": "Cantidades que los pagadores de algunas rentas inmovilizan al sujeto pasivo e ingresan anticipadamente en la Administración tributaria." },
-    { "term": "IAE", "def": "Impuesto de Actividades Económicas. Impuesto local, personal y directo que grava el ejercicio de actividades económicas." },
-    { "term": "IS (Impuesto sobre Sociedades)", "def": "Tributo personal y directo que grava las rentas de empresas y entidades jurídicas residentes en España. Tipo general: 25%." },
-    { "term": "Análisis PESTEL", "def": "Herramienta de análisis del entorno general que estudia factores Políticos, Económicos, Sociales, Tecnológicos, Ecológicos y Legales." },
-    { "term": "5 fuerzas de Porter", "def": "Modelo de análisis del entorno específico que examina: amenaza de nuevos competidores, poder de clientes, poder de proveedores, rivalidad entre competidores y amenaza de sustitutos." }
+    {
+      "term": "Tributo",
+      "def": "Prestación pecuniaria exigida por una Administración pública como consecuencia de la realización de un hecho imponible, para sostener el gasto público."
+    },
+    {
+      "term": "Impuesto",
+      "def": "Tributo sin contraprestación directa dedicado a la financiación general del gasto público."
+    },
+    {
+      "term": "Tasa",
+      "def": "Tributo por una contraprestación directa y personal: servicios o trámites obligatorios o prestados en exclusiva por la Administración."
+    },
+    {
+      "term": "Contribución especial",
+      "def": "Tributo con contraprestación directa y comunitaria, derivado del aprovechamiento especial del dominio público o de un beneficio causado por una obra pública."
+    },
+    {
+      "term": "Agencia Tributaria",
+      "def": "Entidad de derecho público adscrita al Ministerio de Hacienda, creada en 1992 para aplicar el sistema tributario español."
+    },
+    {
+      "term": "Presupuesto (documento)",
+      "def": "Expedido por el vendedor para dejar constancia de la oferta y condiciones de entrega de un bien o servicio. Vinculante para el comprador al aceptarlo."
+    },
+    {
+      "term": "Pedido",
+      "def": "Documento emitido por el comprador para solicitar bienes o servicios a un proveedor. El precio se indica sin IVA."
+    },
+    {
+      "term": "Albarán",
+      "def": "Nota de entrega emitida por el vendedor para acreditar la descripción de las mercancías entregadas. El comprador lo firma al recibirlas."
+    },
+    {
+      "term": "Factura",
+      "def": "Documento obligatorio de carácter mercantil que acredita legalmente la compraventa de un bien o la prestación de un servicio. Contenido regulado legalmente."
+    },
+    {
+      "term": "Letra de cambio",
+      "def": "Documento formal con orden de pago cuyo derecho de cobro puede transmitirse a un tercero."
+    },
+    {
+      "term": "Pagaré",
+      "def": "Compromiso escrito de pagar un importe a otra persona en una fecha de vencimiento determinada."
+    },
+    {
+      "term": "Plan de tesorería",
+      "def": "Documento que recoge los cobros y pagos previstos por la empresa a corto plazo, permitiendo anticipar déficits o superávits."
+    },
+    {
+      "term": "IVA repercutido",
+      "def": "IVA que la empresa cobra a sus clientes."
+    },
+    {
+      "term": "IVA soportado",
+      "def": "IVA que la empresa paga a sus proveedores."
+    },
+    {
+      "term": "Base imponible (IRPF)",
+      "def": "Rentas totales del contribuyente sobre las que se calcula el impuesto."
+    },
+    {
+      "term": "Base liquidable (IRPF)",
+      "def": "Resultado de aplicar a la base imponible las deducciones o reducciones correspondientes. Es la cantidad sometida al gravamen."
+    },
+    {
+      "term": "Retenciones (IRPF)",
+      "def": "Cantidades que los pagadores de algunas rentas inmovilizan al sujeto pasivo e ingresan anticipadamente en la Administración tributaria."
+    },
+    {
+      "term": "IAE",
+      "def": "Impuesto de Actividades Económicas. Impuesto local, personal y directo que grava el ejercicio de actividades económicas."
+    },
+    {
+      "term": "IS (Impuesto sobre Sociedades)",
+      "def": "Tributo personal y directo que grava las rentas de empresas y entidades jurídicas residentes en España. Tipo general: 25%."
+    },
+    {
+      "term": "Análisis PESTEL",
+      "def": "Herramienta de análisis del entorno general que estudia factores Políticos, Económicos, Sociales, Tecnológicos, Ecológicos y Legales."
+    },
+    {
+      "term": "5 fuerzas de Porter",
+      "def": "Modelo de análisis del entorno específico que examina: amenaza de nuevos competidores, poder de clientes, poder de proveedores, rivalidad entre competidores y amenaza de sustitutos."
+    }
   ],
   "quiz": [
     {
@@ -383,6 +501,6 @@
     "s6": "U2 El sistema fiscal.txt pp. 12; U2 DIAPOSITIVAS El sistema fiscal.txt pp. 7",
     "s7": "U2 El sistema fiscal.txt pp. 13-14; U2 Síntesis El sistema fiscal.txt pp. 2",
     "s8": "U2 El sistema fiscal.txt pp. 15-22; U2 DIAPOSITIVAS El sistema fiscal.txt pp. 10",
-    "s9": "U2 El sistema fiscal.txt pp. 20-21"
+    "s9": "Resumen_IRPF. Preguntas mas comunes.pdf (relevancia recaudatoria del IRPF)"
   }
 }

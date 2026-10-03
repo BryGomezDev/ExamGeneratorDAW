@@ -23,10 +23,26 @@
         {
           "type": "timeline",
           "items": [
-            { "year": "Inicios", "label": "Lenguaje máquina (binario)", "detail": "Todo era 0 y 1. Solo accesible para unos pocos especialistas." },
-            { "year": "Siguiente paso", "label": "Tarjetas perforadas", "detail": "Método manual de introducir instrucciones en código binario mediante agujeros en tarjetas." },
-            { "year": "Avance", "label": "Lenguaje ensamblador", "detail": "Se sustituyeron secuencias de 0s y 1s por palabras (mnemonics). Seguía muy ligado al hardware." },
-            { "year": "Modernidad", "label": "Lenguajes de alto nivel", "detail": "A partir del ensamblador surgen lenguajes más accesibles: Fortran, Cobol, Pascal, C, Java, Python..." }
+            {
+              "year": "Inicios",
+              "label": "Lenguaje máquina (binario)",
+              "detail": "Todo era 0 y 1. Solo accesible para unos pocos especialistas."
+            },
+            {
+              "year": "Siguiente paso",
+              "label": "Tarjetas perforadas",
+              "detail": "Método manual de introducir instrucciones en código binario mediante agujeros en tarjetas."
+            },
+            {
+              "year": "Avance",
+              "label": "Lenguaje ensamblador",
+              "detail": "Se sustituyeron secuencias de 0s y 1s por palabras (mnemonics). Seguía muy ligado al hardware."
+            },
+            {
+              "year": "Modernidad",
+              "label": "Lenguajes de alto nivel",
+              "detail": "A partir del ensamblador surgen lenguajes más accesibles: Fortran, Cobol, Pascal, C, Java, Python..."
+            }
           ]
         }
       ]
@@ -39,9 +55,18 @@
         {
           "type": "flipcards",
           "items": [
-            { "term": "Programa informático", "def": "Conjunto de instrucciones o algoritmos escritos en un lenguaje de programación para ser interpretados y ejecutados en una computadora." },
-            { "term": "Algoritmo", "def": "Conjunto de instrucciones definidas, ordenadas y concretas para resolver un problema o tarea. No necesariamente se ejecuta en máquina (ej.: una receta de cocina). Su representación es el pseudocódigo o los diagramas de flujo." },
-            { "term": "¿Algoritmo = Programa?", "def": "No son lo mismo. Un algoritmo puede ejecutarlo una persona; un programa siempre está diseñado para ejecutarse en una computadora. Los programadores diseñan algoritmos primero y luego los implementan en un programa." }
+            {
+              "term": "Programa informático",
+              "def": "Conjunto de instrucciones o algoritmos escritos en un lenguaje de programación para ser interpretados y ejecutados en una computadora."
+            },
+            {
+              "term": "Algoritmo",
+              "def": "Conjunto de instrucciones definidas, ordenadas y concretas para resolver un problema o tarea. No necesariamente se ejecuta en máquina (ej.: una receta de cocina). Su representación es el pseudocódigo o los diagramas de flujo."
+            },
+            {
+              "term": "¿Algoritmo = Programa?",
+              "def": "No son lo mismo. Un algoritmo puede ejecutarlo una persona; un programa siempre está diseñado para ejecutarse en una computadora. Los programadores diseñan algoritmos primero y luego los implementan en un programa."
+            }
           ]
         }
       ]
@@ -57,11 +82,27 @@
         },
         {
           "type": "table",
-          "headers": ["Nivel", "Descripción", "Ejemplos"],
+          "headers": [
+            "Nivel",
+            "Descripción",
+            "Ejemplos"
+          ],
           "rows": [
-            ["Bajo nivel", "Operan directamente con la máquina. Trabajan con instrucciones elementales (0 y 1, AND, OR, XOR).", "Lenguaje máquina, Ensamblador"],
-            ["Medio nivel", "Capa de abstracción respecto al bajo nivel. Instrucciones más complejas que en bajo nivel.", "Pascal, Delphi, Modula2, C, C++"],
-            ["Alto nivel", "Más cercanos al lenguaje humano. Requieren traductores/compiladores para código máquina.", "Java, C#, Python, JavaScript, PHP, Kotlin"]
+            [
+              "Bajo nivel",
+              "Operan directamente con la máquina. Trabajan con instrucciones elementales (0 y 1, AND, OR, XOR).",
+              "Lenguaje máquina, Ensamblador"
+            ],
+            [
+              "Medio nivel",
+              "Capa de abstracción respecto al bajo nivel. Instrucciones más complejas que en bajo nivel.",
+              "Pascal, Delphi, Modula2, C, C++"
+            ],
+            [
+              "Alto nivel",
+              "Más cercanos al lenguaje humano. Requieren traductores/compiladores para código máquina.",
+              "Java, C#, Python, JavaScript, PHP, Kotlin"
+            ]
           ]
         }
       ]
@@ -102,9 +143,24 @@
         {
           "type": "cards",
           "items": [
-            { "kicker": "Estructura 1", "title": "Secuencial", "desc": "Se ejecuta una instrucción tras otra siguiendo el orden preasignado.", "example": "" },
-            { "kicker": "Estructura 2", "title": "Alternativa", "desc": "Se evalúan expresiones; dependiendo del resultado se ejecuta una instrucción u otra.", "example": "" },
-            { "kicker": "Estructura 3", "title": "Iterativa", "desc": "Se repiten instrucciones hasta que se aplique una condición de parada.", "example": "" }
+            {
+              "kicker": "Estructura 1",
+              "title": "Secuencial",
+              "desc": "Se ejecuta una instrucción tras otra siguiendo el orden preasignado.",
+              "example": ""
+            },
+            {
+              "kicker": "Estructura 2",
+              "title": "Alternativa",
+              "desc": "Se evalúan expresiones; dependiendo del resultado se ejecuta una instrucción u otra.",
+              "example": ""
+            },
+            {
+              "kicker": "Estructura 3",
+              "title": "Iterativa",
+              "desc": "Se repiten instrucciones hasta que se aplique una condición de parada.",
+              "example": ""
+            }
           ]
         },
         {
@@ -148,20 +204,58 @@
         },
         {
           "type": "table",
-          "headers": ["Operadores aritméticos", "Operadores relacionales", "Operadores lógicos"],
+          "headers": [
+            "Operadores aritméticos",
+            "Operadores relacionales",
+            "Operadores lógicos"
+          ],
           "rows": [
-            ["+ Suma", "= Igual", "and / Y lógico"],
-            ["- Resta", "< Menor", "or / O lógico"],
-            ["* Multiplicación", "<= Menor o igual", "no / Negación"],
-            ["/ División real", "> Mayor", "← Asignación"],
-            ["Div División entera", ">= Mayor o igual", "// Comentario"],
-            ["Mod Resto o módulo", "<> Distinto", ""],
-            ["^ Potencia", "", ""]
+            [
+              "+ Suma",
+              "= Igual",
+              "and / Y lógico"
+            ],
+            [
+              "- Resta",
+              "< Menor",
+              "or / O lógico"
+            ],
+            [
+              "* Multiplicación",
+              "<= Menor o igual",
+              "no / Negación"
+            ],
+            [
+              "/ División real",
+              "> Mayor",
+              "← Asignación"
+            ],
+            [
+              "Div División entera",
+              ">= Mayor o igual",
+              "// Comentario"
+            ],
+            [
+              "Mod Resto o módulo",
+              "<> Distinto",
+              ""
+            ],
+            [
+              "^ Potencia",
+              "",
+              ""
+            ]
           ]
         },
         {
           "type": "chips",
-          "items": ["Carácter", "Cadena", "Entero", "Real", "Booleano"]
+          "items": [
+            "Carácter",
+            "Cadena",
+            "Entero",
+            "Real",
+            "Booleano"
+          ]
         },
         {
           "type": "accordion",
@@ -221,24 +315,90 @@
         },
         {
           "type": "table",
-          "headers": ["Símbolo", "Representación"],
+          "headers": [
+            "Simbolo ANSI",
+            "Nombre oficial",
+            "Uso"
+          ],
           "rows": [
-            ["Óvalo / Elipse", "Terminal: inicio y fin del diagrama."],
-            ["Trapecio rectángulo", "Entrada de datos desde teclado (el proceso espera al usuario)."],
-            ["Paralelogramo", "Comunicación con periféricos para entrada o salida de información."],
-            ["Rectángulo", "Operaciones de cálculo interno del programa."],
-            ["Rombo", "Decisiones: tantas líneas de flujo como alternativas."],
-            ["Rectángulo con doble línea", "Subproceso (procedimiento/función definido en otro lugar)."],
-            ["Circunferencia", "Conector en la misma página."],
-            ["Pentágono irregular", "Conector entre páginas distintas."],
-            ["Cilindro", "Base de datos para intercambio y almacenamiento."],
-            ["Media ola / Rectángulo", "Documento impreso."],
-            ["Flechas", "Indican el orden de ejecución de las operaciones."]
+            [
+              "Flecha / Linea",
+              "Linea de flujo",
+              "Indica la direccion y secuencia del proceso"
+            ],
+            [
+              "Cometa / Globo",
+              "Anotacion",
+              "Agrega comentarios o aclaraciones al diagrama"
+            ],
+            [
+              "Paralelogramo",
+              "Entrada / Salida",
+              "Representa lectura de datos o escritura de resultados"
+            ],
+            [
+              "Rectangulo",
+              "Proceso",
+              "Operacion o instruccion de calculo o asignacion"
+            ],
+            [
+              "Rombo",
+              "Decision",
+              "Bifurcacion condicional: si / no o verdadero / falso"
+            ],
+            [
+              "Ovalo / Elipse",
+              "Terminal",
+              "Marca el inicio (Inicio) o el fin (Fin) del diagrama"
+            ],
+            [
+              "Rectangulo doble",
+              "Proceso predefinido",
+              "Invoca una subrutina o procedimiento ya definido"
+            ],
+            [
+              "Paralelogramo",
+              "Proceso / Salida",
+              "Impresion o visualizacion de resultados en pantalla"
+            ],
+            [
+              "Circulo pequeno",
+              "Conector de pagina",
+              "Une partes del diagrama en la misma pagina"
+            ],
+            [
+              "Pentagono",
+              "Conector fuera de pagina",
+              "Enlaza con una continuacion en pagina diferente"
+            ]
           ]
         },
         {
           "type": "text",
           "content": "Nota: el archivo 'U1 Diagrama de flujo.txt' está vacío (PDF de imágenes sin texto extraíble). La simbología proviene del PDF principal (pp. 21-25)."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Estructura 1",
+              "title": "Secuencial",
+              "desc": "Las instrucciones se ejecutan una tras otra en el orden en que aparecen, sin bifurcaciones ni repeticiones.",
+              "example": "Leer A → Calcular B = A*2 → Mostrar B"
+            },
+            {
+              "kicker": "Estructura 2",
+              "title": "Alternativa simple",
+              "desc": "Un rombo de decision evalua una condicion. Si es verdadera se ejecuta un bloque; si es falsa se salta (IF sin ELSE).",
+              "example": "Si nota >= 5 entonces mostrar \"Aprobado\""
+            },
+            {
+              "kicker": "Estructura 3",
+              "title": "Alternativa doble",
+              "desc": "Un rombo de decision con dos ramas: una para la condicion verdadera y otra para la falsa (IF-ELSE).",
+              "example": "Si nota >= 5 entonces \"Aprobado\" sino \"Suspenso\""
+            }
+          ]
         }
       ]
     },
@@ -268,18 +428,54 @@
     }
   ],
   "glossary": [
-    { "term": "Programación", "def": "Proceso con el que se agrupan, diseñan y codifican instrucciones que al unirse implementan un algoritmo de uso específico, generalmente para automatizar algún proceso." },
-    { "term": "Algoritmo", "def": "Conjunto de instrucciones definidas, ordenadas y concretas para resolver un problema. No necesita ejecutarse en máquina." },
-    { "term": "Programa informático", "def": "Conjunto de instrucciones o algoritmos en un lenguaje de programación, para ser interpretados y ejecutados en una computadora." },
-    { "term": "Paradigma", "def": "Teoría comprobada que sirve de referencia para resolver problemas. En programación: técnica usada continuadamente como sistema de referencia para generar código de calidad." },
-    { "term": "Cohesión", "def": "Nivel de relación entre los elementos de un módulo. A mayor cohesión, mejor diseño del módulo." },
-    { "term": "Acoplamiento", "def": "Tipo y grado de dependencia entre dos módulos. A menor acoplamiento, mejor diseño." },
-    { "term": "Pseudocódigo", "def": "Lenguaje similar al natural para desarrollar algoritmos interpretables por cualquier programador, sin ser un lenguaje de programación ejecutable." },
-    { "term": "Booleano", "def": "Tipo de valor con solo dos opciones: verdadero o falso." },
-    { "term": "Diagrama de flujo", "def": "Representación gráfica de un algoritmo o proceso. También llamado ordinograma o flujograma." },
-    { "term": "Procedimiento", "def": "Bloque de código modular que ejecuta instrucciones pero no devuelve un valor de salida." },
-    { "term": "Función", "def": "Bloque de código modular que ejecuta instrucciones y retorna un valor de salida." },
-    { "term": "Multiparadigma", "def": "Técnica que usa más de un paradigma de programación a la vez para crear código más completo y eficiente." }
+    {
+      "term": "Programación",
+      "def": "Proceso con el que se agrupan, diseñan y codifican instrucciones que al unirse implementan un algoritmo de uso específico, generalmente para automatizar algún proceso."
+    },
+    {
+      "term": "Algoritmo",
+      "def": "Conjunto de instrucciones definidas, ordenadas y concretas para resolver un problema. No necesita ejecutarse en máquina."
+    },
+    {
+      "term": "Programa informático",
+      "def": "Conjunto de instrucciones o algoritmos en un lenguaje de programación, para ser interpretados y ejecutados en una computadora."
+    },
+    {
+      "term": "Paradigma",
+      "def": "Teoría comprobada que sirve de referencia para resolver problemas. En programación: técnica usada continuadamente como sistema de referencia para generar código de calidad."
+    },
+    {
+      "term": "Cohesión",
+      "def": "Nivel de relación entre los elementos de un módulo. A mayor cohesión, mejor diseño del módulo."
+    },
+    {
+      "term": "Acoplamiento",
+      "def": "Tipo y grado de dependencia entre dos módulos. A menor acoplamiento, mejor diseño."
+    },
+    {
+      "term": "Pseudocódigo",
+      "def": "Lenguaje similar al natural para desarrollar algoritmos interpretables por cualquier programador, sin ser un lenguaje de programación ejecutable."
+    },
+    {
+      "term": "Booleano",
+      "def": "Tipo de valor con solo dos opciones: verdadero o falso."
+    },
+    {
+      "term": "Diagrama de flujo",
+      "def": "Representación gráfica de un algoritmo o proceso. También llamado ordinograma o flujograma."
+    },
+    {
+      "term": "Procedimiento",
+      "def": "Bloque de código modular que ejecuta instrucciones pero no devuelve un valor de salida."
+    },
+    {
+      "term": "Función",
+      "def": "Bloque de código modular que ejecuta instrucciones y retorna un valor de salida."
+    },
+    {
+      "term": "Multiparadigma",
+      "def": "Técnica que usa más de un paradigma de programación a la vez para crear código más completo y eficiente."
+    }
   ],
   "quiz": [
     {
@@ -306,7 +502,12 @@
     },
     {
       "question": "¿Cuál de los siguientes NO es uno de los tres tipos de estructura básica de la programación estructurada?",
-      "options": ["Secuencial", "Alternativa", "Modular", "Iterativa"],
+      "options": [
+        "Secuencial",
+        "Alternativa",
+        "Modular",
+        "Iterativa"
+      ],
       "correct": 2,
       "explanation": "Las tres estructuras del teorema del programa estructurado son: secuencial, alternativa e iterativa. La modular pertenece al paradigma de programación modular, no a la estructurada."
     },
@@ -334,7 +535,12 @@
     },
     {
       "question": "¿Qué símbolo ANSI se usa en un diagrama de flujo para representar una decisión?",
-      "options": ["Rectángulo", "Óvalo", "Rombo", "Paralelogramo"],
+      "options": [
+        "Rectángulo",
+        "Óvalo",
+        "Rombo",
+        "Paralelogramo"
+      ],
       "correct": 2,
       "explanation": "Las decisiones se representan con un rombo, del que parten tantas líneas de flujo como alternativas existan."
     },
@@ -369,7 +575,7 @@
     "s5": "U1 Introducción a la programación.txt pp. 9; U1 RESUMEN Introducción a la programación.txt p. 1",
     "s6": "U1 Introducción a la programación.txt pp. 10-13; U1 RESUMEN Introducción a la programación.txt pp. 1-2",
     "s7": "U1 Introducción a la programación.txt pp. 14-20; U1 Introducción a la programación (1).txt pp. 5-6; U1 RESUMEN Introducción a la programación.txt p. 1",
-    "s8": "U1 Introducción a la programación.txt pp. 21-25; U1 Introducción a la programación (1).txt p. 6",
+    "s8": "U1 Diagrama de flujo.pdf (infografia — simbolos ANSI y estructuras de control)",
     "s9": "U1 Introducción a la programación.txt pp. 26-28"
   }
 }
