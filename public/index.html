@@ -760,6 +760,9 @@ function subjectName(code) {
 }
 const SUBJECT_ICONS = { si: '🖥️', ed: '🛠️', bd: '🗄️', prog: '💻', lm: '📄', dwec: '🌐', dwes: '⚙️', ip: '📘', ipe: '💼' };
 function subjectIcon(code) { return SUBJECT_ICONS[code.toLowerCase()] || '📚'; }
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
 
 // ═══════════════════════════════════════════════════════════════════
 // Breadcrumb
@@ -840,7 +843,10 @@ async function loadHome() {
       grid.appendChild(card);
     });
   } catch (e) {
-    grid.innerHTML = `<p style="color:var(--red)">${e.message}</p>`;
+    const p = document.createElement('p');
+    p.style.color = 'var(--red)';
+    p.textContent = e.message;
+    grid.appendChild(p);
   }
 }
 
@@ -960,7 +966,10 @@ function showUnitSelector(subj) {
       grid.appendChild(psCard);
     }
   }).catch(e => {
-    grid.innerHTML = `<p style="color:var(--red)">${e.message}</p>`;
+    const p = document.createElement('p');
+    p.style.color = 'var(--red)';
+    p.textContent = e.message;
+    grid.appendChild(p);
   });
 }
 
@@ -1051,7 +1060,7 @@ function renderQuestion() {
   optIndices.forEach((origIdx, displayIdx) => {
     const btn = document.createElement('button');
     btn.className = 'option-btn';
-    btn.innerHTML = `<span class="option-label">${labels[displayIdx]}</span><span>${q.options[origIdx]}</span>`;
+    btn.innerHTML = `<span class="option-label">${labels[displayIdx]}</span><span>${esc(q.options[origIdx])}</span>`;
     btn.addEventListener('click', () => chooseAnswer(displayIdx));
     list.appendChild(btn);
   });
@@ -1118,11 +1127,11 @@ function showFeedback(q, isCorrect) {
   const fb = $('feedback-box');
   const stateClass = isCorrect === null ? '' : isCorrect ? ' correct' : ' wrong';
   fb.className = 'feedback-box visible' + stateClass;
-  const correctText = q.options[q.correct];
+  const correctText = esc(q.options[q.correct]);
   const prefix = isCorrect === null ? '⬜ <strong>En blanco.</strong>'
     : isCorrect ? '✅ <strong>¡Correcto!</strong>'
     : '❌ <strong>Incorrecto.</strong>';
-  const explPart = q.explanation ? `<br><br>${q.explanation}` : '';
+  const explPart = q.explanation ? `<br><br>${esc(q.explanation)}` : '';
   fb.innerHTML = `${prefix} <strong>${correctText}</strong>${explPart}`;
 }
 
@@ -1199,7 +1208,7 @@ function showReview() {
 
     card.innerHTML = `
       <div class="review-q-num">Pregunta ${qi + 1} · ${statusLabel}</div>
-      <div class="review-q-text">${q.question}</div>
+      <div class="review-q-text">${esc(q.question)}</div>
     `;
 
     const indices = q._shuffledIndices || q.options.map((_, i) => i);
@@ -1212,7 +1221,7 @@ function showReview() {
       const icon = isCorrect ? '✓' : isChosen && !isCorrect ? '✗' : labels[displayIdx];
       const optDiv = document.createElement('div');
       optDiv.className = `review-option ${cls}`;
-      optDiv.innerHTML = `<strong>${icon}</strong> ${q.options[origIdx]}`;
+      optDiv.innerHTML = `<strong>${icon}</strong> ${esc(q.options[origIdx])}`;
       card.appendChild(optDiv);
     });
 
