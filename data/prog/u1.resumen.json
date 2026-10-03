@@ -1,0 +1,375 @@
+{
+  "subject": "prog",
+  "unit": 1,
+  "title": "Introducción a la programación",
+  "intro": "La Unidad 1 introduce la programación desde sus orígenes hasta las herramientas de diseño previas al código real. Se estudian los conceptos fundamentales de programa y algoritmo, la clasificación de lenguajes, los paradigmas estructurado y modular, el pseudocódigo con sus estructuras de control y los diagramas de flujo con su simbología. Las diapositivas (1) ofrecen un resumen compacto coherente con el principal; el RESUMEN añade definiciones clave de cohesión/acoplamiento.",
+  "objectives": [
+    "Conocer los conceptos básicos de la programación y el diseño de aplicaciones.",
+    "Estudiar los paradigmas de programación y su clasificación.",
+    "Describir los paradigmas de programación estructurada y modular.",
+    "Aprender a utilizar el pseudocódigo como sistema de descripción de programas de alto nivel.",
+    "Representar algoritmos mediante diagramas de flujo usando la simbología ANSI."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "short": "Orígenes",
+      "label": "1.1. Orígenes de la programación",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La programación es el proceso con el que se agrupan, diseñan y codifican instrucciones que implementan un algoritmo para automatizar tareas. Su origen real se sitúa en las primeras calculadoras que usaban tarjetas perforadas y, formalmente, cuando Charles Babbage creó la máquina analítica en 1822 y Augusta Ada Byron escribió el primer algoritmo informático."
+        },
+        {
+          "type": "timeline",
+          "items": [
+            { "year": "Inicios", "label": "Lenguaje máquina (binario)", "detail": "Todo era 0 y 1. Solo accesible para unos pocos especialistas." },
+            { "year": "Siguiente paso", "label": "Tarjetas perforadas", "detail": "Método manual de introducir instrucciones en código binario mediante agujeros en tarjetas." },
+            { "year": "Avance", "label": "Lenguaje ensamblador", "detail": "Se sustituyeron secuencias de 0s y 1s por palabras (mnemonics). Seguía muy ligado al hardware." },
+            { "year": "Modernidad", "label": "Lenguajes de alto nivel", "detail": "A partir del ensamblador surgen lenguajes más accesibles: Fortran, Cobol, Pascal, C, Java, Python..." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "short": "Conceptos fundamentales",
+      "label": "1.2. Conceptos fundamentales",
+      "blocks": [
+        {
+          "type": "flipcards",
+          "items": [
+            { "term": "Programa informático", "def": "Conjunto de instrucciones o algoritmos escritos en un lenguaje de programación para ser interpretados y ejecutados en una computadora." },
+            { "term": "Algoritmo", "def": "Conjunto de instrucciones definidas, ordenadas y concretas para resolver un problema o tarea. No necesariamente se ejecuta en máquina (ej.: una receta de cocina). Su representación es el pseudocódigo o los diagramas de flujo." },
+            { "term": "¿Algoritmo = Programa?", "def": "No son lo mismo. Un algoritmo puede ejecutarlo una persona; un programa siempre está diseñado para ejecutarse en una computadora. Los programadores diseñan algoritmos primero y luego los implementan en un programa." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "short": "Lenguajes de prog.",
+      "label": "1.3. Los lenguajes de programación",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Un lenguaje de programación es un lenguaje formal con sintaxis concreta y reglas gramaticales bien definidas que permite desarrollar algoritmos con instrucciones y sirve de medio de comunicación con la máquina."
+        },
+        {
+          "type": "table",
+          "headers": ["Nivel", "Descripción", "Ejemplos"],
+          "rows": [
+            ["Bajo nivel", "Operan directamente con la máquina. Trabajan con instrucciones elementales (0 y 1, AND, OR, XOR).", "Lenguaje máquina, Ensamblador"],
+            ["Medio nivel", "Capa de abstracción respecto al bajo nivel. Instrucciones más complejas que en bajo nivel.", "Pascal, Delphi, Modula2, C, C++"],
+            ["Alto nivel", "Más cercanos al lenguaje humano. Requieren traductores/compiladores para código máquina.", "Java, C#, Python, JavaScript, PHP, Kotlin"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "short": "Paradigmas",
+      "label": "1.4. Paradigmas de programación",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Un paradigma de programación es una técnica de programación usada de manera continuada que sirve como sistema de referencia para generar código de cierta calidad. Los paradigmas no son excluyentes entre sí: la programación multiparadigma usa varios a la vez."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Paradigmas imperativos",
+              "content": "Se basan en indicar a la máquina exactamente cómo hacer el proceso. El protagonismo lo tiene el programador.\n• Estructurada: flujo controlado por condiciones, subrutinas y bucles. Ej.: Cobol, Pascal, C, Fortran.\n• Modular: procedimientos agrupados en bloques/módulos por funcionalidad. Ej.: Perl, Ruby, Java.\n• Orientada a objetos: agrupación por datos, no funcionalidad. Instrucciones en objetos. Ej.: Java, Python, C++, C#."
+            },
+            {
+              "title": "Paradigmas declarativos",
+              "content": "Se basan en indicar a la máquina qué se quiere obtener, no cómo hacerlo. La máquina tiene protagonismo.\n• Lógico: resultado declarado con hechos o reglas lógicas. Ej.: Prolog, Mercury, Oz.\n• Funcional: resultado declarado con predicados. Ej.: SQL, Lisp, Scala, Haskell."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "short": "Prog. estructurada",
+      "label": "1.4.1. Programación estructurada",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La programación estructurada tiene sus orígenes en los años 70 y busca mejorar la calidad del software reduciendo costes. Toda la lógica se escribe usando únicamente tres estructuras de control (teorema del programa estructurado). Los datos y las funciones se definen de forma separada. No es eficiente para programas grandes."
+        },
+        {
+          "type": "cards",
+          "items": [
+            { "kicker": "Estructura 1", "title": "Secuencial", "desc": "Se ejecuta una instrucción tras otra siguiendo el orden preasignado.", "example": "" },
+            { "kicker": "Estructura 2", "title": "Alternativa", "desc": "Se evalúan expresiones; dependiendo del resultado se ejecuta una instrucción u otra.", "example": "" },
+            { "kicker": "Estructura 3", "title": "Iterativa", "desc": "Se repiten instrucciones hasta que se aplique una condición de parada.", "example": "" }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Nota: existe la estructura de salto incondicional (go to), pero los expertos la desaconsejan porque hace el programa poco legible y dificulta la detección de errores."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "short": "Prog. modular",
+      "label": "1.4.2. Programación modular",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La programación modular descompone el problema en subproblemas más sencillos (divide y vencerás, top-down). Cada subproblema se resuelve en un módulo o subprograma. Un módulo debe: tener un único punto de entrada y salida, realizar una única función bien definida, verse entero en pantalla (~30-50 líneas) y tener cohesión máxima con acoplamiento mínimo."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Tipos de cohesión (de mayor a menor calidad)",
+              "content": "• Funcional: todos los elementos tienen una sola tarea definida. La mejor.\n• Secuencial: la salida de una instrucción coincide con la entrada de la siguiente.\n• Comunicacional: actividades paralelas que comparten datos de entrada/salida.\n• Procedural: diferentes acciones no relacionadas entre sí.\n• Temporal: actividades relacionadas solo por el momento en que se ejecutan.\n• Lógica: actividades de la misma categoría general, selección desde fuera del módulo.\n• Casual: sin ningún tipo de organización. La peor."
+            },
+            {
+              "title": "Tipos de acoplamiento (de menor a mayor dependencia)",
+              "content": "• Normal (mejor): módulo A llama a módulo B, intercambio solo en la llamada. Subtipos: por datos, por marca/estampado, de control.\n• Externo: dos o más módulos usan las mismas fuentes externas de datos.\n• Global: los módulos usan los mismos datos globales.\n• Patológico o por contenido (peor): un módulo accede a otro para leer/modificar sus datos internos."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "short": "Pseudocódigo",
+      "label": "1.5. Pseudocódigo",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El pseudocódigo es un lenguaje similar al natural cuyo objetivo es desarrollar algoritmos interpretables por cualquier programador, independientemente de su lenguaje. No es un lenguaje de programación. Los algoritmos en pseudocódigo tienen solución no infinita y único punto de partida."
+        },
+        {
+          "type": "table",
+          "headers": ["Operadores aritméticos", "Operadores relacionales", "Operadores lógicos"],
+          "rows": [
+            ["+ Suma", "= Igual", "and / Y lógico"],
+            ["- Resta", "< Menor", "or / O lógico"],
+            ["* Multiplicación", "<= Menor o igual", "no / Negación"],
+            ["/ División real", "> Mayor", "← Asignación"],
+            ["Div División entera", ">= Mayor o igual", "// Comentario"],
+            ["Mod Resto o módulo", "<> Distinto", ""],
+            ["^ Potencia", "", ""]
+          ]
+        },
+        {
+          "type": "chips",
+          "items": ["Carácter", "Cadena", "Entero", "Real", "Booleano"]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Variables y constantes",
+              "content": "Variable: nombre/etiqueta que representa un lugar en memoria. Formato: TIPO_DE_DATO NOMBRE. Permite asignaciones que modifican su valor.\nConstante: valor fijo que no cambia durante la ejecución. Convención: mayúsculas. Solo una asignación de inicialización.\nEjemplo constantes:\n  Real PI ← 3,14159\n  Entero LIMITE_MAXIMO ← 500"
+            },
+            {
+              "title": "Estructura alternativa simple",
+              "content": "Si <condición> entonces\n  <instrucción1>\n  ...\n  <instrucciónX>\nFin Si"
+            },
+            {
+              "title": "Estructura alternativa doble",
+              "content": "Si <condición> entonces\n  <instrucciones1>\nSi no\n  <instrucciones2>\nFin Si"
+            },
+            {
+              "title": "Alternativa múltiple (Según)",
+              "content": "Según <expresión> hacer\n  Caso <valor1>\n    <instrucciones1>\n  Caso <valor2>\n    <instrucciones2>\n  Otro caso\n    <instruccionesN>\nFin Según"
+            },
+            {
+              "title": "Iteración while (salida al principio)",
+              "content": "Mientras <condición> Hacer\n  <instrucciones>\nFin Mientras\n\nPrimero evalúa la condición. Si no se cumple nunca, no entra al bucle."
+            },
+            {
+              "title": "Iteración repeat (salida al final)",
+              "content": "Repetir\n  <instrucciones>\nHasta Que <condición>\n\nEjecuta siempre al menos una vez. Termina cuando la condición es verdadera."
+            },
+            {
+              "title": "Iteración do while (salida al final)",
+              "content": "Hacer\n  <instrucciones>\nMientras <condición>\n\nEjecuta al menos una vez. Continúa mientras la condición sea verdadera."
+            },
+            {
+              "title": "Iteración for (contador)",
+              "content": "Entero i\nPara i ← 1 Hasta N Con paso Incremento 1 Hacer\n  <instrucciones>\nFin Para\n\nTambién puede ser decremental (Incremento -1)."
+            },
+            {
+              "title": "Iteración for each",
+              "content": "entero conjunto [1,…,N]\nPara Cada elemento En conjunto Hacer\n  <instrucciones>\nFin Para Cada"
+            },
+            {
+              "title": "Procedimiento vs Función",
+              "content": "Procedimiento: ejecuta instrucciones pero NO retorna valor.\n  Procedimiento nombre (tipo param1, ...)\n    <instrucciones>\n  Fin Procedimiento\n\nFunción: ejecuta instrucciones y SÍ retorna un valor.\n  Función nombre (tipo param1, ...) : tipoRetorno\n    <instrucciones>\n    Retornar X\n  Fin Función"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "short": "Diagramas de flujo",
+      "label": "1.6. Diagramas de flujo",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Un diagrama de flujo (ordinograma o flujograma) representa gráficamente un algoritmo o proceso. Aunque su uso principal es informático, se aplica en muchos sectores. Es una transcripción idéntica del pseudocódigo en forma visual. La simbología sigue la propuesta por la American National Standards Institute (ANSI)."
+        },
+        {
+          "type": "table",
+          "headers": ["Símbolo", "Representación"],
+          "rows": [
+            ["Óvalo / Elipse", "Terminal: inicio y fin del diagrama."],
+            ["Trapecio rectángulo", "Entrada de datos desde teclado (el proceso espera al usuario)."],
+            ["Paralelogramo", "Comunicación con periféricos para entrada o salida de información."],
+            ["Rectángulo", "Operaciones de cálculo interno del programa."],
+            ["Rombo", "Decisiones: tantas líneas de flujo como alternativas."],
+            ["Rectángulo con doble línea", "Subproceso (procedimiento/función definido en otro lugar)."],
+            ["Circunferencia", "Conector en la misma página."],
+            ["Pentágono irregular", "Conector entre páginas distintas."],
+            ["Cilindro", "Base de datos para intercambio y almacenamiento."],
+            ["Media ola / Rectángulo", "Documento impreso."],
+            ["Flechas", "Indican el orden de ejecución de las operaciones."]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Nota: el archivo 'U1 Diagrama de flujo.txt' está vacío (PDF de imágenes sin texto extraíble). La simbología proviene del PDF principal (pp. 21-25)."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "short": "Ejemplos",
+      "label": "1.7. Ejemplos de algoritmos y programas",
+      "blocks": [
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Ejemplo 1: Comparar dos números enteros",
+              "content": "Inicio\n  Entero num1\n  Entero num2\n  Imprimir (\"Introduce el número 1\")\n  Leer (num1)\n  Imprimir (\"Introduce el número 2\")\n  Leer (num2)\n  Si num1>num2 entonces\n    Imprimir (\"El número 1 es mayor\")\n  Si no\n    Si num2>num1 entonces\n      Imprimir (\"El número 2 es mayor\")\n    Si no\n      Imprimir (\"Los números son iguales\")\n    Fin si\n  Fin si\nFin"
+            },
+            {
+              "title": "Ejemplo 2: Saludo con verificación de mayoría de edad",
+              "content": "Inicio\n  Cadena nombre\n  Entero edad\n  Imprimir (\"Indica tu nombre\")\n  Leer (nombre)\n  Imprimir (\"Indica tu edad\")\n  Leer (edad)\n  Si edad >= 18 Entonces\n    Imprimir (\"Hola \", nombre, \" eres mayor de edad\")\n  Si no\n    Imprimir (\"Hola \", nombre, \" eres menor de edad\")\n  Fin si\nFin"
+            },
+            {
+              "title": "Ejemplo 3: Función para calcular potencia",
+              "content": "Función potencia (Real base, Real exponente) : Real\n  Real resultado ← 1\n  Real x ← base\n  Real i ← exponente\n  Mientras i > 0 Hacer\n    Si i Mod 2 <> 0 entonces\n      resultado ← resultado * x\n    Fin si\n    x ← x*x\n    i ← i/2\n  Fin mientras\n  Retornar resultado\nFin función\n\nInicio\n  Real resultado ← potencia(2, 5)\n  Imprimir (resultado)\nFin"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Programación", "def": "Proceso con el que se agrupan, diseñan y codifican instrucciones que al unirse implementan un algoritmo de uso específico, generalmente para automatizar algún proceso." },
+    { "term": "Algoritmo", "def": "Conjunto de instrucciones definidas, ordenadas y concretas para resolver un problema. No necesita ejecutarse en máquina." },
+    { "term": "Programa informático", "def": "Conjunto de instrucciones o algoritmos en un lenguaje de programación, para ser interpretados y ejecutados en una computadora." },
+    { "term": "Paradigma", "def": "Teoría comprobada que sirve de referencia para resolver problemas. En programación: técnica usada continuadamente como sistema de referencia para generar código de calidad." },
+    { "term": "Cohesión", "def": "Nivel de relación entre los elementos de un módulo. A mayor cohesión, mejor diseño del módulo." },
+    { "term": "Acoplamiento", "def": "Tipo y grado de dependencia entre dos módulos. A menor acoplamiento, mejor diseño." },
+    { "term": "Pseudocódigo", "def": "Lenguaje similar al natural para desarrollar algoritmos interpretables por cualquier programador, sin ser un lenguaje de programación ejecutable." },
+    { "term": "Booleano", "def": "Tipo de valor con solo dos opciones: verdadero o falso." },
+    { "term": "Diagrama de flujo", "def": "Representación gráfica de un algoritmo o proceso. También llamado ordinograma o flujograma." },
+    { "term": "Procedimiento", "def": "Bloque de código modular que ejecuta instrucciones pero no devuelve un valor de salida." },
+    { "term": "Función", "def": "Bloque de código modular que ejecuta instrucciones y retorna un valor de salida." },
+    { "term": "Multiparadigma", "def": "Técnica que usa más de un paradigma de programación a la vez para crear código más completo y eficiente." }
+  ],
+  "quiz": [
+    {
+      "question": "¿Cuál es la diferencia principal entre un algoritmo y un programa informático?",
+      "options": [
+        "Un algoritmo siempre se ejecuta en una computadora; un programa no.",
+        "Un algoritmo es una secuencia de pasos para resolver un problema (puede ejecutarlo una persona); un programa siempre está diseñado para ejecutarse en una computadora.",
+        "Son exactamente lo mismo.",
+        "Un programa no usa algoritmos."
+      ],
+      "correct": 1,
+      "explanation": "Un algoritmo puede ejecutarlo una persona (ej.: receta de cocina). Un programa informático siempre está diseñado para ejecutarse en una computadora mediante un lenguaje de programación."
+    },
+    {
+      "question": "¿Qué es un paradigma de programación?",
+      "options": [
+        "Un tipo de lenguaje de programación de bajo nivel.",
+        "Una técnica de programación usada continuadamente que sirve como sistema de referencia para generar código de cierta calidad.",
+        "Un tipo de estructura de control iterativa.",
+        "Un diagrama que representa la estructura de un programa."
+      ],
+      "correct": 1,
+      "explanation": "Los paradigmas son técnicas de programación que se usan de manera continuada y marcan reglas y estándares para generar código de calidad. Los paradigmas no son excluyentes entre sí."
+    },
+    {
+      "question": "¿Cuál de los siguientes NO es uno de los tres tipos de estructura básica de la programación estructurada?",
+      "options": ["Secuencial", "Alternativa", "Modular", "Iterativa"],
+      "correct": 2,
+      "explanation": "Las tres estructuras del teorema del programa estructurado son: secuencial, alternativa e iterativa. La modular pertenece al paradigma de programación modular, no a la estructurada."
+    },
+    {
+      "question": "En programación modular, ¿qué relación existe entre cohesión y acoplamiento para un buen diseño?",
+      "options": [
+        "Cohesión mínima y acoplamiento mínimo.",
+        "Cohesión máxima y acoplamiento mínimo.",
+        "Cohesión máxima y acoplamiento máximo.",
+        "Cohesión mínima y acoplamiento máximo."
+      ],
+      "correct": 1,
+      "explanation": "Un buen diseño modular requiere cohesión máxima (fuerte relación entre elementos del módulo) y acoplamiento mínimo (poca dependencia entre módulos). Cuanto menor el acoplamiento, mayor la cohesión."
+    },
+    {
+      "question": "¿Cuál es la diferencia entre la iteración 'while' y la iteración 'repeat/until' en pseudocódigo?",
+      "options": [
+        "No hay diferencia, son equivalentes.",
+        "El 'while' evalúa la condición al principio (puede no ejecutarse nunca); el 'repeat/until' la evalúa al final (se ejecuta al menos una vez).",
+        "El 'while' se ejecuta al menos una vez; el 'repeat/until' puede no ejecutarse.",
+        "El 'while' usa contador; el 'repeat/until' no."
+      ],
+      "correct": 1,
+      "explanation": "En 'while' (salida al principio) la condición se evalúa antes: si no se cumple nunca, no entra al bucle. En 'repeat/until' (salida al final) se ejecutan las instrucciones primero y luego se evalúa: siempre se ejecuta al menos una vez."
+    },
+    {
+      "question": "¿Qué símbolo ANSI se usa en un diagrama de flujo para representar una decisión?",
+      "options": ["Rectángulo", "Óvalo", "Rombo", "Paralelogramo"],
+      "correct": 2,
+      "explanation": "Las decisiones se representan con un rombo, del que parten tantas líneas de flujo como alternativas existan."
+    },
+    {
+      "question": "¿Cuál es la diferencia entre un procedimiento y una función en pseudocódigo?",
+      "options": [
+        "El procedimiento retorna un valor; la función no.",
+        "La función retorna un valor; el procedimiento ejecuta instrucciones pero no retorna valor.",
+        "Ambos retornan un valor.",
+        "Ninguno retorna un valor."
+      ],
+      "correct": 1,
+      "explanation": "La función retorna un valor (Retornar X al final). El procedimiento ejecuta instrucciones pero no devuelve ningún valor de salida."
+    },
+    {
+      "question": "¿Cómo se clasifica Java según los paradigmas de programación?",
+      "options": [
+        "Solo estructurado.",
+        "Solo declarativo.",
+        "Multiparadigma: modular y orientado a objetos (imperativo).",
+        "Solo funcional."
+      ],
+      "correct": 2,
+      "explanation": "Java se cita en el texto como ejemplo de lenguaje modular y orientado a objetos, y también como ejemplo de programación multiparadigma."
+    }
+  ],
+  "_sources": {
+    "s1": "U1 Introducción a la programación.txt pp. 4; U1 Introducción a la programación (1).txt p. 2",
+    "s2": "U1 Introducción a la programación.txt pp. 5",
+    "s3": "U1 Introducción a la programación.txt pp. 6-7",
+    "s4": "U1 Introducción a la programación.txt pp. 8; U1 Introducción a la programación (1).txt p. 3",
+    "s5": "U1 Introducción a la programación.txt pp. 9; U1 RESUMEN Introducción a la programación.txt p. 1",
+    "s6": "U1 Introducción a la programación.txt pp. 10-13; U1 RESUMEN Introducción a la programación.txt pp. 1-2",
+    "s7": "U1 Introducción a la programación.txt pp. 14-20; U1 Introducción a la programación (1).txt pp. 5-6; U1 RESUMEN Introducción a la programación.txt p. 1",
+    "s8": "U1 Introducción a la programación.txt pp. 21-25; U1 Introducción a la programación (1).txt p. 6",
+    "s9": "U1 Introducción a la programación.txt pp. 26-28"
+  }
+}

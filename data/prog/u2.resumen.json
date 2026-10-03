@@ -1,0 +1,345 @@
+{
+  "subject": "prog",
+  "unit": 2,
+  "title": "Programación orientada a objetos",
+  "intro": "La Unidad 2 estudia el paradigma de Programación Orientada a Objetos (POO), que nació del lenguaje Simula 67 (1962) y desde los años 80 es el paradigma más utilizado. Se cubren sus características fundamentales (clase, objeto, encapsulación, abstracción, reutilización, visibilidad, relaciones y polimorfismo) y el Diagrama de Clases UML como herramienta de diseño visual.",
+  "objectives": [
+    "Definir el paradigma de programación orientada a objetos.",
+    "Conocer los elementos que se emplean en POO: clase, objeto, encapsulación, abstracción, reutilización, visibilidad, relaciones y polimorfismo.",
+    "Definir los diagramas de clases y su uso en la POO.",
+    "Comprender la simbología básica de UML para representar objetos y sus relaciones.",
+    "Familiarizarse con los fundamentos de la POO."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "short": "Auge de la POO",
+      "label": "2.1. Auge de la programación orientada a objetos",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La POO nace del paradigma de programación imperativa y tiene su origen en el lenguaje Simula 67, que introdujo por primera vez en 1962 los conceptos de objeto y clase. Desde los años 80 es el paradigma más utilizado, por sus ventajas frente a otros: código y datos entrelazados (vs. separados en la estructurada), programas escalables y modulares, interfaces gráficas más depuradas y reutilización de código."
+        },
+        {
+          "type": "chips",
+          "items": ["Código y datos entrelazados", "Programas escalables", "Módulos reutilizables", "Interfaz gráfica depurada", "Simula 67 (1962)", "Paradigma más usado desde los 80"]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "short": "Características POO",
+      "label": "2.2. Características de la programación orientada a objetos",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La POO introdujo conceptos que permitieron generar código de más calidad, facilitar el desarrollo y reutilizar código de forma práctica. Otros paradigmas (como la programación dirigida por eventos) tomaron la POO como punto de partida."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "short": "Clase",
+      "label": "2.2.1. Clase",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La clase es el elemento principal de la POO. Describe el conjunto de datos (propiedades, campos) y el conjunto de operaciones (métodos, constructores, destructores) que se realizarán sobre esos datos. Todos son llamados 'miembros'. Una clase es una plantilla: de ella se pueden obtener tantos objetos instanciados como se requieran."
+        },
+        {
+          "type": "cards",
+          "items": [
+            { "kicker": "Miembro de clase", "title": "Campo", "desc": "Variable propia de cada instancia que define un atributo de un objeto. Se puede inicializar, modificar y leer directamente (según visibilidad).", "example": "-nombre: String" },
+            { "kicker": "Miembro de clase", "title": "Propiedad", "desc": "Como el campo, afecta a un atributo, pero no tiene área de almacenamiento directa. El acceso es indirecto a través de métodos get/set.", "example": "setNombre() / getNombre()" },
+            { "kicker": "Miembro de clase", "title": "Método", "desc": "Implementa un algoritmo aplicado a todas las instancias. Forma función: devuelve valor. Forma procedimiento: no devuelve valor.", "example": "+reserva(Date fecha): Boolean" },
+            { "kicker": "Miembro especial", "title": "Constructor", "desc": "Tipo especial de método para instanciar objetos de la clase. Por defecto existe siempre uno que inicializa campos a sus valores por defecto.", "example": "+Persona()" },
+            { "kicker": "Miembro especial", "title": "Destructor", "def": "Destruye un objeto y libera sus recursos asignados. Por defecto existe aunque no se declare.", "example": "" }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Representación UML: rectángulo de 3 áreas. Área superior: nombre de la clase (primera letra en mayúscula). Área intermedia: campos/atributos. Área inferior: métodos/funciones."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "short": "Objeto",
+      "label": "2.2.2. Objeto",
+      "blocks": [
+        {
+          "type": "flipcards",
+          "items": [
+            { "term": "Objeto", "def": "Instancia de una clase. Resultado de la creación en tiempo de ejecución de un conjunto de datos almacenado en memoria con la estructura descrita en su clase." },
+            { "term": "Objeto simple", "def": "Formado solo por datos primitivos: un dígito, un carácter, un booleano, etc." },
+            { "term": "Objeto compuesto", "def": "Formado por datos primitivos y además por objetos pertenecientes a otras clases." },
+            { "term": "Instanciación", "def": "Acto de crear un objeto concreto a partir de una clase. La clase es el modelo; las instancias son los resultados específicos." }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Dos objetos diferentes pueden tener los mismos datos, ya que cada uno tiene un espacio único e independiente en la memoria."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "short": "Encapsulación",
+      "label": "2.2.3. Encapsulación",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La encapsulación es la agrupación en un mismo elemento de los datos y las operaciones relacionadas con estos. Para que solo se pueda acceder mediante interfaces bien definidas, los datos encapsulados deben ser ocultados. Beneficios: oculta código para protegerlo y centraliza las llamadas a métodos mediante interfaces."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "short": "Abstracción",
+      "label": "2.2.4. Abstracción",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La abstracción es un mecanismo que permite reducir la complejidad de los objetos minimizando la información a representar, dejando solo los aspectos más relevantes. Hay que obtener el nivel de abstracción necesario para que aspectos insustanciales no reduzcan el rendimiento ni dificulten el desarrollo. Ejemplo: al pulsar el botón de un ascensor, la persona no ve todo el mecanismo interno."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "short": "Reutilización",
+      "label": "2.2.5. Reutilización o reusabilidad",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La POO permite reusar el código escrito con anterioridad sin necesidad de duplicarlo. La reutilización reduce la cantidad de líneas de código, reduce errores, facilita la generación de programas y el mantenimiento. Se consigue mediante técnicas de composición de objetos y de herencia."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "short": "Visibilidad",
+      "label": "2.2.6. Visibilidad",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La visibilidad determina la manera en que los miembros de una clase son accedidos desde otros puntos del programa. Es importante para las relaciones de herencia y para implementar algoritmos. Se aplica a atributos, métodos, clases y paquetes/librerías."
+        },
+        {
+          "type": "table",
+          "headers": ["Tipo", "Símbolo UML", "Descripción"],
+          "rows": [
+            ["Privada", "-", "Solo visible desde la misma clase donde se declaró. Mayor seguridad."],
+            ["Pública", "+", "Visible desde cualquier parte del programa."],
+            ["Protegida", "#", "Visible desde la clase donde se declaró y desde todas las clases que hereden de ella."]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "short": "Relaciones",
+      "label": "2.2.7. Relaciones entre clases",
+      "blocks": [
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Herencia",
+              "content": "Propiedad exclusiva de las clases que permite declarar nuevas clases a partir de otras. La clase original se llama clase base, padre, ancestra o superclase. La que hereda se llama clase extendida, hija, derivada o subclase.\nCuando A hereda de B, todos los miembros de B se transfieren a A excepto constructores y destructores. A puede añadir miembros propios o sobrescribir los heredados.\nLa herencia puede ser múltiple (C++, Eiffel), aunque la mayoría de lenguajes no la implementan.\nNota: solo los miembros públicos (+) o protegidos (#) son accesibles desde la clase hija."
+            },
+            {
+              "title": "Asociación",
+              "content": "Relación en la que los objetos pueden pertenecer a la misma o a varias clases distintas, que interactúan entre sí. Los objetos pueden existir independientemente. Se representa con una línea continua.\nVariantes: asociación con restricción {or}, asociación como clase, asociación con multiplicidad (1, 1..5, 1..n), asociación reflexiva (conecta instancias de la misma clase)."
+            },
+            {
+              "title": "Agregación",
+              "content": "Asociación opcional (composición débil). Los componentes son capaces de existir por sí mismos y participar en otras relaciones. Se representa con un rombo vacío (sin fondo).\nEjemplo: un cantante puede cambiar de grupo; el grupo agrega cantantes pero estos existen independientemente."
+            },
+            {
+              "title": "Composición",
+              "content": "Asociación obligatoria. Del compuesto dependen los componentes; sin el compuesto no tiene sentido que existan. El objeto compuesto debe destruir los componentes cuando es destruido. Se representa con un rombo negro (con fondo).\nEjemplo: el motor del automóvil pertenece siempre a este."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "short": "Polimorfismo",
+      "label": "2.2.8. Polimorfismo",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El polimorfismo es la propiedad que permite a los objetos adoptar distintas formas en tiempo de ejecución, además de permitir que un objeto de clase derivada sea usado como objeto de clase base. Está estrechamente relacionado con la herencia; ambos constituyen los pilares de la POO."
+        },
+        {
+          "type": "flipcards",
+          "items": [
+            { "term": "Asignación polimorfa", "def": "Se contiene en un elemento declarado de clase base un objeto de clase derivada. Requiere que el lenguaje permita la relajación del sistema de tipos." },
+            { "term": "Ejecución polimorfa", "def": "Se invocan métodos con el mismo nombre sobre instancias de diferente clase sin saber de qué clase son exactamente." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "short": "Diagrama de clases",
+      "label": "2.3. Diagrama de clases",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Un diagrama de clases es un tipo de diagrama UML (Lenguaje de Modelado Unificado) que representa la estructura y comportamiento de un sistema. UML no es un lenguaje de programación; permite definir diferentes tipos de diagramas, siendo ideal para POO. Se usa en las fases de diseño e implementación para ayudar a desarrolladores y partes interesadas a comprender la estructura del sistema."
+        },
+        {
+          "type": "table",
+          "headers": ["Área del rectángulo", "Contenido"],
+          "rows": [
+            ["Superior", "Nombre de la clase (primera letra en mayúscula)."],
+            ["Intermedia", "Campos (atributos) con su tipo. Ej.: -nombre: String, -teléfono: Integer."],
+            ["Inferior", "Métodos (funciones) con sus parámetros y tipo de retorno. Ej.: +getNombre(): String, +reserva(Date fecha): Boolean."]
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Tipos de datos para campos",
+              "content": "• String / cadena de caracteres: texto.\n• Integer/int: número entero, positivo o negativo.\n• Float: número con decimales (coma flotante).\n• Boolean: verdadero o falso."
+            },
+            {
+              "title": "Valores predeterminados en atributos",
+              "content": "• Valor fijo: estado_usuario: String = \"Registrado\"\n• Valor por defecto hasta uso: últimoRegistro: Integer = null\n• Opciones posibles: estadoUsuario: String = conectado {estadoUsuario=conectado o desconectado}"
+            },
+            {
+              "title": "Herencia en UML",
+              "content": "Subclases con relación a su superclase. Se marca con un triángulo en blanco apuntando hacia la superclase. Las subclases deben poseer los mismos atributos y métodos que la superclase. Si no se comparten, es una asociación, no herencia.\nClases abstractas: sirven como superclase modelo; nunca se instancian directamente. Se escriben en cursiva."
+            },
+            {
+              "title": "Agregación vs Composición en UML",
+              "content": "Agregación: suma de clases para crear otra que las englobe. Rombo vacío. Los componentes pueden usarse en otras agregaciones.\nComposición: las instancias son indivisibles del compuesto. Rombo negro. Las instancias no pueden usarse en otras composiciones."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "short": "Caso práctico",
+      "label": "2.4. Caso práctico",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El caso práctico propone obtener el diagrama de clases de un sistema de matrículas de estudiantes en un instituto. Las entidades principales son: Persona (DNI, nombre, apellidos, dirección, teléfono, email, estado civil), Estudiante (extiende Persona; identificador, carnet), Docente (extiende Persona; código, estudios), Asignatura (código, nombre), Matrícula (id, convocatoria, curso, fecha), Nota (nota teórica, práctica, final, anotación) y Beca (código, motivo, importe). Relaciones clave: Persona → Estudiante/Docente (herencia); Estudiante → Matrícula (composición, 1..*); Matrícula → Asignatura (composición, 1..*); Asignatura → Nota (composición, 1); Docente → Asignatura (asociación, 1..*)."
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "POO", "def": "Programación Orientada a Objetos. Paradigma de programación basado en conceptos de objetos en lugar de funciones y lógica. Adecuado para programas grandes y de constante mantenimiento." },
+    { "term": "Clase", "def": "Elemento principal de la POO. Plantilla que describe el conjunto de datos y operaciones de un tipo de objeto. De ella se instancian objetos." },
+    { "term": "Objeto", "def": "Instancia de una clase. Conjunto de datos almacenado en memoria con la estructura descrita en su clase." },
+    { "term": "Encapsulación", "def": "Agrupación en un mismo elemento de los datos y las operaciones relacionadas. Los datos se ocultan y solo se accede mediante interfaces bien definidas." },
+    { "term": "Abstracción", "def": "Mecanismo que reduce la complejidad de los objetos mostrando solo los aspectos más relevantes." },
+    { "term": "Herencia", "def": "Propiedad que permite declarar nuevas clases a partir de otras. La subclase hereda todos los miembros de la superclase (excepto constructores y destructores)." },
+    { "term": "Polimorfismo", "def": "Propiedad que permite a los objetos adoptar distintas formas en tiempo de ejecución. Relacionado con la herencia." },
+    { "term": "Visibilidad", "def": "Determina cómo los miembros de una clase son accedidos desde otros puntos del programa: privada (-), pública (+), protegida (#)." },
+    { "term": "Instanciar", "def": "Crear instancias de una clase, es decir, individualizar un elemento concreto de la idea abstracta de un tipo de objeto." },
+    { "term": "UML", "def": "Lenguaje Unificado de Modelado. No es un lenguaje de programación; permite definir distintos tipos de diagramas. Ideal para representar sistemas orientados a objetos." },
+    { "term": "Agregación", "def": "Asociación opcional (composición débil) en UML. Los componentes existen independientemente del compuesto. Se representa con rombo vacío." },
+    { "term": "Composición", "def": "Asociación obligatoria en UML. Los componentes no existen sin el compuesto; este los destruye al destruirse. Se representa con rombo negro." },
+    { "term": "Clase abstracta", "def": "Clase que sirve como superclase modelo. Nunca se instancia directamente; se identifican con nombre en cursiva en UML." }
+  ],
+  "quiz": [
+    {
+      "question": "¿De qué lenguaje de programación nació la POO y en qué año introdujo por primera vez los conceptos de objeto y clase?",
+      "options": [
+        "C++, en 1983.",
+        "Simula 67, en 1962.",
+        "Smalltalk, en 1972.",
+        "Java, en 1995."
+      ],
+      "correct": 1,
+      "explanation": "La POO nace del lenguaje Simula 67, que incluyó por primera vez en 1962 los conceptos de objeto y clase."
+    },
+    {
+      "question": "¿Cuál es la diferencia entre un campo y una propiedad en una clase?",
+      "options": [
+        "No hay diferencia; son sinónimos.",
+        "El campo tiene área de almacenamiento directo; la propiedad accede indirectamente mediante métodos get/set.",
+        "La propiedad tiene área de almacenamiento directo; el campo accede mediante métodos.",
+        "El campo solo puede ser privado; la propiedad solo puede ser pública."
+      ],
+      "correct": 1,
+      "explanation": "El campo puede inicializarse, modificarse y leerse directamente. La propiedad no tiene área de almacenamiento directa; el acceso se realiza mediante un campo definido antes o un método get/set."
+    },
+    {
+      "question": "¿Qué miembros de la superclase NO se heredan en la subclase?",
+      "options": [
+        "Los métodos privados.",
+        "Los campos públicos.",
+        "Los constructores y destructores.",
+        "Los métodos protegidos."
+      ],
+      "correct": 2,
+      "explanation": "Al heredar de una clase, se transfieren todos los miembros excepto constructores y destructores. La subclase puede añadir sus propios o sobrescribir los heredados."
+    },
+    {
+      "question": "¿Qué símbolo UML se usa para representar la agregación (composición débil)?",
+      "options": [
+        "Rombo negro (con fondo).",
+        "Triángulo blanco.",
+        "Rombo vacío (sin fondo).",
+        "Línea continua sin adornos."
+      ],
+      "correct": 2,
+      "explanation": "La agregación (composición débil) se representa con un rombo vacío. La composición fuerte (obligatoria) usa un rombo negro."
+    },
+    {
+      "question": "¿Cuáles son los dos tipos de polimorfismo descritos en el temario?",
+      "options": [
+        "Estático y dinámico.",
+        "De clase y de objeto.",
+        "Asignación polimorfa y ejecución polimorfa.",
+        "Herencia simple y herencia múltiple."
+      ],
+      "correct": 2,
+      "explanation": "Asignación polimorfa: objeto de clase derivada contenido en elemento de clase base. Ejecución polimorfa: se invocan métodos con el mismo nombre sobre instancias de diferente clase."
+    },
+    {
+      "question": "En UML, ¿cómo se identifica una clase abstracta?",
+      "options": [
+        "Con el símbolo {abstract} al lado del nombre.",
+        "Con el nombre escrito en cursiva.",
+        "Con un rombo negro en la parte superior.",
+        "Con doble línea alrededor del rectángulo."
+      ],
+      "correct": 1,
+      "explanation": "Las clases abstractas se identifican escribiendo su nombre en cursiva en el diagrama UML. De ellas nunca se crean instancias directamente."
+    },
+    {
+      "question": "¿Cuál es la visibilidad que representa el símbolo '#' en UML?",
+      "options": [
+        "Privada: visible solo desde la misma clase.",
+        "Pública: visible desde cualquier parte.",
+        "Protegida: visible desde la clase y sus subclases.",
+        "Interna: visible solo dentro del paquete."
+      ],
+      "correct": 2,
+      "explanation": "El símbolo '#' representa visibilidad protegida: los miembros son visibles desde la propia clase y desde todas las clases que hereden de ella."
+    }
+  ],
+  "_sources": {
+    "s1": "U2 Programación orientada a objetos.txt pp. 3-4; U2 Programación orientada a objetos (1).txt p. 2",
+    "s2": "U2 Programación orientada a objetos.txt pp. 5",
+    "s3": "U2 Programación orientada a objetos.txt pp. 5-7; U2 Programación orientada a objetos (1).txt pp. 3; U2 RESUMEN Programación orientada a objetos.txt p. 1",
+    "s4": "U2 Programación orientada a objetos.txt pp. 8; U2 RESUMEN Programación orientada a objetos.txt p. 1",
+    "s5": "U2 Programación orientada a objetos.txt pp. 8; U2 Programación orientada a objetos (1).txt p. 4; U2 RESUMEN Programación orientada a objetos.txt p. 1",
+    "s6": "U2 Programación orientada a objetos.txt pp. 8; U2 Programación orientada a objetos (1).txt p. 5; U2 RESUMEN Programación orientada a objetos.txt p. 1",
+    "s7": "U2 Programación orientada a objetos.txt pp. 9; U2 Programación orientada a objetos (1).txt p. 6; U2 RESUMEN Programación orientada a objetos.txt p. 1",
+    "s8": "U2 Programación orientada a objetos.txt pp. 9; U2 Programación orientada a objetos (1).txt p. 7; U2 RESUMEN Programación orientada a objetos.txt p. 2",
+    "s9": "U2 Programación orientada a objetos.txt pp. 9-11; U2 Programación orientada a objetos (1).txt p. 8; U2 RESUMEN Programación orientada a objetos.txt p. 2",
+    "s10": "U2 Programación orientada a objetos.txt pp. 11; U2 Programación orientada a objetos (1).txt p. 9; U2 RESUMEN Programación orientada a objetos.txt p. 2",
+    "s11": "U2 Programación orientada a objetos.txt pp. 12-17",
+    "s12": "U2 Programación orientada a objetos.txt pp. 18-19"
+  }
+}

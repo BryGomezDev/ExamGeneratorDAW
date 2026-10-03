@@ -1,0 +1,235 @@
+{
+  "subject": "prog",
+  "unit": 0,
+  "title": "La base de la programación",
+  "intro": "La Unidad 0 introduce los fundamentos de la programación: qué es un programa, cómo se originaron los lenguajes y por qué Java es el primer lenguaje del módulo. Se recorre la evolución desde los algoritmos manuales hasta los entornos de desarrollo modernos, con énfasis en los conceptos necesarios antes de escribir la primera línea de código.",
+  "objectives": [
+    "Comprender qué es la programación y para qué sirve.",
+    "Conocer la evolución de los lenguajes de programación (máquina → ensamblador → alto nivel).",
+    "Entender el papel del pseudocódigo como lenguaje de aprendizaje.",
+    "Conocer ejemplos de lenguajes actuales y los criterios para elegir uno.",
+    "Describir las características principales de Java y preparar el entorno de desarrollo."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "short": "Conceptos básicos",
+      "label": "Conceptos básicos de la programación",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La programación es una disciplina que permite a las personas comunicarse con las máquinas para indicarles qué deben hacer. Sus raíces se remontan al siglo IX con Al-Juarismi, cuyo nombre dio origen al término 'algoritmo': una serie de pasos ordenados y finitos para resolver un problema. Ada Lovelace (siglo XIX) escribió el primer algoritmo destinado a ser procesado por una máquina al trabajar con Charles Babbage en la máquina analítica."
+        },
+        {
+          "type": "flipcards",
+          "items": [
+            { "term": "Instrucción", "def": "Orden concreta que se le da al ordenador para que realice una acción determinada (mostrar un mensaje, sumar números, guardar datos en memoria)." },
+            { "term": "Programa", "def": "Conjunto organizado de instrucciones que permiten a un ordenador realizar una tarea específica. Varias instrucciones en orden lógico forman un programa." },
+            { "term": "Algoritmo", "def": "Serie de pasos ordenados y finitos para resolver un problema o alcanzar un objetivo. No tiene que ejecutarse en máquina: una receta de cocina es un algoritmo." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "short": "Lenguajes de prog.",
+      "label": "Los lenguajes de programación",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las computadoras solo entienden señales eléctricas representadas como 0 y 1 (bits). Los lenguajes de programación son el puente entre las intenciones del programador y las operaciones de la máquina. Evolucionaron desde tarjetas perforadas y lenguaje ensamblador hasta lenguajes de alto nivel como C, Python o Java."
+        },
+        {
+          "type": "timeline",
+          "items": [
+            { "year": "Antigüedad", "label": "Tarjetas perforadas", "detail": "Agujeros en tarjetas representaban instrucciones en código binario; método tedioso y propenso a errores." },
+            { "year": "Siguiente etapa", "label": "Lenguaje ensamblador", "detail": "Sustituye secuencias de 0s y 1s por palabras (mnemonics). Cada instrucción corresponde a una operación elemental de la CPU. Requiere conocimiento detallado de la arquitectura." },
+            { "year": "Posterior", "label": "Lenguajes de alto nivel", "detail": "C, Python, Java: permiten centrarse en la lógica sin preocuparse del hardware. Requieren compiladores/intérpretes para traducir a código máquina." }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Ejemplo: la instrucción ensamblador 'mov a1, [num1]' se traduce a 48 bits (6 bytes) en binario para representar una sola operación de carga de valor."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "short": "Pseudocódigo",
+      "label": "Lenguaje de aprendizaje",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El pseudocódigo es un lenguaje intermedio entre el lenguaje natural y un lenguaje de programación real. No se ejecuta en la computadora: actúa como puente entre la idea del algoritmo y el código real. Permite diseñar la lógica sin lidiar con la sintaxis estricta de ningún lenguaje."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Ejemplo: suma de dos números en pseudocódigo",
+              "content": "Inicio\n  Definir num1 como Entero\n  Definir num2 como Entero\n  Definir suma como Entero\n  Asignar 5 a num1\n  Asignar 10 a num2\n  suma ← num1 + num2\n  Mostrar \"La suma de \", num1, \" y \", num2, \" es: \", suma\nFin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "short": "Lenguajes actuales",
+      "label": "Ejemplos de lenguajes de programación actuales",
+      "blocks": [
+        {
+          "type": "cards",
+          "items": [
+            { "kicker": "Microsoft / .NET", "title": "C#", "desc": "Orientado a objetos. Usado en aplicaciones de escritorio, videojuegos (Unity) y software empresarial.", "example": "" },
+            { "kicker": "Propósito general", "title": "Java", "desc": "Orientado a objetos, portable gracias a la JVM. Usado en aplicaciones empresariales, móvil (Android) y sistemas distribuidos.", "example": "" },
+            { "kicker": "Alto nivel / IA", "title": "Python", "desc": "Sintaxis clara y fácil de aprender. Muy usado en desarrollo web, ciencia de datos, inteligencia artificial y automatización.", "example": "" },
+            { "kicker": "Web front/back", "title": "JavaScript", "desc": "Esencial para el desarrollo web del lado del cliente. Con Node.js también se usa en el backend.", "example": "" },
+            { "kicker": "Web scripting", "title": "PHP", "desc": "Motor de plataformas como WordPress y Laravel. Ampliamente utilizado para la creación de sitios y aplicaciones dinámicas.", "example": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "short": "Elegir un lenguaje",
+      "label": "Requisitos para elegir un lenguaje de programación",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": ["Criterio", "Descripción"],
+          "rows": [
+            ["Propósito del desarrollo", "Cada dominio tiene lenguajes más adecuados: JS para web, Python para datos, C para sistemas."],
+            ["Rendimiento y eficiencia", "Aplicaciones en tiempo real o videojuegos → C o Rust. Facilidad de desarrollo → Python o Ruby."],
+            ["Facilidad de aprendizaje", "Python tiene curva de aprendizaje menor; lenguajes más complejos ofrecen más control."],
+            ["Ecosistema y comunidad", "Gran comunidad = más bibliotecas, actualizaciones y soporte. Ej.: Python, JavaScript."],
+            ["Compatibilidad y portabilidad", "Multiplataforma: Java, Python. Ecosistema específico: Swift para iOS."],
+            ["Soporte a largo plazo", "Java y C# son estables con soporte empresarial. Importante para proyectos grandes."],
+            ["Costes asociados", "Considerar herramientas de pago, licencias y disponibilidad de desarrolladores."]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "short": "Java",
+      "label": "El lenguaje de programación JAVA",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Java fue creado por James Gosling en Sun Microsystems en 1995. Su lema es 'escribe una vez, ejecuta en cualquier lugar' gracias a la Máquina Virtual de Java (JVM). Originalmente se llamó Oak. Según el índice TIOBE 2025, Java ocupa el cuarto lugar de los lenguajes más usados."
+        },
+        {
+          "type": "table",
+          "headers": ["Característica", "Descripción"],
+          "rows": [
+            ["Lenguaje orientado a objetos", "Organiza los programas en clases y objetos, facilitando la reutilización y modularidad."],
+            ["Multiplataforma", "Se ejecuta en Windows, Linux, macOS sin cambiar el código."],
+            ["Sintaxis estructurada", "Obliga a seguir estructura clara (clases, métodos, tipos de datos)."],
+            ["Tipado fuerte", "Cada variable debe tener un tipo definido (entero, texto, decimal)."],
+            ["Compilado e interpretado", "Se compila a bytecode; luego es interpretado por la JVM."],
+            ["Gestión automática de memoria", "El garbage collector libera memoria que ya no se necesita."],
+            ["Seguridad", "Mecanismos para proteger código, especialmente en red."],
+            ["Portable", "El código puede moverse de dispositivo a dispositivo con la JVM instalada."]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "short": "Primeros pasos",
+      "label": "Primeros pasos con Java",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Para programar en Java se necesita instalar el JDK (Java Development Kit) y elegir un IDE. El JDK incluye el compilador que traduce el código a bytecode ejecutable por la JVM."
+        },
+        {
+          "type": "cards",
+          "items": [
+            { "kicker": "IDE profesional", "title": "Eclipse", "desc": "Muy completo y ampliamente utilizado en el mundo profesional.", "example": "" },
+            { "kicker": "IDE educativo", "title": "NetBeans", "desc": "Desarrollado originalmente por Sun Microsystems. Sencillo y didáctico.", "example": "" },
+            { "kicker": "IDE moderno", "title": "IntelliJ IDEA", "desc": "Moderno y potente, especialmente usado en entornos profesionales.", "example": "" },
+            { "kicker": "Editor con extensiones", "title": "Visual Studio Code", "desc": "No es un IDE puro, pero permite programar en Java instalando extensiones.", "example": "" },
+            { "kicker": "IDE educativo", "title": "BlueJ", "desc": "Creado para fines educativos. Visualiza clases, objetos y sus relaciones. Ideal para etapas iniciales.", "example": "" }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Hola mundo en Java",
+              "content": "public class HolaMundo {\n  public static void main(String[] args) {\n    System.out.println(\"Hola mundo\");\n  }\n}\n\npublic class HolaMundo → declara la clase (toda la lógica va dentro).\npublic static void main(String[] args) → método principal: punto de entrada del programa.\nSystem.out.println(...) → imprime por pantalla.\nTras compilar se genera HolaMundo.class (bytecode) que la JVM ejecuta."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Algoritmo", "def": "Serie de pasos ordenados y finitos para resolver un problema. No necesita ejecutarse en una máquina." },
+    { "term": "Programa", "def": "Conjunto organizado de instrucciones escritas en un lenguaje de programación para ser ejecutadas por una computadora." },
+    { "term": "Instrucción", "def": "Orden concreta dada al ordenador para que realice una acción determinada." },
+    { "term": "Pseudocódigo", "def": "Lenguaje intermedio entre el lenguaje natural y un lenguaje de programación real. No se ejecuta directamente en la computadora." },
+    { "term": "Bit", "def": "Unidad mínima de información. Representa los dos estados de un transistor: 0 (cerrado) o 1 (abierto)." },
+    { "term": "Lenguaje ensamblador", "def": "Lenguaje de bajo nivel que sustituye secuencias binarias por mnemonics. Requiere conocimiento detallado de la arquitectura de la máquina." },
+    { "term": "JVM", "def": "Java Virtual Machine. Máquina virtual que interpreta el bytecode de Java, permitiendo la portabilidad multiplataforma." },
+    { "term": "JDK", "def": "Java Development Kit. Herramientas necesarias para compilar y ejecutar programas Java, incluyendo el compilador." },
+    { "term": "Bytecode", "def": "Código intermedio al que se compila el código fuente Java. Es interpretado por la JVM." },
+    { "term": "Garbage collector", "def": "Componente de la JVM que libera automáticamente la memoria que ya no se necesita." },
+    { "term": "IDE", "def": "Integrated Development Environment. Aplicación que facilita la escritura, compilación y ejecución de código." }
+  ],
+  "quiz": [
+    {
+      "question": "¿Qué matemático del siglo IX sentó las bases del término 'algoritmo' y de qué término proviene su nombre?",
+      "options": ["Euclides; del griego 'arithmos'", "Al-Juarismi; su nombre latinizado dio origen a 'algoritmo'", "Ada Lovelace; de 'algo ritmo'", "Charles Babbage; del inglés 'algorithm'"],
+      "correct": 1,
+      "explanation": "Al-Juarismi fue un matemático persa cuyo nombre latinizado (Algoritmi) dio origen al término 'algoritmo'."
+    },
+    {
+      "question": "¿Cuál es la diferencia principal entre lenguaje ensamblador y lenguaje de alto nivel?",
+      "options": ["El ensamblador es más fácil de aprender", "El ensamblador opera con instrucciones próximas al hardware; los de alto nivel son más abstractos y cercanos al lenguaje humano", "El ensamblador ya no se usa en ningún contexto", "Los lenguajes de alto nivel no necesitan compiladores"],
+      "correct": 1,
+      "explanation": "El ensamblador se relaciona directamente con el hardware (bajo nivel); los lenguajes de alto nivel (Java, Python, C#) son más abstractos y requieren compiladores/intérpretes."
+    },
+    {
+      "question": "¿Para qué sirve el pseudocódigo?",
+      "options": ["Para ejecutarse directamente en la JVM", "Como puente entre la idea del algoritmo y el lenguaje de programación real, sin restricciones de sintaxis", "Para compilar programas Java", "Como sustituto del diagrama de clases UML"],
+      "correct": 1,
+      "explanation": "El pseudocódigo no se ejecuta en la computadora. Permite diseñar la lógica de un algoritmo en lenguaje cercano al natural antes de trasladarla al lenguaje de programación elegido."
+    },
+    {
+      "question": "¿Qué es el bytecode en Java?",
+      "options": ["El código binario final ejecutado por el procesador", "Un código intermedio resultado de compilar el fuente Java, que la JVM interpreta", "El código ensamblador específico de cada plataforma", "El archivo .java antes de compilar"],
+      "correct": 1,
+      "explanation": "El compilador de Java transforma el código fuente (.java) en bytecode (.class), un formato intermedio que la JVM puede interpretar en cualquier plataforma."
+    },
+    {
+      "question": "Según el índice TIOBE 2025, ¿qué posición ocupa Java?",
+      "options": ["Primera", "Segunda", "Tercera", "Cuarta"],
+      "correct": 3,
+      "explanation": "Según el índice TIOBE 2025 referenciado en el texto, Java ocupa el cuarto lugar de los lenguajes más usados."
+    },
+    {
+      "question": "¿Cuál de los siguientes IDEs fue creado específicamente con fines educativos para Java?",
+      "options": ["Eclipse", "IntelliJ IDEA", "BlueJ", "Visual Studio Code"],
+      "correct": 2,
+      "explanation": "BlueJ fue creado para fines educativos. Su interfaz permite visualizar clases, objetos y relaciones de forma clara, ideal para las primeras etapas del aprendizaje."
+    },
+    {
+      "question": "En el lema de Java 'escribe una vez, ejecuta en cualquier lugar', ¿qué componente hace posible esa portabilidad?",
+      "options": ["El JDK", "El garbage collector", "La JVM (Java Virtual Machine)", "El IDE Eclipse"],
+      "correct": 2,
+      "explanation": "La JVM es la máquina virtual que interpreta el bytecode Java en cualquier sistema operativo o plataforma donde esté instalada."
+    }
+  ],
+  "_sources": {
+    "s1": "U0 La base de la programación.txt pp. 3",
+    "s2": "U0 La base de la programación.txt pp. 4-6",
+    "s3": "U0 La base de la programación.txt pp. 7",
+    "s4": "U0 La base de la programación.txt pp. 8-9",
+    "s5": "U0 La base de la programación.txt pp. 10",
+    "s6": "U0 La base de la programación.txt pp. 11-12",
+    "s7": "U0 La base de la programación.txt pp. 13-16"
+  }
+}
