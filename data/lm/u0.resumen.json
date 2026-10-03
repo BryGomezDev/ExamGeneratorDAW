@@ -11,6 +11,46 @@
   ],
   "sections": [
     {
+      "id": "s3",
+      "short": "Panorama del módulo",
+      "label": "Introducción",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El módulo «Lenguajes de marcas y sistemas de gestión de información» abarca desde los fundamentos hasta las aplicaciones empresariales de la información estructurada. A lo largo del curso se estudiarán los siguientes bloques temáticos."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "HTML y CSS — presentación de información en la web",
+              "content": "HTML define la estructura de las páginas web; CSS controla su apariencia visual. Son el núcleo del desarrollo web front-end."
+            },
+            {
+              "title": "XML y esquemas (DTD, XML Schema)",
+              "content": "XML permite estructurar y transmitir datos de forma organizada. Los esquemas como DTD y XML Schema definen reglas claras para validar esos datos."
+            },
+            {
+              "title": "Transformación de documentos XML",
+              "content": "Mediante tecnologías de transformación (XSLT) es posible convertir documentos XML a otros formatos, reutilizando la misma información en diferentes contextos."
+            },
+            {
+              "title": "Almacenamiento de información",
+              "content": "La información puede almacenarse en archivos o en bases de datos especializadas (bases de datos nativas XML, relacionales, etc.)."
+            },
+            {
+              "title": "Sindicación de contenidos: RSS y ATOM",
+              "content": "Aplicación muy común en internet para distribuir contenidos actualizados de sitios web de forma estandarizada."
+            },
+            {
+              "title": "Sistemas de gestión empresarial: CRM, ERP",
+              "content": "Los datos bien estructurados ayudan a tomar decisiones en entornos empresariales a través de sistemas como CRM (gestión de clientes) o ERP (planificación de recursos)."
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "s1",
       "short": "Conceptos fundamentales",
       "label": "Conceptos fundamentales antes de empezar",
@@ -78,53 +118,37 @@
         },
         {
           "type": "table",
-          "headers": ["Concepto", "Símbolo / Sintaxis", "Ejemplo"],
+          "headers": [
+            "Concepto",
+            "Símbolo / Sintaxis",
+            "Ejemplo"
+          ],
           "rows": [
-            ["Etiqueta de apertura", "<nombre>", "<p>"],
-            ["Etiqueta de cierre", "</nombre>", "</p>"],
-            ["Etiqueta vacía / autocerrada", "<nombre />", "<br />"],
-            ["Atributo", "nombre=\"valor\"", "src=\"logo.png\""],
-            ["Elemento completo", "<nombre atrib>contenido</nombre>", "<a href=\"url\">texto</a>"]
-          ]
-        }
-      ]
-    },
-    {
-      "id": "s3",
-      "short": "Panorama del módulo",
-      "label": "Introducción",
-      "blocks": [
-        {
-          "type": "text",
-          "content": "El módulo «Lenguajes de marcas y sistemas de gestión de información» abarca desde los fundamentos hasta las aplicaciones empresariales de la información estructurada. A lo largo del curso se estudiarán los siguientes bloques temáticos."
-        },
-        {
-          "type": "accordion",
-          "items": [
-            {
-              "title": "HTML y CSS — presentación de información en la web",
-              "content": "HTML define la estructura de las páginas web; CSS controla su apariencia visual. Son el núcleo del desarrollo web front-end."
-            },
-            {
-              "title": "XML y esquemas (DTD, XML Schema)",
-              "content": "XML permite estructurar y transmitir datos de forma organizada. Los esquemas como DTD y XML Schema definen reglas claras para validar esos datos."
-            },
-            {
-              "title": "Transformación de documentos XML",
-              "content": "Mediante tecnologías de transformación (XSLT) es posible convertir documentos XML a otros formatos, reutilizando la misma información en diferentes contextos."
-            },
-            {
-              "title": "Almacenamiento de información",
-              "content": "La información puede almacenarse en archivos o en bases de datos especializadas (bases de datos nativas XML, relacionales, etc.)."
-            },
-            {
-              "title": "Sindicación de contenidos: RSS y ATOM",
-              "content": "Aplicación muy común en internet para distribuir contenidos actualizados de sitios web de forma estandarizada."
-            },
-            {
-              "title": "Sistemas de gestión empresarial: CRM, ERP",
-              "content": "Los datos bien estructurados ayudan a tomar decisiones en entornos empresariales a través de sistemas como CRM (gestión de clientes) o ERP (planificación de recursos)."
-            }
+            [
+              "Etiqueta de apertura",
+              "<nombre>",
+              "<p>"
+            ],
+            [
+              "Etiqueta de cierre",
+              "</nombre>",
+              "</p>"
+            ],
+            [
+              "Etiqueta vacía / autocerrada",
+              "<nombre />",
+              "<br />"
+            ],
+            [
+              "Atributo",
+              "nombre=\"valor\"",
+              "src=\"logo.png\""
+            ],
+            [
+              "Elemento completo",
+              "<nombre atrib>contenido</nombre>",
+              "<a href=\"url\">texto</a>"
+            ]
           ]
         }
       ]

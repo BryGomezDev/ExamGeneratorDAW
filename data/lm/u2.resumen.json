@@ -116,20 +116,72 @@
         },
         {
           "type": "table",
-          "headers": ["Grupo de etiquetas", "Etiquetas principales", "Uso"],
+          "headers": [
+            "Grupo de etiquetas",
+            "Etiquetas principales",
+            "Uso"
+          ],
           "rows": [
-            ["Formato de texto", "<b>, <u>, <i>, <s>, <big>, <small>, <font>", "Negrita, subrayado, cursiva, tachado, tamaño de fuente"],
-            ["Salto / línea horizontal", "<br>, <hr>", "Salto de línea, línea horizontal (con atributos align y width)"],
-            ["Índices y subíndices", "<SUP>, <SUB>", "Superíndice y subíndice"],
-            ["Párrafos", "<p align=''>", "Párrafo con alineación: left, center, justify, right"],
-            ["Encabezamientos", "<h1> a <h6>", "Títulos; h1 es el mayor, h6 el menor. Usados para SEO"],
-            ["Listas ordenadas", "<ol type=''> + <li>", "Listas numéricas; atributos type (1,a,i,I,A) y start"],
-            ["Listas desordenadas", "<ul type=''> + <li>", "Listas con viñetas; atributos type (disc, square, circle)"],
-            ["Listas de definición", "<dl>, <dt>, <dd>", "Lista de términos con sus definiciones"],
-            ["Enlaces", "<a href='' target=''>", "Hipervínculos absolutos, relativos o internos a la misma página"],
-            ["Imágenes", "<img src='' width='' height='' alt='' align=''>", "Insertar imágenes (jpg, bmp, png, gif)"],
-            ["Tablas", "<table>, <caption>, <th>, <tr>, <td>", "Tablas con filas, columnas, cabeceras y combinaciones (colspan, rowspan)"],
-            ["Formularios", "<form action='' method=''>, <input>, <textarea>, <select>", "Interacción usuario-servidor: texto, radio, checkbox, combo, botones"]
+            [
+              "Formato de texto",
+              "<b>, <u>, <i>, <s>, <big>, <small>, <font>",
+              "Negrita, subrayado, cursiva, tachado, tamaño de fuente"
+            ],
+            [
+              "Salto / línea horizontal",
+              "<br>, <hr>",
+              "Salto de línea, línea horizontal (con atributos align y width)"
+            ],
+            [
+              "Índices y subíndices",
+              "<SUP>, <SUB>",
+              "Superíndice y subíndice"
+            ],
+            [
+              "Párrafos",
+              "<p align=''>",
+              "Párrafo con alineación: left, center, justify, right"
+            ],
+            [
+              "Encabezamientos",
+              "<h1> a <h6>",
+              "Títulos; h1 es el mayor, h6 el menor. Usados para SEO"
+            ],
+            [
+              "Listas ordenadas",
+              "<ol type=''> + <li>",
+              "Listas numéricas; atributos type (1,a,i,I,A) y start"
+            ],
+            [
+              "Listas desordenadas",
+              "<ul type=''> + <li>",
+              "Listas con viñetas; atributos type (disc, square, circle)"
+            ],
+            [
+              "Listas de definición",
+              "<dl>, <dt>, <dd>",
+              "Lista de términos con sus definiciones"
+            ],
+            [
+              "Enlaces",
+              "<a href='' target=''>",
+              "Hipervínculos absolutos, relativos o internos a la misma página"
+            ],
+            [
+              "Imágenes",
+              "<img src='' width='' height='' alt='' align=''>",
+              "Insertar imágenes (jpg, bmp, png, gif)"
+            ],
+            [
+              "Tablas",
+              "<table>, <caption>, <th>, <tr>, <td>",
+              "Tablas con filas, columnas, cabeceras y combinaciones (colspan, rowspan)"
+            ],
+            [
+              "Formularios",
+              "<form action='' method=''>, <input>, <textarea>, <select>",
+              "Interacción usuario-servidor: texto, radio, checkbox, combo, botones"
+            ]
           ]
         },
         {
@@ -150,8 +202,12 @@
     {
       "id": "s3",
       "short": "HTML5",
-      "label": "2.2.5. HMTL5",
+      "label": "2.2.5. HTML5",
       "blocks": [
+        {
+          "type": "text",
+          "content": "⚠ Ojo: el temario escribe este epígrafe como «HMTL5» en lugar de «HTML5». Es un error tipográfico del material original."
+        },
         {
           "type": "text",
           "content": "El objetivo del W3C con HTML5 es modernizar las páginas web añadiendo nuevos elementos y eliminando los obsoletos. HTML4 no podía validar datos en formularios sin JavaScript, ni arrastrar objetos, ni tenía etiquetas para la web semántica. Las mejoras se agrupan en cuatro bloques. La declaración DOCTYPE simplifica a <!DOCTYPE html> y la codificación a <meta charset='UTF-8'>."
@@ -188,10 +244,26 @@
         {
           "type": "chips",
           "items": [
-            "<article>", "<aside>", "<audio>", "<canvas>", "<datalist>",
-            "<details>", "<dialog>", "<embed>", "<figure>", "<footer>",
-            "<header>", "<mark>", "<meter>", "<nav>", "<output>",
-            "<progress>", "<section>", "<source>", "<time>", "<video>"
+            "<article>",
+            "<aside>",
+            "<audio>",
+            "<canvas>",
+            "<datalist>",
+            "<details>",
+            "<dialog>",
+            "<embed>",
+            "<figure>",
+            "<footer>",
+            "<header>",
+            "<mark>",
+            "<meter>",
+            "<nav>",
+            "<output>",
+            "<progress>",
+            "<section>",
+            "<source>",
+            "<time>",
+            "<video>"
           ]
         }
       ]
@@ -253,20 +325,85 @@
         },
         {
           "type": "table",
-          "headers": ["Grupo", "Propiedad", "Valores principales", "Descripción"],
+          "headers": [
+            "Grupo",
+            "Propiedad",
+            "Valores principales",
+            "Descripción"
+          ],
           "rows": [
-            ["Texto", "text-decoration", "none, underline, overline, line-through, blink", "Decoración del texto"],
-            ["Texto", "color", "RGB o nombre de color", "Color del texto"],
-            ["Texto", "text-align", "center, justify, left, right", "Alineación horizontal"],
-            ["Texto", "text-transform", "none, capitalize, lowercase, uppercase", "Conversión de mayúsculas/minúsculas"],
-            ["Fuente", "font-size", "xx-small … xx-large", "Tamaño de fuente"],
-            ["Fuente", "font-family", "nombre de fuente", "Tipo de letra"],
-            ["Fuente", "font-style", "normal, italic, oblique", "Estilo de fuente"],
-            ["Fondo", "background-color", "transparent, color", "Color de fondo"],
-            ["Fondo", "background-image", "none, uri", "Imagen de fondo"],
-            ["Posición", "float", "none, left, right", "Posicionamiento flotante"],
-            ["Posición", "position", "absolute, fixed, relative, static", "Modo de posicionamiento"],
-            ["Tamaño", "width / height", "auto, distancia, porcentaje", "Anchura / Altura del elemento"]
+            [
+              "Texto",
+              "text-decoration",
+              "none, underline, overline, line-through, blink",
+              "Decoración del texto"
+            ],
+            [
+              "Texto",
+              "color",
+              "RGB o nombre de color",
+              "Color del texto"
+            ],
+            [
+              "Texto",
+              "text-align",
+              "center, justify, left, right",
+              "Alineación horizontal"
+            ],
+            [
+              "Texto",
+              "text-transform",
+              "none, capitalize, lowercase, uppercase",
+              "Conversión de mayúsculas/minúsculas"
+            ],
+            [
+              "Fuente",
+              "font-size",
+              "xx-small … xx-large",
+              "Tamaño de fuente"
+            ],
+            [
+              "Fuente",
+              "font-family",
+              "nombre de fuente",
+              "Tipo de letra"
+            ],
+            [
+              "Fuente",
+              "font-style",
+              "normal, italic, oblique",
+              "Estilo de fuente"
+            ],
+            [
+              "Fondo",
+              "background-color",
+              "transparent, color",
+              "Color de fondo"
+            ],
+            [
+              "Fondo",
+              "background-image",
+              "none, uri",
+              "Imagen de fondo"
+            ],
+            [
+              "Posición",
+              "float",
+              "none, left, right",
+              "Posicionamiento flotante"
+            ],
+            [
+              "Posición",
+              "position",
+              "absolute, fixed, relative, static",
+              "Modo de posicionamiento"
+            ],
+            [
+              "Tamaño",
+              "width / height",
+              "auto, distancia, porcentaje",
+              "Anchura / Altura del elemento"
+            ]
           ]
         }
       ]
@@ -316,12 +453,29 @@
         {
           "type": "chips",
           "items": [
-            "background", "border-image", "border-radius", "box-shadow",
-            "box-sizing", "DataURI", "FlexBox", "Generated Content",
-            "hsla()", "Media Queries", "Multiple backgrounds", "opacity",
-            "overflow-scrolling", "pointer-events", "rgba()", "text-shadow",
-            "CSS Reflections", "CSS Transitions", "CSS 2D Transforms",
-            "CSS 3D Transforms", "CSS Animations", "CSS Columns", "CSS Gradients"
+            "background",
+            "border-image",
+            "border-radius",
+            "box-shadow",
+            "box-sizing",
+            "DataURI",
+            "FlexBox",
+            "Generated Content",
+            "hsla()",
+            "Media Queries",
+            "Multiple backgrounds",
+            "opacity",
+            "overflow-scrolling",
+            "pointer-events",
+            "rgba()",
+            "text-shadow",
+            "CSS Reflections",
+            "CSS Transitions",
+            "CSS 2D Transforms",
+            "CSS 3D Transforms",
+            "CSS Animations",
+            "CSS Columns",
+            "CSS Gradients"
           ]
         }
       ]
@@ -354,11 +508,23 @@
         },
         {
           "type": "table",
-          "headers": ["Tipo DTD", "Declaración DOCTYPE"],
+          "headers": [
+            "Tipo DTD",
+            "Declaración DOCTYPE"
+          ],
           "rows": [
-            ["Estricto", "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">"],
-            ["Transitorio", "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"],
-            ["Frameset", "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Frameset//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd\">"]
+            [
+              "Estricto",
+              "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">"
+            ],
+            [
+              "Transitorio",
+              "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"
+            ],
+            [
+              "Frameset",
+              "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Frameset//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd\">"
+            ]
           ]
         }
       ]
