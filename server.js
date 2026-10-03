@@ -186,21 +186,11 @@ function getSummaryUnits(subject) {
 
 function loadQuestions(subject, filename) {
   const filePath = path.join(DATA_DIR, subject, filename);
-  console.log('[path]', path.resolve(filePath));
-
   let content = fs.readFileSync(filePath, 'utf-8');
-  console.log('[raw]', JSON.stringify(content.slice(0, 300)));
-  console.log('[raw] isNewFormat=' + isNewFormat(content));
-
   if (content.charCodeAt(0) === 0xFEFF) content = content.slice(1); // strip BOM
   content = content.replace(/\r\n/g, '\n').replace(/\r/g, '\n');    // normalize line endings
-
-  console.log('[fixed] isNewFormat=' + isNewFormat(content));
-
   const useNew = isNewFormat(content);
-  const questions = useNew ? parseQuestionsNew(content) : parseQuestions(content);
-  console.log('[loadQuestions] ' + subject + '/' + filename + ': parser=' + (useNew ? 'new' : 'moodle') + ', questions=' + questions.length);
-  return questions;
+  return useNew ? parseQuestionsNew(content) : parseQuestions(content);
 }
 
 function shuffle(arr) {
@@ -235,21 +225,20 @@ app.get('/api/subjects', (req, res) => {
       .filter(s => s.units.length > 0 || s.hasPs);
     res.json(subjects);
   } catch (e) {
-    res.status(500).json({ error: e.message });
+    res.status(500).json({ error: 'Error interno' });
   }
 });
 
 app.get('/api/questions/:subject/:file', (req, res) => {
   try {
     const { subject, file } = req.params;
-    // Sanitize: only allow alphanumeric, dots, underscores
-    if (!/^[\w.]+$/.test(subject) || !/^[\w.]+$/.test(file)) {
+    if (!/^[a-z0-9]+$/.test(subject) || !/^(u\d+|ps)\.txt$/.test(file)) {
       return res.status(400).json({ error: 'Invalid path' });
     }
     const questions = loadQuestions(subject, file);
     res.json(questions);
   } catch (e) {
-    res.status(500).json({ error: e.message });
+    res.status(500).json({ error: 'Error interno' });
   }
 });
 
@@ -257,7 +246,7 @@ app.get('/api/questions/:subject/:file', (req, res) => {
 app.get('/api/questions/:subject', (req, res) => {
   try {
     const { subject } = req.params;
-    if (!/^[\w.]+$/.test(subject)) return res.status(400).json({ error: 'Invalid path' });
+    if (!/^[a-z0-9]+$/.test(subject)) return res.status(400).json({ error: 'Invalid path' });
     const { units } = getSubjectFiles(subject);
     let all = [];
     for (const u of units) {
@@ -265,7 +254,7 @@ app.get('/api/questions/:subject', (req, res) => {
     }
     res.json(deduplicateByQuestion(all));
   } catch (e) {
-    res.status(500).json({ error: e.message });
+    res.status(500).json({ error: 'Error interno' });
   }
 });
 
@@ -273,21 +262,17 @@ app.get('/api/questions/:subject', (req, res) => {
 app.get('/api/final/:subject', (req, res) => {
   try {
     const { subject } = req.params;
-    if (!/^[\w.]+$/.test(subject)) return res.status(400).json({ error: 'Invalid path' });
+    if (!/^[a-z0-9]+$/.test(subject)) return res.status(400).json({ error: 'Invalid path' });
 
     const { units, hasPs } = getSubjectFiles(subject);
     if (!hasPs) return res.status(400).json({ error: 'No ps.txt found for this subject' });
 
     const psPool = deduplicateByQuestion(loadQuestions(subject, 'ps.txt'));
-    console.log(`[/api/final/${subject}] psPool: ${psPool.length} questions`);
-
     let unitRaw = [];
     for (const u of units) unitRaw = unitRaw.concat(loadQuestions(subject, u));
     const unitPool = deduplicateByQuestion(unitRaw);
-    console.log(`[/api/final/${subject}] unitPool: ${unitPool.length} questions`);
 
     const psPick = shuffle(psPool).slice(0, 25);
-
     const psKeys = new Set(
       psPick.map(q => q.question.toLowerCase().replace(/\s+/g, ' ').trim())
     );
@@ -295,18 +280,16 @@ app.get('/api/final/:subject', (req, res) => {
       q => q.question && !psKeys.has(q.question.toLowerCase().replace(/\s+/g, ' ').trim())
     );
     const unitPick = shuffle(unitFiltered).slice(0, 15);
-    console.log(`[/api/final/${subject}] psPick=${psPick.length} unitPick=${unitPick.length}`);
 
     res.json(shuffle([...psPick, ...unitPick]));
   } catch (e) {
-    console.error(`[/api/final] Error:`, e);
-    res.status(500).json({ error: e.message });
+    res.status(500).json({ error: 'Error interno' });
   }
 });
 
 app.get('/api/summary/:subject/:unit', (req, res) => {
   const { subject, unit } = req.params;
-  if (!/^[\w.]+$/.test(subject) || !/^\d+$/.test(unit)) {
+  if (!/^[a-z0-9]+$/.test(subject) || !/^\d+$/.test(unit)) {
     return res.status(400).json({ error: 'Invalid params' });
   }
   try {
