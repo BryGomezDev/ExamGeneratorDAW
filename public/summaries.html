@@ -365,24 +365,24 @@
 
 const SUBJECT_NAMES = {
   si: 'Sistemas Informáticos', ed: 'Entornos de Desarrollo',
-  bd: 'Bases de Datos', prog: 'Programación', lm: 'Lenguajes de Marcas',
-  ip: 'Inglés Profesional', ipe: 'Itinerario Profesional para la Empleabilidad',
+  bd: 'Bases de Datos', prog: 'Programación', lm: 'Lenguaje de marcas y sistemas de gestión de información',
+  ip: 'Inglés profesional', ipe: 'Ampliación de itinerario personal para la empleabilidad',
   dwec: 'Desarrollo Web en Entorno Cliente', dwes: 'Desarrollo Web en Entorno Servidor',
 };
 const SUBJECT_FULL_NAMES = {
-  lm:   'Lenguaje de Marcas y Sistemas de Gestión de la Información',
+  lm:   'Lenguaje de marcas y sistemas de gestión de información',
   si:   'Sistemas Informáticos',
   prog: 'Programación',
   ed:   'Entornos de Desarrollo',
   bd:   'Bases de Datos',
-  ip:   'Inglés Profesional para Informática',
-  ipe:  'Itinerario Profesional para la Empleabilidad',
+  ip:   'Inglés profesional',
+  ipe:  'Ampliación de itinerario personal para la empleabilidad',
   dwec: 'Desarrollo Web en Entorno Cliente',
   dwes: 'Desarrollo Web en Entorno Servidor',
 };
 const SUBJECT_ICONS = {
   si: '🖥️', ed: '🛠️', bd: '🗄️', prog: '💻', lm: '📄',
-  dwec: '🌐', dwes: '⚙️', ip: '🇬🇧', ipe: '💼',
+  dwec: '🌐', dwes: '⚙️', ip: '📘', ipe: '💼',
 };
 function subjectName(code) { return SUBJECT_NAMES[code] || code.toUpperCase(); }
 function subjectFullName(code) { return SUBJECT_FULL_NAMES[code] || SUBJECT_NAMES[code] || code.toUpperCase(); }

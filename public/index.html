@@ -728,9 +728,9 @@ const SUBJECT_NAMES = {
   ed: 'Entornos de Desarrollo',
   bd: 'Bases de Datos',
   prog: 'Programación',
-  lm: 'Lenguajes de Marcas',
-  ip: 'Inglés Profesional',
-  ipe: 'Itinerario Profesional para la Empleabilidad',
+  lm: 'Lenguaje de marcas y sistemas de gestión de información',
+  ip: 'Inglés profesional',
+  ipe: 'Ampliación de itinerario personal para la empleabilidad',
   dwec: 'Desarrollo Web en Entorno Cliente',
   dwes: 'Desarrollo Web en Entorno Servidor',
   daw: 'Proyecto DAW',
@@ -738,7 +738,7 @@ const SUBJECT_NAMES = {
 function subjectName(code) {
   return SUBJECT_NAMES[code.toLowerCase()] || code.toUpperCase();
 }
-const SUBJECT_ICONS = { si: '🖥️', ed: '🛠️', bd: '🗄️', prog: '💻', lm: '📄', dwec: '🌐', dwes: '⚙️', ip: '🇬🇧', ipe: '💼' };
+const SUBJECT_ICONS = { si: '🖥️', ed: '🛠️', bd: '🗄️', prog: '💻', lm: '📄', dwec: '🌐', dwes: '⚙️', ip: '📘', ipe: '💼' };
 function subjectIcon(code) { return SUBJECT_ICONS[code.toLowerCase()] || '📚'; }
 
 // ═══════════════════════════════════════════════════════════════════
