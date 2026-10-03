@@ -1,3 +1,16 @@
 node_modules/
 .env
-docs/qa/*.png
+
+# QA screenshots & artifacts
+docs/qa/
+qa_screenshots/
+qa_capture*.js
+
+# IDE / editor / OS
+.vscode/
+.idea/
+*.DS_Store
+Thumbs.db
+
+# Claude internal settings
+.claude/settings.local.json
