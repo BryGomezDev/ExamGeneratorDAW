@@ -515,9 +515,19 @@
     .stats-row { gap: 18px; }
     .history-entry-meta { font-size: 0.85rem; }
   }
+
+  /* ── Accessibility: skip link ────────────────────── */
+  .skip-link {
+    position: absolute; top: -48px; left: 8px; z-index: 9999;
+    background: var(--accent); color: var(--background);
+    padding: 8px 16px; border-radius: var(--radius); font-weight: 600;
+    font-size: 0.9rem; text-decoration: none; transition: top 0.1s;
+  }
+  .skip-link:focus { top: 8px; outline: 2px solid var(--primary); outline-offset: 2px; }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#landing-screen">Ir al contenido principal</a>
 
 <header>
   <h1>Exámenes DAW</h1>
@@ -534,13 +544,13 @@
     <div class="section-subtitle">¿Qué quieres hacer hoy?</div>
     <div class="cards-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px,1fr))">
       <div class="card" id="card-test" tabindex="0" role="button" aria-label="Ir a Pruebas Test">
-        <div class="card-icon">📝</div>
+        <div class="card-icon" aria-hidden="true">📝</div>
         <div class="card-title">Pruebas Test</div>
         <div class="card-meta">Pon a prueba tus conocimientos con preguntas tipo test.</div>
         <div style="margin-top:12px;font-size:0.85rem;color:var(--accent-light)">Empezar →</div>
       </div>
       <div class="card" id="card-summaries" tabindex="0" role="button" aria-label="Ir a Resúmenes Interactivos">
-        <div class="card-icon">📖</div>
+        <div class="card-icon" aria-hidden="true">📖</div>
         <div class="card-title">Resúmenes Interactivos</div>
         <div class="card-meta">Repasa el temario con resúmenes visuales e interactivos.</div>
         <div style="margin-top:12px;font-size:0.85rem;color:var(--accent-light)">Explorar →</div>
@@ -676,9 +686,19 @@ const HISTORY_KEY = 'daw_exam_history';
 // ═══════════════════════════════════════════════════════════════════
 function $(id) { return document.getElementById(id); }
 
+const SCREEN_TITLES = {
+  'landing-screen': 'Exámenes DAW',
+  'home-screen':    'Asignaturas — Exámenes DAW',
+  'mode-screen':    'Modo de examen — Exámenes DAW',
+  'exam-screen':    'Examen — Exámenes DAW',
+  'results-screen': 'Resultados — Exámenes DAW',
+  'review-screen':  'Revisión — Exámenes DAW',
+  'history-screen': 'Histórico — Exámenes DAW',
+};
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   $(id).classList.add('active');
+  document.title = SCREEN_TITLES[id] || 'Exámenes DAW';
   window.scrollTo(0, 0);
 }
 
@@ -809,8 +829,9 @@ async function loadHome() {
       card.className = 'card';
       card.setAttribute('role', 'button');
       card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', subjectName(subj.name));
       card.innerHTML = `
-        <div class="card-icon">${subjectIcon(subj.name)}</div>
+        <div class="card-icon" aria-hidden="true">${subjectIcon(subj.name)}</div>
         <div class="card-title">${subjectName(subj.name)}</div>
         <div class="card-meta">${subj.units.length} unidad${subj.units.length !== 1 ? 'es' : ''}${subj.hasPs ? ' · Prueba semestral' : ''}</div>
       `;

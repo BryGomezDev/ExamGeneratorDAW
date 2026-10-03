@@ -350,9 +350,19 @@
     .summary-main { padding: 20px 0 40px; }
     .objectives-grid { grid-template-columns: 1fr; }
   }
+
+  /* ── Accessibility: skip link ─────────────────────── */
+  .skip-link {
+    position: absolute; top: -48px; left: 8px; z-index: 9999;
+    background: var(--primary-container); color: var(--background);
+    padding: 8px 16px; border-radius: var(--radius); font-weight: 600;
+    font-size: 0.9rem; text-decoration: none; transition: top 0.1s;
+  }
+  .skip-link:focus { top: 8px; outline: 2px solid var(--primary); outline-offset: 2px; }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#app">Ir al contenido principal</a>
 <header>
   <h1>Resúmenes Interactivos</h1>
   <a href="index.html" class="btn-ghost">← Volver</a>
@@ -425,7 +435,7 @@ function renderSubjects() {
   const cards = withSummaries.map(s => `
     <div class="card" data-action="select-subject" data-subject="${esc(s.name)}"
          tabindex="0" role="button" aria-label="${esc(subjectName(s.name))}">
-      <div class="card-icon">${esc(subjectIcon(s.name))}</div>
+      <div class="card-icon" aria-hidden="true">${esc(subjectIcon(s.name))}</div>
       <div class="card-title">${esc(subjectName(s.name))}</div>
       <div class="card-meta">${s.summaryUnits.length} unidad${s.summaryUnits.length !== 1 ? 'es' : ''}</div>
     </div>`).join('');
@@ -444,7 +454,7 @@ function renderUnits() {
     return `
       <div class="card" data-action="select-unit" data-unit="${esc(num)}"
            tabindex="0" role="button" aria-label="Unidad ${esc(num)}">
-        <div class="card-icon">📄</div>
+        <div class="card-icon" aria-hidden="true">📄</div>
         <div class="card-title">Unidad ${esc(num)}</div>
         <div class="card-meta">${esc(subjectName(s.name))}</div>
       </div>`;
@@ -525,7 +535,7 @@ function renderSummary() {
           <span class="summary-breadcrumb-code">${esc(unitCode)}</span>
         </div>
         <div class="summary-kicker">${esc(subjectFullName(d.subject))}</div>
-        <div class="summary-unit">Unidad ${esc(String(d.unit))}</div>
+        <h1 class="summary-unit">Unidad ${esc(String(d.unit))}</h1>
         <div class="summary-title">${esc(d.title)}</div>
       </div>
       <div class="summary-wrap">
@@ -785,7 +795,7 @@ function renderQuizSection() {
       }
       const clickAttr = state.submitted
         ? ''
-        : `data-action="select-answer" data-qi="${qi}" data-oi="${oi}" tabindex="0" role="button"`;
+        : `data-action="select-answer" data-qi="${qi}" data-oi="${oi}" tabindex="0" role="button" aria-labelledby="q${qi}-label"`;
       return `<div class="${cls}" ${clickAttr}>${esc(opt)}</div>`;
     }).join('');
     const expl = state.submitted && q.explanation
@@ -793,7 +803,7 @@ function renderQuizSection() {
     return `
       <div class="quiz-item">
         <div class="quiz-q-header">
-          <div class="quiz-q">${qi + 1}. ${esc(q.question)}</div>
+          <div class="quiz-q" id="q${qi}-label">${qi + 1}. ${esc(q.question)}</div>
           ${badgeHtml}
         </div>
         ${opts}
