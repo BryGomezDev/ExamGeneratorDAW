@@ -14,3 +14,7 @@ Thumbs.db
 
 # Claude internal settings
 .claude/settings.local.json
+
+docs/stitch/
+docs/diseno-resumen-referencia.txt
+extract_pdfs.py
