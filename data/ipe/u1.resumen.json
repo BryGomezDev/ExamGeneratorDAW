@@ -1,0 +1,443 @@
+{
+  "subject": "ipe",
+  "unit": 1,
+  "title": "Economía y administración: nociones básicas",
+  "intro": "La economía está presente en la mayoría de las acciones cotidianas, desde el consumo más básico hasta la operación financiera más compleja. En esta unidad se estudian los conceptos clave de la economía doméstica, la financiación personal y los distintos tipos de empresas. Se analiza también el papel de los agentes económicos y la importancia de la Responsabilidad Social Corporativa.",
+  "objectives": [
+    "Entender los conceptos básicos de la economía doméstica",
+    "Descubrir las opciones de financiación personal disponibles para los ciudadanos",
+    "Aprender la importancia de la toma de decisiones económicas",
+    "Distinguir los distintos tipos de empresas según su forma jurídica y otros criterios",
+    "Conocer las medidas que adoptan las empresas en materia de sostenibilidad y RSC"
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "short": "Toma de decisiones",
+      "label": "1.1. La toma de decisiones",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La toma de decisiones económicas se fundamenta en un análisis coste-beneficio: se elige la opción cuyos beneficios superan a los costes. Tres conceptos clave condicionan este proceso: el coste de oportunidad, el coste irrecuperable y los incentivos."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Concepto clave",
+              "title": "Coste de oportunidad",
+              "desc": "Aquello a lo que se renuncia como consecuencia de una decisión. Se mide como el valor de la mejor alternativa descartada.",
+              "example": "Si eliges unas vacaciones en lugar de un curso de inglés, el coste de oportunidad es el valor de ese curso."
+            },
+            {
+              "kicker": "Concepto clave",
+              "title": "Coste irrecuperable",
+              "desc": "Costes del pasado que ya no se pueden modificar y no deben influir en decisiones futuras. Solo deben tenerse en cuenta los costes y beneficios presentes y futuros.",
+              "example": "El dinero pagado por una entrada de cine que ya no puedes devolver es un coste irrecuperable; no debe condicionar tu decisión de ir o no."
+            },
+            {
+              "kicker": "Concepto clave",
+              "title": "Incentivos",
+              "desc": "Factores positivos o negativos que motivan a individuos o empresas a actuar de una manera concreta. Su variación modifica la conducta al afectar a los costes y beneficios esperados.",
+              "example": "Una oferta de trabajo con mayor salario es un incentivo positivo para cambiar de empleo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "short": "Decisiones individuales",
+      "label": "1.1.1. Decisiones económicas individuales",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las decisiones económicas individuales son imprescindibles para la gestión financiera personal y decisivas para el bienestar a largo plazo. Las más importantes son el consumo, el ahorro y la elaboración del presupuesto familiar."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Consumo",
+              "content": "Implica la compra y utilización de bienes y servicios por parte de individuos y familias. El principal factor que lo condiciona es el nivel de ingresos. También influyen las necesidades básicas, las preferencias personales y los precios."
+            },
+            {
+              "title": "Ahorro",
+              "content": "Supone reservar una parte de los ingresos para usarlos en el futuro. Se recomienda mantener un fondo de emergencia que cubra 6 meses de gastos (9-12 meses si los ingresos son variables). Ese fondo puede invertirse en productos seguros y líquidos, o mantenerse en una cuenta de ahorro."
+            },
+            {
+              "title": "Presupuesto familiar",
+              "content": "Herramienta básica de planificación financiera que incluye gastos fijos, gastos corrientes y gastos ocasionales. Se elabora en 5 pasos: 1) identificar gastos e ingresos, 2) priorizar gastos, 3) fijar el ahorro como gasto fijo obligatorio, 4) hacer seguimiento y 5) revisar y ajustar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "short": "Decisiones colectivas",
+      "label": "1.1.2. Decisiones económicas colectivas",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las decisiones individuales contribuyen a conformar decisiones de mayor envergadura. Cuando las decisiones de unas personas influyen en otras, existe interacción, regida por principios de actuación derivados de la especialización y el intercambio."
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Principio de intercambio: obtener bienes y servicios a cambio de otros",
+            "Principio de eficiencia: maximizar resultados usando adecuadamente los recursos",
+            "Principio de bienestar social: los mercados ajustan oferta y demanda generando prosperidad"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "short": "Agentes y flujo de renta",
+      "label": "1.1.3. Los agentes económicos y el flujo circular de la renta",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los agentes económicos son las personas físicas o jurídicas que participan en un sistema económico, propiciando la actividad económica. El flujo circular de la renta es la representación esquemática de las relaciones de intercambio entre ellos."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Agente económico",
+              "title": "Familias",
+              "desc": "Agrupaciones de personas o individuos independientes. Consumen bienes y servicios, trabajan y gestionan su patrimonio.",
+              "example": "Un hogar que paga hipoteca, compra en el supermercado e invierte en un plan de pensiones."
+            },
+            {
+              "kicker": "Agente económico",
+              "title": "Empresas",
+              "desc": "Personas jurídicas que producen bienes y servicios usando trabajo y capital. Contratan trabajadores y generan empleo y consumo.",
+              "example": "Una empresa de software que contrata programadores y vende licencias."
+            },
+            {
+              "kicker": "Agente económico",
+              "title": "Estado",
+              "desc": "Interviene mediante políticas públicas, recauda tributos, redistribuye la riqueza y elabora leyes que modifican los mercados. Es el agente más relevante por la magnitud de su actividad.",
+              "example": "El Estado financia hospitales y escuelas con los impuestos recaudados."
+            },
+            {
+              "kicker": "Agente económico",
+              "title": "Sector bancario",
+              "desc": "Entidades que regulan y controlan la moneda y las políticas monetarias, controlando la oferta de capital y regulando el consumo, el ahorro y la inversión.",
+              "example": "El Banco Central Europeo fija los tipos de interés para controlar la inflación."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "short": "Financiación personal",
+      "label": "1.2. Financiación personal",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Se recurre a la financiación ajena cuando no se cuenta con el importe necesario para una compra o inversión. Para determinar la cuantía máxima que se puede comprometer, se distingue entre capacidad de endeudamiento (35% de los ingresos netos) y límite de endeudamiento (40% de los ingresos netos)."
+        },
+        {
+          "type": "table",
+          "headers": ["Concepto", "Porcentaje sobre ingresos netos", "Significado"],
+          "rows": [
+            ["Capacidad de endeudamiento", "35%", "Cuota máxima recomendada sin alto riesgo"],
+            ["Límite de endeudamiento", "40%", "Umbral máximo absoluto; superarlo implica alto riesgo"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "short": "Productos bancarios",
+      "label": "1.2.1. Productos bancarios",
+      "blocks": [
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Préstamo hipotecario",
+              "content": "Operación financiera para financiar la adquisición de un inmueble. La cuantía máxima no supera normalmente el 80% del valor de tasación. La cuota mensual no debe superar el 35% de los ingresos acreditados. El plazo óptimo es el más breve posible sin sobrepasar los límites de endeudamiento."
+            },
+            {
+              "title": "Préstamos personales (al consumo)",
+              "content": "Financian compras cotidianas (coche, reformas, vacaciones, estudios). Plazo máximo habitual: 8 años. Sus intereses son superiores a los hipotecarios. El contrato debe incluir importe, tipo de interés, TAE, coste total y comisiones."
+            },
+            {
+              "title": "Tarjetas de débito",
+              "content": "El cargo se realiza inmediatamente en la cuenta bancaria del titular, hasta el límite pactado con la entidad emisora."
+            },
+            {
+              "title": "Tarjetas de crédito",
+              "content": "Las operaciones se adeudan a un plazo determinado (generalmente al mes). El pago puede ser único o aplazado."
+            },
+            {
+              "title": "Tarjetas revolving",
+              "content": "Permiten aplazar el pago mediante un porcentaje del crédito o cuotas fijas. Se consideran una 'deuda eterna' porque al capital pendiente se suman elevados intereses. Más del 90% de las sentencias judiciales contra ellas han sido favorables al cliente por intereses usurarios."
+            },
+            {
+              "title": "Banca electrónica",
+              "content": "Permite operar con los bancos desde casa cualquier día y hora. Ha supuesto una barrera de acceso para personas mayores, especialmente en zonas rurales con oficinas físicas cerradas."
+            }
+          ]
+        },
+        {
+          "type": "flipcards",
+          "items": [
+            {
+              "term": "TAE",
+              "def": "Tasa Anual Equivalente. Brinda información sobre el coste real anual del préstamo: incluye el tipo de interés nominal más comisiones y gastos. Fórmula: TAE = Interés nominal + comisiones + gastos de financiación."
+            },
+            {
+              "term": "Tipo de interés fijo",
+              "def": "Permanece inalterable durante toda la vida del préstamo."
+            },
+            {
+              "term": "Tipo de interés variable",
+              "def": "Se establece mediante un índice de referencia más un diferencial. Depende de la evolución de los mercados. Ejemplo: EURIBOR + 0,5%."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "short": "Economía social",
+      "label": "1.3. Economía social",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El desarrollo sostenible vincula el crecimiento económico a la preservación del medio ambiente y la mejora del bienestar social. A nivel empresarial, implica adoptar valores de austeridad en el uso de recursos, desarrollo integral del personal, visión a largo plazo e innovación. La compensación ambiental busca equilibrar los impactos negativos inevitables con acciones positivas."
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Personas: poner fin a la pobreza y garantizar la dignidad e igualdad",
+            "Planeta: proteger los recursos naturales y el clima",
+            "Economía: asegurar condiciones de vida prósperas para todas las personas",
+            "Relaciones: alcanzar acuerdos globales en favor de la sostenibilidad",
+            "Sociedad: promover la paz, la justicia y la inclusión"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "short": "RSC",
+      "label": "1.3.1. La RSC. Recomendaciones y normativa europea y de otros organismos internacionales",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La Responsabilidad Social Corporativa (RSC) o RSE supone que la empresa toma conciencia de su impacto en la sociedad y emprende acciones para que dicho impacto sea positivo. Según el Libro Verde de la Comisión Europea: «La integración voluntaria, por parte de las empresas, de las preocupaciones sociales y medioambientales en sus operaciones comerciales y sus relaciones con sus interlocutores.»"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Ámbito RSC",
+              "title": "Económico",
+              "desc": "Se relaciona con las metas empresariales: decisiones de inversión, directrices directivas y producción.",
+              "example": "Invertir en proveedores locales para apoyar la economía del entorno."
+            },
+            {
+              "kicker": "Ámbito RSC",
+              "title": "Social",
+              "desc": "Engloba al entorno y las personas con relación a la empresa: respeto a derechos individuales, planes de integración laboral, conciliación, seguridad e higiene.",
+              "example": "Implementar un plan de igualdad o de teletrabajo para la conciliación familiar."
+            },
+            {
+              "kicker": "Ámbito RSC",
+              "title": "Medioambiental",
+              "desc": "Impactos de la actividad empresarial en el medio ambiente: consumo energético, reciclaje, gestión de residuos.",
+              "example": "Instalar paneles solares y reducir el uso de plásticos de un solo uso."
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Indicadores GRI",
+              "content": "Estandarizados por la Global Reporting Initiative. Son KPI que se dividen en tres grupos: GRI 200 (rendimiento económico: ventas, costes, inversiones), GRI 300 (rendimiento ambiental: materias primas, residuos) y GRI 400 (rendimiento social: relaciones laborales, salubridad, formación)."
+            },
+            {
+              "title": "SROI (Social Return On Investment)",
+              "content": "Mide el retorno social de la inversión: el impacto social conseguido con la inversión económica realizada."
+            },
+            {
+              "title": "Balance del Bien Común (BBC)",
+              "content": "Análisis que utiliza una matriz de doble entrada relacionando cinco valores (dignidad humana, solidaridad, sostenibilidad ecológica, justicia social, participación democrática y transparencia) con las acciones de los stakeholders."
+            },
+            {
+              "title": "Balance social",
+              "content": "Herramienta de gestión que ayuda a planificar, organizar, dirigir, registrar, controlar y evaluar la acción social de la empresa (Triple Bottom Line). Se estructura en área interna (características sociolaborales, servicios sociales, integración y desarrollo) y área externa (relaciones primarias, con la comunidad y con otras instituciones)."
+            },
+            {
+              "title": "Certificaciones RSC",
+              "content": "B Corp (certificación internacional de B Lab para empresas con beneficio global), SA 8000 (condiciones laborales según estándares internacionales emitida por SAI) y Dow Jones Sustainability Index (DJSI, evalúa sostenibilidad de empresas cotizadas, activo desde 1999)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "short": "Tipos de sociedades",
+      "label": "1.4. Tipos de sociedades",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las empresas pueden clasificarse según su tamaño, ámbito de actuación, forma jurídica, titularidad del capital y actividad. Según su forma jurídica pueden ser individuales (empresario individual, comunidad de bienes) o societarias."
+        },
+        {
+          "type": "table",
+          "headers": ["Forma jurídica", "Nº de socios", "Capital mínimo", "Responsabilidad"],
+          "rows": [
+            ["Empresario individual", "1", "Sin mínimo legal", "Todo su patrimonio"],
+            ["Comunidad de bienes", "Mín. 2", "Sin mínimo legal", "Todo su patrimonio"],
+            ["Sociedad Anónima (S.A.)", "Mín. 1", "60.000 €", "Limitada al capital aportado"],
+            ["Sociedad de Responsabilidad Limitada (S.R.L.)", "Mín. 1", "1 €", "Limitada al capital aportado"],
+            ["Sociedad Colectiva", "Mín. 2", "Sin mínimo legal", "Todo su patrimonio"],
+            ["Sociedad Comanditaria por acciones", "Mín. 2", "30.000 €", "Socios colectivos: ilimitada; Socios comanditarios: limitada"],
+            ["Sociedad Anónima Laboral (S.A.L.)", "Mín. 3", "30.000 €", "Limitada al capital aportado"],
+            ["Sociedad Laboral Limitada (S.R.L.L.)", "Mín. 3", "3.000 €", "Limitada al capital aportado"],
+            ["Sociedad Cooperativa", "Mín. 3", "Fijado en estatutos", "Limitada al capital aportado"]
+          ]
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Por tamaño: pequeñas, medianas y grandes",
+            "Por ámbito: local, regional, nacional, internacional, multinacional y global",
+            "Por titularidad del capital: públicas, privadas y mixtas",
+            "Por actividad: productoras, comerciales y de servicios"
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Coste de oportunidad", "def": "Valor de la mejor alternativa a la que se renuncia al tomar una decisión." },
+    { "term": "Coste irrecuperable", "def": "Costes del pasado que ya no pueden modificarse y no deben influir en decisiones futuras." },
+    { "term": "Incentivos", "def": "Factores positivos o negativos que motivan a actuar de una manera concreta, modificando la conducta." },
+    { "term": "Consumo", "def": "Compra y utilización de bienes y servicios. Está condicionado por ingresos, necesidades, preferencias y precios." },
+    { "term": "Ahorro", "def": "Parte de los ingresos que no se gastan en consumo inmediato, sino que se reservan para uso futuro." },
+    { "term": "Presupuesto familiar", "def": "Herramienta de planificación financiera que prevé ingresos y gastos (fijos, corrientes y ocasionales)." },
+    { "term": "Agentes económicos", "def": "Personas físicas o jurídicas que participan en un sistema económico: familias, empresas, Estado y sector bancario." },
+    { "term": "Flujo circular de la renta", "def": "Representación esquemática de las relaciones de intercambio entre los agentes económicos." },
+    { "term": "Capacidad de endeudamiento", "def": "35% de los ingresos netos. Cuota máxima recomendada para compromisos de pago." },
+    { "term": "Límite de endeudamiento", "def": "40% de los ingresos netos. Umbral máximo absoluto de endeudamiento." },
+    { "term": "TAE", "def": "Tasa Anual Equivalente. Coste real anual de un préstamo: incluye tipo de interés nominal, comisiones y gastos." },
+    { "term": "Tarjeta revolving", "def": "Tarjeta que permite aplazar el pago mediante cuotas fijas o porcentaje del crédito; genera 'deuda eterna' por sus elevados intereses." },
+    { "term": "RSC / RSE", "def": "Responsabilidad Social Corporativa/Empresarial. Integración voluntaria de preocupaciones sociales y medioambientales en las operaciones de la empresa." },
+    { "term": "Indicadores GRI", "def": "KPI estandarizados por la Global Reporting Initiative para medir la sostenibilidad (GRI 200 económico, GRI 300 ambiental, GRI 400 social)." },
+    { "term": "Balance social", "def": "Herramienta de gestión que evalúa la acción social de la empresa mediante un área interna y un área externa." },
+    { "term": "Stakeholders", "def": "Grupos de interés que interactúan con la empresa y a quienes la RSC dirige sus principios y valores." },
+    { "term": "Compensación ambiental", "def": "Acciones orientadas a equilibrar los impactos negativos inevitables de una organización en el medio ambiente con impactos positivos." }
+  ],
+  "quiz": [
+    {
+      "question": "¿Qué mide el coste de oportunidad?",
+      "options": [
+        "El total de gastos realizados en el pasado",
+        "El valor de la mejor alternativa a la que se renuncia al tomar una decisión",
+        "El porcentaje de ingresos destinado al ahorro",
+        "Los costes fijos de una empresa"
+      ],
+      "correct": 1,
+      "explanation": "El coste de oportunidad es aquello a lo que se renuncia como consecuencia de una decisión; se mide como el valor de la mejor alternativa descartada."
+    },
+    {
+      "question": "¿Cuál es la cuantía recomendada para un fondo de emergencia?",
+      "options": [
+        "1 mes de gastos",
+        "3 meses de gastos",
+        "6 meses de gastos",
+        "12 meses de gastos en todos los casos"
+      ],
+      "correct": 2,
+      "explanation": "Se considera una buena cifra la que permite mantener todos los gastos durante 6 meses. Las personas con ingresos variables deberían tener entre 9 y 12 meses."
+    },
+    {
+      "question": "¿Qué porcentaje de los ingresos netos corresponde a la capacidad de endeudamiento?",
+      "options": [
+        "25%",
+        "30%",
+        "35%",
+        "40%"
+      ],
+      "correct": 2,
+      "explanation": "La capacidad de endeudamiento es el 35% de los ingresos netos. El límite de endeudamiento (máximo absoluto) es el 40%."
+    },
+    {
+      "question": "¿Cuál de los siguientes agentes económicos es considerado el más relevante por la magnitud de su actividad?",
+      "options": [
+        "Las familias",
+        "Las empresas",
+        "El sector bancario",
+        "El Estado"
+      ],
+      "correct": 3,
+      "explanation": "El Estado es considerado el agente económico más relevante por la magnitud de su actividad y su capacidad de afectar a la economía mediante políticas públicas, tributos y leyes."
+    },
+    {
+      "question": "¿Qué tipo de tarjeta genera la llamada 'deuda eterna' por sus elevados intereses?",
+      "options": [
+        "Tarjeta de débito",
+        "Tarjeta de crédito",
+        "Tarjeta revolving",
+        "Tarjeta de compras"
+      ],
+      "correct": 2,
+      "explanation": "Las tarjetas revolving permiten aplazar el pago mediante cuotas fijas o un porcentaje del crédito. Se denominan 'deuda eterna' porque al capital pendiente se suman elevados intereses y cualquier nuevo uso aumenta aún más la deuda."
+    },
+    {
+      "question": "Según el Libro Verde de la Comisión Europea, la RSC consiste en:",
+      "options": [
+        "La obligación legal de las empresas de cumplir la normativa medioambiental",
+        "La integración voluntaria de las preocupaciones sociales y medioambientales en las operaciones comerciales",
+        "El balance de beneficios y pérdidas de una empresa",
+        "Los indicadores de sostenibilidad publicados por la Global Reporting Initiative"
+      ],
+      "correct": 1,
+      "explanation": "El Libro Verde define la RSC como «la integración voluntaria, por parte de las empresas, de las preocupaciones sociales y medioambientales en sus operaciones comerciales y sus relaciones con sus interlocutores»."
+    },
+    {
+      "question": "¿Cuál es el capital mínimo para constituir una Sociedad Anónima (S.A.)?",
+      "options": [
+        "1 €",
+        "3.000 €",
+        "30.000 €",
+        "60.000 €"
+      ],
+      "correct": 3,
+      "explanation": "La Sociedad Anónima requiere un capital mínimo de 60.000 €, mientras que la S.R.L. solo requiere 1 €."
+    },
+    {
+      "question": "Los indicadores GRI 400 evalúan:",
+      "options": [
+        "El desempeño de ventas, costes e inversiones",
+        "El consumo de materias primas y emisión de residuos",
+        "Las relaciones en el trabajo, salubridad, seguridad y formación",
+        "La rentabilidad de la acción en bolsa"
+      ],
+      "correct": 2,
+      "explanation": "Los indicadores GRI 400 son de rendimiento social y evalúan las relaciones laborales, salubridad del entorno, seguridad, formación, etc. Los GRI 200 son económicos y los GRI 300 ambientales."
+    }
+  ],
+  "_sources": {
+    "s1": "U1 Economía y administración nociones básicas.txt pp. 4-5",
+    "s2": "U1 Economía y administración nociones básicas.txt pp. 5-8; U1 Síntesis Economía y Administración. Nociones básicas.txt pp. 1",
+    "s3": "U1 Economía y administración nociones básicas.txt pp. 8-9",
+    "s4": "U1 Economía y administración nociones básicas.txt pp. 9-10; U1 DIAPOSITIVAS Economía y administración, nociones básicas.txt pp. 6",
+    "s5": "U1 Economía y administración nociones básicas.txt pp. 11; U1 Síntesis Economía y Administración. Nociones básicas.txt pp. 1",
+    "s6": "U1 Economía y administración nociones básicas.txt pp. 12-16; U1 Síntesis Economía y Administración. Nociones básicas.txt pp. 2",
+    "s7": "U1 Economía y administración nociones básicas.txt pp. 17-18",
+    "s8": "U1 Economía y administración nociones básicas.txt pp. 19-23; U1 DIAPOSITIVAS Economía y administración, nociones básicas.txt pp. 8-9",
+    "s9": "U1 Economía y administración nociones básicas.txt pp. 24-26; U1 Síntesis Economía y Administración. Nociones básicas.txt pp. 1"
+  }
+}

@@ -1,0 +1,388 @@
+{
+  "subject": "ipe",
+  "unit": 2,
+  "title": "El sistema fiscal",
+  "intro": "Administrar una empresa implica manejar una cadena de documentos administrativos en los procesos de compraventa y cumplir con las obligaciones fiscales correspondientes. La fiscalidad afecta a todas las organizaciones y es esencial para la planificación financiera y la toma de decisiones estratégicas. En esta unidad se estudian la empresa y su entorno, la gestión documental de la compraventa y los principales impuestos que afectan a las empresas en España.",
+  "objectives": [
+    "Entender el valor de las empresas y sus funciones en la sociedad",
+    "Conocer los componentes del entorno empresarial (PESTEL y fuerzas de Porter)",
+    "Aprender a trabajar con la documentación administrativa habitual en la compraventa",
+    "Conocer los distintos tipos de tributos que existen",
+    "Profundizar en las obligaciones fiscales que toda empresa debe afrontar"
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "short": "La empresa y su entorno",
+      "label": "2.1. La empresa y su entorno",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las empresas son imprescindibles en la sociedad y tienen atribuidas cuatro funciones básicas: creación de valor (transforman materias primas añadiendo utilidad), asunción de riesgo (la inversión previa solo retorna si se venden los productos), función social (cubren necesidades y generan empleo) y productividad (coordinan los factores productivos para producir en condiciones óptimas)."
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Creación de valor: transformación que añade utilidad al producto",
+            "Asunción de riesgo: la inversión previa puede no retornar si no se vende",
+            "Función social: cobertura de necesidades y generación de empleo",
+            "Productividad: organización eficiente de recursos, trabajo y capital"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "short": "Entorno empresarial",
+      "label": "2.1.1. Entorno empresarial",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El entorno de la empresa se compone de todos los factores que la rodean y le afectan. Se distinguen el entorno general (factores que afectan a todas las empresas del mismo espacio geográfico, analizado mediante PESTEL) y el entorno específico (factores propios del sector, analizado con las 5 fuerzas de Porter)."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Análisis PESTEL (entorno general)",
+              "content": "Variables del macroentorno: Políticas (estabilidad gubernamental, fiscalidad), Económicas (inflación, política monetaria, desempleo), Sociales (demografía, educación, estilo de vida), Tecnológicas (comunicación, maquinaria, I+D+I), Ecológicas (energía, concienciación ambiental, restricción de emisiones) y Legales (normativa contable, legislación laboral, salubridad)."
+            },
+            {
+              "title": "5 fuerzas de Porter (entorno específico)",
+              "content": "1) Amenaza de nuevos competidores: barreras de entrada (requisitos económicos, licencias). 2) Poder de negociación de los clientes: alternativas, diferenciación, volumen de pedidos. 3) Poder de negociación de los proveedores: exclusividad, concentración del sector. 4) Rivalidad entre competidores actuales: cantidad de competidores, equilibrio de fuerzas. 5) Amenaza de productos sustitutivos: bienes que cumplen la misma función sin gran diferencia percibida."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "short": "Gestión administrativa",
+      "label": "2.2. Gestión administrativa de una empresa",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El acto de compraventa da comienzo a una cadena de emisión de documentos administrativos. El flujo habitual es: presupuesto → pedido → albarán → factura → pago."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Documento",
+              "title": "Presupuesto",
+              "desc": "Expedido por el vendedor. Deja constancia de la oferta de un bien o servicio y sus condiciones de entrega. Tiene la validez de un contrato de compraventa y es vinculante para el comprador una vez aceptado.",
+              "example": "Una empresa de reformas envía un presupuesto detallando el coste de la obra."
+            },
+            {
+              "kicker": "Documento",
+              "title": "Pedido",
+              "desc": "Emitido por el comprador con una petición de adquisición de bienes o servicios. No requiere presupuesto previo. Es de obligada elaboración para el comprador y vinculante para el vendedor al aceptarlo. El precio se indica sin IVA (debe aparecer 'IVA no incluido').",
+              "example": "Una tienda envía una nota de pedido a su proveedor de ropa."
+            },
+            {
+              "kicker": "Documento",
+              "title": "Albarán",
+              "desc": "También llamado nota de entrega. Lo emite el vendedor para acreditar la descripción de las mercancías entregadas. El comprador lo firma al recibir la mercancía, declarando conformidad. Se verifica que la mercancía sea la solicitada, la que figura en el albarán y que la fecha sea la pactada.",
+              "example": "El transportista entrega el albarán al comercio, quien lo firma confirmando la recepción."
+            },
+            {
+              "kicker": "Documento",
+              "title": "Factura",
+              "desc": "Documento obligatorio de carácter mercantil que acredita legalmente la compraventa. Su contenido está regulado legalmente. Justifica la operación y es el medio de repercusión del IVA.",
+              "example": "Una empresa de software emite una factura por el mantenimiento anual de su aplicación."
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Requisitos legales de la factura",
+              "content": "Número y serie (numeración correlativa), fecha de expedición, nombre/razón social y NIF de emisor y destinatario, domicilio de ambas partes, descripción de operaciones y precio unitario sin impuesto, descuentos, tipo impositivo, cuota tributaria separada y fecha de la operación si difiere de la de expedición."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "short": "Proceso de pago",
+      "label": "2.2.5. Proceso de pago y cobro",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El pago puede producirse al contado (cuando se entrega la mercancía) o aplazado (en un momento posterior acordado). Las formas de pago aplazado más extendidas son la letra de cambio, el pagaré y el recibo normalizado."
+        },
+        {
+          "type": "flipcards",
+          "items": [
+            {
+              "term": "Letra de cambio",
+              "def": "Documento formal con una orden de pago. El derecho de cobro puede transmitirse a un tercero, que adelanta el dinero menos una comisión y luego cobra la letra."
+            },
+            {
+              "term": "Pagaré",
+              "def": "Documento por el que una persona se compromete a pagar a otra un importe en una fecha de vencimiento determinada. Regulado por la Ley 19/1985 Cambiaria y del Cheque."
+            },
+            {
+              "term": "Recibo normalizado",
+              "def": "Domiciliación bancaria de pagos periódicos. Se autoriza por escrito a la entidad bancaria para cobrar dichos recibos con cargo a la cuenta corriente."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "short": "Plan de tesorería",
+      "label": "2.2.6. El plan de tesorería",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El plan de tesorería recoge los cobros (entradas de dinero) y pagos (salidas de dinero) previstos a corto plazo. Permite anticipar el flujo de dinero necesario. Se puede elaborar por periodos mensuales, semestrales o anuales."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Resultado",
+              "title": "Déficit de tesorería",
+              "desc": "Se necesita más líquido del que proporciona la actividad. La empresa debe valorar financiarse mediante crédito u otros instrumentos.",
+              "example": "Una empresa que tiene que pagar proveedores en enero pero no cobra hasta febrero necesita una línea de crédito."
+            },
+            {
+              "kicker": "Resultado",
+              "title": "Superávit de tesorería",
+              "desc": "La empresa está en condiciones de invertir el sobrante para rentabilizar el dinero no utilizado.",
+              "example": "Una empresa con buena liquidez en verano puede invertir en depósitos a corto plazo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "short": "Sistema tributario",
+      "label": "2.3. El sistema tributario",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Para cubrir el gasto público, el Estado obtiene ingresos mediante extracción o expropiación (multas, impuestos, tasas), ingresos contractuales, donaciones y emisión de deuda pública. La Agencia Tributaria (creada en 1992, adscrita al Ministerio de Hacienda) gestiona el sistema tributario según los cinco principios del artículo 31 de la Constitución."
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Equidad: todos los españoles son iguales ante sus obligaciones fiscales",
+            "Justicia: los tributos tienen en cuenta la capacidad económica individual",
+            "Progresividad: más carga fiscal para quienes tienen mayor renta",
+            "No confiscatoriedad: los tributos no pueden expoliar la renta o el patrimonio",
+            "Legalidad: el Estado regula los tributos mediante leyes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "short": "Tipos de tributos",
+      "label": "2.3.1. Clases de tributos. Impuestos, tasas y contribuciones especiales",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los tributos son prestaciones pecuniarias exigidas por una Administración pública como consecuencia de la realización del hecho imponible definido por ley, con el fin de obtener ingresos para el sostenimiento del gasto público. Existen tres tipos."
+        },
+        {
+          "type": "table",
+          "headers": ["Tipo de tributo", "Descripción", "Ejemplo"],
+          "rows": [
+            ["Impuestos", "Pagos sin contraprestación directa dedicados a la financiación general del gasto público.", "Pago del IVA al comprar un producto."],
+            ["Contribuciones especiales", "Pagos con contraprestación directa y comunitaria. Derivan del aprovechamiento especial del dominio público o de un beneficio o mayor valor de los bienes causado por una obra pública.", "Mejora del alumbrado de una calle que beneficia a los propietarios de las viviendas."],
+            ["Tasas", "Pagos por una contraprestación directa y personal: servicios y trámites obligatorios o prestados en exclusiva por la administración.", "Pago para renovar el DNI."]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "short": "Obligaciones fiscales",
+      "label": "2.4. Obligaciones fiscales de las empresas",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El inicio de una actividad empresarial genera obligaciones fiscales que varían según la forma jurídica. Algunas se cumplen antes del inicio (declaración censal de alta), otras durante la actividad (IAE, IVA, IRPF, IS) y otras al cesar (declaración censal de baja, IAE de baja)."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Declaración censal (modelos 036/037)",
+              "content": "Inscripción en el Censo de Empresarios, Profesionales y Retenedores antes de iniciar la actividad. Sirve para: solicitar el NIF, identificar la actividad, comunicar el régimen de IVA e IRPF, solicitar alta en el registro de operadores intracomunitarios e informar de modificaciones o bajas."
+            },
+            {
+              "title": "IAE — Impuesto de Actividades Económicas (modelos 840, 848)",
+              "content": "Impuesto local, personal y directo que grava el ejercicio de actividades económicas. Tres tipos de cuota: municipal, provincial y nacional. Están exentos: personas físicas, sociedades con cifra de negocio inferior a 1.000.000 € en el penúltimo año anterior, el Estado y organismos públicos, y empresas en sus dos primeros periodos impositivos."
+            },
+            {
+              "title": "IVA — Impuesto sobre el Valor Añadido (modelos 303, 309)",
+              "content": "Tributo indirecto que grava el consumo de bienes y la prestación de servicios. Se aplica en la Península e Islas Baleares (excluidos Canarias, Ceuta y Melilla). Tipos: general 21%, reducido 10%, superreducido 4%. Las empresas liquidan trimestralmente la diferencia entre IVA repercutido (cobrado a clientes) e IVA soportado deducible (pagado a proveedores). El plazo de deducción del IVA soportado es de 4 años."
+            },
+            {
+              "title": "IRPF — Impuesto sobre la Renta de las Personas Físicas (modelos D-100, 130, 131)",
+              "content": "Impuesto personal, progresivo y directo sobre la obtención de rentas de personas físicas residentes en España. Grava: rendimientos del trabajo, actividades económicas, capital inmobiliario, capital mobiliario y ganancias/pérdidas patrimoniales. Los tipos son progresivos sobre la base liquidable (base imponible menos deducciones). Las CC.AA. gestionan la mitad del impuesto y fijan sus propios tramos y deducciones."
+            },
+            {
+              "title": "IS — Impuesto sobre Sociedades (modelos 202, 222, 200, 220)",
+              "content": "Tributo personal y directo que grava las rentas de empresas, entidades jurídicas y algunas entidades no jurídicas residentes en España. Tipo general: 25%. Tipos especiales: 15% entidades de nueva creación (primer periodo con base imponible positiva), 20% cooperativas fiscalmente protegidas, 10% entidades sin fines de lucro que cumplan requisitos, 1% fondos de inversión y fondos de activos bancarios. El periodo impositivo nunca supera 12 meses."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "short": "Tramos IRPF",
+      "label": "2.4.4. Impuesto sobre la Renta de las Personas Físicas (IRPF)",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los tipos del IRPF son progresivos: gravan en mayor porcentaje las cuantías más altas. A modo de ejemplo, se muestran los tramos de la Región de Murcia para 2024."
+        },
+        {
+          "type": "table",
+          "headers": ["Tramo de renta", "Tipo autonómico", "Tipo estatal", "Tipo total"],
+          "rows": [
+            ["0 – 12.450 €", "9,5%", "9,5%", "19%"],
+            ["12.450 – 20.199 €", "11,2%", "12%", "23,2%"],
+            ["20.200 – 35.199 €", "13,3%", "15%", "28,3%"],
+            ["35.200 – 59.999 €", "17,9%", "18,5%", "36,4%"],
+            ["60.000 – 299.999 €", "22,5%", "22,5%", "45%"],
+            ["A partir de 300.000 €", "24,5%", "22,5%", "47%"]
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Tributo", "def": "Prestación pecuniaria exigida por una Administración pública como consecuencia de la realización de un hecho imponible, para sostener el gasto público." },
+    { "term": "Impuesto", "def": "Tributo sin contraprestación directa dedicado a la financiación general del gasto público." },
+    { "term": "Tasa", "def": "Tributo por una contraprestación directa y personal: servicios o trámites obligatorios o prestados en exclusiva por la Administración." },
+    { "term": "Contribución especial", "def": "Tributo con contraprestación directa y comunitaria, derivado del aprovechamiento especial del dominio público o de un beneficio causado por una obra pública." },
+    { "term": "Agencia Tributaria", "def": "Entidad de derecho público adscrita al Ministerio de Hacienda, creada en 1992 para aplicar el sistema tributario español." },
+    { "term": "Presupuesto (documento)", "def": "Expedido por el vendedor para dejar constancia de la oferta y condiciones de entrega de un bien o servicio. Vinculante para el comprador al aceptarlo." },
+    { "term": "Pedido", "def": "Documento emitido por el comprador para solicitar bienes o servicios a un proveedor. El precio se indica sin IVA." },
+    { "term": "Albarán", "def": "Nota de entrega emitida por el vendedor para acreditar la descripción de las mercancías entregadas. El comprador lo firma al recibirlas." },
+    { "term": "Factura", "def": "Documento obligatorio de carácter mercantil que acredita legalmente la compraventa de un bien o la prestación de un servicio. Contenido regulado legalmente." },
+    { "term": "Letra de cambio", "def": "Documento formal con orden de pago cuyo derecho de cobro puede transmitirse a un tercero." },
+    { "term": "Pagaré", "def": "Compromiso escrito de pagar un importe a otra persona en una fecha de vencimiento determinada." },
+    { "term": "Plan de tesorería", "def": "Documento que recoge los cobros y pagos previstos por la empresa a corto plazo, permitiendo anticipar déficits o superávits." },
+    { "term": "IVA repercutido", "def": "IVA que la empresa cobra a sus clientes." },
+    { "term": "IVA soportado", "def": "IVA que la empresa paga a sus proveedores." },
+    { "term": "Base imponible (IRPF)", "def": "Rentas totales del contribuyente sobre las que se calcula el impuesto." },
+    { "term": "Base liquidable (IRPF)", "def": "Resultado de aplicar a la base imponible las deducciones o reducciones correspondientes. Es la cantidad sometida al gravamen." },
+    { "term": "Retenciones (IRPF)", "def": "Cantidades que los pagadores de algunas rentas inmovilizan al sujeto pasivo e ingresan anticipadamente en la Administración tributaria." },
+    { "term": "IAE", "def": "Impuesto de Actividades Económicas. Impuesto local, personal y directo que grava el ejercicio de actividades económicas." },
+    { "term": "IS (Impuesto sobre Sociedades)", "def": "Tributo personal y directo que grava las rentas de empresas y entidades jurídicas residentes en España. Tipo general: 25%." },
+    { "term": "Análisis PESTEL", "def": "Herramienta de análisis del entorno general que estudia factores Políticos, Económicos, Sociales, Tecnológicos, Ecológicos y Legales." },
+    { "term": "5 fuerzas de Porter", "def": "Modelo de análisis del entorno específico que examina: amenaza de nuevos competidores, poder de clientes, poder de proveedores, rivalidad entre competidores y amenaza de sustitutos." }
+  ],
+  "quiz": [
+    {
+      "question": "¿Cuál de las siguientes herramientas se utiliza para analizar el entorno general de una empresa?",
+      "options": [
+        "Las 5 fuerzas de Porter",
+        "El análisis PESTEL",
+        "El balance del bien común",
+        "El plan de tesorería"
+      ],
+      "correct": 1,
+      "explanation": "El análisis PESTEL estudia las variables del macroentorno (Políticas, Económicas, Sociales, Tecnológicas, Ecológicas y Legales) que afectan a todas las empresas del mismo espacio geográfico. Las 5 fuerzas de Porter se usan para el entorno específico."
+    },
+    {
+      "question": "¿Qué documento de compraventa emite el vendedor para acreditar las mercancías entregadas?",
+      "options": [
+        "La factura",
+        "El pedido",
+        "El albarán",
+        "El presupuesto"
+      ],
+      "correct": 2,
+      "explanation": "El albarán (nota de entrega) es emitido por el vendedor para acreditar la descripción de las mercancías entregadas. El comprador lo firma al recibirlas declarando su conformidad."
+    },
+    {
+      "question": "¿Qué diferencia a la letra de cambio de otros medios de pago aplazado?",
+      "options": [
+        "No puede utilizarse entre empresas",
+        "El derecho de cobro puede transmitirse a un tercero",
+        "No tiene fecha de vencimiento",
+        "Solo puede emitirla el comprador"
+      ],
+      "correct": 1,
+      "explanation": "La característica principal de la letra de cambio es que el derecho de cobro puede transmitirse a un tercero. Esa tercera persona adelanta el dinero (menos una comisión) al cedente y luego se encarga de cobrar la letra."
+    },
+    {
+      "question": "¿Cuál es el tipo general del IVA en España?",
+      "options": [
+        "4%",
+        "10%",
+        "21%",
+        "25%"
+      ],
+      "correct": 2,
+      "explanation": "El IVA tiene tres tipos: superreducido (4%), reducido (10%) y general (21%). El 25% corresponde al tipo general del Impuesto sobre Sociedades."
+    },
+    {
+      "question": "¿Qué empresas están exentas del IAE?",
+      "options": [
+        "Solo las empresas con más de 100 trabajadores",
+        "Las sociedades con cifra de negocio inferior a 1.000.000 € en el penúltimo año y las personas físicas",
+        "Únicamente las entidades sin ánimo de lucro",
+        "Todas las empresas de nueva creación de forma permanente"
+      ],
+      "correct": 1,
+      "explanation": "Están exentos del IAE las personas físicas, las sociedades con cifra de negocio inferior a 1.000.000 € en el penúltimo año anterior, el Estado y organismos públicos, y las empresas en sus dos primeros periodos impositivos."
+    },
+    {
+      "question": "El IRPF es un impuesto:",
+      "options": [
+        "Indirecto, regresivo y real",
+        "Personal, progresivo y directo",
+        "Local, fijo y proporcional",
+        "Indirecto, proporcional y personal"
+      ],
+      "correct": 1,
+      "explanation": "El IRPF es un impuesto personal (tiene en cuenta circunstancias del contribuyente), progresivo (grava más a quienes tienen mayor renta) y directo (grava la renta como manifestación directa de la capacidad económica)."
+    },
+    {
+      "question": "¿Cuál es el tipo de gravamen general del Impuesto sobre Sociedades?",
+      "options": [
+        "10%",
+        "15%",
+        "20%",
+        "25%"
+      ],
+      "correct": 3,
+      "explanation": "El tipo de gravamen general del IS es del 25%. Los tipos especiales son: 15% para entidades de nueva creación en su primer periodo con base positiva, 20% para cooperativas fiscalmente protegidas, 10% para entidades sin fines de lucro y 1% para fondos de inversión."
+    },
+    {
+      "question": "¿Qué principio tributario establece que los tributos no pueden expoliar la renta o el patrimonio gravados?",
+      "options": [
+        "Equidad",
+        "Progresividad",
+        "No confiscatoriedad",
+        "Legalidad"
+      ],
+      "correct": 2,
+      "explanation": "El principio de no confiscatoriedad establece que los tributos no pueden expoliar la renta o el patrimonio gravados. Está recogido en el artículo 31 de la Constitución española junto a los principios de equidad, justicia, progresividad y legalidad."
+    }
+  ],
+  "_sources": {
+    "s1": "U2 El sistema fiscal.txt pp. 4-5; U2 Síntesis El sistema fiscal.txt pp. 1",
+    "s2": "U2 El sistema fiscal.txt pp. 5; U2 DIAPOSITIVAS El sistema fiscal.txt pp. 3",
+    "s3": "U2 El sistema fiscal.txt pp. 6-9; U2 Síntesis El sistema fiscal.txt pp. 1-2",
+    "s4": "U2 El sistema fiscal.txt pp. 10-11; U2 Síntesis El sistema fiscal.txt pp. 2",
+    "s5": "U2 El sistema fiscal.txt pp. 11; U2 DIAPOSITIVAS El sistema fiscal.txt pp. 6",
+    "s6": "U2 El sistema fiscal.txt pp. 12; U2 DIAPOSITIVAS El sistema fiscal.txt pp. 7",
+    "s7": "U2 El sistema fiscal.txt pp. 13-14; U2 Síntesis El sistema fiscal.txt pp. 2",
+    "s8": "U2 El sistema fiscal.txt pp. 15-22; U2 DIAPOSITIVAS El sistema fiscal.txt pp. 10",
+    "s9": "U2 El sistema fiscal.txt pp. 20-21"
+  }
+}
