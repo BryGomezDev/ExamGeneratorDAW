@@ -1,0 +1,79 @@
+PREGUNTA: ¿Cuál de las siguientes no es una orientación para la actividad comercial según el enfoque del marketing?
+A: Orientación hacia el producto.
+B: Orientación hacia las ventas.
+C: Orientación hacia el cliente o consumidor.
+D: Orientación hacia la innovación tecnológica.
+RESPUESTA: D
+EXPLICACION: Las orientaciones clásicas de la actividad comercial son: hacia la producción, hacia el producto (mejorar calidad), hacia las ventas (colocar lo producido) y hacia el cliente o mercado (satisfacer necesidades). La orientación hacia la innovación tecnológica no es una categoría reconocida en la teoría del marketing clásico; la tecnología es un factor del entorno, no una orientación comercial en sí misma.
+
+PREGUNTA: ¿Cuál de los siguientes elementos no pertenece al concepto de mercado?
+A: Beneficios obtenidos por la empresa.
+B: Conjunto de individuos con necesidades.
+C: Recursos y capacidad de compra.
+D: Lugar de intercambio comercial.
+RESPUESTA: A
+EXPLICACION: El concepto de mercado se define por tres elementos: personas con necesidades (demanda potencial), recursos económicos y capacidad de compra para satisfacerlas, y un espacio de intercambio donde oferentes y demandantes se encuentran. Los beneficios de la empresa son un resultado de operar en el mercado, no un elemento constitutivo del mismo.
+
+PREGUNTA: ¿Cuál es el objetivo principal del marketing relacional?
+A: Incrementar las ventas a corto plazo.
+B: Mantener una relación significativa a largo plazo con el público objetivo.
+C: Realizar promociones y descuentos.
+D: Atraer nuevos clientes a través de la publicidad masiva.
+RESPUESTA: B
+EXPLICACION: El marketing relacional se centra en construir y mantener relaciones duraderas y de valor con los clientes, priorizando la fidelización sobre la captación masiva. Se basa en que retener a un cliente existente es más rentable que captar uno nuevo. Las promociones y la publicidad masiva son herramientas del marketing transaccional, orientado a la venta puntual.
+
+PREGUNTA: ¿Cuál es la definición más completa de marketing?
+A: El proceso de ventas de productos y servicios.
+B: El estudio de competencia y comportamiento del consumidor.
+C: La actividad de publicidad y análisis de mercado.
+D: La planificación y ejecución de la concepción del producto, fijación de precios, promoción y distribución de ideas, bienes y servicios para crear relaciones de intercambio que satisfagan objetivos individuales y organizacionales.
+RESPUESTA: D
+EXPLICACION: La definición oficial de la American Marketing Association (AMA) engloba todo el proceso desde la concepción del producto hasta su distribución, incluyendo precio, promoción y los intercambios que generan valor mutuo. Las otras opciones son definiciones parciales que reducen el marketing a una sola función: ventas, investigación o publicidad.
+
+PREGUNTA: ¿Cuál es la principal diferencia entre marketing estratégico y marketing operativo?
+A: El marketing estratégico se centra en el corto plazo, mientras que el operativo se centra en el largo plazo.
+B: El marketing estratégico se ocupa de la implementación de acciones, mientras que el operativo se ocupa del análisis de necesidades del público objetivo.
+C: El marketing estratégico se ocupa de la publicidad, mientras que el marketing operativo se centra en las ventas.
+D: El marketing estratégico se centra en el análisis continuo y la identificación de necesidades del público objetivo, mientras que el marketing operativo se focaliza en la puesta en marcha de medidas para aprovechar oportunidades.
+RESPUESTA: D
+EXPLICACION: El marketing estratégico es de largo plazo: analiza el entorno, identifica oportunidades y define el posicionamiento y los segmentos objetivo. El marketing operativo es de corto y medio plazo: traduce esa estrategia en acciones concretas usando las 4P (producto, precio, distribución y comunicación). Son secuenciales: primero la estrategia, luego la operativa.
+
+PREGUNTA: ¿Cuáles son las funciones del marketing en la empresa?
+A: Funciones de producción y funciones de comercialización.
+B: Funciones de dirección y gestión y funciones de acción.
+C: Funciones de evaluación del mercado.
+D: Funciones de análisis y funciones de planificación y decisión.
+RESPUESTA: D
+EXPLICACION: Las funciones del marketing se agrupan en dos bloques: las funciones de análisis (investigación de mercados, análisis del entorno, estudio del consumidor) y las funciones de planificación y decisión (diseño de estrategias, gestión de las 4P, control de resultados). La producción pertenece al área de operaciones, no al marketing.
+
+PREGUNTA: ¿Qué caracteriza al marketing emocional?
+A: La segmentación del mercado basada en datos demográficos.
+B: El uso intensivo de técnicas de venta agresivas.
+C: La implementación de estrategias de precios competitivos.
+D: La creación de una conexión emocional entre el producto y el consumidor.
+RESPUESTA: D
+EXPLICACION: El marketing emocional busca crear vínculos afectivos entre la marca y el consumidor, apelando a sentimientos como la nostalgia, la pertenencia o la seguridad. Marcas como Apple o Coca-Cola son ejemplos paradigmáticos. No se basa en datos demográficos fríos ni en precios, sino en experiencias y emociones que generan lealtad más allá del precio.
+
+PREGUNTA: ¿Qué enfoque de marketing se centra en la anticipación de problemas y necesidades futuras del mercado?
+A: Orientación hacia el producto.
+B: Orientación hacia las ventas.
+C: Orientación hacia la competencia.
+D: Orientación hacia el mercado.
+RESPUESTA: D
+EXPLICACION: La orientación hacia el mercado es el enfoque más avanzado: la empresa analiza continuamente las necesidades actuales y futuras de sus clientes y del entorno para anticiparse y adaptarse. Va más allá de satisfacer la demanda existente; trata de detectar tendencias y resolver problemas antes de que se manifiesten. Es la base del marketing moderno.
+
+PREGUNTA: ¿Qué es el Producto Mínimo Viable (PMV) en el contexto del método Lean Startup?
+A: Una versión de prueba del producto con características básicas necesarias para satisfacer las necesidades de los clientes.
+B: Un producto final completo.
+C: Un concepto teórico sin implementación real.
+D: Un plan de marketing detallado.
+RESPUESTA: A
+EXPLICACION: El PMV (MVP en inglés) es la versión más reducida de un producto que permite lanzarlo al mercado para obtener feedback real con el mínimo esfuerzo y coste. El método Lean Startup propone construir, medir y aprender en ciclos cortos, empezando por el PMV para validar hipótesis antes de invertir en el desarrollo completo.
+
+PREGUNTA: El marketing interno se refiere a:
+A: Las acciones del marketing dentro de la organización dirigidas a sus propios integrantes.
+B: Las estrategias de comunicación de la empresa hacia su público objetivo.
+C: La publicidad realizada dentro del país de origen de la empresa.
+D: Las ventas directas a los empleados de la empresa.
+RESPUESTA: A
+EXPLICACION: El marketing interno (endomarketing) aplica técnicas de marketing hacia los propios empleados, tratándolos como clientes internos. Su objetivo es motivarlos, alinearlos con los valores de la marca y convertirlos en embajadores de la empresa. Es especialmente relevante en servicios, donde la actitud del empleado impacta directamente en la experiencia del cliente.
