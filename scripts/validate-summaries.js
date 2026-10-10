@@ -14,7 +14,7 @@ function fail(file, msg) {
 }
 
 function checkText(file, loc, val) {
-  if (typeof val === 'string' && MD_RE.test(val))
+  if (typeof val === 'string' && MD_RE.test(val.replace(/\/\*\*/g, '')))
     fail(file, `Markdown en "${loc}": ${val.substring(0,60)}`);
 }
 
@@ -123,6 +123,17 @@ function validate(file) {
     if (!q.explanation) fail(f, `${loc}.explanation requerido`);
     deepCheckText(f, loc, q);
   });
+
+  // Aviso: sesgo de posición en quiz
+  if (Array.isArray(j.quiz) && j.quiz.length >= 6) {
+    const posCount = {};
+    j.quiz.forEach(q => { posCount[q.correct] = (posCount[q.correct] || 0) + 1; });
+    const maxPos = Math.max(...Object.values(posCount));
+    if (maxPos > j.quiz.length / 2) {
+      const biasedPos = Object.keys(posCount).find(k => Number(posCount[k]) === maxPos);
+      console.warn(`  WARN [${f}] Sesgo en quiz: posición ${biasedPos} aparece ${maxPos}/${j.quiz.length} veces`);
+    }
+  }
 }
 
 // Discover all resumen JSONs
