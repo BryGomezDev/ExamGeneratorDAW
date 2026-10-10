@@ -1,0 +1,323 @@
+{
+  "subject": "prog",
+  "unit": 3,
+  "title": "Lenguajes de programación y entornos de desarrollo integrado",
+  "intro": "Todo lo que nos rodea cuenta con sistemas informáticos y programas que se ejecutan sobre ellos. Para llegar al punto actual, muchas tecnologías han ido evolucionando en función de las necesidades existentes, y los lenguajes de programación también se han actualizado. Lo que empezó con el código máquina (secuencias de unos y ceros) ha evolucionado hasta el uso de palabras con orden lógico que facilitan el desarrollo de programas. En esta unidad se estudian los lenguajes de programación, la tecnología Java y sus entornos, el trabajo desde línea de comandos y el uso de entornos de desarrollo integrado (IDE).",
+  "objectives": [
+    "Conocer los diferentes lenguajes de programación y sus clasificaciones.",
+    "Describir las características de la tecnología Java desde línea de comandos.",
+    "Manejar las herramientas de la tecnología Java desde línea de comandos.",
+    "Utilizar los entornos integrados de desarrollo."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "3.1.  Lenguajes de programación",
+      "short": "Lenguajes de prog.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Existe una gran variedad de lenguajes de programación, muchos de los cuales han llevado a cabo su propia evolución a lo largo del tiempo. Fueron creados con distintas características y propósitos, por lo que se pueden ordenar en función de distintos aspectos."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Según generación",
+              "kicker": "Evolución histórica",
+              "desc": "Se distinguen lenguajes de primera, segunda, tercera, cuarta y quinta generación, desde el código máquina hasta los lenguajes de muy alto nivel."
+            },
+            {
+              "title": "Según tipo de ejecución",
+              "kicker": "Compilados vs. Interpretados",
+              "desc": "Los lenguajes compilados traducen el código fuente completo a código máquina antes de ejecutarlo (C, Pascal, Delphi). Los interpretados ejecutan el código línea a línea en tiempo real."
+            },
+            {
+              "title": "Según propósito",
+              "kicker": "General vs. Específico",
+              "desc": "Los lenguajes de propósito general sirven para desarrollar cualquier tipo de aplicación. Los de propósito específico están diseñados para un dominio concreto."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "3.2.  Java",
+      "short": "Java",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Java es uno de los lenguajes de programación con mayor demanda de mercado según el Índice TIOBE. Es de uso libre, muy popular y permite programar una gran variedad de aplicaciones: web, de escritorio, juegos, servicios, etc. Fue anunciado el 23 de mayo de 1995; la primera versión del JDK (JDK 1.0) fue publicada por Sun Microsystems el 23 de enero de 1996, empresa que posteriormente fue adquirida por Oracle. Su objetivo era facilitar el desarrollo de programas independientes del sistema operativo y del hardware, gracias a un código intermedio ejecutable en cualquier sistema que cuente con el entorno de ejecución JRE."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "3.2.1. Descripción de la tecnología — Distribuciones de Java",
+              "content": "Java cuenta con una extensa variedad de distribuciones para cubrir distintas necesidades:\n\nJ2ME (Java 2 Micro Edition): surgió para desarrollar software en dispositivos con menos recursos (impresoras, móviles, electrodomésticos). Fue muy exitosa gracias a los juegos en móviles, aunque su uso se ha reducido significativamente.\n\nJ2SE (Java 2 Standard Edition): a cargo del desarrollo de aplicaciones de escritorio para servidores y ordenadores personales, conexiones con bases de datos (JDBC) y aplicaciones cliente-servidor. Utiliza librerías de J2ME pero no la engloba completamente.\n\nJ2EE (Java 2 Enterprise Edition): la distribución más completa; se centra en desarrollar e implementar aplicaciones empresariales basadas en tecnología web (Servlets, JSP, WebServices, etc.)."
+            },
+            {
+              "title": "3.2.2. Entorno de desarrollo JDK",
+              "content": "El JDK (Java Development Kit) es el entorno de desarrollo suministrado por Oracle. Se recomienda usar la última versión estable disponible, aunque puede existir alguna incompatibilidad con herramientas como el IDE.\n\nOracle suministra dos tipos de JDK con licencias distintas:\n- JDK: licencia Binary Code License Agreement for the Java SE Platform Products and JavaFX.\n- OpenJDK: licencia GNU General Public License, version 2.\n\nLas aplicaciones desarrolladas en el JDK necesitan del JRE para ser ejecutadas. El JRE viene incluido junto al JDK."
+            },
+            {
+              "title": "3.2.3. Entorno de ejecución JRE",
+              "content": "Los compiladores clásicos traducen el código fuente directamente al lenguaje del sistema operativo (C, Pascal, Delphi). En Java, el compilador genera un código intermedio llamado bytecode, que no puede ejecutarse directamente en el sistema operativo.\n\nEl JRE (Java Runtime Environment) es el elemento que intermedia entre el sistema operativo y el programa: contiene bibliotecas con código Java, una JVM (Java Virtual Machine) y elementos adicionales. Gracias a que existen versiones para la mayoría de los sistemas operativos, el código puede ejecutarse sin modificarlo en diferentes plataformas.\n\nEn el mundo .NET, el código intermedio se denomina CIL o MSIL, y la máquina virtual equivalente es CLR (Common Language Runtime).\n\nPara evitar que el bytecode se traduzca una y otra vez, el JRE incluye un compilador JIT (Just In Time), que reutiliza código ya compilado anteriormente, reduciendo considerablemente los tiempos de ejecución."
+            },
+            {
+              "title": "3.2.4. Variables de entorno PATH y CLASSPATH",
+              "content": "Para compilar, generar y ejecutar paquetes jar de forma cómoda desde la línea de comandos, deben configurarse correctamente dos variables de entorno:\n\nPATH: variable usada por el sistema operativo para la búsqueda de ejecutables de las aplicaciones desde el terminal de Linux o el intérprete de comandos de MS-DOS.\n\nCLASSPATH: variable utilizada por el JRE para la búsqueda de clases y paquetes definidos por el usuario.\n\nEstas variables son imprescindibles para trabajar desde línea de comandos o terminal."
+            },
+            {
+              "title": "3.2.5. Tipos de archivos empleados",
+              "content": "Java utiliza distintos tipos de archivos a lo largo del ciclo de desarrollo:\n\n.java: archivo de texto plano donde se almacena el código fuente.\n.class: archivo con código intermedio (bytecode) generado al compilar un archivo .java. Se genera un archivo .class por cada clase del proyecto.\n.jar (Java Archive): empaqueta todos los archivos .class y recursos en un único contenedor comprimido con el algoritmo Zip. Pueden ser simples contenedores de recursos o ejecutables comprimidos.\n.war (Web Application Archive): contiene los archivos de una aplicación web Java (Servlets, JSP, etc.) y facilita su despliegue.\n.ear (Enterprise Archive): empaqueta uno o varios módulos en un único archivo para despliegue en servidores de aplicaciones; puede contener archivos de cualquier tipo, incluidos .war y .jar. Incluye un archivo META-INF/application.xml."
+            },
+            {
+              "title": "3.2.6. Recolector de basura",
+              "content": "El recolector de basura (garbage collector) es un elemento fundamental de Java que gestiona automáticamente la reserva y liberación de memoria, evitando que el programador deba hacerlo manualmente.\n\nPuede verse como ventaja o inconveniente:\n- Ventaja: facilita el desarrollo y reduce errores de gestión de memoria.\n- Inconveniente: consume recursos, lo que afecta al rendimiento. Por ello no se utiliza para sistemas de tiempo real.\n\nJava crea una subrutina que se ejecuta paralelamente a los demás programas. Su funcionamiento sigue tres fases:\n1. Marcado: se identifican en el Heap los objetos sin referencia en el Stack.\n2. Borrado de objetos no referenciados: se liberan las zonas de memoria ocupadas por esos objetos.\n3. Compactación del espacio usado: se reordena la memoria para optimizar el almacenamiento de nuevos objetos.\n\nExisten distintas estrategias para ejecutar el recolector: cuando no quede memoria libre, al alcanzar un límite, a intervalos regulares, antes de cada reserva, o a petición del programador."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "3.3.  Programación sin IDE",
+      "short": "Programación sin IDE",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El JDK y JRE, junto a un editor de texto plano, son suficientes para llevar a cabo el desarrollo de un proyecto Java sin necesidad de un IDE. Java puede manejarse desde la línea de comandos y los comandos son equivalentes para todos los sistemas operativos."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "3.3.1. Compilar un programa",
+              "content": "Para convertir el código fuente escrito en un archivo .java a código intermedio (bytecode), se utiliza el comando javac:\n\njavac <opciones> <ficheros>\n\nEl resultado de una compilación exitosa será al menos un archivo .class con el bytecode."
+            },
+            {
+              "title": "3.3.2. Crear un jar",
+              "content": "Disponiendo de los archivos .class y los recursos necesarios, se puede generar un archivo .jar con el siguiente comando:\n\njar {ctxui}[vfm0Me] [fichero jar] [fichero manifest] [punto de entrada a la aplicación] [-C dir] ficheros ...\n\nLas opciones -cvf permiten crear un nuevo archivo con un nombre determinado. Los archivos .jar pueden construirse como:\n- Simples contenedores de recursos para usar en otros proyectos.\n- Ejecutables comprimidos (añadiendo la opción -e para indicar la clase principal).\n\nAl construir un .jar se crea automáticamente un directorio META-INF con el archivo MANIFEST.MF, que contiene información del .jar como la clase principal. Para eliminar elementos del .jar se requieren herramientas externas (WinRAR, WinZip, 7zip, etc.)."
+            },
+            {
+              "title": "3.3.3. Ejecutar un programa",
+              "content": "Con el bytecode generado y disponiendo de un .jar ejecutable o un .class, se puede lanzar sobre el JRE con el siguiente comando:\n\njava [opciones] <clase principal> [argumentos...]\n\nEl JRE se encargará de interpretar y ejecutar el bytecode."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Paso", "Comando", "Descripción"],
+          "rows": [
+            ["Compilar", "javac <opciones> <ficheros>", "Genera archivos .class con bytecode a partir de archivos .java"],
+            ["Empaquetar", "jar {ctxui}[vfm0Me] [fichero jar] ...", "Comprime .class y recursos en un archivo .jar"],
+            ["Ejecutar", "java [opciones] <clase principal> [args...]", "Lanza el bytecode sobre el JRE para su interpretación"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "3.4.  Programación con IDE",
+      "short": "Programación con IDE",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Desarrollar grandes proyectos utilizando solo la línea de comandos puede ser complicado. Para solucionar este problema se crearon los entornos de desarrollo integrado (IDE, Integrated Development Environment): aplicaciones que aglutinan herramientas generadas para facilitar el desarrollo de programas, suministradas conjuntamente y normalmente basadas en interfaces gráficas."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "3.4.1. Características y elementos",
+              "content": "Un IDE es una aglomeración de herramientas que facilitan el desarrollo de programas. Generalmente están basados en aplicaciones gráficas que permiten acceder cómodamente a herramientas no disponibles en un simple JDK.\n\nAlgunas herramientas habituales en un IDE son: editor de código, compilador, depurador (debugger) y ensamblador."
+            },
+            {
+              "title": "3.4.2. Alternativas",
+              "content": "En el mercado existen varias alternativas, tanto libres como de pago. Algunas están orientadas al desarrollo en varios lenguajes y otras se centran en uno solo.\n\nNetBeans: gratuito, soporta distintos lenguajes, disponible en Windows y Linux. Recomendado por el temario.\nEclipse: gratuito, soporta distintos lenguajes, disponible en Windows y Linux. Muy utilizado.\nIntelliJ IDEA: desarrollado en Java, con versiones gratuitas y de pago. Disponible para Windows y Linux. Soporta distintos lenguajes.\nJCreator: solo disponible en Windows, con versión de pago y versión libre. Desarrollado en C++; recomendado para máquinas con recursos limitados."
+            },
+            {
+              "title": "3.4.3. Configuración de NetBeans",
+              "content": "NetBeans permite dos niveles de configuración:\n\nConfiguraciones generales (Tools > Options): afectan a todos los proyectos.\n- Editor: corrección y optimización del código (On Save), autocompletado (Code Completion), tabulaciones (Formatting).\n- Fonts & Colors: tipografía y simbología del editor.\n- Keymap: atajos de teclado (shortcuts).\n- Java: comportamiento del depurador (Java Debugger) y del constructor (GUI Builder).\n- Appearance: aspecto del IDE (ventanas, separadores y tema visual).\n\nPrimero debe habilitarse el soporte para Java desde la opción Java (pestaña GUI Builder o Java Debugger). Esto activa automáticamente todas las herramientas necesarias.\n\nSe recomienda tener visibles las ventanas Projects y Files para acceder a la estructura del proyecto.\n\nConfiguraciones específicas de proyecto (clic derecho en proyecto > Properties): permiten modificar propiedades sin afectar a los demás proyectos."
+            },
+            {
+              "title": "3.4.4. Manejo del IDE",
+              "content": "Crear un proyecto: se utiliza el icono de carpeta en la barra de tareas. El asistente guía el proceso; se debe seleccionar Java Application, indicar el directorio y nombre, y opcionalmente marcar Create Main Class para generar la clase principal automáticamente.\n\nConstruir el proyecto: una vez escrito el código, se compila para generar los archivos .class. Hay dos opciones:\n- Build Project: compila solo los archivos modificados y actualiza el .jar.\n- Clean and Build Project: elimina todo resultado previo, recompila todos los archivos y genera un nuevo .jar completo.\n\nEjecutar un programa: con la opción Run Project se lanza el bytecode sobre el JRE. El resultado puede verse en la ventana Output.\n\nDepurar un programa: la opción Debug permite estudiar el comportamiento del programa y corregir errores en tiempo de ejecución. Atajos principales:\n- Ctrl + F5: comenzar el Debug.\n- Mayus + F5: detener el Debug.\n- F5: continuar hasta el siguiente punto de ruptura.\n- F4: ejecutar hasta la posición del cursor.\n- F7: ejecutar la siguiente línea (entrando en métodos).\n- F8: ejecutar la siguiente línea (ejecutando el método completo como una instrucción).\n- Ctrl + F8: establecer o eliminar punto de ruptura.\n- Ctrl + Mayus + F7: añadir ventana de inspección (Watch).\n\nLos resultados de la depuración se ven en la ventana Output; los valores de variables en la ventana Variables."
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "NetBeans",
+              "kicker": "Gratuito · Multiplataforma",
+              "desc": "Soporta distintos lenguajes. Disponible en Windows y Linux. IDE recomendado en el temario.",
+              "example": "https://netbeans.apache.org/"
+            },
+            {
+              "title": "Eclipse",
+              "kicker": "Gratuito · Multiplataforma",
+              "desc": "Soporta distintos lenguajes. Disponible en Windows y Linux. Muy extendido en la industria.",
+              "example": "https://www.eclipse.org/"
+            },
+            {
+              "title": "IntelliJ IDEA",
+              "kicker": "Gratuito/Pago · Multiplataforma",
+              "desc": "Desarrollado en Java. Versiones Community (gratuita) y Ultimate (pago). Disponible en Windows y Linux.",
+              "example": ""
+            },
+            {
+              "title": "JCreator",
+              "kicker": "Gratuito/Pago · Solo Windows",
+              "desc": "Desarrollado en C++. Recomendado para máquinas con recursos limitados. Solo disponible en Windows.",
+              "example": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Bytecode",
+      "def": "Código intermedio generado por el compilador de Java (archivos .class) que no puede ejecutarse directamente en el sistema operativo y requiere del JRE para su interpretación."
+    },
+    {
+      "term": "JDK (Java Development Kit)",
+      "def": "Entorno de desarrollo suministrado por Oracle que incluye las herramientas necesarias para construir y ejecutar aplicaciones Java, así como el propio JRE."
+    },
+    {
+      "term": "JRE (Java Runtime Environment)",
+      "def": "Entorno de ejecución de Java compuesto por bibliotecas con código Java, la JVM y elementos adicionales. Intermedia entre el sistema operativo y el bytecode."
+    },
+    {
+      "term": "JVM (Java Virtual Machine)",
+      "def": "Máquina virtual incluida en el JRE que traduce el bytecode al lenguaje que el sistema operativo puede comprender."
+    },
+    {
+      "term": "JIT (Just In Time)",
+      "def": "Compilador incluido en el JRE que reutiliza código ya compilado anteriormente para reducir los tiempos de ejecución."
+    },
+    {
+      "term": "Garbage Collector",
+      "def": "Recolector de basura de Java; subrutina que se ejecuta en paralelo y gestiona automáticamente la liberación de memoria de los objetos no referenciados en el Heap."
+    },
+    {
+      "term": "PATH",
+      "def": "Variable de entorno usada por el sistema operativo para buscar los ejecutables de las aplicaciones desde la línea de comandos."
+    },
+    {
+      "term": "CLASSPATH",
+      "def": "Variable de entorno utilizada por el JRE para buscar clases y paquetes definidos por el usuario."
+    },
+    {
+      "term": "JAR (Java Archive)",
+      "def": "Archivo comprimido con el algoritmo Zip que empaqueta archivos .class y recursos de un proyecto Java."
+    },
+    {
+      "term": "IDE (Integrated Development Environment)",
+      "def": "Entorno de desarrollo integrado; aplicación que agrupa herramientas como editor, compilador y depurador para facilitar el desarrollo de software."
+    },
+    {
+      "term": "Código fuente",
+      "def": "Programa escrito en un lenguaje de alto nivel, cercano al lenguaje humano, que no puede ser ejecutado directamente por el hardware sin pasar por una traducción."
+    },
+    {
+      "term": "Enlazador (Linker)",
+      "def": "Herramienta que une el código compilado, los recursos del código fuente y las bibliotecas empleadas."
+    },
+    {
+      "term": "Servlet",
+      "def": "Programa Java que al ejecutarse permite responder peticiones basadas en páginas dinámicas."
+    },
+    {
+      "term": "CIL / MSIL",
+      "def": "Código intermedio equivalente al bytecode de Java pero en el entorno .NET de Microsoft."
+    },
+    {
+      "term": "CLR (Common Language Runtime)",
+      "def": "Máquina virtual del entorno .NET, equivalente a la JVM de Java."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "¿Cuál es la extensión del código fuente en Java?",
+      "options": [".class", ".jar", ".java", ".war"],
+      "correct": 2,
+      "explanation": "El código fuente de Java debe almacenarse en archivos de texto plano con extensión .java. Al compilarlos se generan archivos .class con el bytecode."
+    },
+    {
+      "question": "¿Qué distribución de Java está orientada al desarrollo de aplicaciones empresariales basadas en tecnología web?",
+      "options": ["J2ME", "J2SE", "J2EE", "OpenJDK"],
+      "correct": 2,
+      "explanation": "J2EE (Java 2 Enterprise Edition) es la distribución más completa y se centra en desarrollar e implementar aplicaciones empresariales basadas en tecnología web (Servlets, JSP, WebServices, etc.)."
+    },
+    {
+      "question": "¿Cuál es el comando para compilar un programa Java desde la línea de comandos?",
+      "options": ["java", "javac", "jar", "javaw"],
+      "correct": 1,
+      "explanation": "El comando javac convierte el código fuente (.java) a código intermedio (bytecode, archivos .class). Su sintaxis es: javac <opciones> <ficheros>."
+    },
+    {
+      "question": "¿Qué elemento del JRE reutiliza código ya compilado para reducir los tiempos de ejecución?",
+      "options": ["JVM", "Garbage Collector", "Compilador JIT", "CLASSPATH"],
+      "correct": 2,
+      "explanation": "El compilador JIT (Just In Time) está incluido en el JRE y evita que el bytecode se traduzca una y otra vez al reutilizar código ya compilado anteriormente, mejorando el rendimiento."
+    },
+    {
+      "question": "¿Cuáles son las tres fases del funcionamiento del recolector de basura en Java?",
+      "options": [
+        "Compilación, ejecución y depuración",
+        "Marcado, borrado de objetos no referenciados y compactación del espacio usado",
+        "Reserva, uso y liberación manual",
+        "Inicialización, procesamiento y finalización"
+      ],
+      "correct": 1,
+      "explanation": "El garbage collector de Java opera en tres fases: marcado (identifica objetos sin referencia en el Heap), borrado de objetos no referenciados (libera esas zonas de memoria) y compactación del espacio usado (reordena la memoria para optimizar el almacenamiento)."
+    },
+    {
+      "question": "¿Qué variable de entorno utiliza el JRE para buscar clases y paquetes definidos por el usuario?",
+      "options": ["PATH", "JAVA_HOME", "CLASSPATH", "JRE_PATH"],
+      "correct": 2,
+      "explanation": "CLASSPATH es la variable de entorno utilizada por el JRE para realizar la búsqueda de clases y paquetes definidos por el usuario. PATH, en cambio, es usada por el sistema operativo para localizar ejecutables."
+    },
+    {
+      "question": "¿Qué tipo de archivo Java empaqueta los componentes de una aplicación web (Servlets, JSP) para facilitar su despliegue?",
+      "options": [".jar", ".class", ".ear", ".war"],
+      "correct": 3,
+      "explanation": "El archivo .war (Web Application Archive) contiene los archivos que conforman una aplicación web Java (Servlets, JSP, etc.) y facilita su despliegue en un servidor."
+    },
+    {
+      "question": "En NetBeans, ¿cuál es la diferencia entre 'Build Project' y 'Clean and Build Project'?",
+      "options": [
+        "No hay diferencia, ambas opciones producen el mismo resultado siempre",
+        "Build Project compila solo los archivos modificados; Clean and Build elimina todo lo anterior y recompila desde cero",
+        "Build Project elimina todo y recompila; Clean and Build solo compila los modificados",
+        "Build Project solo ejecuta; Clean and Build solo compila"
+      ],
+      "correct": 1,
+      "explanation": "Build Project compila únicamente los archivos de código fuente que sea necesario y actualiza el .jar. Clean and Build Project elimina todo resultado de la construcción anterior, recompila todos los archivos y genera un nuevo .jar completo."
+    },
+    {
+      "question": "¿Qué atajo de teclado permite establecer o eliminar un punto de ruptura en el depurador de NetBeans?",
+      "options": ["F5", "F7", "Ctrl + F5", "Ctrl + F8"],
+      "correct": 3,
+      "explanation": "Ctrl + F8 es el atajo para establecer o eliminar un punto de ruptura (breakpoint) sobre la línea actual del cursor en el depurador de NetBeans."
+    },
+    {
+      "question": "¿Cuál de los siguientes IDE está desarrollado en C++ y solo está disponible en Windows?",
+      "options": ["NetBeans", "Eclipse", "IntelliJ IDEA", "JCreator"],
+      "correct": 3,
+      "explanation": "JCreator está desarrollado en C++ y solo está disponible en Windows. Se recomienda su uso en máquinas con recursos limitados. NetBeans, Eclipse e IntelliJ IDEA están disponibles en Windows y Linux."
+    }
+  ],
+  "_sources": {
+    "s1": "prog_u3_main.txt §3.1 (líneas 81-103)",
+    "s2": "prog_u3_main.txt §3.2–3.2.6 (líneas 104-361)",
+    "s3": "prog_u3_main.txt §3.3–3.3.3 (líneas 363-424)",
+    "s4": "prog_u3_main.txt §3.4–3.4.4 (líneas 426-658)"
+  }
+}
