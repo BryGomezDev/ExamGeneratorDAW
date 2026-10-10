@@ -1,0 +1,611 @@
+{
+  "subject": "prog",
+  "unit": 4,
+  "title": "Elementos de un programa informático",
+  "intro": "Un programa informático en Java se construye a partir de una serie de elementos bien definidos que hay que conocer antes de escribir cualquier instrucción. El lenguaje impone reglas de sintaxis estrictas: si el código no es sintácticamente correcto, el compilador lo rechaza. En esta unidad se estudia la estructura de un proyecto, cómo se nombran sus piezas (identificadores y palabras reservadas), cómo se organizan en clases y paquetes, cómo se almacenan y clasifican los datos (variables, constantes y tipos primitivos), qué herramientas facilitan la manipulación de texto (String, clases envoltorio) y, por último, qué operadores y expresiones permiten realizar cálculos y comparaciones, con su orden de evaluación.",
+  "objectives": [
+    "Comprender la estructura de un proyecto Java y la diferencia entre proyecto y solución.",
+    "Conocer las reglas de formación de identificadores y las convenciones de nomenclatura.",
+    "Identificar las palabras reservadas del lenguaje y su propósito.",
+    "Entender la estructura de una clase y el papel del método main como punto de entrada.",
+    "Saber declarar paquetes y comprender la jerarquía entre ellos.",
+    "Distinguir entre variables y constantes, y entender el concepto de ámbito.",
+    "Conocer los ocho tipos de datos primitivos de Java, su tamaño, rango y valor por defecto.",
+    "Aplicar conversiones de tipo implícitas y explícitas (casting) de forma correcta.",
+    "Manejar la clase String y las clases envoltorio, incluyendo autoboxing y unboxing.",
+    "Utilizar las secuencias de escape disponibles en char y String.",
+    "Conocer los tipos de comentarios en Java y cuándo usarlos.",
+    "Aplicar los operadores de Java respetando su orden de precedencia."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "4.1. Soluciones y proyectos",
+      "short": "Soluciones y proyectos",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El proyecto es el primer elemento a considerar. Consiste en un grupo de archivos y carpetas organizados según un criterio lógico. Los proyectos Java suelen contener archivos de código fuente (.java), archivos de código intermedio (.class) y otros recursos como imágenes o ficheros de texto. Para desarrollar un programa, lo primero que hay que hacer es crear el proyecto."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Proyecto",
+              "kicker": "Unidad básica de trabajo",
+              "desc": "Agrupación de archivos y carpetas con un orden lógico. Contiene ficheros .java, .class y otros recursos del programa."
+            },
+            {
+              "title": "Solución",
+              "kicker": "Agrupación de proyectos",
+              "desc": "Cuando un proyecto o varios relacionados entre sí se agrupan forman una solución. Puede contener también archivos sin conexión directa con los proyectos. En NetBeans el concepto equivalente se denomina Project Groups."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "4.2. Identificadores",
+      "short": "Identific. y pal. res.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Un identificador sirve para que el programador nombre un elemento del programa: variables, clases, métodos, etc. Consiste en una secuencia de uno o varios caracteres. Existen reglas obligatorias y recomendaciones de estilo."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Reglas obligatorias de formación",
+              "content": "Debe contener al menos un carácter. Solo pueden usarse letras (a-Z), dígitos (0-9), el símbolo dólar ($) o el guion bajo (_). No se puede utilizar un dígito como primer carácter."
+            },
+            {
+              "title": "Convenciones recomendadas",
+              "content": "Paquetes: todo en minúsculas, sin espacios; la jerarquía se indica con puntos. Clases e interfaces: todas las palabras juntas con la primera letra de cada una en mayúscula (UpperCamelCase). Métodos y variables: todas las palabras juntas con la primera letra de la primera en minúscula (lowerCamelCase). Constantes: todas las palabras en mayúsculas separadas por guion bajo (SCREAMING_SNAKE_CASE)."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Elemento", "Convención", "Ejemplo"],
+          "rows": [
+            ["Paquetes", "lowercase con puntos jerárquicos", "com.empresa.proyecto"],
+            ["Clases / Interfaces", "UpperCamelCase", "MiClasePrincipal"],
+            ["Métodos / Variables", "lowerCamelCase", "calcularTotal"],
+            ["Constantes", "SCREAMING_SNAKE_CASE", "MAX_VALOR"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "4.3. Palabras reservadas: Existen ciertas palabras que ya tienen su propio significado en el lenguaje y no pueden usarse como identificadores. La siguiente tabla muestra la lista completa de palabras reservadas de Java."
+        },
+        {
+          "type": "chips",
+          "items": [
+            "abstract", "assert", "boolean", "break", "byte", "case", "catch", "char",
+            "class", "const", "continue", "default", "do", "double", "else", "enum",
+            "extends", "final", "finally", "float", "for", "goto", "if", "implements",
+            "import", "instanceof", "int", "interface", "long", "native", "new",
+            "package", "private", "protected", "public", "return", "short", "static",
+            "strictfp", "super", "switch", "synchronized", "this", "throw", "throws",
+            "transient", "try", "void", "volatile", "while"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "4.4. Clases",
+      "short": "Clases, main y paquetes",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La POO tiene como objetivo la encapsulación y la modularidad. Java cuenta con el elemento Clase para conseguirlo. El identificador de la clase y el nombre del archivo .java en que está escrita deben ser idénticos."
+        },
+        {
+          "type": "text",
+          "content": "4.4.1. Método main: Para comenzar su ejecución, todos los programas necesitan un punto de entrada. En Java ese punto de entrada es el método main. Debe declararse en una de las clases del programa y ser estático, público y conservar las especificaciones de sus parámetros de entrada."
+        },
+        {
+          "type": "code",
+          "content": "public class NombreClase {\n    public static void main(String[] args) {\n        System.out.println(\"Texto Aqui\");\n    }\n}"
+        },
+        {
+          "type": "text",
+          "content": "4.5. Paquetes: Otro mecanismo de encapsulación y modularidad en Java. Un paquete agrupa clases con características comunes, mantiene independientes las declaraciones entre paquetes y permite controlar la visibilidad de los elementos que contiene. Para declarar un paquete se usa la palabra reservada package en la primera línea del archivo, seguida del nombre y terminada en punto y coma (;)."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Ventajas de los paquetes",
+              "content": "Identifica las clases cuyas características sean comunes y las agrupa. Mantiene independientes las declaraciones de un paquete respecto a las de otros, lo que permite reutilizar identificadores. Ofrece un mecanismo de control de acceso mediante la visibilidad."
+            },
+            {
+              "title": "Jerarquía de paquetes",
+              "content": "Unos paquetes pueden contener a otros. La jerarquía se representa separando con puntos los nombres de los paquetes. Para acceder a una clase del mismo paquete solo hace falta el nombre de la clase. Si la clase pertenece a un paquete distinto hay que especificar el nombre del paquete primero o importarlo con import."
+            },
+            {
+              "title": "Compilación y ejecución con paquetes desde terminal",
+              "content": "Al compilar se recomienda indicar el directorio de destino de los ficheros .class con el modificador -d. Para ejecutar o crear el jar, se antepone el nombre de los paquetes al nombre de la clase que contiene el método main."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "content": "// Declaración de paquete (primera línea del fichero)\npackage com.empresa.proyecto;\n\n// Importar todo el contenido de un paquete externo\nimport otro.paquete.*;"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "4.6. Variables",
+      "short": "Variables y constantes",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las variables permiten almacenar valores en la memoria principal mientras el programa se está ejecutando. En Java se distinguen dos tipos: referencias a objetos y variables de tipo primitivo. Toda declaración de variable debe terminar en punto y coma (;)."
+        },
+        {
+          "type": "code",
+          "content": "// Declaración y asignación separadas\n[Visibilidad] tipo nombreVariable1;\nnombreVariable1 = valor1;\n\n// Declaración y asignación en la misma línea\n[Visibilidad] tipo nombreVariable2 = valor2;"
+        },
+        {
+          "type": "text",
+          "content": "4.6.1. Ámbito de una variable: El ámbito (también llamado alcance o scope) determina desde qué zona del código puede accederse a una variable. Depende de dónde se haya declarado."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Mismo ámbito",
+              "kicker": "Bloque entre llaves {}",
+              "desc": "Todo código entre un par de llaves pertenece al mismo ámbito."
+            },
+            {
+              "title": "Acceso desde subámbitos",
+              "kicker": "Herencia de ámbito",
+              "desc": "Se puede acceder a las variables declaradas en un ámbito desde ese mismo ámbito o desde subámbitos creados dentro de él."
+            },
+            {
+              "title": "Destrucción de la variable",
+              "kicker": "Fin de ámbito",
+              "desc": "Una variable se destruye cuando el flujo de ejecución sale del ámbito donde fue declarada."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "4.7. Constantes: Las constantes son elementos que mantienen el mismo valor durante toda la vida del programa. En Java se declaran en la misma línea que su valor, usando las palabras reservadas static final antes del tipo de dato."
+        },
+        {
+          "type": "code",
+          "content": "// Declaración de constante\n[Visibilidad] static final tipo NOMBRE_CONSTANTE = valor;\n\n// Ejemplo concreto\npublic static final int MAX_INTENTOS = 3;"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "4.8. Tipos de datos primitivos",
+      "short": "Primitivos y casting",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Java es un lenguaje de tipo estático: las variables deben declararse antes de usarse. Los datos primitivos ya están definidos en el lenguaje y se referencian con palabras reservadas. El tipo de dato determina los valores posibles y las operaciones aplicables."
+        },
+        {
+          "type": "table",
+          "headers": ["Nombre", "Tipo de dato", "Ocupa", "Rango", "Valor defecto"],
+          "rows": [
+            ["byte", "Entero con signo", "1 byte", "-128 a 127", "0"],
+            ["short", "Entero con signo", "2 bytes", "-32768 a 32767", "0"],
+            ["int", "Entero con signo", "4 bytes", "-2^31 a 2^31-1", "0"],
+            ["long", "Entero con signo", "8 bytes", "-2^63 a 2^63-1", "0L"],
+            ["float", "Decimal simple", "4 bytes", "IEEE 754 32-bit", "0.0f"],
+            ["double", "Decimal doble", "8 bytes", "IEEE 754 64-bit", "0.0d"],
+            ["char", "Carácter simple", "2 bytes", "\\u0000 a \\uffff (65535)", "\\u0000"],
+            ["boolean", "Booleano", "1 byte", "true o false", "false"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "4.8.1. Conversiones de tipo (casting): El casting permite transferir la información desde una variable de un tipo a otro diferente. Las conversiones que no suelen dar problemas son aquellas en las que el tipo destino ocupa una cantidad de bytes mayor o igual que el tipo origen."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Conversiones implícitas",
+              "content": "Se producen automáticamente al realizar una asignación sin declarar el tipo de conversión. Por ejemplo: byte b = 1; short s = b; int i = s; long l = i; float f = l; double d = f;"
+            },
+            {
+              "title": "Conversiones explícitas",
+              "content": "Se llevan a cabo colocando primero el tipo de variable destino entre paréntesis y después el dato origen. Permiten realizar conversiones que de forma implícita no serían posibles, aunque pueden provocar pérdida de datos. Ejemplo: int i = 127; byte b = (byte) i; — tanto i como b almacenan 127. Si i = 128 entonces b almacenaría -128 por desbordamiento."
+            },
+            {
+              "title": "Tabla de conversiones seguras",
+              "content": "byte puede convertirse a: short, int, long, float, double. char puede convertirse a: int, long, float, double. short puede convertirse a: int, long, float, double. int puede convertirse a: long, float, double. long puede convertirse a: float, double. float puede convertirse a: double."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "content": "// Conversión implícita (widening)\nbyte b = 1;\nshort s = b;\nint i = s;\nlong l = i;\nfloat f = l;\ndouble d = f;\n\n// Conversión explícita (narrowing)\nint i = 127;\nbyte b = (byte) i;  // b almacena 127\n\nint i2 = 128;\nbyte b2 = (byte) i2; // b2 almacena -128 (desbordamiento)"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "4.9. String",
+      "short": "String y wrappers",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Manejar caracteres sueltos de tipo char no suele ser suficiente: los programas trabajan habitualmente con cadenas de caracteres. En Java se utilizan objetos de la clase String, que simplifica la complejidad de trabajar con secuencias de char y proporciona métodos listos para su manejo sin necesidad de implementarlos."
+        },
+        {
+          "type": "code",
+          "content": "// Formas de declarar un String\nString a = \"prueba de string\";\nString b = a;  // b apunta al mismo objeto que a"
+        },
+        {
+          "type": "text",
+          "content": "4.10. Clases envoltorio (Wrapper Class): Una clase envoltorio encapsula un dato de tipo primitivo en un objeto y proporciona métodos para facilitar su manejo. Hay métodos disponibles solo en una clase concreta y otros disponibles en cualquiera de ellas."
+        },
+        {
+          "type": "table",
+          "headers": ["Tipo primitivo", "Clase envoltorio"],
+          "rows": [
+            ["boolean", "Boolean"],
+            ["byte", "Byte"],
+            ["char", "Character"],
+            ["double", "Double"],
+            ["float", "Float"],
+            ["int", "Integer"],
+            ["long", "Long"],
+            ["short", "Short"]
+          ]
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "toString()",
+              "kicker": "Método compartido",
+              "desc": "Devuelve un String con el valor literal igual al del dato primitivo contenido."
+            },
+            {
+              "title": "x.compareTo(y)",
+              "kicker": "Comparación de orden",
+              "desc": "Devuelve 0 si x e y son iguales, 1 si x es mayor que y, -1 si x es menor que y."
+            },
+            {
+              "title": "x.equals(y)",
+              "kicker": "Comparación de igualdad",
+              "desc": "Devuelve true si los datos contenidos en x e y son iguales, false en caso contrario."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "4.10.1. Autoboxing y Unboxing: Desde el JDK 5, las clases envoltorio y los tipos primitivos tienen correspondencia directa, lo que permite la conversión automática entre ellos. Autoboxing es la conversión de tipo primitivo a su envoltorio. Unboxing es la conversión de envoltorio a tipo primitivo."
+        },
+        {
+          "type": "code",
+          "content": "// Autoboxing: primitivo -> envoltorio (automático)\nInteger a = 11, b = 20;\n\n// Unboxing: envoltorio -> primitivo (automático)\nint c = b - a;  // c = 9"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "label": "4.11. Secuencias de escape",
+      "short": "Escape y comentarios",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Java permite utilizar secuencias de escape tanto en variables de tipo primitivo char como en String. Hacen que el carácter contenido en la secuencia se trate sin su significado habitual, o bien lo reemplazan por un contenido diferente (salto de línea, tabulación, etc.)."
+        },
+        {
+          "type": "table",
+          "headers": ["Secuencia", "Significado"],
+          "rows": [
+            ["\\b", "Retrocede un espacio"],
+            ["\\t", "Tabulación"],
+            ["\\n", "Nueva línea"],
+            ["\\r", "Retorno de carro"],
+            ["\\\"", "Comilla doble"],
+            ["\\'", "Comilla simple"],
+            ["\\f", "Salto de página"],
+            ["\\\\", "Barra invertida"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "4.12. Comentarios: Son textos que pueden estar contenidos en el código fuente para preparar la documentación o explicar la función de un fragmento de código. No son compilados y no afectan al tamaño del archivo ejecutable. Java distingue tres tipos."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Comentario de una línea",
+              "kicker": "// ...",
+              "desc": "Se usa para añadir una explicación breve. Comienza con // y abarca hasta el final de la línea.",
+              "example": "// Calcula el total del pedido"
+            },
+            {
+              "title": "Comentario de varias líneas",
+              "kicker": "/* ... */",
+              "desc": "Se usa para explicaciones más largas. Comienza con /* y termina con */.",
+              "example": "/* Este bloque inicializa\n   los valores del sistema */"
+            },
+            {
+              "title": "Comentario de documentación",
+              "kicker": "/*(doc) ... */",
+              "desc": "Utilizado por la herramienta javadoc para generar automáticamente la documentación del código. Comienza con /*(doc) y termina con */.",
+              "example": "/*(doc) @param nombre El nombre del usuario */"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "label": "4.13. Operadores y expresiones",
+      "short": "Operadores y precedencia",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los operadores sirven para realizar operaciones con las variables. Se pueden realizar operaciones sobre uno (unarios), dos (binarios) o tres operandos. Los operadores se agrupan en las siguientes categorías."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Operadores aritméticos",
+              "content": "+ (suma y concatenación en String), - (resta), * (multiplicación), / (división real), % (resto o módulo). Los signos + y - también se usan como unarios para indicar valor positivo o negación."
+            },
+            {
+              "title": "Operadores relacionales",
+              "content": "== (igual), != (distinto), < (menor), <= (menor o igual), > (mayor), >= (mayor o igual)."
+            },
+            {
+              "title": "Operadores lógicos",
+              "content": "&& (y lógico, conjunción), || (o lógico, disyunción), ! (negación lógica)."
+            },
+            {
+              "title": "Operadores unarios de incremento/decremento",
+              "content": "++ (incrementa en 1), -- (decrementa en 1). Pueden usarse como prefijo (++expr) o sufijo (expr++)."
+            },
+            {
+              "title": "Operadores de bits",
+              "content": "A&B (AND a nivel de bits), A|B (OR a nivel de bits), A^B (XOR a nivel de bits), ~A (complemento de A). Desplazamiento: A<<B (desplaza A a la izquierda B posiciones), A>>B (desplaza a la derecha con signo), A>>>B (desplaza a la derecha sin signo)."
+            },
+            {
+              "title": "Operadores especiales",
+              "content": "= (asignación), instanceof (comprueba si un objeto es de un tipo determinado)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "4.13.1. Precedencia de operadores: Los operadores con nivel más alto se evalúan antes. Si dos operadores tienen igual nivel, se evalúan de izquierda a derecha, excepto el operador de asignación que se evalúa de derecha a izquierda."
+        },
+        {
+          "type": "table",
+          "headers": ["Nivel (mayor a menor)", "Operadores"],
+          "rows": [
+            ["1 - Postfijo", "expr++  expr--"],
+            ["2 - Prefijo / Unario", "++expr  --expr  +expr  -expr  ~  !"],
+            ["3 - Multiplicativo", "*  /  %"],
+            ["4 - Aditivo", "+  -"],
+            ["5 - Desplazamiento de bits", "<<  >>  >>>"],
+            ["6 - Relacional", "<  >  <=  >=  instanceof"],
+            ["7 - Igualdad", "==  !="],
+            ["8 - AND de bits", "&"],
+            ["9 - XOR de bits", "^"],
+            ["10 - OR de bits", "|"],
+            ["11 - AND lógico", "&&"],
+            ["12 - OR lógico", "||"],
+            ["13 - Asignación (dcha a izda)", "=  +=  -=  *=  /=  %=  &=  ^=  |=  <<=  >>=  >>>="]
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Proyecto",
+      "def": "Grupo de archivos y carpetas organizados según un criterio lógico que constituye la unidad de trabajo en Java."
+    },
+    {
+      "term": "Solución",
+      "def": "Agrupación de uno o varios proyectos relacionados entre sí, equivalente a los Project Groups de NetBeans."
+    },
+    {
+      "term": "Identificador",
+      "def": "Secuencia de caracteres que el programador asigna a un elemento del programa (variable, clase, método, etc.)."
+    },
+    {
+      "term": "Palabra reservada",
+      "def": "Palabra con significado propio del lenguaje Java que no puede usarse como identificador."
+    },
+    {
+      "term": "Método main",
+      "def": "Punto de entrada de un programa Java. Debe ser público, estático y declararse dentro de una clase."
+    },
+    {
+      "term": "Paquete",
+      "def": "Mecanismo de encapsulación que agrupa clases con características comunes y controla su visibilidad."
+    },
+    {
+      "term": "Ámbito (scope)",
+      "def": "Zona del código desde la que puede accederse a una variable. Una variable se destruye al salir del ámbito donde fue declarada."
+    },
+    {
+      "term": "Constante",
+      "def": "Elemento que mantiene el mismo valor durante toda la vida del programa. Se declara con static final."
+    },
+    {
+      "term": "Casting",
+      "def": "Conversión de un tipo de dato a otro. Puede ser implícita (automática) o explícita (indicando el tipo destino entre paréntesis)."
+    },
+    {
+      "term": "Wrapper Class (clase envoltorio)",
+      "def": "Clase que encapsula un tipo de dato primitivo en un objeto y proporciona métodos para su manejo (Boolean, Integer, Double, etc.)."
+    },
+    {
+      "term": "Autoboxing",
+      "def": "Conversión automática de un tipo primitivo a su clase envoltorio correspondiente, disponible desde JDK 5."
+    },
+    {
+      "term": "Unboxing",
+      "def": "Conversión automática de una clase envoltorio a su tipo primitivo correspondiente, disponible desde JDK 5."
+    },
+    {
+      "term": "Secuencia de escape",
+      "def": "Combinación de caracteres que empieza por barra invertida (\\) y representa un carácter especial en char o String."
+    },
+    {
+      "term": "lowerCamelCase",
+      "def": "Convención de escritura en la que las palabras se juntan y cada una (excepto la primera) empieza en mayúscula. Se usa en métodos y variables."
+    },
+    {
+      "term": "UpperCamelCase",
+      "def": "Convención de escritura en la que todas las palabras se juntan y cada una empieza en mayúscula. Se usa en clases e interfaces."
+    },
+    {
+      "term": "SCREAMING_SNAKE_CASE",
+      "def": "Convención de escritura en la que las palabras van completamente en mayúsculas separadas por guion bajo. Se usa en constantes."
+    },
+    {
+      "term": "javadoc",
+      "def": "Herramienta de Java que genera automáticamente la documentación del código a partir de los comentarios de documentación (/*(doc) ... */)."
+    },
+    {
+      "term": "Precedencia de operadores",
+      "def": "Orden en que se evalúan los operadores de una expresión. Los de mayor nivel se evalúan antes; los de igual nivel, de izquierda a derecha (excepto la asignación, que va de derecha a izquierda)."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "¿Cuál de las siguientes NO es una regla obligatoria de formación de un identificador en Java?",
+      "options": [
+        "Debe contener al menos un carácter.",
+        "No puede empezar por un dígito.",
+        "La primera letra debe ser mayúscula.",
+        "Solo pueden usarse letras, dígitos, $ o _."
+      ],
+      "correct": 2,
+      "explanation": "Que la primera letra sea mayúscula es una recomendación de estilo para clases, no una regla obligatoria del lenguaje. Un identificador puede empezar con minúscula, dólar o guion bajo."
+    },
+    {
+      "question": "¿Cómo se declara correctamente una constante en Java?",
+      "options": [
+        "[Visibilidad] const tipo NOMBRE = valor;",
+        "[Visibilidad] final tipo NOMBRE = valor;",
+        "[Visibilidad] static final tipo NOMBRE = valor;",
+        "[Visibilidad] static tipo NOMBRE = valor;"
+      ],
+      "correct": 2,
+      "explanation": "Las constantes en Java se declaran con static final antes del tipo de dato. La palabra const existe como palabra reservada pero no se usa en Java; omitir static también es incorrecto para constantes de clase."
+    },
+    {
+      "question": "¿Cuál es el valor por defecto del tipo primitivo boolean en Java?",
+      "options": [
+        "true",
+        "0",
+        "null",
+        "false"
+      ],
+      "correct": 3,
+      "explanation": "El valor por defecto de boolean es false. Los tipos enteros tienen 0, los decimales 0.0f o 0.0d, y char tiene \\u0000. El valor null corresponde a referencias a objetos, no a primitivos."
+    },
+    {
+      "question": "¿Qué ocurre cuando se ejecuta el siguiente código: int i = 128; byte b = (byte) i;?",
+      "options": [
+        "b almacena 128.",
+        "Se produce una excepción en tiempo de ejecución.",
+        "b almacena -128 por desbordamiento.",
+        "El código no compila porque 128 no cabe en un byte."
+      ],
+      "correct": 2,
+      "explanation": "Un byte solo puede almacenar valores de -128 a 127. Al hacer un casting explícito de 128 a byte se produce un desbordamiento y el resultado es -128. No se lanza ninguna excepción; el compilador lo permite porque la conversión es explícita."
+    },
+    {
+      "question": "¿Cuál es la diferencia entre Autoboxing y Unboxing?",
+      "options": [
+        "Autoboxing convierte un objeto a primitivo; Unboxing hace lo contrario.",
+        "Autoboxing convierte un primitivo a su clase envoltorio; Unboxing convierte una clase envoltorio a su primitivo.",
+        "Son sinónimos y se refieren a la conversión entre tipos primitivos.",
+        "Autoboxing solo funciona con Integer; Unboxing solo con Double."
+      ],
+      "correct": 1,
+      "explanation": "Autoboxing es la conversión automática de tipo primitivo a envoltorio (por ejemplo, int a Integer). Unboxing es la conversión inversa, de envoltorio a primitivo. Ambas funcionalidades están disponibles desde JDK 5."
+    },
+    {
+      "question": "¿Qué tipo de comentario utiliza la herramienta javadoc para generar documentación automática?",
+      "options": [
+        "Comentario de una línea (//).",
+        "Comentario de varias líneas (/* */).",
+        "Comentario de documentación (/*(doc) */).",
+        "Javadoc no usa comentarios; lee anotaciones @."
+      ],
+      "correct": 2,
+      "explanation": "Los comentarios de documentación comienzan con /*(doc) y terminan con */. Son los que javadoc procesa para generar automáticamente la documentación del código. Los comentarios // y /* */ son ignorados por javadoc."
+    },
+    {
+      "question": "En la tabla de precedencia de operadores de Java, ¿cuál se evalúa primero?",
+      "options": [
+        "El operador de asignación (=).",
+        "Los operadores lógicos (&& y ||).",
+        "Los operadores multiplicativos (*, /, %).",
+        "El postfijo (expr++ y expr--)."
+      ],
+      "correct": 3,
+      "explanation": "El nivel de mayor precedencia corresponde al postfijo (expr++ y expr--). Le siguen los prefijos y unarios, luego los multiplicativos, los aditivos, etc. El operador de asignación tiene el nivel más bajo de todos."
+    },
+    {
+      "question": "¿Cuál de las siguientes afirmaciones sobre los paquetes en Java es correcta?",
+      "options": [
+        "Un paquete debe declararse en la última línea del archivo.",
+        "Los paquetes no pueden contener otros paquetes.",
+        "La jerarquía de paquetes se representa separando los nombres con puntos.",
+        "Para acceder a una clase de otro paquete siempre hay que usar el asterisco (*)."
+      ],
+      "correct": 2,
+      "explanation": "La jerarquía de paquetes se representa separando con puntos los nombres de los paquetes (por ejemplo, com.empresa.modulo). La declaración de paquete va en la primera línea. Los paquetes pueden contener a otros. Para acceder a una clase de otro paquete se puede usar el nombre completo o importar solo la clase, no necesariamente el asterisco."
+    },
+    {
+      "question": "¿Qué convención de nomenclatura se recomienda para los nombres de clases en Java?",
+      "options": [
+        "lowercase (todo en minúsculas).",
+        "lowerCamelCase (primera letra de la primera palabra en minúscula).",
+        "UpperCamelCase (primera letra de cada palabra en mayúscula).",
+        "SCREAMING_SNAKE_CASE (todo en mayúsculas con guion bajo)."
+      ],
+      "correct": 2,
+      "explanation": "Para clases e interfaces se recomienda UpperCamelCase: todas las palabras juntas con la primera letra de cada una en mayúscula. lowerCamelCase es para métodos y variables; SCREAMING_SNAKE_CASE para constantes; lowercase para paquetes."
+    },
+    {
+      "question": "¿Qué secuencia de escape se usa para insertar una nueva línea en un String en Java?",
+      "options": [
+        "\\r",
+        "\\t",
+        "\\n",
+        "\\b"
+      ],
+      "correct": 2,
+      "explanation": "\\n inserta una nueva línea. \\r es retorno de carro, \\t es tabulación y \\b retrocede un espacio. En la mayoría de los sistemas modernos \\n es suficiente para saltar de línea."
+    }
+  ],
+  "_sources": {
+    "s1": "prog_u4_main_a.txt §4.1 (líneas 78-93), prog_u4_resumen.txt §Resumen (líneas 13-19)",
+    "s2": "prog_u4_main_a.txt §4.2-4.3 (líneas 104-243), prog_u4_main_b.txt §Identificadores (líneas 23-44), prog_u4_resumen.txt §Conceptos fundamentales (líneas 97-113)",
+    "s3": "prog_u4_main_a.txt §4.4-4.5 (líneas 247-343), prog_u4_main_b.txt §Clases y paquetes (líneas 57-77)",
+    "s4": "prog_u4_main_a.txt §4.6-4.7 (líneas 347-419), prog_u4_main_b.txt §Variables, constantes y ámbitos (líneas 79-94)",
+    "s5": "prog_u4_main_a.txt §4.8-4.8.1 (líneas 421-625), prog_u4_resumen.txt §Resumen casting (líneas 45-56)",
+    "s6": "prog_u4_main_a.txt §4.9-4.10.1 (líneas 630-735), prog_u4_main_b.txt §String y Clases envoltorio (líneas 99-105), prog_u4_resumen.txt (líneas 58-70)",
+    "s7": "prog_u4_main_a.txt §4.11-4.12 (líneas 738-806), prog_u4_resumen.txt (líneas 79-86)",
+    "s8": "prog_u4_main_a.txt §4.13-4.13.1 (líneas 809-997)"
+  }
+}
