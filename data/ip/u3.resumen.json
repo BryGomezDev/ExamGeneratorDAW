@@ -1,0 +1,479 @@
+{
+  "subject": "ip",
+  "unit": 3,
+  "title": "Exploring the past",
+  "intro": "En esta unidad estudiaremos los tiempos verbales del pasado y el presente perfecto en inglés. Comenzaremos con el Past Simple (verbos regulares, irregulares, el verbo To Be y la estructura used to), seguiremos con el Past Continuous para describir acciones en progreso en el pasado, y después analizaremos el Present Perfect Simple y su contraste con el Past Simple. Además, aprenderemos las preposiciones de lugar y las question tags para confirmar información.",
+  "objectives": [
+    "Formar frases afirmativas, negativas e interrogativas en Past Simple con verbos regulares e irregulares",
+    "Conjugar el verbo To Be en pasado y usarlo correctamente",
+    "Usar la estructura used to para hablar de hábitos pasados",
+    "Construir oraciones en Past Continuous con was/were + verbo en -ing",
+    "Usar el Present Perfect Simple con have/has + participio de pasado",
+    "Distinguir cuándo usar el Present Perfect Simple y cuándo usar el Past Simple",
+    "Aplicar las preposiciones de lugar at, in, on, under, between, behind, in front of y next to",
+    "Formar question tags correctamente, incluyendo sus excepciones"
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "3.1. Past Simple",
+      "short": "Past Simple",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El Past Simple se usa para hablar de acciones que ya han finalizado en el pasado. Suele acompañarse de expresiones de tiempo como ago, yesterday, last week, in 2000, when... Para oraciones negativas e interrogativas, tanto los verbos regulares como los irregulares utilizan el verbo auxiliar did/didn't seguido del verbo principal en infinitivo."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "3.1.1. Past Simple: verbos regulares e irregulares",
+              "content": "Los verbos regulares forman el pasado añadiendo -ed/-d al infinitivo. Reglas especiales: si el verbo termina en -e, solo se añade -d (live → lived); si termina en consonante + y, se cambia -y por -ied (cry → cried); los verbos monosilábicos acabados en consonante+vocal+consonante duplican la última consonante (stop → stopped).\n\nEjemplos regulares: work → worked | watch → watched | love → loved | apply → applied | plan → planned\n\nLos verbos irregulares tienen formas propias que hay que memorizar:\nbe → was/were | go → went | have → had | see → saw | come → came | make → made | take → took | give → gave | say → said | think → thought | know → knew | get → got | buy → bought | bring → brought | find → found | feel → felt | leave → left | meet → met | tell → told | write → wrote | speak → spoke | eat → ate | drive → drove | fly → flew | run → ran | sit → sat | stand → stood | swim → swam | sing → sang | send → sent | sell → sold | keep → kept | hear → heard | fall → fell | forget → forgot | lose → lost | pay → paid | read → read\n\nEstructura afirmativa: Subject + verb-ed (regular) / irregular form\nEstructura negativa: Subject + didn't + verb (infinitive)\nEstructura interrogativa: Did + subject + verb (infinitive) ...?\nRespuesta corta: Yes, I did. / No, I didn't."
+            },
+            {
+              "title": "3.1.2. Verb To Be in the past tense",
+              "content": "El verbo To Be en pasado se usa para describir estados, características y situaciones del pasado. Tiene dos formas: was (para I, he, she, it) y were (para you, we, they).\n\nNo necesita verbo auxiliar para formar negativas e interrogativas: la negativa añade not (wasn't/weren't) y la interrogativa invierte el orden (verbo + sujeto).\n\nEjemplos:\nAffirmative: I was in the bank yesterday. / The children were in the park.\nNegative: She wasn't in the office two days ago. / You weren't with me.\nInterrogative: Were you at home? Yes, I was. / Was Mary in the bank? No, she wasn't.\n\nNota: también se usa con expresiones de sensación: I was cold (tenía frío). / We were hungry (teníamos hambre). / I was 20 (tenía 20 años)."
+            },
+            {
+              "title": "3.1.3. Used to",
+              "content": "La estructura used to + infinitivo expresa hábitos o situaciones del pasado que han cambiado o ya no existen. Contrasta el pasado con el presente.\n\nEstructura afirmativa: Subject + used to + verb (infinitive)\nEstructura negativa: Subject + didn't use to + verb (infinitive)\nEstructura interrogativa: Did + subject + use to + verb (infinitive) ...?\n\nEjemplos:\nShe used to work in a shop but now she works in a bank.\nShe didn't use to work in an office.\nDid she use to work in an office? Yes, she did. / No, she didn't.\n\nImportante: en negativa e interrogativa se escribe use to (sin -d), porque el pasado lo marca el auxiliar did/didn't."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Sujeto", "Affirmative", "Negative", "Interrogative"],
+          "rows": [
+            ["I / You / He / She / It / We / You / They", "worked", "didn't work", "Did ... work ...?"],
+            ["Short answer", "Yes, I did.", "No, I didn't.", "—"]
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Sujeto", "Affirmative (To Be)", "Negative (To Be)", "Interrogative (To Be)"],
+          "rows": [
+            ["I", "was", "was not / wasn't", "Was I ...?"],
+            ["You", "were", "were not / weren't", "Were you ...?"],
+            ["He / She / It", "was", "was not / wasn't", "Was he/she/it ...?"],
+            ["We / You / They", "were", "were not / weren't", "Were we/you/they ...?"],
+            ["Short answer", "Yes, I was. / Yes, they were.", "No, I wasn't. / No, they weren't.", "—"]
+          ]
+        },
+        {
+          "type": "chips",
+          "items": ["yesterday", "last week", "last year", "ago", "in 2000", "when", "the other day", "two days ago", "in 1996"]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "3.2. Past Continuous",
+      "short": "Past Continuous",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El Past Continuous describe acciones que estaban en progreso en un momento específico del pasado. Se forma con el verbo To Be en pasado (was/were) más el verbo principal en gerundio (-ing). Para la negativa se añade not al verbo To Be (wasn't/weren't + -ing). Para la interrogativa se invierte el orden (was/were + sujeto + verbo -ing)."
+        },
+        {
+          "type": "code",
+          "content": "Estructura: was / were + verb -ing\n\nAffirmative:   Subject + was/were + verb-ing\nNegative:      Subject + wasn't/weren't + verb-ing\nInterrogative: Was/Were + subject + verb-ing ...?"
+        },
+        {
+          "type": "table",
+          "headers": ["Sujeto", "Affirmative", "Negative", "Interrogative"],
+          "rows": [
+            ["I", "was working", "wasn't working", "Was I working ...?"],
+            ["You", "were working", "weren't working", "Were you working ...?"],
+            ["He / She / It", "was working", "wasn't working", "Was he/she/it working ...?"],
+            ["We / You / They", "were working", "weren't working", "Were we/you/they working ...?"],
+            ["Short answer", "Yes, I was. / Yes, they were.", "No, I wasn't. / No, they weren't.", "—"]
+          ]
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Reglas del gerundio (-ing)",
+              "kicker": "Spelling rules",
+              "desc": "Norma general: añadir -ing directamente al verbo.",
+              "example": "work → working"
+            },
+            {
+              "title": "Verbo acabado en -e",
+              "kicker": "Regla especial",
+              "desc": "Se elimina la -e y se añade -ing.",
+              "example": "write → writing"
+            },
+            {
+              "title": "Monosílabo consonante+vocal+consonante",
+              "kicker": "Regla especial",
+              "desc": "Se duplica la última consonante antes de añadir -ing.",
+              "example": "stop → stopping"
+            },
+            {
+              "title": "Verbo acabado en -ie",
+              "kicker": "Regla especial",
+              "desc": "Se cambia -ie por -y antes de añadir -ing.",
+              "example": "lie → lying"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Ejemplo de uso: While I was studying, my friends were playing. / I was working in the document at 9 yesterday."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "3.3. Present Perfect Simple",
+      "short": "Present Perfect",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El Present Perfect Simple se forma con have/has más el participio de pasado (para verbos regulares, termina en -ed/-d; para irregulares, es la tercera columna de la tabla). Se usa cuando algo ocurrió en el pasado pero tiene un efecto en el presente, o cuando no sabemos exactamente cuándo ocurrió."
+        },
+        {
+          "type": "code",
+          "content": "Estructura: have / has + past participle\n\nAffirmative:   Subject + have/has + past participle\nNegative:      Subject + haven't/hasn't + past participle\nInterrogative: Have/Has + subject + past participle ...?"
+        },
+        {
+          "type": "table",
+          "headers": ["Sujeto", "Affirmative", "Negative", "Interrogative"],
+          "rows": [
+            ["I / You / We / They", "have / 've worked", "haven't worked", "Have I/you/we/they worked ...?"],
+            ["He / She / It", "has / 's worked", "hasn't worked", "Has he/she/it worked ...?"],
+            ["Short answer", "Yes, I have. / Yes, he has.", "No, I haven't. / No, he hasn't.", "—"]
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Ever / Never",
+              "content": "Ever significa 'alguna vez' y se usa en preguntas. Never significa 'nunca' y expresa experiencia (no frecuencia).\n\nEjemplo: Have you ever worked in a factory? No, never. / Have you ever been to London? No, never."
+            },
+            {
+              "title": "Just",
+              "content": "Just significa 'acabar de'. Se coloca entre el verbo auxiliar y el participio.\n\nEjemplo: She's just left the room. / I've just seen Mary."
+            },
+            {
+              "title": "For / Since",
+              "content": "For se usa con un periodo de tiempo y significa 'desde hace'. Since se usa con un punto en el tiempo y significa 'desde' o 'desde que'.\n\nEjemplos: I've lived in London for three years. / I've lived in London since I was a child. / I've worked here for 5 years. / I've worked here since 1998."
+            },
+            {
+              "title": "Already",
+              "content": "Already significa 'ya' y se usa en frases afirmativas para expresar que algo ocurrió antes de lo esperado. Se coloca entre el auxiliar y el participio.\n\nEjemplo: I've already done it. / I've already prepared the food."
+            },
+            {
+              "title": "Yet",
+              "content": "Yet significa 'ya' en preguntas y 'aún/todavía' en negativas. Siempre va al final de la frase.\n\nEjemplos: Have you finished yet? No, not yet. / I haven't worked with them yet."
+            },
+            {
+              "title": "Otras expresiones del Present Perfect",
+              "content": "Palabras y expresiones que también se asocian a este tiempo: recently (recientemente), today, this evening, how long...?, it is the first/second time..., always.\n\nEjemplos: It is the second time she has changed her job this year. / I've always wanted to be a teacher."
+            }
+          ]
+        },
+        {
+          "type": "chips",
+          "items": ["ever", "never", "just", "for", "since", "already", "yet", "recently", "today", "this evening", "how long?", "it is the first time", "always"]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "3.4. Present Perfect Simple vs Past Simple",
+      "short": "PPS vs Past Simple",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El Past Simple describe acciones terminadas en un tiempo específico y definido del pasado. El Present Perfect Simple describe acciones pasadas que siguen siendo relevantes en el presente o cuyo momento exacto se desconoce. La diferencia clave es que el Past Simple sitúa la acción en un tiempo concreto, mientras que el Present Perfect crea un vínculo entre el pasado y el presente."
+        },
+        {
+          "type": "table",
+          "headers": ["Tiempo verbal", "Cuándo se usa", "Ejemplo"],
+          "rows": [
+            ["Past Simple", "Acción terminada en un tiempo definido del pasado", "She broke her glasses yesterday."],
+            ["Present Perfect Simple", "Acción pasada con relevancia en el presente o tiempo indefinido", "She has broken her glasses."],
+            ["Past Simple", "Con marcadores de tiempo específicos: yesterday, last year, ago, in 2000...", "We met at a party in 2000."],
+            ["Present Perfect Simple", "Con marcadores: ever, just, already, yet, for, since, recently...", "He has lived in the city since 2020."]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "3.5. Prepositions of place (at, in, on, under, between, behind, in front of, next to)",
+      "short": "Prepositions of place",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las preposiciones de lugar indican la posición o ubicación de un objeto o persona en relación con otro. Siempre van delante de sustantivos (before nouns)."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "At",
+              "kicker": "Lugar/actividad o dirección exacta",
+              "desc": "Se usa para referirse a lugares donde se realiza una actividad específica o para direcciones y posiciones exactas.",
+              "example": "I'm at work. / She lives at 25 Oak Street."
+            },
+            {
+              "title": "In",
+              "kicker": "Dentro de un espacio mayor",
+              "desc": "Se emplea para hablar de algo o alguien dentro de un espacio más grande: ciudad, país, casa, mar, bosque...",
+              "example": "She is living in London. / There's a bookshop in the shopping center."
+            },
+            {
+              "title": "On",
+              "kicker": "Sobre una superficie o transporte público",
+              "desc": "Indica ubicación sobre una superficie. También se usa para ciertos medios de transporte público (bus, plane, train).",
+              "example": "The book is on the table. / You can't make phone calls on a plane."
+            },
+            {
+              "title": "Under",
+              "kicker": "Debajo de algo",
+              "desc": "Significa que algo o alguien está debajo de otra cosa.",
+              "example": "The pencil is under the desk. / The dog is under the box."
+            },
+            {
+              "title": "Between",
+              "kicker": "Entre dos elementos",
+              "desc": "Se usa cuando hay algo o alguien a cada lado (entre dos objetos o lugares).",
+              "example": "Our building is between the cinema and the supermarket."
+            },
+            {
+              "title": "Behind",
+              "kicker": "Detrás",
+              "desc": "Indica que algo o alguien está en la parte trasera.",
+              "example": "Our car is behind the house."
+            },
+            {
+              "title": "In front of",
+              "kicker": "Delante de",
+              "desc": "Expresa que algo o alguien está delante, visible si miras hacia adelante.",
+              "example": "He was in front of her. / The mouse is in front of the cheese."
+            },
+            {
+              "title": "Next to",
+              "kicker": "Al lado de",
+              "desc": "Significa que algo o alguien está al lado de otra cosa.",
+              "example": "Mary sat next to me in the ceremony."
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Expresiones fijas con At",
+              "content": "at home | at work | at school | at university | at college | at the top | at the bottom | at the side | at reception"
+            },
+            {
+              "title": "Expresiones fijas con In",
+              "content": "in a car | in a taxi | in a helicopter | in a boat | in a lift | in the newspaper | in the sky | in a row | in a street"
+            },
+            {
+              "title": "Expresiones fijas con On",
+              "content": "on a bus | on a train | on a plane | on a ship | on a bicycle | on a motorbike | on a horse | on an elephant | on the radio | on TV | on the left | on the right | on the way"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "3.6. Question tags",
+      "short": "Question tags",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las question tags son pequeñas preguntas añadidas al final de una oración para confirmar información. Se forman con el verbo auxiliar de la oración y el sujeto. La regla general es: si la oración es positiva, la question tag es negativa; si la oración es negativa, la question tag es positiva."
+        },
+        {
+          "type": "code",
+          "content": "Regla general:\nFrase positiva  →  question tag negativa\nFrase negativa  →  question tag positiva\n\nEjemplos:\nMary will be late, won't she?\nThey don't have the notes, do they?\nShe works in a hospital, doesn't she?\nThey didn't pay the taxes, did they?"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Excepción 1: Let's → shall we?",
+              "content": "Después de Let's, la question tag siempre es 'shall we?'.\n\nEjemplos: Let's start with the calls, shall we? / Let's go out, shall we? / Let's take a day off tomorrow, shall we?"
+            },
+            {
+              "title": "Excepción 2: I'm → aren't I?",
+              "content": "Después de I'm, la question tag es 'aren't I?'.\n\nEjemplos: I'm wrong, aren't I? / I'm alone today, aren't I? / I'm such a good swimmer, aren't I?"
+            },
+            {
+              "title": "Excepción 3: imperativo → will you?",
+              "content": "Después de un imperativo (positivo o negativo), la question tag es 'will you?'.\n\nEjemplos: Don't stay until late, will you? / Stay here, will you? / Pass me the sugar, will you?"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Frase", "Question tag", "Razón"],
+          "rows": [
+            ["Mary will be late, ...", "won't she?", "Frase positiva → tag negativa"],
+            ["They don't have the notes, ...", "do they?", "Frase negativa → tag positiva"],
+            ["Let's start, ...", "shall we?", "Excepción: Let's"],
+            ["I'm wrong, ...", "aren't I?", "Excepción: I'm"],
+            ["Don't stay late, ...", "will you?", "Excepción: imperativo"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "label": "Vocabulario: procesadores de texto y teclado",
+      "short": "Vocabulario",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Un procesador de textos (word processor) es un programa informático para escribir, editar y formatear documentos. Los más populares son Microsoft Word, Google Docs y LibreOffice Writer. Permiten tareas como cambiar fuentes, revisar ortografía, insertar imágenes, copiar y pegar texto, e imprimir documentos."
+        },
+        {
+          "type": "flipcards",
+          "items": [
+            { "term": "word processor", "def": "procesador de textos" },
+            { "term": "to edit", "def": "editar" },
+            { "term": "to format", "def": "formatear, dar formato" },
+            { "term": "font", "def": "fuente tipográfica" },
+            { "term": "bold", "def": "negrita" },
+            { "term": "italic", "def": "cursiva" },
+            { "term": "underlined", "def": "subrayado" },
+            { "term": "spell check", "def": "corrector ortográfico" },
+            { "term": "to insert", "def": "insertar" },
+            { "term": "to copy", "def": "copiar" },
+            { "term": "to cut", "def": "cortar" },
+            { "term": "to paste", "def": "pegar" },
+            { "term": "to save", "def": "guardar" },
+            { "term": "to print", "def": "imprimir" },
+            { "term": "bullet points", "def": "viñetas, puntos de lista" },
+            { "term": "page layout", "def": "diseño de página" },
+            { "term": "header", "def": "encabezado" },
+            { "term": "footer", "def": "pie de página" },
+            { "term": "margins", "def": "márgenes" },
+            { "term": "portrait", "def": "orientación vertical" },
+            { "term": "landscape", "def": "orientación horizontal" },
+            { "term": "shortcut", "def": "atajo de teclado" },
+            { "term": "at sign (@)", "def": "arroba" },
+            { "term": "hash (#)", "def": "almohadilla" },
+            { "term": "percent sign (%)", "def": "signo de porcentaje" },
+            { "term": "ampersand (&)", "def": "et, símbolo &" },
+            { "term": "asterisk (*)", "def": "asterisco" },
+            { "term": "parentheses (())", "def": "paréntesis" },
+            { "term": "square brackets ([])", "def": "corchetes" },
+            { "term": "curly braces ({})", "def": "llaves" },
+            { "term": "slash (/)", "def": "barra diagonal" },
+            { "term": "backslash (\\)", "def": "barra invertida" },
+            { "term": "hyphen / dash (—)", "def": "guion / raya" },
+            { "term": "underscore (_)", "def": "guion bajo" },
+            { "term": "quotation marks (\")", "def": "comillas" },
+            { "term": "apostrophe (')", "def": "apóstrofo" },
+            { "term": "colon (:)", "def": "dos puntos" },
+            { "term": "semicolon (;)", "def": "punto y coma" },
+            { "term": "period / full stop (.)", "def": "punto final" },
+            { "term": "comma (,)", "def": "coma" },
+            { "term": "exclamation mark (!)", "def": "signo de exclamación" },
+            { "term": "question mark (?)", "def": "signo de interrogación" },
+            { "term": "caret (^)", "def": "acento circunflejo / caret" }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Past Simple", "def": "Tiempo verbal que describe acciones terminadas en un momento específico del pasado" },
+    { "term": "Past Continuous", "def": "Tiempo verbal que describe acciones que estaban en progreso en un momento del pasado (was/were + -ing)" },
+    { "term": "Present Perfect Simple", "def": "Tiempo verbal que conecta el pasado con el presente (have/has + participio de pasado)" },
+    { "term": "regular verb", "def": "Verbo regular: forma el pasado añadiendo -ed/-d al infinitivo" },
+    { "term": "irregular verb", "def": "Verbo irregular: tiene formas propias en pasado y participio que hay que memorizar" },
+    { "term": "past participle", "def": "Participio de pasado: tercera forma verbal usada en Present Perfect y voz pasiva" },
+    { "term": "gerund (-ing form)", "def": "Gerundio: forma verbal terminada en -ing, usada en Past Continuous y otros tiempos" },
+    { "term": "used to", "def": "Estructura para hablar de hábitos pasados que ya no existen (used to + infinitivo)" },
+    { "term": "auxiliary verb", "def": "Verbo auxiliar: do/does/did/have/has/was/were, usado para formar negativas e interrogativas" },
+    { "term": "question tag", "def": "Mini pregunta al final de una oración para confirmar información" },
+    { "term": "preposition of place", "def": "Preposición de lugar: indica la posición de algo o alguien en relación con otro elemento" },
+    { "term": "for", "def": "Durante (un periodo de tiempo): used with Present Perfect to indicate duration" },
+    { "term": "since", "def": "Desde / desde que (un punto en el tiempo): used with Present Perfect to indicate a starting point" },
+    { "term": "ever", "def": "Alguna vez: used in questions with Present Perfect" },
+    { "term": "yet", "def": "Ya (preguntas) / aún, todavía (negativas): used at the end of sentences with Present Perfect" },
+    { "term": "already", "def": "Ya (antes de lo esperado): used in affirmative sentences with Present Perfect" },
+    { "term": "just", "def": "Acabar de: used with Present Perfect to indicate something happened very recently" }
+  ],
+  "quiz": [
+    {
+      "question": "She ... (not/go) to work yesterday because she was ill.",
+      "options": ["didn't went", "didn't go", "doesn't go", "wasn't go"],
+      "correct": 1,
+      "explanation": "En el Past Simple, las oraciones negativas se forman con didn't + verbo en infinitivo (sin -ed). Por tanto: didn't go."
+    },
+    {
+      "question": "¿Cuál es la forma correcta del verbo 'fly' en Past Simple?",
+      "options": ["flyed", "flied", "flew", "flown"],
+      "correct": 2,
+      "explanation": "Fly es un verbo irregular. Su forma de Past Simple es flew. Flown es el participio de pasado."
+    },
+    {
+      "question": "While Tom ... (read), his sister ... (listen) to music.",
+      "options": ["was reading / was listening", "read / listened", "was reading / listened", "reads / listens"],
+      "correct": 0,
+      "explanation": "Cuando dos acciones ocurrían simultáneamente en el pasado, se usa el Past Continuous para ambas: was/were + -ing."
+    },
+    {
+      "question": "I ... to the gym three times this week.",
+      "options": ["went", "have gone", "was going", "go"],
+      "correct": 1,
+      "explanation": "Se usa el Present Perfect (have/has + participio) cuando la acción tiene relevancia en el presente o el periodo de tiempo no ha terminado (this week)."
+    },
+    {
+      "question": "... you ever ... in a foreign country?",
+      "options": ["Did / live", "Have / lived", "Were / living", "Do / live"],
+      "correct": 1,
+      "explanation": "Con ever se usa el Present Perfect: Have you ever + participio de pasado. La forma correcta es Have you ever lived."
+    },
+    {
+      "question": "She ... work in a bakery, but now she is a teacher.",
+      "options": ["used to", "was used to", "use to", "did use to"],
+      "correct": 0,
+      "explanation": "Para hablar de un hábito del pasado que ya no existe, se usa used to + infinitivo en la forma afirmativa."
+    },
+    {
+      "question": "The keys are ... the table.",
+      "options": ["in", "at", "on", "under"],
+      "correct": 2,
+      "explanation": "On se usa para indicar que algo está sobre una superficie. Las llaves están encima de la mesa: on the table."
+    },
+    {
+      "question": "She broke her glasses ....",
+      "options": ["since two years", "for a long time", "yesterday", "already"],
+      "correct": 2,
+      "explanation": "El Past Simple se usa con marcadores de tiempo específicos y pasados como yesterday, last week, ago. Yesterday indica un tiempo definido y terminado."
+    },
+    {
+      "question": "They haven't finished the project ..., ... they?",
+      "options": ["yet / have", "already / haven't", "still / did", "just / haven't"],
+      "correct": 0,
+      "explanation": "Yet va al final en frases negativas con Present Perfect. La question tag de una frase negativa es positiva, por tanto: have they?"
+    },
+    {
+      "question": "Let's review the notes, ... ?",
+      "options": ["don't we", "won't we", "shall we", "will we"],
+      "correct": 2,
+      "explanation": "Esta es una excepción de las question tags: después de Let's, siempre se usa shall we? independientemente del contexto."
+    }
+  ],
+  "_sources": {
+    "s1": "ip_u3_main.txt §3.1 + ip_u3_pastSimple.txt + ip_u3_verbToBe.txt + ip_u3_usedTo.txt",
+    "s2": "ip_u3_main.txt §3.2 + ip_u3_pastCont.txt",
+    "s3": "ip_u3_main.txt §3.3 + ip_u3_presentPerf.txt",
+    "s4": "ip_u3_main.txt §3.4 + ip_u3_summary.txt",
+    "s5": "ip_u3_main.txt §3.5 + ip_u3_diapos_prep.txt",
+    "s6": "ip_u3_main.txt §3.6 + ip_u3_questionTags.txt",
+    "s7": "ip_u3_vocab.txt §3.1.1–3.1.3"
+  }
+}
