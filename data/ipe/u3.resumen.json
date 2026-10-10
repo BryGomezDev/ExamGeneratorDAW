@@ -1,0 +1,411 @@
+{
+  "subject": "ipe",
+  "unit": 3,
+  "title": "Concepto de marketing y análisis de mercado",
+  "intro": "El marketing está reconocido como el área encargada de crear y comunicar el valor del producto comercializado. No se limita a las ventas o la publicidad, sino que abarca el conjunto de procesos que vinculan a la organización con su público objetivo. Esta unidad estudia las funciones del marketing, sus tipologías, los distintos enfoques de gestión que puede adoptar una empresa, el concepto de mercado y demanda, y el método Lean Startup como herramienta de validación de modelos de negocio.",
+  "objectives": [
+    "Conocer la función del marketing dentro de una empresa",
+    "Identificar los distintos tipos de marketing que existen",
+    "Profundizar en las distintas orientaciones de una empresa según el tipo de marketing que seleccione",
+    "Analizar los tipos de compradores y estructuras de mercado que pueden existir",
+    "Descubrir el método Lean Startup para formar nuevas empresas o idear nuevos productos"
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "3.1. Aproximación al concepto y funciones del marketing",
+      "short": "Concepto y funciones",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Para establecer cómo son los procesos de interrelación entre las empresas y su público, es importante identificar con claridad en qué consiste el marketing. Es un error frecuente utilizarlo para referirse solo a actividades parciales como las ventas, la publicidad o el análisis de mercado. Como punto de partida global, el marketing es el área de conocimiento que se focaliza en el reconocimiento y la optimización de las relaciones de intercambio entre la organización y su público objetivo."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "3.1.1. Concepto de marketing",
+              "content": "El marketing se define como el proceso de planificación y ejecución de la concepción del producto, la fijación de precios y la promoción y distribución de ideas, bienes y servicios, con el fin de crear relaciones de intercambio que satisfagan objetivos individuales y organizacionales. Aspectos destacados: (1) Es un proceso de planificación vinculado a la planificación estratégica. (2) Todo el proceso gira en torno al intercambio, desde la perspectiva económica y no monetaria. (3) Se sustenta sobre cuatro pilares: creación y diseño de productos, fijación de precios, promoción o comunicación y distribución. (4) Su campo de actuación alcanza a empresas, instituciones públicas o privadas e individuos. (5) La satisfacción se convierte en la meta que guía todo el proceso."
+            },
+            {
+              "title": "3.1.2. Funciones del marketing en la empresa y en la economía",
+              "content": "Las organizaciones son un sistema abierto cuya supervivencia está condicionada por la efectividad de sus interacciones con su microentorno y macroentorno. El enfoque sistémico da lugar a tres subsistemas: (1) Subsistemas del ciclo de explotación: aprovisionamiento, producción, distribución y comercialización. (2) Subsistemas del ciclo de capital: financiación e inversión. (3) Subsistemas directivos: planificación y control, información y comunicación. El marketing es el instrumento fundamental en el ciclo de explotación, ya que permite transformar bienes o servicios en flujos de ingresos tras su venta. Las funciones del marketing en la empresa se agrupan en dos categorías: funciones de análisis (reconocer nuevas oportunidades de negocio) y funciones de planificación y decisión (determinar la organización y gestión de recursos para aprovecharlas)."
+            },
+            {
+              "title": "3.1.3. Tipologías de marketing",
+              "content": "El marketing manifiesta diferentes características según el marco de actuación. Los tipos más relevantes son: Marketing estratégico (análisis continuo e identificación de necesidades del público objetivo para dirigir las acciones de la empresa), Marketing operativo (focalizado en la acción y puesta en marcha de medidas a corto o medio plazo), Marketing interno (actuaciones dentro de la organización dirigidas a sus propios integrantes para conseguir su satisfacción y orientarlos al cliente), Marketing externo (actuaciones orientadas al establecimiento y mantenimiento de las relaciones entre la organización y el público objetivo), Marketing interactivo (calidad de los servicios condicionada por la calidad de la interacción oferente-demandante), Marketing relacional (potencia la satisfacción a través de canales que construyen confianza y una relación a largo plazo con el público objetivo), Marketing emocional (acerca la organización al cliente a través de las emociones, dotándola de una personalidad propia que fomenta la fidelidad y la repetición de compra), Marketing social (transforma opiniones, actitudes y comportamientos del público objetivo mediante campañas de concienciación ciudadana sin priorizar el aspecto lucrativo), Marketing político (acciones impulsadas por actores políticos para atraer el apoyo de los votantes, con objetivos de tipo ideológico)."
+            }
+          ]
+        },
+        {
+          "type": "flipcards",
+          "items": [
+            {
+              "term": "Marketing estratégico",
+              "def": "Análisis continuo de las necesidades del público objetivo para dirigir las acciones de la empresa. Detecta oportunidades y amenazas y prepara a la organización para adaptarse a los cambios."
+            },
+            {
+              "term": "Marketing operativo",
+              "def": "Focalizado en la acción y la puesta en marcha de medidas para aprovechar las oportunidades identificadas por el marketing estratégico. Sus objetivos son de carácter práctico a corto o medio plazo."
+            },
+            {
+              "term": "Marketing relacional",
+              "def": "Incluye todas las actuaciones que desarrolla una organización en su interacción con los distintos públicos que le rodean, con el fin de mantener una relación significativa a largo plazo."
+            },
+            {
+              "term": "Marketing emocional",
+              "def": "Pretende acercar la organización al cliente a través de las emociones, dotándola de una personalidad propia. Crea una conexión producto-consumo-consumidor que fomenta la fidelidad."
+            },
+            {
+              "term": "Marketing social",
+              "def": "También conocido como marketing de las causas sociales. Busca transformar opiniones, actitudes y comportamientos del público objetivo sin priorizar el aspecto lucrativo."
+            },
+            {
+              "term": "Marketing político",
+              "def": "Engloba las acciones impulsadas por actores políticos para atraer el apoyo del público objetivo (los votantes), con objetivos de tipo ideológico."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "3.2. El marketing en la gestión de la organización",
+      "short": "Marketing en la gestión",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En la gestión del marketing se puede optar por diversos enfoques, según el grado de importancia que se les otorgue a los consumidores, a la organización y a la sociedad en general. Estos enfoques derivan en cinco modelos para la actividad comercial: orientación hacia el producto, orientación hacia las ventas, orientación hacia el cliente o consumidor, orientación hacia la competencia y orientación hacia el mercado."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Modelo 1",
+              "title": "Orientación hacia el producto",
+              "desc": "La organización decide de manera independiente acerca de la oferta y el producto a comercializar, dando por hecho que la respuesta de los clientes será satisfactoria. Visión extrema: demanda superior a la oferta, objetivo de mayor producción al menor coste. Visión intermedia: equilibrio entre oferta y demanda, mayor atención a la calidad técnica del producto.",
+              "example": "Mercados en los que la demanda supera a la oferta y la empresa se centra en producir más al menor coste posible."
+            },
+            {
+              "kicker": "Modelo 2",
+              "title": "Orientación hacia las ventas",
+              "desc": "En mercados con alta competencia, la empresa organiza un sistema de venta para incentivar al cliente. Implica un proceso de persuasión, canales y puntos de venta atractivos y un equipo de ventas altamente cualificado. El riesgo es dejar de prestar atención a la satisfacción del cliente.",
+              "example": "Empresa que prioriza alcanzar cifras de venta fijadas por la organización por encima de la satisfacción del cliente."
+            },
+            {
+              "kicker": "Modelo 3",
+              "title": "Orientación hacia el cliente o consumidor",
+              "desc": "Cuando la oferta es muy superior a la demanda, el cliente tiene el mayor poder de decisión. Es imprescindible identificar las necesidades y deseos del público objetivo para diseñar una oferta que los satisfaga. Exige un marketing integrado donde la satisfacción del cliente es un objetivo global.",
+              "example": "Empresa que adapta su producto y procesos a las necesidades detectadas en el mercado."
+            },
+            {
+              "kicker": "Modelo 4",
+              "title": "Orientación hacia la competencia",
+              "desc": "No es suficiente satisfacer las necesidades del consumidor; hay que analizar también a la competencia, pues el cliente puede sustituir a la empresa por un competidor. Recomendable en mercados con alta competencia identificable. Potencia la capacidad de reacción, aunque con el riesgo de condicionar en exceso el desarrollo estratégico.",
+              "example": "Empresa que monitoriza continuamente los precios y acciones de sus competidores directos."
+            },
+            {
+              "kicker": "Modelo 5",
+              "title": "Orientación hacia el mercado",
+              "desc": "Enfoque proactivo que pretende anticiparse a posibles problemas y necesidades futuras. Dirige el marketing hacia todos los niveles de mercado y todas las funciones de la organización, con una cultura organizativa y de mercado compartida.",
+              "example": "Empresa que invierte en investigación de tendencias para detectar necesidades antes de que los clientes las verbalicen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "3.3. Concepto de mercado. Oferta. Demanda",
+      "short": "Mercado, oferta y demanda",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El mercado es el lugar o medio en el que interactúan comprador y vendedor para realizar un intercambio comercial. También se puede entender como un conjunto de individuos que, sintiendo una necesidad, desean satisfacerla y tienen recursos y capacidad para ello. Los mercados se clasifican según distintos criterios: el tipo de comprador, el ámbito geográfico, el tipo de producto y la estructura de la competencia."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Tipos de mercado según el comprador",
+              "content": "Mercado de consumo: compuesto por individuos que compran para satisfacer sus necesidades o las de su entorno inmediato. Produce la demanda final. Mercado industrial: empresas que compran bienes y servicios para sus procesos de producción. Es la demanda derivada. Mercado institucional: organismos públicos e instituciones sin ánimo de lucro que compran productos para llevar a cabo sus actividades."
+            },
+            {
+              "title": "Tipos de mercado según el ámbito geográfico",
+              "content": "Mercado local: dimensión pequeña, en la localidad donde opera la empresa y alrededores. Mercado regional: todas las localidades de una región natural, política o económica. Mercado nacional: todos los intercambios dentro de un país (mercado interior). Mercado internacional: se ubica en diferentes países; también existe el mercado comunitario (países de la Unión Europea). Mercado global: alcanza a todos los continentes."
+            },
+            {
+              "title": "Tipos de mercado según el tipo de producto",
+              "content": "Mercado de bienes: hay intercambio de productos tangibles. Mercado de servicios: hay prestación de servicios o productos intangibles."
+            },
+            {
+              "title": "Tipos de mercado según la estructura de la competencia",
+              "content": "Monopolio de oferta: un solo vendedor y muchos compradores. Monopolio de demanda (monopsonio): un solo comprador y varios vendedores. Oligopolio de oferta: pocos vendedores y muchos compradores. Oligopolio de demanda: muchos vendedores para pocos compradores. Competencia perfecta: muchos compradores y muchos vendedores con producto homogéneo, sin diferenciación. Competencia monopolística: muchos vendedores con producto diferenciado y muchos compradores; es el mercado más común en las economías actuales."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Oferta / Demanda", "Muchos compradores", "Pocos compradores", "Un comprador"],
+          "rows": [
+            ["Muchos vendedores", "Competencia perfecta (homogéneo) o monopolística (diferenciado)", "Oligopolio de demanda", "Monopolio de demanda (monopsonio)"],
+            ["Pocos vendedores", "Oligopolio de oferta", "Oligopolio bilateral", "Monopolio limitado de demanda"],
+            ["Un vendedor", "Monopolio de oferta", "Monopolio limitado de oferta", "Monopolio bilateral"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "La demanda es la cantidad de producto que los compradores quieren adquirir en ciertas condiciones y a un determinado precio. Depende de: la renta disponible y su distribución (a mayor renta, mayor demanda general; la distribución condiciona qué tipo de productos se demandan), el comportamiento del consumidor (condicionado por factores externos como familia, cultura y grupos de referencia, e internos como experiencia y personalidad), el precio del producto (cuanto más se ajuste a las expectativas del cliente, mayor será la demanda) y el precio de los demás bienes (la existencia de productos sustitutivos condiciona la demanda)."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "3.3.1. Técnicas de estimación de la demanda",
+              "content": "Se aplican cuando no hay información de periodos anteriores (producto nuevo o empresa que inicia su actividad). Los métodos más utilizados son: Método de los ratios en cadena (aplicado en mercados de consumo; se multiplican los porcentajes de personas que cumplen condiciones predefinidas por la cantidad media de producto consumida en un periodo) y Método de construcción del mercado (aplicado en mercados industriales; la demanda estimada es la suma de las necesidades de todos los consumidores potenciales identificados)."
+            },
+            {
+              "title": "Técnicas de previsión de la demanda",
+              "content": "Se aplican cuando se dispone del histórico de datos de otros ejercicios. Los métodos con mejores resultados son: Método ingenuo (aplica el porcentaje de variación de los dos últimos periodos, bajo la premisa de que el siguiente tendrá la misma tendencia), Método de las medias simples (calcula la media aritmética de la demanda en los últimos periodos; usa más datos que el anterior, por lo que el resultado es más fiable) y Medias móviles simples (calcula medias de datos de varios periodos agrupados, dando más peso a los periodos centrales y obteniendo un resultado ajustado a las tendencias del mercado)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "3.4. El método Lean Startup",
+      "short": "Lean Startup",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Eric Ries y Steve Blank propusieron el método científico Lean Startup para cambiar la forma en la que se construyen las empresas o se sacan nuevos productos al mercado. Se basa en la experimentación y el aprendizaje validado, mediante la prueba en el exterior de cada una de las hipótesis del modelo de negocio planteado. Se origina en el sistema de producción ágil (lean) implantado por fabricantes japoneses de coches en los años 80, aplicado a las startups. Se dirige a proyectos en su fase inicial con incertidumbre o riesgo cliente/mercado: pequeños negocios, startups con posibilidades de crecer, emprendedores sociales o departamentos de innovación. La hipótesis queda validada cuando se encuentran clientes reales dispuestos a pagar por la propuesta de valor creada."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "3.4.1. Identificación de las hipótesis del modelo de negocio y diseño del experimento",
+              "content": "La clave del Lean Startup es diseñar un experimento que facilite la comprobación y validación de las hipótesis en las que se ha basado el modelo de negocio. El proceso tiene dos pasos: primero, se identifican las hipótesis y se hace un listado por orden de importancia; segundo, se diseña el experimento donde se pondrán a prueba todas las hipótesis y se medirán los resultados. La primera hipótesis que se valida es que existe la necesidad que se quiere cubrir. La segunda, que la propuesta de negocio efectivamente cubre esa necesidad."
+            },
+            {
+              "title": "3.4.2. Creación del producto mínimo viable (PMV)",
+              "content": "Para llevar a cabo el experimento, es necesario desarrollar un producto mínimo viable (PMV): una versión de prueba del producto que incluya las características básicas necesarias para satisfacer las necesidades de los clientes. Debe servir para analizar, medir y aprender con la menor inversión de trabajo, tiempo y dinero posible."
+            },
+            {
+              "title": "3.4.3. Qué parámetros debemos medir",
+              "content": "El PMV se lanza al mercado real para obtener información relevante de los primeros clientes. Se debe crear una lista con indicadores para realizar las mediciones y tener definido el propio sistema de medición. Los parámetros deben ser relevantes y significativos para el modelo de negocio."
+            },
+            {
+              "title": "3.4.4. Aprendizaje validado: pivotar o perseverar",
+              "content": "En esta fase se obtiene información interactuando con clientes reales, para descubrir: quiénes son, qué propuesta de valor demandan, sus reacciones ante el producto, qué precio estarían dispuestos a pagar y cómo llegar a ellos eficazmente. Las respuestas se consiguen mediante el método de ensayo y error, con ciclos cortos repetitivos que ayudan a perseverar en lo que funciona en el modelo de negocio y a abandonar (pivotar) aquello que es conveniente modificar."
+            }
+          ]
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Identificar hipótesis del modelo de negocio",
+            "Diseñar el experimento de validación",
+            "Crear el Producto Mínimo Viable (PMV)",
+            "Definir parámetros e indicadores de medición",
+            "Lanzar el PMV al mercado real",
+            "Aprendizaje validado: pivotar o perseverar"
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Marketing",
+      "def": "Proceso de planificación y ejecución de la concepción del producto, la fijación de precios y la promoción y distribución de ideas, bienes y servicios, con el fin de crear relaciones de intercambio que satisfagan objetivos individuales y organizacionales."
+    },
+    {
+      "term": "Marketing estratégico",
+      "def": "Se centra en el análisis continuo y la identificación de las necesidades y anhelos del público objetivo, con el fin de dirigir las acciones de la empresa a cubrir efectivamente dichas necesidades."
+    },
+    {
+      "term": "Marketing operativo",
+      "def": "Se focaliza en la acción y la puesta en marcha de las medidas adecuadas para un aprovechamiento óptimo de las oportunidades identificadas por el marketing estratégico. Sus objetivos son de carácter práctico a corto o medio plazo."
+    },
+    {
+      "term": "Marketing interno",
+      "def": "Actuaciones de marketing elaboradas dentro de la organización y dirigidas a sus propios integrantes, con el fin de conseguir su satisfacción y un trabajo más efectivo y orientado a las necesidades de los clientes."
+    },
+    {
+      "term": "Marketing externo",
+      "def": "Actuaciones orientadas al establecimiento y mantenimiento de las relaciones entre la organización y el público objetivo."
+    },
+    {
+      "term": "Marketing relacional",
+      "def": "Actuaciones e iniciativas de una organización en su interacción con los distintos públicos que le rodean, para potenciar la satisfacción a través de canales que construyan confianza y una relación significativa a largo plazo."
+    },
+    {
+      "term": "Marketing emocional",
+      "def": "Pretende acercar la organización al cliente a través de las emociones, dotándola de una personalidad propia. Gestiona el acto de compra o consumo para que se vincule a emociones y vivencias gratificantes, fortaleciendo la marca."
+    },
+    {
+      "term": "Marketing social",
+      "def": "También conocido como marketing de las causas sociales. Busca transformar opiniones, actitudes y comportamientos del público objetivo mediante campañas de concienciación ciudadana, sin priorizar el aspecto lucrativo."
+    },
+    {
+      "term": "Marketing político",
+      "def": "Acciones impulsadas por los actores políticos para atraer el apoyo del público objetivo (los votantes), con objetivos de tipo ideológico que afectan a las cuestiones sociopolíticas y económicas."
+    },
+    {
+      "term": "Ciclo de explotación",
+      "def": "Tareas dirigidas a la obtención y transformación de los recursos que permiten desarrollar la actividad de la empresa y aprovechar las oportunidades de mercado, delimitando el plan orientado a la generación de beneficios y la consecución de objetivos."
+    },
+    {
+      "term": "Mercado",
+      "def": "Lugar o medio en el que interactúan comprador y vendedor para realizar un intercambio comercial. También se entiende como el conjunto de individuos que, sintiendo una necesidad, desean satisfacerla y tienen recursos y capacidad para ello."
+    },
+    {
+      "term": "Demanda",
+      "def": "Cantidad de producto que los compradores quieren adquirir en ciertas condiciones y a un determinado precio. Depende de la renta disponible, el comportamiento del consumidor, el precio del producto y el precio de los bienes sustitutivos."
+    },
+    {
+      "term": "Monopolio de oferta",
+      "def": "Estructura de mercado con un solo vendedor y muchos compradores."
+    },
+    {
+      "term": "Competencia monopolística",
+      "def": "Estructura de mercado con muchos vendedores de producto diferenciado y muchos compradores. Es el mercado más común en las economías actuales."
+    },
+    {
+      "term": "Método Lean Startup",
+      "def": "Método científico basado en la experimentación y el aprendizaje validado, mediante la prueba en el exterior de las hipótesis del modelo de negocio planteado, con el fin de construirlo e implementarlo con mayor posibilidad de éxito."
+    },
+    {
+      "term": "Producto mínimo viable (PMV)",
+      "def": "Versión de prueba del producto que incluye las características básicas necesarias para satisfacer las necesidades de los clientes. Debe servir para analizar, medir y aprender con la menor inversión de trabajo, tiempo y dinero."
+    },
+    {
+      "term": "Pivotar",
+      "def": "En el contexto Lean Startup, abandonar o modificar aquellos aspectos del modelo de negocio que no funcionan, a partir del aprendizaje validado obtenido con el PMV."
+    },
+    {
+      "term": "Perseverar",
+      "def": "En el contexto Lean Startup, mantener y potenciar aquellos aspectos del modelo de negocio que han demostrado funcionar, a partir del aprendizaje validado obtenido con el PMV."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "¿Cómo se define el marketing según el temario?",
+      "options": [
+        "El conjunto de técnicas de publicidad y ventas de una empresa",
+        "El proceso de planificación y ejecución de la concepción del producto, la fijación de precios y la promoción y distribución de ideas, bienes y servicios para crear relaciones de intercambio",
+        "El área de la empresa encargada exclusivamente de la distribución de productos",
+        "El análisis del comportamiento del consumidor en el mercado"
+      ],
+      "correct": 1,
+      "explanation": "El marketing se define como el proceso de planificación y ejecución de la concepción del producto, la fijación de precios y la promoción y distribución de ideas, bienes y servicios, con el fin de crear relaciones de intercambio que satisfagan objetivos individuales y organizacionales."
+    },
+    {
+      "question": "¿Cuáles son las dos categorías en las que se agrupan las funciones del marketing en la empresa?",
+      "options": [
+        "Funciones internas y funciones externas",
+        "Funciones estratégicas y funciones operativas",
+        "Funciones de análisis y funciones de planificación y decisión",
+        "Funciones de producción y funciones de distribución"
+      ],
+      "correct": 2,
+      "explanation": "Las funciones del marketing en la empresa se agrupan en funciones de análisis (reconocer nuevas oportunidades de negocio) y funciones de planificación y decisión (determinar la organización y gestión de recursos para aprovechar esas oportunidades)."
+    },
+    {
+      "question": "El marketing relacional busca principalmente:",
+      "options": [
+        "Maximizar las ventas a corto plazo mediante campañas publicitarias intensivas",
+        "Mantener una relación significativa a largo plazo con el público objetivo",
+        "Reducir los costes de producción del producto",
+        "Adaptarse a las acciones de los competidores en el mercado"
+      ],
+      "correct": 1,
+      "explanation": "El marketing relacional incluye todas las actuaciones e iniciativas que desarrolla una organización en su interacción con sus distintos públicos, con el fin de potenciar la satisfacción a través de canales que construyan confianza y una relación significativa a largo plazo."
+    },
+    {
+      "question": "¿Cuál de las siguientes orientaciones de marketing es recomendable para organizaciones en mercados con nivel de competencia alta y competencia identificable?",
+      "options": [
+        "Orientación hacia el producto",
+        "Orientación hacia las ventas",
+        "Orientación hacia el cliente o consumidor",
+        "Orientación hacia la competencia"
+      ],
+      "correct": 3,
+      "explanation": "La orientación hacia la competencia es recomendable para organizaciones en mercados con un nivel de competencia alta, en los que se puede identificar con nitidez a la competencia, sus características y sus comportamientos."
+    },
+    {
+      "question": "¿Qué es el mercado industrial según la clasificación por tipo de comprador?",
+      "options": [
+        "Organismos públicos e instituciones sin ánimo de lucro que compran para sus actividades",
+        "Individuos que compran para satisfacer sus necesidades personales o familiares",
+        "Empresas que compran bienes y servicios necesarios para sus procesos de producción",
+        "Empresas multinacionales que operan en mercados globales"
+      ],
+      "correct": 2,
+      "explanation": "El mercado industrial está compuesto por empresas que compran bienes y servicios que necesitan para sus procesos de producción. La demanda que produce este mercado se denomina demanda derivada."
+    },
+    {
+      "question": "¿Qué método de estimación de la demanda se aplica en mercados industriales donde se conoce el número de consumidores potenciales?",
+      "options": [
+        "Método ingenuo",
+        "Método de los ratios en cadena",
+        "Medias móviles simples",
+        "Método de construcción del mercado"
+      ],
+      "correct": 3,
+      "explanation": "El método de construcción del mercado se aplica en mercados industriales, donde se conoce el número de consumidores potenciales y las posibles necesidades de producto. La demanda estimada es la suma de las necesidades de todos ellos."
+    },
+    {
+      "question": "En el método Lean Startup, ¿cuándo se considera que la hipótesis del modelo de negocio ha sido validada?",
+      "options": [
+        "Cuando el producto mínimo viable supera la fase de diseño interno",
+        "Cuando se publican los resultados del experimento en el mercado",
+        "Cuando se encuentran clientes reales dispuestos a pagar por la propuesta de valor creada",
+        "Cuando se completan todos los pasos del plan de empresa"
+      ],
+      "correct": 2,
+      "explanation": "Se puede afirmar que se ha validado la hipótesis del modelo de negocio en el momento en que se encuentran clientes reales que están dispuestos a pagar por la propuesta de valor creada."
+    },
+    {
+      "question": "¿Qué significa pivotar en el contexto del método Lean Startup?",
+      "options": [
+        "Ampliar la inversión en el producto para acelerar su lanzamiento",
+        "Mantener el modelo de negocio porque los resultados han sido positivos",
+        "Abandonar o modificar aquellos aspectos del modelo de negocio que no funcionan",
+        "Realizar una nueva ronda de financiación para la startup"
+      ],
+      "correct": 2,
+      "explanation": "Pivotar consiste en abandonar aquello que es conveniente modificar, a diferencia de perseverar en lo que funciona en el modelo de negocio. Ambas decisiones se toman a partir del aprendizaje validado obtenido con ciclos cortos repetitivos."
+    },
+    {
+      "question": "¿Cuál es la estructura de mercado más común en las economías actuales?",
+      "options": [
+        "Monopolio de oferta",
+        "Competencia perfecta",
+        "Oligopolio de demanda",
+        "Competencia monopolística"
+      ],
+      "correct": 3,
+      "explanation": "La competencia monopolística, caracterizada por muchos vendedores con producto diferenciado y muchos compradores que escogerán el que les aporte mayores beneficios, es el mercado más común en nuestras economías."
+    },
+    {
+      "question": "¿Qué es el Producto Mínimo Viable (PMV) en el método Lean Startup?",
+      "options": [
+        "El prototipo definitivo del producto listo para su comercialización masiva",
+        "Una versión de prueba del producto con las características básicas para satisfacer las necesidades de los clientes, con la menor inversión posible",
+        "El documento de planificación estratégica del modelo de negocio",
+        "El conjunto de indicadores financieros mínimos que debe cumplir una startup"
+      ],
+      "correct": 1,
+      "explanation": "El PMV es una versión de prueba del producto que incluye las características básicas necesarias para satisfacer las necesidades de los clientes. Debe servir para analizar, medir y aprender con la menor inversión de trabajo, tiempo y dinero."
+    }
+  ],
+  "_sources": {
+    "s1": "ipe_u3_main.txt §3.1 (pp. 4-8); ipe_u3_sintesis.txt conceptos fundamentales",
+    "s2": "ipe_u3_main.txt §3.2 (pp. 9-10); ipe_u3_diapos.txt El marketing en la gestión de la organización",
+    "s3": "ipe_u3_main.txt §3.3 y §3.3.1 (pp. 11-13); ipe_u3_sintesis.txt §demanda",
+    "s4": "ipe_u3_main.txt §3.4 y §3.4.1-3.4.4 (pp. 14-15); ipe_u3_diapos.txt El método Lean Startup"
+  }
+}
