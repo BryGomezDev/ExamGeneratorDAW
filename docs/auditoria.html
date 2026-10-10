@@ -1,325 +1,144 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Auditoría antes de publicar — Generador de Exámenes DAW</title>
-<style>
-:root{--bg:#10131f;--s:#1d1f2c;--b:#484551;--t:#e1e1f3;--m:#c9c4d2;--p:#c9beff}
-body{background:var(--bg);color:var(--t);font:16px/1.6 system-ui,'Segoe UI',sans-serif;margin:0}
-main{max-width:960px;margin:0 auto;padding:32px 20px 64px}
-h1,h2,h3{line-height:1.3} h2{border-bottom:1px solid var(--b);padding-bottom:6px;margin-top:40px}
-a{color:var(--p)} code{font-family:Consolas,monospace;background:var(--s);padding:1px 5px;border-radius:4px;font-size:.9em}
-pre{background:var(--s);border:1px solid var(--b);border-radius:8px;padding:14px;overflow-x:auto} pre code{background:none;padding:0}
-table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font-size:.92em}
-th,td{border:1px solid var(--b);padding:8px 10px;text-align:left;vertical-align:top} th{background:var(--s);color:var(--p)}
-blockquote{border-left:3px solid var(--p);margin:0;padding:4px 16px;color:var(--m);background:var(--s);border-radius:0 8px 8px 0}
-strong{color:#fff}
-</style></head><body><main><h1>Auditoría antes de publicar — Generador de Exámenes DAW</h1>
-<p>Fecha: 2026-10-03 · Alcance: estado local del repo antes del <code>git push</code> que publicará en <code>exam-generator-daw.vercel.app</code>.</p>
-<blockquote>
-<p>Cómo leer este informe: cada hallazgo indica <strong>severidad</strong>, <strong>archivo:línea</strong> y si es <strong>(comprobado)</strong> —visto en el código— o <strong>(interpretación)</strong> —mi lectura del riesgo—. No se ha modificado ningún archivo del proyecto; aplicar arreglos y publicar es un paso aparte.</p>
-</blockquote>
-<p><strong>Nota importante sobre el tipo de proyecto.</strong> La skill está pensada para webs estáticas, pero esta app <strong>no es estática pura</strong>: es un servidor Express (<code>server.js</code>) que Vercel ejecuta como función. Solo se sirve por HTTP lo que hay en <code>public/</code> más la API <code>/api/*</code> <strong>(comprobado, <code>server.js:9</code>)</strong>. El resto del repo (docs, scripts, CLAUDE.md…) no se sirve en la web, pero <strong>sí viaja a GitHub</strong> con el push.</p>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Auditoría antes de publicar</title><style>
+body{font-family:Arial,sans-serif;max-width:900px;margin:0 auto;padding:24px 16px;line-height:1.55;color:#1f2937;background:#fff}
+h1{color:#1E3A5F}h2{background:#D5E8F0;color:#1E3A5F;padding:6px 10px;border-radius:4px;margin-top:32px}h3{color:#2E75B6}
+table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}th{background:#2E75B6;color:#fff;text-align:left}th,td{border:1px solid #cbd5e1;padding:6px 8px;vertical-align:top}
+code{font-family:'Courier New',monospace;background:#F2F2F2;padding:1px 4px;border-radius:3px}pre{background:#F2F2F2;padding:12px;overflow-x:auto;border-radius:4px}pre code{padding:0}
+</style></head><body><h1>Auditoría antes de publicar — Generador de Exámenes DAW</h1>
+<p><strong>Fecha:</strong> 10/10/2026 · <strong>Alcance:</strong> estado actual del repo antes del push del lote U3/U4 (resúmenes prog/u3, prog/u4, lm/u3, ip/u3, ipe/u3; validador; arreglo del botón "Hacer el test"). Sustituye a la auditoría del 03/10/2026.
+<strong>Destino:</strong> Vercel (<code>vercel.json</code>: todas las rutas → <code>server.js</code>, Express). Publicar = <code>git push</code> a <code>master</code> (interpretación: integración Git de Vercel; no lo he comprobado en el panel de Vercel).</p>
+<p><strong>Cómo leer este informe</strong></p>
+<ul>
+<li><strong>(comprobado)</strong>: lo he visto en el código; se cita el archivo y la línea.</li>
+<li><strong>(interpretación)</strong>: es mi lectura del riesgo y no se puede verificar línea por línea.</li>
+</ul>
 <hr />
 <h2>Resumen ejecutivo</h2>
+<p><strong>No hay hallazgos críticos ni altos.</strong> Los arreglos de la auditoría anterior siguen en el código.</p>
 <table>
 <thead>
 <tr>
-<th>#</th>
+<th>ID</th>
 <th>Severidad</th>
 <th>Hallazgo</th>
-<th>Archivo</th>
+<th>Ubicación</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>S1</td>
-<td><strong>Alto</strong></td>
-<td>El test pinta preguntas, opciones y explicaciones con <code>innerHTML</code> sin escapar: las etiquetas HTML del temario (<code>&lt;link&gt;</code>, <code>&lt;video&gt;</code>, <code>&lt;form&gt;</code>…) desaparecen o se convierten en elementos reales</td>
-<td><code>public/index.html:1054, 1125-1126, 1202, 1215</code></td>
-</tr>
-<tr>
-<td>D1</td>
-<td><strong>Alto</strong></td>
-<td><code>data/lm/u2.txt</code> y <code>data/prog/u3.txt</code> existen en local pero <strong>no están en git</strong>: en producción no habrá test de LM U2 ni de Programación U3</td>
-<td><code>data/</code> + índice de git</td>
-</tr>
-<tr>
-<td>S2</td>
+<td>N1</td>
 <td>Medio</td>
-<td>Con el push se suben a GitHub ficheros internos: <code>.claude/settings.local.json</code> (rutas locales e historial de comandos), planes, informes de QA y 60 capturas (20 obsoletas)</td>
+<td>El push publicará también el <strong>test de IPE U3</strong> (<code>data/ipe/u3.txt</code> está en el índice de git), aunque este lote se planteó sin tests</td>
 <td>índice de git</td>
 </tr>
 <tr>
-<td>D2</td>
-<td>Medio</td>
-<td>Probablemente el push <strong>publica automáticamente</strong> (integración Git de Vercel); no hay vuelta atrás "en local"</td>
-<td>(interpretación)</td>
-</tr>
-<tr>
-<td>R1</td>
-<td>Medio</td>
-<td>En móvil (375 px) la miga de pan de la cabecera del test se corta ("Prue…")</td>
-<td><code>public/index.html:40-52</code></td>
-</tr>
-<tr>
-<td>D3</td>
-<td>Medio</td>
-<td>Verificar tras el despliegue que Vercel incluye los nuevos <code>*.resumen.json</code></td>
-<td><code>vercel.json</code></td>
-</tr>
-<tr>
-<td>S3</td>
+<td>N2</td>
 <td>Bajo</td>
-<td>La API devuelve <code>e.message</code> en los errores 500 (puede revelar rutas del servidor)</td>
-<td><code>server.js:238, 252, 268, 303</code></td>
+<td>En móvil (375 px), la tabla de 5 columnas de prog/u4 obliga a desplazarse en horizontal. Se puede usar, pero es incómodo</td>
+<td><code>data/prog/u4.resumen.json</code> + <code>summaries.html:253</code></td>
 </tr>
 <tr>
-<td>S4</td>
+<td>N3</td>
 <td>Bajo</td>
-<td>La validación de parámetros admite <code>..</code></td>
-<td><code>server.js:246, 260, 276, 309</code></td>
+<td>Se suben a GitHub scripts de un solo uso (<code>scripts/_patch-image-pdfs.js</code>, <code>scripts/qa-fase3.js</code>). No se sirven en la web</td>
+<td>índice de git</td>
 </tr>
 <tr>
-<td>S5</td>
+<td>N4</td>
 <td>Bajo</td>
-<td>Mensajes de error de <code>fetch</code> insertados con <code>innerHTML</code></td>
-<td><code>public/index.html:843, 963</code></td>
+<td><code>d.subject</code> y <code>sec.id</code> (que vienen del JSON) se insertan sin escapar en atributos e identificadores. Hoy no es explotable porque los JSON los escribes tú y se validan</td>
+<td><code>summaries.html:492, 840</code></td>
 </tr>
 </tbody>
 </table>
-<p>No se han encontrado <strong>secretos</strong> (claves de API, tokens, contraseñas) en el código <strong>(comprobado)</strong>: búsqueda de <code>api_key</code>, <code>password</code>, <code>secret</code>, <code>token</code>, <code>BEGIN … PRIVATE KEY</code>, <code>AKIA</code>, <code>ghp_</code>, <code>sk-</code>, <code>Bearer</code> en <code>.js/.json/.html/.md/.py</code> fuera de <code>node_modules</code>. Las coincidencias eran texto del temario ("tokens" de diseño, <code>&lt;input type='password'&gt;</code> en el resumen de LM U2).</p>
 <hr />
 <h2>1. Seguridad</h2>
-<p><strong>XSS (Cross-Site Scripting)</strong>: cuando un texto se mete en la página con <code>innerHTML</code> sin "escapar" (convertir <code>&lt;</code> en <code>&amp;lt;</code>, etc.), el navegador lo interpreta como HTML. Si ese texto viene de una persona, podría inyectar código que se ejecute en el navegador de otra.</p>
-<h3>S1 — Alto · Contenido del test sin escapar (comprobado)</h3>
-<p><code>public/index.html</code>:</p>
-<pre><code class="language-js">// 1054 — opciones de la pregunta
-btn.innerHTML = `&lt;span class=&quot;option-label&quot;&gt;${labels[displayIdx]}&lt;/span&gt;&lt;span&gt;${q.options[origIdx]}&lt;/span&gt;`;
-
-// 1125-1126 — caja de feedback: respuesta correcta + explicación
-const explPart = q.explanation ? `&lt;br&gt;&lt;br&gt;${q.explanation}` : '';
-fb.innerHTML = `${prefix} &lt;strong&gt;${correctText}&lt;/strong&gt;${explPart}`;
-
-// 1202 y 1215 — pantalla de repaso
-&lt;div class=&quot;review-q-text&quot;&gt;${q.question}&lt;/div&gt;
-optDiv.innerHTML = `&lt;strong&gt;${icon}&lt;/strong&gt; ${q.options[origIdx]}`;
-</code></pre>
-<p>Los ficheros de preguntas contienen etiquetas HTML como texto <strong>(comprobado)</strong>:</p>
+<p><strong>XSS</strong> (<em>cross-site scripting</em>): se produce cuando un texto acaba insertado en la página como HTML y el navegador ejecuta un <code>&lt;script&gt;</code> o un atributo <code>on...=</code> que venía dentro de ese texto.</p>
+<h3>Lo que está bien (comprobado)</h3>
 <ul>
-<li><code>data/lm/u2.txt:39</code> — "La etiqueta <code>&lt;link&gt;</code> se coloca en el <code>&lt;head&gt;</code>… <code>&lt;!DOCTYPE html&gt;</code>"</li>
-<li><code>data/lm/u2.txt:47</code> — "<code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>… el elemento <code>&lt;video&gt;</code>"</li>
-<li><code>data/lm/u2.txt:79</code> — "<code>&lt;form&gt;</code>… <code>&lt;dialog&gt;</code>… <code>&lt;figure&gt;</code>… <code>&lt;progress&gt;</code>"</li>
-<li><code>data/lm/u1.txt:63</code> — "<code>&lt;p&gt;</code>, <code>&lt;div&gt;</code> o <code>&lt;nombre&gt;</code>… <code>&lt;br/&gt;</code>"</li>
+<li><code>summaries.html</code> define <code>esc()</code> (líneas 401-405), que sustituye <code>&amp; &lt; &gt; " '</code>. Todo el contenido del temario pasa por ella antes de insertarse con <code>innerHTML</code>: preguntas, opciones y explicación del quiz (líneas 799, 808 y 810), glosario (líneas 672-673), tablas (889 y 891) y el código de unidad (535).</li>
+<li><strong>Única entrada del usuario: el buscador del glosario.</strong> El texto que escribes solo se usa para filtrar (líneas 663-666) y nunca llega al DOM, así que no hay vía de XSS.</li>
+<li><strong>Botón nuevo "Hacer el test →"</strong> (líneas 760-763). La condición usa <code>state.subject.units</code>, que viene de <code>/api/subjects</code>. El enlace escapa <code>subject</code> y <code>unit</code> con <code>esc()</code>, y <code>unitNum</code> es un entero porque sale de <code>parseInt</code> (línea 584).</li>
+<li><strong>API de resúmenes</strong> (<code>server.js:290-303</code>). Valida los parámetros con <code>^[a-z0-9]+$</code> y <code>^\d+$</code>, así que no se puede salir de la carpeta con <code>..</code>. Los errores 500 devuelven <code>'Error interno'</code> (líneas 228, 241, 257 y 286).</li>
+<li><strong>Secretos.</strong> He buscado <code>api_key</code>, <code>password</code>, <code>secret</code>, <code>token</code>, <code>PRIVATE KEY</code> y <code>AKIA</code> en <code>public/</code>, <code>server.js</code>, <code>data/</code>, <code>scripts/</code> y <code>package.json</code>. Solo aparecen como palabras del temario (por ejemplo, <code>&lt;input type='password'&gt;</code> en lm/u2), no como credenciales.</li>
 </ul>
-<p><strong>Efecto (interpretación)</strong>: en el test de Lenguaje de marcas las explicaciones pierden palabras clave justo en la materia donde importan ("La etiqueta  se coloca en el …"), y algunas generan elementos reales dentro de la caja (un <code>&lt;video&gt;</code> vacío, un <code>&lt;form&gt;</code>, una barra <code>&lt;progress&gt;</code>). No es un XSS explotable hoy porque el contenido lo escribes tú, no los usuarios; pasaría a serlo si algún día las preguntas vinieran de fuera. La pregunta en sí se pinta bien porque usa <code>textContent</code> (<code>index.html:1041</code>).</p>
-<p><code>summaries.html</code> <strong>sí</strong> escapa todo con su función <code>esc()</code> (<code>summaries.html:401</code>) <strong>(comprobado)</strong>: no tiene este problema.</p>
-<h3>S2 — Medio · Qué se sube a GitHub sin hacer falta (comprobado / interpretación)</h3>
-<p>Ficheros <strong>seguidos por git</strong> (leído del índice <code>.git/index</code>, 77 entradas) que no forman parte de la app:</p>
-<table>
-<thead>
-<tr>
-<th>Fichero</th>
-<th>Por qué no debería subirse</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>.claude/settings.local.json</code></td>
-<td>Configuración local de Claude Code: contiene rutas de tu equipo (<code>C:/Users/BryDev/...</code>) y el historial de comandos permitidos. "local" indica que no es para compartir.</td>
-</tr>
-<tr>
-<td><code>docs/qa/fase3/*.png</code> (60)</td>
-<td>Capturas de QA. Las 20 <code>*-sections.png</code> son <strong>obsoletas e idénticas</strong> entre sí (de la QA inválida anterior).</td>
-</tr>
-<tr>
-<td><code>docs/qa/qa-report.md</code>, <code>docs/superpowers/plans/*</code>, <code>docs/superpowers/specs/*</code></td>
-<td>Documentación interna de trabajo.</td>
-</tr>
-<tr>
-<td><code>scripts/_patch-image-pdfs.js</code>, <code>scripts/qa-fase3.js</code></td>
-<td>Scripts de un solo uso / sustituidos por <code>qa-summaries.js</code>.</td>
-</tr>
-<tr>
-<td><code>CLAUDE.md</code></td>
-<td>Instrucciones para el asistente. Inofensivo, pero interno.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>No seguidos</strong> (no se suben, correcto): <code>docs/stitch/</code>, <code>docs/diseno-resumen-referencia.txt</code>, <code>qa_screenshots/</code> (~4 MB), <code>qa_capture*.js</code>, <code>extract_pdfs.py</code>, <code>.superpowers/</code> (tiene su propio <code>.gitignore</code> con <code>*</code>).</p>
-<p><strong>Riesgo real (interpretación)</strong>: ninguno de estos ficheros se sirve en la web (Express solo publica <code>public/</code>). El riesgo depende de si el repositorio <code>github.com/BryGomezDev/ExamGeneratorDAW</code> es <strong>público</strong>: <strong>No puedo confirmar esto</strong> (la consulta a la API de GitHub devolvió 403 desde esta sesión). Si es público, cualquiera puede leer lo anterior.</p>
-<h3>S3 — Bajo · Mensajes de error internos en la API (comprobado)</h3>
-<pre><code class="language-js">// server.js:238, 252, 268, 303
-res.status(500).json({ error: e.message });
+<h3>N4 — Bajo · Valores del JSON sin escapar en identificadores (comprobado / interpretación)</h3>
+<pre><code class="language-js">// summaries.html:492 — d.subject viene del JSON; luego se escapa al pintarlo (línea 535)
+const unitCode = `${d.subject.toUpperCase()}-U${String(d.unit).padStart(2, '0')}`;
+// summaries.html:840 — sectionId (sec.id del JSON) va sin esc() a data-key / id
+const key = `${sectionId}-${blockIdx}-${i}`;
 </code></pre>
-<p>Un error de lectura de fichero devuelve el mensaje de Node, que incluye la <strong>ruta absoluta del servidor</strong> (p. ej. <code>ENOENT: no such file or directory, open '/var/task/data/…'</code>) (interpretación). Además <code>server.js:189-202</code> escribe en el log los primeros 300 caracteres de cada fichero leído: inofensivo, pero ruidoso en producción.</p>
-<h3>S4 — Bajo · Validación de parámetros permite <code>..</code> (comprobado)</h3>
-<pre><code class="language-js">// server.js:246
-if (!/^[\w.]+$/.test(subject) || !/^[\w.]+$/.test(file)) { … }
-</code></pre>
-<p><code>[\w.]+</code> acepta <code>..</code>, así que <code>subject=..</code> apunta fuera de <code>data/</code>. <strong>Interpretación</strong>: el impacto es bajo porque lo leído pasa por el parser de preguntas (solo devuelve bloques con formato de pregunta) o por un nombre fijo (<code>u&lt;N&gt;.resumen.json</code>), pero conviene cerrarlo: asignatura <code>^[a-z0-9]+$</code>, fichero <code>^(u\d+|ps)\.txt$</code>.</p>
-<h3>S5 — Bajo · <code>e.message</code> con innerHTML en el cliente (comprobado)</h3>
-<p><code>public/index.html:843</code> y <code>963</code> pintan el mensaje de error de <code>fetch</code> con <code>innerHTML</code>. El texto lo genera el propio código o el servidor, no el usuario: riesgo bajo; usar <code>textContent</code>.</p>
+<p><strong>Interpretación:</strong> solo podría explotarse si alguien metiera un JSON malicioso en <code>data/</code>, y ese alguien ya tendría acceso al repo. En los 5 JSON nuevos he comprobado que todos los <code>id</code> siguen el patrón <code>s\d+</code>. Para cerrarlo del todo, el validador podría exigir ese patrón. No bloquea el push.</p>
+<h3>N3 — Bajo · Scripts de un solo uso en GitHub (comprobado)</h3>
+<p>El índice de git incluye <code>scripts/_patch-image-pdfs.js</code> y <code>scripts/qa-fase3.js</code>. <strong>No se publican en la web</strong>: Express solo sirve <code>public/</code> (<code>server.js:9</code>) y la API. Lo único que hacen es ocupar sitio en el repositorio de GitHub.</p>
 <hr />
 <h2>2. Diseño responsive</h2>
-<p><strong>Breakpoint</strong>: regla CSS que cambia el diseño a partir de un ancho de pantalla (<code>@media (max-width: …)</code>).</p>
-<p>Breakpoints existentes <strong>(comprobado)</strong>:
-- <code>public/index.html:511</code> → <code>@media (max-width: 600px)</code>: reduce paddings y tamaños.
-- <code>public/summaries.html:331</code> → <code>@media (max-width: 640px)</code>: nav lateral → pestañas horizontales con scroll, una columna.
-- <code>public/style.css</code>: ninguno (solo tokens).</p>
+<p>Un <strong>breakpoint</strong> es una regla CSS (<code>@media (max-width: …)</code>) que cambia el diseño a partir de cierto ancho de pantalla. Hay uno en <code>summaries.html:331</code> (640 px: una sola columna y menú horizontal desplazable) y otro en <code>index.html:511</code> (600 px).</p>
 <table>
 <thead>
 <tr>
 <th>Ancho</th>
-<th>Test (<code>index.html</code>)</th>
-<th>Resúmenes (<code>summaries.html</code>)</th>
+<th>Resultado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>375 px</strong></td>
-<td><strong>R1 (Medio)</strong>: cabecera con <code>h1</code> y botones <code>white-space: nowrap</code> (<code>index.html:40, 63</code>) + miga de pan con <code>overflow: hidden</code> (<code>:47</code>) → la miga se corta ("Prue…") (comprobado en CSS; visto en <code>docs/qa/test-pregunta-375.png</code> de la QA).</td>
-<td>Correcto: tablas y código con <code>overflow-x: auto</code> (<code>summaries.html:253, 255, 888, 896</code>) (comprobado).</td>
+<td>La navegación usa <code>short</code>, que mide como mucho 25 caracteres en los JSON nuevos (comprobado), así que el título largo de ip/u3 s5 no rompe el menú. Tablas y código tienen <code>overflow-x: auto</code> (líneas 253 y 255). <strong>N2:</strong> la tabla de 5 columnas de prog/u4 se desplaza en horizontal (interpretación: se puede usar, pero es incómodo).</td>
 </tr>
 <tr>
 <td><strong>768 px</strong></td>
-<td>Layout de escritorio con contenedores <code>max-width</code> 700–900 px: cabe (interpretación).</td>
-<td>Sin breakpoint entre 641 y 1180 px: nav lateral + contenido. Cabe; el contenido queda algo estrecho (interpretación).</td>
+<td>Diseño de escritorio con menú lateral. Las tablas de 3-4 columnas caben (interpretación, deducida del CSS).</td>
 </tr>
 <tr>
 <td><strong>1440 px</strong></td>
-<td>Correcto.</td>
-<td>Correcto: contenedor centrado <code>max-width: 1180px</code> (<code>summaries.html:38, 72</code>).</td>
+<td>Sin problemas: el contenido tiene un ancho máximo fijo (interpretación).</td>
 </tr>
 </tbody>
 </table>
+<p>No he abierto un navegador en estos anchos. Las capturas del QA de Claude Code solo son de escritorio (1280 px).</p>
 <hr />
 <h2>3. Problemas de despliegue</h2>
-<p><strong>Cómo se despliega (comprobado + interpretación)</strong>: <code>vercel.json</code> empaqueta <code>server.js</code> con <code>@vercel/node</code> y envía todas las rutas a Express. No existe la carpeta <code>.vercel/</code> (no se ha desplegado con la CLI desde este equipo) y el remoto es <code>github.com/BryGomezDev/ExamGeneratorDAW</code> (<code>.git/config</code>). Lo más probable es que Vercel esté conectado al repo y <strong>despliegue automáticamente cada push a <code>master</code></strong> (<strong>No puedo confirmar esto</strong> sin acceso al panel de Vercel).</p>
-<h3>D1 — Alto · Ficheros de test que no se publicarán (comprobado)</h3>
-<p>En local existen <code>data/lm/u2.txt</code> y <code>data/prog/u3.txt</code>, pero <strong>no están en el índice de git</strong>. Vercel construye desde el repo, así que en producción:
-- Lenguaje de marcas mostrará el test de U1 pero <strong>no el de U2</strong>.
-- Programación <strong>no tendrá U3</strong>.</p>
-<p>En local todo funciona porque el servidor lee la carpeta tal cual: el típico "funciona en mi máquina".</p>
-<h3>D2 — Medio · Publicar = hacer push (interpretación)</h3>
-<p>Si la integración Git está activa, <code>git push</code> publica sin paso intermedio. Conviene hacer el push solo después de aplicar los arreglos y repasar en local.</p>
-<h3>D3 — Medio · Inclusión de los JSON en la función de Vercel (interpretación)</h3>
-<p><code>server.js</code> lee <code>data/</code> con rutas dinámicas (<code>path.join(DATA_DIR, subject, …)</code>). Hoy funciona en producción con <code>data/si/*.txt</code>, lo que indica que Vercel ya incluye <code>data/</code>. Aun así, tras el despliegue hay que comprobar que <code>GET /api/subjects</code> devuelve <code>summaryUnits</code> con contenido. Si llegara vacío, se fuerza con <code>"config": { "includeFiles": ["data/**"] }</code> en el build de <code>vercel.json</code>.</p>
-<h3>D4 — Bajo · Rutas, mayúsculas y punto de entrada (comprobado)</h3>
+<h3>N1 — Medio · El test de IPE U3 se publicará con este push (comprobado / interpretación)</h3>
+<p><code>data/ipe/u3.txt</code> (7404 bytes, del 09/10) está en el índice de git. El servidor detecta solo los <code>u&lt;N&gt;.txt</code> (<code>server.js:164-176</code>). Con el push, aparecerá en producción el test por unidad de IPE U3, contará en el modo conjunto y en el simulacro, y el resumen de ipe/u3 mostrará el botón "Hacer el test →".</p>
+<p><strong>No puedo confirmar esto:</strong> si ese test ya estaba publicado antes. Intenté consultar <code>/api/subjects</code> en producción y la petición no salió. Si no lo quieres publicado aún: <code>git rm --cached data/ipe/u3.txt</code> y commit.</p>
+<h3>Rutas, punto de entrada y datos (comprobado)</h3>
 <ul>
-<li><strong>Ruta absoluta</strong>: una ruta que empieza por <code>/</code> asume que la app vive en la raíz del dominio. La app usa <code>fetch('/api/...')</code> (<code>index.html:788-803</code>, <code>summaries.html:652, 905</code>). En Vercel vive en la raíz: <strong>correcto</strong>.</li>
-<li><strong>Mayúsculas</strong>: Windows ignora mayúsculas en los nombres de fichero y Linux (Vercel) no; <code>.git/config</code> tiene <code>ignorecase = true</code>. Hoy todos los nombres (<code>style.css</code>, <code>summaries.html</code>, carpetas <code>ip/ipe/lm/prog/si</code>) coinciden en minúsculas con sus referencias: <strong>correcto</strong>. Riesgo futuro si se renombra algo cambiando solo mayúsculas.</li>
-<li><strong>Punto de entrada</strong>: <code>public/index.html</code> lo sirve <code>express.static</code> en <code>/</code> (<code>server.js:9</code>); <code>public/summaries.html</code> en <code>/summaries.html</code>: <strong>correcto</strong>.</li>
-<li><strong>Dependencia externa</strong>: fuentes Inter y JetBrains Mono desde Google Fonts (<code>style.css:1</code>). Si Google Fonts no responde, cae a <code>system-ui</code>: aceptable.</li>
+<li><code>vercel.json</code> manda todas las rutas a <code>server.js</code>. Express sirve <code>public/index.html</code> como raíz y <code>summaries.html</code> desde la misma carpeta, con rutas relativas.</li>
+<li>Los 5 JSON nuevos están en el índice de git (<code>data/*/u3.resumen.json</code> y <code>data/prog/u4.resumen.json</code>). Los nombres van en minúsculas y coinciden con lo que construye el servidor (<code>u${unit}.resumen.json</code>), así que no hay problema con las mayúsculas en Linux.</li>
+<li>Hay ficheros internos en git (<code>CLAUDE.md</code>, <code>docs/superpowers/…</code>, <code>docs/auditoria.*</code>) que <strong>no se sirven</strong>: Vercel los incluye en el despliegue, pero ninguna ruta los expone (interpretación).</li>
+<li><code>docs/qa/</code>, <code>qa_screenshots/</code>, <code>extract_pdfs.py</code>, <code>docs/stitch/</code> y <code>.claude/settings.local.json</code> están en <code>.gitignore</code> y no aparecen en el índice (comprobado).</li>
 </ul>
+<h3>Después del push (verificación)</h3>
+<ol>
+<li><code>/api/summary/prog/4</code> y <code>/api/summary/ip/3</code> devuelven el JSON.</li>
+<li>En <code>/summaries.html</code>, el botón "Hacer el test →" <strong>no</strong> aparece en lm/u3 y <strong>sí</strong> en lm/u2.</li>
+</ol>
 <hr />
-<h2>4. Arquitectura</h2>
-<table>
-<thead>
-<tr>
-<th>Archivo</th>
-<th>Qué hace</th>
-<th>Depende de</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>server.js</code></td>
-<td>Express: sirve <code>public/</code> como estático y expone la API. Parsea los <code>.txt</code> de preguntas (formato <code>PREGUNTA:</code> y Moodle), deduplica y mezcla.</td>
-<td><code>express</code>, <code>fs</code>, <code>data/</code></td>
-</tr>
-<tr>
-<td><code>public/style.css</code></td>
-<td>Tokens de diseño "Nocturne Editorial" (colores, tipografía, radios), reset y foco.</td>
-<td>Google Fonts</td>
-</tr>
-<tr>
-<td><code>public/index.html</code></td>
-<td>SPA del <strong>test</strong>: landing (Pruebas Test / Resúmenes), asignatura → modo → examen → resultados → repaso → histórico (<code>localStorage</code>). Enlace directo <code>?subject=&amp;unit=</code>.</td>
-<td><code>style.css</code>, <code>/api/subjects</code>, <code>/api/questions/*</code>, <code>/api/final/*</code></td>
-</tr>
-<tr>
-<td><code>public/summaries.html</code></td>
-<td>SPA de <strong>resúmenes</strong>: asignatura → unidad → visor (nav, 8 tipos de bloque, glosario con búsqueda, autoevaluación). Escapa todo con <code>esc()</code>.</td>
-<td><code>style.css</code>, <code>/api/subjects</code>, <code>/api/summary/*</code></td>
-</tr>
-<tr>
-<td><code>data/&lt;asig&gt;/u&lt;N&gt;.txt</code>, <code>ps.txt</code></td>
-<td>Bancos de preguntas del test.</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>data/&lt;asig&gt;/u&lt;N&gt;.resumen.json</code></td>
-<td>Contenido de cada resumen (secciones, glosario, quiz).</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>scripts/validate-summaries.js</code></td>
-<td><code>npm run validate</code>: valida el esquema de todos los JSON.</td>
-<td>Node</td>
-</tr>
-<tr>
-<td><code>scripts/qa-summaries.js</code></td>
-<td><code>npm run qa</code>: recorre las 10 unidades con Playwright y guarda capturas.</td>
-<td><code>playwright</code> (dev)</td>
-</tr>
-<tr>
-<td><code>vercel.json</code></td>
-<td>Despliegue de <code>server.js</code> como función.</td>
-<td>Vercel</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Flujo de un resumen</strong>: <code>summaries.html</code> hace <code>fetch('/api/subjects')</code> → <code>server.js:228</code> lista carpetas de <code>data/</code> y, con <code>getSummaryUnits()</code> (<code>server.js:179</code>), las unidades con <code>u&lt;N&gt;.resumen.json</code> → el usuario elige unidad → <code>fetch('/api/summary/lm/1')</code> → <code>server.js:307</code> valida, lee y parsea el JSON → <code>render()</code> / <code>renderSummary()</code> construyen el HTML con <code>esc()</code> → la delegación de eventos en <code>#app</code> gestiona nav, acordeones, flipcards y quiz.</p>
-<p><strong>Flujo de un test</strong>: <code>index.html</code> → <code>/api/questions/lm/u2.txt</code> → <code>loadQuestions()</code> → <code>parseQuestionsNew()</code> → JSON <code>{question, options, correct, explanation}</code> → <code>renderQuestion()</code> (pregunta con <code>textContent</code>, <strong>opciones con <code>innerHTML</code></strong>) → <code>chooseAnswer()</code> → <code>showFeedback()</code> (<strong><code>innerHTML</code></strong>) → <code>saveToHistory()</code> en <code>localStorage</code>.</p>
-<p>La separación servidor (datos) / cliente (pintado) se cumple. La diferencia de criterio entre los dos HTML (uno escapa y el otro no) es el origen de S1.</p>
+<h2>4. Arquitectura (cambios desde la auditoría anterior)</h2>
+<ul>
+<li><strong><code>public/summaries.html</code></strong>: el visor de resúmenes. El único cambio es la condición de <code>testLink</code> (línea 760).</li>
+<li><strong><code>scripts/validate-summaries.js</code></strong> (no se despliega): ignora <code>/**</code> antes de buscar Markdown (línea 17) y avisa (WARN) cuando más de la mitad de las respuestas correctas están en la misma posición (líneas 129-134).</li>
+<li><strong><code>data/&lt;cod&gt;/u&lt;N&gt;.resumen.json</code></strong>: 5 unidades nuevas con el esquema de siempre.</li>
+</ul>
+<p><strong>Flujo de un dato:</strong> clic en una unidad (<code>select-unit</code>, línea 584) → <code>loadSummary()</code> hace <code>fetch('/api/summary/&lt;cod&gt;/&lt;N&gt;')</code> (línea 649) → <code>server.js:290</code> valida, lee y devuelve el JSON → <code>render()</code> → <code>renderBlock()</code> escapa cada campo con <code>esc()</code> → DOM. La lista de unidades con test viaja en <code>/api/subjects</code> (<code>server.js:222-223</code>) y la usa la condición del botón.</p>
 <hr />
 <h2>Arreglos rápidos antes de publicar (por prioridad)</h2>
 <ol>
-<li><strong>S1 (Alto)</strong> — En <code>index.html</code>, añadir la misma <code>esc()</code> de <code>summaries.html</code> y aplicarla a <code>q.options[...]</code>, <code>correctText</code>, <code>q.explanation</code> y <code>q.question</code> en las líneas 1054, 1125-1126, 1202 y 1215 (o construir esos nodos con <code>textContent</code>). Probar con la pregunta de <code>&lt;link&gt;</code> de LM U2.</li>
-<li><strong>D1 (Alto)</strong> — Si quieres esos tests en producción: <code>git add data/lm/u2.txt data/prog/u3.txt</code> y commit.</li>
-<li><strong>S2 (Medio)</strong> — Dejar de seguir lo interno:</li>
-<li><code>git rm --cached .claude/settings.local.json</code></li>
-<li><code>git rm --cached docs/qa/fase3/*-sections.png</code> (obsoletas)</li>
-<li>Decidir si <code>docs/qa/</code>, <code>docs/superpowers/</code> y los scripts de un solo uso deben estar en el repo; si no, <code>git rm --cached</code> y añadirlos al <code>.gitignore</code>.</li>
-<li><strong>S3 + S4 (Bajo)</strong> — Respuesta genérica <code>{ error: 'Error interno' }</code> en los 500 y regex estrictas (<code>^[a-z0-9]+$</code>, <code>^(u\d+|ps)\.txt$</code>). Quitar los <code>console.log</code> de contenido en <code>loadQuestions</code>.</li>
-<li><strong>R1 (Medio)</strong> — En <code>≤600px</code>, ocultar la miga de pan o reducir el <code>h1</code>.</li>
-<li><strong>Tras el push</strong> — Abrir producción y comprobar: <code>/api/subjects</code> (con <code>summaryUnits</code>), <code>/summaries.html</code> → una unidad de cada asignatura, y el test de LM U2 con la pregunta de <code>&lt;link&gt;</code>.</li>
+<li><strong>N1 (Medio):</strong> decide si quieres publicar ya el test de IPE U3. Si no, ejecuta <code>git rm --cached data/ipe/u3.txt</code> y haz commit antes del push.</li>
+<li><strong>N3 (Bajo, opcional):</strong> <code>git rm --cached scripts/_patch-image-pdfs.js scripts/qa-fase3.js</code> y añádelos a <code>.gitignore</code>.</li>
+<li><strong>N4 (Bajo, opcional):</strong> en el validador, exigir que <code>sections[].id</code> cumpla <code>^s\d+$</code>.</li>
+<li><strong>N2 (Bajo):</strong> no requiere acción.</li>
 </ol>
-<h3><code>.gitignore</code> propuesto (añadir)</h3>
-<p>El hosting de destino es Vercel con despliegue desde GitHub, así que lo que importa es <strong>qué entra en el repo</strong>. El equivalente práctico al <code>.surgeignore</code> es el <code>.gitignore</code>:</p>
-<pre><code class="language-gitignore"># Ya existentes
-node_modules/
-.env
-docs/qa/*.png
-
-# Configuración local del asistente (rutas e historial de tu equipo)
-.claude/settings.local.json
-.superpowers/
-
-# Capturas y material de QA (pesan y no son parte de la app)
-docs/qa/
-qa_screenshots/
-qa_capture*.js
-
-# Material de diseño y trabajo interno
-docs/stitch/
-docs/diseno-resumen-referencia.txt
-docs/superpowers/
-
-# Scripts de un solo uso
-extract_pdfs.py
+<h3><code>.gitignore</code>: líneas a añadir (opcional, N3)</h3>
+<pre><code class="language-gitignore"># Scripts de un solo uso (QA de la fase 3 y parche de PDFs-imagen); no forman parte de la app
 scripts/_patch-image-pdfs.js
 scripts/qa-fase3.js
 </code></pre>
-<blockquote>
-<p>Ojo: <code>.gitignore</code> solo afecta a ficheros <strong>no seguidos todavía</strong>. Para los que ya están en git hay que hacer <code>git rm --cached &lt;ruta&gt;</code> (no borra tu copia local).</p>
-</blockquote>
-<h3><code>.vercelignore</code> opcional</h3>
-<p>Reduce lo que se sube a Vercel en despliegues por CLI. <strong>No puedo confirmar</strong> si tu proyecto lo aplica también en los despliegues desde Git; no hace daño tenerlo:</p>
-<pre><code class="language-text">docs/
-qa_screenshots/
-qa_capture*.js
-extract_pdfs.py
-scripts/
-.claude/
-.superpowers/
+<h3><code>.vercelignore</code> (opcional)</h3>
+<p>Con Express, solo <code>public/</code> y la API son accesibles, así que no es imprescindible. Si quieres reducir lo que se sube a la función de Vercel:</p>
+<pre><code class="language-gitignore"># Documentación interna y material de trabajo: no lo usa el servidor
+docs/
 CLAUDE.md
-</code></pre></main></body></html>
+scripts/
+</code></pre></body></html>
