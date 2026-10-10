@@ -757,7 +757,7 @@ function renderQuizSection() {
     const wrongPct   = d.quiz.length > 0 ? Math.round(wrong   / d.quiz.length * 100) : 0;
     const cLabel = correct === 1 ? 'correcta' : 'correctas';
     const wLabel = wrong   === 1 ? 'incorrecta' : 'incorrectas';
-    const testLink = state.subject && state.unitNum !== null
+    const testLink = state.subject && state.unitNum !== null && state.subject.units && state.subject.units.includes('u' + state.unitNum + '.txt')
       ? `<a href="index.html?subject=${esc(state.subject.name)}&unit=${esc(String(state.unitNum))}"
            class="btn-primary" style="text-decoration:none">Hacer el test →</a>`
       : '';
