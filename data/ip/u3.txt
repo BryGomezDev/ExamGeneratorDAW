@@ -1,0 +1,79 @@
+PREGUNTA: Choose the correct preposition of place: "The shoes are ______ the bed."
+A: between
+B: next
+C: in front
+D: under
+RESPUESTA: D
+EXPLICACION: "Under" indica posición debajo de algo. "Between" es entre dos cosas, "next to" es al lado (falta "to" para ser correcta), y "in front of" es delante de (también incompleta). Para objetos situados debajo de un mueble se usa siempre "under": "under the bed", "under the table", "under the chair".
+
+PREGUNTA: Choose the correct question tag for this sentence: "You are Spanish, __________?"
+A: are you
+B: aren't you
+C: don't you
+D: isn't it
+RESPUESTA: B
+EXPLICACION: Las question tags se forman con el auxiliar contrario al de la oración principal. "You are" es afirmativo → la tag es negativa: "aren't you". Regla: afirmativo → tag negativa; negativo → tag afirmativa. El auxiliar debe coincidir con el del sujeto ("are" para "you"), nunca "don't" ni "isn't it".
+
+PREGUNTA: Choose the correct question tag: "He didn't go to the party, ______?"
+A: didn't he
+B: did he
+C: does he
+D: will he
+RESPUESTA: B
+EXPLICACION: La oración principal es negativa ("didn't go") → la question tag debe ser afirmativa. El auxiliar de Past Simple es "did", y el sujeto es "he" → la tag correcta es "did he". "Didn't he" sería negativa sobre negativa, lo cual es incorrecto. "Does" es Present Simple y "will" es futuro, ambos incorrectos aquí.
+
+PREGUNTA: Choose the CORRECT sentence in the Past Continuous tense.
+A: She was study at 8 p.m.
+B: She were studying at 8 p.m.
+C: She was studying at 8 p.m.
+D: She studying at 8 p.m.
+RESPUESTA: C
+EXPLICACION: Past Continuous = was/were + verbo-ing. Con "she" (3ª persona singular) el auxiliar es "was", nunca "were". La opción A usa el infinitivo sin -ing ("study" en lugar de "studying"). La D omite el auxiliar por completo. La estructura correcta es: she/he/it + was + verbo-ing.
+
+PREGUNTA: Choose the correct sentence using the verb To Be in the past tense.
+A: We was very happy with the results.
+B: We were very happy with the results.
+C: They wasn't at the party.
+D: She were at the hospital.
+RESPUESTA: B
+EXPLICACION: El verbo "to be" en pasado tiene dos formas: "was" (I, he, she, it) y "were" (you, we, they). "We" siempre lleva "were", nunca "was". "They" también lleva "were", así que "they wasn't" es incorrecto (además "wasn't" es singular). "She" lleva "was", no "were".
+
+PREGUNTA: Complete the sentence correctly (Past Simple vs Past Continuous):
+A: I was walking in the park when I saw an old friend.
+B: I walked in the park when I was seeing an old friend.
+C: I was walking in the park when I was seeing an old friend.
+D: I walked in the park when I saw an old friend.
+RESPUESTA: A
+EXPLICACION: Patrón clave: Past Continuous para la acción larga en progreso + Past Simple para la interrupción puntual. "Was walking" = acción en curso (larga); "saw" = momento puntual que la interrumpe. "See" es verbo de percepción involuntaria (stative verb) y no suele usarse en continuo, por eso "was seeing" sería incorrecto aunque el tiempo fuera el adecuado.
+
+PREGUNTA: Complete the sentence in the Present Perfect Simple tense:
+A: I have never was to Paris.
+B: I have never were to Paris.
+C: I have never been to Paris.
+D: I have never be to Paris.
+RESPUESTA: C
+EXPLICACION: Present Perfect = have/has + participio pasado. El participio de "to be" es "been", no "was", "were" ni "be". "Have never been" es la forma estándar para expresar experiencias con "never". Las opciones A y B usan formas de pasado simple (was/were) y D usa el infinitivo; ninguna es el participio.
+
+PREGUNTA: Complete the sentence using the Present Perfect and Past Simple tenses: "She __________ in Madrid in 2010, but she __________ there since then."
+A: lived / hasn't lived
+B: has lived / didn't live
+C: lived / didn't lived
+D: lives / hasn't lived
+RESPUESTA: A
+EXPLICACION: "In 2010" es un tiempo concreto del pasado → Past Simple: "lived". "Since then" indica un periodo que llega hasta el presente → Present Perfect negativo: "hasn't lived". La opción B invierte los tiempos. La C usa "didn't lived" con doble pasado (error grave: con "didn't" el verbo va en infinitivo: "didn't live"). La D usa presente simple, incorrecto.
+
+PREGUNTA: Complete this sentence: "I ________ eat a lot of sweets when I was a child."
+A: used to
+B: use to
+C: was used to
+D: am used to
+RESPUESTA: A
+EXPLICACION: "Used to + infinitivo" expresa hábitos o estados del pasado que ya no ocurren. La forma es siempre "used to" (con -d) en afirmativas. "Use to" sin -d solo aparece en preguntas e interrogativas con did: "Did you use to...?". "Was used to" y "am used to" significan "estar acostumbrado a" (be used to + -ing), un significado completamente distinto.
+
+PREGUNTA: Which of the following questions in the Past Simple is correct?
+A: Did you went to the concert last night?
+B: Were you go to the concert last night?
+C: Did you go to the concert last night?
+D: Do you went to the concert last night?
+RESPUESTA: C
+EXPLICACION: Las preguntas en Past Simple se forman con "Did + sujeto + infinitivo (sin to)". Al usar "did", el verbo principal va en forma base, nunca en pasado: "did you go", no "did you went". La opción A comete ese error. La B usa "were" con infinitivo (incorrecto). La D usa "do" de Present Simple con un pasado "went", mezcla imposible.
