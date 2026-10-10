@@ -24,14 +24,19 @@ const PROBLEMS_RE = /\bundefined\b|\bNaN\b/;
 const UNITS = [
   { subject: 'ip',   unit: '1' },
   { subject: 'ip',   unit: '2' },
+  { subject: 'ip',   unit: '3' },
   { subject: 'ipe',  unit: '1' },
   { subject: 'ipe',  unit: '2' },
+  { subject: 'ipe',  unit: '3' },
   { subject: 'lm',   unit: '0' },
   { subject: 'lm',   unit: '1' },
   { subject: 'lm',   unit: '2' },
+  { subject: 'lm',   unit: '3' },
   { subject: 'prog', unit: '0' },
   { subject: 'prog', unit: '1' },
   { subject: 'prog', unit: '2' },
+  { subject: 'prog', unit: '3' },
+  { subject: 'prog', unit: '4' },
 ];
 
 fs.mkdirSync(OUT, { recursive: true });
