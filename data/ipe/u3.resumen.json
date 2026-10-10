@@ -146,11 +146,31 @@
         },
         {
           "type": "table",
-          "headers": ["Oferta / Demanda", "Muchos compradores", "Pocos compradores", "Un comprador"],
+          "headers": [
+            "Oferta / Demanda",
+            "Muchos compradores",
+            "Pocos compradores",
+            "Un comprador"
+          ],
           "rows": [
-            ["Muchos vendedores", "Competencia perfecta (homogéneo) o monopolística (diferenciado)", "Oligopolio de demanda", "Monopolio de demanda (monopsonio)"],
-            ["Pocos vendedores", "Oligopolio de oferta", "Oligopolio bilateral", "Monopolio limitado de demanda"],
-            ["Un vendedor", "Monopolio de oferta", "Monopolio limitado de oferta", "Monopolio bilateral"]
+            [
+              "Muchos vendedores",
+              "Competencia perfecta (homogéneo) o monopolística (diferenciado)",
+              "Oligopolio de demanda",
+              "Monopolio de demanda (monopsonio)"
+            ],
+            [
+              "Pocos vendedores",
+              "Oligopolio de oferta",
+              "Oligopolio bilateral",
+              "Monopolio limitado de demanda"
+            ],
+            [
+              "Un vendedor",
+              "Monopolio de oferta",
+              "Monopolio limitado de oferta",
+              "Monopolio bilateral"
+            ]
           ]
         },
         {
@@ -403,9 +423,9 @@
     }
   ],
   "_sources": {
-    "s1": "ipe_u3_main.txt §3.1 (pp. 4-8); ipe_u3_sintesis.txt conceptos fundamentales",
-    "s2": "ipe_u3_main.txt §3.2 (pp. 9-10); ipe_u3_diapos.txt El marketing en la gestión de la organización",
-    "s3": "ipe_u3_main.txt §3.3 y §3.3.1 (pp. 11-13); ipe_u3_sintesis.txt §demanda",
-    "s4": "ipe_u3_main.txt §3.4 y §3.4.1-3.4.4 (pp. 14-15); ipe_u3_diapos.txt El método Lean Startup"
+    "s1": "U3 Concepto de marketing y análisis de mercado.pdf §3.1; U3 Síntesis Concepto de marketing y análisis de mercado.pdf §conceptos fundamentales",
+    "s2": "U3 Concepto de marketing y análisis de mercado.pdf §3.2; U3 DIAPOSITIVAS Concepto de marketing y análisis de mercado.pdf §marketing en la gestión",
+    "s3": "U3 Concepto de marketing y análisis de mercado.pdf §3.3-3.3.1; U3 Síntesis Concepto de marketing y análisis de mercado.pdf §demanda",
+    "s4": "U3 Concepto de marketing y análisis de mercado.pdf §3.4-3.4.4; U3 DIAPOSITIVAS Concepto de marketing y análisis de mercado.pdf §Lean Startup"
   }
 }

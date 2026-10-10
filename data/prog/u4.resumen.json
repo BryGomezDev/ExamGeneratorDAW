@@ -68,12 +68,32 @@
         },
         {
           "type": "table",
-          "headers": ["Elemento", "Convención", "Ejemplo"],
+          "headers": [
+            "Elemento",
+            "Convención",
+            "Ejemplo"
+          ],
           "rows": [
-            ["Paquetes", "lowercase con puntos jerárquicos", "com.empresa.proyecto"],
-            ["Clases / Interfaces", "UpperCamelCase", "MiClasePrincipal"],
-            ["Métodos / Variables", "lowerCamelCase", "calcularTotal"],
-            ["Constantes", "SCREAMING_SNAKE_CASE", "MAX_VALOR"]
+            [
+              "Paquetes",
+              "lowercase con puntos jerárquicos",
+              "com.empresa.proyecto"
+            ],
+            [
+              "Clases / Interfaces",
+              "UpperCamelCase",
+              "MiClasePrincipal"
+            ],
+            [
+              "Métodos / Variables",
+              "lowerCamelCase",
+              "calcularTotal"
+            ],
+            [
+              "Constantes",
+              "SCREAMING_SNAKE_CASE",
+              "MAX_VALOR"
+            ]
           ]
         },
         {
@@ -83,13 +103,56 @@
         {
           "type": "chips",
           "items": [
-            "abstract", "assert", "boolean", "break", "byte", "case", "catch", "char",
-            "class", "const", "continue", "default", "do", "double", "else", "enum",
-            "extends", "final", "finally", "float", "for", "goto", "if", "implements",
-            "import", "instanceof", "int", "interface", "long", "native", "new",
-            "package", "private", "protected", "public", "return", "short", "static",
-            "strictfp", "super", "switch", "synchronized", "this", "throw", "throws",
-            "transient", "try", "void", "volatile", "while"
+            "abstract",
+            "assert",
+            "boolean",
+            "break",
+            "byte",
+            "case",
+            "catch",
+            "char",
+            "class",
+            "const",
+            "continue",
+            "default",
+            "do",
+            "double",
+            "else",
+            "enum",
+            "extends",
+            "final",
+            "finally",
+            "float",
+            "for",
+            "goto",
+            "if",
+            "implements",
+            "import",
+            "instanceof",
+            "int",
+            "interface",
+            "long",
+            "native",
+            "new",
+            "package",
+            "private",
+            "protected",
+            "public",
+            "return",
+            "short",
+            "static",
+            "strictfp",
+            "super",
+            "switch",
+            "synchronized",
+            "this",
+            "throw",
+            "throws",
+            "transient",
+            "try",
+            "void",
+            "volatile",
+            "while"
           ]
         }
       ]
@@ -196,16 +259,70 @@
         },
         {
           "type": "table",
-          "headers": ["Nombre", "Tipo de dato", "Ocupa", "Rango", "Valor defecto"],
+          "headers": [
+            "Nombre",
+            "Tipo de dato",
+            "Ocupa",
+            "Rango",
+            "Valor defecto"
+          ],
           "rows": [
-            ["byte", "Entero con signo", "1 byte", "-128 a 127", "0"],
-            ["short", "Entero con signo", "2 bytes", "-32768 a 32767", "0"],
-            ["int", "Entero con signo", "4 bytes", "-2^31 a 2^31-1", "0"],
-            ["long", "Entero con signo", "8 bytes", "-2^63 a 2^63-1", "0L"],
-            ["float", "Decimal simple", "4 bytes", "IEEE 754 32-bit", "0.0f"],
-            ["double", "Decimal doble", "8 bytes", "IEEE 754 64-bit", "0.0d"],
-            ["char", "Carácter simple", "2 bytes", "\\u0000 a \\uffff (65535)", "\\u0000"],
-            ["boolean", "Booleano", "1 byte", "true o false", "false"]
+            [
+              "byte",
+              "Entero con signo",
+              "1 byte",
+              "-128 a 127",
+              "0"
+            ],
+            [
+              "short",
+              "Entero con signo",
+              "2 bytes",
+              "-32768 a 32767",
+              "0"
+            ],
+            [
+              "int",
+              "Entero con signo",
+              "4 bytes",
+              "-2^31 a 2^31-1",
+              "0"
+            ],
+            [
+              "long",
+              "Entero con signo",
+              "8 bytes",
+              "-2^63 a 2^63-1",
+              "0L"
+            ],
+            [
+              "float",
+              "Decimal simple",
+              "4 bytes",
+              "IEEE 754 32-bit",
+              "0.0f"
+            ],
+            [
+              "double",
+              "Decimal doble",
+              "8 bytes",
+              "IEEE 754 64-bit",
+              "0.0d"
+            ],
+            [
+              "char",
+              "Carácter simple",
+              "2 bytes",
+              "\\u0000 a \\uffff (65535)",
+              "\\u0000"
+            ],
+            [
+              "boolean",
+              "Booleano",
+              "1 byte",
+              "true o false",
+              "false"
+            ]
           ]
         },
         {
@@ -254,16 +371,43 @@
         },
         {
           "type": "table",
-          "headers": ["Tipo primitivo", "Clase envoltorio"],
+          "headers": [
+            "Tipo primitivo",
+            "Clase envoltorio"
+          ],
           "rows": [
-            ["boolean", "Boolean"],
-            ["byte", "Byte"],
-            ["char", "Character"],
-            ["double", "Double"],
-            ["float", "Float"],
-            ["int", "Integer"],
-            ["long", "Long"],
-            ["short", "Short"]
+            [
+              "boolean",
+              "Boolean"
+            ],
+            [
+              "byte",
+              "Byte"
+            ],
+            [
+              "char",
+              "Character"
+            ],
+            [
+              "double",
+              "Double"
+            ],
+            [
+              "float",
+              "Float"
+            ],
+            [
+              "int",
+              "Integer"
+            ],
+            [
+              "long",
+              "Long"
+            ],
+            [
+              "short",
+              "Short"
+            ]
           ]
         },
         {
@@ -307,16 +451,43 @@
         },
         {
           "type": "table",
-          "headers": ["Secuencia", "Significado"],
+          "headers": [
+            "Secuencia",
+            "Significado"
+          ],
           "rows": [
-            ["\\b", "Retrocede un espacio"],
-            ["\\t", "Tabulación"],
-            ["\\n", "Nueva línea"],
-            ["\\r", "Retorno de carro"],
-            ["\\\"", "Comilla doble"],
-            ["\\'", "Comilla simple"],
-            ["\\f", "Salto de página"],
-            ["\\\\", "Barra invertida"]
+            [
+              "\\b",
+              "Retrocede un espacio"
+            ],
+            [
+              "\\t",
+              "Tabulación"
+            ],
+            [
+              "\\n",
+              "Nueva línea"
+            ],
+            [
+              "\\r",
+              "Retorno de carro"
+            ],
+            [
+              "\\\"",
+              "Comilla doble"
+            ],
+            [
+              "\\'",
+              "Comilla simple"
+            ],
+            [
+              "\\f",
+              "Salto de página"
+            ],
+            [
+              "\\\\",
+              "Barra invertida"
+            ]
           ]
         },
         {
@@ -340,9 +511,9 @@
             },
             {
               "title": "Comentario de documentación",
-              "kicker": "/*(doc) ... */",
-              "desc": "Utilizado por la herramienta javadoc para generar automáticamente la documentación del código. Comienza con /*(doc) y termina con */.",
-              "example": "/*(doc) @param nombre El nombre del usuario */"
+              "kicker": "/** ... */",
+              "desc": "Utilizado por la herramienta javadoc para generar automáticamente la documentación del código. Comienza con /** y termina con */.",
+              "example": "/** @param nombre El nombre del usuario */"
             }
           ]
         }
@@ -392,21 +563,63 @@
         },
         {
           "type": "table",
-          "headers": ["Nivel (mayor a menor)", "Operadores"],
+          "headers": [
+            "Nivel (mayor a menor)",
+            "Operadores"
+          ],
           "rows": [
-            ["1 - Postfijo", "expr++  expr--"],
-            ["2 - Prefijo / Unario", "++expr  --expr  +expr  -expr  ~  !"],
-            ["3 - Multiplicativo", "*  /  %"],
-            ["4 - Aditivo", "+  -"],
-            ["5 - Desplazamiento de bits", "<<  >>  >>>"],
-            ["6 - Relacional", "<  >  <=  >=  instanceof"],
-            ["7 - Igualdad", "==  !="],
-            ["8 - AND de bits", "&"],
-            ["9 - XOR de bits", "^"],
-            ["10 - OR de bits", "|"],
-            ["11 - AND lógico", "&&"],
-            ["12 - OR lógico", "||"],
-            ["13 - Asignación (dcha a izda)", "=  +=  -=  *=  /=  %=  &=  ^=  |=  <<=  >>=  >>>="]
+            [
+              "1 - Postfijo",
+              "expr++  expr--"
+            ],
+            [
+              "2 - Prefijo / Unario",
+              "++expr  --expr  +expr  -expr  ~  !"
+            ],
+            [
+              "3 - Multiplicativo",
+              "*  /  %"
+            ],
+            [
+              "4 - Aditivo",
+              "+  -"
+            ],
+            [
+              "5 - Desplazamiento de bits",
+              "<<  >>  >>>"
+            ],
+            [
+              "6 - Relacional",
+              "<  >  <=  >=  instanceof"
+            ],
+            [
+              "7 - Igualdad",
+              "==  !="
+            ],
+            [
+              "8 - AND de bits",
+              "&"
+            ],
+            [
+              "9 - XOR de bits",
+              "^"
+            ],
+            [
+              "10 - OR de bits",
+              "|"
+            ],
+            [
+              "11 - AND lógico",
+              "&&"
+            ],
+            [
+              "12 - OR lógico",
+              "||"
+            ],
+            [
+              "13 - Asignación (dcha a izda)",
+              "=  +=  -=  *=  /=  %=  &=  ^=  |=  <<=  >>=  >>>="
+            ]
           ]
         }
       ]
@@ -479,7 +692,7 @@
     },
     {
       "term": "javadoc",
-      "def": "Herramienta de Java que genera automáticamente la documentación del código a partir de los comentarios de documentación (/*(doc) ... */)."
+      "def": "Herramienta de Java que genera automáticamente la documentación del código a partir de los comentarios de documentación (/** ... */)."
     },
     {
       "term": "Precedencia de operadores",
@@ -490,23 +703,23 @@
     {
       "question": "¿Cuál de las siguientes NO es una regla obligatoria de formación de un identificador en Java?",
       "options": [
+        "La primera letra debe ser mayúscula.",
         "Debe contener al menos un carácter.",
         "No puede empezar por un dígito.",
-        "La primera letra debe ser mayúscula.",
         "Solo pueden usarse letras, dígitos, $ o _."
       ],
-      "correct": 2,
+      "correct": 0,
       "explanation": "Que la primera letra sea mayúscula es una recomendación de estilo para clases, no una regla obligatoria del lenguaje. Un identificador puede empezar con minúscula, dólar o guion bajo."
     },
     {
       "question": "¿Cómo se declara correctamente una constante en Java?",
       "options": [
         "[Visibilidad] const tipo NOMBRE = valor;",
-        "[Visibilidad] final tipo NOMBRE = valor;",
         "[Visibilidad] static final tipo NOMBRE = valor;",
+        "[Visibilidad] final tipo NOMBRE = valor;",
         "[Visibilidad] static tipo NOMBRE = valor;"
       ],
-      "correct": 2,
+      "correct": 1,
       "explanation": "Las constantes en Java se declaran con static final antes del tipo de dato. La palabra const existe como palabra reservada pero no se usa en Java; omitir static también es incorrecto para constantes de clase."
     },
     {
@@ -547,11 +760,11 @@
       "options": [
         "Comentario de una línea (//).",
         "Comentario de varias líneas (/* */).",
-        "Comentario de documentación (/*(doc) */).",
-        "Javadoc no usa comentarios; lee anotaciones @."
+        "Javadoc no usa comentarios; lee anotaciones @.",
+        "Comentario de documentación (/** */)."
       ],
-      "correct": 2,
-      "explanation": "Los comentarios de documentación comienzan con /*(doc) y terminan con */. Son los que javadoc procesa para generar automáticamente la documentación del código. Los comentarios // y /* */ son ignorados por javadoc."
+      "correct": 3,
+      "explanation": "Los comentarios de documentación comienzan con /** y terminan con */. Son los que javadoc procesa para generar automáticamente la documentación del código. Los comentarios // y /* */ son ignorados por javadoc."
     },
     {
       "question": "En la tabla de precedencia de operadores de Java, ¿cuál se evalúa primero?",
@@ -568,22 +781,22 @@
       "question": "¿Cuál de las siguientes afirmaciones sobre los paquetes en Java es correcta?",
       "options": [
         "Un paquete debe declararse en la última línea del archivo.",
-        "Los paquetes no pueden contener otros paquetes.",
         "La jerarquía de paquetes se representa separando los nombres con puntos.",
+        "Los paquetes no pueden contener otros paquetes.",
         "Para acceder a una clase de otro paquete siempre hay que usar el asterisco (*)."
       ],
-      "correct": 2,
+      "correct": 1,
       "explanation": "La jerarquía de paquetes se representa separando con puntos los nombres de los paquetes (por ejemplo, com.empresa.modulo). La declaración de paquete va en la primera línea. Los paquetes pueden contener a otros. Para acceder a una clase de otro paquete se puede usar el nombre completo o importar solo la clase, no necesariamente el asterisco."
     },
     {
       "question": "¿Qué convención de nomenclatura se recomienda para los nombres de clases en Java?",
       "options": [
+        "UpperCamelCase (primera letra de cada palabra en mayúscula).",
         "lowercase (todo en minúsculas).",
         "lowerCamelCase (primera letra de la primera palabra en minúscula).",
-        "UpperCamelCase (primera letra de cada palabra en mayúscula).",
         "SCREAMING_SNAKE_CASE (todo en mayúsculas con guion bajo)."
       ],
-      "correct": 2,
+      "correct": 0,
       "explanation": "Para clases e interfaces se recomienda UpperCamelCase: todas las palabras juntas con la primera letra de cada una en mayúscula. lowerCamelCase es para métodos y variables; SCREAMING_SNAKE_CASE para constantes; lowercase para paquetes."
     },
     {
@@ -599,13 +812,13 @@
     }
   ],
   "_sources": {
-    "s1": "prog_u4_main_a.txt §4.1 (líneas 78-93), prog_u4_resumen.txt §Resumen (líneas 13-19)",
-    "s2": "prog_u4_main_a.txt §4.2-4.3 (líneas 104-243), prog_u4_main_b.txt §Identificadores (líneas 23-44), prog_u4_resumen.txt §Conceptos fundamentales (líneas 97-113)",
-    "s3": "prog_u4_main_a.txt §4.4-4.5 (líneas 247-343), prog_u4_main_b.txt §Clases y paquetes (líneas 57-77)",
-    "s4": "prog_u4_main_a.txt §4.6-4.7 (líneas 347-419), prog_u4_main_b.txt §Variables, constantes y ámbitos (líneas 79-94)",
-    "s5": "prog_u4_main_a.txt §4.8-4.8.1 (líneas 421-625), prog_u4_resumen.txt §Resumen casting (líneas 45-56)",
-    "s6": "prog_u4_main_a.txt §4.9-4.10.1 (líneas 630-735), prog_u4_main_b.txt §String y Clases envoltorio (líneas 99-105), prog_u4_resumen.txt (líneas 58-70)",
-    "s7": "prog_u4_main_a.txt §4.11-4.12 (líneas 738-806), prog_u4_resumen.txt (líneas 79-86)",
-    "s8": "prog_u4_main_a.txt §4.13-4.13.1 (líneas 809-997)"
+    "s1": "U4 Elementos de un programa informático.pdf §4.1; U4 RESUMEN Elementos de un programa informático.pdf",
+    "s2": "U4 Elementos de un programa informático.pdf §4.2-4.3; U4 Elementos de un programa informático (1).pdf §Identificadores",
+    "s3": "U4 Elementos de un programa informático.pdf §4.4-4.5; U4 Elementos de un programa informático (1).pdf §Clases y paquetes",
+    "s4": "U4 Elementos de un programa informático.pdf §4.6-4.7; U4 Elementos de un programa informático (1).pdf §Variables, constantes y ámbitos",
+    "s5": "U4 Elementos de un programa informático.pdf §4.8-4.8.1; U4 RESUMEN Elementos de un programa informático.pdf §casting",
+    "s6": "U4 Elementos de un programa informático.pdf §4.9-4.10.1; U4 Elementos de un programa informático (1).pdf §String y Clases envoltorio; U4 RESUMEN Elementos de un programa informático.pdf",
+    "s7": "U4 Elementos de un programa informático.pdf §4.11-4.12; U4 RESUMEN Elementos de un programa informático.pdf",
+    "s8": "U4 Elementos de un programa informático.pdf §4.13-4.13.1"
   }
 }

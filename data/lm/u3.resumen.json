@@ -208,90 +208,178 @@
     }
   ],
   "glossary": [
-    { "term": "XML", "def": "Extensible Markup Language. Metalenguaje surgido para resolver los problemas de HTML al mostrar el significado de sus etiquetas. Tiene estructura jerárquica en árbol con prólogo y cuerpo." },
-    { "term": "SGML", "def": "Standard Generalized Markup Language. Lenguaje de marcado generalizado estándar, origen de HTML y XML, considerado metalenguaje." },
-    { "term": "Prólogo", "def": "Primera parte de un documento XML. Contiene la instrucción de procesamiento con la versión de XML y la codificación de caracteres." },
-    { "term": "Cuerpo", "def": "Segunda parte de un documento XML. Contiene el elemento raíz y todos los datos del documento." },
-    { "term": "Elemento raíz", "def": "Único elemento principal de un documento XML. Debe ser el primero en abrirse y el último en cerrarse." },
-    { "term": "Etiqueta vacía", "def": "Etiqueta que no contiene datos entre apertura y cierre; se escribe en una sola marca con barra al final, por ejemplo <elemento />." },
-    { "term": "Atributo", "def": "Par nombre-valor dentro de la etiqueta de apertura de un elemento. El valor debe ir siempre entrecomillado." },
-    { "term": "Documento bien formado", "def": "Documento XML que cumple todas las reglas sintácticas del W3C: declaración de versión, elemento raíz único, anidado correcto, atributos entrecomillados, distinción mayúsculas/minúsculas, nombres válidos y comentarios fuera de etiquetas." },
-    { "term": "Espacio de nombres (namespace)", "def": "Mecanismo XML que permite diferenciar etiquetas con el mismo nombre procedentes de documentos distintos, asignando a cada grupo un prefijo vinculado a una URI mediante xmlns:prefijo." },
-    { "term": "Prefijo", "def": "Texto que se antepone con dos puntos al nombre de un elemento o atributo para indicar a qué espacio de nombres pertenece. Ejemplo: c1:caña." },
-    { "term": "URI del namespace", "def": "Cadena de texto (generalmente en formato URL) que identifica de forma única un espacio de nombres en XML." },
-    { "term": "ISO 8859-1", "def": "Codificación de caracteres que permite utilizar la letra ñ y los acentos propios del español." },
-    { "term": "UTF-8", "def": "Codificación de caracteres Unicode, soportada por el Bloc de notas de Windows junto con UTF-16 y ANSI." },
-    { "term": "Notepad++", "def": "Editor de texto gratuito (licencia GPL) para Windows, escrito en C++. Soporta múltiples lenguajes con coloreo de sintaxis, numeración de líneas y autocompletado." },
-    { "term": "Gedit", "def": "Editor de texto para el entorno GNOME (también disponible en Windows). Ofrece numeración de líneas y coloreado de elementos, además de las funciones básicas de edición." },
-    { "term": "XML Copy Editor", "def": "Herramienta que puede usarse para verificar que un documento XML está escrito correctamente." }
+    {
+      "term": "XML",
+      "def": "Extensible Markup Language. Metalenguaje surgido para resolver los problemas de HTML al mostrar el significado de sus etiquetas. Tiene estructura jerárquica en árbol con prólogo y cuerpo."
+    },
+    {
+      "term": "SGML",
+      "def": "Standard Generalized Markup Language. Lenguaje de marcado generalizado estándar, origen de HTML y XML, considerado metalenguaje."
+    },
+    {
+      "term": "Prólogo",
+      "def": "Primera parte de un documento XML. Contiene la instrucción de procesamiento con la versión de XML y la codificación de caracteres."
+    },
+    {
+      "term": "Cuerpo",
+      "def": "Segunda parte de un documento XML. Contiene el elemento raíz y todos los datos del documento."
+    },
+    {
+      "term": "Elemento raíz",
+      "def": "Único elemento principal de un documento XML. Debe ser el primero en abrirse y el último en cerrarse."
+    },
+    {
+      "term": "Etiqueta vacía",
+      "def": "Etiqueta que no contiene datos entre apertura y cierre; se escribe en una sola marca con barra al final, por ejemplo <elemento />."
+    },
+    {
+      "term": "Atributo",
+      "def": "Par nombre-valor dentro de la etiqueta de apertura de un elemento. El valor debe ir siempre entrecomillado."
+    },
+    {
+      "term": "Documento bien formado",
+      "def": "Documento XML que cumple todas las reglas sintácticas del W3C: declaración de versión, elemento raíz único, anidado correcto, atributos entrecomillados, distinción mayúsculas/minúsculas, nombres válidos y comentarios fuera de etiquetas."
+    },
+    {
+      "term": "Espacio de nombres (namespace)",
+      "def": "Mecanismo XML que permite diferenciar etiquetas con el mismo nombre procedentes de documentos distintos, asignando a cada grupo un prefijo vinculado a una URI mediante xmlns:prefijo."
+    },
+    {
+      "term": "Prefijo",
+      "def": "Texto que se antepone con dos puntos al nombre de un elemento o atributo para indicar a qué espacio de nombres pertenece. Ejemplo: c1:caña."
+    },
+    {
+      "term": "URI del namespace",
+      "def": "Cadena de texto (generalmente en formato URL) que identifica de forma única un espacio de nombres en XML."
+    },
+    {
+      "term": "ISO 8859-1",
+      "def": "Codificación de caracteres que permite utilizar la letra ñ y los acentos propios del español."
+    },
+    {
+      "term": "UTF-8",
+      "def": "Codificación de caracteres Unicode, soportada por el Bloc de notas de Windows junto con UTF-16 y ANSI."
+    },
+    {
+      "term": "Notepad++",
+      "def": "Editor de texto gratuito (licencia GPL) para Windows, escrito en C++. Soporta múltiples lenguajes con coloreo de sintaxis, numeración de líneas y autocompletado."
+    },
+    {
+      "term": "Gedit",
+      "def": "Editor de texto para el entorno GNOME (también disponible en Windows). Ofrece numeración de líneas y coloreado de elementos, además de las funciones básicas de edición."
+    },
+    {
+      "term": "XML Copy Editor",
+      "def": "Herramienta que puede usarse para verificar que un documento XML está escrito correctamente."
+    }
   ],
   "quiz": [
     {
       "question": "¿Cuáles son las dos partes bien diferenciadas de un documento XML?",
-      "options": ["Cabecera y pie", "Prólogo y cuerpo", "Declaración y sección de datos"],
+      "options": [
+        "Cabecera y pie",
+        "Prólogo y cuerpo",
+        "Declaración y sección de datos"
+      ],
       "correct": 1,
       "explanation": "Todo documento XML tiene estructura jerárquica en árbol y se divide en dos partes: el prólogo (que contiene la declaración de versión y codificación) y el cuerpo (con los datos del documento)."
     },
     {
       "question": "¿Cuántos elementos raíz puede tener un documento XML bien formado?",
-      "options": ["Uno solo", "Dos como máximo", "Tantos como el autor necesite"],
+      "options": [
+        "Uno solo",
+        "Dos como máximo",
+        "Tantos como el autor necesite"
+      ],
       "correct": 0,
       "explanation": "La estructura de los documentos XML debe ser jerárquica con solo un elemento principal o raíz, el cual debe ser el primero en abrirse y el último en cerrarse."
     },
     {
       "question": "¿Qué codificaciones soporta el Bloc de notas de Windows para sus archivos?",
-      "options": ["Solo ASCII", "UTF-8, Unicode y ANSI", "ISO 8859-1 únicamente"],
-      "correct": 1,
+      "options": [
+        "Solo ASCII",
+        "ISO 8859-1 únicamente",
+        "UTF-8, Unicode y ANSI"
+      ],
+      "correct": 2,
       "explanation": "El Bloc de notas de Windows (Notepad) permite codificar caracteres en UTF-8, Unicode y ANSI."
     },
     {
       "question": "Un elemento llamado <5correo> en XML es incorrecto porque...",
-      "options": ["Contiene una vocal en el nombre", "El nombre comienza por un número", "El nombre es demasiado corto"],
-      "correct": 1,
+      "options": [
+        "El nombre comienza por un número",
+        "Contiene una vocal en el nombre",
+        "El nombre es demasiado corto"
+      ],
+      "correct": 0,
       "explanation": "Las reglas de XML prohíben que el nombre de un elemento, atributo o etiqueta empiece por un número. Tampoco puede empezar por la palabra XML ni contener caracteres especiales reservados como < o *."
     },
     {
       "question": "¿Para qué se usan los espacios de nombres en XML?",
-      "options": ["Para comprimir el tamaño del documento", "Para evitar ambigüedades entre etiquetas con la misma denominación procedentes de distintos documentos XML", "Para definir el estilo visual de los elementos"],
-      "correct": 1,
+      "options": [
+        "Para comprimir el tamaño del documento",
+        "Para definir el estilo visual de los elementos",
+        "Para evitar ambigüedades entre etiquetas con la misma denominación procedentes de distintos documentos XML"
+      ],
+      "correct": 2,
       "explanation": "Los espacios de nombres (namespaces) son mecanismos que permiten diferenciar etiquetas que tienen la misma denominación cuando se trabaja con varios documentos XML, evitando así la ambigüedad."
     },
     {
       "question": "¿Cómo se declara un espacio de nombres en XML?",
-      "options": ["<elemento namespace:prefijo=\"URI\">", "<elemento xmlns:prefijo=\"URI\">", "<elemento ns=\"prefijo:URI\">"],
+      "options": [
+        "<elemento namespace:prefijo=\"URI\">",
+        "<elemento xmlns:prefijo=\"URI\">",
+        "<elemento ns=\"prefijo:URI\">"
+      ],
       "correct": 1,
       "explanation": "La declaración de un espacio de nombres en XML usa el atributo xmlns:prefijo con la URI identificadora. La sintaxis correcta es: <elemento xmlns:prefijo=\"URI\">."
     },
     {
       "question": "¿Qué editor de texto está hecho para el entorno de escritorio GNOME y también está disponible para Windows?",
-      "options": ["Bloc de notas Windows", "Notepad++", "Gedit"],
+      "options": [
+        "Bloc de notas Windows",
+        "Notepad++",
+        "Gedit"
+      ],
       "correct": 2,
       "explanation": "Gedit está creado para el entorno de escritorio GNOME pero también puede encontrarse para Windows. Ofrece numeración de líneas y coloreado de elementos del programa."
     },
     {
       "question": "¿Qué significa que XML distingue entre mayúsculas y minúsculas?",
-      "options": ["Solo permite nombres en mayúsculas", "La etiqueta <municipio> no coincide con </Municipio> y provocará un error", "Los comentarios deben escribirse en mayúsculas"],
-      "correct": 1,
+      "options": [
+        "La etiqueta <municipio> no coincide con </Municipio> y provocará un error",
+        "Solo permite nombres en mayúsculas",
+        "Los comentarios deben escribirse en mayúsculas"
+      ],
+      "correct": 0,
       "explanation": "XML es case-sensitive: <municipio> no equivale a </Municipio>. Si la etiqueta de apertura y la de cierre no coinciden exactamente en mayúsculas y minúsculas, el documento no está bien formado y el navegador mostrará un error."
     },
     {
       "question": "¿Qué ventaja tiene XML respecto a HTML según el temario?",
-      "options": ["XML permite usar más colores que HTML", "XML resuelve los problemas de HTML al mostrar el significado de sus datos en las etiquetas", "XML es exclusivo para páginas web"],
+      "options": [
+        "XML permite usar más colores que HTML",
+        "XML resuelve los problemas de HTML al mostrar el significado de sus datos en las etiquetas",
+        "XML es exclusivo para páginas web"
+      ],
       "correct": 1,
       "explanation": "XML surgió como método de resolución para los problemas planteados por HTML a la hora de que las etiquetas muestren el significado de sus datos. XML es un metalenguaje que permite crear etiquetas propias con significado semántico."
     },
     {
       "question": "¿Cómo se puede verificar que un documento XML está bien formado de forma sencilla?",
-      "options": ["Enviándolo por correo electrónico", "Guardándolo con extensión .xml y abriéndolo en un navegador: si muestra la estructura arborescente, es correcto", "Imprimiéndolo y revisándolo manualmente"],
-      "correct": 1,
+      "options": [
+        "Enviándolo por correo electrónico",
+        "Imprimiéndolo y revisándolo manualmente",
+        "Guardándolo con extensión .xml y abriéndolo en un navegador: si muestra la estructura arborescente, es correcto"
+      ],
+      "correct": 2,
       "explanation": "Guardando el documento con extensión .xml y abriéndolo en un navegador se puede comprobar si está bien formado. Si el navegador muestra la estructura jerárquica arborescente el documento es correcto; si hay errores, el navegador indica la línea exacta del problema."
     }
   ],
   "_sources": {
-    "s1": "lm_u3_main.txt §3.1 (p. 3)",
-    "s2": "lm_u3_main.txt §3.2 (pp. 3-4) + lm_u3_diapos.txt §XML estructura y sintaxis",
-    "s3": "lm_u3_main.txt §3.3 (pp. 4-5) + lm_u3_diapos.txt §Herramientas de edición",
-    "s4": "lm_u3_main.txt §3.4 (pp. 5-7) + lm_u3_diapos.txt §Elaboración de documentos bien formados",
-    "s5": "lm_u3_main.txt §3.5 (pp. 7-8)"
+    "s1": "U3 Lenguajes para el almacenamiento y transmisión de información.pdf §3.1",
+    "s2": "U3 Lenguajes para el almacenamiento y transmisión de información.pdf §3.2; U3 DIAPOSITIVAS Lenguajes para el almacenamiento y transmisión de información.pdf §XML estructura y sintaxis",
+    "s3": "U3 Lenguajes para el almacenamiento y transmisión de información.pdf §3.3; U3 DIAPOSITIVAS Lenguajes para el almacenamiento y transmisión de información.pdf §Herramientas de edición",
+    "s4": "U3 Lenguajes para el almacenamiento y transmisión de información.pdf §3.4; U3 DIAPOSITIVAS Lenguajes para el almacenamiento y transmisión de información.pdf §Documentos bien formados",
+    "s5": "U3 Lenguajes para el almacenamiento y transmisión de información.pdf §3.5"
   }
 }

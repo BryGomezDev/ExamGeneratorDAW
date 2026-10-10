@@ -42,26 +42,81 @@
         },
         {
           "type": "table",
-          "headers": ["Sujeto", "Affirmative", "Negative", "Interrogative"],
+          "headers": [
+            "Sujeto",
+            "Affirmative",
+            "Negative",
+            "Interrogative"
+          ],
           "rows": [
-            ["I / You / He / She / It / We / You / They", "worked", "didn't work", "Did ... work ...?"],
-            ["Short answer", "Yes, I did.", "No, I didn't.", "—"]
+            [
+              "I / You / He / She / It / We / You / They",
+              "worked",
+              "didn't work",
+              "Did ... work ...?"
+            ],
+            [
+              "Short answer",
+              "Yes, I did.",
+              "No, I didn't.",
+              "—"
+            ]
           ]
         },
         {
           "type": "table",
-          "headers": ["Sujeto", "Affirmative (To Be)", "Negative (To Be)", "Interrogative (To Be)"],
+          "headers": [
+            "Sujeto",
+            "Affirmative (To Be)",
+            "Negative (To Be)",
+            "Interrogative (To Be)"
+          ],
           "rows": [
-            ["I", "was", "was not / wasn't", "Was I ...?"],
-            ["You", "were", "were not / weren't", "Were you ...?"],
-            ["He / She / It", "was", "was not / wasn't", "Was he/she/it ...?"],
-            ["We / You / They", "were", "were not / weren't", "Were we/you/they ...?"],
-            ["Short answer", "Yes, I was. / Yes, they were.", "No, I wasn't. / No, they weren't.", "—"]
+            [
+              "I",
+              "was",
+              "was not / wasn't",
+              "Was I ...?"
+            ],
+            [
+              "You",
+              "were",
+              "were not / weren't",
+              "Were you ...?"
+            ],
+            [
+              "He / She / It",
+              "was",
+              "was not / wasn't",
+              "Was he/she/it ...?"
+            ],
+            [
+              "We / You / They",
+              "were",
+              "were not / weren't",
+              "Were we/you/they ...?"
+            ],
+            [
+              "Short answer",
+              "Yes, I was. / Yes, they were.",
+              "No, I wasn't. / No, they weren't.",
+              "—"
+            ]
           ]
         },
         {
           "type": "chips",
-          "items": ["yesterday", "last week", "last year", "ago", "in 2000", "when", "the other day", "two days ago", "in 1996"]
+          "items": [
+            "yesterday",
+            "last week",
+            "last year",
+            "ago",
+            "in 2000",
+            "when",
+            "the other day",
+            "two days ago",
+            "in 1996"
+          ]
         }
       ]
     },
@@ -80,13 +135,43 @@
         },
         {
           "type": "table",
-          "headers": ["Sujeto", "Affirmative", "Negative", "Interrogative"],
+          "headers": [
+            "Sujeto",
+            "Affirmative",
+            "Negative",
+            "Interrogative"
+          ],
           "rows": [
-            ["I", "was working", "wasn't working", "Was I working ...?"],
-            ["You", "were working", "weren't working", "Were you working ...?"],
-            ["He / She / It", "was working", "wasn't working", "Was he/she/it working ...?"],
-            ["We / You / They", "were working", "weren't working", "Were we/you/they working ...?"],
-            ["Short answer", "Yes, I was. / Yes, they were.", "No, I wasn't. / No, they weren't.", "—"]
+            [
+              "I",
+              "was working",
+              "wasn't working",
+              "Was I working ...?"
+            ],
+            [
+              "You",
+              "were working",
+              "weren't working",
+              "Were you working ...?"
+            ],
+            [
+              "He / She / It",
+              "was working",
+              "wasn't working",
+              "Was he/she/it working ...?"
+            ],
+            [
+              "We / You / They",
+              "were working",
+              "weren't working",
+              "Were we/you/they working ...?"
+            ],
+            [
+              "Short answer",
+              "Yes, I was. / Yes, they were.",
+              "No, I wasn't. / No, they weren't.",
+              "—"
+            ]
           ]
         },
         {
@@ -139,11 +224,31 @@
         },
         {
           "type": "table",
-          "headers": ["Sujeto", "Affirmative", "Negative", "Interrogative"],
+          "headers": [
+            "Sujeto",
+            "Affirmative",
+            "Negative",
+            "Interrogative"
+          ],
           "rows": [
-            ["I / You / We / They", "have / 've worked", "haven't worked", "Have I/you/we/they worked ...?"],
-            ["He / She / It", "has / 's worked", "hasn't worked", "Has he/she/it worked ...?"],
-            ["Short answer", "Yes, I have. / Yes, he has.", "No, I haven't. / No, he hasn't.", "—"]
+            [
+              "I / You / We / They",
+              "have / 've worked",
+              "haven't worked",
+              "Have I/you/we/they worked ...?"
+            ],
+            [
+              "He / She / It",
+              "has / 's worked",
+              "hasn't worked",
+              "Has he/she/it worked ...?"
+            ],
+            [
+              "Short answer",
+              "Yes, I have. / Yes, he has.",
+              "No, I haven't. / No, he hasn't.",
+              "—"
+            ]
           ]
         },
         {
@@ -177,7 +282,21 @@
         },
         {
           "type": "chips",
-          "items": ["ever", "never", "just", "for", "since", "already", "yet", "recently", "today", "this evening", "how long?", "it is the first time", "always"]
+          "items": [
+            "ever",
+            "never",
+            "just",
+            "for",
+            "since",
+            "already",
+            "yet",
+            "recently",
+            "today",
+            "this evening",
+            "how long?",
+            "it is the first time",
+            "always"
+          ]
         }
       ]
     },
@@ -192,12 +311,32 @@
         },
         {
           "type": "table",
-          "headers": ["Tiempo verbal", "Cuándo se usa", "Ejemplo"],
+          "headers": [
+            "Tiempo verbal",
+            "Cuándo se usa",
+            "Ejemplo"
+          ],
           "rows": [
-            ["Past Simple", "Acción terminada en un tiempo definido del pasado", "She broke her glasses yesterday."],
-            ["Present Perfect Simple", "Acción pasada con relevancia en el presente o tiempo indefinido", "She has broken her glasses."],
-            ["Past Simple", "Con marcadores de tiempo específicos: yesterday, last year, ago, in 2000...", "We met at a party in 2000."],
-            ["Present Perfect Simple", "Con marcadores: ever, just, already, yet, for, since, recently...", "He has lived in the city since 2020."]
+            [
+              "Past Simple",
+              "Acción terminada en un tiempo definido del pasado",
+              "She broke her glasses yesterday."
+            ],
+            [
+              "Present Perfect Simple",
+              "Acción pasada con relevancia en el presente o tiempo indefinido",
+              "She has broken her glasses."
+            ],
+            [
+              "Past Simple",
+              "Con marcadores de tiempo específicos: yesterday, last year, ago, in 2000...",
+              "We met at a party in 2000."
+            ],
+            [
+              "Present Perfect Simple",
+              "Con marcadores: ever, just, already, yet, for, since, recently...",
+              "He has lived in the city since 2020."
+            ]
           ]
         }
       ]
@@ -273,11 +412,15 @@
             },
             {
               "title": "Expresiones fijas con In",
-              "content": "in a car | in a taxi | in a helicopter | in a boat | in a lift | in the newspaper | in the sky | in a row | in a street"
+              "content": "in a car | in a taxi | in a helicopter | in a boat | in a lift | in the newspaper | in the sky | in a row | in a street | in the classroom"
             },
             {
               "title": "Expresiones fijas con On",
-              "content": "on a bus | on a train | on a plane | on a ship | on a bicycle | on a motorbike | on a horse | on an elephant | on the radio | on TV | on the left | on the right | on the way"
+              "content": "on a bus | on a train | on a plane | on a ship | on a bicycle | on a motorbike | on a horse | on an elephant | on the radio | on the Internet | on TV | on the left | on the right | on the way"
+            },
+            {
+              "title": "ON vs IN en transportes",
+              "content": "ON: transportes donde puedes caminar dentro (bus, plane, train). IN: transportes donde no puedes caminar dentro (car, taxi, van)."
             }
           ]
         }
@@ -315,13 +458,37 @@
         },
         {
           "type": "table",
-          "headers": ["Frase", "Question tag", "Razón"],
+          "headers": [
+            "Frase",
+            "Question tag",
+            "Razón"
+          ],
           "rows": [
-            ["Mary will be late, ...", "won't she?", "Frase positiva → tag negativa"],
-            ["They don't have the notes, ...", "do they?", "Frase negativa → tag positiva"],
-            ["Let's start, ...", "shall we?", "Excepción: Let's"],
-            ["I'm wrong, ...", "aren't I?", "Excepción: I'm"],
-            ["Don't stay late, ...", "will you?", "Excepción: imperativo"]
+            [
+              "Mary will be late, ...",
+              "won't she?",
+              "Frase positiva → tag negativa"
+            ],
+            [
+              "They don't have the notes, ...",
+              "do they?",
+              "Frase negativa → tag positiva"
+            ],
+            [
+              "Let's start, ...",
+              "shall we?",
+              "Excepción: Let's"
+            ],
+            [
+              "I'm wrong, ...",
+              "aren't I?",
+              "Excepción: I'm"
+            ],
+            [
+              "Don't stay late, ...",
+              "will you?",
+              "Excepción: imperativo"
+            ]
           ]
         }
       ]
@@ -338,142 +505,372 @@
         {
           "type": "flipcards",
           "items": [
-            { "term": "word processor", "def": "procesador de textos" },
-            { "term": "to edit", "def": "editar" },
-            { "term": "to format", "def": "formatear, dar formato" },
-            { "term": "font", "def": "fuente tipográfica" },
-            { "term": "bold", "def": "negrita" },
-            { "term": "italic", "def": "cursiva" },
-            { "term": "underlined", "def": "subrayado" },
-            { "term": "spell check", "def": "corrector ortográfico" },
-            { "term": "to insert", "def": "insertar" },
-            { "term": "to copy", "def": "copiar" },
-            { "term": "to cut", "def": "cortar" },
-            { "term": "to paste", "def": "pegar" },
-            { "term": "to save", "def": "guardar" },
-            { "term": "to print", "def": "imprimir" },
-            { "term": "bullet points", "def": "viñetas, puntos de lista" },
-            { "term": "page layout", "def": "diseño de página" },
-            { "term": "header", "def": "encabezado" },
-            { "term": "footer", "def": "pie de página" },
-            { "term": "margins", "def": "márgenes" },
-            { "term": "portrait", "def": "orientación vertical" },
-            { "term": "landscape", "def": "orientación horizontal" },
-            { "term": "shortcut", "def": "atajo de teclado" },
-            { "term": "at sign (@)", "def": "arroba" },
-            { "term": "hash (#)", "def": "almohadilla" },
-            { "term": "percent sign (%)", "def": "signo de porcentaje" },
-            { "term": "ampersand (&)", "def": "et, símbolo &" },
-            { "term": "asterisk (*)", "def": "asterisco" },
-            { "term": "parentheses (())", "def": "paréntesis" },
-            { "term": "square brackets ([])", "def": "corchetes" },
-            { "term": "curly braces ({})", "def": "llaves" },
-            { "term": "slash (/)", "def": "barra diagonal" },
-            { "term": "backslash (\\)", "def": "barra invertida" },
-            { "term": "hyphen / dash (—)", "def": "guion / raya" },
-            { "term": "underscore (_)", "def": "guion bajo" },
-            { "term": "quotation marks (\")", "def": "comillas" },
-            { "term": "apostrophe (')", "def": "apóstrofo" },
-            { "term": "colon (:)", "def": "dos puntos" },
-            { "term": "semicolon (;)", "def": "punto y coma" },
-            { "term": "period / full stop (.)", "def": "punto final" },
-            { "term": "comma (,)", "def": "coma" },
-            { "term": "exclamation mark (!)", "def": "signo de exclamación" },
-            { "term": "question mark (?)", "def": "signo de interrogación" },
-            { "term": "caret (^)", "def": "acento circunflejo / caret" }
+            {
+              "term": "word processor",
+              "def": "procesador de textos"
+            },
+            {
+              "term": "to edit",
+              "def": "editar"
+            },
+            {
+              "term": "to format",
+              "def": "formatear, dar formato"
+            },
+            {
+              "term": "font",
+              "def": "fuente tipográfica"
+            },
+            {
+              "term": "bold",
+              "def": "negrita"
+            },
+            {
+              "term": "italic",
+              "def": "cursiva"
+            },
+            {
+              "term": "underlined",
+              "def": "subrayado"
+            },
+            {
+              "term": "spell check",
+              "def": "corrector ortográfico"
+            },
+            {
+              "term": "to insert",
+              "def": "insertar"
+            },
+            {
+              "term": "to copy",
+              "def": "copiar"
+            },
+            {
+              "term": "to cut",
+              "def": "cortar"
+            },
+            {
+              "term": "to paste",
+              "def": "pegar"
+            },
+            {
+              "term": "to save",
+              "def": "guardar"
+            },
+            {
+              "term": "to print",
+              "def": "imprimir"
+            },
+            {
+              "term": "bullet points",
+              "def": "viñetas, puntos de lista"
+            },
+            {
+              "term": "page layout",
+              "def": "diseño de página"
+            },
+            {
+              "term": "header",
+              "def": "encabezado"
+            },
+            {
+              "term": "footer",
+              "def": "pie de página"
+            },
+            {
+              "term": "margins",
+              "def": "márgenes"
+            },
+            {
+              "term": "portrait",
+              "def": "orientación vertical"
+            },
+            {
+              "term": "landscape",
+              "def": "orientación horizontal"
+            },
+            {
+              "term": "shortcut",
+              "def": "atajo de teclado"
+            },
+            {
+              "term": "at sign (@)",
+              "def": "arroba"
+            },
+            {
+              "term": "hash (#)",
+              "def": "almohadilla"
+            },
+            {
+              "term": "percent sign (%)",
+              "def": "signo de porcentaje"
+            },
+            {
+              "term": "ampersand (&)",
+              "def": "et, símbolo &"
+            },
+            {
+              "term": "asterisk (*)",
+              "def": "asterisco"
+            },
+            {
+              "term": "parentheses (())",
+              "def": "paréntesis"
+            },
+            {
+              "term": "square brackets ([])",
+              "def": "corchetes"
+            },
+            {
+              "term": "curly braces ({})",
+              "def": "llaves"
+            },
+            {
+              "term": "slash (/)",
+              "def": "barra diagonal"
+            },
+            {
+              "term": "backslash (\\)",
+              "def": "barra invertida"
+            },
+            {
+              "term": "hyphen / dash (—)",
+              "def": "guion / raya"
+            },
+            {
+              "term": "underscore (_)",
+              "def": "guion bajo"
+            },
+            {
+              "term": "quotation marks (\")",
+              "def": "comillas"
+            },
+            {
+              "term": "apostrophe (')",
+              "def": "apóstrofo"
+            },
+            {
+              "term": "colon (:)",
+              "def": "dos puntos"
+            },
+            {
+              "term": "semicolon (;)",
+              "def": "punto y coma"
+            },
+            {
+              "term": "period / full stop (.)",
+              "def": "punto final"
+            },
+            {
+              "term": "comma (,)",
+              "def": "coma"
+            },
+            {
+              "term": "exclamation mark (!)",
+              "def": "signo de exclamación"
+            },
+            {
+              "term": "question mark (?)",
+              "def": "signo de interrogación"
+            },
+            {
+              "term": "caret (^)",
+              "def": "acento circunflejo / caret"
+            }
           ]
         }
       ]
     }
   ],
   "glossary": [
-    { "term": "Past Simple", "def": "Tiempo verbal que describe acciones terminadas en un momento específico del pasado" },
-    { "term": "Past Continuous", "def": "Tiempo verbal que describe acciones que estaban en progreso en un momento del pasado (was/were + -ing)" },
-    { "term": "Present Perfect Simple", "def": "Tiempo verbal que conecta el pasado con el presente (have/has + participio de pasado)" },
-    { "term": "regular verb", "def": "Verbo regular: forma el pasado añadiendo -ed/-d al infinitivo" },
-    { "term": "irregular verb", "def": "Verbo irregular: tiene formas propias en pasado y participio que hay que memorizar" },
-    { "term": "past participle", "def": "Participio de pasado: tercera forma verbal usada en Present Perfect y voz pasiva" },
-    { "term": "gerund (-ing form)", "def": "Gerundio: forma verbal terminada en -ing, usada en Past Continuous y otros tiempos" },
-    { "term": "used to", "def": "Estructura para hablar de hábitos pasados que ya no existen (used to + infinitivo)" },
-    { "term": "auxiliary verb", "def": "Verbo auxiliar: do/does/did/have/has/was/were, usado para formar negativas e interrogativas" },
-    { "term": "question tag", "def": "Mini pregunta al final de una oración para confirmar información" },
-    { "term": "preposition of place", "def": "Preposición de lugar: indica la posición de algo o alguien en relación con otro elemento" },
-    { "term": "for", "def": "Durante (un periodo de tiempo): used with Present Perfect to indicate duration" },
-    { "term": "since", "def": "Desde / desde que (un punto en el tiempo): used with Present Perfect to indicate a starting point" },
-    { "term": "ever", "def": "Alguna vez: used in questions with Present Perfect" },
-    { "term": "yet", "def": "Ya (preguntas) / aún, todavía (negativas): used at the end of sentences with Present Perfect" },
-    { "term": "already", "def": "Ya (antes de lo esperado): used in affirmative sentences with Present Perfect" },
-    { "term": "just", "def": "Acabar de: used with Present Perfect to indicate something happened very recently" }
+    {
+      "term": "Past Simple",
+      "def": "Tiempo verbal que describe acciones terminadas en un momento específico del pasado"
+    },
+    {
+      "term": "Past Continuous",
+      "def": "Tiempo verbal que describe acciones que estaban en progreso en un momento del pasado (was/were + -ing)"
+    },
+    {
+      "term": "Present Perfect Simple",
+      "def": "Tiempo verbal que conecta el pasado con el presente (have/has + participio de pasado)"
+    },
+    {
+      "term": "regular verb",
+      "def": "Verbo regular: forma el pasado añadiendo -ed/-d al infinitivo"
+    },
+    {
+      "term": "irregular verb",
+      "def": "Verbo irregular: tiene formas propias en pasado y participio que hay que memorizar"
+    },
+    {
+      "term": "past participle",
+      "def": "Participio de pasado: tercera forma verbal usada en Present Perfect y voz pasiva"
+    },
+    {
+      "term": "gerund (-ing form)",
+      "def": "Gerundio: forma verbal terminada en -ing, usada en Past Continuous y otros tiempos"
+    },
+    {
+      "term": "used to",
+      "def": "Estructura para hablar de hábitos pasados que ya no existen (used to + infinitivo)"
+    },
+    {
+      "term": "auxiliary verb",
+      "def": "Verbo auxiliar: do/does/did/have/has/was/were, usado para formar negativas e interrogativas"
+    },
+    {
+      "term": "question tag",
+      "def": "Mini pregunta al final de una oración para confirmar información"
+    },
+    {
+      "term": "preposition of place",
+      "def": "Preposición de lugar: indica la posición de algo o alguien en relación con otro elemento"
+    },
+    {
+      "term": "for",
+      "def": "Durante (un periodo de tiempo): used with Present Perfect to indicate duration"
+    },
+    {
+      "term": "since",
+      "def": "Desde / desde que (un punto en el tiempo): used with Present Perfect to indicate a starting point"
+    },
+    {
+      "term": "ever",
+      "def": "Alguna vez: used in questions with Present Perfect"
+    },
+    {
+      "term": "yet",
+      "def": "Ya (preguntas) / aún, todavía (negativas): used at the end of sentences with Present Perfect"
+    },
+    {
+      "term": "already",
+      "def": "Ya (antes de lo esperado): used in affirmative sentences with Present Perfect"
+    },
+    {
+      "term": "just",
+      "def": "Acabar de: used with Present Perfect to indicate something happened very recently"
+    }
   ],
   "quiz": [
     {
       "question": "She ... (not/go) to work yesterday because she was ill.",
-      "options": ["didn't went", "didn't go", "doesn't go", "wasn't go"],
+      "options": [
+        "didn't went",
+        "didn't go",
+        "doesn't go",
+        "wasn't go"
+      ],
       "correct": 1,
       "explanation": "En el Past Simple, las oraciones negativas se forman con didn't + verbo en infinitivo (sin -ed). Por tanto: didn't go."
     },
     {
       "question": "¿Cuál es la forma correcta del verbo 'fly' en Past Simple?",
-      "options": ["flyed", "flied", "flew", "flown"],
+      "options": [
+        "flyed",
+        "flied",
+        "flew",
+        "flown"
+      ],
       "correct": 2,
       "explanation": "Fly es un verbo irregular. Su forma de Past Simple es flew. Flown es el participio de pasado."
     },
     {
       "question": "While Tom ... (read), his sister ... (listen) to music.",
-      "options": ["was reading / was listening", "read / listened", "was reading / listened", "reads / listens"],
+      "options": [
+        "was reading / was listening",
+        "read / listened",
+        "was reading / listened",
+        "reads / listens"
+      ],
       "correct": 0,
       "explanation": "Cuando dos acciones ocurrían simultáneamente en el pasado, se usa el Past Continuous para ambas: was/were + -ing."
     },
     {
       "question": "I ... to the gym three times this week.",
-      "options": ["went", "have gone", "was going", "go"],
+      "options": [
+        "went",
+        "have gone",
+        "was going",
+        "go"
+      ],
       "correct": 1,
       "explanation": "Se usa el Present Perfect (have/has + participio) cuando la acción tiene relevancia en el presente o el periodo de tiempo no ha terminado (this week)."
     },
     {
       "question": "... you ever ... in a foreign country?",
-      "options": ["Did / live", "Have / lived", "Were / living", "Do / live"],
+      "options": [
+        "Did / live",
+        "Have / lived",
+        "Were / living",
+        "Do / live"
+      ],
       "correct": 1,
       "explanation": "Con ever se usa el Present Perfect: Have you ever + participio de pasado. La forma correcta es Have you ever lived."
     },
     {
       "question": "She ... work in a bakery, but now she is a teacher.",
-      "options": ["used to", "was used to", "use to", "did use to"],
+      "options": [
+        "used to",
+        "was used to",
+        "use to",
+        "did use to"
+      ],
       "correct": 0,
       "explanation": "Para hablar de un hábito del pasado que ya no existe, se usa used to + infinitivo en la forma afirmativa."
     },
     {
       "question": "The keys are ... the table.",
-      "options": ["in", "at", "on", "under"],
+      "options": [
+        "in",
+        "at",
+        "on",
+        "under"
+      ],
       "correct": 2,
       "explanation": "On se usa para indicar que algo está sobre una superficie. Las llaves están encima de la mesa: on the table."
     },
     {
       "question": "She broke her glasses ....",
-      "options": ["since two years", "for a long time", "yesterday", "already"],
+      "options": [
+        "since two years",
+        "for a long time",
+        "yesterday",
+        "already"
+      ],
       "correct": 2,
       "explanation": "El Past Simple se usa con marcadores de tiempo específicos y pasados como yesterday, last week, ago. Yesterday indica un tiempo definido y terminado."
     },
     {
       "question": "They haven't finished the project ..., ... they?",
-      "options": ["yet / have", "already / haven't", "still / did", "just / haven't"],
+      "options": [
+        "yet / have",
+        "already / haven't",
+        "still / did",
+        "just / haven't"
+      ],
       "correct": 0,
       "explanation": "Yet va al final en frases negativas con Present Perfect. La question tag de una frase negativa es positiva, por tanto: have they?"
     },
     {
       "question": "Let's review the notes, ... ?",
-      "options": ["don't we", "won't we", "shall we", "will we"],
+      "options": [
+        "don't we",
+        "won't we",
+        "shall we",
+        "will we"
+      ],
       "correct": 2,
       "explanation": "Esta es una excepción de las question tags: después de Let's, siempre se usa shall we? independientemente del contexto."
     }
   ],
   "_sources": {
-    "s1": "ip_u3_main.txt §3.1 + ip_u3_pastSimple.txt + ip_u3_verbToBe.txt + ip_u3_usedTo.txt",
-    "s2": "ip_u3_main.txt §3.2 + ip_u3_pastCont.txt",
-    "s3": "ip_u3_main.txt §3.3 + ip_u3_presentPerf.txt",
-    "s4": "ip_u3_main.txt §3.4 + ip_u3_summary.txt",
-    "s5": "ip_u3_main.txt §3.5 + ip_u3_diapos_prep.txt",
-    "s6": "ip_u3_main.txt §3.6 + ip_u3_questionTags.txt",
-    "s7": "ip_u3_vocab.txt §3.1.1–3.1.3"
+    "s1": "U3 Exploring the past.pdf §3.1; Past Simple ( regular and irregular verbs).pdf; Verb To Be in the past tense.pdf; Used to.pdf",
+    "s2": "U3 Exploring the past.pdf §3.2; Past Continuos.pdf",
+    "s3": "U3 Exploring the past.pdf §3.3; Present Perfect Simple.pdf",
+    "s4": "U3 Exploring the past.pdf §3.4; Summary U3 Exploring the past.pdf",
+    "s5": "U3 Exploring the past.pdf §3.5; U3 DIAPOSITIVAS Preposition of place.pdf; U3 Prepositions of place.pdf (imagen, sin capa de texto)",
+    "s6": "U3 Exploring the past.pdf §3.6; Question tags.pdf",
+    "s7": "U3 Vocabulary Exploring the past.pdf"
   }
 }

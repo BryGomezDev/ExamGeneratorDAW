@@ -109,11 +109,27 @@
         },
         {
           "type": "table",
-          "headers": ["Paso", "Comando", "Descripción"],
+          "headers": [
+            "Paso",
+            "Comando",
+            "Descripción"
+          ],
           "rows": [
-            ["Compilar", "javac <opciones> <ficheros>", "Genera archivos .class con bytecode a partir de archivos .java"],
-            ["Empaquetar", "jar {ctxui}[vfm0Me] [fichero jar] ...", "Comprime .class y recursos en un archivo .jar"],
-            ["Ejecutar", "java [opciones] <clase principal> [args...]", "Lanza el bytecode sobre el JRE para su interpretación"]
+            [
+              "Compilar",
+              "javac <opciones> <ficheros>",
+              "Genera archivos .class con bytecode a partir de archivos .java"
+            ],
+            [
+              "Empaquetar",
+              "jar {ctxui}[vfm0Me] [fichero jar] ...",
+              "Comprime .class y recursos en un archivo .jar"
+            ],
+            [
+              "Ejecutar",
+              "java [opciones] <clase principal> [args...]",
+              "Lanza el bytecode sobre el JRE para su interpretación"
+            ]
           ]
         }
       ]
@@ -245,25 +261,45 @@
   "quiz": [
     {
       "question": "¿Cuál es la extensión del código fuente en Java?",
-      "options": [".class", ".jar", ".java", ".war"],
+      "options": [
+        ".class",
+        ".jar",
+        ".java",
+        ".war"
+      ],
       "correct": 2,
       "explanation": "El código fuente de Java debe almacenarse en archivos de texto plano con extensión .java. Al compilarlos se generan archivos .class con el bytecode."
     },
     {
       "question": "¿Qué distribución de Java está orientada al desarrollo de aplicaciones empresariales basadas en tecnología web?",
-      "options": ["J2ME", "J2SE", "J2EE", "OpenJDK"],
+      "options": [
+        "J2ME",
+        "J2SE",
+        "J2EE",
+        "OpenJDK"
+      ],
       "correct": 2,
       "explanation": "J2EE (Java 2 Enterprise Edition) es la distribución más completa y se centra en desarrollar e implementar aplicaciones empresariales basadas en tecnología web (Servlets, JSP, WebServices, etc.)."
     },
     {
       "question": "¿Cuál es el comando para compilar un programa Java desde la línea de comandos?",
-      "options": ["java", "javac", "jar", "javaw"],
+      "options": [
+        "java",
+        "javac",
+        "jar",
+        "javaw"
+      ],
       "correct": 1,
       "explanation": "El comando javac convierte el código fuente (.java) a código intermedio (bytecode, archivos .class). Su sintaxis es: javac <opciones> <ficheros>."
     },
     {
       "question": "¿Qué elemento del JRE reutiliza código ya compilado para reducir los tiempos de ejecución?",
-      "options": ["JVM", "Garbage Collector", "Compilador JIT", "CLASSPATH"],
+      "options": [
+        "JVM",
+        "Garbage Collector",
+        "Compilador JIT",
+        "CLASSPATH"
+      ],
       "correct": 2,
       "explanation": "El compilador JIT (Just In Time) está incluido en el JRE y evita que el bytecode se traduzca una y otra vez al reutilizar código ya compilado anteriormente, mejorando el rendimiento."
     },
@@ -280,13 +316,23 @@
     },
     {
       "question": "¿Qué variable de entorno utiliza el JRE para buscar clases y paquetes definidos por el usuario?",
-      "options": ["PATH", "JAVA_HOME", "CLASSPATH", "JRE_PATH"],
+      "options": [
+        "PATH",
+        "JAVA_HOME",
+        "CLASSPATH",
+        "JRE_PATH"
+      ],
       "correct": 2,
       "explanation": "CLASSPATH es la variable de entorno utilizada por el JRE para realizar la búsqueda de clases y paquetes definidos por el usuario. PATH, en cambio, es usada por el sistema operativo para localizar ejecutables."
     },
     {
       "question": "¿Qué tipo de archivo Java empaqueta los componentes de una aplicación web (Servlets, JSP) para facilitar su despliegue?",
-      "options": [".jar", ".class", ".ear", ".war"],
+      "options": [
+        ".jar",
+        ".class",
+        ".ear",
+        ".war"
+      ],
       "correct": 3,
       "explanation": "El archivo .war (Web Application Archive) contiene los archivos que conforman una aplicación web Java (Servlets, JSP, etc.) y facilita su despliegue en un servidor."
     },
@@ -303,21 +349,31 @@
     },
     {
       "question": "¿Qué atajo de teclado permite establecer o eliminar un punto de ruptura en el depurador de NetBeans?",
-      "options": ["F5", "F7", "Ctrl + F5", "Ctrl + F8"],
+      "options": [
+        "F5",
+        "F7",
+        "Ctrl + F5",
+        "Ctrl + F8"
+      ],
       "correct": 3,
       "explanation": "Ctrl + F8 es el atajo para establecer o eliminar un punto de ruptura (breakpoint) sobre la línea actual del cursor en el depurador de NetBeans."
     },
     {
       "question": "¿Cuál de los siguientes IDE está desarrollado en C++ y solo está disponible en Windows?",
-      "options": ["NetBeans", "Eclipse", "IntelliJ IDEA", "JCreator"],
+      "options": [
+        "NetBeans",
+        "Eclipse",
+        "IntelliJ IDEA",
+        "JCreator"
+      ],
       "correct": 3,
       "explanation": "JCreator está desarrollado en C++ y solo está disponible en Windows. Se recomienda su uso en máquinas con recursos limitados. NetBeans, Eclipse e IntelliJ IDEA están disponibles en Windows y Linux."
     }
   ],
   "_sources": {
-    "s1": "prog_u3_main.txt §3.1 (líneas 81-103)",
-    "s2": "prog_u3_main.txt §3.2–3.2.6 (líneas 104-361)",
-    "s3": "prog_u3_main.txt §3.3–3.3.3 (líneas 363-424)",
-    "s4": "prog_u3_main.txt §3.4–3.4.4 (líneas 426-658)"
+    "s1": "U3 Lenguajes de programación y entornos de desarrollo integrado.pdf §3.1; U3 RESUMEN Lenguajes de programación y entornos de desarrollo integrado.pdf",
+    "s2": "U3 Lenguajes de programación y entornos de desarrollo integrado.pdf §3.2-3.2.6; U3 RESUMEN Lenguajes de programación y entornos de desarrollo integrado.pdf §Java",
+    "s3": "U3 Lenguajes de programación y entornos de desarrollo integrado.pdf §3.3-3.3.3; U3 RESUMEN Lenguajes de programación y entornos de desarrollo integrado.pdf §enlazador-linker; U3 Lenguajes de programación y entornos de desarrollo integrado_videoclase.pdf",
+    "s4": "U3 Lenguajes de programación y entornos de desarrollo integrado.pdf §3.4-3.4.4; U3 RESUMEN Lenguajes de programación y entornos de desarrollo integrado.pdf §IDE; U3 Lenguajes de programación y entornos de desarrollo integrado_videoclase.pdf"
   }
 }
