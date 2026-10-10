@@ -1,0 +1,79 @@
+PREGUNTA: Estos, continue, default, else y try, son:
+A: Palabras reservadas.
+B: Notaciones.
+C: Constantes.
+D: Secuencias de escape.
+RESPUESTA: A
+EXPLICACION: Las palabras reservadas (keywords) son términos con significado propio en el lenguaje Java que no pueden usarse como identificadores. "continue" salta a la siguiente iteración de un bucle, "default" es el caso por defecto en un switch, "else" es la rama alternativa de un if, y "try" inicia un bloque de manejo de excepciones. Java tiene 50+ palabras reservadas definidas por la JLS.
+
+PREGUNTA: Estos, <, %, ! y ||, son:
+A: Constantes.
+B: Tipos de datos primitivos.
+C: Operadores.
+D: Variables.
+RESPUESTA: C
+EXPLICACION: Son operadores: "<" es operador relacional (menor que), "%" es operador aritmético (módulo/resto), "!" es operador lógico unario (negación), y "||" es operador lógico binario (OR). Los operadores son símbolos que indican al compilador que realice una operación específica con uno o más operandos.
+
+PREGUNTA: Estos, char, int, boolean y double, son:
+A: Constantes.
+B: Tipos de datos primitivos.
+C: Operadores.
+D: Ninguna de las anteriores.
+RESPUESTA: B
+EXPLICACION: Java define 8 tipos de datos primitivos: byte, short, int, long (enteros), float, double (decimales), char (carácter Unicode) y boolean (true/false). Son primitivos porque no son objetos, se almacenan directamente en la pila (stack) y no tienen métodos. A diferencia de String, que es una clase (objeto), estos son tipos básicos del lenguaje.
+
+PREGUNTA: Las palabras reservadas son:
+A: Palabras que cuentan con su propio significado, por lo que no se pueden utilizar como identificadores en los programas.
+B: Palabras que permiten realizar operaciones con las variables explicadas anteriormente.
+C: Palabras que, a lo largo de la vida del programa, mantienen un mismo valor.
+D: Ninguna de las anteriores.
+RESPUESTA: A
+EXPLICACION: Las palabras reservadas tienen semántica predefinida por el compilador de Java y están prohibidas como nombres de variables, métodos o clases. La opción B describe a los operadores y la C describe a las constantes (final). Intentar usar "int", "class" o "return" como nombre de variable genera un error de compilación.
+
+PREGUNTA: Los comentarios pueden iniciarse con la marca:
+A: //.
+B: /*.
+C: /**.
+D: Todas las anteriores son correctas.
+RESPUESTA: D
+EXPLICACION: Java soporta tres tipos de comentarios: "//" para comentarios de una sola línea (hasta el final de la línea), "/* ... */" para bloques multilínea, y "/** ... */" para comentarios Javadoc que generan documentación HTML automática con la herramienta javadoc. Los tres son sintaxis válida reconocida por el compilador.
+
+PREGUNTA: Los datos primitivos al realizar casting pueden ser:
+A: Declarados y no declarados.
+B: Implícitos y explícitos.
+C: Autoboxing y unboxing.
+D: Compilatorio y compilado.
+RESPUESTA: B
+EXPLICACION: El casting (conversión de tipos) puede ser implícito (widening): Java lo hace automáticamente cuando no hay pérdida de datos, por ejemplo de int a double. O explícito (narrowing): el programador debe indicarlo con paréntesis cuando puede haber pérdida, por ejemplo "(int) 3.9" devuelve 3. Autoboxing/unboxing es la conversión entre primitivos y sus clases envolventes (int ↔ Integer), concepto distinto.
+
+PREGUNTA: Palabras que cuentan con su propio significado, por lo que no se pueden utilizar como identificadores en los programas:
+A: Constantes.
+B: Identificadores.
+C: String.
+D: Ninguna de las anteriores.
+RESPUESTA: D
+EXPLICACION: La descripción corresponde exactamente a las palabras reservadas (keywords), pero esa opción no aparece en las respuestas disponibles. "Constantes" son valores inmutables declarados con "final". "Identificadores" son los nombres que el programador asigna a variables, métodos y clases. "String" es una clase. Ninguna de las tres opciones A, B o C coincide con la definición dada.
+
+PREGUNTA: Sistemas de signos destinado a representar símbolos o conceptos especiales por pertenecer a campos específicos y por lo tanto no encontrarse en el lenguaje general:
+A: lowercase.
+B: UpperCamelCase.
+C: Datos primitivos.
+D: Notación.
+RESPUESTA: D
+EXPLICACION: La notación es un sistema de signos convencionales para representar conceptos de un campo específico. En programación se usan notaciones de nomenclatura como camelCase (variables: miVariable), UpperCamelCase o PascalCase (clases: MiClase), SCREAMING_SNAKE_CASE (constantes: MAX_VALUE) y lowercase (paquetes: com.empresa.app).
+
+PREGUNTA: Un identificador puede emplear el símbolo:
+A: &.
+B: %.
+C: $.
+D: #.
+RESPUESTA: C
+EXPLICACION: En Java, un identificador puede contener letras, dígitos, el guion bajo "_" y el símbolo dólar "$". No puede empezar por un dígito. Los símbolos "&", "%", "#", "@", "!", etc. están prohibidos en identificadores porque son operadores o tienen uso reservado en el lenguaje. El "$" se permite aunque por convención se reserva para código generado automáticamente.
+
+PREGUNTA: Un paquete (package):
+A: Identifica las clases cuyas características sean comunes y las agrupa.
+B: Mantiene independientes las declaraciones que son realizadas en un paquete de las que existen en otros paquetes.
+C: Puede controlar la visibilidad de los elementos contenidos en él.
+D: Todas las anteriores son correctas.
+RESPUESTA: D
+EXPLICACION: Los paquetes en Java cumplen tres funciones simultáneamente: organización (agrupan clases relacionadas, como java.util o java.io), encapsulación de espacios de nombres (evitan colisiones entre clases con el mismo nombre en paquetes distintos) y control de acceso (el modificador de acceso por defecto "package-private" limita la visibilidad al propio paquete). Las tres afirmaciones son correctas y complementarias.
