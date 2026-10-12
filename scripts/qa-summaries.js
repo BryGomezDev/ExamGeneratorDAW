@@ -37,6 +37,7 @@ const UNITS = [
   { subject: 'prog', unit: '2' },
   { subject: 'prog', unit: '3' },
   { subject: 'prog', unit: '4' },
+  { subject: 'prog', unit: '5' },
 ];
 
 fs.mkdirSync(OUT, { recursive: true });

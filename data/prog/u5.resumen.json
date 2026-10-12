@@ -1,0 +1,424 @@
+{
+  "subject": "prog",
+  "unit": 5,
+  "title": "Estructura de control",
+  "intro": "Los programas se ejecutan de manera secuencial, desde la primera línea hasta la última, pero las sentencias de control permiten cambiar ese orden según la lógica que necesitemos aplicar. En esta unidad se estudia cómo comunicarse con un programa Java mediante la entrada y salida de datos, y cómo controlar el flujo de ejecución con estructuras de selección, repetición y salto. Conocer bien estas estructuras es imprescindible para escribir programas que evalúen datos de entrada y devuelvan el resultado correspondiente.",
+  "objectives": [
+    "Conocer los mecanismos básicos de entrada y salida de datos desde consola en un programa Java.",
+    "Comprender el manejo de las diferentes estructuras de selección (if, else if, switch).",
+    "Comprender el manejo de las estructuras de repetición (for, while, do while).",
+    "Conocer las estructuras de salto incondicional (break, continue) y el uso de etiquetas.",
+    "Desarrollar un programa que evalúe datos de entrada y devuelva el resultado correspondiente.",
+    "Aplicar técnicas básicas de prueba y depuración de programas."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "5.1. Entrada y salida de información",
+      "short": "5.1 Entrada y salida",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Podemos comunicarnos con Java mediante distintas alternativas. A continuación se ven la entrada y salida de información por el terminal y la entrada de información por argumentos (en la llamada). Los flujos de datos (Streams) son la manera en que los datos entran y salen en Java."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Entrada",
+              "title": "Entrada por argumentos",
+              "desc": "El método main recibe los argumentos con los que se invoca el programa en el parámetro args. El primer argumento es args[0], el segundo args[1], etc. Se envían separados por espacio y sin cantidad límite. En NetBeans se configuran en Propiedades del proyecto → Run → Arguments.",
+              "example": "java MiPrograma hola mundo → args[0]=\"hola\", args[1]=\"mundo\""
+            },
+            {
+              "kicker": "Salida estándar",
+              "title": "System.out (PrintStream)",
+              "desc": "Flujo estándar de salida. Métodos: write(datos) imprime bytes; print(obj) convierte a bytes e imprime; println(obj) igual que print pero añade salto de línea; printf(String, args...) imprime con especificadores de formato.",
+              "example": "System.out.println(\"Hola\");"
+            },
+            {
+              "kicker": "Salida de error",
+              "title": "System.err",
+              "desc": "Funciona igual que System.out pero se usa para la salida de error.",
+              "example": "System.err.println(\"Error\");"
+            },
+            {
+              "kicker": "Entrada estándar",
+              "title": "System.in (InputStream)",
+              "desc": "Flujo estándar de entrada, corresponde al teclado por defecto. System.in.read(datos) guarda en un array de bytes los caracteres leídos. System.in.read() devuelve el siguiente byte como entero (0-255) y debe convertirse a char con casting.",
+              "example": "int b = System.in.read(); char c = (char) b;"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Aquí podemos ver un ejemplo de Entrada/Salida utilizando flujos estándar:"
+        },
+        {
+          "type": "code",
+          "content": "int n1, n2, n3;\nSystem.out.println(\"Introduce tres números\");\nn1 = System.in.read();\nn2 = System.in.read();\nn3 = System.in.read();\nSystem.out.write(n1);\nSystem.out.print((char)n2);\nSystem.out.println((char)n3);"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Clase Scanner (Java 1.5+)",
+              "content": "Permite leer Streams de forma más cómoda. Analiza tipos primitivos y divide la entrada en tokens separados por espacios. Métodos principales: nextLine() devuelve la línea completa como String; next() devuelve el siguiente token como String; nextXXXX() devuelve el próximo token como tipo XXXX (nextInt, nextDouble, etc.); hasNext() devuelve true si hay otro token; hasNextInt() devuelve true si el siguiente token puede interpretarse como un tipo XXXX."
+            },
+            {
+              "title": "Clase Console (Java 1.6+)",
+              "content": "Incorpora funciones para leer passwords ocultando los caracteres tecleados. Métodos: readLine() devuelve la línea completa como String; readPassword() mantiene ocultos los caracteres y retorna un array de caracteres; printf(String, args...) imprime texto por consola de forma similar a System.out.printf."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "content": "package entradasalida;\n\nimport java.util.Scanner;\n\npublic class EntradaSalida {\n\n    public static void main(String[] args) {\n\n        System.out.println(\"Escriba su texto\");\n        Scanner entradaEscaner = new Scanner(System.in);\n        String entradaTeclado = entradaEscaner.nextLine();\n        System.out.println(entradaTeclado);\n\n    }\n\n}"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "5.2. Estructuras de selección (alternativa)",
+      "short": "5.2 Selección",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Para escribir el código, los lenguajes de programación cuentan con una serie de estructuras de selección y de control. Las estructuras de selección permiten evaluar condiciones y ejecutar un bloque de instrucciones u otro según el resultado."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "5.2.1",
+              "title": "if",
+              "desc": "Evalúa la condición entre paréntesis. Si devuelve true ejecuta el bloque entre llaves; si devuelve false pasa a la siguiente instrucción.",
+              "example": "if (s > t) { mayor = s; menor = t; }"
+            },
+            {
+              "kicker": "5.2.1",
+              "title": "if-else",
+              "desc": "Igual que if pero al devolver false ejecuta un bloque alternativo en lugar de pasar a la siguiente instrucción. El operador ternario permite hacer un if-else simple en una sola línea.",
+              "example": "mayor = (f > g) ? f : g;"
+            },
+            {
+              "kicker": "5.2.1",
+              "title": "if-else if",
+              "desc": "Encadena varios bloques if-else para evaluar más de una condición secuencialmente. Se ejecuta el bloque correspondiente al primer caso que resulte true.",
+              "example": "if (mes==\"enero\") { ... } else if (mes==\"febrero\") { ... } else { ... }"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Dentro de un bloque de instrucciones podemos encontrarnos con otras sentencias condicionales contenidas en ellos (sentencias anidadas)."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "switch",
+              "content": "Permite evaluar una variable y, en función de su valor, ejecutar un bloque de instrucciones u otro. Se puede incluir la opción default para cuando el valor no coincide con ningún case. Es necesario usar break al final de cada case para evitar que se sigan ejecutando los cases siguientes. Switch puede trabajar con: Strings, tipos primitivos char, short, int, byte, tipos enumerados, y clases envoltorio Byte, Short, Integer y Character."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "content": "int mes = 1; // 1-J, 2-F, 3-M, 4-A, 5-Ma\nswitch (mes) {\n    case 1: System.out.println(\"January\");\n    case 2: System.out.println(\"February\");\n    case 3: System.out.println(\"March\");\n    case 4: System.out.println(\"April\");\n    case 5: System.out.println(\"May\");\n        breack;\n    default: System.out.println(\"Resto del año\");\n        break;\n}"
+        },
+        {
+          "type": "text",
+          "content": "⚠ Ojo: El código switch del temario contiene la errata breack (en lugar de break) en el case 5, y los cases 1-4 no tienen break, por lo que el ejemplo imprimiría todos los meses desde el seleccionado hasta mayo. El bloque de código anterior se reproduce literalmente del PDF."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "5.3. Estructuras de repetición (iterativa)",
+      "short": "5.3 Repetición",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las estructuras de repetición o bucles permiten ejecutar repetidamente un bloque de instrucciones. Java dispone de tres sentencias iterativas: for, while y do while."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "5.3.1",
+              "title": "for",
+              "desc": "Se usa para iterar sobre un rango de valores. Consta de tres expresiones: inicialización (se ejecuta solo al comienzo), condición de finalización (finaliza el bucle cuando devuelve false) e incremento/decremento (se invoca en cada iteración). Si no se coloca ninguna de las tres expresiones, el bucle se ejecuta de forma infinita.",
+              "example": "for (int i = 1; i < 4; i++) { ... }"
+            },
+            {
+              "kicker": "5.3.2",
+              "title": "while",
+              "desc": "Evalúa la condición al principio; si devuelve true ejecuta el bloque. Si la condición es false desde el inicio, el bloque no se ejecuta nunca. Las instrucciones del bloque deben modificar la condición para evitar bucles infinitos.",
+              "example": "int i = 1; while (i < 3) { i++; }"
+            },
+            {
+              "kicker": "5.3.3",
+              "title": "do while",
+              "desc": "Similar al while, pero el bloque de instrucciones se ejecuta primero y después se evalúa la condición. Garantiza que el bloque se ejecuta al menos una vez siempre.",
+              "example": "do { i++; } while (i < 1);"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Respecto al alcance de la variable de control en for: si se declara dentro de la expresión de inicialización, se destruye al finalizar el bucle; si se declara fuera, permanece disponible hasta que termine el bloque en el que se declaró el for."
+        },
+        {
+          "type": "code",
+          "content": "// for con incremento\nfor (int i = 1; i < 4; i++) {\n    System.out.println(\"Incrementando: \" + i);\n}\n// for con decremento\nfor (int j = 3; j > 0; j--) {\n    System.out.println(\"Decrementando: \" + j);\n}\n// for infinito\nfor ( ; ; ) {\n    System.out.println(\"Bucle infinito\");\n}\n\n// while\nint i = 1;\nwhile (i < 3) {\n    System.out.println(\"Iteración: \" + i);\n    i++;\n}\n\n// do while\nint i = 1;\ndo {\n    System.out.println(\"Iteración: \" + i);\n    i++;\n} while (i < 1);"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "5.4. Estructuras de salto incondicional",
+      "short": "5.4 Salto incondicional",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las estructuras de salto incondicional permiten modificar el flujo natural de ejecución para saltar a otras partes del código. Su uso no se aconseja en programación estructurada, ya que dificulta la trazabilidad y el seguimiento de los programas. Con las estructuras de selección y repetición es más que suficiente para la mayoría de los casos."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "5.4.1",
+              "title": "break",
+              "desc": "Para la ejecución del bucle (o del switch) y avanza a la siguiente instrucción que haya después de él. Normalmente va contenida dentro de una sentencia if para indicar la condición de parada. Puede ir dentro de un bucle o dentro de un switch.",
+              "example": "if (j == 3) break;"
+            },
+            {
+              "kicker": "5.4.1",
+              "title": "continue",
+              "desc": "Detiene solo la iteración actual y salta a la próxima iteración del bucle sin salir de él. Solo puede ir dentro de un bucle, no dentro de un switch.",
+              "example": "if (j < 3) continue;"
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "break y continue con etiquetas (5.4.2)",
+              "content": "Las etiquetas permiten que un break o continue salte a la zona del código identificada con dicha etiqueta, en lugar de actuar sobre el bucle inmediatamente contenedor. Solo se pueden usar para saltos dentro de los bucles en los que nos encontremos. Para declarar una etiqueta se usa la sintaxis nombreEtiqueta: colocada antes del bucle. Por ejemplo: break W; sale del bucle etiquetado como W; continue Y; salta a la siguiente iteración del bucle etiquetado como Y."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "content": "// break con etiquetas\nW: while (true) {\n    System.out.println(\"Dentro de W\");\n    X: while (true) {\n        System.out.println(\"Dentro de X\");\n        break W;\n    }\n}\n// continue con etiquetas\nY: while (true) {\n    System.out.println(\"Dentro de Y\");\n    Z: while (true) {\n        System.out.println(\"Dentro de Z\");\n        continue Y;\n    }\n}"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "5.5. Prueba y depuración de programas",
+      "short": "5.5 Prueba y depuración",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Una vez completado un programa, este debe ser testado para asegurar su operatividad, cumpliendo con las funciones para las que fue desarrollado, y debe contar con suficientes comentarios para que otros desarrolladores lo comprendan con facilidad. Cuando se detecta un fallo en el programa, se denomina bug."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "¿Qué es la depuración?",
+              "content": "La depuración es el proceso para eliminar bugs (errores) de un programa. Se siguen una serie de pasos: seguir el flujo del programa e inspeccionar el código tratando de pronosticar el resultado; someter al programa a baterías de prueba para comprobar que funciona correctamente; realizar pruebas unitarias (probar por separado los diferentes módulos); y, por último, corregir todos los errores detectados sabiendo que una corrección puede generar nuevos errores."
+            },
+            {
+              "title": "Pasos del proceso de depuración",
+              "content": "1. Seguir el flujo del programa e inspeccionar el código mientras se trata de pronosticar el resultado, siempre que sea posible. 2. Someter al programa a una gran cantidad de trabajo mediante baterías de prueba, para que, si consigue ejecutarlas correctamente, se pueda deducir que funcionará apropiadamente en un escenario real. 3. Pruebas unitarias: probar por separado los diferentes módulos del programa. 4. Corregir todos los errores detectados, sabiendo que una vez corregidos, pueden generar nuevos errores."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Stream (flujo de datos)",
+      "def": "Mecanismo por el que los datos entran y salen en Java. Los flujos estándar son System.in (entrada desde teclado), System.out (salida a pantalla) y System.err (salida de error)."
+    },
+    {
+      "term": "args",
+      "def": "Parámetro del método main que recibe los argumentos pasados al programa en la invocación. args[0] es el primer argumento, args[1] el segundo, etc."
+    },
+    {
+      "term": "Scanner",
+      "def": "Clase Java (introducida en la versión 1.5) que permite leer Streams de forma cómoda, analizando tipos primitivos y dividiendo la entrada en tokens separados por espacios."
+    },
+    {
+      "term": "Console",
+      "def": "Clase Java (introducida en la versión 1.6) que incorpora funciones para leer passwords ocultando los caracteres tecleados, mediante el método readPassword()."
+    },
+    {
+      "term": "Sentencia condicional",
+      "def": "Instrucción que evalúa una condición y ejecuta un bloque de código u otro según el resultado (true o false). En Java: if, if-else, if-else if y switch."
+    },
+    {
+      "term": "Operador ternario",
+      "def": "Operador que permite realizar un if-else simple en una sola línea. Sintaxis: condicion ? valorSiTrue : valorSiFalse."
+    },
+    {
+      "term": "switch",
+      "def": "Estructura de selección que evalúa el valor de una variable (no una condición booleana) y ejecuta el bloque del case correspondiente. Trabaja con String, tipos primitivos (char, short, int, byte), enumerados y clases envoltorio (Byte, Short, Integer, Character)."
+    },
+    {
+      "term": "break",
+      "def": "Sentencia de salto que para la ejecución del bucle o switch actual y pasa a la siguiente instrucción después de él."
+    },
+    {
+      "term": "continue",
+      "def": "Sentencia de salto que detiene la iteración actual de un bucle y salta a la siguiente iteración, sin salir del bucle. Solo puede usarse dentro de bucles."
+    },
+    {
+      "term": "Etiqueta",
+      "def": "Identificador seguido de dos puntos (nombreEtiqueta:) colocado antes de un bucle para que break o continue puedan referenciarlo y saltar al bucle etiquetado en lugar del bucle inmediato."
+    },
+    {
+      "term": "Bug",
+      "def": "Fallo o error detectado en un programa."
+    },
+    {
+      "term": "Depuración",
+      "def": "Proceso para inspeccionar el código y eliminar errores (bugs). Incluye seguir el flujo, baterías de prueba, pruebas unitarias y corrección de errores."
+    },
+    {
+      "term": "Prueba unitaria",
+      "def": "Técnica de depuración que consiste en probar por separado los diferentes módulos de un programa."
+    },
+    {
+      "term": "Iteración",
+      "def": "Número de veces que se repite una instrucción de código o un conjunto de instrucciones dentro de un bucle."
+    },
+    {
+      "term": "Token",
+      "def": "Unidad de entrada reconocida por la clase Scanner. Por defecto los tokens están separados por espacios."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "¿Qué parámetro del método main contiene los argumentos con los que se invocó el programa?",
+      "options": [
+        "params",
+        "args",
+        "argv",
+        "arguments"
+      ],
+      "correct": 1,
+      "explanation": "El método main se declara como public static void main(String[] args). El parámetro args contiene los argumentos de la línea de comandos: args[0] es el primero, args[1] el segundo, etc."
+    },
+    {
+      "question": "¿Cuál es la diferencia principal entre System.out.print() y System.out.println()?",
+      "options": [
+        "print() imprime en color y println() en blanco y negro",
+        "print() solo acepta números y println() acepta cualquier tipo",
+        "println() añade un salto de línea al final, print() no",
+        "No hay diferencia, son equivalentes"
+      ],
+      "correct": 2,
+      "explanation": "Según el temario, println() hace lo mismo que print() pero al final añade un salto de línea. Ambos convierten el argumento a bytes y los imprimen."
+    },
+    {
+      "question": "¿Qué clase Java se introdujo en la versión 1.5 para leer Streams de forma más cómoda, dividiendo la entrada en tokens?",
+      "options": [
+        "Scanner",
+        "Console",
+        "BufferedReader",
+        "InputStreamReader"
+      ],
+      "correct": 0,
+      "explanation": "La clase Scanner fue introducida en la versión 1.5 de Java. Analiza los tipos primitivos y divide la entrada en tokens separados por espacios por defecto."
+    },
+    {
+      "question": "En una estructura switch de Java, ¿con qué tipos de datos puede trabajar?",
+      "options": [
+        "Solo con tipos primitivos int y char",
+        "Con boolean, int y String únicamente",
+        "Con cualquier tipo de dato, incluyendo objetos",
+        "Con String, tipos primitivos char/short/int/byte, tipos enumerados y clases envoltorio Byte/Short/Integer/Character"
+      ],
+      "correct": 3,
+      "explanation": "Según el temario, switch puede trabajar con Strings, tipos primitivos char, short, int y byte, tipos enumerados, y las clases envoltorio Byte, Short, Integer y Character."
+    },
+    {
+      "question": "¿Cuál es la diferencia fundamental entre while y do while?",
+      "options": [
+        "do while es más rápido que while",
+        "En do while el bloque se ejecuta antes de evaluar la condición, garantizando al menos una ejecución",
+        "while permite condiciones más complejas que do while",
+        "do while solo funciona con contadores enteros"
+      ],
+      "correct": 1,
+      "explanation": "La única diferencia entre do while y while es que en do while el bloque de instrucciones es lo primero que se ejecuta y después se evalúa la condición, de modo que el bloque se ejecuta al menos una vez siempre."
+    },
+    {
+      "question": "¿Qué ocurre cuando se ejecuta la sentencia continue dentro de un bucle for?",
+      "options": [
+        "Termina el programa",
+        "Sale del bucle y pasa a la siguiente instrucción fuera del bucle",
+        "Reinicia el bucle desde el principio reseteando el contador",
+        "Detiene la iteración actual y salta a la próxima iteración del bucle sin salir de él"
+      ],
+      "correct": 3,
+      "explanation": "Mediante la sentencia continue, se detiene solamente la iteración actual y se salta a la próxima iteración del bucle, pero sin salir de este, a no ser que se haya terminado el bucle."
+    },
+    {
+      "question": "¿Dónde puede usarse la sentencia break pero NO la sentencia continue?",
+      "options": [
+        "Dentro de una sentencia switch",
+        "Dentro de un método static",
+        "Dentro de un bloque try-catch",
+        "Dentro de un bucle while"
+      ],
+      "correct": 0,
+      "explanation": "Según el temario, las sentencias continue solo pueden ir dentro de un bucle, mientras que las break, además, pueden ir dentro de un switch."
+    },
+    {
+      "question": "¿Para qué sirven las etiquetas en combinación con break o continue?",
+      "options": [
+        "Para nombrar variables de control del bucle",
+        "Para que break o continue salten a un bucle externo identificado con la etiqueta, no solo al bucle inmediato",
+        "Para añadir comentarios al código",
+        "Para declarar el tipo de retorno del bucle"
+      ],
+      "correct": 1,
+      "explanation": "Las etiquetas sirven para que cuando se encuentre un continue o break, en vez de actuar sobre el bucle inmediato, se salte a la zona del código identificada con dicha etiqueta. Se declaran con la sintaxis nombreEtiqueta: antes del bucle."
+    },
+    {
+      "question": "¿Qué es un bug en el contexto de la depuración de programas?",
+      "options": [
+        "Un tipo especial de comentario en el código",
+        "Un fallo o error detectado en el programa",
+        "Una instrucción de salto incondicional",
+        "Un módulo del programa que no ha sido probado"
+      ],
+      "correct": 1,
+      "explanation": "Cuando se detecta un fallo en el programa, este se denomina bug. La depuración es el proceso para eliminar estos errores."
+    },
+    {
+      "question": "Si en un bucle for se declara la variable de control dentro de la expresión de inicialización, ¿qué ocurre con esa variable cuando termina el bucle?",
+      "options": [
+        "Conserva su último valor y sigue disponible en el método",
+        "Se destruye al finalizar el bucle",
+        "Pasa a ser una variable global accesible en toda la clase",
+        "Se resetea a cero automáticamente"
+      ],
+      "correct": 1,
+      "explanation": "Al declararse la variable dentro del propio for (en la expresión de inicialización), la variable se destruye al finalizar el bucle. Si se declara fuera, permanece hasta que termine el bloque en el que se declaró el for."
+    }
+  ],
+  "_sources": {
+    "s1": "U5 Estructura de control.pdf — sección 5.1, páginas 4-6",
+    "s2": "U5 Estructura de control.pdf — sección 5.2, páginas 7-8",
+    "s3": "U5 Estructura de control.pdf — sección 5.3, páginas 9-10",
+    "s4": "U5 Estructura de control.pdf — sección 5.4, páginas 11-12",
+    "s5": "U5 Estructura de control.pdf — sección 5.5, página 13"
+  }
+}
