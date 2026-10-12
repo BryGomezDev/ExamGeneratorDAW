@@ -1,0 +1,79 @@
+PREGUNTA: La depuración:
+A: Es el proceso encargado de hacer pruebas unitarias.
+B: Permite inspeccionar el código para eliminar posibles errores.
+C: Determinar el resultado de la aplicación según la entrada de datos.
+D: Todas las anteriores son correctas.
+RESPUESTA: D
+EXPLICACION: La depuración (debugging) es un proceso integral que engloba las tres acciones. Incluye ejecutar pruebas unitarias para detectar fallos, inspeccionar el estado interno del programa mediante un depurador (breakpoints, watches) para eliminar errores, y rastrear el flujo de datos para verificar que los resultados son los esperados según la entrada. En Java se usa el depurador del IDE (IntelliJ, Eclipse) o jdb en línea de comandos.
+
+PREGUNTA: La entrada de datos puede ser:
+A: Mediante argumentos.
+B: Por consola.
+C: Otros.
+D: Todas las opciones son correctas.
+RESPUESTA: D
+EXPLICACION: En Java existen múltiples formas de introducir datos en una aplicación: mediante argumentos al lanzar el programa (String[] args en el método main), por consola en tiempo de ejecución con Scanner(System.in), y otras vías como ficheros, bases de datos, peticiones HTTP o interfaces gráficas. Las tres categorías son válidas y se usan según el tipo de aplicación.
+
+PREGUNTA: La estructura for:
+A: Es una estructura de repetición o iterativa.
+B: Es una estructura condicional.
+C: Es una estructura de salto incondicional.
+D: Es una estructura de flujo.
+RESPUESTA: A
+EXPLICACION: "for" es una estructura de control iterativa que repite un bloque de código un número determinado de veces. Su sintaxis es: for (inicialización; condición; actualización) { cuerpo }. Las estructuras condicionales son if/else y switch. Los saltos incondicionales son break, continue y return. Java también tiene for-each (for-each) para recorrer colecciones e iterables.
+
+PREGUNTA: La estructura if:
+A: Permite hacer saltos incondicionales.
+B: Permite ejecutar una parte de código según una condición.
+C: Permite ejecutar varias veces una parte de código.
+D: Solo se ejecuta una vez.
+RESPUESTA: B
+EXPLICACION: "if" es una estructura condicional: evalúa una expresión booleana y ejecuta el bloque de código solo si la condición es verdadera. Puede combinarse con "else" para el caso contrario y con "else if" para múltiples condiciones. No es un salto incondicional (eso es break/goto), ni ejecuta varias veces el código (eso lo hacen los bucles). Puede ejecutarse 0 o 1 veces según la condición.
+
+PREGUNTA: La salida de datos por consola en Java se emplea:
+A: System.out por defecto.
+B: System.in por defecto.
+C: System.out por defecto y System.err para salidas de error.
+D: Todas las opciones son correctas.
+RESPUESTA: C
+EXPLICACION: Java define tres streams estándar en la clase System: System.in para la entrada (teclado por defecto), System.out para la salida estándar (consola, usado con print/println/printf) y System.err para la salida de errores, que también se muestra en consola pero en rojo en muchos IDEs y puede redirigirse independientemente. System.in es entrada, no salida, por lo que la opción A es incompleta y la D es incorrecta.
+
+PREGUNTA: La sentencia break permite:
+A: Parar la ejecución de un bucle para ejecutar la próxima instrucción fuera del bucle.
+B: Salta una iteración.
+C: Rompe la ejecución y detiene la aplicación.
+D: Ninguna de las anteriores es correcta.
+RESPUESTA: A
+EXPLICACION: "break" interrumpe inmediatamente la ejecución del bucle (for, while, do-while) o del switch más cercano, y transfiere el control a la primera instrucción después del bloque. La opción B describe a "continue", que salta solo la iteración actual y continúa con la siguiente. "break" no detiene la aplicación; para eso se usaría System.exit(). También puede usarse con etiquetas para salir de bucles anidados.
+
+PREGUNTA: Qué hace el siguiente código: switch(opciones) con cases 'a', 'b', 'c' que imprimen "Opción incorrecta" y case 'd' que imprime "Opción correcta", cada uno con break.
+A: Según el valor de la variable opciones ejecutará solo el código de uno de los valores 'a', 'b', 'c' o 'd'.
+B: Según el valor de la variable opciones ejecutará solo el código de uno de los valores que no sean ni 'a', 'b', 'c' y 'd'.
+C: Ejecutará el código de las opciones 'a', 'b', 'c' y 'd'.
+D: Si la variable opciones es verdadera, ejecutará cada parte de las opciones.
+RESPUESTA: A
+EXPLICACION: La estructura switch evalúa el valor de la variable "opciones" y salta directamente al case que coincida, ejecutando SOLO ese bloque. Si opciones vale 'd', imprime "Opción correcta"; si vale 'a', 'b' o 'c', imprime "Opción incorrecta". El "break" al final de cada case es clave: evita el fall-through (ejecución en cascada al siguiente case). Sin break, se ejecutarían todos los cases desde el que coincide hasta el final. Switch no evalúa booleanos, sino el valor de la variable.
+
+PREGUNTA: Qué hace el siguiente código: for (int i=10; i<10; i++) { System.out.println(i); } seguido de int i=10; do { i++; } while(i<10);
+A: Solo se ejecutará la instrucción i++.
+B: Se imprimirá por pantalla 10 veces.
+C: Se ejecutará 10 veces la instrucción de imprimir y 10 veces la instrucción i++.
+D: No hará nada.
+RESPUESTA: A
+EXPLICACION: Hay dos bloques. El for empieza con i=10 y la condición es i<10, que es false desde el principio, por lo que el for nunca ejecuta su cuerpo: println no se imprime ninguna vez. El do-while empieza con i=10, ejecuta el cuerpo una vez (i++ → i=11) y luego comprueba la condición while(i<10): 11<10 es false, así que para. En total: solo se ejecuta una vez i++. La diferencia clave entre while y do-while es que do-while siempre ejecuta el cuerpo al menos una vez antes de comprobar la condición.
+
+PREGUNTA: Qué método permite obtener una línea completa por teclado:
+A: Next().
+B: nextLine().
+C: hasNext().
+D: hasNextInt().
+RESPUESTA: B
+EXPLICACION: La clase Scanner (java.util.Scanner) proporciona varios métodos de lectura: next() lee hasta el siguiente espacio en blanco (una palabra), nextLine() lee toda la línea incluyendo espacios hasta el salto de línea, nextInt() lee un entero, nextDouble() un decimal. hasNext() y hasNextInt() comprueban si hay más tokens disponibles sin consumirlos. Para leer una frase completa se usa siempre nextLine().
+
+PREGUNTA: Una aplicación:
+A: No necesita manejar información.
+B: Necesita el manejo de información dependiendo de la funcionalidad.
+C: Necesita el manejo de información existiendo solo una entrada de datos.
+D: Necesita el manejo de información existiendo una entrada y salida de datos.
+RESPUESTA: D
+EXPLICACION: Toda aplicación, por definición, procesa información: recibe datos de entrada (teclado, fichero, red, sensores), los procesa y produce una salida (pantalla, fichero, respuesta HTTP, señal). El modelo básico de cualquier programa es IPO (Input - Process - Output). Una aplicación sin entrada ni salida no tendría utilidad. La opción B es parcialmente correcta pero incompleta; la D refleja el modelo completo.
