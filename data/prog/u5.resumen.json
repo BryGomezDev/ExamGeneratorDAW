@@ -128,7 +128,7 @@
         },
         {
           "type": "text",
-          "content": "⚠ Ojo: El código switch del temario contiene la errata breack (en lugar de break) en el case 5, y los cases 1-4 no tienen break, por lo que el ejemplo imprimiría todos los meses desde el seleccionado hasta mayo. El bloque de código anterior se reproduce literalmente del PDF."
+          "content": "⚠ Ojo: el ejemplo del temario tiene dos errores. 1) Escribe breack en lugar de break en el case 5, así que tal cual no compila. 2) El temario dice que hay un break al final de cada opción, pero los cases 1-4 no lo tienen. Versión correcta: un break; al final de cada case. Si se omite el break en un case, la ejecución continúa por los case siguientes hasta encontrar un break (con mes = 1 se imprimirían January, February, March, April y May)."
         }
       ]
     },
@@ -415,9 +415,9 @@
     }
   ],
   "_sources": {
-    "s1": "U5 Estructura de control.pdf — sección 5.1, páginas 4-6",
+    "s1": "U5 Estructura de control.pdf — sección 5.1, páginas 4-6; U5 RESUMEN Estructuras de control.pdf — glosario (Stream, token)",
     "s2": "U5 Estructura de control.pdf — sección 5.2, páginas 7-8",
-    "s3": "U5 Estructura de control.pdf — sección 5.3, páginas 9-10",
+    "s3": "U5 Estructura de control.pdf — sección 5.3, páginas 9-10; U5 RESUMEN Estructuras de control.pdf — glosario (iteración)",
     "s4": "U5 Estructura de control.pdf — sección 5.4, páginas 11-12",
     "s5": "U5 Estructura de control.pdf — sección 5.5, página 13"
   }
