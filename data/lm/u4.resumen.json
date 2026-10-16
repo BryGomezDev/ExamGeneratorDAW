@@ -110,7 +110,11 @@
         },
         {
           "type": "code",
-          "content": "<!DOCTYPE inventario [\n  <!ELEMENT inventario (plantas)+>\n  <!ELEMENT plantas (especie, (precio | no_disponible))>\n  <!ELEMENT especie (#PCDATA)>\n  <!ELEMENT precio (#PCDATA)>\n  <!ELEMENT no_disponible (#PCDATA)>\n]>"
+          "content": "<!DOCTYPE inventario [\n  <!ELEMENT inventario (plantas)+>\n  <!ELEMENT plantas (especie, (precio | no_disponible))>\n  <!ELEMENT especie (#PCDATA) #REQUIRED>\n  <!ELEMENT precio (#PCDATA)>\n  <!ELEMENT no_disponible (#PCDATA)>\n]>"
+        },
+        {
+          "type": "text",
+          "content": "⚠ Ojo: en este ejemplo del temario, #REQUIRED aparece en una declaración <!ELEMENT>, pero según el propio temario #REQUIRED es un valor de atributo (se usa en <!ATTLIST>). Tal cual, la declaración no es correcta; la versión válida es <!ELEMENT especie (#PCDATA)>."
         },
         {
           "type": "text",
@@ -122,7 +126,7 @@
         },
         {
           "type": "text",
-          "content": "⚠ Ojo: En el ejemplo de DTD insertado del temario (página 14), el elemento helechos se declara en el DTD pero no aparece en el modelo de contenido de plantas (que solo referencia flores y precio), ni se usa en el XML. Es una declaración huérfana que no causa error de validez pero resulta contradictoria con el modelo de contenido definido."
+          "content": "⚠ Ojo: este ejemplo del temario no es válido contra su propio DTD: plantas se define como (flores, precio), pero precio no se declara con <!ELEMENT>. Además, helechos se declara pero no se usa (eso no da error). Para que valide, habría que añadir <!ELEMENT precio (#PCDATA)>."
         }
       ]
     },
