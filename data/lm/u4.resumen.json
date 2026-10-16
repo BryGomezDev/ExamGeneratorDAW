@@ -1,0 +1,415 @@
+{
+  "subject": "lm",
+  "unit": 4,
+  "title": "Definición de esquemas y vocabularios en XML",
+  "intro": "En esta unidad se estudia el lenguaje XML (extensible markup language), derivado de SGML, que actúa como metalenguaje para el intercambio y almacenamiento de información. Se analizan sus elementos estructurales (prólogo, marcas, elementos, atributos, comentarios y CDATA) y se profundiza en los documentos de restricción DTD y XSD, que permiten definir y validar la estructura de un documento XML. Además, se presentan las principales herramientas de creación y edición de XML, tanto de escritorio como en línea, y se explican los métodos de validación disponibles.",
+  "objectives": [
+    "Comprender la estructura jerárquica y la sintaxis correcta de un documento XML.",
+    "Crear y asociar documentos DTD para definir restricciones y vocabularios en XML.",
+    "Crear y asociar esquemas XSD aplicando tipos de datos, indicadores de ocurrencia y restricciones.",
+    "Identificar y utilizar herramientas especializadas para la creación y edición de XML.",
+    "Aplicar métodos de validación para detectar y corregir errores en documentos XML."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "4.1. Definición de la estructura y sintaxis de documentos XML",
+      "short": "4.1 Estructura XML",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El lenguaje de marcas XML (extensible markup language) deriva de SGML (standard generalized markup language) y es un metalenguaje semejante al HTML que surge para resolver los problemas de este a partir del W3C. Usa marcas no predefinidas, lo que da una gran libertad para definir etiquetas propias. Su estructura es jerárquica arborescente: surge de un único elemento raíz y los elementos hijos o ramas se subordinan a él. La extensión de los documentos es .xml."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "4.1.1",
+              "title": "Instrucciones de procesamiento o prólogo",
+              "desc": "Primera línea del documento XML. Contiene: versión XML usada, encoding (tipo de codificación del cuerpo) y, opcionalmente, standalone ('yes' o 'no'), que indica si el documento tiene DTD o XSD adjuntos. Comienza siempre con '<?xml' y termina con '?>'."
+            },
+            {
+              "kicker": "4.1.2",
+              "title": "Marcas o etiquetas",
+              "desc": "Se delimitan con '<' y '>'. El cierre se marca añadiendo '/' antes del nombre. XML es case sensitive: mayúsculas y minúsculas son distintas. Las marcas no pueden empezar por número, contener espacios ni usar barras que no sean la de cierre."
+            },
+            {
+              "kicker": "4.1.3",
+              "title": "Elementos",
+              "desc": "Conjunto formado por etiqueta de apertura, contenido (texto u otros elementos) y etiqueta de cierre. El nombre puede contener caracteres alfanuméricos, guion, guion bajo y punto, nunca al inicio. Pueden existir elementos vacíos."
+            },
+            {
+              "kicker": "4.1.4",
+              "title": "Atributos",
+              "desc": "Propiedades específicas de un elemento. Se incluyen en la etiqueta de apertura con la sintaxis: nombre_elemento atributo=\"valor\". Si hay varios atributos se separan con espacios. Su abuso puede ser contraproducente."
+            },
+            {
+              "kicker": "4.1.5",
+              "title": "Comentarios",
+              "desc": "Se pueden introducir en cualquier parte del documento para aclarar o recordar información. Sintaxis: <!-- comentario -->. Son ignorados por el procesador."
+            },
+            {
+              "kicker": "4.1.6",
+              "title": "Sección CDATA",
+              "desc": "Permite añadir información al archivo sin que sea procesada por el parser. Sintaxis: <![CDATA[ contenido ]]>. Es útil para almacenar datos que no se van a usar actualmente pero que podrían usarse en el futuro."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "content": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n<perro>\n  <raza>\n    <nombre>dálmata</nombre>\n    <origen>Dalmacia</origen>\n    <color>blanco y negro</color>\n    <peso_medio>24 kg</peso_medio>\n    <altura_media>58 cm</altura_media>\n  </raza>\n</perro>"
+        },
+        {
+          "type": "table",
+          "headers": ["Incorrecta", "Correcta", "Causa del error"],
+          "rows": [
+            ["<Texto></texto>", "<Texto></Texto>", "Mayúsculas (case sensitive)"],
+            ["<1Texto></1Texto>", "<Texto1></Texto1>", "Número al inicio del nombre"],
+            ["<Texto 1></Texto 1>", "<Texto_1></Texto_1>", "Espacios en el nombre"],
+            ["<Texto/1></Texto/1>", "<Texto_1></Texto_1>", "Uso de barra no final"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "4.2. Creación, asociación y elementos de DTD y XSD",
+      "short": "4.2 DTD y XSD",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Cuando el documento XML no es suficiente para las necesidades del proyecto, se le pueden adjuntar archivos de restricción. Las dos opciones principales son DTD (document type definition) y XSD (XML schema definition). Ambos definen la estructura que debe seguir el XML. Para crearlos o convertir entre ellos existen herramientas como Trang u Oxygen XML Editor."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "4.2.1. DTD (definición de tipo de documento)",
+      "short": "4.2.1 DTD",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El DTD es un documento de texto plano con extensión .dtd que se adjunta al XML como archivo de restricciones. Permite especificar la estructura del documento: elementos permitidos, sus tipos, atributos y entidades. Es especialmente recomendable cuando el mismo documento va a ser trabajado por varias personas. Se aconseja crear el DTD antes que el XML. Se compone de tres partes: elementos, atributos y entidades."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "1. Elementos DTD",
+              "content": "Son la base del DTD. Sintaxis: <!ELEMENT nombre tipo>. Los tipos posibles son: #PCDATA (texto analizable por un parser), #CDATA (texto no analizable), ANY (cualquier valor) y EMPTY (elemento vacío). Si un elemento tiene hijos se listan entre paréntesis separados por comas. Los cuantificadores de ocurrencia son: ? (0 o 1 vez), * (0 o más veces), + (1 o más veces) y | (elige uno entre varios)."
+            },
+            {
+              "title": "2. Atributos DTD",
+              "content": "Sintaxis: <!ATTLIST elemento atributo tipo valor>. Tipos de atributo: CDATA (alfanumérico), ID (único), IDREF (referencia a otro elemento), IDREFS (conjunto de referencias), ENTITY, ENTITIES, NOTATION, NMTOKENS, Enumeraciones. Valores: #REQUIRED (obligatorio), #IMPLIED (opcional), #FIXED (fijo e inflexible), #DEFAULT (debe especificarse pero no es fijo)."
+            },
+            {
+              "title": "3. Entidades DTD",
+              "content": "Sirven como marcadores de posición para valores predefinidos reutilizables. Definición en DTD: <!ENTITY nombre \"valor\">. Referencia en XML: &nombre;. Permiten preconfigurar acciones y respuestas. También existen entidades de caracteres predefinidas: &amp; (&), &lt; (<), &gt; (>), &quot; (\"), &apos; (')."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "content": "<!DOCTYPE inventario [\n  <!ELEMENT inventario (plantas)+>\n  <!ELEMENT plantas (especie, (precio | no_disponible))>\n  <!ELEMENT especie (#PCDATA)>\n  <!ELEMENT precio (#PCDATA)>\n  <!ELEMENT no_disponible (#PCDATA)>\n]>"
+        },
+        {
+          "type": "text",
+          "content": "Asociación DTD en XML. Existen dos formas: insertada (el DTD se escribe dentro del propio XML, entre corchetes tras <!DOCTYPE raíz [...]>) o externa (el DTD se crea como archivo separado y se referencia con <!DOCTYPE raíz SYSTEM \"archivo.dtd\"> para DTD privado, o con PUBLIC y el identificador FPI para DTD público)."
+        },
+        {
+          "type": "code",
+          "content": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n<!DOCTYPE flora [\n  <!ELEMENT flora (plantas)+>\n  <!ELEMENT plantas (flores, precio)>\n  <!ELEMENT flores (#PCDATA)>\n  <!ELEMENT helechos (#PCDATA)>\n]>\n<flora>\n  <plantas>\n    <flores>Rosa</flores>\n    <precio>1€</precio>\n  </plantas>\n  <plantas>\n    <flores>Clavel</flores>\n    <precio>0,75€</precio>\n  </plantas>\n</flora>"
+        },
+        {
+          "type": "text",
+          "content": "⚠ Ojo: En el ejemplo de DTD insertado del temario (página 14), el elemento helechos se declara en el DTD pero no aparece en el modelo de contenido de plantas (que solo referencia flores y precio), ni se usa en el XML. Es una declaración huérfana que no causa error de validez pero resulta contradictoria con el modelo de contenido definido."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "4.2.2. XML Schema XSD",
+      "short": "4.2.2 XSD",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El XSD (XML schema definition) es la alternativa al DTD. Sus ventajas principales son: permite especificar tipos de datos (string, integer, date, etc.), añadir restricciones y atributos más complejos, su sintaxis es similar a XML y ofrece mayor control sobre las ocurrencias de elementos. Los archivos XSD tienen extensión .xsd. La raíz del documento XSD es siempre el elemento <xs:schema>."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Atributo raíz",
+              "title": "xmlns:alias",
+              "desc": "Especifica el espacio de nombres de los elementos XSD. El valor siempre es 'http://www.w3.org/2001/XMLSchema'. El alias puede ser xs o xsd y debe ser consistente en todo el documento."
+            },
+            {
+              "kicker": "Atributo raíz",
+              "title": "elementFormDefault",
+              "desc": "Indica si los elementos del XML deben estar calificados para el espacio de nombres. Valor por defecto: 'qualified'."
+            },
+            {
+              "kicker": "Atributo raíz",
+              "title": "targetNamespace",
+              "desc": "Especifica el espacio de nombres de donde se extraen los nombres de los elementos definidos en el esquema."
+            },
+            {
+              "kicker": "Atributo raíz",
+              "title": "attributeFormDefault",
+              "desc": "Indica si los atributos deben llevar los valores 'qualified' o 'unqualified'."
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "1. Elementos simples XSD",
+              "content": "Solo pueden contener texto, sin atributos ni elementos hijo. Sintaxis: <xs:element name=\"X\" type=\"Y\"/>. Los tipos más comunes son: xs:string, xs:decimal, xs:integer, xs:boolean, xs:date, xs:time. Se puede añadir valor predeterminado (default, modificable) o fijo (fixed, no modificable). Los indicadores de ocurrencia maxOccurs y minOccurs controlan cuántas veces puede aparecer un elemento; el valor 'unbounded' indica sin límite."
+            },
+            {
+              "title": "2. Elementos complejos XSD",
+              "content": "Pueden contener elementos hijo, atributos y texto. Se declaran con <xs:complexType>. El indicador de orden especifica cómo deben aparecer los hijos: xs:sequence (todos en el orden indicado), xs:choice (solo uno de los indicados), xs:all (todos sin importar el orden)."
+            },
+            {
+              "title": "3. Tipos de datos simples personalizados",
+              "content": "Se crean con <xs:simpleType name=\"nombre\"> para definir un nuevo tipo con características y restricciones propias."
+            },
+            {
+              "title": "4. Restricciones o facetas XSD",
+              "content": "Se aplican con <xs:restriction base=\"tipo\"> para limitar los valores válidos. Las facetas disponibles son: length (longitud fija), minLength, maxLength, maxExclusive, minExclusive, maxInclusive, minInclusive, totalDigits, fractionDigits, enumeration (lista de valores admitidos) y pattern (expresión regular que define caracteres admitidos)."
+            },
+            {
+              "title": "5. Documentación de esquemas XSD",
+              "content": "XSD incluye elementos para documentar el esquema: xs:annotation (determina qué comentarios contienen documentación), xs:documentation (añade comentarios, soporta atributos source y xml:lang) y xs:appinfo (especifica información de la aplicación)."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "content": "<?xml version=\"1.0\"?>\n<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"\n  targetNamespace=\"https://www.w3schools.com\"\n  xmlns=\"https://www.w3schools.com\"\n  elementFormDefault=\"qualified\">\n</xs:schema>"
+        },
+        {
+          "type": "code",
+          "content": "<xs:element name=\"flora\">\n  <xs:complexType>\n    <xs:sequence>\n      <xs:element name=\"Flores\" type=\"xs:string\" default=\"Rosa\"/>\n      <xs:element name=\"Arbustos\" type=\"xs:string\" default=\"Cardo\"/>\n    </xs:sequence>\n  </xs:complexType>\n</xs:element>"
+        },
+        {
+          "type": "table",
+          "headers": ["Tipo de dato XSD", "Descripción"],
+          "rows": [
+            ["xs:decimal", "Números decimales"],
+            ["xs:boolean", "Valor lógico (true/false)"],
+            ["xs:dateTime", "Año-mes-díaThora:minuto:segundo (T intercalada)"],
+            ["xs:string", "Cadena de caracteres (texto)"],
+            ["xs:date", "Año-mes-día"],
+            ["xs:time", "Hora:minuto:segundo"],
+            ["xs:integer", "Número entero positivo o negativo"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Asociación XSD en XML. Si no se usan espacios de nombres se usa el atributo noNamespaceSchemaLocation con el nombre del archivo .xsd. Si se usan espacios de nombres se emplea schemaLocation. Ambos atributos se añaden al elemento raíz del documento XML."
+        },
+        {
+          "type": "code",
+          "content": "<xs:simpleType name=\"Estado\">\n  <xs:restriction base=\"xs:string\">\n    <xs:enumeration value=\"No empezado\"/>\n    <xs:enumeration value=\"En proceso\"/>\n    <xs:enumeration value=\"Parado\"/>\n    <xs:enumeration value=\"Completado\"/>\n  </xs:restriction>\n</xs:simpleType>"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "4.3. Herramientas de creación y edición XML",
+      "short": "4.3 Herramientas XML",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Existen numerosas herramientas para crear y editar XML, tanto descargables como en línea y tanto gratuitas como de pago. Las de pago suelen incluir un verificador de errores avanzado. Algunas de las más conocidas son Stylus Studio, Oxygen XML y Exchanger XML Editor."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "4.3.1",
+              "title": "XML Copy Editor",
+              "desc": "Disponible para Windows y Linux. Licencia GNU (General Public License). Permite validación DTD. Destaca en: resaltado de sintaxis, plegado de elementos y terminación automática de etiquetas."
+            },
+            {
+              "kicker": "4.3.2",
+              "title": "Altova XMLSpy",
+              "desc": "El editor de XML más vendido. Funciones avanzadas de modelado, edición, transformación y depuración. Incluye editor JSON, esquemas JSON, editor XSLT, depurador XSLT, optimizador XSL, validación smartFix y corrección de errores."
+            },
+            {
+              "kicker": "4.3.3",
+              "title": "XMLSpear",
+              "desc": "Editor XML gratuito construido en Java, disponible para todas las plataformas, con validación en tiempo real. Incluye panel XPath (v3.0), compatibilidad con catálogos XML, traducción XSLT, validación completa mediante DOM3 con Xerces 2.9.0 y editor de árbol."
+            },
+            {
+              "kicker": "4.3.4",
+              "title": "XML Notepad",
+              "desc": "Editor con interfaz intuitiva de doble ventana (texto y árbol). Permite visualizar y editar documentos con facilidad. Características: soporte drag-and-drop, opción de undo infinito y posibilidad de personalizar fuentes y colores."
+            },
+            {
+              "kicker": "4.3.5",
+              "title": "Online XML Editor",
+              "desc": "Editor en línea con forma de árbol de doble ventana: el usuario escribe las etiquetas en el panel izquierdo y el árbol se genera en tiempo real en el panel derecho. Su manejo es simple e intuitivo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "4.4. Validación",
+      "short": "4.4 Validación",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La validación permite poner a prueba los archivos XML para detectar posibles fallos o carencias. Los programas que realizan esta labor se conocen como validadores o parsers. Un documento XML puede estar bien formado (cumple las reglas sintácticas) pero no ser válido (no cumple las restricciones del DTD o XSD asociado)."
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Usando línea de comando: herramienta XMLStarlet (disponible online)",
+            "Aplicaciones de escritorio: XML Copy Editor",
+            "Aplicaciones de escritorio: Stylus Studio",
+            "Aplicaciones de escritorio: Liquid Studio",
+            "Aplicaciones de escritorio: Oxygen XML Editor",
+            "Aplicaciones de escritorio: EditiX XML Editor"
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "XML",
+      "def": "Extensible Markup Language. Metalenguaje derivado de SGML que usa marcas no predefinidas para estructurar e intercambiar información. Su estructura es jerárquica arborescente."
+    },
+    {
+      "term": "Prólogo",
+      "def": "Primera línea de un documento XML. Contiene la versión XML, el encoding y, opcionalmente, el standalone. Comienza con '<?xml' y termina con '?>'."
+    },
+    {
+      "term": "DTD",
+      "def": "Document Type Definition. Archivo de texto plano con extensión .dtd que define la estructura permitida de un documento XML: elementos, atributos y entidades. Puede insertarse en el propio XML o adjuntarse como archivo externo."
+    },
+    {
+      "term": "XSD",
+      "def": "XML Schema Definition. Alternativa al DTD que permite especificar tipos de datos, restricciones complejas e indicadores de ocurrencia. Su sintaxis es similar a XML y ofrece mayor control que el DTD."
+    },
+    {
+      "term": "Entidad",
+      "def": "En DTD, marcador de posición que almacena un valor reutilizable. Se define con <!ENTITY nombre 'valor'> y se referencia en XML con &nombre;."
+    },
+    {
+      "term": "CDATA",
+      "def": "Character Data. Sección de un documento XML cuyo contenido no es procesado por el parser. Sintaxis: <![CDATA[ contenido ]]>. Sirve para almacenar datos que no deben interpretarse como marcado XML."
+    },
+    {
+      "term": "Parser / validador",
+      "def": "Programa que analiza un documento XML para comprobar si está bien formado y, si tiene DTD o XSD asociado, si es válido según las restricciones definidas."
+    },
+    {
+      "term": "Faceta (restricción XSD)",
+      "def": "Mecanismo de XSD para limitar los valores válidos de un tipo de dato. Ejemplos: minInclusive, maxInclusive, length, enumeration, pattern."
+    },
+    {
+      "term": "Elemento complejo XSD",
+      "def": "Elemento XSD que puede contener elementos hijo, atributos o texto. Se declara con xs:complexType y usa indicadores de orden (xs:sequence, xs:choice, xs:all) para definir cómo deben aparecer sus hijos."
+    },
+    {
+      "term": "Case sensitive",
+      "def": "Propiedad de XML por la que las mayúsculas y minúsculas en los nombres de las marcas se consideran diferentes. '<Texto>' y '<texto>' son etiquetas distintas."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "¿Qué indica el atributo standalone en el prólogo de un documento XML?",
+      "options": [
+        "Si el documento tiene fichero DTD o XSD adjunto",
+        "La versión de XML utilizada en el documento",
+        "El tipo de codificación de caracteres del cuerpo"
+      ],
+      "correct": 0,
+      "explanation": "El atributo standalone del prólogo indica con 'yes' o 'no' si el documento contiene ficheros DTD o XSD adjuntos. La versión XML se indica con el atributo version y la codificación con encoding."
+    },
+    {
+      "question": "¿Cuál de los siguientes nombres de etiqueta XML es incorrecto?",
+      "options": [
+        "<Texto_1>",
+        "<1Texto>",
+        "<Texto-1>"
+      ],
+      "correct": 1,
+      "explanation": "Los nombres de etiquetas XML no pueden comenzar con un número. '<1Texto>' es incorrecto porque empieza por '1'. '<Texto_1>' y '<Texto-1>' son válidos porque el guion bajo y el guion sí están permitidos, aunque nunca al inicio."
+    },
+    {
+      "question": "¿Qué tipo de contenido DTD indica que el elemento puede contener cualquier valor?",
+      "options": [
+        "EMPTY",
+        "#PCDATA",
+        "ANY"
+      ],
+      "correct": 2,
+      "explanation": "El tipo ANY en DTD indica que el elemento puede contener cualquier valor. EMPTY significa que el elemento no tiene contenido, y #PCDATA indica texto analizable por un parser."
+    },
+    {
+      "question": "¿Qué sintaxis se usa para declarar un atributo en un archivo DTD?",
+      "options": [
+        "<!ELEMENT Elemento Atributo Tipo Valor>",
+        "<!ATTLIST Elemento Atributo Tipo Valor>",
+        "<!ENTITY Elemento Atributo Tipo Valor>"
+      ],
+      "correct": 1,
+      "explanation": "Los atributos en DTD se declaran con la instrucción <!ATTLIST seguida del elemento, el atributo, el tipo y el valor. <!ELEMENT define elementos y <!ENTITY define entidades."
+    },
+    {
+      "question": "¿Cuál es la principal ventaja del XSD sobre el DTD?",
+      "options": [
+        "El XSD permite usar sintaxis de texto plano, más sencilla que XML",
+        "El XSD es el único formato que puede asociarse externamente al XML",
+        "El XSD permite especificar tipos de datos y añadir restricciones más complejas"
+      ],
+      "correct": 2,
+      "explanation": "La principal ventaja del XSD frente al DTD es que permite especificar tipos de datos concretos (string, integer, date, etc.) y añadir restricciones más complejas. Además, su sintaxis es similar a XML, lo que facilita su uso. El DTD también puede asociarse externamente al XML."
+    },
+    {
+      "question": "En un esquema XSD, ¿qué indicador de orden obliga a que aparezcan todos los elementos hijo según la secuencia indicada?",
+      "options": [
+        "xs:all",
+        "xs:sequence",
+        "xs:choice"
+      ],
+      "correct": 1,
+      "explanation": "xs:sequence exige que todos los elementos hijo aparezcan exactamente en el orden indicado. xs:all permite que aparezcan todos sin importar el orden, y xs:choice indica que debe aparecer solo uno de los indicados."
+    },
+    {
+      "question": "¿Qué hace la faceta 'enumeration' en una restricción XSD?",
+      "options": [
+        "Limita el número de dígitos decimales permitidos",
+        "Selecciona uno de los valores admitidos en una lista predefinida",
+        "Especifica un rango de caracteres mediante expresión regular"
+      ],
+      "correct": 1,
+      "explanation": "La faceta enumeration permite limitar los valores posibles a una lista predefinida. fractionDigits limita los dígitos decimales y pattern usa expresiones regulares para definir el formato permitido."
+    },
+    {
+      "question": "¿Qué editor XML es conocido por su interfaz de doble ventana que muestra simultáneamente el texto y la estructura en árbol, con soporte para drag-and-drop y undo infinito?",
+      "options": [
+        "XML Notepad",
+        "Altova XMLSpy",
+        "XML Copy Editor"
+      ],
+      "correct": 0,
+      "explanation": "XML Notepad destaca por su interfaz intuitiva de doble ventana (texto y árbol), el soporte para drag-and-drop y la opción de undo infinito. Altova XMLSpy es el más vendido pero con funciones más avanzadas, y XML Copy Editor destaca en resaltado de sintaxis y plegado de elementos."
+    }
+  ],
+  "_sources": {
+    "s1": "U4 Definición de esquemas y vocabularios en XML §4.1, págs. 4-8 | U4 Definición de esquemas y vocabulario presentación págs. 2-7",
+    "s2": "U4 Definición de esquemas y vocabularios en XML §4.2 introducción, pág. 9 | U4 Síntesis (4) pág. 1",
+    "s3": "U4 Definición de esquemas y vocabularios en XML §4.2.1, págs. 9-14 | U4 Definición de esquemas y vocabulario presentación págs. 8-13",
+    "s4": "U4 Definición de esquemas y vocabularios en XML §4.2.2, págs. 15-20 | U4 Definición de esquemas y vocabulario presentación págs. 14-15 | U4 Síntesis (4) pág. 1",
+    "s5": "U4 Definición de esquemas y vocabularios en XML §4.3, págs. 21 | U4 Definición de esquemas y vocabulario presentación pág. 16 | U4 Síntesis (4) pág. 1",
+    "s6": "U4 Definición de esquemas y vocabularios en XML §4.4, pág. 22 | U4 Definición de esquemas y vocabulario presentación pág. 17 | U4 Síntesis (4) pág. 1"
+  }
+}
