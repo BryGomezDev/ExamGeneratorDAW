@@ -370,6 +370,7 @@
 <div id="app">
   <div class="loading"><div class="spinner"></div><span>Cargando…</span></div>
 </div>
+<script src="subjects-config.js"></script>
 <script>
 'use strict';
 
@@ -432,18 +433,27 @@ function renderSubjects() {
   const withSummaries = state.subjects.filter(s => s.summaryUnits && s.summaryUnits.length > 0);
   if (withSummaries.length === 0)
     return `<div class="container"><p class="error-msg">No hay resúmenes disponibles aún.</p></div>`;
-  const cards = withSummaries.map(s => `
-    <div class="card" data-action="select-subject" data-subject="${esc(s.name)}"
-         tabindex="0" role="button" aria-label="${esc(subjectName(s.name))}">
-      <div class="card-icon" aria-hidden="true">${esc(subjectIcon(s.name))}</div>
-      <div class="card-title">${esc(subjectName(s.name))}</div>
-      <div class="card-meta">${s.summaryUnits.length} unidad${s.summaryUnits.length !== 1 ? 'es' : ''}</div>
-    </div>`).join('');
+  const groups = {};
+  withSummaries.forEach(s => {
+    const b = SUBJECT_BLOCKS[s.name] ?? 'otras';
+    (groups[b] ??= []).push(s);
+  });
+  const ORDER = [1, 2, 'otras'];
+  const BLOCK_LABELS = { 1: 'Bloque 1', 2: 'Bloque 2', otras: 'Otras' };
+  const blocksHtml = ORDER.filter(b => groups[b]).map(b => `
+    <h2 class="block-header">${esc(BLOCK_LABELS[b])}</h2>
+    <div class="cards-grid">${groups[b].map(s => `
+      <div class="card" data-action="select-subject" data-subject="${esc(s.name)}"
+           tabindex="0" role="button" aria-label="${esc(subjectName(s.name))}">
+        <div class="card-icon" aria-hidden="true">${esc(subjectIcon(s.name))}</div>
+        <div class="card-title">${esc(subjectName(s.name))}</div>
+        <div class="card-meta">${s.summaryUnits.length} unidad${s.summaryUnits.length !== 1 ? 'es' : ''}</div>
+      </div>`).join('')}</div>`).join('');
   return `
     <div class="container">
       <div class="section-title">Resúmenes por asignatura</div>
       <div class="section-subtitle">Selecciona una asignatura para ver sus resúmenes</div>
-      <div class="cards-grid">${cards}</div>
+      ${blocksHtml}
     </div>`;
 }
 

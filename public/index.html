@@ -565,7 +565,7 @@
   <div class="container">
     <div class="section-title">Asignaturas</div>
     <div class="section-subtitle">Selecciona una asignatura para empezar</div>
-    <div class="cards-grid" id="subject-grid">
+    <div id="subject-grid">
       <div class="loading"><div class="spinner"></div><span>Cargando asignaturas…</span></div>
     </div>
   </div>
@@ -661,6 +661,7 @@
   </div>
 </div>
 
+<script src="subjects-config.js"></script>
 <script>
 // ═══════════════════════════════════════════════════════════════════
 // State
@@ -828,21 +829,37 @@ async function loadHome() {
       grid.innerHTML = '<p style="color:var(--text-muted)">No se encontraron asignaturas. Añade carpetas con ficheros .txt.</p>';
       return;
     }
+    const groups = {};
     state.subjects.forEach(subj => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.setAttribute('role', 'button');
-      card.setAttribute('tabindex', '0');
-      card.setAttribute('aria-label', subjectName(subj.name));
-      card.innerHTML = `
-        <div class="card-icon" aria-hidden="true">${subjectIcon(subj.name)}</div>
-        <div class="card-title">${subjectName(subj.name)}</div>
-        <div class="card-meta">${subj.units.length} unidad${subj.units.length !== 1 ? 'es' : ''}${subj.hasPs ? ' · Prueba semestral' : ''}</div>
-      `;
-      card.addEventListener('click', () => loadModeScreen(subj));
-      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); } });
-      grid.appendChild(card);
+      const b = SUBJECT_BLOCKS[subj.name] ?? 'otras';
+      (groups[b] ??= []).push(subj);
     });
+    const ORDER = [1, 2, 'otras'];
+    const BLOCK_LABELS = { 1: 'Bloque 1', 2: 'Bloque 2', otras: 'Otras' };
+    for (const b of ORDER.filter(k => groups[k])) {
+      const h2 = document.createElement('h2');
+      h2.className = 'block-header';
+      h2.textContent = BLOCK_LABELS[b];
+      grid.appendChild(h2);
+      const subGrid = document.createElement('div');
+      subGrid.className = 'cards-grid';
+      groups[b].forEach(subj => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-label', subjectName(subj.name));
+        card.innerHTML = `
+          <div class="card-icon" aria-hidden="true">${subjectIcon(subj.name)}</div>
+          <div class="card-title">${subjectName(subj.name)}</div>
+          <div class="card-meta">${subj.units.length} unidad${subj.units.length !== 1 ? 'es' : ''}${subj.hasPs ? ' · Prueba semestral' : ''}</div>
+        `;
+        card.addEventListener('click', () => loadModeScreen(subj));
+        card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); } });
+        subGrid.appendChild(card);
+      });
+      grid.appendChild(subGrid);
+    }
   } catch (e) {
     const p = document.createElement('p');
     p.style.color = 'var(--red)';
