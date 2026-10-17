@@ -1,79 +1,79 @@
-PREGUNTA: ¿Cuál de las siguientes características de Gedit lo hace destacar como editor de texto?
-A: Uso en Windows y entornos como GNOME.
-B: Guardar y copiar texto.
-C: Uso en windows.
-D: Distintos usos de fuentes.
-RESPUESTA: A
-EXPLICACION: Gedit es el editor de texto oficial del entorno de escritorio GNOME (Linux). Su característica distintiva es la compatibilidad multiplataforma: funciona en Linux (su entorno nativo), macOS y también Windows, aunque está especialmente integrado en GNOME. Guardar, copiar o usar fuentes son funciones básicas de cualquier editor de texto y no son características diferenciadoras de Gedit.
-
-PREGUNTA: Con cual de estos podemos editar páginas web:
-A: Bloc de notas de Windows.
-B: Gedit.
-C: Notepad++.
-D: Todas las anteriores son correctas.
-RESPUESTA: D
-EXPLICACION: Un archivo HTML o XML no es más que texto plano, por lo que cualquier editor de texto puede abrirlo y modificarlo. El Bloc de notas de Windows, Gedit y Notepad++ son todos capaces de editar páginas web, aunque con diferente nivel de comodidad: Notepad++ añade resaltado de sintaxis para HTML/CSS/JS, Gedit también lo soporta con plugins, y el Bloc de notas es básico pero funcional.
-
-PREGUNTA: El formato de codificación de caracteres generalmente empleado por XML es:
-A: uef-8.
-B: utf-8.
-C: uft-8.
-D: ufe-8.
+PREGUNTA: En el contexto de XML, el término Case Sensitive se refiere a:
+A: Cualidad que permite referenciar elementos DTD.
+B: Propiedad que permite distinguir entre mayúsculas y minúsculas.
+C: Cualidad de los elementos de consulta que permite asignar valores.
+D: Ninguna de las anteriores es correcta.
 RESPUESTA: B
-EXPLICACION: UTF-8 (Unicode Transformation Format, 8 bits) es la codificación estándar para XML y la web en general. Se declara en el prólogo del documento: <?xml version="1.0" encoding="UTF-8"?>. UTF-8 es compatible con ASCII para los 128 caracteres básicos y usa secuencias de 2-4 bytes para el resto del estándar Unicode. Las otras opciones (uef-8, uft-8, ufe-8) no existen; son distractores con letras transpuestas.
+EXPLICACION: XML es case sensitive, lo que significa que distingue entre mayúsculas y minúsculas en los nombres de etiquetas y atributos. Así, <Libro>, <libro> y <LIBRO> son tres etiquetas completamente distintas. Esto contrasta con HTML, que no es case sensitive. Por ello, las etiquetas de apertura y cierre deben usar exactamente el mismo uso de mayúsculas: <Autor> no puede cerrarse con </autor>.
 
-PREGUNTA: En XML los valores siempre deben:
-A: Ser numéricos.
-B: Entrecomillarse.
-C: Ir entre símbolos de igual.
-D: Acotarse con los símbolos "<" y ">".
+PREGUNTA: ¿Cuál no es una herramienta de creación y edición de XML?
+A: Stylus Studio.
+B: Oxygen XML.
+C: Excharger XN1L Editor.
+D: Todas las anteriores son herramientas de creación y edición de XML.
+RESPUESTA: D
+EXPLICACION: Las tres opciones son editores XML especializados reales. Stylus Studio es un IDE para XML/XSLT/XQuery. Oxygen XML Editor es uno de los editores XML más completos del mercado, con soporte para DTD, XML Schema, XSLT y XPath. Excharger XN1L Editor también es un editor XML. Por eso la respuesta correcta es que todas son herramientas válidas de creación y edición XML.
+
+PREGUNTA: Del lenguaje XML surgieron otros como:
+A: XHTML.
+B: MathML.
+C: SVG.
+D: Todos los anteriores son correctos.
+RESPUESTA: D
+EXPLICACION: XML es un metalenguaje que sirve de base para definir otros lenguajes de marcas. XHTML es la reformulación de HTML 4 usando sintaxis XML estricta. MathML (Mathematical Markup Language) representa fórmulas matemáticas en XML. SVG (Scalable Vector Graphics) describe gráficos vectoriales en XML. Los tres son vocabularios XML estandarizados por el W3C, por lo que todos son correctos.
+
+PREGUNTA: DTD es:
+A: Un sistema numérico.
+B: Un tipo de atributo.
+C: Un documento de verificación.
+D: Un tipo de etiqueta.
+RESPUESTA: C
+EXPLICACION: DTD (Document Type Definition) es un documento que define la estructura y las reglas de un documento XML: qué elementos pueden aparecer, en qué orden, cuántas veces y qué atributos tienen. Actúa como esquema de verificación: permite comprobar que un documento XML es válido (no solo bien formado). Puede declararse internamente dentro del propio XML o en un archivo externo con extensión .dtd.
+
+PREGUNTA: El prólogo del documento XML se marca con:
+A: <= ... =>.
+B: <" ... ">.
+C: <? ...?>.
+D: < ... >.
+RESPUESTA: C
+EXPLICACION: El prólogo de un documento XML se escribe con la sintaxis <?xml version="1.0" encoding="UTF-8"?>, usando los delimitadores <? y ?>. Esta declaración es una instrucción de procesamiento que informa al parser sobre la versión de XML utilizada y la codificación de caracteres. Aunque técnicamente opcional, se recomienda incluirla siempre como primera línea del documento.
+
+PREGUNTA: En un DTD, #IMPLIED implica que el atributo:
+A: Es obligatorio.
+B: Es opcional.
+C: Es fijo.
+D: Ninguna de las anteriores es correcta.
 RESPUESTA: B
-EXPLICACION: En XML, los valores de los atributos deben ir siempre entre comillas, ya sean simples o dobles: <libro id="123"> o <libro id='123'>. Los valores numéricos dentro de elementos no requieren comillas (van entre etiquetas de apertura y cierre), pero los valores de atributos sí. El símbolo "=" separa el nombre del atributo de su valor, y "<" y ">" delimitan las etiquetas, no los valores.
+EXPLICACION: En un DTD, el valor por defecto de un atributo puede ser #REQUIRED (obligatorio, debe aparecer siempre), #IMPLIED (opcional, puede omitirse sin valor por defecto), #FIXED "valor" (fijo, siempre tiene ese valor) o un valor literal como valor por defecto. Por tanto, #IMPLIED significa que el atributo es completamente opcional: si no se incluye, no hay valor predeterminado.
 
-PREGUNTA: Selecciona la afirmación correcta:
-A: Los elementos XML no necesitan estar anidados correctamente.
-B: Un documento XML puede tener múltiples elementos de raíz.
-C: La estructura de los documentos XML debe ser jerárquica con un único elemento raíz.
-D: No es necesario que los elementos se abran y cierren en el orden correcto.
+PREGUNTA: Las anotaciones con <![CDATA[ deben cerrarse con:
+A: ]!>.
+B: !]>.
+C: ]]>.
+D: ]!]>.
 RESPUESTA: C
-EXPLICACION: Un documento XML bien formado (well-formed) tiene obligatoriamente un único elemento raíz que contiene a todos los demás. Los elementos deben estar correctamente anidados (el último en abrirse debe ser el primero en cerrarse) y todas las etiquetas deben cerrarse. Esto distingue XML de HTML, que es más permisivo con el anidado y el cierre de etiquetas.
+EXPLICACION: Las secciones CDATA (Character DATA) en XML permiten incluir texto que no debe ser interpretado como marcado. Se abren con <![CDATA[ y se cierran obligatoriamente con ]]>. Su uso más común es incluir código con caracteres especiales como <, > o & sin necesidad de usar entidades como &lt; o &gt;. El contenido entre ambas marcas se trata como texto literal.
 
-PREGUNTA: La estructura de XML consta de:
-A: Prólogo y directorio.
-B: Índice y cuerpo.
-C: Prólogo y cuerpo.
-D: Todas las anteriores son incorrectas.
-RESPUESTA: C
-EXPLICACION: Un documento XML se divide en dos partes: el prólogo, que contiene la declaración XML (<?xml version="1.0" encoding="UTF-8"?>) y opcionalmente la referencia a un DTD o schema para validación; y el cuerpo, que es el contenido real del documento con el elemento raíz y toda la jerarquía de elementos anidados. No existe "directorio" ni "índice" como partes de la estructura XML.
-
-PREGUNTA: La extensión predeterminada de los archivos del bloc de notas es:
-A: .txt.
-B: .doc.
-C: .docx.
-D: .xml.
-RESPUESTA: A
-EXPLICACION: El Bloc de notas de Windows guarda por defecto con extensión .txt (texto plano). Los formatos .doc y .docx son exclusivos de Microsoft Word e incluyen formato enriquecido, mientras que .txt no contiene ningún formato. Aunque el Bloc de notas puede guardar archivos con cualquier extensión (incluida .xml o .html) si se especifica, su extensión predeterminada es siempre .txt.
-
-PREGUNTA: Los lenguajes de marcas pueden ser de:
-A: Procedimiento.
-B: Presentación.
-C: Descriptivos.
-D: Todas las anteriores son correctas.
+PREGUNTA: Las marcas de cierre:
+A: Pueden contener espacios.
+B: Deben estar acompañadas de los signos "[" y "]" para delimitarlas.
+C: No requieren el uso de los signos "<" y ">" para delimitarlas.
+D: Deben estar acompañadas de los signos "<" y ">" para delimitarlas.
 RESPUESTA: D
-EXPLICACION: Los lenguajes de marcas se clasifican en tres tipos: de procedimiento (indican cómo debe procesarse el documento, como TeX o troff), de presentación (definen el aspecto visual, como RTF o los estilos de WordprocessingML) y descriptivos o semánticos (describen qué es cada elemento sin indicar cómo mostrarlo, como HTML o XML). Los tres tipos existen y son categorías reconocidas en la teoría de lenguajes de marcas.
+EXPLICACION: En XML, todas las etiquetas (tanto de apertura como de cierre) deben usar obligatoriamente los símbolos < y > como delimitadores. Las etiquetas de cierre añaden además la barra: </etiqueta>. No pueden contener espacios en el nombre ni usar otros delimitadores. Esta es una regla fundamental de un documento XML bien formado (well-formed).
 
-PREGUNTA: SGML son las siglas de:
-A: Standard Generalized Markup Language.
-B: Sistem Generalized Markup Language.
-C: Synthesis Generalized Markup Language.
-D: Es GSML no SGML.
-RESPUESTA: A
-EXPLICACION: SGML (Standard Generalized Markup Language) es el metalenguaje de marcas estándar ISO (ISO 8879:1986) del que derivan HTML y XML. "Standard" hace referencia a su naturaleza de estándar internacional, "Generalized" indica que es un marco genérico para definir otros lenguajes de marcas, y "Markup Language" describe su función. Las opciones B y C tienen palabras incorrectas, y la D es falsa.
-
-PREGUNTA: ¿Cuál de las siguientes características no es comúnmente proporcionada por Notepad++?
-A: Autocompletado.
-B: Búsqueda y reemplazo.
-C: Resaltado de sintaxis.
-D: Edición de imágenes.
+PREGUNTA: Selecciona el elemento XML correcto:
+A: "<Texto></Text>"
+B: "<.Texto></.Texto>"
+C: "<Texto$></Texto$>"
+D: "<Texto />"
 RESPUESTA: D
-EXPLICACION: Notepad++ es un editor de texto y código fuente, no un editor de imágenes. Sus características principales incluyen resaltado de sintaxis para más de 80 lenguajes, autocompletado, búsqueda y reemplazo con expresiones regulares, edición de múltiples documentos en pestañas, macros y soporte de plugins. La edición de imágenes (formatos PNG, JPG, etc.) requiere herramientas específicas como GIMP o Photoshop.
+EXPLICACION: La opción D muestra un elemento vacío con sintaxis de autocierre, completamente válida en XML. La A es incorrecta porque apertura y cierre usan nombres distintos (Texto vs Text). La B es inválida porque los nombres de etiqueta no pueden empezar con punto. La C es inválida porque el símbolo $ no está permitido en nombres de etiquetas XML (solo letras, dígitos, guion, guion bajo y punto, sin empezar por dígito).
+
+PREGUNTA: Parser es:
+A: Un analizador sintáctico.
+B: Un modelo de base de datos No-SQL.
+C: Un nodo de XPath.
+D: Ninguna de las anteriores, Parser no existe.
+RESPUESTA: A
+EXPLICACION: Un parser (analizador sintáctico) es el componente software que lee un documento XML y verifica que cumple las reglas de sintaxis del lenguaje. Los parsers XML pueden ser validadores (comprueban además la conformidad con un DTD o Schema) o no validadores (solo verifican que el documento está bien formado). Ejemplos conocidos son Xerces (Apache), MSXML (Microsoft) o el integrado en los navegadores modernos.
