@@ -1,0 +1,550 @@
+{
+  "subject": "prog",
+  "unit": 6,
+  "title": "Clases y utilización de objetos",
+  "intro": "En la programación orientada a objetos la parte más importante es saber trasladar las entidades del mundo real a su representación en un programa informático. Hasta ahora se habían estudiado los tipos primitivos de datos (int, char, float); en esta unidad se trabaja con un tipo de datos referencia denominado clase, que agrupa propiedades y acciones de una entidad en una sola estructura reutilizable.",
+  "objectives": [
+    "Conocer qué es una clase y su estructura interna (campos y métodos).",
+    "Comprender la visibilidad y el paso de datos en los elementos de una clase.",
+    "Aprender a instanciar y destruir objetos en Java.",
+    "Conocer qué es una librería y cuáles son las más usadas en Java.",
+    "Aplicar correctamente los modificadores de acceso (public, protected, package, private).",
+    "Utilizar los modificadores de clase y miembro (static, final, abstract, volatile, transient)."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "6.1. Concepto de clase",
+      "short": "6.1 Concepto de clase",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Una clase es una representación abstracta de una entidad del mundo real en un programa informático que contiene unas propiedades y unas acciones. La clase es la plantilla o estructura; los objetos son instancias creadas a partir de ella."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Clase",
+              "title": "Plantilla o estructura",
+              "desc": "Define las propiedades (campos) y las acciones (métodos) que tendrá cualquier objeto creado a partir de ella. Es la representación abstracta de una entidad. Ejemplo: la clase Persona define campos como nombre, DNI, edad y métodos como saludar, andar.",
+              "example": "Una clase Vehiculo puede tener campos marca, modelo y métodos aparcar, mover, repostar."
+            },
+            {
+              "kicker": "Objeto",
+              "title": "Instancia de una clase",
+              "desc": "Un objeto es una instancia creada en base a una clase. Una variable de esa clase contendrá las mismas propiedades y acciones definidas en la clase. Cada objeto declarado de una misma clase será independiente de los demás: compartirán la misma estructura pero tendrán diferentes valores.",
+              "example": "persona1 y persona2 son dos objetos de la clase Persona con nombres y DNI distintos."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "La instanciación de una clase produce un objeto en ejecución. Una clase puede tener visibilidad pública o de paquete (por defecto)."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "6.2. Estructura y miembros de una clase",
+      "short": "6.2 Estructura",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Una clase se puede declarar indicando el nivel de visibilidad, su nombre, el nombre de la clase de la que hereda (por defecto se hereda de la superclase Object) y las interfaces que pueda implementar. Las clases se componen de dos partes: campos (propiedades) y métodos (acciones)."
+        },
+        {
+          "type": "code",
+          "content": "[visibilidad] class Nombre [extends Superclase] [implements Interface1, Interface2, ...] { }"
+        },
+        {
+          "type": "text",
+          "content": "Los elementos extends (herencia) e implements (interfaz) son opcionales."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "6.2.1. Campos",
+      "short": "6.2.1 Campos",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los campos, también denominados atributos, variables o fields, permiten guardar la información que debe contener la clase. Por cada objeto instanciado la clase contendrá valores diferentes en sus campos. Si se quiere que todos los objetos compartan un mismo valor, se declaran como estático (campos de clase o variables de clase)."
+        },
+        {
+          "type": "code",
+          "content": "[visibilidad] [static] tipo nombreCampo;"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Visibilidad de los campos",
+              "content": "Los campos se declaran indicando un tipo de visibilidad, que normalmente siempre va a ser privada, para así cumplir con los principios de encapsulación y ocultación de la información. Hay algunos casos en los que los campos podrán ser públicos. El tipo puede ser un tipo primitivo o un tipo referencia (otra clase)."
+            },
+            {
+              "title": "Campos estáticos (static)",
+              "content": "Al declarar un campo como static, ese campo es común (compartido) entre todos los objetos de la clase. Por ejemplo, todas las personas tienen 2 piernas: ese valor sería un campo estático. Si no es estático, cada objeto tendrá su propio valor (por ejemplo, el DNI de cada persona es diferente)."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "content": "public class Persona {\n    private String nombre;\n    private String dni;\n    private int edad;\n    private static int numeroPiernas = 2; // campo estático: igual para todos\n}"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "6.2.2. Métodos",
+      "short": "6.2.2 Métodos",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los métodos dotan de acciones a la clase usando los datos de sus campos y se identifican por su nombramiento precedido por un verbo. Su sintaxis es:"
+        },
+        {
+          "type": "code",
+          "content": "[visibilidad] [static] tipo nombre ([tipo param1] [, tipo paramN]) {\n    // declaraciones locales al método\n    [return valor]\n}"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Tipo",
+              "title": "Constructores",
+              "desc": "Inicializan los objetos. Pueden ser por defecto (sin parámetros) o con parámetros."
+            },
+            {
+              "kicker": "Tipo",
+              "title": "Observadores (getter)",
+              "desc": "Permiten consultar el valor de un campo privado desde el exterior de la clase."
+            },
+            {
+              "kicker": "Tipo",
+              "title": "Modificadores (setter)",
+              "desc": "Permiten modificar el valor de un campo privado desde el exterior de la clase."
+            },
+            {
+              "kicker": "Tipo",
+              "title": "Métodos personalizados",
+              "desc": "Métodos definidos según la funcionalidad específica que necesite la clase."
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Argumentos y parámetros",
+              "content": "En la declaración del método los parámetros van precedidos por su tipo y nombre, separados por comas. Cuando se invoca el método se deben incluir todos los argumentos definidos como parámetros y que coincidan en tipo. Si una variable o parámetro del método se nombra igual que un campo de la clase, el campo queda oculto; para acceder al campo hay que usar la palabra reservada this."
+            },
+            {
+              "title": "Paso por valor vs paso por referencia",
+              "content": "En Java siempre se aplica el paso por valor para los tipos primitivos (int, char, float, etc.): se envía una copia del valor original y no se puede modificar el original. Para los objetos se aplica el paso por referencia: se envía una copia de la dirección de memoria, por lo que si el método modifica algún campo del objeto, se verá modificado en el objeto original."
+            },
+            {
+              "title": "Valores de retorno",
+              "content": "Los métodos pueden operar sin devolver ningún valor (se indica void en la declaración) o devolviendo un resultado. En este último caso se indica el tipo de datos a devolver en la firma del método y se incluye la instrucción return en el cuerpo."
+            },
+            {
+              "title": "Métodos estáticos (static)",
+              "content": "Los métodos estáticos permiten acceder a ellos sin tener que instanciar objetos, simplemente nombrando a la clase. Si un método necesita usar un campo estático, ese método tiene que ser obligatoriamente estático."
+            },
+            {
+              "title": "Sobrecarga de métodos (Overloading)",
+              "content": "La sobrecarga es la declaración de un mismo método en una misma clase pero con diferentes parámetros: mismo nombre, pero con un tipo de datos o un número de parámetros diferente. Permite que la misma operación admita distintos tipos de entrada."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "content": "public class Persona {\n    private String nombre;\n\n    // getter\n    public String getNombre() {\n        return nombre;\n    }\n\n    // setter — usa this para distinguir campo de parámetro\n    public void setNombre(String nombre) {\n        this.nombre = nombre;\n    }\n\n    // método personalizado\n    public void saludar() {\n        System.out.println(\"Hola, soy \" + nombre);\n    }\n\n    // sobrecarga: mismo nombre, parámetro distinto\n    public void saludar(String saludo) {\n        System.out.println(saludo + \", soy \" + nombre);\n    }\n}"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "6.2.3. Constructores e instanciación de objetos",
+      "short": "6.2.3 Constructores",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los constructores son los encargados de inicializar los objetos de las clases. Por defecto, todas las clases aunque no se declare disponen de un constructor sin parámetros. Se pueden definir tantos constructores como sean necesarios (sobrecarga de constructores). Su sintaxis es:"
+        },
+        {
+          "type": "code",
+          "content": "[visibilidad] NombreClase ([tipo param1] [, tipo paramN]) { }"
+        },
+        {
+          "type": "text",
+          "content": "Para instanciar un objeto solo es necesario indicar el operador new junto al nombre de clase y el constructor que se quiere invocar."
+        },
+        {
+          "type": "code",
+          "content": "public class Persona {\n    private String nombre;\n    private int edad;\n\n    // Constructor sin parámetros (por defecto)\n    public Persona() { }\n\n    // Constructor con parámetros\n    public Persona(String nombre, int edad) {\n        this.nombre = nombre;\n        this.edad = edad;\n    }\n}\n\n// Instanciación\nPersona p1 = new Persona();\nPersona p2 = new Persona(\"Ana\", 25);"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "6.2.4. Destructores y liberador de memoria",
+      "short": "6.2.4 Destructores",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "A diferencia de otros lenguajes como C++ o Delphi en los que hay que definir métodos destructores para liberar memoria, en Java no es necesario y no existen ese tipo de métodos. En Java existe un mecanismo denominado recolector de basura (garbage collector) que se encarga de liberar la memoria de aquellos objetos que se han quedado sin referencia."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Mecanismo",
+              "title": "Garbage Collector",
+              "desc": "Mecanismo automático de Java que libera la memoria de los objetos que se han quedado sin referencia. El programador no tiene que liberar memoria manualmente.",
+              "example": "Cuando ninguna variable apunta a un objeto, el garbage collector lo elimina automáticamente."
+            },
+            {
+              "kicker": "Invocación manual",
+              "title": "System.gc()",
+              "desc": "Se puede invocar al recolector de basura mediante el método System.gc(). Este método llamará al método finalize() de la superclase Object por cada objeto que se necesite liberar de la memoria.",
+              "example": "System.gc(); // sugiere al JVM que ejecute el recolector"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "label": "6.3. Encapsulación y visibilidad",
+      "short": "6.3 Encapsulación",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La encapsulación y visibilidad permiten definir distintos niveles de protección al acceso de la información de una clase. Las formas de garantizar la protección son: la organización de paquetes y clases, y los modificadores de visibilidad en campos y métodos. Existen cuatro niveles de visibilidad."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Menos restrictivo",
+              "title": "public",
+              "desc": "Visibilidad menos restrictiva: permite acceder a sus elementos desde el exterior y cualquier parte del programa.",
+              "example": "public int edad;"
+            },
+            {
+              "kicker": "Intermedio",
+              "title": "protected",
+              "desc": "Se tendrá acceso desde el mismo paquete o desde subclases que estén en diferente paquete. Una clase externa en otro paquete no tendrá acceso.",
+              "example": "protected String nombre;"
+            },
+            {
+              "kicker": "Intermedio",
+              "title": "package (sin modificador)",
+              "desc": "Sin modificador definido. Se tendrá acceso desde el mismo paquete o subclases del mismo paquete. Desde otros paquetes no se podrá.",
+              "example": "int dni; // sin modificador = package"
+            },
+            {
+              "kicker": "Más restrictivo",
+              "title": "private",
+              "desc": "La más restrictiva. Solo se puede acceder desde la misma clase, no desde el exterior.",
+              "example": "private String contrasena;"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Acceso desde...", "public", "protected", "package", "private"],
+          "rows": [
+            ["La misma clase", "SI", "SI", "SI", "SI"],
+            ["Otras clases del mismo paquete", "SI", "SI", "SI", "NO"],
+            ["Subclase en el mismo paquete", "SI", "SI", "SI", "NO"],
+            ["Subclases en otros paquetes", "SI", "SI", "NO", "NO"],
+            ["Otras clases en otros paquetes", "SI", "NO", "NO", "NO"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "label": "6.4. Librerías y paquetes de clases",
+      "short": "6.4 Librerías y paquetes",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los paquetes permiten agrupar varias clases de forma jerárquica según una misma idea. Es muy parecido al sistema de archivos de un directorio. Los beneficios de organizar el programa en paquetes son: reutilización de código, organización del proyecto, agrupamiento de clases y mayor seguridad. Para definir un paquete se usa la palabra reservada package y para importar clases de otro paquete se utiliza import."
+        },
+        {
+          "type": "text",
+          "content": "Una librería es una agrupación de paquetes y clases que comparten una misma funcionalidad, permitiendo su reutilización en otros programas. Pueden ser librerías estándar, de terceros o propias."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "java.io",
+              "content": "Contiene todas las clases para entrada y salida de programas hechos en Java."
+            },
+            {
+              "title": "java.util",
+              "content": "Contiene un conjunto de librerías útiles para el modelado de datos, colecciones, internalización, etc."
+            },
+            {
+              "title": "java.lang",
+              "content": "La librería fundamental en Java: contiene todas las interfaces y clases fundamentales. Esta librería está importada por defecto."
+            },
+            {
+              "title": "java.security",
+              "content": "Soporta criptografía, firma digital y diferentes clases que permiten encriptar y desencriptar datos."
+            },
+            {
+              "title": "Apache Commons",
+              "content": "Librería con diferentes utilidades para escribir en ficheros, tratamiento de cadena de caracteres, etc."
+            },
+            {
+              "title": "jSoup",
+              "content": "Permite transformar HTML de forma fácil."
+            },
+            {
+              "title": "Gson",
+              "content": "Permite serializar objetos a formato JSON y después deserializarlos."
+            },
+            {
+              "title": "JFreeChart",
+              "content": "Librería para graficar datos: permite hacer diferentes tipos de gráficos y pasarlos a imagen."
+            },
+            {
+              "title": "SWT",
+              "content": "La librería para componentes gráficos de Java con la que fue hecha Eclipse."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "content": "package com.empresa.modelo; // define el paquete\n\nimport java.util.ArrayList; // importa una clase de otro paquete\n\npublic class Alumno {\n    // ...\n}"
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "label": "Modificadores de clase y miembro",
+      "short": "Modificadores adicionales",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Además de los modificadores de visibilidad (public, protected, package, private), Java dispone de modificadores que alteran el comportamiento de clases, atributos y métodos: abstract, final, static, volatile, transient y synchronized."
+        },
+        {
+          "type": "table",
+          "headers": ["Modificador", "Efecto", "Aplicable a"],
+          "rows": [
+            ["abstract", "Aplicado a una clase, la declara como clase abstracta: no se pueden crear objetos de ella, solo usarse como superclases. Aplicado a un método, la definición del método se hace en las subclases.", "Clases, Métodos"],
+            ["final", "Aplicado a una clase significa que no se puede extender (heredar). Aplicado a un método significa que no puede ser sobrescrito en las subclases. Aplicado a un atributo indica que contiene un valor constante que no se puede modificar.", "Clases, Atributos, Métodos"],
+            ["static", "Aplicado a un atributo indica que es una variable de clase: única y compartida por todos los objetos de la clase. Aplicado a un método indica que se puede invocar sin crear ningún objeto.", "Atributos, Métodos"],
+            ["volatile", "Un atributo volatile puede ser modificado por métodos no sincronizados en un entorno multihilo.", "Atributos"],
+            ["transient", "Un atributo transient no es parte del estado persistente de las instancias (se excluye de la serialización).", "Atributos"],
+            ["synchronized", "Métodos para entornos multihilo: garantiza que solo un hilo a la vez puede ejecutar el método.", "Métodos"]
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Clase",
+      "def": "Representación abstracta de una entidad del mundo real en un programa informático. Contiene campos (propiedades) y métodos (acciones) y actúa como plantilla para crear objetos."
+    },
+    {
+      "term": "Objeto",
+      "def": "Instancia creada a partir de una clase. Cada objeto comparte la misma estructura que su clase pero puede tener valores diferentes en sus campos."
+    },
+    {
+      "term": "Campo (atributo / field)",
+      "def": "Variable declarada dentro de una clase que almacena la información de un objeto. Su visibilidad suele ser privada para cumplir con la encapsulación."
+    },
+    {
+      "term": "Método",
+      "def": "Función declarada dentro de una clase que define las acciones que puede realizar. Se identifica por su nombre precedido de un verbo."
+    },
+    {
+      "term": "Constructor",
+      "def": "Método especial que inicializa los objetos de una clase. Su nombre coincide con el de la clase y no indica tipo de retorno. Todas las clases disponen al menos de un constructor sin parámetros por defecto."
+    },
+    {
+      "term": "Instanciación",
+      "def": "Proceso de crear un objeto a partir de una clase usando el operador new. Ejemplo: Persona p = new Persona();"
+    },
+    {
+      "term": "static",
+      "def": "Modificador que hace que un campo o método pertenezca a la clase y no a cada instancia. Un campo estático es compartido por todos los objetos. Si un método usa un campo estático, el método también debe ser estático."
+    },
+    {
+      "term": "this",
+      "def": "Palabra reservada que hace referencia al objeto actual dentro de un método. Se usa para distinguir entre un campo de la clase y un parámetro del método con el mismo nombre."
+    },
+    {
+      "term": "Getter (observador)",
+      "def": "Método que permite consultar el valor de un campo privado desde el exterior de la clase."
+    },
+    {
+      "term": "Setter (modificador)",
+      "def": "Método que permite modificar el valor de un campo privado desde el exterior de la clase."
+    },
+    {
+      "term": "Overloading (sobrecarga)",
+      "def": "Declaración de varios métodos con el mismo nombre en una misma clase pero con diferente número o tipo de parámetros."
+    },
+    {
+      "term": "Garbage collector (recolector de basura)",
+      "def": "Mecanismo automático de Java que libera la memoria de los objetos que se han quedado sin referencia. Se puede invocar mediante System.gc()."
+    },
+    {
+      "term": "Encapsulación",
+      "def": "Principio de la POO que consiste en ocultar los detalles internos de una clase y exponer solo lo necesario a través de métodos públicos, usando modificadores de visibilidad."
+    },
+    {
+      "term": "Paquete (package)",
+      "def": "Estructura jerárquica que agrupa varias clases con una misma funcionalidad, similar al sistema de carpetas. Se declara con la palabra reservada package y se importa con import."
+    },
+    {
+      "term": "Librería",
+      "def": "Agrupación de paquetes y clases que comparten una misma funcionalidad y pueden reutilizarse en distintos programas. Pueden ser estándar (java.io, java.util), de terceros (Gson, Apache Commons) o propias."
+    },
+    {
+      "term": "abstract",
+      "def": "Modificador que aplicado a una clase impide crear objetos directamente de ella (solo puede usarse como superclase). Aplicado a un método obliga a las subclases a proporcionar la implementación."
+    },
+    {
+      "term": "final",
+      "def": "Modificador que aplicado a una clase impide que se herede de ella; aplicado a un método impide que se sobrescriba; aplicado a un atributo lo convierte en constante."
+    },
+    {
+      "term": "Paso por valor / paso por referencia",
+      "def": "En Java los tipos primitivos se pasan por valor (copia del dato, el original no se modifica). Los objetos se pasan por referencia (copia de la dirección de memoria, el original puede modificarse dentro del método)."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "¿Cuál es la diferencia entre una clase y un objeto en Java?",
+      "options": [
+        "Son exactamente lo mismo, solo cambia el nombre",
+        "La clase es la plantilla o estructura; el objeto es una instancia creada a partir de esa clase",
+        "El objeto define las propiedades y la clase las acciones",
+        "Una clase solo puede tener un objeto"
+      ],
+      "correct": 1,
+      "explanation": "Según el temario, una clase es la representación abstracta (plantilla) que define propiedades y acciones. Un objeto es una instancia creada a partir de esa clase y puede tener valores distintos en sus campos aunque comparta la misma estructura."
+    },
+    {
+      "question": "¿Qué modificador se usa para que un campo sea compartido por todos los objetos de una clase?",
+      "options": [
+        "final",
+        "shared",
+        "static",
+        "public"
+      ],
+      "correct": 2,
+      "explanation": "La palabra reservada static convierte un campo en campo de clase o variable de clase: es único y compartido por todos los objetos de esa clase. Por ejemplo, si todas las personas tienen 2 piernas, ese campo sería estático."
+    },
+    {
+      "question": "¿Qué es la sobrecarga de métodos (overloading)?",
+      "options": [
+        "Declarar un método en una subclase con el mismo nombre que uno de la superclase",
+        "Llamar a un método con más argumentos de los que acepta",
+        "Declarar en la misma clase varios métodos con el mismo nombre pero diferente número o tipo de parámetros",
+        "Declarar un método como estático para que no requiera instancia"
+      ],
+      "correct": 2,
+      "explanation": "La sobrecarga de métodos es la declaración de un mismo método en una misma clase pero con diferentes parámetros: el mismo nombre pero con un tipo de datos o un número de parámetros diferente."
+    },
+    {
+      "question": "¿Qué ocurre en Java cuando se pasa un objeto como argumento a un método?",
+      "options": [
+        "Se crea una copia completa del objeto y el original no puede modificarse",
+        "Se pasa por referencia: una copia de su dirección de memoria, por lo que el original puede modificarse",
+        "El objeto se destruye al salir del método",
+        "Java lanza una excepción si el objeto es privado"
+      ],
+      "correct": 1,
+      "explanation": "En Java, para los objetos se aplica el paso por referencia: se envía una copia de la dirección de memoria. Eso significa que si el método modifica algún campo del objeto, ese cambio se verá reflejado en el objeto original. Para los tipos primitivos, en cambio, se usa paso por valor."
+    },
+    {
+      "question": "¿Cuál de los siguientes modificadores de visibilidad es el más restrictivo?",
+      "options": [
+        "public",
+        "protected",
+        "package (sin modificador)",
+        "private"
+      ],
+      "correct": 3,
+      "explanation": "El modificador private es el más restrictivo: solo se puede acceder al campo o método desde la misma clase, no desde el exterior. El modificador public es el menos restrictivo y permite acceso desde cualquier parte del programa."
+    },
+    {
+      "question": "¿Cómo libera Java la memoria de los objetos que ya no se usan?",
+      "options": [
+        "Mediante métodos destructores que el programador debe definir obligatoriamente",
+        "Usando la instrucción delete, igual que en C++",
+        "A través del garbage collector, que libera automáticamente los objetos sin referencia",
+        "La memoria no se libera: permanece ocupada hasta que el programa termina"
+      ],
+      "correct": 2,
+      "explanation": "En Java no existen métodos destructores. Hay un mecanismo denominado garbage collector (recolector de basura) que se encarga de liberar automáticamente la memoria de los objetos que se han quedado sin referencia. Se puede invocar con System.gc()."
+    },
+    {
+      "question": "¿Qué indica la palabra reservada this dentro de un método?",
+      "options": [
+        "Que el método es estático y pertenece a la clase",
+        "Que se hace referencia al objeto actual, útil cuando un parámetro tiene el mismo nombre que un campo",
+        "Que se invoca al constructor de la superclase",
+        "Que el método devuelve el propio objeto como resultado"
+      ],
+      "correct": 1,
+      "explanation": "La palabra reservada this hace referencia al objeto actual dentro de un método. Se usa para distinguir entre un campo de la clase y un parámetro o variable local del método que tenga el mismo nombre, evitando que el campo quede oculto."
+    },
+    {
+      "question": "¿Qué sucede si se aplica el modificador abstract a una clase?",
+      "options": [
+        "La clase no puede tener campos, solo métodos",
+        "No se pueden crear objetos directamente de esa clase; solo puede usarse como superclase",
+        "La clase se convierte en una interfaz",
+        "Todos sus métodos pasan a ser estáticos automáticamente"
+      ],
+      "correct": 1,
+      "explanation": "Según el PDF de Modificadores de acceso, aplicar abstract a una clase la declara como clase abstracta: no se pueden crear objetos de ella directamente. Solo puede usarse como superclase. Aplicado a un método, obliga a las subclases a proporcionar la implementación."
+    },
+    {
+      "question": "¿Para qué sirve la librería java.lang en Java?",
+      "options": [
+        "Para gestionar la entrada y salida de ficheros",
+        "Para soportar criptografía y firma digital",
+        "Contiene todas las interfaces y clases fundamentales de Java y está importada por defecto",
+        "Permite serializar objetos a formato JSON"
+      ],
+      "correct": 2,
+      "explanation": "Según el temario, java.lang es la librería fundamental de Java: contiene todas las interfaces y clases fundamentales. A diferencia de otras librerías, está importada automáticamente por defecto en todos los programas Java."
+    },
+    {
+      "question": "¿Cuál es la sintaxis correcta para declarar el constructor de la clase Persona con parámetros nombre y edad?",
+      "options": [
+        "void Persona(String nombre, int edad) { }",
+        "public static Persona(String nombre, int edad) { }",
+        "public Persona(String nombre, int edad) { }",
+        "constructor Persona(String nombre, int edad) { }"
+      ],
+      "correct": 2,
+      "explanation": "La sintaxis de un constructor es [visibilidad] NombreClase ([parámetros]) { }. El constructor no lleva tipo de retorno (ni void ni ningún otro). La opción correcta es public Persona(String nombre, int edad) { }."
+    }
+  ],
+  "_sources": {
+    "s1": "U6 Clases y utilización de objetos.pdf — sección 6.1, página 3; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Concepto de clase; U6 Síntesis (2).pdf — bloque Resumen",
+    "s2": "U6 Clases y utilización de objetos.pdf — sección 6.2, página 4; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Sintaxis",
+    "s3": "U6 Clases y utilización de objetos.pdf — sección 6.2.1, página 4-5; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Campos o atributos; U6 Síntesis (2).pdf — bloque Resumen",
+    "s4": "U6 Clases y utilización de objetos.pdf — sección 6.2.2, páginas 5-7; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositivas Métodos y Sobrecarga; U6 Síntesis (2).pdf — bloque Resumen",
+    "s5": "U6 Clases y utilización de objetos.pdf — sección 6.2.3, página 7-8; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Constructores; U6 Síntesis (2).pdf — bloque Resumen",
+    "s6": "U6 Clases y utilización de objetos.pdf — sección 6.2.4, página 8; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Destructores; U6 Síntesis (2).pdf — Conceptos fundamentales (Recolector de basura)",
+    "s7": "U6 Clases y utilización de objetos.pdf — sección 6.3, página 9; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Encapsulación; U6 Síntesis (2).pdf — bloque Resumen",
+    "s8": "U6 Clases y utilización de objetos.pdf — sección 6.4, páginas 9-10; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Librerías y paquetes; U6 Síntesis (2).pdf — Conceptos fundamentales (java.io, Apache Commons, SWT)",
+    "s9": "U6 Modificadores de acceso.pdf — infografía completa (abstract, final, static, volatile, transient, synchronized)"
+  }
+}
