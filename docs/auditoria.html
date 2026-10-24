@@ -72,4 +72,13 @@ code{font-family:'Courier New',monospace;background:#F2F2F2;padding:1px 4px;bord
 </ul>
 <hr />
 <h2>Arreglos antes de publicar</h2>
-<p><strong>Ninguno es obligatorio.</strong> Opcional, para más adelante: convertir las opciones de los dos quizzes en un grupo de radios accesible (<code>role="radiogroup"</code> / <code>role="radio"</code> + <code>aria-checked</code>), es decir, E1.</p></body></html>
+<p><strong>Ninguno es obligatorio.</strong> Opcional, para más adelante: convertir las opciones de los dos quizzes en un grupo de radios accesible (<code>role="radiogroup"</code> / <code>role="radio"</code> + <code>aria-checked</code>), es decir, E1.</p>
+<hr />
+<h2>Anexo (24/10/2026, tarde): saltos de línea en el visor + ip/u4</h2>
+<p><strong>Cambio auditado:</strong> en <code>public/summaries.html</code>, <code>white-space: pre-line</code> en <code>.block-text</code>, <code>.block-card .card-d</code> y <code>.accordion-body</code> (líneas 193, 199 y 211), y el contenido del accordion insertado en línea con la etiqueta (línea 911). Además, el contenido nuevo de <code>data/ip/u4.resumen.json</code>.</p>
+<ul>
+<li><strong>(comprobado)</strong> Seguridad: no cambia nada. El contenido sigue pasando por <code>esc()</code> (línea 911) y el cambio es solo de CSS y de colocación en la plantilla.</li>
+<li><strong>(comprobado)</strong> Render: lo he probado en local con Playwright sobre los ficheros del repo, en ip/u4 s2, prog/u6 s4 y lm/u4 s3 con accordions abiertos. Los saltos <code>\n</code> se ven como líneas separadas y no aparecen líneas en blanco extra en accordions ni tarjetas. Las capturas son de 1280 px de ancho.</li>
+<li><strong>(interpretación)</strong> Responsive: <code>pre-line</code> mantiene el ajuste de línea automático, así que el texto largo no desborda a 375 px. No lo he probado en un navegador a 375 px.</li>
+<li><strong>Resultado:</strong> sin hallazgos nuevos.</li>
+</ul></body></html>
