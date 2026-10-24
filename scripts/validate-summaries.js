@@ -134,6 +134,23 @@ function validate(file) {
       console.warn(`  WARN [${f}] Sesgo en quiz: posición ${biasedPos} aparece ${maxPos}/${j.quiz.length} veces`);
     }
   }
+
+  // extraQuiz (opcional) — sin límite 6-10, sin sesgo, explanation opcional
+  if (j.extraQuiz !== undefined) {
+    if (typeof j.extraQuiz.title !== 'string' || !j.extraQuiz.title)
+      fail(f, 'extraQuiz.title requerido');
+    if (!Array.isArray(j.extraQuiz.questions) || j.extraQuiz.questions.length === 0)
+      fail(f, 'extraQuiz.questions debe ser array no vacío');
+    else j.extraQuiz.questions.forEach((q, qi) => {
+      const loc = `extraQuiz.questions[${qi}]`;
+      if (!q.question) fail(f, `${loc}.question requerido`);
+      if (!Array.isArray(q.options) || q.options.length === 0) fail(f, `${loc}.options requerido`);
+      if (q.correct === undefined || q.correct === null) fail(f, `${loc}.correct requerido`);
+      else if (q.correct < 0 || q.correct >= (q.options || []).length)
+        fail(f, `${loc}.correct=${q.correct} fuera de rango (${(q.options || []).length} opciones)`);
+      deepCheckText(f, loc, { question: q.question, options: q.options });
+    });
+  }
 }
 
 // Discover all resumen JSONs

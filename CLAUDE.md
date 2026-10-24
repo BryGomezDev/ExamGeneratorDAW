@@ -99,6 +99,17 @@ Files live at `data/<subject>/u<N>.resumen.json`.
       "explanation": "string"
     }
   ],
+  "extraQuiz": {
+    "title": "Test extra title",
+    "questions": [
+      {
+        "question": "string",
+        "options": ["string", "…"],
+        "correct": 0,
+        "explanation": "string (optional — omit if source has no explanations)"
+      }
+    ]
+  },
   "_sources": { "s1": "PDF page reference" }
 }
 ```
@@ -117,6 +128,8 @@ Files live at `data/<subject>/u<N>.resumen.json`.
 | `code` | `content` (string) |
 
 `quiz` must contain 6–10 items. `correct` is a 0-based index into `options`.
+
+`extraQuiz` is **optional**. When present: `title` is required, `questions` must be a non-empty array, each item needs `question`/`options`/`correct` (same rules as quiz), `explanation` is optional. No 6–10 limit, no bias check, options order is never reordered (some answers reference other options by letter).
 
 ## How to add a resumen unit
 
