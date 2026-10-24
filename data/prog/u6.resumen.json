@@ -282,8 +282,7 @@
             {
               "kicker": "Intermedio",
               "title": "package (sin modificador)",
-              "desc": "Sin modificador definido. Se tendrá acceso desde el mismo paquete o subclases del mismo paquete. Desde otros paquetes no se podrá.",
-              "example": "int dni; // sin modificador = package"
+              "desc": "Sin modificador definido. Se tendrá acceso desde el mismo paquete o subclases del mismo paquete. Desde otros paquetes no se podrá."
             },
             {
               "kicker": "Más restrictivo",
@@ -379,8 +378,8 @@
             ["final", "Aplicado a una clase significa que no se puede extender (heredar). Aplicado a un método significa que no puede ser sobrescrito en las subclases. Aplicado a un atributo indica que contiene un valor constante que no se puede modificar.", "Clases, Atributos, Métodos"],
             ["static", "Aplicado a un atributo indica que es una variable de clase: única y compartida por todos los objetos de la clase. Aplicado a un método indica que se puede invocar sin crear ningún objeto.", "Atributos, Métodos"],
             ["volatile", "Un atributo volatile puede ser modificado por métodos no sincronizados en un entorno multihilo.", "Atributos"],
-            ["transient", "Un atributo transient no es parte del estado persistente de las instancias (se excluye de la serialización).", "Atributos"],
-            ["synchronized", "Métodos para entornos multihilo: garantiza que solo un hilo a la vez puede ejecutar el método.", "Métodos"]
+            ["transient", "Un atributo transient no es parte del estado persistente de las instancias.", "Atributos"],
+            ["synchronized", "Métodos para entornos multihilo.", "Métodos"]
           ]
         }
       ]
@@ -574,10 +573,10 @@
   ],
   "_sources": {
     "s1": "U6 Clases y utilización de objetos.pdf — sección 6.1, página 3; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Concepto de clase; U6 Síntesis (2).pdf — bloque Resumen",
-    "s2": "U6 Clases y utilización de objetos.pdf — sección 6.2, página 4; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Sintaxis",
-    "s3": "U6 Clases y utilización de objetos.pdf — sección 6.2.1, página 4-5; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Campos o atributos; U6 Síntesis (2).pdf — bloque Resumen",
-    "s4": "U6 Clases y utilización de objetos.pdf — sección 6.2.2, páginas 5-7; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositivas Métodos y Sobrecarga; U6 Síntesis (2).pdf — bloque Resumen",
-    "s5": "U6 Clases y utilización de objetos.pdf — sección 6.2.3, página 7-8; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Constructores; U6 Síntesis (2).pdf — bloque Resumen",
+    "s2": "U6 Clases y utilización de objetos.pdf — sección 6.2, página 4, imágenes 2; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Sintaxis",
+    "s3": "U6 Clases y utilización de objetos.pdf — sección 6.2.1, página 4-5, imagen 3; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Campos o atributos; U6 Síntesis (2).pdf — bloque Resumen",
+    "s4": "U6 Clases y utilización de objetos.pdf — sección 6.2.2, páginas 5-7, imágenes 4-7; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositivas Métodos y Sobrecarga; U6 Síntesis (2).pdf — bloque Resumen",
+    "s5": "U6 Clases y utilización de objetos.pdf — sección 6.2.3, página 7-8, imágenes 8-9; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Constructores; U6 Síntesis (2).pdf — bloque Resumen",
     "s6": "U6 Clases y utilización de objetos.pdf — sección 6.2.4, página 8; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Destructores; U6 Síntesis (2).pdf — Conceptos fundamentales (Recolector de basura)",
     "s7": "U6 Clases y utilización de objetos.pdf — sección 6.3, página 9; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Encapsulación; U6 Síntesis (2).pdf — bloque Resumen",
     "s8": "U6 Clases y utilización de objetos.pdf — sección 6.4, páginas 9-10; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Librerías y paquetes; U6 Síntesis (2).pdf — Conceptos fundamentales (java.io, Apache Commons, SWT)",
