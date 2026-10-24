@@ -60,6 +60,10 @@
         {
           "type": "text",
           "content": "Los elementos extends (herencia) e implements (interfaz) son opcionales."
+        },
+        {
+          "type": "code",
+          "content": "public class Persona {\n    //campos\n    //métodos\n}"
         }
       ]
     },
@@ -91,7 +95,7 @@
         },
         {
           "type": "code",
-          "content": "public class Persona {\n    private String nombre;\n    private String dni;\n    private int edad;\n    private static int numeroPiernas = 2; // campo estático: igual para todos\n}"
+          "content": "public class Persona {\n\n    //atributos\n    static int numeroBrazos;\n\n    private String nombre;\n    private String apellido1;\n    private String apellido2;\n    private int edad;\n\n    //métodos\n\n}"
         }
       ]
     },
@@ -139,19 +143,47 @@
             {
               "title": "Argumentos y parámetros",
               "content": "En la declaración del método los parámetros van precedidos por su tipo y nombre, separados por comas. Cuando se invoca el método se deben incluir todos los argumentos definidos como parámetros y que coincidan en tipo. Si una variable o parámetro del método se nombra igual que un campo de la clase, el campo queda oculto; para acceder al campo hay que usar la palabra reservada this."
-            },
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "content": "public class Persona {\n\n    //atributos\n    static int numeroBrazos;\n\n    private String nombre;\n\n    public void saludarA(String nombre) {\n\n        // Se mostrará el nombre que viene por el parámetro del método\n        System.out.println(\"Hola \" + nombre);\n\n        // Se mostrará el nombre del campo de clase.\n        System.out.println(\"Hola \" + this.nombre);\n\n    }\n\n}"
+        },
+        {
+          "type": "accordion",
+          "items": [
             {
               "title": "Paso por valor vs paso por referencia",
               "content": "En Java siempre se aplica el paso por valor para los tipos primitivos (int, char, float, etc.): se envía una copia del valor original y no se puede modificar el original. Para los objetos se aplica el paso por referencia: se envía una copia de la dirección de memoria, por lo que si el método modifica algún campo del objeto, se verá modificado en el objeto original."
-            },
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
             {
               "title": "Valores de retorno",
               "content": "Los métodos pueden operar sin devolver ningún valor (se indica void en la declaración) o devolviendo un resultado. En este último caso se indica el tipo de datos a devolver en la firma del método y se incluye la instrucción return en el cuerpo."
-            },
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "content": "// Ejemplo de metodo sin devolver ningun valor\npublic void saludar() {\n    System.out.println(nombre +\" \"+apellido1+\" \"+apellido2+ \" te saluda\");\n}\n\n// Ejemplo de metodo devolviendo un valor\npublic float calcularIMC(float peso, float estatura) {\n    float imc = peso / estatura;\n    return imc;\n}"
+        },
+        {
+          "type": "accordion",
+          "items": [
             {
               "title": "Métodos estáticos (static)",
               "content": "Los métodos estáticos permiten acceder a ellos sin tener que instanciar objetos, simplemente nombrando a la clase. Si un método necesita usar un campo estático, ese método tiene que ser obligatoriamente estático."
-            },
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
             {
               "title": "Sobrecarga de métodos (Overloading)",
               "content": "La sobrecarga es la declaración de un mismo método en una misma clase pero con diferentes parámetros: mismo nombre, pero con un tipo de datos o un número de parámetros diferente. Permite que la misma operación admita distintos tipos de entrada."
@@ -160,7 +192,11 @@
         },
         {
           "type": "code",
-          "content": "public class Persona {\n    private String nombre;\n\n    // getter\n    public String getNombre() {\n        return nombre;\n    }\n\n    // setter — usa this para distinguir campo de parámetro\n    public void setNombre(String nombre) {\n        this.nombre = nombre;\n    }\n\n    // método personalizado\n    public void saludar() {\n        System.out.println(\"Hola, soy \" + nombre);\n    }\n\n    // sobrecarga: mismo nombre, parámetro distinto\n    public void saludar(String saludo) {\n        System.out.println(saludo + \", soy \" + nombre);\n    }\n}"
+          "content": "public int suma(int a, int b) {\n    return a+b;\n}\n\npublic float suma(float a, float b) {\n    return a+b;\n}"
+        },
+        {
+          "type": "code",
+          "content": "public class Persona {\n\n    //atributos\n    static int numeroBrazos;\n\n    private String nombre;\n    private String apellido1;\n    private String apellido2;\n    private int edad;\n\n    //métodos\n    //observador o getter\n    public String getNombre() {\n        return nombre;\n    }\n    //modificador o setter\n    public void setNombre(String nombre) {\n        this.nombre = nombre;\n    }\n    //método personalizado\n    public String saludar() {\n        return nombre +\" \"+apellido1+\" \"+apellido2+ \" te saluda\";\n    }\n\n}"
         }
       ]
     },
@@ -183,7 +219,11 @@
         },
         {
           "type": "code",
-          "content": "public class Persona {\n    private String nombre;\n    private int edad;\n\n    // Constructor sin parámetros (por defecto)\n    public Persona() { }\n\n    // Constructor con parámetros\n    public Persona(String nombre, int edad) {\n        this.nombre = nombre;\n        this.edad = edad;\n    }\n}\n\n// Instanciación\nPersona p1 = new Persona();\nPersona p2 = new Persona(\"Ana\", 25);"
+          "content": "public class Persona {\n\n    //atributos\n    static int numeroBrazos;\n\n    private String nombre;\n    private String apellido1;\n    private String apellido2;\n    private int edad;\n\n    //métodos\n    //constructores\n    public Persona() {\n\n    }\n\n    public Persona(String nombre, String apellido1, String apellido2, int edad) {\n        this.nombre = nombre;\n        this.apellido1 = apellido1;\n        this.apellido2 = apellido2;\n        this.edad = edad;\n    }"
+        },
+        {
+          "type": "code",
+          "content": "Persona persona = new Persona();\nPersona persona1 = new Persona(\"Pepe\", \"Gines\", \"Gonzalez\", 30);"
         }
       ]
     },
@@ -319,10 +359,6 @@
               "content": "La librería para componentes gráficos de Java con la que fue hecha Eclipse."
             }
           ]
-        },
-        {
-          "type": "code",
-          "content": "package com.empresa.modelo; // define el paquete\n\nimport java.util.ArrayList; // importa una clase de otro paquete\n\npublic class Alumno {\n    // ...\n}"
         }
       ]
     },
@@ -445,7 +481,7 @@
         "public"
       ],
       "correct": 2,
-      "explanation": "La palabra reservada static convierte un campo en campo de clase o variable de clase: es único y compartido por todos los objetos de esa clase. Por ejemplo, si todas las personas tienen 2 piernas, ese campo sería estático."
+      "explanation": "La palabra reservada static convierte un campo en campo de clase o variable de clase: es único y compartido por todos los objetos de esa clase. El ejemplo del temario es numeroBrazos: es el mismo para todos los objetos Persona."
     },
     {
       "question": "¿Qué es la sobrecarga de métodos (overloading)?",
@@ -456,7 +492,7 @@
         "Declarar un método como estático para que no requiera instancia"
       ],
       "correct": 2,
-      "explanation": "La sobrecarga de métodos es la declaración de un mismo método en una misma clase pero con diferentes parámetros: el mismo nombre pero con un tipo de datos o un número de parámetros diferente."
+      "explanation": "La sobrecarga de métodos es la declaración de un mismo método en una misma clase pero con diferentes parámetros: el mismo nombre pero con un tipo de datos o un número de parámetros diferente. El temario muestra el ejemplo de suma(int, int) y suma(float, float)."
     },
     {
       "question": "¿Qué ocurre en Java cuando se pasa un objeto como argumento a un método?",
@@ -500,7 +536,7 @@
         "Que el método devuelve el propio objeto como resultado"
       ],
       "correct": 1,
-      "explanation": "La palabra reservada this hace referencia al objeto actual dentro de un método. Se usa para distinguir entre un campo de la clase y un parámetro o variable local del método que tenga el mismo nombre, evitando que el campo quede oculto."
+      "explanation": "La palabra reservada this hace referencia al objeto actual dentro de un método. El temario muestra el ejemplo del método saludarA(String nombre): this.nombre accede al campo de la clase, mientras que nombre solo accede al parámetro del método."
     },
     {
       "question": "¿Qué sucede si se aplica el modificador abstract a una clase?",
@@ -525,15 +561,15 @@
       "explanation": "Según el temario, java.lang es la librería fundamental de Java: contiene todas las interfaces y clases fundamentales. A diferencia de otras librerías, está importada automáticamente por defecto en todos los programas Java."
     },
     {
-      "question": "¿Cuál es la sintaxis correcta para declarar el constructor de la clase Persona con parámetros nombre y edad?",
+      "question": "¿Cuántos constructores puede tener una clase en Java?",
       "options": [
-        "void Persona(String nombre, int edad) { }",
-        "public static Persona(String nombre, int edad) { }",
-        "public Persona(String nombre, int edad) { }",
-        "constructor Persona(String nombre, int edad) { }"
+        "Solo uno: el constructor por defecto sin parámetros",
+        "Como máximo dos: uno sin parámetros y otro con parámetros",
+        "Tantos como sean necesarios, usando sobrecarga de constructores",
+        "Ninguno, los constructores los genera automáticamente el compilador"
       ],
       "correct": 2,
-      "explanation": "La sintaxis de un constructor es [visibilidad] NombreClase ([parámetros]) { }. El constructor no lleva tipo de retorno (ni void ni ningún otro). La opción correcta es public Persona(String nombre, int edad) { }."
+      "explanation": "Según el temario, se pueden definir tantos constructores como sean necesarios mediante sobrecarga de constructores. El ejemplo muestra Persona() sin parámetros y Persona(String nombre, String apellido1, String apellido2, int edad) con parámetros."
     }
   ],
   "_sources": {
