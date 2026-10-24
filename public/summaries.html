@@ -417,6 +417,8 @@ const state = {
   search:    '',
   answers:   {},
   submitted: false,
+  eqAnswers:   {},
+  eqSubmitted: false,
 };
 
 function render() {
@@ -516,8 +518,9 @@ function renderSummary() {
       </button>`;
   }).join('');
 
-  const gActive = state.section === 'glossary';
-  const qActive = state.section === 'quiz';
+  const gActive  = state.section === 'glossary';
+  const qActive  = state.section === 'quiz';
+  const eqActive = state.section === 'extra-quiz';
 
   const navHtml = `
     <div class="nav-label">Contenido de la unidad</div>
@@ -534,7 +537,14 @@ function renderSummary() {
       data-action="nav-section" data-section="quiz">
       <span>Autoevaluación</span>
       <span class="nav-badge-quiz">${quizCount} Q</span>
-    </button>`;
+    </button>
+    ${d.extraQuiz ? `
+    <button class="nav-item${eqActive ? ' active' : ''}"
+      ${eqActive ? 'aria-current="page"' : ''}
+      data-action="nav-section" data-section="extra-quiz">
+      <span>${esc(d.extraQuiz.title)}</span>
+      <span class="nav-badge-quiz">${d.extraQuiz.questions.length} Q</span>
+    </button>` : ''}`;
 
   return `
     <div class="summary-outer">
@@ -593,7 +603,7 @@ function handleClick(e) {
   } else if (action === 'select-unit') {
     const num = parseInt(el.dataset.unit, 10);
     state.unitNum = num; state.screen = 'summary'; state.section = 'intro';
-    state.open = {}; state.flipped = {}; state.search = ''; state.answers = {}; state.submitted = false;
+    state.open = {}; state.flipped = {}; state.search = ''; state.answers = {}; state.submitted = false; state.eqAnswers = {}; state.eqSubmitted = false;
     render();
     loadSummary(state.subject.name, num);
 
@@ -652,6 +662,30 @@ function handleClick(e) {
     if (section) section.innerHTML = renderQuizSection();
     bindEvents();
 
+  } else if (action === 'select-answer-eq') {
+    if (state.eqSubmitted) return;
+    const qi = parseInt(el.dataset.qi, 10), oi = parseInt(el.dataset.oi, 10);
+    state.eqAnswers[qi] = oi;
+    const eq = state.summary.extraQuiz;
+    const sec = document.getElementById('eq-section');
+    if (sec) sec.innerHTML = renderQuizSection(eq.questions, state.eqAnswers, state.eqSubmitted, eq.title, 'eq');
+    bindEvents();
+
+  } else if (action === 'submit-eq') {
+    state.eqSubmitted = true;
+    const eq = state.summary.extraQuiz;
+    const sec = document.getElementById('eq-section');
+    if (sec) sec.innerHTML = renderQuizSection(eq.questions, state.eqAnswers, state.eqSubmitted, eq.title, 'eq');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    bindEvents();
+
+  } else if (action === 'retry-eq') {
+    state.eqAnswers = {}; state.eqSubmitted = false;
+    const eq = state.summary.extraQuiz;
+    const sec = document.getElementById('eq-section');
+    if (sec) sec.innerHTML = renderQuizSection(eq.questions, state.eqAnswers, state.eqSubmitted, eq.title, 'eq');
+    bindEvents();
+
   } else if (action === 'back-units') {
     state.screen = 'units'; state.summary = null; render();
   }
@@ -685,13 +719,15 @@ function renderGlossaryItems() {
 }
 
 function renderNextButton(d, currentSectionId) {
-  const allSections = ['intro', ...d.sections.map(s => s.id), 'glossary', 'quiz'];
+  const allSections = ['intro', ...d.sections.map(s => s.id), 'glossary', 'quiz',
+    ...(d.extraQuiz ? ['extra-quiz'] : [])];
   const idx = allSections.indexOf(currentSectionId);
   if (idx < 0 || idx >= allSections.length - 1) return '';
   const nextId = allSections[idx + 1];
   let nextLabel;
   if (nextId === 'glossary') nextLabel = 'Glosario';
   else if (nextId === 'quiz') nextLabel = 'Autoevaluación';
+  else if (nextId === 'extra-quiz') nextLabel = d.extraQuiz.title;
   else {
     const s = d.sections.find(s => s.id === nextId);
     nextLabel = s ? (s.short || s.label) : nextId;
@@ -748,6 +784,13 @@ function renderActiveSection() {
     return `<div id="quiz-section">${renderQuizSection()}</div>`;
   }
 
+  if (state.section === 'extra-quiz') {
+    const eq = d.extraQuiz;
+    return `<div id="eq-section">${renderQuizSection(
+      eq.questions, state.eqAnswers, state.eqSubmitted, eq.title, 'eq'
+    )}</div>`;
+  }
+
   const sec = d.sections.find(s => s.id === state.section);
   if (!sec) return '<p class="error-msg">Sección no encontrada.</p>';
   const blocks = sec.blocks.map((b, i) =>
@@ -756,24 +799,33 @@ function renderActiveSection() {
   return `<h2 class="section-h">${esc(sec.label)}</h2>${blocks}${renderNextButton(d, state.section)}`;
 }
 
-function renderQuizSection() {
-  const d = state.summary;
+function renderQuizSection(
+  questions  = state.summary.quiz,
+  answers    = state.answers,
+  submitted  = state.submitted,
+  title      = 'Autoevaluación',
+  actNs      = ''
+) {
+  const selectAct = actNs ? `select-answer-${actNs}` : 'select-answer';
+  const submitAct = actNs ? `submit-${actNs}`         : 'submit-quiz';
+  const retryAct  = actNs ? `retry-${actNs}`          : 'retry-quiz';
+  const qPfx      = actNs ? `${actNs}-q`              : 'q';
   let topHtml = '';
 
-  if (state.submitted) {
-    const correct = d.quiz.filter((q, qi) => state.answers[qi] === q.correct).length;
-    const wrong   = d.quiz.filter((q, qi) => state.answers[qi] !== undefined && state.answers[qi] !== q.correct).length;
-    const correctPct = d.quiz.length > 0 ? Math.round(correct / d.quiz.length * 100) : 0;
-    const wrongPct   = d.quiz.length > 0 ? Math.round(wrong   / d.quiz.length * 100) : 0;
+  if (submitted) {
+    const correct = questions.filter((q, qi) => answers[qi] === q.correct).length;
+    const wrong   = questions.filter((q, qi) => answers[qi] !== undefined && answers[qi] !== q.correct).length;
+    const correctPct = questions.length > 0 ? Math.round(correct / questions.length * 100) : 0;
+    const wrongPct   = questions.length > 0 ? Math.round(wrong   / questions.length * 100) : 0;
     const cLabel = correct === 1 ? 'correcta' : 'correctas';
     const wLabel = wrong   === 1 ? 'incorrecta' : 'incorrectas';
-    const testLink = state.subject && state.unitNum !== null && state.subject.units && state.subject.units.includes('u' + state.unitNum + '.txt')
+    const testLink = !actNs && state.subject && state.unitNum !== null && state.subject.units && state.subject.units.includes('u' + state.unitNum + '.txt')
       ? `<a href="index.html?subject=${esc(state.subject.name)}&unit=${esc(String(state.unitNum))}"
            class="btn-primary" style="text-decoration:none">Hacer el test →</a>`
       : '';
     topHtml = `
       <div class="quiz-score-card">
-        <div class="quiz-score-display">${correct}<span style="font-size:1.5rem;color:var(--on-surface-variant)"> / ${d.quiz.length}</span></div>
+        <div class="quiz-score-display">${correct}<span style="font-size:1.5rem;color:var(--on-surface-variant)"> / ${questions.length}</span></div>
         <div class="quiz-pills">
           <span class="pill-correct">✓ ${correct} ${cLabel}</span>
           <span class="pill-wrong">✗ ${wrong} ${wLabel}</span>
@@ -784,36 +836,36 @@ function renderQuizSection() {
         </div>
       </div>
       <div class="quiz-footer" style="margin-bottom:24px;border-top:none;padding-top:0">
-        <button class="btn-secondary" data-action="retry-quiz">Reintentar</button>
+        <button class="btn-secondary" data-action="${retryAct}">Reintentar</button>
         ${testLink}
       </div>`;
   }
 
-  const items = d.quiz.map((q, qi) => {
-    const isCorrect = state.answers[qi] === q.correct;
-    const badgeHtml = state.submitted
+  const items = questions.map((q, qi) => {
+    const isCorrect = answers[qi] === q.correct;
+    const badgeHtml = submitted
       ? `<span class="quiz-badge-inline ${isCorrect ? 'correct-badge' : 'wrong-badge'}">${isCorrect ? '✓ Acertada' : '✗ Fallida'}</span>`
       : '';
     const opts = q.options.map((opt, oi) => {
       let cls = 'quiz-option';
-      if (state.submitted) {
+      if (submitted) {
         if (oi === q.correct) cls += ' correct';
-        else if (oi === state.answers[qi]) cls += ' wrong';
+        else if (oi === answers[qi]) cls += ' wrong';
         cls += ' submitted';
-      } else if (state.answers[qi] === oi) {
+      } else if (answers[qi] === oi) {
         cls += ' selected';
       }
-      const clickAttr = state.submitted
+      const clickAttr = submitted
         ? ''
-        : `data-action="select-answer" data-qi="${qi}" data-oi="${oi}" tabindex="0" role="button" aria-labelledby="q${qi}-label"`;
+        : `data-action="${selectAct}" data-qi="${qi}" data-oi="${oi}" tabindex="0" role="button" aria-labelledby="${qPfx}${qi}-label"`;
       return `<div class="${cls}" ${clickAttr}>${esc(opt)}</div>`;
     }).join('');
-    const expl = state.submitted && q.explanation
+    const expl = submitted && q.explanation
       ? `<div class="quiz-explanation">${esc(q.explanation)}</div>` : '';
     return `
       <div class="quiz-item">
         <div class="quiz-q-header">
-          <div class="quiz-q" id="q${qi}-label">${qi + 1}. ${esc(q.question)}</div>
+          <div class="quiz-q" id="${qPfx}${qi}-label">${qi + 1}. ${esc(q.question)}</div>
           ${badgeHtml}
         </div>
         ${opts}
@@ -821,14 +873,15 @@ function renderQuizSection() {
       </div>`;
   }).join('');
 
-  const bottomFooter = !state.submitted ? `
+  const answeredCount = Object.keys(answers).length;
+  const bottomFooter = !submitted ? `
     <div class="quiz-footer">
-      <span style="color:var(--outline);font-size:0.88rem">${Object.keys(state.answers).length} / ${d.quiz.length} respondidas</span>
-      <button class="btn-primary" data-action="submit-quiz"
-        ${Object.keys(state.answers).length === 0 ? 'disabled' : ''}>Comprobar respuestas</button>
+      <span style="color:var(--outline);font-size:0.88rem">${answeredCount} / ${questions.length} respondidas</span>
+      <button class="btn-primary" data-action="${submitAct}"
+        ${answeredCount === 0 ? 'disabled' : ''}>Comprobar respuestas</button>
     </div>` : '';
 
-  return `<h2 class="section-h">Autoevaluación</h2>${topHtml}${items}${bottomFooter}`;
+  return `<h2 class="section-h">${esc(title)}</h2>${topHtml}${items}${bottomFooter}`;
 }
 
 function renderBlock(block, sectionId, blockIdx) {
