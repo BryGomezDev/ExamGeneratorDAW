@@ -39,7 +39,7 @@ const UNITS = [
   { subject: 'prog', unit: '3' },
   { subject: 'prog', unit: '4' },
   { subject: 'prog', unit: '5' },
-  { subject: 'prog', unit: '6' },
+  { subject: 'prog', unit: '6', hasExtraQuiz: true },
 ];
 
 fs.mkdirSync(OUT, { recursive: true });
@@ -48,7 +48,7 @@ function sha(buf) {
   return crypto.createHash('sha256').update(buf).digest('hex');
 }
 
-async function qaUnit(browser, subject, unit, errors) {
+async function qaUnit(browser, subject, unit, errors, hasExtraQuiz = false) {
   const tag = `${subject}-u${unit}`;
   const page = await browser.newPage();
   const consoleErrs = [];
@@ -166,6 +166,45 @@ async function qaUnit(browser, subject, unit, errors) {
     errors.push(`${tag}: intro and quiz-revisada have identical hash — screenshots did not change`);
   }
 
+  // ── 11. Extra quiz (optional) ─────────────────────────────────────────
+  let eqHash = null;
+  const eqNavCount = await page.locator('[data-action="nav-section"][data-section="extra-quiz"]').count();
+  if (hasExtraQuiz) {
+    if (eqNavCount === 0) {
+      errors.push(`${tag}: expected extra-quiz nav element but not found`);
+    } else {
+      const eqNav = page.locator('[data-action="nav-section"][data-section="extra-quiz"]');
+      await eqNav.click();
+      await page.waitForTimeout(400);
+
+      const eqItems = page.locator('.quiz-item');
+      const eqCount = await eqItems.count();
+      if (eqCount === 0) errors.push(`${tag} extra-quiz: no .quiz-item elements found`);
+      for (let qi = 0; qi < eqCount; qi++) {
+        const opt = page.locator(`[data-action="select-answer-eq"][data-qi="${qi}"][data-oi="0"]`);
+        await opt.waitFor({ state: 'visible', timeout: 4000 }).catch(() => {});
+        await opt.click({ timeout: 3000 }).catch(() => {
+          errors.push(`${tag} extra-quiz q${qi}: could not click option 0`);
+        });
+        await page.waitForTimeout(150);
+      }
+
+      const eqSubmit = page.locator('[data-action="submit-eq"]');
+      await eqSubmit.waitFor({ state: 'visible', timeout: 5000 });
+      await eqSubmit.scrollIntoViewIfNeeded();
+      await eqSubmit.click();
+      await page.waitForTimeout(600);
+
+      if (await page.locator('.quiz-score-card').count() === 0)
+        errors.push(`${tag}: .quiz-score-card not found after submitting extra quiz`);
+
+      const eqBuf = await page.screenshot({ path: path.join(OUT, `${tag}-extra-quiz.png`) });
+      eqHash = sha(eqBuf);
+    }
+  } else if (eqNavCount > 0) {
+    errors.push(`${tag}: unexpected extra-quiz nav element found (unit has no extraQuiz)`);
+  }
+
   // Console errors
   if (consoleErrs.length > 0) {
     errors.push(`${tag} console: ${consoleErrs.slice(0, 3).join(' | ')}`);
@@ -176,9 +215,10 @@ async function qaUnit(browser, subject, unit, errors) {
   const unitFails = errors.filter(e => e.startsWith(tag));
   console.log(
     `  ${tag}  ${unitFails.length === 0 ? 'OK' : `FAIL(${unitFails.length})`}` +
-    `  intro:${introHash.slice(0, 8)}  quiz:${quizHash.slice(0, 8)}`
+    `  intro:${introHash.slice(0, 8)}  quiz:${quizHash.slice(0, 8)}` +
+    (eqHash ? `  eq:${eqHash.slice(0, 8)}` : '')
   );
-  return { tag, introHash, quizHash };
+  return { tag, introHash, quizHash, eqHash };
 }
 
 (async () => {
@@ -186,8 +226,8 @@ async function qaUnit(browser, subject, unit, errors) {
   const allErrors = [];
   const results = [];
 
-  for (const { subject, unit } of UNITS) {
-    const r = await qaUnit(browser, subject, unit, allErrors).catch(err => {
+  for (const { subject, unit, hasExtraQuiz } of UNITS) {
+    const r = await qaUnit(browser, subject, unit, allErrors, hasExtraQuiz).catch(err => {
       allErrors.push(`${subject}-u${unit} CRASH: ${err.message}`);
       console.log(`  ${subject}-u${unit}  CRASH: ${err.message}`);
       return null;
@@ -199,8 +239,10 @@ async function qaUnit(browser, subject, unit, errors) {
 
   // Global duplicate hash check (across all units)
   const seen = new Map();
-  for (const { tag, introHash, quizHash } of results) {
-    for (const [label, h] of [[`${tag}-intro`, introHash], [`${tag}-quiz-revisada`, quizHash]]) {
+  for (const { tag, introHash, quizHash, eqHash } of results) {
+    const pairs = [[`${tag}-intro`, introHash], [`${tag}-quiz-revisada`, quizHash]];
+    if (eqHash) pairs.push([`${tag}-extra-quiz`, eqHash]);
+    for (const [label, h] of pairs) {
       if (seen.has(h)) {
         allErrors.push(`${label}: same hash as ${seen.get(h)} — duplicate screenshot`);
       } else {

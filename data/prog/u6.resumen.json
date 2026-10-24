@@ -571,6 +571,61 @@
       "explanation": "Según el temario, se pueden definir tantos constructores como sean necesarios mediante sobrecarga de constructores. El ejemplo muestra Persona() sin parámetros y Persona(String nombre, String apellido1, String apellido2, int edad) con parámetros."
     }
   ],
+  "extraQuiz": {
+    "title": "Test extra U6–U7",
+    "questions": [
+      {
+        "question": "¿Es posible invocar directamente al método finalize()?",
+        "options": ["Si", "Sí, pero únicamente desde la clase pública del paquete.", "No, se llama al ejecutar el método System.gc()."],
+        "correct": 2
+      },
+      {
+        "question": "Si no se establece un modificador de visibilidad a un método, por defecto será:",
+        "options": ["Private.", "Package-private.", "Protected."],
+        "correct": 1
+      },
+      {
+        "question": "¿Cuál de las siguientes afirmaciones es falsa?",
+        "options": ["Si un parámetro se pasa por referencia a un método, este recibe la dirección de memoria real del dato original y, por tanto, cualquier cambio desde el método sobre el dato afecta al dato original.", "En java los parámetros no se pueden pasar por referencia.", "Todas las afirmaciones anteriores son falsas."],
+        "correct": 2
+      },
+      {
+        "question": "Un método estático se puede invocar:",
+        "options": ["Sin necesidad de tener creado un objeto de la clase en la que fue declarado.", "Las opciones a) y c) son correctas.", "Desde un objeto de la clase en la que fue declarado."],
+        "correct": 1
+      },
+      {
+        "question": "Si se necesita utilizar el tipo Date de la librería java.util:",
+        "options": ["Se puede hacer import java.util.Date y ya estará accesible el tipo Date.", "Se puede hacer import java.util.*; y ya estará accesible el tipo Date.", "Todas las opciones son correctas"],
+        "correct": 2
+      },
+      {
+        "question": "Si la clase A hereda de la clase B:",
+        "options": ["Todos los campos de B son transferidos a la clase A.", "Todos los métodos de B son transferidos a la clase A.", "a) y b) son verdaderas."],
+        "correct": 2
+      },
+      {
+        "question": "¿Cuál de las siguientes afirmaciones es verdadera?",
+        "options": ["En una relación de composición, el compuesto debe existir previamente al componente.", "En una relación de asociación, el compuesto debe dejar de existir si lo hace el componente.", "En una relación de composición, el componente debe existir previamente al compuesto."],
+        "correct": 2
+      },
+      {
+        "question": "¿Puede una variable declarada de un tipo clase abstracta contener un objeto de otra clase?",
+        "options": ["Sí, pero únicamente si el objeto es de una subclase que implementa completamente la clase abstracta.", "Sí, puesto que al ser abstracta puede contener referencias a objetos de cualquier tipo.", "Sí, pero únicamente si el objeto es de tipo Object."],
+        "correct": 0
+      },
+      {
+        "question": "Un método abstracto",
+        "options": ["No puede ser codificado en la clase en la que se declara.", "Obliga a que la clase en la que se declara sea también abstracta.", "Las opciones a) y b) son correctas."],
+        "correct": 2
+      },
+      {
+        "question": "Si se declara un constructor sin parámetros:",
+        "options": ["El constructor por defecto no se creará.", "No se podrá invocar al constructor de la superclase.", "Su cuerpo debe estar vacío."],
+        "correct": 0
+      }
+    ]
+  },
   "_sources": {
     "s1": "U6 Clases y utilización de objetos.pdf — sección 6.1, página 3; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Concepto de clase; U6 Síntesis (2).pdf — bloque Resumen",
     "s2": "U6 Clases y utilización de objetos.pdf — sección 6.2, página 4, imágenes 2; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Sintaxis",
@@ -580,6 +635,7 @@
     "s6": "U6 Clases y utilización de objetos.pdf — sección 6.2.4, página 8; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Destructores; U6 Síntesis (2).pdf — Conceptos fundamentales (Recolector de basura)",
     "s7": "U6 Clases y utilización de objetos.pdf — sección 6.3, página 9; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Encapsulación; U6 Síntesis (2).pdf — bloque Resumen",
     "s8": "U6 Clases y utilización de objetos.pdf — sección 6.4, páginas 9-10; U6 DIAPOSITIVAS Clases y utilización de objetos.pdf — diapositiva Librerías y paquetes; U6 Síntesis (2).pdf — Conceptos fundamentales (java.io, Apache Commons, SWT)",
-    "s9": "U6 Modificadores de acceso.pdf — infografía completa (abstract, final, static, volatile, transient, synchronized)"
+    "s9": "U6 Modificadores de acceso.pdf — infografía completa (abstract, final, static, volatile, transient, synchronized)",
+    "extraQuiz": "Test extra U6–U7 del campus (capturas aportadas por Brayan)"
   }
 }
