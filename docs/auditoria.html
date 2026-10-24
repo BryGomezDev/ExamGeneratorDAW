@@ -3,18 +3,14 @@
 body{font-family:Arial,sans-serif;max-width:900px;margin:0 auto;padding:24px 16px;line-height:1.55;color:#1f2937;background:#fff}
 h1{color:#1E3A5F}h2{background:#D5E8F0;color:#1E3A5F;padding:6px 10px;border-radius:4px;margin-top:32px}h3{color:#2E75B6}
 table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}th{background:#2E75B6;color:#fff;text-align:left}th,td{border:1px solid #cbd5e1;padding:6px 8px;vertical-align:top}
-code{font-family:'Courier New',monospace;background:#F2F2F2;padding:1px 4px;border-radius:3px}pre{background:#F2F2F2;padding:12px;overflow-x:auto;border-radius:4px}pre code{padding:0}
+code{font-family:'Courier New',monospace;background:#F2F2F2;padding:1px 4px;border-radius:3px}
 </style></head><body><h1>Auditoría antes de publicar — Generador de Exámenes DAW</h1>
-<p><strong>Fecha:</strong> 10/10/2026 · <strong>Alcance:</strong> estado actual del repo antes del push del lote U3/U4 (resúmenes prog/u3, prog/u4, lm/u3, ip/u3, ipe/u3; validador; arreglo del botón "Hacer el test"). Sustituye a la auditoría del 03/10/2026.
-<strong>Destino:</strong> Vercel (<code>vercel.json</code>: todas las rutas → <code>server.js</code>, Express). Publicar = <code>git push</code> a <code>master</code> (interpretación: integración Git de Vercel; no lo he comprobado en el panel de Vercel).</p>
-<p><strong>Cómo leer este informe</strong></p>
-<ul>
-<li><strong>(comprobado)</strong>: lo he visto en el código; se cita el archivo y la línea.</li>
-<li><strong>(interpretación)</strong>: es mi lectura del riesgo y no se puede verificar línea por línea.</li>
-</ul>
+<p><strong>Fecha:</strong> 24/10/2026 · <strong>Alcance:</strong> cambios pendientes de push, que son la funcionalidad "Test extra" (<code>extraQuiz</code>) y el resumen prog/u6. Esta auditoría actualiza la del 10/10/2026. Del resto del código revisado entonces no ha cambiado nada relevante.
+<strong>Destino:</strong> Vercel (<code>vercel.json</code> enruta todo a <code>server.js</code>). Publicar = <code>git push</code> a <code>master</code>.</p>
+<p>En cada hallazgo se indica si está <strong>(comprobado)</strong>, es decir, visto en el código con archivo y línea, o si es <strong>(interpretación)</strong>, es decir, mi lectura del riesgo.</p>
 <hr />
 <h2>Resumen ejecutivo</h2>
-<p><strong>No hay hallazgos críticos ni altos.</strong> Los arreglos de la auditoría anterior siguen en el código.</p>
+<p><strong>No hay hallazgos críticos, altos ni medios.</strong> Solo tres de severidad baja, que no bloquean el push.</p>
 <table>
 <thead>
 <tr>
@@ -26,119 +22,54 @@ code{font-family:'Courier New',monospace;background:#F2F2F2;padding:1px 4px;bord
 </thead>
 <tbody>
 <tr>
-<td>N1</td>
-<td>Medio</td>
-<td>El push publicará también el <strong>test de IPE U3</strong> (<code>data/ipe/u3.txt</code> está en el índice de git), aunque este lote se planteó sin tests</td>
-<td>índice de git</td>
+<td>E1</td>
+<td>Bajo</td>
+<td>Las opciones del quiz son <code>&lt;div role="button"&gt;</code>, no radios accesibles. Ya pasaba antes y el test extra hereda el mismo patrón</td>
+<td><code>summaries.html</code> (renderQuizSection)</td>
 </tr>
 <tr>
-<td>N2</td>
+<td>E2</td>
 <td>Bajo</td>
-<td>En móvil (375 px), la tabla de 5 columnas de prog/u4 obliga a desplazarse en horizontal. Se puede usar, pero es incómodo</td>
-<td><code>data/prog/u4.resumen.json</code> + <code>summaries.html:253</code></td>
+<td>La validación de <code>extraQuiz</code> depende del validador local (<code>npm run validate</code>), no del servidor. Igual que el resto del JSON</td>
+<td><code>scripts/validate-summaries.js</code></td>
 </tr>
 <tr>
-<td>N3</td>
+<td>E3</td>
 <td>Bajo</td>
-<td>Se suben a GitHub scripts de un solo uso (<code>scripts/_patch-image-pdfs.js</code>, <code>scripts/qa-fase3.js</code>). No se sirven en la web</td>
-<td>índice de git</td>
-</tr>
-<tr>
-<td>N4</td>
-<td>Bajo</td>
-<td><code>d.subject</code> y <code>sec.id</code> (que vienen del JSON) se insertan sin escapar en atributos e identificadores. Hoy no es explotable porque los JSON los escribes tú y se validan</td>
-<td><code>summaries.html:492, 840</code></td>
+<td><code>public/subjects-config.js</code> (mapa asignatura→bloque) se sirve en público. Solo contiene códigos de asignatura, nada sensible</td>
+<td><code>public/subjects-config.js</code></td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2>1. Seguridad</h2>
-<p><strong>XSS</strong> (<em>cross-site scripting</em>): se produce cuando un texto acaba insertado en la página como HTML y el navegador ejecuta un <code>&lt;script&gt;</code> o un atributo <code>on...=</code> que venía dentro de ese texto.</p>
-<h3>Lo que está bien (comprobado)</h3>
+<p><strong>XSS</strong> (<em>cross-site scripting</em>): se produce cuando un texto se inserta en la página como HTML y el navegador ejecuta código que venía dentro de él.</p>
 <ul>
-<li><code>summaries.html</code> define <code>esc()</code> (líneas 401-405), que sustituye <code>&amp; &lt; &gt; " '</code>. Todo el contenido del temario pasa por ella antes de insertarse con <code>innerHTML</code>: preguntas, opciones y explicación del quiz (líneas 799, 808 y 810), glosario (líneas 672-673), tablas (889 y 891) y el código de unidad (535).</li>
-<li><strong>Única entrada del usuario: el buscador del glosario.</strong> El texto que escribes solo se usa para filtrar (líneas 663-666) y nunca llega al DOM, así que no hay vía de XSS.</li>
-<li><strong>Botón nuevo "Hacer el test →"</strong> (líneas 760-763). La condición usa <code>state.subject.units</code>, que viene de <code>/api/subjects</code>. El enlace escapa <code>subject</code> y <code>unit</code> con <code>esc()</code>, y <code>unitNum</code> es un entero porque sale de <code>parseInt</code> (línea 584).</li>
-<li><strong>API de resúmenes</strong> (<code>server.js:290-303</code>). Valida los parámetros con <code>^[a-z0-9]+$</code> y <code>^\d+$</code>, así que no se puede salir de la carpeta con <code>..</code>. Los errores 500 devuelven <code>'Error interno'</code> (líneas 228, 241, 257 y 286).</li>
-<li><strong>Secretos.</strong> He buscado <code>api_key</code>, <code>password</code>, <code>secret</code>, <code>token</code>, <code>PRIVATE KEY</code> y <code>AKIA</code> en <code>public/</code>, <code>server.js</code>, <code>data/</code>, <code>scripts/</code> y <code>package.json</code>. Solo aparecen como palabras del temario (por ejemplo, <code>&lt;input type='password'&gt;</code> en lm/u2), no como credenciales.</li>
+<li><strong>(comprobado)</strong> El renderer del quiz ahora es genérico: <code>renderQuizSection(questions, answers, submitted, title, actNs)</code>. Sigue escapando todo con <code>esc()</code>: preguntas, opciones y explicación del quiz, y el título del test extra, tanto en el <code>&lt;h2&gt;</code> de la sección como en el nav (<code>summaries.html</code>, ~línea 545).</li>
+<li><strong>(comprobado)</strong> <code>actNs</code> vale siempre <code>''</code> o <code>'eq'</code>, que son literales del código. Nunca viene de datos, así que los atributos <code>data-action</code> e <code>id</code> que forma no son inyectables.</li>
+<li><strong>(comprobado)</strong> Los nuevos estados <code>eqAnswers</code> y <code>eqSubmitted</code> solo guardan enteros, que salen de <code>parseInt</code> sobre <code>data-qi</code> y <code>data-oi</code>. Se reinician al cambiar de unidad (~línea 606).</li>
+<li><strong>(comprobado)</strong> No hay secretos en los cambios. <code>server.js</code> no ha cambiado desde la auditoría anterior.</li>
+<li><strong>(interpretación)</strong> El contenido de <code>extraQuiz</code> lo escribes tú en el repo y pasa por <code>esc()</code>. No hay ninguna entrada del usuario que llegue al DOM.</li>
 </ul>
-<h3>N4 — Bajo · Valores del JSON sin escapar en identificadores (comprobado / interpretación)</h3>
-<pre><code class="language-js">// summaries.html:492 — d.subject viene del JSON; luego se escapa al pintarlo (línea 535)
-const unitCode = `${d.subject.toUpperCase()}-U${String(d.unit).padStart(2, '0')}`;
-// summaries.html:840 — sectionId (sec.id del JSON) va sin esc() a data-key / id
-const key = `${sectionId}-${blockIdx}-${i}`;
-</code></pre>
-<p><strong>Interpretación:</strong> solo podría explotarse si alguien metiera un JSON malicioso en <code>data/</code>, y ese alguien ya tendría acceso al repo. En los 5 JSON nuevos he comprobado que todos los <code>id</code> siguen el patrón <code>s\d+</code>. Para cerrarlo del todo, el validador podría exigir ese patrón. No bloquea el push.</p>
-<h3>N3 — Bajo · Scripts de un solo uso en GitHub (comprobado)</h3>
-<p>El índice de git incluye <code>scripts/_patch-image-pdfs.js</code> y <code>scripts/qa-fase3.js</code>. <strong>No se publican en la web</strong>: Express solo sirve <code>public/</code> (<code>server.js:9</code>) y la API. Lo único que hacen es ocupar sitio en el repositorio de GitHub.</p>
-<hr />
-<h2>2. Diseño responsive</h2>
-<p>Un <strong>breakpoint</strong> es una regla CSS (<code>@media (max-width: …)</code>) que cambia el diseño a partir de cierto ancho de pantalla. Hay uno en <code>summaries.html:331</code> (640 px: una sola columna y menú horizontal desplazable) y otro en <code>index.html:511</code> (600 px).</p>
-<table>
-<thead>
-<tr>
-<th>Ancho</th>
-<th>Resultado</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>375 px</strong></td>
-<td>La navegación usa <code>short</code>, que mide como mucho 25 caracteres en los JSON nuevos (comprobado), así que el título largo de ip/u3 s5 no rompe el menú. Tablas y código tienen <code>overflow-x: auto</code> (líneas 253 y 255). <strong>N2:</strong> la tabla de 5 columnas de prog/u4 se desplaza en horizontal (interpretación: se puede usar, pero es incómodo).</td>
-</tr>
-<tr>
-<td><strong>768 px</strong></td>
-<td>Diseño de escritorio con menú lateral. Las tablas de 3-4 columnas caben (interpretación, deducida del CSS).</td>
-</tr>
-<tr>
-<td><strong>1440 px</strong></td>
-<td>Sin problemas: el contenido tiene un ancho máximo fijo (interpretación).</td>
-</tr>
-</tbody>
-</table>
-<p>No he abierto un navegador en estos anchos. Las capturas del QA de Claude Code solo son de escritorio (1280 px).</p>
-<hr />
-<h2>3. Problemas de despliegue</h2>
-<h3>N1 — Medio · El test de IPE U3 se publicará con este push (comprobado / interpretación)</h3>
-<p><code>data/ipe/u3.txt</code> (7404 bytes, del 09/10) está en el índice de git. El servidor detecta solo los <code>u&lt;N&gt;.txt</code> (<code>server.js:164-176</code>). Con el push, aparecerá en producción el test por unidad de IPE U3, contará en el modo conjunto y en el simulacro, y el resumen de ipe/u3 mostrará el botón "Hacer el test →".</p>
-<p><strong>No puedo confirmar esto:</strong> si ese test ya estaba publicado antes. Intenté consultar <code>/api/subjects</code> en producción y la petición no salió. Si no lo quieres publicado aún: <code>git rm --cached data/ipe/u3.txt</code> y commit.</p>
-<h3>Rutas, punto de entrada y datos (comprobado)</h3>
+<h2>2. Responsive</h2>
 <ul>
-<li><code>vercel.json</code> manda todas las rutas a <code>server.js</code>. Express sirve <code>public/index.html</code> como raíz y <code>summaries.html</code> desde la misma carpeta, con rutas relativas.</li>
-<li>Los 5 JSON nuevos están en el índice de git (<code>data/*/u3.resumen.json</code> y <code>data/prog/u4.resumen.json</code>). Los nombres van en minúsculas y coinciden con lo que construye el servidor (<code>u${unit}.resumen.json</code>), así que no hay problema con las mayúsculas en Linux.</li>
-<li>Hay ficheros internos en git (<code>CLAUDE.md</code>, <code>docs/superpowers/…</code>, <code>docs/auditoria.*</code>) que <strong>no se sirven</strong>: Vercel los incluye en el despliegue, pero ninguna ruta los expone (interpretación).</li>
-<li><code>docs/qa/</code>, <code>qa_screenshots/</code>, <code>extract_pdfs.py</code>, <code>docs/stitch/</code> y <code>.claude/settings.local.json</code> están en <code>.gitignore</code> y no aparecen en el índice (comprobado).</li>
+<li><strong>(comprobado)</strong> El nav gana un elemento ("Test extra U6–U7 · 10 Q"). A ≤640 px el nav ya es una tira horizontal con scroll (<code>summaries.html</code>, breakpoint 640 px), así que un elemento más no desborda la página.</li>
+<li><strong>(comprobado)</strong> La pantalla del test extra usa las mismas clases que el quiz (<code>quiz-item</code>, <code>quiz-option</code>, <code>quiz-score-card</code>), cuyo comportamiento en móvil ya estaba revisado.</li>
+<li><strong>(interpretación)</strong> A 375, 768 y 1440 px no debería cambiar nada respecto al quiz actual. Solo he visto la captura de escritorio de <code>docs/qa/fase3/prog-u6-extra-quiz.png</code>; no he probado en un navegador a 375 px.</li>
 </ul>
-<h3>Después del push (verificación)</h3>
-<ol>
-<li><code>/api/summary/prog/4</code> y <code>/api/summary/ip/3</code> devuelven el JSON.</li>
-<li>En <code>/summaries.html</code>, el botón "Hacer el test →" <strong>no</strong> aparece en lm/u3 y <strong>sí</strong> en lm/u2.</li>
-</ol>
-<hr />
-<h2>4. Arquitectura (cambios desde la auditoría anterior)</h2>
+<h2>3. Despliegue</h2>
 <ul>
-<li><strong><code>public/summaries.html</code></strong>: el visor de resúmenes. El único cambio es la condición de <code>testLink</code> (línea 760).</li>
-<li><strong><code>scripts/validate-summaries.js</code></strong> (no se despliega): ignora <code>/**</code> antes de buscar Markdown (línea 17) y avisa (WARN) cuando más de la mitad de las respuestas correctas están en la misma posición (líneas 129-134).</li>
-<li><strong><code>data/&lt;cod&gt;/u&lt;N&gt;.resumen.json</code></strong>: 5 unidades nuevas con el esquema de siempre.</li>
+<li><strong>(comprobado)</strong> <code>data/prog/u6.resumen.json</code> está en el índice de git. No hace falta ningún cambio en el servidor: <code>/api/summary/prog/6</code> sirve el JSON completo, con <code>extraQuiz</code> incluido.</li>
+<li><strong>(comprobado)</strong> Las unidades sin <code>extraQuiz</code> no muestran el elemento en el nav. Lo dice el QA negativo de Claude Code sobre las otras 17 unidades; lo he contrastado con el código (<code>${d.extraQuiz ? … : ''}</code>).</li>
+<li><strong>(comprobado)</strong> El índice de git incluye además <code>data/lm/u3.txt</code>, <code>data/lm/u4.txt</code>, <code>data/prog/u4.txt</code> y <code>data/prog/u5.txt</code>, que son los tests que añadiste tú. Si alguno no estaba publicado todavía, saldrá en producción con este push.</li>
 </ul>
-<p><strong>Flujo de un dato:</strong> clic en una unidad (<code>select-unit</code>, línea 584) → <code>loadSummary()</code> hace <code>fetch('/api/summary/&lt;cod&gt;/&lt;N&gt;')</code> (línea 649) → <code>server.js:290</code> valida, lee y devuelve el JSON → <code>render()</code> → <code>renderBlock()</code> escapa cada campo con <code>esc()</code> → DOM. La lista de unidades con test viaja en <code>/api/subjects</code> (<code>server.js:222-223</code>) y la usa la condición del botón.</p>
+<h2>4. Arquitectura (cambio)</h2>
+<ul>
+<li><strong>Flujo del test extra:</strong> clic en el nav "Test extra" (<code>nav-section</code>, <code>extra-quiz</code>) → <code>renderActiveSection()</code> → <code>&lt;div id="eq-section"&gt;</code> + <code>renderQuizSection(eq.questions, state.eqAnswers, state.eqSubmitted, eq.title, 'eq')</code>.</li>
+<li><strong>Acciones:</strong> <code>select-answer-eq</code>, <code>submit-eq</code> y <code>retry-eq</code> vuelven a pintar solo <code>#eq-section</code>.</li>
+<li><strong>Botón "Hacer el test →":</strong> queda excluido del test extra con <code>!actNs</code>.</li>
+<li><strong>Esquema:</strong> <code>extraQuiz</code> es un campo opcional documentado en <code>CLAUDE.md</code>. El validador lo comprueba sin el límite de 6–10 preguntas y sin el aviso de sesgo, porque las opciones no se reordenan (hay respuestas tipo "a) y c)").</li>
+</ul>
 <hr />
-<h2>Arreglos rápidos antes de publicar (por prioridad)</h2>
-<ol>
-<li><strong>N1 (Medio):</strong> decide si quieres publicar ya el test de IPE U3. Si no, ejecuta <code>git rm --cached data/ipe/u3.txt</code> y haz commit antes del push.</li>
-<li><strong>N3 (Bajo, opcional):</strong> <code>git rm --cached scripts/_patch-image-pdfs.js scripts/qa-fase3.js</code> y añádelos a <code>.gitignore</code>.</li>
-<li><strong>N4 (Bajo, opcional):</strong> en el validador, exigir que <code>sections[].id</code> cumpla <code>^s\d+$</code>.</li>
-<li><strong>N2 (Bajo):</strong> no requiere acción.</li>
-</ol>
-<h3><code>.gitignore</code>: líneas a añadir (opcional, N3)</h3>
-<pre><code class="language-gitignore"># Scripts de un solo uso (QA de la fase 3 y parche de PDFs-imagen); no forman parte de la app
-scripts/_patch-image-pdfs.js
-scripts/qa-fase3.js
-</code></pre>
-<h3><code>.vercelignore</code> (opcional)</h3>
-<p>Con Express, solo <code>public/</code> y la API son accesibles, así que no es imprescindible. Si quieres reducir lo que se sube a la función de Vercel:</p>
-<pre><code class="language-gitignore"># Documentación interna y material de trabajo: no lo usa el servidor
-docs/
-CLAUDE.md
-scripts/
-</code></pre></body></html>
+<h2>Arreglos antes de publicar</h2>
+<p><strong>Ninguno es obligatorio.</strong> Opcional, para más adelante: convertir las opciones de los dos quizzes en un grupo de radios accesible (<code>role="radiogroup"</code> / <code>role="radio"</code> + <code>aria-checked</code>), es decir, E1.</p></body></html>
