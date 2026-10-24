@@ -1,0 +1,396 @@
+{
+  "subject": "ip",
+  "unit": 4,
+  "title": "What's next",
+  "intro": "En esta unidad aprenderemos a comparar elementos usando los adjetivos comparativos y superlativos, incluidas sus formas irregulares. Estudiaremos las preposiciones de movimiento para describir trayectorias y desplazamientos. Trabajaremos también la expresión del propósito con diferentes estructuras verbales (to + infinitivo, for + gerundio, for + sustantivo) y el uso del imperativo para dar órdenes, instrucciones y consejos. Finalmente, exploraremos las cinco formas del futuro en inglés: will, be going to, el present continuous, el present simple y el future perfect, cada una con sus usos y contextos propios.",
+  "objectives": [
+    "Formar comparativos y superlativos de adjetivos cortos, largos y con terminaciones especiales (-e, -y, CVC)",
+    "Memorizar las formas irregulares de los adjetivos comparativos y superlativos",
+    "Usar las preposiciones de movimiento para describir trayectorias y construir frases con la estructura correcta",
+    "Distinguir entre el infinitivo, el bare infinitive y el gerundio, y aplicarlos según el contexto",
+    "Expresar propósito usando to + infinitivo, for + gerundio y for + sustantivo según lo que se quiere comunicar",
+    "Formar el imperativo afirmativo y negativo e identificar sus distintos usos",
+    "Usar las cinco formas del futuro (will, going to, present continuous, present simple, future perfect) según la situación comunicativa",
+    "Identificar vocabulario de tecnologías de la información: Internet, tipos de redes y phrasal verbs de TI"
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "4.1. Comparative and superlative adjectives",
+      "short": "Comparativos/superlativos",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Un adjetivo es una palabra que describe a una persona, lugar o cosa (sustantivo). Los adjetivos comparativos se usan para comparar dos elementos, mientras que los superlativos se usan para indicar cuál tiene el mayor o menor grado de una cualidad en un grupo de tres o más elementos."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "4.1.1. Comparative adjectives",
+              "content": "Se usan los comparativos cuando se quieren comparar dos cosas.\n\nReglas de formación:\n\n1. Adjetivos de una sílaba: añadir -er\n   Soft → Softer / Tall → Taller / Fast → Faster\n\n2. Adjetivos de una sílaba terminados en -e: añadir solo -r\n   Wise → Wiser / Safe → Safer / Nice → Nicer\n\n3. Adjetivos de una sílaba con estructura consonante + vocal + consonante (CVC): doblar la consonante final y añadir -er\n   Red → Redder / Fit → Fitter / Big → Bigger\n\n4. Adjetivos de dos o más sílabas: añadir more delante del adjetivo\n   Polite → More polite / Expensive → More expensive / Famous → More famous\n\n5. Adjetivos de dos sílabas terminados en -y: cambiar -y por -ier\n   Noisy → Noisier / Busy → Busier / Easy → Easier\n\n6. Adjetivos terminados en -ed: añadir more delante\n   Interested → More interested / Excited → More excited / Bored → More bored"
+            },
+            {
+              "title": "4.1.2. Superlative adjectives",
+              "content": "Los superlativos se usan para decir que algo tiene el mayor o menor grado de una cualidad comparado con tres o más elementos.\n\nReglas de formación:\n\n1. Adjetivos de una sílaba: añadir -est\n   Tall → Tallest / Fast → Fastest\n\n2. Adjetivos terminados en -e: añadir -st\n   Safe → Safest / Wise → Wisest\n\n3. Adjetivos terminados en -y: cambiar -y por -iest\n   Happy → Happiest / Noisy → Noisiest\n\n4. Adjetivos de dos o más sílabas: usar the most\n   Interesting → The most interesting / Expensive → The most expensive"
+            },
+            {
+              "title": "4.1.3. Irregular adjectives",
+              "content": "Algunos adjetivos no siguen las reglas regulares; tienen formas propias que deben memorizarse:\n\nGood → Better → The best\nBad → Worse → The worst\nFar → Farther / Further → The farthest / The furthest\nLittle → Less → The least\nMuch / Many → More → The most"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Adjective", "Comparative", "Superlative"],
+          "rows": [
+            ["Good", "Better", "The best"],
+            ["Bad", "Worse", "The worst"],
+            ["Far", "Farther / Further", "The farthest / The furthest"],
+            ["Little", "Less", "The least"],
+            ["Much / Many", "More", "The most"],
+            ["One syllable: strong", "stronger", "strongest"],
+            ["CVC: big", "bigger", "biggest"],
+            ["Ends in -e: large", "larger", "largest"],
+            ["Ends in -y: happy", "happier", "happiest"],
+            ["2+ syllables: expensive", "more expensive", "most expensive"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Los comparativos sirven para comparar dos cosas, mientras que los superlativos indican cuál es el mejor o peor de todos. Se forman siguiendo reglas sencillas, excepto las formas irregulares, que deben memorizarse."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "4.2. Prepositions of movement",
+      "short": "Preposiciones movimiento",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Una preposición de movimiento es una palabra que indica dirección o el camino del movimiento. Se usan habitualmente con verbos de movimiento como go, walk, run, drive, fly, move y swim.\n\nEjemplos:\n- The bus drove across the bridge.\n- I sent a postcard to my mother.\n- We walked past the restaurant."
+        },
+        {
+          "type": "table",
+          "headers": ["Preposición", "Significado"],
+          "rows": [
+            ["To / Toward(s)", "a, hacia"],
+            ["Off", "de, a lo lejos, caerse, fuera de"],
+            ["Over", "sobre, encima de, arriba de"],
+            ["Past", "por, por delante de"],
+            ["Up", "subir, hacia arriba"],
+            ["Down", "bajar, hacia abajo"],
+            ["Across", "al otro lado de"],
+            ["Into", "en, dentro de"],
+            ["Out of", "fuera de"],
+            ["From...to", "desde...a / hasta"],
+            ["Through", "a través de, por"],
+            ["Along", "a lo largo de, por"],
+            ["Around / Round", "por todo, alrededor de"],
+            ["Away", "en otra dirección, alejarse"],
+            ["Back", "de vuelta / regreso, hacia atrás"]
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "4.2.1. Common prepositions of movement",
+              "content": "Preposiciones con sus definiciones y ejemplos:\n\nAcross — al otro lado de. Indica movimiento al lado opuesto.\nThe boat will take you across the river.\n\nThrough — a través de.\nYou must turn on your lights when passing through the tunnel.\n\nInto — dentro de.\nDon't go into your sister's room!\n\nAlong — a lo largo de.\nWe walked quietly along the beach.\n\nAround / Round — alrededor de.\nYou must drive around the city center to reach the cinema.\n\nFrom — de, desde (origen).\nShe drives from Madrid to Alicante.\n\nTo — a, hacia.\nI go to school by bus.\n\nUp — hacia arriba.\nGo up and you'll find your room!\n\nDown — hacia abajo.\nI prefer to ride my bike down the hill.\n\nOut of — fuera de.\nShe came out of the room."
+            },
+            {
+              "title": "4.2.2. Building sentences with directions and movement",
+              "content": "Una frase preposicional de movimiento indica hacia dónde se mueve alguien o algo.\n\nEstructura básica:\nSujeto + verbo de movimiento + preposición de movimiento + lugar\n\nEjemplos:\n- The cat jumped into the box.\n- He walked along the beach.\n- We ran through the park.\n\nEstructura con objeto:\nSujeto + verbo + objeto + preposición + lugar\n\nEjemplo: She threw the rubbish into the bin.\n(Incorrecto: She threw into the bin the rubbish.)\n\nLas preposiciones de movimiento indican hacia dónde se mueve algo o alguien. Se construyen con un verbo de movimiento + preposición de movimiento + lugar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "4.3. Expressing purpose",
+      "short": "Expressing purpose",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Podemos usar diferentes formas verbales para hablar del motivo por el que hacemos algo. Las tres estructuras principales son: to + infinitivo (propósito de una persona con verbo), for + gerundio (propósito de una cosa) y for + sustantivo (propósito de una persona con sustantivo)."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "4.3.1 Infinitive and gerund",
+              "content": "Infinitivo: la forma base del verbo, normalmente con 'to'.\nEjemplos: to eat / to run / to study\nFrase: I want to eat an apple.\n\nUsos del infinitivo (to + base form):\n- Como sujeto: To read is good for your mind.\n- Para expresar finalidad (para + verbo): You travelled abroad to study a second language.\n- Después de adjetivos: My baby is old enough to talk.\n- Después de 'would': He would like to visit a new place.\n- Después de verbos como want, decide, plan, offer: They offered me to help me with the exam.\n\nBare infinitive (base form sin 'to'):\n- Después de verbos modales: You must wear a uniform at work.\n- Después de verbos de percepción (ver, oír, sentir): I hear the bug make some noise.\n\nGerundio: un verbo terminado en -ing que funciona como sustantivo.\nEjemplos: eating / running / studying\nFrase: Running is good for your health.\n\nUsos del gerundio (base form + ing):\n- Como sujeto: Dancing is beneficial for your health.\n- Después de verbos de opinión: We love shopping.\n- Después de la mayoría de los phrasal verbs: I'm fed up of working.\n- Detrás de una preposición: I am reading about working abroad."
+            },
+            {
+              "title": "4.3.2. Using to and for for purpose",
+              "content": "Usando 'to' + infinitivo: para explicar un objetivo o propósito claro de una persona.\nEjemplo: I listen to podcasts to improve my listening skills.\n\nUsando 'for' + gerundio: para describir el propósito general o la función de una cosa.\nEjemplo: This tool is for weeding the garden.\n\nUsando 'for' + sustantivo: para explicar por qué fuimos a algún lugar o hicimos algo.\nEjemplo: I went there for fresh air.\n(También posible con to + infinitivo: I went to get fresh air.)"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Propósito", "Estructura"],
+          "rows": [
+            ["El propósito de una persona (verbo)", "To + verbo infinitivo"],
+            ["El propósito de una persona (sustantivo)", "For + sustantivo"],
+            ["El propósito de una cosa (verbo)", "For + gerundio"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Para expresar propósito en inglés, usamos 'to' + infinitivo para objetivos claros (ej. I study to learn), y 'for' + gerundio para describir la función general de algo (ej. This tool is for cutting paper)."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "4.4. The imperative",
+      "short": "The imperative",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El imperativo se usa para dar órdenes, instrucciones o peticiones directas. El verbo va en su forma base (sin 'to') y no hay sujeto explícito porque se sobreentiende que la orden va dirigida a la persona o personas con las que hablamos (you, singular o plural)."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Orders (órdenes)",
+              "desc": "Finish your homework."
+            },
+            {
+              "title": "Advice (consejos)",
+              "desc": "Drink plenty of water."
+            },
+            {
+              "title": "Warnings (advertencias)",
+              "desc": "Be careful with that knife."
+            },
+            {
+              "title": "Requests (peticiones)",
+              "desc": "Please pass me the salt."
+            },
+            {
+              "title": "Instructions (instrucciones)",
+              "desc": "First, open the box."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Tipo", "Estructura", "Ejemplo"],
+          "rows": [
+            ["Afirmativo", "Base form del verbo", "Sit down. / Eat your dinner."],
+            ["Negativo", "Don't + base form", "Don't touch that. / Don't speak loudly."],
+            ["Cortés", "Please + base form (o al final)", "Please sit down. / Sit down, please."]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "El imperativo se usa para dar órdenes, consejos o instrucciones, y suele formarse con el verbo en infinitivo sin 'to' (Go!, Listen!). Para ser más cortés, se añade 'please' (Please sit down)."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "4.5. The future",
+      "short": "The future",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En inglés existen varias estructuras para hablar del futuro dependiendo de lo que se quiere expresar. Las más comunes son: will, be going to, present continuous, present simple y future perfect."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "4.5.1. Future simple (will)",
+              "content": "El futuro simple se usa para hablar de acciones o eventos que ocurrirán en el futuro.\n\nEstructura:\n- Afirmativa: Subject + will + base form → I will study tomorrow.\n- Negativa: Subject + will not (won't) + base form → She will not (won't) come to the party.\n- Interrogativa: Will + subject + base form? → Will they visit us next summer?\n\nUsos:\n1. Predicciones: I think it will rain tomorrow.\n2. Promesas: I will always support you.\n3. Decisiones tomadas en el momento de hablar: I'll have a coffee, please.\n\nEl futuro simple se usa para hablar de cosas que sucederán. Usamos 'will' + verbo en su forma base para predicciones, promesas y decisiones tomadas en el momento."
+            },
+            {
+              "title": "4.5.2. To be going to",
+              "content": "Se usa 'going to' para hablar de planes personales o intenciones.\n\nEstructura:\n- Afirmativa: Subject + to be + going to + base form → I am going to travel next summer.\n- Negativa: Subject + to be + not + going to + base form → She is not (isn't) going to buy a new car.\n- Interrogativa: To be + subject + going to + base form? → Are they going to watch a movie tonight?\n\nConjugación de to be:\n- I → am going to\n- You, we, they → are going to\n- He, she, it → is going to\n\nEjemplos:\n- I am going to have fun on vacation.\n- She is not going to break up with her boyfriend.\n- Are they going to try to have a baby?\n\nUsamos 'going to' cuando ya tenemos un plan o decisión para el futuro."
+            },
+            {
+              "title": "4.5.3. Present continuous for future arrangements",
+              "content": "Se usa el present continuous para hablar de planes fijos o arreglos ya confirmados en el futuro próximo, como reuniones, citas o eventos sociales.\n\nEstructura:\n- Afirmativa: Subject + am/is/are + verb(-ing) + time expression → I am meeting my friends tomorrow.\n- Negativa: Subject + am/is/are + not + verb(-ing) + time expression → She isn't traveling next weekend.\n- Interrogativa: Am/Is/Are + subject + verb(-ing) + time expression? → Are they coming to the party tonight?\n\nEjemplos:\n- We are having dinner with Sarah on Friday.\n- He is not playing football this evening.\n- Is she visiting her grandparents next weekend?\n\nExpresiones de tiempo frecuentes:\n- Tomorrow / Next week, month, year\n- On + day of the week / At + specific time\n- This evening / afternoon / morning\n- In + a period of time / The day after tomorrow"
+            },
+            {
+              "title": "4.5.4. Present simple for scheduled events",
+              "content": "Se usa el present simple para hablar de horarios o programas fijos en el futuro, especialmente para transporte, eventos o programas que siguen un horario regular.\n\nEstructura:\n- Afirmativa: Subject + base verb + time expression → The train leaves at 8 AM.\n- Negativa: Subject + do/does not + base verb + time expression → The shop doesn't open on Sundays.\n- Interrogativa: Do/Does + subject + base verb + time expression? → Does the movie start at 6 PM?\n\nEjemplos:\n- The flight arrives at noon.\n- The bus doesn't leave at night.\n- What time does the concert start?\n\nExpresiones de tiempo frecuentes: at + time / on + day / on + date / next week, month / in + period of time."
+            },
+            {
+              "title": "4.5.5. Future perfect",
+              "content": "El futuro perfecto se usa para decir que algo habrá finalizado antes de un momento concreto en el futuro.\n\nEstructura: Subject + will have + past participle\n\n- Afirmativa: By 10 p.m., I will have finished my homework.\n- Negativa: She will not have arrived by noon.\n- Interrogativa: Will you have finished by Friday?\n\nUsos:\n- Para hablar de algo que estará terminado antes de un momento futuro: By next year, we will have moved to a new house.\n- Para imaginar el pasado desde un momento futuro: By the time you wake up, I will have left.\n\nExpresiones de tiempo:\n- By + time → by Monday, by 2025, by 6 p.m.\n- Before + event → before dinner, before the weekend\n\nEl futuro perfecto se diferencia del futuro simple en que enfatiza que la acción estará terminada antes de un punto en el futuro."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Forma", "Ejemplo", "Uso principal"],
+          "rows": [
+            ["Will", "I will help you.", "Predictions, promises, decisions"],
+            ["Going to", "She's going to cook.", "Plans, intentions"],
+            ["Present Continuous", "We are travelling next week.", "Fixed arrangements"],
+            ["Present Simple", "The bus leaves at 8.", "Official schedules"],
+            ["Future Perfect", "I will have left by 10.", "Completed actions before future time"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "Vocabulario — Unit 4",
+      "short": "Vocabulario — Unit 4",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El vocabulario de la unidad 4 gira en torno a las tecnologías de la información: Internet y la World Wide Web, tipos de redes informáticas y los phrasal verbs más habituales en entornos TI."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "The Internet vs. The WWW",
+              "content": "The Internet: a global system of computers and other devices that are connected to each other, allowing them to share information and communicate. It works through a network of cables, satellites, and wireless connections. Devices connect to servers, which store and send information like websites, images, and videos.\n\nThe WWW (World Wide Web): a system of websites and web pages accessed through the internet. When you use a browser (like Google Chrome or Firefox), you are using the WWW to visit websites and view content. Websites are made up of web pages linked by hyperlinks, written in HTML (Hypertext Markup Language).\n\nDiferencia clave: The internet is the global network of connected computers and servers. The WWW is just one of the many services that run on the internet."
+            },
+            {
+              "title": "Types of Networks (LAN, MAN, WAN)",
+              "content": "A network is when two or more computers or electronic devices are connected to share information and use resources together.\n\nPor estructura:\n- Peer-to-peer network: both computers are equal; they can share files, programs, or devices like printers. Used when fewer than ten computers.\n- Client-server network: one computer is the server and gives information or services to the other computers (clients). Used when more than ten computers.\n\nPor tamaño:\n- LAN (Local Area Network): connects computers in a small area, like in a house, school, or office. Devices connected using cables to a hub or switch. Small and privately owned.\n- MAN (Metropolitan Area Network): bigger than a LAN, covers a city. Usually connects different buildings or offices. Key aspects: security and standardization.\n- WAN (Wide Area Network): connects many LANs. Can connect computers across a country or the world. Works more slowly than a LAN or MAN. Two main types: Enterprise WAN (for businesses) and Global WAN (covers large parts of the world)."
+            }
+          ]
+        },
+        {
+          "type": "flipcards",
+          "items": [
+            {"term": "Boot up", "def": "Start a computer. I booted up my laptop to check the report."},
+            {"term": "Log in / Log on", "def": "Access a system using credentials. You need to log in to your account first."},
+            {"term": "Log out / Log off", "def": "Exit your account or system. Don't forget to log off before leaving."},
+            {"term": "Sign in", "def": "Enter your account (same as log in; often used for websites). Please sign in with your email and password."},
+            {"term": "Sign up", "def": "Create a new account. You need to sign up before using the app."},
+            {"term": "Shut down", "def": "Turn off a computer or system. The technician shut down all the servers for maintenance."},
+            {"term": "Set up", "def": "Install or prepare a system or device. I set up the new printer yesterday."},
+            {"term": "Back up", "def": "Make a copy of data. Remember to back up your files regularly."},
+            {"term": "Plug in", "def": "Connect a device to electricity or another device. Is your monitor plugged in?"},
+            {"term": "Break down", "def": "Stop working. My computer broke down during the update."},
+            {"term": "Scroll up / Scroll down", "def": "Move up or down the screen. Scroll down to see the full document."},
+            {"term": "Turn on / Turn off", "def": "Start or stop a device. Can you turn off the projector, please?"},
+            {"term": "Freeze up", "def": "Become unresponsive. My screen froze up during the meeting."},
+            {"term": "Pop up", "def": "Appear suddenly on the screen (usually a window or message). A warning message popped up while I was browsing."}
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {"term": "Comparative adjective", "def": "Adjetivo que compara dos elementos. Se forma añadiendo -er (adjetivos cortos) o more (adjetivos largos). Ej.: taller, more expensive."},
+    {"term": "Superlative adjective", "def": "Adjetivo que indica el mayor o menor grado en un grupo de tres o más. Se forma con -est o the most. Ej.: the tallest, the most expensive."},
+    {"term": "Irregular adjective", "def": "Adjetivo cuyas formas comparativa y superlativa no siguen las reglas regulares y deben memorizarse. Ej.: good/better/best, bad/worse/worst."},
+    {"term": "Preposition of movement", "def": "Palabra que indica la dirección o el camino del movimiento. Se usa con verbos de movimiento (go, walk, run). Ej.: into, through, along."},
+    {"term": "Infinitive", "def": "Forma base del verbo precedida de 'to'. Se usa como sujeto, tras adjetivos y tras verbos como want, decide, plan. Ej.: to eat, to run."},
+    {"term": "Bare infinitive", "def": "Forma base del verbo sin 'to'. Se usa después de verbos modales y verbos de percepción. Ej.: You must wear a uniform. / I hear the bug make some noise."},
+    {"term": "Gerund", "def": "Forma verbal terminada en -ing que funciona como sustantivo. Se usa como sujeto, tras verbos de opinión y tras preposiciones. Ej.: Running is good for your health."},
+    {"term": "Expressing purpose", "def": "Estructuras para explicar el motivo o finalidad de una acción: to + infinitivo (propósito de una persona), for + gerundio (función de una cosa), for + sustantivo. Ej.: I study to learn. / This tool is for cutting."},
+    {"term": "Imperative", "def": "Forma verbal usada para dar órdenes, instrucciones, consejos o advertencias. Se forma con la base del verbo sin 'to' y sin sujeto explícito. Negativa: Don't + base form."},
+    {"term": "Future simple (will)", "def": "Tiempo futuro para predicciones, promesas y decisiones tomadas en el momento de hablar. Estructura: Subject + will + base form. Ej.: I will call you later."},
+    {"term": "Be going to", "def": "Estructura para hablar de planes o intenciones futuras ya decididas. Estructura: Subject + am/is/are + going to + base form. Ej.: She is going to travel next summer."},
+    {"term": "Present continuous (future)", "def": "Uso del present continuous para planes fijos o arreglos ya confirmados en el futuro próximo. Estructura: Subject + am/is/are + verb-ing + time expression. Ej.: I am meeting my friends tomorrow."},
+    {"term": "Present simple (future)", "def": "Uso del present simple para horarios y eventos programados en el futuro. Estructura: Subject + base verb + time expression. Ej.: The train leaves at 8 AM."},
+    {"term": "Future perfect", "def": "Tiempo que expresa una acción que se habrá completado antes de un momento futuro. Estructura: Subject + will have + past participle. Ej.: By 10 p.m., I will have finished my homework."},
+    {"term": "LAN", "def": "Local Area Network. Red que conecta ordenadores en un área pequeña (casa, escuela, oficina). Dispositivos conectados por cables a un hub o switch."},
+    {"term": "WAN", "def": "Wide Area Network. Red que conecta muchas LANs; puede abarcar un país o el mundo entero. Más lenta que una LAN o MAN. Tipos: Enterprise WAN y Global WAN."},
+    {"term": "Phrasal verb", "def": "Verbo combinado con una preposición o adverbio que forma un nuevo significado. En TI: boot up (encender), shut down (apagar), back up (hacer copia de seguridad)."}
+  ],
+  "quiz": [
+    {
+      "question": "How do you form the comparative of a two-syllable adjective ending in -y, like 'noisy'?",
+      "options": [
+        "noisier",
+        "more noisy",
+        "noisiest"
+      ],
+      "correct": 0,
+      "explanation": "El temario indica que los adjetivos de dos sílabas terminados en -y se forman cambiando -y por -ier: noisy → noisier. 'More noisy' sería la forma para adjetivos largos sin terminación -y, y 'noisiest' es el superlativo."
+    },
+    {
+      "question": "¿Qué forma del futuro se usa para hablar de planes fijos o arreglos ya confirmados, como citas o reuniones?",
+      "options": [
+        "Future simple: will + base form",
+        "Present continuous: am/is/are + verb-ing",
+        "Present simple: base verb"
+      ],
+      "correct": 1,
+      "explanation": "El temario establece que el present continuous se usa para hablar de planes fijos o arreglos en el futuro próximo que ya están confirmados (I am meeting my friends tomorrow). Will se usa para predicciones y promesas; el present simple para horarios programados."
+    },
+    {
+      "question": "¿Cuál es la estructura del future perfect?",
+      "options": [
+        "To be + going to + base form",
+        "Will + base form",
+        "Will have + past participle"
+      ],
+      "correct": 2,
+      "explanation": "El temario define el future perfect con la estructura 'will have + past participle', para acciones que estarán completadas antes de un momento específico en el futuro. Ejemplo: By 10 p.m., I will have finished my homework."
+    },
+    {
+      "question": "¿Cómo se forma el imperativo negativo en inglés?",
+      "options": [
+        "Don't + base form del verbo",
+        "No + to + base form del verbo",
+        "Not + base form del verbo"
+      ],
+      "correct": 0,
+      "explanation": "Según el temario y las diapositivas del imperativo, la forma negativa se construye con 'Don't + base form del verbo', sin 'to'. Ejemplos: Don't touch that. / Don't speak loudly."
+    },
+    {
+      "question": "¿Qué estructura se usa para expresar el propósito de una cosa (objeto o herramienta)?",
+      "options": [
+        "To + infinitivo",
+        "For + sustantivo",
+        "For + gerundio"
+      ],
+      "correct": 2,
+      "explanation": "El temario y el PDF de Expressing Purpose establecen que para expresar el propósito de una cosa se usa 'for + gerundio'. Ejemplo del temario: This tool is for weeding the garden. 'To + infinitivo' expresa el propósito de una persona; 'for + sustantivo' el propósito nominal."
+    },
+    {
+      "question": "Which is the superlative form of 'bad'?",
+      "options": [
+        "the baddest",
+        "the worst",
+        "the most bad"
+      ],
+      "correct": 1,
+      "explanation": "El temario incluye una tabla de adjetivos irregulares donde bad → worse (comparativo) → the worst (superlativo). Las formas 'the baddest' y 'the most bad' son incorrectas y no existen en inglés estándar."
+    },
+    {
+      "question": "¿Qué significa el phrasal verb 'boot up' según el vocabulario de la unidad?",
+      "options": [
+        "Encender o arrancar un ordenador",
+        "Hacer una copia de seguridad de datos",
+        "Apagar un ordenador o sistema"
+      ],
+      "correct": 0,
+      "explanation": "El PDF de vocabulario define 'boot up' como 'start a computer', con el ejemplo: I booted up my laptop to check the report. No debe confundirse con 'back up' (hacer copia de seguridad) ni con 'shut down' (apagar)."
+    },
+    {
+      "question": "¿Para qué se usa 'be going to' según el temario?",
+      "options": [
+        "Para decisiones espontáneas tomadas en el momento de hablar",
+        "Para hablar de planes personales o intenciones ya decididas",
+        "Para horarios y eventos con programación oficial"
+      ],
+      "correct": 1,
+      "explanation": "El temario establece que 'going to' se usa cuando ya se tiene un plan o decisión para el futuro. Las decisiones espontáneas en el momento de hablar usan 'will'; los horarios oficiales usan el present simple."
+    }
+  ],
+  "_sources": {
+    "s1": "U4 What's next.pdf — sección 4.1, páginas 4–6; 16. Comparative adjective.pdf — p. 2; U4 DIAPOSITIVAS Superlative adjectives.pdf — p. 2",
+    "s2": "U4 What's next.pdf — sección 4.2, páginas 7–8; U4 Prepositions of movement.pdf — infografía p. 1; U4 DIAPOSITIVAS Preposition of movement.pdf — pp. 2–4",
+    "s3": "U4 What's next.pdf — sección 4.3, páginas 9–10; 38. Infinitives and gerunds.pdf — pp. 2–3; 44. Expressing Purpose.pdf — p. 2",
+    "s4": "U4 What's next.pdf — sección 4.4, página 11; U4 DIAPOSITIVAS The Imperative.pdf — pp. 2–4",
+    "s5": "U4 What's next.pdf — sección 4.5, páginas 12–16; U4. The future (GS).pdf — pp. 3–7; Summary U4 Whats next.pdf — pp. 3–4",
+    "s6": "U4 Vocabulary Whats next.pdf — secciones 4.1–4.1.3, páginas 3–8"
+  }
+}
