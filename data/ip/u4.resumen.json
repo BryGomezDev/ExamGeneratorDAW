@@ -104,6 +104,19 @@
               "content": "Una frase preposicional de movimiento indica hacia dónde se mueve alguien o algo.\n\nEstructura básica:\nSujeto + verbo de movimiento + preposición de movimiento + lugar\n\nEjemplos:\n- The cat jumped into the box.\n- He walked along the beach.\n- We ran through the park.\n\nEstructura con objeto:\nSujeto + verbo + objeto + preposición + lugar\n\nEjemplo: She threw the rubbish into the bin.\n(Incorrecto: She threw into the bin the rubbish.)\n\nLas preposiciones de movimiento indican hacia dónde se mueve algo o alguien. Se construyen con un verbo de movimiento + preposición de movimiento + lugar."
             }
           ]
+        },
+        {
+          "type": "text",
+          "content": "Infografía del temario: cada preposición de movimiento con su ejemplo."
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Up the stairs", "Down the stairs", "Over the box",
+            "From the box", "To the box", "Along the boxes",
+            "Into the box", "Out of the box", "Around the box",
+            "Through the tunnel", "Under the box", "Across the bridge"
+          ]
         }
       ]
     },
@@ -387,7 +400,7 @@
   ],
   "_sources": {
     "s1": "U4 What's next.pdf — sección 4.1, páginas 4–6; 16. Comparative adjective.pdf — p. 2; U4 DIAPOSITIVAS Superlative adjectives.pdf — p. 2",
-    "s2": "U4 What's next.pdf — sección 4.2, páginas 7–8; U4 Prepositions of movement.pdf — infografía p. 1; U4 DIAPOSITIVAS Preposition of movement.pdf — pp. 2–4",
+    "s2": "U4 What's next.pdf — sección 4.2, páginas 7–8; U4 Prepositions of movement.pdf — infografía p. 1 (sin capa de texto, leída como imagen); U4 DIAPOSITIVAS Preposition of movement.pdf — pp. 2–4",
     "s3": "U4 What's next.pdf — sección 4.3, páginas 9–10; 38. Infinitives and gerunds.pdf — pp. 2–3; 44. Expressing Purpose.pdf — p. 2",
     "s4": "U4 What's next.pdf — sección 4.4, página 11; U4 DIAPOSITIVAS The Imperative.pdf — pp. 2–4",
     "s5": "U4 What's next.pdf — sección 4.5, páginas 12–16; U4. The future (GS).pdf — pp. 3–7; Summary U4 Whats next.pdf — pp. 3–4",
