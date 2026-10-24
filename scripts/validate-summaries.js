@@ -146,9 +146,10 @@ function validate(file) {
       if (!q.question) fail(f, `${loc}.question requerido`);
       if (!Array.isArray(q.options) || q.options.length === 0) fail(f, `${loc}.options requerido`);
       if (q.correct === undefined || q.correct === null) fail(f, `${loc}.correct requerido`);
+      else if (typeof q.correct !== 'number') fail(f, `${loc}.correct debe ser número`);
       else if (q.correct < 0 || q.correct >= (q.options || []).length)
         fail(f, `${loc}.correct=${q.correct} fuera de rango (${(q.options || []).length} opciones)`);
-      deepCheckText(f, loc, { question: q.question, options: q.options });
+      deepCheckText(f, loc, q);
     });
   }
 }
