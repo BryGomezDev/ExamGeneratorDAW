@@ -190,13 +190,13 @@
   /* ── Blocks ──────────────────────────────────────── */
   .block + .block { margin-top: 24px; }
   .block-hint { font-size: 0.82rem; color: var(--outline); margin-bottom: 10px; font-style: italic; }
-  .block-text { color: var(--on-surface-variant); line-height: 1.65; max-width: 75ch; }
+  .block-text { color: var(--on-surface-variant); line-height: 1.65; max-width: 75ch; white-space: pre-line; }
 
   .block-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
   .block-card { background: var(--surface-variant); border: 1px solid var(--outline-variant); border-radius: var(--radius); padding: 16px; }
   .block-card .kicker { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; }
   .block-card .card-h { font-weight: 600; color: var(--on-surface); margin: 4px 0 6px; }
-  .block-card .card-d { font-size: 0.88rem; color: var(--on-surface-variant); }
+  .block-card .card-d { font-size: 0.88rem; color: var(--on-surface-variant); white-space: pre-line; }
   .block-card .card-ex { font-family: var(--font-mono); font-size: 0.8rem; color: var(--on-surface-variant); margin-top: 6px; background: var(--surface-container-lowest); padding: 6px 10px; border-radius: calc(var(--radius) / 2); }
 
   .accordion-wrap { background: var(--surface-container); border-radius: var(--radius); overflow: hidden; }
@@ -208,7 +208,7 @@
   }
   .accordion-header:hover { background: var(--surface-container-high); }
   .toggle-icon { color: var(--primary); font-size: 1.1rem; font-weight: 400; }
-  .accordion-body { padding: 12px 16px; color: var(--on-surface-variant); line-height: 1.6; border-top: 1px solid var(--surface-container-highest); background: var(--surface-container-low); }
+  .accordion-body { padding: 12px 16px; color: var(--on-surface-variant); line-height: 1.6; border-top: 1px solid var(--surface-container-highest); background: var(--surface-container-low); white-space: pre-line; }
 
   .timeline { padding-left: 20px; border-left: 2px solid var(--outline-variant); }
   .timeline-item { position: relative; padding: 0 0 20px 20px; }
@@ -908,9 +908,7 @@ function renderBlock(block, sectionId, blockIdx) {
               <span>${esc(item.title)}</span>
               <span class="toggle-icon">${state.open[key] ? '−' : '+'}</span>
             </button>
-            <div class="accordion-body" id="body-${esc(key)}" ${state.open[key] ? '' : 'hidden'}>
-              ${esc(item.content)}
-            </div>
+            <div class="accordion-body" id="body-${esc(key)}" ${state.open[key] ? '' : 'hidden'}>${esc(item.content)}</div>
           </div>`;
       }).join('')}</div>`;
 
