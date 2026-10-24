@@ -1,0 +1,79 @@
+PREGUNTA: ¿Cuál es la palabra reservada que convierte a un campo en común entre todos los objetos de una clase?
+A: Static.
+B: getter.
+C: setter.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: A
+EXPLICACION: La palabra reservada "static" convierte un campo en variable de clase: en lugar de existir una copia por cada objeto instanciado, existe una única copia compartida por todos ellos. Se accede directamente con el nombre de la clase (Clase.campo) sin necesitar una instancia. Ejemplos típicos son contadores de instancias o constantes compartidas. Getter y setter son métodos de acceso, no palabras reservadas que modifiquen el ámbito del campo.
+
+PREGUNTA: Garbage collector es un mecanismo de:
+A: C++.
+B: Delphi.
+C: Java.
+D: Ninguna de las anteriores.
+RESPUESTA: C
+EXPLICACION: El Garbage Collector (GC) es el mecanismo automático de gestión de memoria de la JVM (Java Virtual Machine). Detecta y libera los objetos que ya no tienen referencias activas, evitando que el programador tenga que liberar memoria manualmente. En C++ la gestión de memoria es manual (new/delete). Delphi tiene su propio sistema pero no usa el término "Garbage Collector" de la misma forma. Java popularizó este mecanismo en lenguajes de alto nivel.
+
+PREGUNTA: JFreeChart es:
+A: Un tipo de librería.
+B: Un tipo de dato.
+C: Un tipo de llamada para métodos.
+D: Un tipo de mecanismo de Java.
+RESPUESTA: A
+EXPLICACION: JFreeChart es una librería (biblioteca) open source para Java que permite crear gráficos y diagramas de forma programática: gráficos de barras, líneas, sectores, dispersión, etc. Se añade al proyecto como dependencia JAR y se usa desde el código Java para generar visualizaciones de datos. No es un tipo de dato primitivo ni un mecanismo interno de la JVM, sino una librería de terceros ampliamente usada en aplicaciones empresariales y de escritorio.
+
+PREGUNTA: Los campos también pueden ser llamados:
+A: Atributos.
+B: Variables.
+C: Fields.
+D: Todas las anteriores son correctas.
+RESPUESTA: D
+EXPLICACION: Los campos de una clase tienen varios nombres sinónimos según el contexto. "Atributos" es el término usado en UML y en programación orientada a objetos en general. "Variables de instancia" o simplemente "variables" es el uso coloquial. "Fields" es el término oficial en la especificación Java (Java Language Specification). Los tres nombres son igualmente válidos y se usan indistintamente en documentación, libros y entornos de desarrollo.
+
+PREGUNTA: Los métodos pueden operar devolviendo algún resultado o sin tener que devolver ningún valor, indicando ___ en la declaración del método.
+A: Null.
+B: Void.
+C: 0.
+D: 000.
+RESPUESTA: B
+EXPLICACION: "void" es la palabra reservada que se usa en la declaración de un método cuando este no devuelve ningún valor: public void imprimirMensaje() { ... }. Si el método devuelve algo, se especifica el tipo de retorno (int, String, boolean, etc.) y debe incluir una sentencia return con un valor del tipo declarado. "null" es un valor que puede devolver un método que retorna un objeto, pero no se usa para indicar ausencia de retorno.
+
+PREGUNTA: Para instanciar un objeto solo será necesario indicar este operador junto al nombre de clase:
+A: &.
+B: %.
+C: $.
+D: Ninguno de los anteriores.
+RESPUESTA: D
+EXPLICACION: Para instanciar un objeto en Java se usa el operador "new" junto al constructor de la clase: Clase objeto = new Clase(). El operador "new" reserva memoria en el heap para el nuevo objeto y llama al constructor para inicializarlo. Los símbolos &, % y $ no son operadores de instanciación en Java: & es AND binario o referencia en otros lenguajes, % es módulo, y $ se permite en identificadores pero no es un operador.
+
+PREGUNTA: Sobrecarga de métodos:
+A: Declaración de métodos diferentes en una misma clase con diferentes parámetros.
+B: Declaración de un mismo parámetro en una misma clase, en diferentes métodos.
+C: Declaración de un mismo método en una misma clase, pero con diferentes parámetros.
+D: Declaración de diferentes parámetros en una misma clase, en un mismo método.
+RESPUESTA: C
+EXPLICACION: La sobrecarga (overloading) consiste en declarar varios métodos con el mismo nombre en la misma clase pero con diferente firma: distinto número de parámetros, distintos tipos o distinto orden. El compilador distingue cuál llamar según los argumentos pasados. Ejemplo: calcular(int a), calcular(int a, int b), calcular(double a). No confundir con sobreescritura (overriding), que ocurre entre clase padre e hija en herencia.
+
+PREGUNTA: También mencionado como getter. Permiten consultar un campo:
+A: Constructores.
+B: Observadores.
+C: Modificadores.
+D: Ninguna de las anteriores es correcta.
+RESPUESTA: B
+EXPLICACION: Los métodos observadores (también llamados getters o accessors) permiten leer el valor de un campo privado sin acceder directamente a él, siguiendo el principio de encapsulamiento. Su convención es getName() para un campo "name". Los modificadores (setters) hacen lo contrario: permiten cambiar el valor del campo. Los constructores inicializan el objeto al crearlo, no sirven para consultar campos en tiempo de ejecución.
+
+PREGUNTA: Tipo de visibilidad: tendrá acceso a la clase desde el mismo paquete o subclases que estén en diferente paquete. Una clase externa en otro paquete no tendrá acceso:
+A: Public.
+B: Protected.
+C: Package o estándar.
+D: Private.
+RESPUESTA: B
+EXPLICACION: El modificador "protected" da acceso desde: la propia clase, otras clases del mismo paquete, y subclases (herencia) aunque estén en paquetes distintos. "Public" es accesible desde cualquier clase en cualquier paquete. "Package" (sin modificador explícito) solo permite acceso desde el mismo paquete, no desde subclases en otros paquetes. "Private" restringe el acceso a la propia clase únicamente.
+
+PREGUNTA: Tipos de paso al enviar un método: Envía una copia del valor original y por lo tanto no se puede modificar el valor original:
+A: Por referencia.
+B: Por frecuencia.
+C: Por constantes.
+D: Por valor.
+RESPUESTA: D
+EXPLICACION: El paso por valor envía una copia del dato al método; cualquier modificación dentro del método afecta solo a la copia local, dejando intacto el valor original. En Java, los tipos primitivos (int, double, boolean, etc.) siempre se pasan por valor. El paso por referencia envía la dirección de memoria del objeto, permitiendo modificar el objeto original; en Java, los objetos se pasan por valor de la referencia (una copia de la dirección), no una referencia pura.
