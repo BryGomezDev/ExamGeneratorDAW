@@ -1,0 +1,79 @@
+PREGUNTA: Choose the correct form of the future simple: "I think people ________ on Mars in the future."
+A: will to live
+B: are living
+C: will live
+D: is going to live
+RESPUESTA: C
+EXPLICACION: Future Simple = will + infinitivo (sin "to"). Se usa para predicciones basadas en opinión o creencia, especialmente tras "I think", "I believe" o "I suppose". La opción A es incorrecta porque "will" ya actúa como auxiliar y no necesita "to". La B es Present Continuous (planes concretos). La D usa "is going to" pero con sujeto "people" debería ser "are going to live".
+
+PREGUNTA: Choose the correct imperative sentence:
+A: You not open the window!
+B: Don't open the window!
+C: Doesn't open the window!
+D: Not to open the window!
+RESPUESTA: B
+EXPLICACION: El imperativo negativo en inglés se forma con "Don't + infinitivo". La negación en imperativo siempre usa "don't" (forma corta de "do not"), nunca "doesn't" (que es tercera persona del presente simple). La opción A omite el auxiliar. La D usa "not to", que pertenece al infinitivo negativo (I decided not to go), no al imperativo.
+
+PREGUNTA: Choose the correct sentence using the future perfect tense:
+A: I will have finish reading this book by tomorrow.
+B: I will finish reading this book by tomorrow.
+C: I will have finished reading this book by tomorrow.
+D: I have finished reading this book by tomorrow.
+RESPUESTA: C
+EXPLICACION: Future Perfect = will have + participio pasado. Se usa para indicar que una acción estará completada antes de un momento futuro, generalmente con "by" (para entonces). La opción A usa el infinitivo "finish" en lugar del participio "finished". La B es Future Simple (sin "have"). La D es Present Perfect, que no proyecta al futuro.
+
+PREGUNTA: Choose the correct superlative adjective: "This is ________ restaurant in the whole city."
+A: the badest
+B: the worse
+C: the worst
+D: the most bad
+RESPUESTA: C
+EXPLICACION: "Bad" es un adjetivo irregular: sus formas comparativa y superlativa son "worse" y "worst" respectivamente, no siguen la regla regular. "The worst" es el superlativo correcto. "The badest" y "the most bad" aplican erróneamente la regla regular. "The worse" es el comparativo, no el superlativo. Otros irregulares comunes: good → better → best; far → farther → farthest.
+
+PREGUNTA: Complete the sentence with the correct comparative adjective: "My current job is ________ than my previous one."
+A: more stressful
+B: most stressful
+C: stressfuller
+D: stressful
+RESPUESTA: A
+EXPLICACION: Los adjetivos de dos o más sílabas forman el comparativo con "more + adjetivo + than", nunca añadiendo "-er". "Stressful" tiene dos sílabas, así que el comparativo es "more stressful than". "Most stressful" sería el superlativo. "Stressfuller" no existe en inglés. Esta regla aplica también a: more beautiful, more expensive, more comfortable.
+
+PREGUNTA: Fill in the gap with the correct option to express purpose: "I went to the supermarket ________ buy some milk."
+A: for
+B: to
+C: in order
+D: so that
+RESPUESTA: B
+EXPLICACION: Para expresar propósito con un infinitivo, se usa "to + infinitivo" directamente: "I went to buy..." es la forma más común y natural. "In order to" también es correcto pero aquí faltaría "in order to buy" completo; "in order" solo no funciona. "For" expresa propósito cuando va seguido de un sustantivo ("for milk") o gerundio, no de infinitivo. "So that" requiere una cláusula con sujeto y verbo.
+
+PREGUNTA: Pick the correct preposition of movement: "He ran ________ the tunnel to escape the rain."
+A: across
+B: through
+C: over
+D: along
+RESPUESTA: B
+EXPLICACION: "Through" indica movimiento de un extremo al otro pasando por el interior de algo (túnel, bosque, puerta, multitud). "Across" es de un lado al otro de una superficie (across the street, across the river). "Over" es por encima de algo. "Along" es en paralelo a algo (along the river, along the road). Un túnel tiene interior por el que se atraviesa, por eso "through" es el único correcto.
+
+PREGUNTA: Select the correct sentence using the present simple for scheduled events:
+A: The plane is leaving at 9 PM tonight.
+B: The plane will leave at 9 PM tonight.
+C: The plane leaves at 9 PM tonight.
+D: The plane leave at 9 PM tonight.
+RESPUESTA: C
+EXPLICACION: El Present Simple se usa para eventos programados o con horario fijo (transporte, timetables, calendarios oficiales): "The plane leaves", "The train arrives", "The match starts". La opción A es Present Continuous (planes personales). La B es Future Simple (predicción/decisión espontánea). La D es incorrecta gramaticalmente porque "plane" (3ª persona singular) requiere "leaves", no "leave".
+
+PREGUNTA: Use the correct verb form after verbs of preference: "She enjoys ________ in the sea during summer."
+A: swim
+B: to swimming
+C: to swim
+D: swimming
+RESPUESTA: D
+EXPLICACION: El verbo "enjoy" siempre va seguido de gerundio (-ing), nunca de infinitivo. Lo mismo ocurre con otros verbos de gusto/preferencia como: like, love, hate, mind, miss, finish, stop, avoid, suggest. "To swimming" es incorrecto porque mezcla el "to" del infinitivo con la forma -ing. Regla: enjoy/mind/avoid + gerundio; want/need/decide/hope + infinitivo.
+
+PREGUNTA: Which of these is an irregular comparative adjective?
+A: happier
+B: farther
+C: bigger
+D: slower
+RESPUESTA: B
+EXPLICACION: "Farther" es el comparativo irregular de "far" (farther/further → farthest/furthest). Los otros son regulares: "happier" sigue la regla de adjetivos de dos sílabas terminados en -y (happy → happier → happiest). "Bigger" aplica la regla de consonante-vocal-consonante (big → bigger). "Slower" añade -er al adjetivo de una sílaba (slow → slower). Los irregulares en inglés son: good/bad/far y sus formas better/worse/farther.
