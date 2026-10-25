@@ -110,7 +110,7 @@
             },
             {
               "title": "Pasos para realizar un análisis DAFO",
-              "content": "1. Establecer los objetivos.\n2. Análisis externo: análisis del entorno (sociedad, país, competencia) para descubrir las amenazas existentes y las posibles oportunidades.\n3. Análisis interno: análisis de la propia empresa en todas sus áreas para localizar las fortalezas presentes y las debilidades que debe afrontar.\n4. Confección de la matriz DAFO (factores positivos/negativos × factores internos/externos).\n5. Seleccionar la estrategia a seguir en función de los resultados."
+              "content": "1. Establecer los objetivos.\n2. Análisis externo: análisis del entorno (sociedad, país, competencia) para descubrir las amenazas existentes y las posibles oportunidades.\n3. Análisis interno: análisis de la propia empresa en todas sus áreas para localizar las fortalezas presentes y las debilidades que debe afrontar.\n4. Confección de la matriz DAFO (factores positivos/negativos × factores internos/externos).\n5. Seleccionar la estrategia a seguir en función de los resultados.\nImplementación de DAFO: Análisis del entorno → amenazas y oportunidades; Análisis interno → fortalezas y debilidades; después, aplicar las estrategias y evaluar los resultados."
             },
             {
               "title": "Clasificación de las unidades estratégicas de negocio",
@@ -167,7 +167,7 @@
             },
             {
               "title": "2ª fase: búsqueda y obtención de la información",
-              "content": "Se estipulan las variables necesarias, es decir, aquello que se mide, la información o los datos que se recaban para dar respuesta a las preguntas que plantea la investigación. Pueden ser continuas, discretas, dicotómicas, nominales, ordinales, escalares, etc. A continuación se identifican las fuentes de información y las técnicas de obtención adecuadas."
+              "content": "Se estipulan las variables necesarias, es decir, aquello que se mide, la información o los datos que se recaban para dar respuesta a las preguntas que plantea la investigación. Pueden ser continuas, discretas, dicotómicas, nominales, ordinales, escalares, etc. Para identificar cuáles son las variables más adecuadas para la investigación, se explorarán cuatro aspectos:"
             },
             {
               "title": "3ª fase: análisis de la información",
@@ -180,16 +180,49 @@
           ]
         },
         {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Necesidades de información",
+              "desc": "Es clave saber qué datos, características, opiniones o informaciones se deben recopilar para cubrir los objetivos fijados, de modo que las variables las contengan."
+            },
+            {
+              "title": "Valoración de la información",
+              "desc": "Consiste en calcular el coste que supondrá obtener la información que se necesita y compararlo con el valor que la propia información tendrá. Así se sabrá si es rentable asumir el proceso o, por el contrario, hay que modificarlo para alcanzar una rentabilidad aceptable."
+            },
+            {
+              "title": "Fuentes de información",
+              "desc": "La información contenida en las variables tendrá una procedencia concreta. Primero se sondearán las fuentes secundarias (más rentables y accesibles), acudiendo después a las primarias."
+            },
+            {
+              "title": "Técnicas de obtención de la información",
+              "desc": "La metodología de recogida de información dependerá de las variables requeridas, siendo un factor decisivo en el desarrollo de la investigación. Por ejemplo, para datos cuantitativos se podrá recurrir a encuestas, mientras que los datos cualitativos se pueden recopilar mediante dinámicas de grupo."
+            }
+          ]
+        },
+        {
           "type": "text",
           "content": "La segmentación del mercado consiste en compartimentar un conjunto de consumidores heterogéneo en varios grupos o segmentos más pequeños y homogéneos, con unas particularidades comerciales concretas. Este proceso permite determinar las secciones del mercado más afines y adecuadas para la empresa, de modo que se emplee sobre ellas la estrategia de cobertura comercial más efectiva."
         },
         {
-          "type": "chips",
+          "type": "cards",
           "items": [
-            "Concentración",
-            "Expansión de mercado",
-            "Expansión de productos",
-            "Diferenciación"
+            {
+              "title": "Estrategia de concentración",
+              "desc": "Se actuará en un solo segmento con un solo producto. Se recomienda para empresas que trabajan productos muy diferentes."
+            },
+            {
+              "title": "Estrategia de expansión de mercado",
+              "desc": "Se centrará en más de un segmento, pero con un solo producto. Se aplicará cuando la empresa tenga un producto muy potente."
+            },
+            {
+              "title": "Estrategia de expansión de productos",
+              "desc": "La empresa ofrece distintos productos a un solo segmento."
+            },
+            {
+              "title": "Estrategia de diferenciación",
+              "desc": "Se adaptará el producto en base a las particularidades de cada segmento. Se aplicará en empresas que quieran una amplia cobertura comercial."
+            }
           ]
         }
       ]
@@ -428,8 +461,8 @@
     }
   ],
   "_sources": {
-    "s1": "U4 Plan de marketing.pdf §4.1 (pp. 3-7); U4 Síntesis El plan de marketing.pdf §Resumen y §Conceptos fundamentales; U4 Diapositivas Plan de marketing.pdf §Plan de marketing: definición y §Análisis DAFO",
-    "s2": "U4 Plan de marketing.pdf §4.2-4.2.1-4.2.2 (pp. 8-11); U4 Síntesis El plan de marketing.pdf §Resumen; U4 Diapositivas Plan de marketing.pdf §Análisis del mercado y §Segmentación del mercado",
+    "s1": "U4 Plan de marketing.pdf §4.1 (pp. 3-7); U4 Síntesis El plan de marketing.pdf §Resumen y §Conceptos fundamentales; U4 Diapositivas Plan de marketing.pdf §Plan de marketing: definición y §Análisis DAFO; diagrama pág. 7 (sin capa de texto, leído como imagen)",
+    "s2": "U4 Plan de marketing.pdf §4.2-4.2.1-4.2.2 (pp. 8-11); U4 Síntesis El plan de marketing.pdf §Resumen; U4 Diapositivas Plan de marketing.pdf §Análisis del mercado y §Segmentación del mercado; diagramas págs. 10 y 11 (sin capa de texto, leídos como imagen)",
     "s3": "U4 Plan de marketing.pdf §4.3-4.3.1-4.3.2-4.3.3-4.3.4 (pp. 11-15); U4 Síntesis El plan de marketing.pdf §Resumen y §Conceptos fundamentales; U4 Diapositivas Plan de marketing.pdf §Marketing mix: las 4P"
   }
 }
