@@ -1,0 +1,435 @@
+{
+  "subject": "ipe",
+  "unit": 4,
+  "title": "Plan de marketing",
+  "intro": "El plan de marketing es la herramienta primordial del marketing estratégico: un documento estructurado que permite a las empresas alinear sus objetivos con las necesidades de su público objetivo. Esta unidad estudia sus apartados fundamentales, el análisis DAFO como instrumento de diagnóstico de la situación interna y externa, el proceso de análisis del mercado y segmentación, y el modelo de las cuatro políticas del marketing mix (producto, precio, distribución y comunicación).",
+  "objectives": [
+    "Entender cómo se realiza un análisis de mercado",
+    "Interpretar las distintas categorías de las que se compone un marketing mix",
+    "Identificar el papel fundamental del plan de marketing en la estrategia empresarial y cómo alinea los objetivos de la empresa con las necesidades y deseos del público objetivo",
+    "Transformar las ventajas competitivas identificadas en acciones concretas que permitan alcanzar los objetivos comerciales de la empresa",
+    "Identificar y aplicar las estrategias de mercado más convenientes según la ventaja competitiva y el producto, asegurando un enfoque eficaz y rentable"
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "4.1. El plan de Marketing",
+      "short": "El plan de marketing",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El marketing estratégico se centra en el análisis continuo y en la identificación de las necesidades y los anhelos del público objetivo o clientela potencial, con el fin de dirigir las metas de la empresa hacia dichas necesidades. La herramienta primordial del marketing estratégico es el plan de marketing, un documento estructurado para dar respuesta a medio y largo plazo a tres cuestiones básicas: ¿Quiénes somos?, ¿Qué queremos? y ¿Cómo conseguirlo?"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Definición estratégica",
+              "content": "Enumera las metas comerciales o la misión estratégica de la empresa, tanto a medio como a largo plazo: cuota de mercado objetiva y posicionamiento deseado."
+            },
+            {
+              "title": "Análisis de la situación",
+              "content": "Se divide en cuatro apartados: análisis de la demanda, análisis de la competencia, análisis del entorno (situación socioeconómica) y análisis interno de la empresa (recursos y capacidades)."
+            },
+            {
+              "title": "Desarrollo de la estrategia",
+              "content": "Consiste en transformar la ventaja competitiva en un elemento que permita alcanzar los objetivos empresariales, a través del marketing operativo."
+            },
+            {
+              "title": "Implantación de la estrategia",
+              "content": "Puesta en práctica de la estrategia definida, mediante una aplicación coherente y coordinada de las políticas de marketing operativo."
+            },
+            {
+              "title": "Evaluación y control",
+              "content": "Diseño del método de control de la aplicación del plan de marketing y valoración de los resultados obtenidos con respecto a las metas planteadas. Así se podrán corregir los errores que surjan."
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Ventaja competitiva",
+              "title": "Estrategia de costes",
+              "desc": "Busca costes de producción bajos para competir en precios, aplicando las economías de escala y otras actuaciones de economización."
+            },
+            {
+              "kicker": "Ventaja competitiva",
+              "title": "Estrategia de diferenciación",
+              "desc": "Brinda al producto de una calidad que aporte al cliente cierta ventaja con respecto al resto de los productos competidores."
+            },
+            {
+              "kicker": "Ventaja competitiva",
+              "title": "Estrategia de enfoque",
+              "desc": "Se dirigen todas las acciones a un segmento de mercado específico, lo que se denomina empresa especialista."
+            },
+            {
+              "kicker": "Producto",
+              "title": "Estrategia de penetración",
+              "desc": "Persigue el aumento de la cuota de mercado dentro del propio mercado de la empresa."
+            },
+            {
+              "kicker": "Producto",
+              "title": "Estrategia de desarrollo de mercado",
+              "desc": "Busca posicionar al producto en nuevos mercados en los que no está presente la empresa."
+            },
+            {
+              "kicker": "Producto",
+              "title": "Estrategia de desarrollo de producto",
+              "desc": "Modifica o sustituye el producto para mejorarlo y conseguir mayor incursión en el mercado."
+            },
+            {
+              "kicker": "Producto",
+              "title": "Estrategia de diversificación",
+              "desc": "Implementa simultáneamente las estrategias de desarrollo de mercado y desarrollo de producto."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "El análisis DAFO (Debilidades, Amenazas, Fortalezas y Oportunidades) es una herramienta que permite recoger información del entorno para adaptar la empresa a la sociedad y la comunidad en la que se inserta. Al mismo tiempo, analiza la competencia y la estructura interna de la empresa con el fin de que su funcionamiento sea óptimo. También se denomina análisis FODA."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Debilidades",
+              "content": "Elementos internos de la empresa que no rinden a su máxima capacidad y suponen una desventaja. Ejemplos: alta rotación de empleados, bajo nivel de motivación, problemas con la infraestructura TI, red de distribución limitada, escaso conocimiento del cliente."
+            },
+            {
+              "title": "Amenazas",
+              "content": "Situaciones externas a la empresa y fuera de su alcance que pueden repercutir negativamente en ella. Ejemplos: innovaciones de la competencia, ciclos económicos, dependencia de tecnologías específicas, subida de tipos de interés, cambios demográficos."
+            },
+            {
+              "title": "Fortalezas",
+              "content": "Elementos internos de la empresa que la hacen ser competitiva y suponen una ventaja. Ejemplos: bajo índice de rotación, tecnología avanzada, eficiencia operativa, reconocimiento de la marca, fidelidad del cliente, cumplimiento normativo."
+            },
+            {
+              "title": "Oportunidades",
+              "content": "Situaciones externas a la empresa que pueden abrir una posibilidad de mejora o una oportunidad de negocio. Ejemplos: expansión a nuevos mercados geográficos, avances tecnológicos, envejecimiento de la población, acuerdos comerciales internacionales."
+            },
+            {
+              "title": "Pasos para realizar un análisis DAFO",
+              "content": "1. Establecer los objetivos.\n2. Análisis externo: análisis del entorno (sociedad, país, competencia) para descubrir las amenazas existentes y las posibles oportunidades.\n3. Análisis interno: análisis de la propia empresa en todas sus áreas para localizar las fortalezas presentes y las debilidades que debe afrontar.\n4. Confección de la matriz DAFO (factores positivos/negativos × factores internos/externos).\n5. Seleccionar la estrategia a seguir en función de los resultados."
+            },
+            {
+              "title": "Clasificación de las unidades estratégicas de negocio",
+              "content": "A partir del análisis DAFO, cada unidad estratégica de negocio se clasifica según su nivel de amenazas y oportunidades:\n- Ideal: grandes oportunidades y pequeñas amenazas.\n- Especulativa: oportunidades y amenazas equiparables.\n- Madura: oportunidades limitadas y pequeñas amenazas.\n- Problemática: bajo volumen de oportunidades y alto volumen de amenazas."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "4.2. Análisis del mercado",
+      "short": "Análisis del mercado",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El análisis del mercado comprende las acciones que se llevan a cabo para recoger, tratar y analizar los datos referentes a elementos, agentes, características, políticas o tendencias presentes en el mercado de referencia de una organización. Su objetivo es asesorar a la dirección de la empresa en la toma de decisiones comerciales."
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Ayuda a comprender el funcionamiento del mercado",
+            "Identifica las necesidades y el comportamiento del consumidor",
+            "Detecta errores en las políticas de marketing implementadas",
+            "Localiza posibles competidores y la ventaja competitiva necesaria",
+            "Muestra nuevas oportunidades de negocio y nichos de mercado",
+            "Contribuye a la evaluación de las decisiones de marketing",
+            "Facilita la adecuación de las decisiones a cada situación concreta"
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Tipos de datos según su naturaleza",
+              "content": "Datos cuantitativos: elementos objetivos que se pueden medir mediante un sistema numérico.\nDatos cualitativos: cuestiones subjetivas de cuantificación compleja."
+            },
+            {
+              "title": "Tipos de datos según su fuente",
+              "content": "Datos primarios: se obtienen de la investigación directa.\nDatos secundarios: ya estaban disponibles porque se consiguieron en otras investigaciones previas."
+            },
+            {
+              "title": "Tipos de datos según su ubicación",
+              "content": "Datos internos: se consiguen en la propia empresa.\nDatos externos: se consiguen en el mercado en el que se trabaja."
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "1ª fase: planteamiento de la investigación",
+              "content": "El punto de partida gira alrededor de tres preguntas: ¿Qué se investigará?, ¿Cómo se investigará? y ¿Para qué se investigará? Las respuestas dan forma a los objetivos de la investigación, que pueden ser generales (expresión global de las pretensiones) o específicos u operativos (desarrollan el objetivo general y orientan la puesta en marcha). También se decide el método: estudio exploratorio (para identificar un problema o hacer una investigación previa) o estudio descriptivo (para describir una situación relacionándola con ciertas variables)."
+            },
+            {
+              "title": "2ª fase: búsqueda y obtención de la información",
+              "content": "Se estipulan las variables necesarias, es decir, aquello que se mide, la información o los datos que se recaban para dar respuesta a las preguntas que plantea la investigación. Pueden ser continuas, discretas, dicotómicas, nominales, ordinales, escalares, etc. A continuación se identifican las fuentes de información y las técnicas de obtención adecuadas."
+            },
+            {
+              "title": "3ª fase: análisis de la información",
+              "content": "Para datos cualitativos: el análisis se centra en clasificar las opiniones obtenidas y valorarlas en base a los criterios fijados por el analista.\nPara datos cuantitativos: se utilizan los métodos estadísticos adecuados en cada caso."
+            },
+            {
+              "title": "4ª fase: obtención y presentación de resultados y conclusiones",
+              "content": "Se elabora un informe: documento que recoge de forma ordenada y precisa los datos y conclusiones más relevantes de todas las fases del proceso, con el objeto de apoyar la toma de decisiones. Para ser útil debe ser ordenado, preciso, objetivo y confidencial. Se recomienda acompañarlo de algún recurso visual, como una presentación."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "La segmentación del mercado consiste en compartimentar un conjunto de consumidores heterogéneo en varios grupos o segmentos más pequeños y homogéneos, con unas particularidades comerciales concretas. Este proceso permite determinar las secciones del mercado más afines y adecuadas para la empresa, de modo que se emplee sobre ellas la estrategia de cobertura comercial más efectiva."
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Concentración",
+            "Expansión de mercado",
+            "Expansión de productos",
+            "Diferenciación"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "4.3. Marketing mix: precio, producto, promoción y distribución",
+      "short": "Marketing mix: las 4P",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El marketing mix comprende la mezcla de funciones, recursos e instrumentos de los que hace uso una organización para conseguir sus objetivos comerciales. El modelo más extendido es el propuesto por McCarthy, conocido como Modelo de las Cuatro Pes o 4Ps del marketing. Este modelo concentra las decisiones de marketing de una organización en cuatro políticas: producto, precio, punto de venta o distribución y comunicación o promoción. Para optimizar su funcionamiento es imprescindible que las decisiones tomadas con respecto a estas cuatro políticas se realicen de manera conjunta, ya que mantienen un gran nivel de interacción."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "1ª P",
+              "title": "Producto",
+              "desc": "De la función ejercida por el producto derivan la misión y el ámbito de actividad de la empresa. La estrategia de marketing parte del diseño, fabricación y posterior clasificación de las características que componen el producto.",
+              "example": "Un producto nace con la intención de satisfacer las necesidades del consumidor; los consumidores lo perciben y posicionan según la utilidad que les transmita."
+            },
+            {
+              "kicker": "2ª P",
+              "title": "Precio",
+              "desc": "Para fijar el precio hay que conocer la cuantía que los consumidores están dispuestos a pagar. Surge una doble perspectiva: la estimulación de la demanda (que fluctuará según el precio) y la rentabilidad de la empresa."
+            },
+            {
+              "kicker": "3ª P",
+              "title": "Punto de venta o distribución",
+              "desc": "Las decisiones sobre distribución se relacionan con la forma y el lugar en el que los bienes y servicios se ponen a disposición del público. La configuración y el éxito de la distribución depende, en gran medida, del canal de distribución."
+            },
+            {
+              "kicker": "4ª P",
+              "title": "Comunicación o promoción",
+              "desc": "Tiene como fin informar, recordar y persuadir a los consumidores potenciales para que demanden los bienes y servicios que oferta la organización. En el ámbito empresarial también se denomina promoción."
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Política de producto: aspectos relevantes",
+              "content": "Los aspectos más relevantes de la política de producto son:\n- Innovación: capacidad de introducir nuevos productos o mejorar los existentes para satisfacer mejor las necesidades del mercado.\n- Reposición, mantenimiento, modificación o abandono: decisiones sobre la vida útil de los productos y cuándo actualizarlos o retirarlos.\n- Diseño y composición de la cartera de productos: determinar qué productos ofrecer y cómo diversificar la oferta para maximizar la cobertura del mercado.\n- Operaciones competitivas de productos: análisis de la competencia y estrategias de posicionamiento.\n- Calidad técnica de los productos: garantizar que cumplen con los estándares de calidad esperados por los consumidores.\n- Marca e imagen: desarrollo y gestión de la marca para crear una identidad sólida y reconocible.\n- Envase y etiquetado: diseño del envase y las etiquetas para atraer a los consumidores y cumplir con las normativas."
+            },
+            {
+              "title": "Política de precio: impactos",
+              "content": "El precio que se fije tiene gran relevancia sobre los siguientes aspectos:\n- Acciones o reacciones por parte de la competencia: cómo los competidores ajustarán sus precios en respuesta.\n- Determinación del beneficio marginal y la contribución del producto al beneficio global de la empresa.\n- Definición de la imagen del propio producto: percepción del valor del producto por parte de los consumidores.\n- Nivel de adaptación en los mercados en los que la empresa promueve los productos."
+            },
+            {
+              "title": "Política de distribución: canal y decisiones",
+              "content": "El canal de distribución es la estructura compuesta por distintos niveles (agentes) que llevan a cabo las acciones necesarias para que sea posible la llegada del producto al público objetivo. Las principales decisiones de la política de distribución afectan a: longitud, amplitud y modalidad distributiva del canal; responsabilidad y capacitación de los agentes que lo componen; localización y dimensión de los establecimientos y áreas comerciales; relaciones, cooperación y resolución de conflictos en el canal; asociación, integración y nuevas formas de intermediación (e-commerce, dropshipping, marketplaces); y gestión de pedidos, existencias y logística de almacenes."
+            },
+            {
+              "title": "Política de comunicación: grandes acciones",
+              "content": "Las grandes acciones que se integran en la política de comunicación son:\n- Publicidad: uso de medios pagados para transmitir mensajes sobre el producto.\n- Relaciones públicas: estrategias para gestionar la imagen y las relaciones de la empresa con el público.\n- Promoción de ventas: actividades temporales diseñadas para incentivar la compra.\n- Merchandising: prácticas para mejorar la presentación y la venta de productos en puntos de venta.\n- Venta personal: interacción directa entre el personal de ventas y los consumidores.\n- Marketing directo: comunicación directa y personalizada con los consumidores.\n- Marketing online: uso de canales digitales para promocionar y vender productos, incluyendo redes sociales, SEO, SEM y campañas de correo electrónico."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Plan de marketing",
+      "def": "Documento estructurado para dar respuesta a medio y largo plazo a tres cuestiones básicas: ¿Quiénes somos?, ¿Qué queremos? y ¿Cómo conseguirlo? Es la herramienta primordial del marketing estratégico."
+    },
+    {
+      "term": "Estrategia de costes",
+      "def": "Busca costes de producción bajos para competir en precios, aplicando las economías de escala y otras actuaciones de economización."
+    },
+    {
+      "term": "Estrategia de diferenciación",
+      "def": "Brinda al producto de una calidad que aporte al cliente cierta ventaja con respecto al resto de los productos competidores."
+    },
+    {
+      "term": "Estrategia de enfoque",
+      "def": "Se dirigen todas las acciones a un segmento de mercado específico, lo que se denomina empresa especialista."
+    },
+    {
+      "term": "Estrategia de penetración",
+      "def": "Persigue el aumento de la cuota de mercado dentro del propio mercado de la empresa."
+    },
+    {
+      "term": "Estrategia de desarrollo de mercado",
+      "def": "Busca posicionar al producto en nuevos mercados en los que no está presente la empresa."
+    },
+    {
+      "term": "Estrategia de desarrollo de producto",
+      "def": "Modifica o sustituye el producto para mejorarlo y conseguir mayor incursión en el mercado."
+    },
+    {
+      "term": "Estrategia de diversificación",
+      "def": "Implementa simultáneamente las estrategias de desarrollo de mercado y desarrollo de producto."
+    },
+    {
+      "term": "Análisis DAFO",
+      "def": "Herramienta que permite recoger información del entorno para adaptar la empresa a la sociedad y la comunidad en la que se inserta, analizando al mismo tiempo la competencia y la estructura interna con el fin de que su funcionamiento sea óptimo. También se denomina análisis FODA."
+    },
+    {
+      "term": "Análisis del mercado",
+      "def": "Comprende las acciones que se llevan a cabo para recoger, tratar y analizar los datos referentes a elementos, agentes, características, políticas o tendencias presentes en el mercado de referencia de una organización, con el objetivo de asesorar a la dirección en la toma de decisiones comerciales."
+    },
+    {
+      "term": "Variables",
+      "def": "Aquello que se mide, la información o los datos que se recaban para dar respuesta a las preguntas que plantea una investigación. Pueden ser continuas, discretas, dicotómicas, nominales, ordinales, escalares, etc."
+    },
+    {
+      "term": "Informe",
+      "def": "Documento que recoge de forma organizada y concisa los datos y conclusiones más relevantes del proceso de investigación, con el objeto de apoyar la toma de decisiones. Para ser útil debe ser ordenado, preciso, objetivo y confidencial."
+    },
+    {
+      "term": "Segmentación del mercado",
+      "def": "Consiste en compartimentar un conjunto de consumidores heterogéneo en varios grupos o segmentos más pequeños y homogéneos, con unas particularidades comerciales concretas."
+    },
+    {
+      "term": "Marketing mix",
+      "def": "Comprende la mezcla de funciones, recursos e instrumentos de los que hace uso una organización para conseguir sus objetivos comerciales. El modelo más extendido es el de Jerome McCarthy, conocido como Modelo de las Cuatro Pes o 4Ps del marketing."
+    },
+    {
+      "term": "Canal de distribución",
+      "def": "Estructura compuesta por distintos niveles (agentes) que llevan a cabo las acciones necesarias para que sea posible la llegada del producto al público objetivo."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "¿Cuál es la herramienta primordial del marketing estratégico según el temario?",
+      "options": [
+        "El análisis DAFO",
+        "El análisis de la competencia",
+        "El plan de marketing",
+        "El marketing mix"
+      ],
+      "correct": 2,
+      "explanation": "El plan de marketing es la herramienta primordial del marketing estratégico: un documento estructurado para dar respuesta a medio y largo plazo a las preguntas ¿Quiénes somos?, ¿Qué queremos? y ¿Cómo conseguirlo?"
+    },
+    {
+      "question": "¿Qué estrategia genérica busca costes de producción bajos para competir en precios aplicando economías de escala?",
+      "options": [
+        "Estrategia de diferenciación",
+        "Estrategia de penetración",
+        "Estrategia de enfoque",
+        "Estrategia de costes"
+      ],
+      "correct": 3,
+      "explanation": "La estrategia de costes busca costes de producción bajos para competir en precios, aplicando las economías de escala y otras actuaciones de economización."
+    },
+    {
+      "question": "En el análisis DAFO, ¿qué son las amenazas?",
+      "options": [
+        "Situaciones externas que pueden repercutir negativamente en la empresa",
+        "Elementos internos que suponen una desventaja",
+        "Elementos internos que hacen a la empresa competitiva",
+        "Situaciones externas que abren posibilidades de mejora o de negocio"
+      ],
+      "correct": 0,
+      "explanation": "Las amenazas son situaciones externas a la empresa y fuera de su alcance que pueden repercutir negativamente en ella, como innovaciones de la competencia, ciclos económicos o subida de tipos de interés."
+    },
+    {
+      "question": "¿Cómo se denominan los datos que ya estaban disponibles por haberse obtenido en investigaciones anteriores?",
+      "options": [
+        "Datos cuantitativos",
+        "Datos secundarios",
+        "Datos internos",
+        "Datos primarios"
+      ],
+      "correct": 1,
+      "explanation": "Los datos secundarios ya estaban disponibles porque se consiguieron en otras investigaciones previas, a diferencia de los datos primarios, que se obtienen de la investigación directa."
+    },
+    {
+      "question": "¿Cuántas fases tiene el proceso de análisis de mercado según el temario?",
+      "options": [
+        "Cuatro",
+        "Tres",
+        "Cinco",
+        "Seis"
+      ],
+      "correct": 0,
+      "explanation": "El proceso para realizar un análisis de mercado tiene cuatro fases: planteamiento de la investigación, búsqueda y obtención de la información, análisis de la información, y obtención y presentación de resultados y conclusiones."
+    },
+    {
+      "question": "¿En qué consiste la segmentación del mercado?",
+      "options": [
+        "Analizar las fortalezas y debilidades internas de la empresa",
+        "Expandir el producto a nuevos mercados geográficos",
+        "Seleccionar el canal de distribución más eficiente",
+        "Compartimentar un conjunto de consumidores heterogéneo en grupos más pequeños y homogéneos"
+      ],
+      "correct": 3,
+      "explanation": "La segmentación del mercado consiste en compartimentar un conjunto de consumidores heterogéneo en varios grupos o segmentos más pequeños y homogéneos, con unas particularidades comerciales concretas."
+    },
+    {
+      "question": "¿Quién propuso el modelo de las Cuatro Pes del marketing?",
+      "options": [
+        "Philip Kotler",
+        "Eric Ries",
+        "McCarthy",
+        "Steve Blank"
+      ],
+      "correct": 2,
+      "explanation": "El modelo de las Cuatro Pes o 4Ps del marketing fue propuesto por McCarthy. Concentra las decisiones de marketing de una organización en cuatro políticas: producto, precio, punto de venta o distribución y comunicación o promoción."
+    },
+    {
+      "question": "¿Cuál es la función principal de la comunicación en el marketing mix?",
+      "options": [
+        "Fijar el precio adecuado del producto en función de la demanda",
+        "Informar, recordar y persuadir a los consumidores potenciales para que demanden los bienes y servicios",
+        "Gestionar el canal de distribución y los intermediarios",
+        "Diseñar el envase y el etiquetado del producto"
+      ],
+      "correct": 1,
+      "explanation": "La comunicación tiene como fin informar, recordar y persuadir a los consumidores potenciales para que demanden los bienes y servicios que oferta la organización. En el ámbito empresarial también se denomina promoción."
+    },
+    {
+      "question": "¿Cómo se clasifica una unidad estratégica de negocio con grandes oportunidades y pequeñas amenazas?",
+      "options": [
+        "Ideal",
+        "Especulativa",
+        "Madura",
+        "Problemática"
+      ],
+      "correct": 0,
+      "explanation": "La unidad estratégica de negocio ideal se caracteriza por tener grandes oportunidades y pequeñas amenazas. En el extremo opuesto, la problemática tiene bajo volumen de oportunidades y alto volumen de amenazas."
+    },
+    {
+      "question": "¿Cuál de las siguientes es una estrategia genérica en función del producto, no de la ventaja competitiva?",
+      "options": [
+        "Estrategia de costes",
+        "Estrategia de diferenciación",
+        "Estrategia de enfoque",
+        "Estrategia de diversificación"
+      ],
+      "correct": 3,
+      "explanation": "La estrategia de diversificación es una estrategia en función del producto, que implementa simultáneamente las estrategias de desarrollo de mercado y desarrollo de producto. Las estrategias de costes, diferenciación y enfoque son estrategias en función de la ventaja competitiva."
+    }
+  ],
+  "_sources": {
+    "s1": "U4 Plan de marketing.pdf §4.1 (pp. 3-7); U4 Síntesis El plan de marketing.pdf §Resumen y §Conceptos fundamentales; U4 Diapositivas Plan de marketing.pdf §Plan de marketing: definición y §Análisis DAFO",
+    "s2": "U4 Plan de marketing.pdf §4.2-4.2.1-4.2.2 (pp. 8-11); U4 Síntesis El plan de marketing.pdf §Resumen; U4 Diapositivas Plan de marketing.pdf §Análisis del mercado y §Segmentación del mercado",
+    "s3": "U4 Plan de marketing.pdf §4.3-4.3.1-4.3.2-4.3.3-4.3.4 (pp. 11-15); U4 Síntesis El plan de marketing.pdf §Resumen y §Conceptos fundamentales; U4 Diapositivas Plan de marketing.pdf §Marketing mix: las 4P"
+  }
+}
