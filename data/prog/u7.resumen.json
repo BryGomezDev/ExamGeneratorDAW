@@ -49,6 +49,30 @@
               "example": "Muchos animales con características diferentes pueden representarse con una clase cada tipo, y que la clase padre (Animal) defina las características comunes."
             }
           ]
+        },
+        {
+          "type": "text",
+          "content": "Imagen 1. Ejemplo de asociación"
+        },
+        {
+          "type": "code",
+          "content": "public class Zoologico {\n\n    private String nombre;\n\n    public Zoologico(String nombre) {\n        this.nombre = nombre;\n    }\n\n    public String getNombreZoologico() {\n        return nombre;\n    }\n\n}\n\npublic class Animal {\n\n    private String nombre;\n\n    public Animal(String nombre) {\n        this.nombre = nombre;\n    }\n\n    public String getNombreAnimal() {\n        return nombre;\n    }\n\n}"
+        },
+        {
+          "type": "text",
+          "content": "Imagen 2. Ejemplo de agregación"
+        },
+        {
+          "type": "code",
+          "content": "public class Animal {\n\n    private String nombre;\n    private Animal padre;\n\n    public Animal(Animal padre, String nombre) {\n        this.padre = padre;\n        this.nombre = nombre;\n    }\n\n    public String getNombreAnimal() {\n        return nombre;\n    }\n\n}"
+        },
+        {
+          "type": "text",
+          "content": "Imagen 3. Ejemplo de composición"
+        },
+        {
+          "type": "code",
+          "content": "public class Zoologico {\n\n    private String nombre;\n    private Ubicacion ubicacion = new Ubicacion();\n\n    public Zoologico(String nombre) {\n        this.nombre = nombre;\n    }\n\n    public String getNombreZoologico() {\n        return nombre;\n    }\n\n}\n\npublic class Ubicacion {\n\n    private String ciudad;\n    private String direccion;\n\n    public Ubicacion(String ciudad, String direccion) {\n\n        this.ciudad = ciudad;\n        this.direccion = direccion;\n    }\n\n    public Ubicacion() {\n        this.ciudad = \"por defecto\";\n        this.direccion = \"por defecto\";\n    }\n}"
         }
       ]
     },
@@ -88,6 +112,10 @@
         {
           "type": "code",
           "content": "public class Animal {\n    private String nombre;\n    private Animal padre;\n\n    public Animal() { // Constructor por defecto\n    }\n\n    public Animal(String nombre) {\n        this.nombre = nombre;\n    }\n\n    public Animal(String nombre, Animal padre) {\n        this.nombre = nombre;\n        this.padre = padre;\n    }\n}\n\npublic class Tigre extends Animal {\n\n    public Tigre() {\n        super();\n    }\n\n    public Tigre(String nombre) {\n        super(nombre);\n    }\n\n    public Tigre(String nombre, Tigre padre) {\n        super(nombre, padre);\n    }\n}"
+        },
+        {
+          "type": "text",
+          "content": "Imagen 5. Flujo de llamada a constructores: Hijo2 hijo2 = new Hijo2() — se instancia un objeto Hijo2 y se llama al constructor; Hijo2 hereda de Hijo1 y se llama al constructor de Hijo1; Hijo1 hereda de Padre y se llama al constructor de Padre."
         }
       ]
     },
@@ -323,8 +351,8 @@
   "quiz": [
     {
       "question": "¿Qué palabra reservada se usa en Java para establecer la herencia entre clases?",
-      "options": ["implements", "extends", "super", "abstract"],
-      "correct": 1,
+      "options": ["extends", "implements", "super", "abstract"],
+      "correct": 0,
       "explanation": "En Java se usa extends en la declaración de la clase hija: public class Hijo extends Padre { ... }. implements es para interfaces, super para referenciar al padre, y abstract para clases o métodos abstractos."
     },
     {
@@ -357,8 +385,8 @@
     },
     {
       "question": "¿Qué anotación debe añadirse al sobreescribir un método heredado en Java?",
-      "options": ["@Inherit", "@Super", "@Override", "@Final"],
-      "correct": 2,
+      "options": ["@Override", "@Inherit", "@Super", "@Final"],
+      "correct": 0,
       "explanation": "Se añade @Override encima de la cabecera del método. Esto indica al compilador que se está sobreescribiendo un método del padre con el mismo nombre, parámetros y tipo de retorno."
     },
     {
@@ -451,9 +479,9 @@
     ]
   },
   "_sources": {
-    "s1": "U7 Clases avanzadas y utilización de objetos.pdf — pp. 4–5; U7 DIAPOSITIVAS — Tipos de relación entre clases; U7 RESUMEN — Asociación, agregación y composición de clases",
+    "s1": "U7 Clases avanzadas y utilización de objetos.pdf — pp. 4–5; U7 DIAPOSITIVAS — Tipos de relación entre clases; U7 RESUMEN — Asociación, agregación y composición de clases; imágenes 1–3 (código, leídas como imagen)",
     "s2": "U7 Clases avanzadas y utilización de objetos.pdf — pp. 5–6; U7 DIAPOSITIVAS — Herencia; U7 RESUMEN — Herencia",
-    "s3": "U7 Clases avanzadas y utilización de objetos.pdf — pp. 6–7 (código literal); U7 DIAPOSITIVAS — Herencia. Constructores",
+    "s3": "U7 Clases avanzadas y utilización de objetos.pdf — pp. 6–7 (código literal); U7 DIAPOSITIVAS — Herencia. Constructores; imagen 5 (diagrama de flujo)",
     "s4": "U7 Clases avanzadas y utilización de objetos.pdf — p. 7; U7 DIAPOSITIVAS — Herencia. Acceso a elementos",
     "s5": "U7 Clases avanzadas y utilización de objetos.pdf — p. 7; U7 DIAPOSITIVAS — Herencia. Acceso a elementos; U7 RESUMEN — Acceso a métodos de la superclase",
     "s6": "U7 Clases avanzadas y utilización de objetos.pdf — pp. 8–9 (código literal); U7 DIAPOSITIVAS — Herencia. Sobreescritura de métodos",
