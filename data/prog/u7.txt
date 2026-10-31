@@ -1,0 +1,79 @@
+PREGUNTA: Al sobrescribir el método este se modificará para la clase concreta, el método original:
+A: Se eliminará de la clase padre.
+B: Seguirá estando disponible para la clase padre u otras clases que hereden.
+C: También se sobrescribirá.
+D: Cambiará su visibilidad a público.
+RESPUESTA: B
+EXPLICACION: La sobreescritura (override) crea una nueva versión del método en la subclase, pero NO elimina ni modifica el método original de la clase padre. La clase padre sigue teniendo su versión intacta, y otras subclases que no sobreescriban el método heredarán la versión original. Para llamar explícitamente al método del padre desde la subclase se usa super.nombreMetodo().
+
+PREGUNTA: El operador instanceof:
+A: Permite crear una instancia de una clase.
+B: Permite crear una instancia de una clase evitando que herede los métodos de esta.
+C: Permite comprobar si un objeto es instancia de un tipo concreto.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: C
+EXPLICACION: El operador "instanceof" evalúa si un objeto pertenece a una clase o interfaz concreta y devuelve un booleano: "objeto instanceof Clase". Se usa frecuentemente antes de hacer un casting para evitar ClassCastException. No tiene ninguna relación con la creación de objetos; para instanciar se usa "new". Ejemplo: if (animal instanceof Perro) { Perro p = (Perro) animal; }.
+
+PREGUNTA: La interfaz permite:
+A: La organización y estructuración del código.
+B: La separación de la parte visual a su implementación.
+C: Las dos anteriores son correctas.
+D: Ninguna de las anteriores es correcta.
+RESPUESTA: C
+EXPLICACION: Las interfaces en Java cumplen dos grandes funciones: organizan y estructuran el código estableciendo contratos que las clases deben cumplir (qué métodos deben implementar), y permiten separar la definición de comportamiento de su implementación concreta. Esto favorece el principio de inversión de dependencias y facilita el desarrollo de capas (vista, lógica, datos) independientes entre sí.
+
+PREGUNTA: Las clases abstractas:
+A: Pueden ser instanciadas normalmente.
+B: Pueden ser instanciadas pero requieren de la palabra reservada abstract.
+C: No puede ser instanciada ni empleada de otro modo.
+D: No puede ser instanciada, pero sí empleada para la herencia.
+RESPUESTA: D
+EXPLICACION: Una clase declarada con "abstract" no puede instanciarse directamente (new ClaseAbstracta() daría error de compilación), pero sirve como plantilla para sus subclases mediante herencia. Puede contener métodos abstractos (sin cuerpo, que obligan a las subclases a implementarlos) y métodos concretos con implementación. Su utilidad es definir comportamiento común y forzar a las subclases a completar la implementación específica.
+
+PREGUNTA: ¿Qué afirmación es verdadera con respecto a los constructores en la herencia y clases abstractas?
+A: Existen en las clases abstractas para facilitar la construcción de objetos.
+B: Los constructores no pueden ser heredados directamente.
+C: Se pueden sobreescribir con Override.
+D: Todas las anteriores son correctas.
+RESPUESTA: B
+EXPLICACION: Los constructores no se heredan en Java: cada clase define sus propios constructores. Cuando se crea un objeto de una subclase, el constructor de la subclase puede llamar al constructor del padre con "super()", pero no lo hereda como si fuera un método. Las clases abstractas sí pueden tener constructores, pero solo se invocan mediante super() desde las subclases. Los constructores tampoco pueden sobreescribirse con @Override.
+
+PREGUNTA: Los métodos sobrescritos tendrán que añadir encima de la cabecera del método la palabra reservada:
+A: @override.
+B: @overwrite.
+C: $override.
+D: $overwrite.
+RESPUESTA: A
+EXPLICACION: La anotación "@Override" (con @, no con $) se coloca justo encima de la declaración del método sobreescrito. Aunque es técnicamente opcional, es una buena práctica obligatoria: avisa al compilador de que el método debe existir en la clase padre, y si no existe (por error de nombre o firma), el compilador emite un error. "@overwrite" no existe en Java; la terminología correcta es "override" (sobreescritura).
+
+PREGUNTA: No pueden pasar por un proceso de override:
+A: Métodos.
+B: Métodos abstractos.
+C: Constructores.
+D: Todas las anteriores son incorrectas.
+RESPUESTA: C
+EXPLICACION: Los constructores no pueden sobreescribirse (override) porque no se heredan. Los métodos normales sí pueden sobreescribirse en subclases. Los métodos abstractos están diseñados precisamente para ser sobreescritos (la subclase está obligada a implementarlos). También existen otros elementos que no admiten override: métodos estáticos (static), métodos finales (final) y métodos privados (private).
+
+PREGUNTA: Palabra reservada que permite llamar y hacer uso de la interfaz:
+A: null.
+B: void.
+C: status.
+D: Ninguna de las anteriores es correcta.
+RESPUESTA: D
+EXPLICACION: Para implementar una interfaz en Java se usa la palabra reservada "implements": "class MiClase implements MiInterfaz". Ninguna de las opciones ofrecidas (null, void, status) es la respuesta correcta. "null" es un literal de referencia nula, "void" indica ausencia de valor de retorno, y "status" no es una palabra reservada de Java. La correcta habría sido "implements", que no aparece entre las opciones.
+
+PREGUNTA: Relación donde una clase no tiene sentido sin otra, ambas son dependientes:
+A: Asociación.
+B: Composición de clases.
+C: Agregación.
+D: Entrelazado.
+RESPUESTA: B
+EXPLICACION: La composición es la relación más fuerte entre clases: el objeto "parte" no puede existir sin el objeto "todo". Si el objeto contenedor se destruye, sus partes también. Ejemplo: un Corazón no existe sin un Cuerpo. En la agregación (relación más débil) las partes pueden existir independientemente del todo: un Departamento puede desaparecer pero sus Empleados siguen existiendo. La asociación es simplemente una relación de uso entre clases.
+
+PREGUNTA: Subrutina que permite instanciar objetos a partir de una clase:
+A: Constructores.
+B: Observadores.
+C: Modificadores.
+D: Ninguna de las anteriores es correcta.
+RESPUESTA: A
+EXPLICACION: El constructor es el método especial que se invoca al crear un objeto con "new". Tiene el mismo nombre que la clase, no declara tipo de retorno y puede sobrecargarse para admitir distintos parámetros de inicialización. Si no se define ninguno, Java proporciona un constructor por defecto sin parámetros. Los observadores (getters) leen campos, los modificadores (setters) los escriben; ninguno instancia objetos.
