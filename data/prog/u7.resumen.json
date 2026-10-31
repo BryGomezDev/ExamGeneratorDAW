@@ -1,0 +1,466 @@
+{
+  "subject": "prog",
+  "unit": 7,
+  "title": "Clases avanzadas y utilización de objetos",
+  "intro": "En la anterior unidad vimos el concepto de clase y como representaba un objeto en el mundo real sin interacción alguna con otras clases. Un programa tiene una clase raíz encargada de poner en marcha la aplicación y a partir de ese punto va creando objetos que tienen una relación común. Ahora se profundizará en la relación que hay entre clases, su encapsulamiento y ocultación al resto del programa con el objetivo de facilitar su comprensión y la reutilización de código.",
+  "objectives": [
+    "Asimilar qué es la herencia y en qué momentos implementarla.",
+    "Conocer aspectos más avanzados: clases abstractas e interfaces.",
+    "Conocer qué es el polimorfismo y su aplicación.",
+    "Diferenciar los tipos de relación entre clases: asociación, agregación y composición.",
+    "Aplicar la sobreescritura de métodos con @Override.",
+    "Entender el uso de palabras reservadas: extends, super, abstract, final, interface, implements."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "7.1. Asociación, agregación y composición de clases",
+      "short": "7.1 Relaciones clases",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Para que un programa tenga sentido y pueda funcionar adecuadamente no basta con tener solo la definición de las clases que representan los elementos reales de la lógica del programa. Es necesario definir la relación que tiene cada clase dentro del programa para que esté conectado y tenga un diseño lógico y sólido. Dependiendo de la lógica se pueden identificar cuatro tipos de relaciones entre clases."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Asociación",
+              "kicker": "Relación débil",
+              "desc": "Dos clases tienen un enlace que las une conceptualmente, pero pueden existir sin depender la una de la otra.",
+              "example": "Un zoológico y un animal: ambos pueden existir independientemente. En el código no existe ningún campo interno de cada clase que haga referencia a la otra."
+            },
+            {
+              "title": "Agregación",
+              "kicker": "Relación con dependencia lógica",
+              "desc": "Una de las clases declara a la otra en su interior, pero se mantiene la característica de que pueden existir por sí mismas sin necesidad de la otra.",
+              "example": "Un animal puede existir sin tener un padre conocido."
+            },
+            {
+              "title": "Composición",
+              "kicker": "Relación fuerte",
+              "desc": "Una clase no tiene sentido sin otra; ambas son dependientes. La clase declara en su interior como tipo de atributo a otra clase y se instancia siempre.",
+              "example": "Una clase que siempre necesita otra para poder existir y funcionar correctamente."
+            },
+            {
+              "title": "Herencia",
+              "kicker": "Relación jerárquica",
+              "desc": "La relación se define entre clase padre y clase hija. La clase padre tiene toda la funcionalidad y las clases hijas heredarán toda la funcionalidad del padre.",
+              "example": "Muchos animales con características diferentes pueden representarse con una clase cada tipo, y que la clase padre (Animal) defina las características comunes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "7.2. Herencia",
+      "short": "7.2 Herencia",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La herencia es una característica de la programación orientada a objetos que permite generalizar conceptos y crear una jerarquía de clases. Se define una clase padre (también llamada base, ancestra o superclase) con características comunes, y las clases hijas (extendidas, derivadas o subclases) heredan esas características como propias, a excepción de la parte declarada privada y de los constructores del padre.\n\nLa ventaja de la herencia es que permite definir en la clase padre todo el código común, reduciendo la duplicación de atributos y métodos.\n\nEn Java solo es posible la herencia simple (de una única clase y en forma de jerarquía). No es posible la herencia múltiple."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Sintaxis de herencia con extends",
+              "content": "Para heredar se usa la palabra reservada extends al lado del nombre de la clase:\n\npublic class Hijo extends Padre { ... }\n\nSi una clase no va a tener funcionalidad de padre y no se quiere que se herede de ella, se usa la palabra reservada final:\n\npublic final class Clase { ... }"
+            },
+            {
+              "title": "Ventajas de la herencia",
+              "content": "• Reutilización de código.\n• Facilidad de mantenimiento.\n• Facilidad de creación de objetos.\n• Reducción del código: no es necesario replicar los atributos y métodos de la clase padre a cada clase hija."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "7.3. Constructores y herencia",
+      "short": "7.3 Constructores",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En herencia los constructores no se pueden heredar directamente sino de forma indirecta. Cada clase tiene que definir sus constructores obligatoriamente. Una vez se instancien los objetos desde la clase hija, se realizará una llamada en cascada desde abajo hasta llegar a la clase padre.\n\nLo primero que hay que hacer en el constructor de la clase hija de forma obligatoria es invocar al constructor de la clase padre en la primera línea. Para invocar al constructor del padre se usa la palabra reservada super: super() para el constructor por defecto, o super(parametro1, parametro2, ...) para constructores con parámetros."
+        },
+        {
+          "type": "code",
+          "content": "public class Animal {\n    private String nombre;\n    private Animal padre;\n\n    public Animal() { // Constructor por defecto\n    }\n\n    public Animal(String nombre) {\n        this.nombre = nombre;\n    }\n\n    public Animal(String nombre, Animal padre) {\n        this.nombre = nombre;\n        this.padre = padre;\n    }\n}\n\npublic class Tigre extends Animal {\n\n    public Tigre() {\n        super();\n    }\n\n    public Tigre(String nombre) {\n        super(nombre);\n    }\n\n    public Tigre(String nombre, Tigre padre) {\n        super(nombre, padre);\n    }\n}"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "7.4. Acceso a campos de la superclase",
+      "short": "7.4 Acceso a campos",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "A diferencia de los constructores, los atributos sí son heredables. Sin embargo, pueden darse diferentes casuísticas al acceder a los campos de la superclase:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Campos visibles (no privados)",
+              "content": "Si los campos de la clase padre no se han declarado privados, se puede acceder a ellos directamente desde las clases hijas hasta un nivel."
+            },
+            {
+              "title": "Mismo identificador en padre e hija",
+              "content": "Si el campo padre tiene el mismo identificador que el campo hija, el campo padre se oculta y solo será visible el de la clase hija. Para acceder al campo padre hay que usar la palabra reservada super."
+            },
+            {
+              "title": "Más de un nivel de jerarquía",
+              "content": "Si hay más de un nivel de jerarquía de herencia, la clase de nivel más bajo para acceder a los campos de clases superiores a un nivel tiene que hacer cast del nivel intermedio para hacer uso de esos campos."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "7.5. Acceso a métodos de la superclase",
+      "short": "7.5 Acceso a métodos",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Con la palabra reservada super se puede llamar a los constructores y campos de la clase padre. De la misma forma se puede emplear para llamar a los métodos de la clase padre, siempre y cuando sean visibles (no privados).\n\nSintaxis: super.nombreMetodo(argumentos)\n\nEsta capacidad es especialmente útil cuando se sobreescribe un método y se quiere conservar la funcionalidad original del padre además de añadir nueva funcionalidad."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "7.6. Sobreescritura de métodos (Override)",
+      "short": "7.6 Override",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Cuando una clase hija hereda un método pero quiere aplicar una funcionalidad diferente a la definida por la clase padre, hay que sobreescribir ese método. No es necesario crear un método nuevo.\n\nSe pueden sobreescribir cualquier método de la clase padre, a excepción de los constructores. Para sobreescribir un método, hay que volver a crearlo con el mismo nombre, parámetros y retorno que la clase padre, y añadir encima de la cabecera la palabra reservada @Override.\n\nAl sobreescribir el método, este se modifica para la clase concreta, pero el método original sigue estando disponible para la clase padre u otras clases que hereden."
+        },
+        {
+          "type": "code",
+          "content": "public class Animal {\n    public void identificarse() {\n        System.out.println(\"Soy un animal\");\n    }\n}\n\npublic class Tigre extends Animal {\n    @Override\n    public void identificarse() {\n        super.identificarse();\n        System.out.println(\"y un tigre\");\n    }\n}\n\npublic static void main(String[] args) {\n    Tigre tigre = new Tigre();\n    tigre.identificarse();\n}\n// Resultado:\n// Soy un animal\n// y un tigre"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "label": "7.7. Clases y métodos abstractos",
+      "short": "7.7 Abstractos",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Cuando una clase no tiene sentido instanciar porque su representación contiene conceptos abstractos, se dice que es una clase abstracta. Sirve exclusivamente para la herencia y actúa como plantilla para indicar cómo pueden definirse sus métodos en las clases hijas.\n\nUna clase abstracta no se puede instanciar, pero sí puede tener constructores para las clases hijas.\n\nPara crear una clase abstracta se añade la palabra reservada abstract antes de class:\n\npublic abstract class Animal { .. }"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "7.7.1. Métodos abstractos",
+              "content": "Un método abstracto permite que desde la clase padre se fuerce a las clases hijas a sobreescribirlo obligatoriamente. Es útil cuando hay una acción común entre varios elementos pero cada uno tiene diferente funcionalidad.\n\nLa clase contenedora de un método abstracto obligatoriamente tiene que ser abstracta.\n\nSintaxis: no se define cuerpo del método; las clases hijas definen la funcionalidad.\n\npublic abstract class Animal {\n    abstract void formaDeComunicarse();\n}\n\npublic class Tigre extends Animal {\n    @Override\n    void formaDeComunicarse() {\n        System.out.println(\"Ruge, gruñe o ronronea\");\n    }\n}\n\npublic class Tortuga extends Animal {\n    @Override\n    void formaDeComunicarse() {\n        System.out.println(\"Emiten sonidos\");\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "label": "7.8. Clases y métodos finales",
+      "short": "7.8 Finales",
+      "blocks": [
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Clases finales",
+              "kicker": "No heredable",
+              "desc": "Las clases finales indican que de una clase no es posible heredar. Se declaran con la palabra reservada final justo delante de class.",
+              "example": "Motivos: seguridad, código que ya no puede evolucionar, o cortar la jerarquía de herencia. Sintaxis: [visibilidad] final class NOMBRE"
+            },
+            {
+              "title": "7.8.1. Métodos finales",
+              "kicker": "No sobreescribible",
+              "desc": "Igual que en las clases, se puede definir un método final para que las clases hijas no puedan sobreescribir su funcionalidad.",
+              "example": "La funcionalidad solo la establece la clase padre. Sintaxis: [visibilidad] final [void o tipo retorno] NOMBRE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "label": "7.9. Interfaces",
+      "short": "7.9 Interfaces",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Una interfaz es un prototipo de plantilla que proporciona un conjunto de métodos que simplifican la funcionalidad de una clase. A diferencia de una clase abstracta, una interfaz solo puede tener variables constantes y métodos sin implementar.\n\nLas principales características de las interfaces son:\n• Organización y estructuración del código.\n• Separación de la parte visual a su implementación.\n\nPara declarar una interfaz se utiliza la palabra reservada interface. Para hacer uso de la interfaz, la clase implementadora usa la palabra reservada implements."
+        },
+        {
+          "type": "code",
+          "content": "public interface OperacionesConstruccion {\n    public void tabicar();\n    public void pintar();\n    public String devolverHerramientas();\n}\n\npublic class Capataz implements OperacionesConstruccion {\n    @Override\n    public void tabicar() {\n        System.out.println(\"Tabicando\");\n    }\n\n    @Override\n    public void pintar() {\n        System.out.println(\"Pintando\");\n    }\n\n    @Override\n    public String devolverHerramientas() {\n        return \"Herramientas del capaz\";\n    }\n}"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "7.9.1. Pseudoherencia múltiple",
+              "content": "En Java no es posible la herencia múltiple, pero se puede simular con las interfaces. Una clase hija puede heredar de la clase padre y a la vez implementar una o varias interfaces.\n\nEjemplo:\npublic class Tigre extends Animal implements AccionesCaza { ... }\n\nDe esta forma Tigre hereda la funcionalidad de Animal y además implementa los métodos definidos en la interfaz AccionesCaza."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "label": "7.10. Polimorfismo",
+      "short": "7.10 Polimorfismo",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El polimorfismo es la capacidad para ciertos objetos que tienen una relación entre sí de adoptar diferentes formas en tiempo de ejecución.\n\nCuando instanciamos un objeto normalmente hacemos: Tipo identificador = new Tipo(). Con el polimorfismo, Java permite la relajación de tipos y que la instanciación de un objeto sea dinámica."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "7.10.1. Asignación polimorfa",
+              "content": "Cada clase padre tiene la generalización de todas sus clases hijas. Por ello, la clase padre puede ser instanciada a partir de cualquiera de sus hijas:\n\nTipoPadre identificador = new TipoHija();\n\nAl revés no sería posible: una clase hija no puede contener la instanciación de una clase padre."
+            },
+            {
+              "title": "7.10.2. Ejecución polimorfa",
+              "content": "El polimorfismo garantiza que se ejecute correctamente el método de la clase real y no la contenedora (padre) de aquellos métodos que existen por igual en ambas clases.\n\nCuando la clase real tiene métodos exclusivos que no existen en la clase padre, no se pueden invocar directamente. Para invocarlos hay que realizar un casting a la clase real.\n\nSi no sabemos qué clase real contiene la instancia, se usa el operador instanceof para comprobarlo:\nidentificador instanceof Tipo"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "content": "public class Empleado {\n    private int sueldoBase = 700;\n\n    public int getSueldo() {\n        return sueldoBase;\n    }\n}\n\npublic class Analista extends Empleado {\n    @Override\n    public int getSueldo() {\n        return super.getSueldo() + 500;\n    }\n\n    public void analizarProyecto() {\n        System.out.println(\"El analista analiza el proyecto\");\n    }\n}\n\npublic class Programador extends Empleado {\n    @Override\n    public int getSueldo() {\n        return super.getSueldo() + 70;\n    }\n}\n\npublic class EjemploPolimorfismo {\n    public static void main(String[] args) {\n        Empleado empleado1 = new Analista();\n        Empleado empleado2 = new Programador();\n\n        System.out.println(\"Sueldo del analista: \" + empleado1.getSueldo());\n        System.out.println(\"Sueldo del programador: \" + empleado2.getSueldo());\n\n        if (empleado1 instanceof Analista) {\n            ((Analista) empleado1).analizarProyecto();\n        }\n    }\n}\n// Resultado:\n// Sueldo del analista: 1200\n// Sueldo del programador: 770"
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Herencia",
+      "def": "Característica de la POO que permite crear una jerarquía de clases donde las clases hijas obtienen la funcionalidad de la clase padre (excepto constructores y miembros privados)."
+    },
+    {
+      "term": "Superclase (clase padre)",
+      "def": "Clase desde la que se crean otras clases más específicas. También llamada clase base o ancestra."
+    },
+    {
+      "term": "Subclase (clase hija)",
+      "def": "Clase creada a partir de otra clase más general. Hereda sus campos y métodos accesibles mediante extends."
+    },
+    {
+      "term": "extends",
+      "def": "Palabra reservada de Java que se usa en la declaración de una clase hija para indicar de qué clase hereda."
+    },
+    {
+      "term": "super",
+      "def": "Palabra reservada que permite acceder a los constructores, campos y métodos de la clase padre desde la clase hija."
+    },
+    {
+      "term": "Override (@Override)",
+      "def": "Sobreescritura de métodos. Permite que una clase hija redefina un método heredado con la misma firma pero diferente implementación."
+    },
+    {
+      "term": "Clase abstracta",
+      "def": "Clase que no se puede instanciar directamente. Contiene conceptos abstractos y sirve como plantilla para las clases hijas. Se declara con abstract."
+    },
+    {
+      "term": "Método abstracto",
+      "def": "Método declarado sin cuerpo en una clase abstracta que obliga a las clases hijas a implementarlo. Se declara con abstract."
+    },
+    {
+      "term": "Clase final",
+      "def": "Clase de la que no se puede heredar. Se declara con final. Motivos: seguridad o código que no va a evolucionar."
+    },
+    {
+      "term": "Método final",
+      "def": "Método que no puede ser sobreescrito por las clases hijas. La funcionalidad solo la establece la clase que lo declara."
+    },
+    {
+      "term": "Interfaz (interface)",
+      "def": "Prototipo de plantilla que solo puede contener constantes y métodos sin implementar. Una clase la implementa con implements."
+    },
+    {
+      "term": "implements",
+      "def": "Palabra reservada que permite a una clase implementar una o más interfaces."
+    },
+    {
+      "term": "Pseudoherencia múltiple",
+      "def": "Simulación de herencia múltiple en Java usando interfaces. Una clase puede heredar de otra clase y además implementar una o varias interfaces."
+    },
+    {
+      "term": "Polimorfismo",
+      "def": "Capacidad de ciertos objetos con relación entre sí de adoptar diferentes formas en tiempo de ejecución."
+    },
+    {
+      "term": "Asignación polimorfa",
+      "def": "La clase padre puede ser instanciada a partir de cualquiera de sus clases hijas: TipoPadre id = new TipoHija()."
+    },
+    {
+      "term": "instanceof",
+      "def": "Operador de Java que permite comprobar si un objeto es instancia de un tipo concreto. Útil en ejecución polimorfa."
+    },
+    {
+      "term": "Asociación",
+      "def": "Relación entre dos clases que tienen un enlace conceptual pero pueden existir independientemente la una de la otra."
+    },
+    {
+      "term": "Agregación",
+      "def": "Relación en la que una clase declara a la otra en su interior, pero ambas pueden existir de forma independiente."
+    },
+    {
+      "term": "Composición",
+      "def": "Relación fuerte en la que una clase no tiene sentido sin la otra; ambas son dependientes y se instancian conjuntamente."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "¿Qué palabra reservada se usa en Java para establecer la herencia entre clases?",
+      "options": ["implements", "extends", "super", "abstract"],
+      "correct": 1,
+      "explanation": "En Java se usa extends en la declaración de la clase hija: public class Hijo extends Padre { ... }. implements es para interfaces, super para referenciar al padre, y abstract para clases o métodos abstractos."
+    },
+    {
+      "question": "¿Cuál es la diferencia principal entre una clase abstracta y una interfaz en Java?",
+      "options": [
+        "No hay diferencia, son equivalentes.",
+        "Una clase abstracta puede tener métodos con implementación, mientras que una interfaz solo puede tener constantes y métodos sin implementar.",
+        "Una interfaz puede instanciarse, una clase abstracta no.",
+        "Una clase abstracta solo puede tener métodos abstractos."
+      ],
+      "correct": 1,
+      "explanation": "Una clase abstracta puede tener métodos implementados y constructores (para las hijas). Una interfaz solo puede tener variables constantes y métodos sin implementar, según el temario de la unidad."
+    },
+    {
+      "question": "En herencia, ¿qué ocurre con los constructores de la clase padre?",
+      "options": [
+        "Se heredan automáticamente.",
+        "No se heredan; la clase hija debe definir sus propios constructores e invocar al del padre con super() como primera instrucción.",
+        "Se heredan solo si son públicos.",
+        "No se pueden usar desde la clase hija."
+      ],
+      "correct": 1,
+      "explanation": "Los constructores no se heredan directamente. La clase hija debe definir los suyos y llamar obligatoriamente al constructor del padre con super() o super(params) como primera instrucción."
+    },
+    {
+      "question": "¿Qué tipo de relación existe cuando una clase no tiene sentido sin la otra y siempre se instancia una dentro de la otra?",
+      "options": ["Asociación", "Agregación", "Composición", "Herencia"],
+      "correct": 2,
+      "explanation": "La composición es la relación fuerte en la que una clase no puede existir sin la otra y siempre se instancia internamente. La asociación y la agregación permiten que ambas clases existan de forma independiente."
+    },
+    {
+      "question": "¿Qué anotación debe añadirse al sobreescribir un método heredado en Java?",
+      "options": ["@Inherit", "@Super", "@Override", "@Final"],
+      "correct": 2,
+      "explanation": "Se añade @Override encima de la cabecera del método. Esto indica al compilador que se está sobreescribiendo un método del padre con el mismo nombre, parámetros y tipo de retorno."
+    },
+    {
+      "question": "Una variable declarada de tipo clase padre contiene una instancia de una clase hija. Al llamar a un método que existe en ambas, ¿qué ocurre?",
+      "options": [
+        "Se ejecuta el método de la clase padre.",
+        "Se produce un error de compilación.",
+        "Se ejecuta el método de la clase real (hija) gracias a la ejecución polimorfa.",
+        "Depende del modificador de acceso."
+      ],
+      "correct": 2,
+      "explanation": "La ejecución polimorfa garantiza que se ejecute el método de la clase real (hija) y no el de la clase contenedora (padre), cuando ambas tienen el mismo método definido."
+    },
+    {
+      "question": "¿Qué permite simular la pseudoherencia múltiple en Java?",
+      "options": [
+        "Usar extends con varias clases separadas por coma.",
+        "Usar abstract en la clase padre.",
+        "Implementar una o varias interfaces con implements.",
+        "Usar super varias veces en el constructor."
+      ],
+      "correct": 2,
+      "explanation": "Java no permite herencia múltiple de clases, pero una clase puede heredar de una clase padre y además implementar una o varias interfaces con la palabra reservada implements, simulando la herencia múltiple."
+    },
+    {
+      "question": "¿Para qué se usa el operador instanceof en el contexto del polimorfismo?",
+      "options": [
+        "Para crear una nueva instancia de una clase.",
+        "Para comprobar si un objeto es instancia de un tipo concreto antes de hacer casting.",
+        "Para comparar el contenido de dos objetos.",
+        "Para invocar al constructor de la superclase."
+      ],
+      "correct": 1,
+      "explanation": "instanceof se usa para comprobar si una variable de asignación polimorfa contiene una instancia de un tipo concreto. Esto permite hacer el casting de forma segura antes de invocar métodos exclusivos de la clase hija."
+    }
+  ],
+  "extraQuiz": {
+    "title": "Test extra U6–U7",
+    "questions": [
+      {
+        "question": "¿Es posible invocar directamente al método finalize()?",
+        "options": ["Si", "Sí, pero únicamente desde la clase pública del paquete.", "No, se llama al ejecutar el método System.gc()."],
+        "correct": 2
+      },
+      {
+        "question": "Si no se establece un modificador de visibilidad a un método, por defecto será:",
+        "options": ["Private.", "Package-private.", "Protected."],
+        "correct": 1
+      },
+      {
+        "question": "¿Cuál de las siguientes afirmaciones es falsa?",
+        "options": ["Si un parámetro se pasa por referencia a un método, este recibe la dirección de memoria real del dato original y, por tanto, cualquier cambio desde el método sobre el dato afecta al dato original.", "En java los parámetros no se pueden pasar por referencia.", "Todas las afirmaciones anteriores son falsas."],
+        "correct": 2
+      },
+      {
+        "question": "Un método estático se puede invocar:",
+        "options": ["Sin necesidad de tener creado un objeto de la clase en la que fue declarado.", "Las opciones a) y c) son correctas.", "Desde un objeto de la clase en la que fue declarado."],
+        "correct": 1
+      },
+      {
+        "question": "Si se necesita utilizar el tipo Date de la librería java.util:",
+        "options": ["Se puede hacer import java.util.Date y ya estará accesible el tipo Date.", "Se puede hacer import java.util.*; y ya estará accesible el tipo Date.", "Todas las opciones son correctas"],
+        "correct": 2
+      },
+      {
+        "question": "Si la clase A hereda de la clase B:",
+        "options": ["Todos los campos de B son transferidos a la clase A.", "Todos los métodos de B son transferidos a la clase A.", "a) y b) son verdaderas."],
+        "correct": 2
+      },
+      {
+        "question": "¿Cuál de las siguientes afirmaciones es verdadera?",
+        "options": ["En una relación de composición, el compuesto debe existir previamente al componente.", "En una relación de asociación, el compuesto debe dejar de existir si lo hace el componente.", "En una relación de composición, el componente debe existir previamente al compuesto."],
+        "correct": 2
+      },
+      {
+        "question": "¿Puede una variable declarada de un tipo clase abstracta contener un objeto de otra clase?",
+        "options": ["Sí, pero únicamente si el objeto es de una subclase que implementa completamente la clase abstracta.", "Sí, puesto que al ser abstracta puede contener referencias a objetos de cualquier tipo.", "Sí, pero únicamente si el objeto es de tipo Object."],
+        "correct": 0
+      },
+      {
+        "question": "Un método abstracto",
+        "options": ["No puede ser codificado en la clase en la que se declara.", "Obliga a que la clase en la que se declara sea también abstracta.", "Las opciones a) y b) son correctas."],
+        "correct": 2
+      },
+      {
+        "question": "Si se declara un constructor sin parámetros:",
+        "options": ["El constructor por defecto no se creará.", "No se podrá invocar al constructor de la superclase.", "Su cuerpo debe estar vacío."],
+        "correct": 0
+      }
+    ]
+  },
+  "_sources": {
+    "s1": "U7 Clases avanzadas y utilización de objetos.pdf — pp. 4–5; U7 DIAPOSITIVAS — Tipos de relación entre clases; U7 RESUMEN — Asociación, agregación y composición de clases",
+    "s2": "U7 Clases avanzadas y utilización de objetos.pdf — pp. 5–6; U7 DIAPOSITIVAS — Herencia; U7 RESUMEN — Herencia",
+    "s3": "U7 Clases avanzadas y utilización de objetos.pdf — pp. 6–7 (código literal); U7 DIAPOSITIVAS — Herencia. Constructores",
+    "s4": "U7 Clases avanzadas y utilización de objetos.pdf — p. 7; U7 DIAPOSITIVAS — Herencia. Acceso a elementos",
+    "s5": "U7 Clases avanzadas y utilización de objetos.pdf — p. 7; U7 DIAPOSITIVAS — Herencia. Acceso a elementos; U7 RESUMEN — Acceso a métodos de la superclase",
+    "s6": "U7 Clases avanzadas y utilización de objetos.pdf — pp. 8–9 (código literal); U7 DIAPOSITIVAS — Herencia. Sobreescritura de métodos",
+    "s7": "U7 Clases avanzadas y utilización de objetos.pdf — pp. 9–10 (código literal); U7 DIAPOSITIVAS — Clases y métodos abstractos; U7 RESUMEN — Clases y métodos abstractos",
+    "s8": "U7 Clases avanzadas y utilización de objetos.pdf — p. 10; U7 DIAPOSITIVAS — Clases y métodos finales; U7 RESUMEN — Clases y métodos finales",
+    "s9": "U7 Clases avanzadas y utilización de objetos.pdf — pp. 11–13 (código literal); U7 DIAPOSITIVAS — Interfaces; U7 RESUMEN — Interfaces y Pseudoherencia múltiple",
+    "s10": "U7 Clases avanzadas y utilización de objetos.pdf — pp. 13–15 (código literal); U7 DIAPOSITIVAS — Polimorfirmo (sic) + Ejemplo; U7 RESUMEN — Polimorfismo",
+    "extraQuiz": "Test extra U6–U7 del campus (capturas aportadas por Brayan)"
+  }
+}
