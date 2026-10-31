@@ -1,0 +1,79 @@
+PREGUNTA: ¿Cuál de las siguientes NO es una estrategia según la ventaja competitiva?
+A: Estrategia de costes.
+B: Estrategia de diferenciación.
+C: Estrategia de enfoque.
+D: Estrategia de diversificación.
+RESPUESTA: D
+EXPLICACION: Según el modelo de Michael Porter, las tres estrategias genéricas basadas en ventaja competitiva son: liderazgo en costes (ser el productor más barato del sector), diferenciación (ofrecer un producto percibido como único) y enfoque o segmentación (concentrarse en un nicho concreto). La estrategia de diversificación (entrar en nuevos mercados con nuevos productos) es una estrategia de crecimiento de la matriz Ansoff, no una estrategia de ventaja competitiva.
+
+PREGUNTA: ¿Cuál de los siguientes no es un criterio para clasificar los datos en el análisis de mercado?
+A: Por su naturaleza.
+B: Por su ubicación.
+C: Por su fuente.
+D: Por su costo.
+RESPUESTA: D
+EXPLICACION: Los criterios habituales para clasificar los datos en investigación de mercados son: por su naturaleza (cuantitativos o cualitativos), por su fuente (primarios —recogidos expresamente— o secundarios —ya existentes—) y por su ubicación o procedencia (internos a la empresa o externos). El coste de obtención de los datos no es un criterio de clasificación reconocido en la metodología de análisis de mercados.
+
+PREGUNTA: ¿Cuál es la primera fase en el proceso de análisis de mercados?
+A: Análisis de la información.
+B: Búsqueda y obtención de la información.
+C: Planteamiento de la investigación.
+D: Obtención y presentación de resultados.
+RESPUESTA: C
+EXPLICACION: El proceso de investigación de mercados sigue un orden lógico: 1) Planteamiento de la investigación (definir el problema, objetivos y metodología), 2) Búsqueda y obtención de la información (recopilar datos primarios y secundarios), 3) Análisis de la información (procesar e interpretar los datos), 4) Obtención y presentación de resultados (informe final con conclusiones). Sin un planteamiento claro, el resto del proceso carece de dirección.
+
+PREGUNTA: ¿Cuál es la principal herramienta del marketing estratégico?
+A: Análisis DAFO.
+B: Plan de marketing.
+C: Investigación de mercado.
+D: Estrategia de precios.
+RESPUESTA: B
+EXPLICACION: El plan de marketing es la herramienta central del marketing estratégico: integra el análisis de la situación, la definición de objetivos, la estrategia a seguir y el plan de acción con los recursos necesarios. El análisis DAFO y la investigación de mercado son instrumentos que alimentan el plan, pero no son la herramienta principal en sí. La estrategia de precios es solo una de las 4P del marketing operativo.
+
+PREGUNTA: ¿Qué análisis no forma parte del análisis de la situación en el plan de marketing?
+A: Análisis de la demanda.
+B: Análisis de la competencia.
+C: Análisis del producto.
+D: Análisis interno de la empresa.
+RESPUESTA: C
+EXPLICACION: El análisis de la situación en el plan de marketing examina el entorno externo (demanda, competencia, macroentorno PEST) y el interno (recursos, capacidades, resultados de la empresa). El "análisis del producto" no es una categoría reconocida dentro del análisis de la situación; las decisiones sobre producto forman parte de la política de producto del marketing mix, que pertenece a la fase de implantación de la estrategia, no al análisis previo.
+
+PREGUNTA: ¿Qué apartado del plan de marketing se enfoca en definir las metas comerciales a medio y largo plazo?
+A: Análisis de la situación.
+B: Evaluación y control.
+C: Definición estratégica.
+D: Implantación de la estrategia.
+RESPUESTA: C
+EXPLICACION: La definición estratégica es el apartado del plan de marketing donde se establecen los objetivos comerciales (cuota de mercado, volumen de ventas, posicionamiento) a medio y largo plazo, y se seleccionan las estrategias para alcanzarlos (segmentación, targeting, posicionamiento, estrategia de crecimiento). El análisis de la situación describe el punto de partida; la implantación concreta las acciones; la evaluación mide los resultados.
+
+PREGUNTA: ¿Qué herramienta permite analizar las debilidades, amenazas, fortalezas y oportunidades de una empresa?
+A: Análisis PEST.
+B: Análisis DAFO.
+C: Investigación de mercado.
+D: Matriz de crecimiento.
+RESPUESTA: B
+EXPLICACION: El análisis DAFO (Debilidades, Amenazas, Fortalezas, Oportunidades) — o SWOT en inglés — es la herramienta que combina el análisis interno (Fortalezas y Debilidades, factores controlables) con el externo (Oportunidades y Amenazas, factores del entorno). El análisis PEST estudia solo el macroentorno (Político, Económico, Social, Tecnológico). La matriz de crecimiento (Ansoff) define estrategias de expansión según producto/mercado.
+
+PREGUNTA: ¿Qué política del marketing mix se relaciona con la forma y el lugar en el que los bienes y servicios se ponen a disposición del público?
+A: Política de precio.
+B: Política de producto.
+C: Política de distribución.
+D: Política de comunicación.
+RESPUESTA: C
+EXPLICACION: La política de distribución (Place, la tercera P) define los canales y métodos mediante los cuales el producto llega al consumidor final: distribución directa o indirecta, canales cortos o largos, distribución intensiva/selectiva/exclusiva, logística y puntos de venta. Las otras tres P son: Producto (características y diseño), Precio (valor monetario) y Comunicación/Promoción (publicidad, RRPP, venta personal).
+
+PREGUNTA: El informe final de la investigación:
+A: Tendrá un carácter formal, público y subjetivo.
+B: Es un vídeo de presentación.
+C: Se centra en clasificar las opiniones que se hayan obtenido y valorarlas en base a los criterios.
+D: Debe ser ordenado, preciso, objetivo y confidencial.
+RESPUESTA: D
+EXPLICACION: El informe final de una investigación de mercados debe cumplir cuatro características: ordenado (estructura clara y lógica), preciso (datos exactos y verificables), objetivo (libre de juicios personales o sesgos, basado en hechos) y confidencial (la información recogida sobre competidores, clientes o estrategias no se divulga fuera de la organización). La subjetividad es precisamente lo que debe evitarse en un informe de investigación.
+
+PREGUNTA: La política de comunicación:
+A: Se relaciona con la forma y el lugar en el que los bienes y servicios se ponen a disposición del público.
+B: Tiene como fin informar, recordar y persuadir a los consumidores potenciales.
+C: Es sinónimo de hacer publicidad.
+D: Permite determinar las secciones del mercado más afines y adecuadas.
+RESPUESTA: B
+EXPLICACION: La política de comunicación (4ª P del marketing mix) engloba todas las acciones para transmitir mensajes al mercado: publicidad, relaciones públicas, marketing directo, promoción de ventas y venta personal. Su triple objetivo es informar (dar a conocer el producto), persuadir (convencer de su compra) y recordar (mantener la marca presente). No es sinónimo de publicidad, que es solo uno de sus instrumentos. La opción A describe la distribución; la D define la segmentación.
