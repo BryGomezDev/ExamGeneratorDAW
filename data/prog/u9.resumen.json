@@ -153,6 +153,10 @@
         },
         {
           "type": "text",
+          "content": "⚠ Ojo: dos definiciones de esta tabla del temario no son correctas. ceiling(E e) devuelve el menor elemento que sea MAYOR o igual al dado (el temario dice «menor o igual», lo que lo haría igual que first()). lower(E e) devuelve el MAYOR elemento que sea menor al dado (el temario dice «el menor»). Es lo simétrico de floor(E e) y higher(E e), que sí están bien."
+        },
+        {
+          "type": "text",
           "content": "Imagen 3. Ejemplo de TreeSet"
         },
         {
