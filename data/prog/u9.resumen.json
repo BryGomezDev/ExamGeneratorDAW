@@ -1,0 +1,617 @@
+{
+  "subject": "prog",
+  "unit": 9,
+  "title": "Colecciones y tipos abstractos de datos",
+  "intro": "Las arrays nos permiten trabajar con agrupaciones de datos, pero su uso queda limitado si no conocemos el total de datos que disponemos y nos obliga a trabajar estáticamente haciendo ineficiente su uso. Cuando tenemos agrupaciones de datos dinámicamente que varían sus elementos en tiempo tenemos que hacer uso de un nuevo concepto: las colecciones. Las colecciones son estructuras dinámicas de un tamaño ilimitado que facilitan el tratamiento de un conjunto de valores, como añadir, eliminar, buscar, ordenar, etc. Existen dos interfaces principales: Collection (con Set, List y Queue) y Map.",
+  "objectives": [
+    "Saber qué es una colección y en qué se diferencia de un array.",
+    "Conocer las diferentes colecciones que existen en Java.",
+    "Analizar qué colección es mejor según las necesidades del programa.",
+    "Conocer la interfaz Collection y sus métodos principales.",
+    "Distinguir las implementaciones de Set: HashSet, LinkedHashSet y TreeSet.",
+    "Distinguir las implementaciones de List: ArrayList y LinkedList.",
+    "Distinguir las implementaciones de Queue: PriorityQueue y ArrayDeque.",
+    "Conocer la interfaz Map y sus implementaciones: HashMap, LinkedHashMap y TreeMap."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "9.1. Colecciones y tipos abstractos de datos",
+      "short": "9.1 Colecciones",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Una colección es una estructura dinámica que nos permite agrupar elementos de una misma tipología y variar su tamaño según las necesidades que sean requeridas. A diferencia de los arrays, las colecciones ya tienen implementadas funcionalidades a través de sus interfaces que facilitan el trabajo con ellas, como, por ejemplo, los métodos de inserción, eliminación, ordenación, etc.\n\nExisten diferentes tipos de colecciones. En Java se dispone de la interfaz Collection con tres tipos diferentes: Set, List y Queue. Aparte, tenemos Map, que permite albergar colecciones haciendo uso de claves-valor por cada elemento.\n\nEl uso de un tipo de colección u otra dependerá de si queremos que la colección sea ordenada, su acceso sea secuencial, exista una prioridad, pueda haber valores duplicados, etc."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Collection",
+              "kicker": "Interfaz base",
+              "desc": "Interfaz raíz para Set, List y Queue. Los elementos se identifican por sí mismos. Pueden estar duplicados o no, y ordenados o no, dependiendo del tipo."
+            },
+            {
+              "title": "Set",
+              "kicker": "Sin duplicados",
+              "desc": "Subinterfaz de Collection. Principal característica: no permite elementos duplicados. Implementaciones: HashSet, LinkedHashSet, TreeSet."
+            },
+            {
+              "title": "List",
+              "kicker": "Con duplicados, acceso secuencial",
+              "desc": "Subinterfaz de Collection. Permite valores duplicados y su acceso es secuencial. Implementaciones: ArrayList, LinkedList."
+            },
+            {
+              "title": "Queue",
+              "kicker": "Cola o pila",
+              "desc": "Subinterfaz de Collection. Representa una estructura de cola o pila, puede tener valores duplicados y su acceso no es secuencial. Implementaciones: PriorityQueue, ArrayDeque."
+            },
+            {
+              "title": "Map",
+              "kicker": "Clave-Valor",
+              "desc": "Difiere de Collection. Requiere usar un identificador (clave) por cada elemento, siendo el par Clave-Valor. No admite claves duplicadas. Implementaciones: HashMap, LinkedHashMap, TreeMap."
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Conceptos fundamentales",
+              "content": "Hash: Es un código único de identificación generado a partir de una función algorítmica de resumen de un conjunto de elementos o elemento.\n\nTabla Hash: Matriz o mapa es una estructura que guarda a modo diccionario el código hash como identificador del elemento y su valor.\n\nCola (FIFO): First in First Out es una estructura que representa una cola haciendo que el primer elemento que entra sea el primero en salir.\n\nPila (LIFO): Last in First Out es una estructura que representa una pila haciendo que el último elemento que entra sea el primero en salir.\n\nÁrbol Binario: Es una estructura en nodos, con una sola raíz y ramificada siempre por dos nodos."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "9.2. Interfaz Collection",
+      "short": "9.2 Interfaz Collection",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La interfaz Collection es la raíz para las colecciones Set, List y Queue. Collection hereda de la interfaz Iterable, dando la posibilidad de hacer uso de iteradores para recorrer sus elementos."
+        },
+        {
+          "type": "table",
+          "headers": ["Método", "Descripción"],
+          "rows": [
+            ["int size()", "Devuelve el número de elementos contenido en la colección."],
+            ["boolean isEmpty()", "Devuelve true si no hay elementos, false si hay elementos."],
+            ["void clear()", "Borra todos los elementos."],
+            ["boolean contains(E elemento)", "Devuelve true si existe el elemento, false en caso contrario."],
+            ["boolean add(E elemento)", "Añade el elemento. Devuelve true si ha sido añadido."],
+            ["boolean remove(E elemento)", "Elimina el elemento. Devuelve true si lo ha borrado."],
+            ["Iterator<E> iterator()", "Devuelve un iterador de la colección para recorrerla."]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "9.2.1. Set",
+      "short": "9.2.1 Set",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Set es una interfaz que usa un conjunto de datos con la principal característica de que no permite elementos duplicados. Las clases que hacen uso de la interfaz Set son: HashSet, LinkedHashSet y TreeSet."
+        },
+        {
+          "type": "table",
+          "headers": ["Característica", "HashSet", "LinkedHashSet", "TreeSet"],
+          "rows": [
+            ["Estructura interna", "Tabla hash", "Tabla hash con enlaces", "Árbol binario"],
+            ["Orden", "Sin orden", "Orden de inserción", "Ascendente por valor"],
+            ["Nulos", "Permite null", "Permite null", "No permite null"],
+            ["Duplicados", "No permite", "No permite", "No permite"],
+            ["Acceso secuencial", "No", "Sí", "No"],
+            ["Rendimiento", "Muy bueno (más rápido)", "Inferior a HashSet, aun así rápido", "Lento"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "HashSet es una colección que hace uso interno de una tabla hash para almacenar sus elementos. Su acceso es muy rápido. Los elementos no están ordenados. Puede tener elementos null. No permite accesos secuenciales."
+        },
+        {
+          "type": "text",
+          "content": "Imagen 1. Ejemplo de HashSet"
+        },
+        {
+          "type": "code",
+          "content": "HashSet<String> clientes = new  HashSet<>();\nclientes.add(\"Asdaiop S.A\");\nclientes.add(\"Juan A. Escaleras\");\nclientes.add(\"JindaX S.A.\");\nclientes.add(\"Copisteria El Arbol\");\nclientes.add(null);\nclientes.add(\"TodoFurgo2287 S.L.\");\nclientes.add(\"JindaX S.A.\");\nclientes.add(\"A. Ay. y cia\");\n\nIterator<String> iterador = clientes.iterator();\n\nSystem.out.println(\"Resultado:\");\n\nwhile(iterador.hasNext()) {\n    System.out.println(iterador.next());\n}\n// Resultado:\n// null\n// TodoFurgo2287 S.L.\n// Juan A. Escaleras\n// JindaX S.A.\n// A. Ay. y cia\n// Copisteria El Arbol\n// Asdaiop S.A"
+        },
+        {
+          "type": "text",
+          "content": "LinkedHashSet es similar a HashSet y hace uso interno de una tabla hash para almacenar sus elementos, pero se diferencia en que usa enlaces o punteros para guardar la dirección de memoria del anterior y posterior elementos. Los elementos están ordenados según el orden de inserción. Puede tener elementos null. Tiene acceso secuencial. Su rendimiento es inferior a HashSet, aunque su acceso es rápido."
+        },
+        {
+          "type": "text",
+          "content": "Imagen 2. Ejemplo de LinkedHashSet"
+        },
+        {
+          "type": "code",
+          "content": "LinkedHashSet<String> clientes = new  LinkedHashSet<>();\nclientes.add(\"Asdaiop S.A\");\nclientes.add(\"Juan A. Escaleras\");\nclientes.add(\"JindaX S.A.\");\nclientes.add(\"Copisteria El Arbol\");\nclientes.add(null);\nclientes.add(\"TodoFurgo2287 S.L.\");\nclientes.add(\"JindaX S.A.\");\nclientes.add(\"A. Ay. y cia\");\n\nIterator<String> iterador = clientes.iterator();\n\nSystem.out.println(\"Resultado:\");\n\nwhile(iterador.hasNext()) {\n    System.out.println(iterador.next());\n}\n// Resultado:\n// Asdaiop S.A\n// Juan A. Escaleras\n// JindaX S.A.\n// Copisteria El Arbol\n// null\n// TodoFurgo2287 S.L.\n// A. Ay. y cia"
+        },
+        {
+          "type": "text",
+          "content": "TreeSet es una estructura en árbol binario (solo puede haber dos ramificaciones por cada nodo), lo que permite tener ordenados sus elementos según un criterio. Los elementos están ordenados ascendentemente según sus valores. No puede tener elementos null. No permite el acceso secuencial. Su rendimiento es lento.\n\nEl criterio de ordenación viene establecido por el tipo del elemento: si son tipos de clases envoltorio, los ordena según orden alfabético, numérico o lexicográfico. Si son de tipo clase, habrá que definir el criterio de ordenación usando la clase Comparator.\n\nAl usar TreeSet se pueden usar otros métodos exclusivos:"
+        },
+        {
+          "type": "table",
+          "headers": ["Método", "Descripción"],
+          "rows": [
+            ["E first()", "Devuelve el menor elemento."],
+            ["E last()", "Devuelve el mayor elemento."],
+            ["E floor(E e)", "Devuelve el mayor elemento que sea menor o igual al elemento dado, null si no existe."],
+            ["E ceiling(E e)", "Devuelve el menor elemento que sea menor o igual al elemento dado, null si no existe."],
+            ["E higher(E e)", "Devuelve el menor elemento que sea mayor al elemento dado, null si no existe."],
+            ["E lower(E e)", "Devuelve el menor elemento que sea menor al elemento dado, null si no existe."],
+            ["E pollFirst()", "Recupera y elimina el primer elemento menor."],
+            ["E pollLast()", "Recupera y elimina el último elemento mayor."]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Imagen 3. Ejemplo de TreeSet"
+        },
+        {
+          "type": "code",
+          "content": "TreeSet<String> clientesTree = new TreeSet<>();\nclientesTree.add(\"Asdaiop S.A\");\nclientesTree.add(\"Juan A. Escaleras\");\nclientesTree.add(\"JindaX S.A.\");\nclientesTree.add(\"Copisteria El Arbol\");\nclientesTree.add(\"TodoFurgo2287 S.L.\");\nclientesTree.add(\"JindaX S.A.\");\nclientesTree.add(\"A. Ay. y cia\");\n\nSystem.out.println(\"Resultado:\");\nfor (String cliente : clientesTree) {\n    System.out.println(cliente);\n}\n// Resultado:\n// A. Ay. y cia\n// Asdaiop S.A\n// Copisteria El Arbol\n// JindaX S.A.\n// Juan A. Escaleras\n// TodoFurgo2287 S.L."
+        },
+        {
+          "type": "text",
+          "content": "Cuando se necesita un criterio de ordenación personalizado en TreeSet, se pasa una instancia de una clase que implemente Comparator al constructor."
+        },
+        {
+          "type": "text",
+          "content": "Imagen 4. Ejemplo de TreeSet con Comparator"
+        },
+        {
+          "type": "code",
+          "content": "public static void main(String[] args) {\n\n    TreeSet<String> clientesTree = new TreeSet<>(new comparador());\n    clientesTree.add(\"Asdaiop S.A\");\n    clientesTree.add(\"Juan A. Escaleras\");\n    clientesTree.add(\"JindaX S.A.\");\n    clientesTree.add(\"Copisteria El Arbol\");\n    clientesTree.add(\"TodoFurgo2287 S.L.\");\n    clientesTree.add(\"JindaX S.A.\");\n    clientesTree.add(\"A. Ay. y cia\");\n\n    System.out.println(\"Resultado:\");\n    for (String cliente : clientesTree) {\n        System.out.println(cliente);\n    }\n\n}\n\nstatic class comparador implements Comparator<String> {\n\n    public int compare(String cadena1, String cadena2) {\n\n        int resultado = cadena1.compareTo(cadena2);\n\n        // Cambiamos a orden descendente\n        if(resultado < 0)\n            resultado = 1;\n        else\n            resultado = -1;\n\n        return resultado;\n    }\n\n}\n// Resultado:\n// TodoFurgo2287 S.L.\n// Juan A. Escaleras\n// JindaX S.A.\n// JindaX S.A.\n// Copisteria El Arbol\n// Asdaiop S.A\n// A. Ay. y cia"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "9.2.2. List",
+      "short": "9.2.2 List",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "List es una interfaz que usa una sucesión de elementos sin necesidad de que sea un conjunto. Sus principales características son que permite elementos duplicados y su acceso puede ser secuencial. Las clases que hacen uso de la interfaz List son ArrayList y LinkedList.\n\nHaciendo uso de List se puede implementar sistemas de cola (FIFO) y pila (LIFO) dependiendo de cómo se inserte y extraiga elementos:\n- Cola (FIFO – First in First Out): las extracciones de elementos se harán del principio de la lista y sus inserciones se harán al final de la lista.\n- Pila (LIFO – Last in First Out): las extracciones e inserciones se harán desde el final, con lo cual, el último elemento en extraerse siempre será el primero que se insertó."
+        },
+        {
+          "type": "table",
+          "headers": ["Característica", "ArrayList", "LinkedList"],
+          "rows": [
+            ["Estructura interna", "Array dinámico con índices", "Array con doble lista enlazada"],
+            ["Acceso secuencial", "Sí", "Sí"],
+            ["Nulos", "Permite null", "Permite null"],
+            ["Duplicados", "Permite", "Permite"],
+            ["Orden", "Orden de inserción", "Orden de inserción"],
+            ["Rendimiento acceso", "Muy bueno (secuencial y aleatorio)", "Bueno para acceso secuencial; peor para acceso aleatorio"],
+            ["Rendimiento inserción/borrado", "Coste muy alto", "Mejor que ArrayList"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "ArrayList es la implementación de un array dinámico haciendo uso de índices, añadiendo la mejora de que puede variar su tamaño en ejecución. Su acceso es secuencial. Puede tener elementos null. Los elementos están ordenados según el orden de inserción. Su rendimiento es muy bueno para el acceso secuencial y aleatorio; en cambio, para insertar o eliminar tiene un coste muy alto."
+        },
+        {
+          "type": "table",
+          "headers": ["Método", "Descripción"],
+          "rows": [
+            ["E get(int posición)", "Devuelve el elemento según la posición dada."],
+            ["int indexOf(E elemento)", "Devuelve la posición de la primera ocurrencia del elemento."],
+            ["int lastIndexOf(E elemento)", "Devuelve la posición de la última ocurrencia del elemento."],
+            ["E set(int posición, E elemento)", "Remplaza el elemento según la posición dada."],
+            ["sort(Comparator<? super E> c)", "Ordena los elementos según el comparador facilitado."]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Imagen 5. Ejemplo de ArrayList"
+        },
+        {
+          "type": "code",
+          "content": "ArrayList<String> clientes = new  ArrayList<>();\nclientes.add(\"Asdaiop S.A\");\nclientes.add(\"Juan A. Escaleras\");\nclientes.add(\"JindaX S.A.\");\nclientes.add(\"Copisteria El Arbol\");\nclientes.add(null);\nclientes.add(\"TodoFurgo2287 S.L.\");\nclientes.add(\"JindaX S.A.\");\nclientes.add(\"A. Ay. y cia\");\n\nSystem.out.println(\"Resultado:\");\nfor (String cliente : clientes) {\n    System.out.println(cliente);\n}\n// Resultado:\n// Asdaiop S.A\n// Juan A. Escaleras\n// JindaX S.A.\n// Copisteria El Arbol\n// null\n// TodoFurgo2287 S.L.\n// JindaX S.A.\n// A. Ay. y cia"
+        },
+        {
+          "type": "text",
+          "content": "LinkedList es un ArrayList pero mejorando su rendimiento debido a su doble lista enlazada. Guarda la dirección de memoria del siguiente y anterior elemento y facilita su inserción y borrado. Su acceso es secuencial. Puede tener elementos null. Los elementos están ordenados según el orden de inserción. Su rendimiento es muy bueno para el acceso secuencial y mejora su rendimiento para insertar o eliminar frente a ArrayList; en cambio, empeora su rendimiento para acceder a un elemento aleatoriamente, debido a que hay que recorrer toda la lista."
+        },
+        {
+          "type": "text",
+          "content": "LinkedList hace uso de los métodos de Collection y ArrayList, además añade los siguientes métodos exclusivos:"
+        },
+        {
+          "type": "table",
+          "headers": ["Método", "Descripción"],
+          "rows": [
+            ["addFirst(E e)", "Inserta el elemento al principio."],
+            ["push(E e)", "Inserta el elemento al principio."],
+            ["addLast(E e)", "Inserta el elemento al final."],
+            ["boolean offer(E e)", "Inserta el elemento al final."],
+            ["E peek()", "Devuelve el elemento del principio."],
+            ["E peekLast()", "Devuelve el elemento del final."],
+            ["E poll()", "Devuelve y elimina el elemento del principio."],
+            ["E pollLast()", "Devuelve y elimina el elemento del final."]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Imagen 6. Ejemplo de LinkedList"
+        },
+        {
+          "type": "code",
+          "content": "LinkedList<String> clientes = new  LinkedList<>();\nclientes.add(\"Asdaiop S.A\");\nclientes.add(\"Juan A. Escaleras\");\nclientes.add(\"JindaX S.A.\");\nclientes.add(\"Copisteria El Arbol\");\nclientes.add(null);\nclientes.add(\"TodoFurgo2287 S.L.\");\nclientes.add(\"JindaX S.A.\");\nclientes.add(\"A. Ay. y cia\");\n\nSystem.out.println(\"Resultado:\");\nfor (String cliente : clientes) {\n    System.out.println(cliente);\n}\n// Resultado:\n// Asdaiop S.A\n// Juan A. Escaleras\n// JindaX S.A.\n// Copisteria El Arbol\n// null\n// TodoFurgo2287 S.L.\n// JindaX S.A.\n// A. Ay. y cia"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "9.2.3. Queue",
+      "short": "9.2.3 Queue",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La interfaz Queue o cola es un símil de la interfaz List con la implementación FIFO. Sus características permiten tener elementos duplicados y el acceso no es secuencial. Las clases que hacen uso de la interfaz Queue son PriorityQueue y ArrayDeque.\n\nSus principales métodos son los indicados anteriormente para LinkedList."
+        },
+        {
+          "type": "table",
+          "headers": ["Característica", "PriorityQueue", "ArrayDeque"],
+          "rows": [
+            ["Estructura interna", "Cola con orden de prioridad", "Array (similar a ArrayList)"],
+            ["Nulos", "No permite null", "No permite null"],
+            ["Duplicados", "Permite", "Permite"],
+            ["Orden", "Según orden de priorización (natural del tipo o Comparable propio)", "Secuencial (orden de inserción)"],
+            ["Acceso", "No secuencial", "Secuencial"],
+            ["Implementa", "FIFO", "FIFO o LIFO (permite añadir por delante y por detrás)"],
+            ["Rendimiento", "—", "Acceso rápido"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "PriorityQueue es una cola con un orden de prioridad. La prioridad es marcada por el orden natural del tipo y es posible definir una prioridad propia usando Comparable. Sus principales características: orden no secuencial, no permite valores nulos, los elementos están ordenados según el orden de priorización."
+        },
+        {
+          "type": "text",
+          "content": "Imagen 7. Ejemplo de PriorityQueue"
+        },
+        {
+          "type": "code",
+          "content": "PriorityQueue<Integer> turnoClientes = new  PriorityQueue<>();\nturnoClientes.add(9);\nturnoClientes.add(55);\nturnoClientes.add(4);\nturnoClientes.add(1);\nturnoClientes.add(67);\nturnoClientes.add(3);\n\nInteger elemento = turnoClientes.poll();\nwhile(elemento!=null) {\n    System.out.println(elemento);\n    elemento = turnoClientes.poll();\n}\n// Resultado:\n// 1\n// 3\n// 4\n// 9\n// 55\n// 67"
+        },
+        {
+          "type": "text",
+          "content": "ArrayDeque es un array similar a ArrayList que puede implementar una cola, pila o ambos a la vez, ya que permite añadir por delante y por detrás. Sus principales características: orden secuencial, no permite valores nulos, acceso rápido."
+        },
+        {
+          "type": "text",
+          "content": "Imagen 8. Ejemplo de ArrayDeque"
+        },
+        {
+          "type": "code",
+          "content": "ArrayDeque<Integer> turnoClientes = new  ArrayDeque<>();\nturnoClientes.add(9);\nturnoClientes.add(55);\nturnoClientes.add(4);\nturnoClientes.add(1);\nturnoClientes.add(67);\nturnoClientes.add(3);\n\nSystem.out.println(\"Resultado: \");\nInteger elemento = turnoClientes.poll();\nwhile(elemento!=null) {\n    System.out.println(elemento);\n    elemento = turnoClientes.poll();\n}\n// Resultado:\n// 9\n// 55\n// 4\n// 1\n// 67\n// 3"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "9.3. Interfaz Map",
+      "short": "9.3 Interfaz Map",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Map difiere de las colecciones de la interfaz Collection que hasta ahora se habían visto. Permite agrupar datos y conjuntos teniendo que hacer uso de una clave para cada elemento (Clave-Valor), es decir, va a tener siempre dos tipos: un tipo para representar la clave y otro para el elemento. La clave asocia siempre al elemento y no puede haber claves duplicadas. Las clases que hacen uso de la interfaz Map son HashMap, LinkedHashMap y TreeMap."
+        },
+        {
+          "type": "table",
+          "headers": ["Método", "Descripción"],
+          "rows": [
+            ["int size()", "Devuelve el número de elementos contenido en el mapa."],
+            ["boolean isEmpty()", "Devuelve true si el mapa está vacío, false si hay algún par clave-valor."],
+            ["void clear()", "Borra todos los pares clave-valor."],
+            ["Set<K> keySet()", "Obtiene todas las claves del mapa."],
+            ["Collection<V> values()", "Obtiene todos los valores del mapa."],
+            ["boolean containsKey(K clave)", "Devuelve true si existe la clave, false en caso contrario."],
+            ["boolean containsValue(V valor)", "Devuelve true si existe el valor, false en caso contrario."],
+            ["Object get(Object clave)", "Obtiene el valor según su clave."],
+            ["Object put(K clave, V valor)", "Añade el par clave-valor. Si el par ya existía devuelve el objeto, si no, devuelve null."],
+            ["Object remove(K clave)", "Elimina el par clave-valor según su clave y lo devuelve si lo ha podido eliminar."],
+            ["boolean remove(K clave, V valor)", "Elimina el par clave-valor según su clave y valor. Devuelve true si lo ha eliminado."],
+            ["E replace(K clave, V valor)", "Remplaza el valor del par clave-valor. Devuelve el valor anterior si lo remplaza, null en caso contrario."]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "label": "9.3.1. HashMap",
+      "short": "9.3.1 HashMap",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "HashMap es una estructura de mapa o matriz que almacena las claves en una tabla hash. Sus principales características: no existe ningún orden, permite poner la clave como su valor nulo, el rendimiento es muy bueno. Es recomendable inicializar el tamaño que tendrá para que el rendimiento no se vea afectado."
+        },
+        {
+          "type": "text",
+          "content": "Imagen 9. Ejemplo de HashMap"
+        },
+        {
+          "type": "code",
+          "content": "HashMap<Integer, String> clientes = new  HashMap<Integer, String>();\nclientes.put(1,\"Asdaiop S.A\");\nclientes.put(2,\"Juan A. Escaleras\");\nclientes.put(4,\"JindaX S.A.\");\nclientes.put(7,\"Copisteria El Arbol\");\nclientes.put(null, null);\nclientes.put(5,\"TodoFurgo2287 S.L.\");\nclientes.put(6, \"JindaX S.A.\");\nclientes.put(3, \"A. Ay. y cia\");\n\nSystem.out.println(\"Resultado:\");\nfor (String cliente : clientes.values()) {\n    System.out.println(cliente);\n}\n// Resultado:\n// null\n// Asdaiop S.A\n// Juan A. Escaleras\n// A. Ay. y cia\n// JindaX S.A.\n// TodoFurgo2287 S.L.\n// JindaX S.A.\n// Copisteria El Arbol"
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "label": "9.3.2. LinkedHashMap",
+      "short": "9.3.2 LinkedHashMap",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "LinkedHashMap es igual a HashMap pero añade los enlaces para apuntar al siguiente y anterior elemento. Sus principales características: mantiene el orden de inserción, permite poner la clave como su valor nulo, su rendimiento es inferior a HashMap, facilita la inserción en cualquier momento y no hace falta establecer un tamaño inicial."
+        },
+        {
+          "type": "text",
+          "content": "Imagen 10. Ejemplo de LinkedHashMap"
+        },
+        {
+          "type": "code",
+          "content": "LinkedHashMap<Integer, String> clientes = new  LinkedHashMap<Integer, String>();\nclientes.put(1,\"Asdaiop S.A\");\nclientes.put(2,\"Juan A. Escaleras\");\nclientes.put(4,\"JindaX S.A.\");\nclientes.put(7,\"Copisteria El Arbol\");\nclientes.put(null, null);\nclientes.put(5,\"TodoFurgo2287 S.L.\");\nclientes.put(6, \"JindaX S.A.\");\nclientes.put(3, \"A. Ay. y cia\");\n\nSystem.out.println(\"Resultado:\");\nfor (String cliente : clientes.values()) {\n    System.out.println(cliente);\n}\n// Resultado:\n// Asdaiop S.A\n// Juan A. Escaleras\n// JindaX S.A.\n// Copisteria El Arbol\n// null\n// TodoFurgo2287 S.L.\n// JindaX S.A.\n// A. Ay. y cia"
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "label": "9.3.3. TreeMap",
+      "short": "9.3.3 TreeMap",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "TreeMap realiza un mapa con una estructura en árbol, ordenado ascendentemente por las claves del conjunto. Se puede establecer un criterio diferente de ordenación mediante el uso de Comparable. Sus principales características: realiza un orden por la clave, no permite poner la clave a null (en cambio sus valores sí), tiene un peor rendimiento debido a la ordenación que se realiza por cada inserción; en cambio, las búsquedas aleatorias son las más rápidas."
+        },
+        {
+          "type": "table",
+          "headers": ["Método", "Descripción"],
+          "rows": [
+            ["Map.Entry<K,V> firstEntry()", "Devuelve el par clave-valor asociado a la menor clave."],
+            ["Map.Entry<K,V> lastEntry()", "Devuelve el par clave-valor asociado a la mayor clave."],
+            ["K firstKey()", "Devuelve la menor clave."],
+            ["K lastKey()", "Devuelve la mayor clave."],
+            ["Map.Entry<K,V> higherEntry(K clave)", "Devuelve el par clave-valor asociado a la menor clave de todas aquellas claves que son mayores o igual a la pasada por argumento."],
+            ["Map.Entry<K,V> floorEntry(K clave)", "Devuelve el par clave-valor asociado a la mayor clave de todas aquellas claves que son menores o igual a la pasada por argumento."]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Imagen 11. Ejemplo de TreeMap"
+        },
+        {
+          "type": "code",
+          "content": "TreeMap<Integer, String> clientesTreeMap = new  TreeMap<Integer, String>();\nclientesTreeMap.put(0,\"Asdaiop S.A\");\nclientesTreeMap.put(1,\"Juan A. Escaleras\");\nclientesTreeMap.put(3,\"JindaX S.A.\");\nclientesTreeMap.put(4,\"Copisteria El Arbol\");\nclientesTreeMap.put(2,null);\nclientesTreeMap.put(5,\"TodoFurgo2287 S.L.\");\nclientesTreeMap.put(7,\"JindaX S.A.\");\nclientesTreeMap.put(6,\"A. Ay. y cia\");\n\nSystem.out.println(\"Resultado:\");\nfor (int i = 0; i<clientesTreeMap.size();i++) {\n    System.out.println(clientesTreeMap.get(i));\n}\n// Resultado:\n// Asdaiop S.A\n// Juan A. Escaleras\n// null\n// JindaX S.A.\n// Copisteria El Arbol\n// TodoFurgo2287 S.L.\n// A. Ay. y cia\n// JindaX S.A."
+        },
+        {
+          "type": "text",
+          "content": "Resumen comparativo de las implementaciones de la interfaz Map:"
+        },
+        {
+          "type": "table",
+          "headers": ["Característica", "HashMap", "LinkedHashMap", "TreeMap"],
+          "rows": [
+            ["Estructura interna", "Tabla hash", "Tabla hash con enlaces", "Árbol"],
+            ["Orden", "Sin orden", "Orden de inserción", "Ascendente por clave"],
+            ["Clave null", "Permite", "Permite", "No permite"],
+            ["Valor null", "Permite", "Permite", "Permite"],
+            ["Rendimiento", "Muy bueno (mejor)", "Inferior a HashMap", "Peor para insertar; búsquedas aleatorias más rápidas"]
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Colección",
+      "def": "Estructura dinámica que permite agrupar elementos de una misma tipología y variar su tamaño según las necesidades. Tiene implementados métodos de inserción, eliminación, ordenación, etc."
+    },
+    {
+      "term": "Collection",
+      "def": "Interfaz raíz de Java para Set, List y Queue. Hereda de Iterable y proporciona los métodos básicos comunes: add, remove, contains, size, isEmpty, clear, iterator."
+    },
+    {
+      "term": "Set",
+      "def": "Subinterfaz de Collection cuya principal característica es no permitir elementos duplicados. Implementaciones: HashSet, LinkedHashSet, TreeSet."
+    },
+    {
+      "term": "HashSet",
+      "def": "Implementación de Set basada en tabla hash. Acceso muy rápido. Los elementos no están ordenados. Permite null. No permite acceso secuencial."
+    },
+    {
+      "term": "LinkedHashSet",
+      "def": "Implementación de Set basada en tabla hash con enlaces al anterior y posterior elemento. Mantiene el orden de inserción. Permite null. Acceso secuencial. Rendimiento inferior a HashSet."
+    },
+    {
+      "term": "TreeSet",
+      "def": "Implementación de Set basada en árbol binario. Ordena los elementos ascendentemente. No permite null. No permite acceso secuencial. Rendimiento lento. Soporta Comparator personalizado."
+    },
+    {
+      "term": "List",
+      "def": "Subinterfaz de Collection que permite elementos duplicados y acceso secuencial. Puede implementar FIFO y LIFO según cómo se inserten y extraigan los elementos."
+    },
+    {
+      "term": "ArrayList",
+      "def": "Implementación de List basada en array dinámico con índices. Acceso secuencial y aleatorio muy rápido. Inserción y borrado con coste alto."
+    },
+    {
+      "term": "LinkedList",
+      "def": "Implementación de List con doble lista enlazada. Mejor rendimiento que ArrayList para inserción y borrado, pero peor para acceso aleatorio."
+    },
+    {
+      "term": "Queue",
+      "def": "Subinterfaz de Collection que representa una cola con implementación FIFO. Permite duplicados. El acceso no es secuencial. Implementaciones: PriorityQueue, ArrayDeque."
+    },
+    {
+      "term": "PriorityQueue",
+      "def": "Implementación de Queue con orden de prioridad marcado por el orden natural del tipo o por Comparable personalizado. No permite null."
+    },
+    {
+      "term": "ArrayDeque",
+      "def": "Implementación de Queue similar a ArrayList que puede actuar como cola, pila o ambos a la vez (permite añadir por delante y por detrás). No permite null. Acceso rápido."
+    },
+    {
+      "term": "Map",
+      "def": "Interfaz de Java independiente de Collection que almacena pares Clave-Valor. No admite claves duplicadas. Implementaciones: HashMap, LinkedHashMap, TreeMap."
+    },
+    {
+      "term": "HashMap",
+      "def": "Implementación de Map basada en tabla hash. Sin orden. Permite clave y valor null. Rendimiento muy bueno. Recomendable inicializar el tamaño para mantener el rendimiento."
+    },
+    {
+      "term": "LinkedHashMap",
+      "def": "Implementación de Map igual a HashMap pero con enlaces al siguiente y anterior elemento. Mantiene orden de inserción. Permite null. Rendimiento inferior a HashMap."
+    },
+    {
+      "term": "TreeMap",
+      "def": "Implementación de Map con estructura en árbol. Ordena ascendentemente por clave. No permite clave null (sí valor null). Peor rendimiento de inserción pero búsquedas aleatorias muy rápidas."
+    },
+    {
+      "term": "FIFO",
+      "def": "First In First Out. Estructura de cola donde el primer elemento que entra es el primero en salir. Las inserciones se hacen al final y las extracciones al principio."
+    },
+    {
+      "term": "LIFO",
+      "def": "Last In First Out. Estructura de pila donde el último elemento que entra es el primero en salir. Las inserciones y extracciones se hacen desde el final."
+    },
+    {
+      "term": "Tabla Hash",
+      "def": "Estructura que guarda a modo de diccionario el código hash como identificador del elemento y su valor."
+    },
+    {
+      "term": "Árbol Binario",
+      "def": "Estructura en nodos, con una sola raíz y ramificada siempre por dos nodos. Usada internamente por TreeSet y TreeMap para mantener el orden."
+    },
+    {
+      "term": "Comparator",
+      "def": "Clase de Java que permite definir un criterio de ordenación personalizado para colecciones como TreeSet y TreeMap cuando los elementos son de tipo clase."
+    },
+    {
+      "term": "Iterator",
+      "def": "Mecanismo que permite recorrer los elementos de una colección que implementa Iterable. Se obtiene con el método iterator() y se usa con hasNext() y next()."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "¿Cuál es la principal diferencia entre un array y una colección en Java?",
+      "options": [
+        "Los arrays permiten elementos de diferentes tipos, las colecciones no.",
+        "Las colecciones son estructuras dinámicas cuyo tamaño puede variar en ejecución, mientras que los arrays son estáticos.",
+        "Las colecciones no permiten elementos null, los arrays sí.",
+        "Los arrays heredan de la interfaz Collection, las colecciones no."
+      ],
+      "correct": 1,
+      "explanation": "Una colección es una estructura dinámica que puede variar su tamaño según las necesidades requeridas. Los arrays obligan a trabajar estáticamente, lo que los hace ineficientes cuando no se conoce el total de datos de antemano."
+    },
+    {
+      "question": "¿Qué implementación de Set mantiene el orden de inserción?",
+      "options": [
+        "HashSet",
+        "TreeSet",
+        "LinkedHashSet",
+        "PriorityQueue"
+      ],
+      "correct": 2,
+      "explanation": "LinkedHashSet usa enlaces o punteros para guardar la dirección de memoria del anterior y posterior elementos, lo que le permite mantener el orden de inserción. HashSet no tiene orden y TreeSet ordena ascendentemente por valor."
+    },
+    {
+      "question": "¿Qué colección NO permite valores null?",
+      "options": [
+        "HashSet",
+        "LinkedHashSet",
+        "ArrayList",
+        "TreeSet"
+      ],
+      "correct": 3,
+      "explanation": "TreeSet no puede tener elementos null, ya que es una estructura en árbol binario que necesita comparar los elementos para ordenarlos. HashSet y LinkedHashSet sí permiten null, al igual que ArrayList."
+    },
+    {
+      "question": "¿Qué estructura implementa FIFO y LIFO a la vez, pudiendo añadir por delante y por detrás?",
+      "options": [
+        "PriorityQueue",
+        "LinkedList",
+        "TreeSet",
+        "ArrayDeque"
+      ],
+      "correct": 3,
+      "explanation": "ArrayDeque es un array similar a ArrayList que puede implementar una cola, pila o ambos a la vez, ya que permite añadir por delante y por detrás. No permite valores nulos y tiene acceso rápido."
+    },
+    {
+      "question": "En la interfaz Map, ¿qué método se usa para añadir un par clave-valor?",
+      "options": [
+        "add(K clave, V valor)",
+        "insert(K clave, V valor)",
+        "put(K clave, V valor)",
+        "set(K clave, V valor)"
+      ],
+      "correct": 2,
+      "explanation": "El método put(K clave, V valor) añade el par clave-valor en un Map. Si el par ya existía devuelve el objeto anterior, si no, devuelve null. No existe add ni insert en la interfaz Map."
+    },
+    {
+      "question": "¿Cuál de las siguientes implementaciones de Map ordena sus elementos por clave?",
+      "options": [
+        "TreeMap",
+        "HashMap",
+        "LinkedHashMap",
+        "ArrayDeque"
+      ],
+      "correct": 0,
+      "explanation": "TreeMap realiza un mapa con estructura en árbol, ordenado ascendentemente por las claves del conjunto. HashMap no tiene orden y LinkedHashMap mantiene el orden de inserción."
+    },
+    {
+      "question": "¿Qué característica distingue a ArrayList de LinkedList en cuanto al rendimiento?",
+      "options": [
+        "ArrayList tiene mejor rendimiento para insertar y eliminar elementos.",
+        "LinkedList tiene mejor rendimiento para el acceso aleatorio a elementos.",
+        "ArrayList tiene mejor rendimiento para el acceso secuencial y aleatorio; LinkedList mejora la inserción y el borrado.",
+        "No hay diferencia de rendimiento entre ambas."
+      ],
+      "correct": 2,
+      "explanation": "ArrayList tiene rendimiento muy bueno para el acceso secuencial y aleatorio, pero un coste muy alto para insertar o eliminar. LinkedList mejora el rendimiento de inserción o eliminación gracias a su doble lista enlazada, pero empeora el acceso aleatorio porque hay que recorrer toda la lista."
+    },
+    {
+      "question": "¿Qué implementación de Map permite tener la clave con valor null?",
+      "options": [
+        "TreeMap",
+        "HashMap y LinkedHashMap",
+        "Solo LinkedHashMap",
+        "Ninguna implementación de Map permite clave null"
+      ],
+      "correct": 1,
+      "explanation": "HashMap y LinkedHashMap permiten poner la clave como null. En cambio, TreeMap no permite poner la clave a null (aunque sí permite valores null), ya que necesita comparar las claves para ordenar la estructura en árbol."
+    },
+    {
+      "question": "¿Cuál es la interfaz raíz de las colecciones Set, List y Queue en Java?",
+      "options": [
+        "Map",
+        "Comparable",
+        "Iterable",
+        "Collection"
+      ],
+      "correct": 3,
+      "explanation": "Collection es la interfaz raíz para las colecciones Set, List y Queue. A su vez, Collection hereda de la interfaz Iterable, lo que permite hacer uso de iteradores para recorrer sus elementos. Map es una interfaz diferente e independiente."
+    }
+  ],
+  "_sources": {
+    "s1": "U9 Colecciones y tipos abstractos de datos.pdf — pp. 3–4; U9 DIAPOSITIVAS — pp. 3–4; U9 RESUMEN — p. 1",
+    "s2": "U9 Colecciones y tipos abstractos de datos.pdf — p. 5; U9 DIAPOSITIVAS — p. 4",
+    "s3": "U9 Colecciones y tipos abstractos de datos.pdf — pp. 5–8; U9 DIAPOSITIVAS — pp. 5–7; imágenes 1, 2, 3, 4 (código, transcritas desde imagen)",
+    "s4": "U9 Colecciones y tipos abstractos de datos.pdf — pp. 9–10; U9 DIAPOSITIVAS — pp. 8–10; imágenes 5, 6 (código, transcritas desde imagen)",
+    "s5": "U9 Colecciones y tipos abstractos de datos.pdf — p. 11; U9 DIAPOSITIVAS — pp. 11–12; imágenes 7, 8 (código, transcritas desde imagen)",
+    "s6": "U9 Colecciones y tipos abstractos de datos.pdf — p. 12; U9 DIAPOSITIVAS — pp. 13",
+    "s7": "U9 Colecciones y tipos abstractos de datos.pdf — p. 13; U9 DIAPOSITIVAS — p. 14; imagen 9 (código, transcritas desde imagen)",
+    "s8": "U9 Colecciones y tipos abstractos de datos.pdf — p. 13; U9 DIAPOSITIVAS — p. 15; imagen 10 (código, transcritas desde imagen)",
+    "s9": "U9 Colecciones y tipos abstractos de datos.pdf — pp. 14–15; U9 DIAPOSITIVAS — p. 16; imagen 11 (código, transcritas desde imagen)"
+  }
+}
