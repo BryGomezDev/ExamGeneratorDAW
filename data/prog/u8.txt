@@ -1,0 +1,79 @@
+PREGUNTA: ¿Cómo podemos conocer la longitud de un array?
+A: Recorriendo todo el array y guardando el total de elementos.
+B: Con la función .length
+C: Las opciones a) y b) son correctas.
+D: Ninguna opción es correcta.
+RESPUESTA: C
+EXPLICACION: En Java hay dos formas válidas de conocer la longitud de un array: usar la propiedad .length (no es un método, no lleva paréntesis), que devuelve directamente el número de elementos en O(1); o recorrer el array manualmente contando elementos, lo que es O(n) pero también funciona. Ambas son correctas, aunque en la práctica siempre se usa .length por ser más eficiente y directo.
+
+PREGUNTA: ¿De qué tipo se puede declarar los valores un array?
+A: Tipo primitivo o abstracto.
+B: Tipo primitivo.
+C: Tipo abstracto.
+D: Ninguna de las anteriores.
+RESPUESTA: A
+EXPLICACION: En Java, un array puede almacenar tanto tipos primitivos (int, double, boolean, char, etc.) como tipos de referencia (objetos de cualquier clase, incluyendo clases abstractas e interfaces). Por ejemplo: int[] numeros = new int[5] o String[] nombres = new String[3]. El término "abstracto" aquí hace referencia a tipos de referencia/objeto en sentido amplio, no exclusivamente a clases declaradas abstract.
+
+PREGUNTA: ¿Es posible cambiar el tamaño de un array durante su ejecución?
+A: Sí.
+B: Sí, solo cuando tenga un primer valor asignado.
+C: Sí, en cualquier momento.
+D: No, solo se puede indicar su tamaño en la declaración inicial.
+RESPUESTA: D
+EXPLICACION: Los arrays en Java tienen tamaño fijo: una vez creados con "new tipo[n]", su longitud no puede modificarse. Para colecciones de tamaño variable se usan las clases de la API Collections como ArrayList o LinkedList, que sí crecen y encogen dinámicamente. Si se necesita "redimensionar" un array, hay que crear uno nuevo de mayor tamaño y copiar los elementos (Arrays.copyOf() o System.arraycopy()).
+
+PREGUNTA: ¿Qué función permite cortar una cadena de caracteres?
+A: replace(String cadenaBuscada, String remplazo)
+B: substring(int posiciónInicial, int posiciónFinal)
+C: trim()
+D: contains(String cadena)
+RESPUESTA: B
+EXPLICACION: substring(int inicio, int fin) extrae una porción de la cadena desde la posición inicial (inclusive) hasta la posición final (exclusive). Ejemplo: "Hola mundo".substring(0, 4) devuelve "Hola". replace() sustituye ocurrencias de una subcadena por otra. trim() elimina espacios en blanco al inicio y al final. contains() comprueba si la cadena contiene una subcadena, devolviendo boolean.
+
+PREGUNTA: El tipo String se considera por ser:
+A: Tipo primitivo que define una cadena de caracteres.
+B: Tipo primitivo que define una agrupación de datos de tipo carácter.
+C: Tipo primitivo que define un conjunto de cadenas.
+D: Todas las anteriores son falsas.
+RESPUESTA: D
+EXPLICACION: String NO es un tipo primitivo en Java, es una clase (java.lang.String), por lo tanto es un tipo de referencia u objeto. Los 8 tipos primitivos son: byte, short, int, long, float, double, char y boolean. String tiene su propio pool de literales y comportamiento especial en Java, pero sigue siendo una clase. Al declarar String s = "hola", se crea un objeto de la clase String, no un primitivo.
+
+PREGUNTA: Indica qué código es el correcto para cambiar el número 10,5 a cadena.
+A: String.valueOf(10.5f);
+B: Float.parseFloat(10.5f);
+C: New String(10.5f);
+D: String.parseString(10.5f);
+RESPUESTA: A
+EXPLICACION: String.valueOf() es el método estático de la clase String que convierte cualquier tipo primitivo o objeto a su representación String. Para un float: String.valueOf(10.5f) devuelve "10.5". Float.parseFloat() hace lo contrario: convierte un String a float. new String() acepta char[] o bytes, no floats. String.parseString() no existe en la API de Java.
+
+PREGUNTA: Indica qué código es el correcto para inicializar un array.
+A: int[][] numeros = new int[2][1]; numeros[0][0] = 1; numeros[1][0] = 2;
+B: int[][] numeros1 = {{1},{2}};
+C: int[][] numeros2 = numeros.clone();
+D: Todas las opciones son correctas.
+RESPUESTA: D
+EXPLICACION: En Java hay múltiples formas válidas de inicializar un array bidimensional: A) declarar con new y asignar cada posición individualmente; B) usar la inicialización directa con llaves (literal array); C) clonar un array existente con .clone(), que crea una copia shallow del array. Las tres son sintaxis correctas y reconocidas por el compilador Java, por lo que todas las opciones son correctas.
+
+PREGUNTA: Si queremos hacer una copia exacta y que el objeto sea independiente de un array de tipo clase estamos hablando de:
+A: Copia shallow
+B: Copia deep
+C: Copia uno a uno
+D: Copia incremental
+RESPUESTA: B
+EXPLICACION: La copia deep (profunda) crea objetos completamente independientes: copia el array y también crea nuevas instancias de cada objeto contenido. Modificar el original no afecta a la copia. La copia shallow (superficial), como .clone() o Arrays.copyOf(), copia las referencias de los objetos pero no los objetos en sí: si el array contiene objetos, ambos arrays apuntan a los mismos objetos en memoria. Para arrays de primitivos, shallow y deep son equivalentes.
+
+PREGUNTA: Si se quiere acceder al primer y último elemento de un array de tipo int con un total de valores de 10, usaremos el siguiente código:
+A: int primerElemento = nombreArray[1]; int ultimoElemento = nombreArray[9];
+B: int primerElemento = nombreArray[1]; int ultimoElemento = nombreArray[10];
+C: int primerElemento = nombreArray[0]; int ultimoElemento = nombreArray[9];
+D: int primerElemento = nombreArray[0]; int ultimoElemento = nombreArray[10];
+RESPUESTA: C
+EXPLICACION: Los arrays en Java usan índices base 0: el primer elemento está en [0] y el último en [longitud-1]. Para un array de 10 elementos, los índices válidos son del 0 al 9. nombreArray[1] accedería al segundo elemento, no al primero. nombreArray[10] lanzaría ArrayIndexOutOfBoundsException porque el índice 10 no existe en un array de tamaño 10. La fórmula correcta siempre es: primer=[0], último=[length-1].
+
+PREGUNTA: Un array se puede definir como:
+A: Un objeto estático que almacena elementos de forma secuencial un número ilimitado de valores.
+B: Un objeto estático que almacena elementos de forma secuencial un número limitado de valores.
+C: Un objeto dinámico que almacena elementos de forma secuencial un número limitado de valores.
+D: Un objeto dinámico que almacena elementos de forma secuencial un número ilimitado de valores.
+RESPUESTA: B
+EXPLICACION: Un array es un objeto estático (tamaño fijo, definido en su creación y no modificable) que almacena un número limitado de elementos del mismo tipo de forma secuencial en memoria contigua. "Estático" aquí significa que su tamaño no cambia en tiempo de ejecución, no que sea una variable estática. Las estructuras dinámicas con tamaño variable son las colecciones (ArrayList, LinkedList), no los arrays nativos de Java.
