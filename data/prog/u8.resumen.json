@@ -295,7 +295,7 @@
         },
         {
           "type": "text",
-          "content": "⚠ Ojo: el Resultado impreso en el PDF muestra 7 líneas, pero el código tiene 8 llamadas a println. Falta la salida de compareToIgnoreCase (no se puede deducir el valor exacto desde el propio ejemplo)."
+          "content": "⚠ Ojo: el código tiene 8 println, pero el Resultado del temario solo muestra 7 líneas: falta la salida de compareToIgnoreCase. Según la propia tabla de métodos del temario, compareTo devuelve cero si las cadenas son iguales y compareToIgnoreCase funciona igual sin distinguir mayúsculas; como el ejemplo compara la cadena consigo misma, la línea que falta es 0."
         }
       ]
     },
@@ -405,12 +405,12 @@
     {
       "question": "¿Qué es un array en Java según el temario?",
       "options": [
-        "Una lista dinámica que puede cambiar de tamaño en tiempo de ejecución.",
         "Un objeto estático que almacena elementos de forma secuencial con un número fijo de valores del mismo tipo.",
+        "Una lista dinámica que puede cambiar de tamaño en tiempo de ejecución.",
         "Un tipo primitivo que agrupa valores de diferentes tipos.",
         "Una clase que solo puede almacenar objetos, no tipos primitivos."
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "El temario define un array como un objeto estático que almacena o contiene elementos de forma secuencial un número fijo de valores del mismo tipo. No es dinámico: su tamaño es fijo desde la creación."
     },
     {
@@ -427,12 +427,12 @@
     {
       "question": "¿Qué tipo de copia se realiza con clone() sobre un array cuyos elementos son objetos (no primitivos)?",
       "options": [
+        "Copia shallow o poco profunda: cualquier cambio en uno afecta al otro.",
         "Copia deep o profunda: original y copia son independientes.",
         "No se puede usar clone() con tipos no primitivos.",
-        "Copia shallow o poco profunda: cualquier cambio en uno afecta al otro.",
         "Copia profunda, pero solo del primer nivel de la jerarquía."
       ],
-      "correct": 2,
+      "correct": 0,
       "explanation": "Si el tipo de datos no es primitivo, clone() hará una copia shallow o poco profunda: se copian las direcciones de memoria donde apuntan los elementos, no los valores en sí. Cualquier modificación en el original o en la copia afecta a ambas partes."
     },
     {
