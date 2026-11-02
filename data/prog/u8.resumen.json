@@ -1,0 +1,507 @@
+{
+  "subject": "prog",
+  "unit": 8,
+  "title": "Estructura de almacenamiento. Arrays y cadenas de caracteres",
+  "intro": "Hasta ahora hemos visto almacenar datos en variables. Declarábamos una variable y almacenábamos un solo valor, podíamos cambiarlo en el transcurso de nuestro programa y seguir trabajando con esa variable. ¿Y si necesitamos trabajar con más de un dato? Podemos usar esa misma variable e ir cambiando su dato constantemente, eso sería muy ineficiente. Otra opción sería crear tantas variables como necesitáramos, imaginaos que tengamos que trabajar con 10.000 datos diferentes, tendríamos que crear y manipular 10.000 variables, tampoco sería eficiente. Para ello vamos a introducir el concepto de contenedor de elementos, denominado Arrays que nos facilitará el trabajo cuando tengamos que operar con más de un dato.",
+  "objectives": [
+    "Conocer una tipología de estructura de almacenamiento, los arrays.",
+    "Saber las principales operaciones con arrays.",
+    "Trabajar con las cadenas de caracteres y cómo se almacenan.",
+    "Aprender el tratamiento de tipos de datos y transformarlos."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "8.1. Estructuras",
+      "short": "8.1 Estructuras",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Una forma de poder agrupar datos y estructurarlos, es definiendo clases para almacenar un conjunto de variables de diferente tipo que tienen una relación entre sí, denominado atributos o campos de clase.\n\nEn Java no existen estructuras definidas para agrupar un conjunto de una o más variables de distinto tipo como sucede en otros lenguajes de programación."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Ejemplo de estructura en C",
+              "content": "struct tipo_estructura\n{\n    tipo_variable nombre_variable1;\n    tipo_variable nombre_variable2;\n};"
+            },
+            {
+              "title": "Equivalencia en Java",
+              "content": "class tipo_estructura\n{\n    tipo_variable nombre_variable1;\n    tipo_variable nombre_variable2;\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "8.2. Arrays",
+      "short": "8.2 Arrays",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Un array es un objeto estático que almacena o contiene elementos de forma secuencial un número fijo de valores del mismo tipo."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Tipo Primitivo",
+              "kicker": "int, long, double, boolean…",
+              "desc": "Todos los elementos del array cuentan con un valor inicial, ya que son inicializados en el momento de su creación."
+            },
+            {
+              "title": "Tipo Abstracto o Referencia",
+              "kicker": "Cualquier objeto",
+              "desc": "Cuando se crea el array, todos sus elementos son referencias a null, y por tanto deben crearse a parte."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "8.2.1. Dimensiones de un array",
+      "short": "8.2.1 Dimensiones",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las dimensiones indican la profundidad de un array, vienen representadas por [ ] y podemos tener de dos tipos."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Unidimensional",
+              "kicker": "Una dimensión",
+              "desc": "Los elementos son manejados de forma lineal, como una fila. En su declaración solo tendrá un par de [ ]."
+            },
+            {
+              "title": "Multidimensional o Matriz",
+              "kicker": "Varias dimensiones",
+              "desc": "Los elementos son manejados en forma de tabla, columnas y filas. En su declaración se añadirá tantos [ ] como dimensiones contenga. Lo más común es trabajar con dos dimensiones, pero se pueden emplear más."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Imagen 1. Array unidimensional: casillas indexadas de 0 a N-1. La casilla 0 es el Primer elemento y la casilla N-1 es el Último elemento."
+        },
+        {
+          "type": "text",
+          "content": "Imagen 2. Array multidimensional: filas de 0 a M-1 y columnas de 0 a N-1. El primer elemento es [0][0] y el último es [M-1][N-1]."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "8.2.2. Declaración y creación",
+      "short": "8.2.2 Declaración",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La declaración de un array es muy similar a una variable. Se indicará la visibilidad, el tipo de datos, tantos [ ] según las dimensiones que tenga y el nombre del array. Es posible alternar el orden de la declaración de la dimensión y el nombre.\n\nAl crearlo siempre irá precedido por new, el tipo de dato, y tantos [1..N] según las dimensiones que tenga. Esta vez hay que indicar entre los corchetes la cantidad fija mayor igual a 1 del espacio que tendrá el array."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Sintaxis de declaración",
+              "content": "[Visibilidad] tipo[].. array1;\n[Visibilidad] tipo array1 []..;"
+            },
+            {
+              "title": "Sintaxis de creación",
+              "content": "= new tipo[1..N]..;"
+            },
+            {
+              "title": "Ejemplo: array bidimensional para datos de clientes",
+              "content": "String [][] datosCliente = new String[4][2];\n\nTendrá dos columnas lógicas que representan el nombre y los apellidos, y cuatro filas para añadir cuatro clientes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "8.2.3. Inicialización y acceso",
+      "short": "8.2.3 Inicialización",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La inicialización de los elementos puede ser directamente en la declaración o elemento a elemento."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Directamente en la declaración",
+              "content": "El conjunto de elementos irá agrupado por { } y la cantidad total definida será el número de la capacidad del array.\n\ntipo[] nombre = {valor1, valor2}\ntipo[][] nombre = {{valor1, valor2},{valor3, valor4}}"
+            },
+            {
+              "title": "Elemento a elemento",
+              "content": "Hay que acceder a cada posición e introducir su valor.\n\nnombre[0] = valor1;\nnombre[1] = valor2;\nnombre[n] = valor3;"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "El acceso a cada elemento del array se emplea un índice numérico que especifica la posición del elemento. El índice va desde la primera posición 0 hasta la última que será la cantidad total - 1."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "8.2.4. Arrays y métodos",
+      "short": "8.2.4 Arrays y métodos",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Como se vio en anteriores temas, podíamos invocar a un método y pasarle como argumentos varios parámetros, ahora podemos agrupar y pasar como parámetro un array. Igual que sucede cuando el método ha de retornar diferentes valores, podemos indicar que devuelva un array, de esta manera es posible devolver más de un valor."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "label": "8.2.5. Operaciones para realizar sobre un array estático",
+      "short": "8.2.5 Operaciones array",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "A continuación, se va a explicar diferentes operaciones más comunes sobre un array. En algunas operaciones se usará la librería java.util.Arrays que proporciona Java para facilitar el uso de arrays.\n\nEn los diferentes ejemplos vamos a usar los siguientes arrays:\n\nString [] amigos = {\"Juan\",\"Carla\",\"María\",\"Pepe\",\"Antonio\"};\nString [][] amigosEdad = {{\"Juan\",\"20\"},{\"Carla\",\"22\"},{\"María\",\"23\"},{\"Pepe\",\"22\"},{\"Antonio\",\"30\"}};"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Recorrer un array",
+              "content": "Para recorrer un array hay que conocer su capacidad total mediante el campo .length. A continuación se pueden usar distintos bucles:\n\n// Empleando un bucle for\nfor (int i=0;i<amigos.length;i++) {\n    amigos[i].toString();\n}\n\n// Empleando un bucle foreach\nfor (String elemento: amigos) {\n    elemento.toString();\n}\n\n// Recorrido de un array multidimensional\nfor (int i=0;i<amigosEdad.length;i++) {\n    System.out.print(\"Los datos de mi amigo nº: (\"+ i + \") \");\n    for (int j=0;j<amigosEdad[i].length;j++) {\n        System.out.print(amigosEdad[i][j] + \" \");\n    }\n    System.out.println();\n}\n// El resultado: Los datos de mi amigo nº: (0) Juan 20 , Los datos de mi amigo nº: (1) Carla 22 , Los datos de mi amigo nº: (2) María 23 , Los datos de mi amigo nº: (3) Pepe 22, Los datos de mi amigo nº: (4) Antonio 30"
+            },
+            {
+              "title": "Búsqueda de elementos",
+              "content": "Para buscar elementos se emplea el método .binarySearch(nombreArray, valor). Este método buscará el valor dentro del array y devolverá la posición en que se encuentra el elemento.\n\nint posicionElemento = java.util.Arrays.binarySearch(amigos, \"María\");\nSystem.out.println(posicionElemento);\n// El resultado: 2"
+            },
+            {
+              "title": "Impresión de elementos",
+              "content": "Se puede imprimir elemento a elemento usando el recorrido completo del array o usando el método .toString(array) pasando como argumento el nombre del array.\n\n// Elemento a elemento\nfor (int i=0;i<amigos.length;i++) {\n    System.out.println(amigos[i]);\n}\n// El resultado: Juan / Carla / María / Pepe / Antonio\n\n// Con toString\nSystem.out.println(java.util.Arrays.toString(amigos));\n// El resultado: [Juan, Carla, María, Pepe, Antonio]"
+            },
+            {
+              "title": "Ordenación",
+              "content": "Permite ordenar ascendentemente los valores de los elementos de un array.\n\njava.util.Arrays.sort(amigos);\n// El resultado: [Antonio, Carla, Juan, María, Pepe]"
+            },
+            {
+              "title": "Comparación",
+              "content": "Internamente un array se representa como un objeto, guarda en su dirección de memoria la información que compone el array. Se puede comparar si apuntan a la misma dirección de memoria o si sus valores son iguales.\n\n• Mediante el operador \"==\": compara si dos arrays apuntan a la misma dirección de memoria.\n• Mediante el método equals: compara si dos arrays tienen los mismos valores.\n\nString [] amigosNuevos = amigos;\nString [] amigosdeJuan = {\"Juan\",\"Carla\",\"María\",\"Pepe\",\"Antonio\"};\n\nSystem.out.println(\"Los amigos nuevos apuntan a la misma dirección de memoria que amigos: \"+ (amigosNuevos == amigos) + \" Son los mismo que amigos: \"+ java.util.Arrays.equals(amigos, amigosNuevos));\nSystem.out.println(\"Los amigos de Juan apuntan a la misma dirección de memoria que amigos: \" + (amigosdeJuan == amigos) + \" Son los mismo que amigos: \"+ java.util.Arrays.equals(amigos, amigosdeJuan));\n\n// El resultado:\n// Los amigos nuevos apuntan a la misma dirección de memoria que amigos: true Son los mismo que amigos: true\n// Los amigos de Juan apuntan a la misma dirección de memoria que amigos: false Son los mismo que amigos: true"
+            },
+            {
+              "title": "Inicialización masiva",
+              "content": "Es posible inicializar un array para que todos sus elementos tengan un valor definido. Para ello se usará el método .fill(Array, Valor).\n\nString [] datosClientes = new String[5];\njava.util.Arrays.fill(datosClientes, \"Sin datos\");\n// El resultado: [Sin datos, Sin datos, Sin datos, Sin datos, Sin datos]"
+            },
+            {
+              "title": "Copia de arrays",
+              "content": "Previamente hay que determinar si se quiere hacer una copia deep (profunda) o shallow (poco profunda), dependiendo del tipo de sus elementos.\n\n• Copia deep o profunda: el array apuntará a una dirección de memoria diferente y tendrá una copia exacta de sus elementos. La copia será independiente del original.\n• Copia shallow o poco profunda: se hace copia de las direcciones de memoria donde apuntan los elementos del array. No es una copia independiente y cualquier modificación afecta a ambas.\n\nSi el tipo de datos es primitivo hará una copia deep; si no es primitivo, hará una copia shallow.\n\nMétodos disponibles: clone(), java.util.Arrays.copyOf(array, longitud) y System.arraycopy(array origen, posición inicio, array copia, posición inicio, longitud)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Ejemplos de copia con cada método:"
+        },
+        {
+          "type": "code",
+          "content": "// Método clone() — tipo primitivo (copia deep)\nString [] amigosCopia = amigos.clone();\namigosCopia[0] = \"Elena\";\nSystem.out.println(java.util.Arrays.toString(amigos));\nSystem.out.println(java.util.Arrays.toString(amigosCopia));\n// Resultado: [Antonio, Carla, Juan, María, Pepe]\n// [Elena, Carla, Juan, María, Pepe]\n\n// Método clone() — tipo no primitivo (copia shallow)\nAmigo [] amigosNoPrimitivo = {new Amigo(\"Juan\",22), new Amigo(\"Elena\",25)};\nAmigo [] copiaAmigosNoPrimitivo = amigosNoPrimitivo.clone();\nSystem.out.println(amigosNoPrimitivo[0].getNombre());\nSystem.out.println(copiaAmigosNoPrimitivo[0].getNombre());\namigosNoPrimitivo[0].setNombre(\"Carolina\");\nSystem.out.println(amigosNoPrimitivo[0].getNombre());\nSystem.out.println(copiaAmigosNoPrimitivo[0].getNombre());\n// Resultado: Juan\n// Juan\n// Carolina\n// Carolina\n\n// java.util.Arrays.copyOf\nString[] amigosCopia = java.util.Arrays.copyOf(amigos, amigos.length);\nSystem.out.println(java.util.Arrays.toString(amigos));\nSystem.out.println(java.util.Arrays.toString(amigosCopia));\n// Resultado: [Antonio, Carla, Juan, María, Pepe]\n// [Antonio, Carla, Juan, María, Pepe]\n\n// System.arraycopy\nString [] amigosCopia = new String[amigos.length];\nSystem.arraycopy(amigos, 0, amigosCopia, 0, amigos.length);\nSystem.out.println(java.util.Arrays.toString(amigos));\nSystem.out.println(java.util.Arrays.toString(amigosCopia));\n// Resultado: [Antonio, Carla, Juan, María, Pepe]\n// [Antonio, Carla, Juan, María, Pepe]"
+        },
+        {
+          "type": "text",
+          "content": "Inserción de elementos:\n\nOperar con arrays estáticos facilita su operativa para trabajar con un conjunto de elementos que ya sabemos al principio; en cambio, presenta un gran inconveniente cuando no podemos conocer el tamaño inicial. Si queremos insertar nuevos elementos, hay que declarar un nuevo array incrementando su tamaño, copiar los elementos anteriores y añadir el nuevo elemento en la posición que corresponda."
+        },
+        {
+          "type": "code",
+          "content": "int[] numVisitas = {10, 15, 16};\nSystem.out.println(java.util.Arrays.toString(numVisitas));\nint posElemento = 1;\nint valorElemento = 31;\nint[] nuevoNumVisitas = new int[numVisitas.length+1];\nSystem.arraycopy(numVisitas, 0, nuevoNumVisitas, 0, posElemento);\nnuevoNumVisitas[posElemento] = valorElemento;\nSystem.arraycopy(numVisitas, posElemento, nuevoNumVisitas, posElemento+1, numVisitas.length-posElemento);\nSystem.out.println(java.util.Arrays.toString(nuevoNumVisitas));\n// Resultado: [10, 15, 16]\n// [10, 31, 15, 16]"
+        },
+        {
+          "type": "text",
+          "content": "Eliminación de elementos:\n\nIgual que sucedía con la inserción, ahora se presenta al revés. Cada vez que queramos eliminar un elemento, hay que declarar un nuevo array decrementando su tamaño, copiar los elementos anteriores a excepción del elemento a borrar."
+        },
+        {
+          "type": "code",
+          "content": "int[] numVisitas = {10, 15, 16};\nSystem.out.println(java.util.Arrays.toString(numVisitas));\nint posElemento = 1;\nint[] nuevoNumVisitas = new int[numVisitas.length-1];\nSystem.arraycopy(numVisitas, 0, nuevoNumVisitas, 0, posElemento);\nSystem.arraycopy(numVisitas, posElemento+1, nuevoNumVisitas, posElemento, nuevoNumVisitas.length-posElemento);\nSystem.out.println(java.util.Arrays.toString(nuevoNumVisitas));\n// Resultado: [10, 15, 16]\n// [10, 16]"
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "label": "8.3. Cadenas de caracteres",
+      "short": "8.3 Cadenas",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las cadenas de caracteres es un conjunto de caracteres para formar una palabra o frase de longitud finita, puede contener cualquier dígito o carácter y su representación es un array de caracteres."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "label": "8.3.1. Declaración, creación e inicialización",
+      "short": "8.3.1 Declaración String",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Una cadena de caracteres suele venir representada por un array de tipo char. Sin embargo, Java proporciona el tipo String para facilitar su uso.\n\nLa forma más común de declarar e inicializar una cadena de caracteres es mediante el uso de comillas dobles \"\" para encerrar la secuencia de caracteres.\n\nAunque puede causar confusión, String no es un tipo primitivo; se puede observar que se declara con su primer carácter en mayúscula."
+        },
+        {
+          "type": "code",
+          "content": "char [] array = {'H','o','l','a'};\nString cadena = \"Hola\";\nString arrayACadena = String.copyValueOf(array);"
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "label": "8.3.2. Operaciones",
+      "short": "8.3.2 Operaciones String",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El tipo String contiene bastantes métodos para operar con las cadenas de caracteres. A continuación, se detallan los métodos más importantes (Imagen 3):"
+        },
+        {
+          "type": "table",
+          "headers": ["Método", "Definición"],
+          "rows": [
+            ["charAt(int posición)", "Devuelve el carácter situado en la posición pasada por parámetro."],
+            ["compareTo(String cadena)", "Devuelve un valor negativo, un valor positivo o cero. Un valor negativo si el String precede a la cadena pasada por parámetro, un valor positivo indica lo contrario y cero si son iguales."],
+            ["compareToIgnoreCase(String cadena)", "Igual al anterior, pero sin tener en cuenta mayúsculas y minúsculas."],
+            ["concat(String cadena)", "Une el String con la cadena pasada por parámetro. Es lo mismo que usar el operador +."],
+            ["contains(String cadena)", "Devuelve verdadero o falso si el String contiene la cadena pasada por parámetro."],
+            ["indexOf(String cadena)", "Devuelve la posición de la primera ocurrencia de la cadena pasada por parámetro."],
+            ["lastIndexOf(String cadena)", "Similar a la anterior, pero empezando por el final."],
+            ["isEmpty()", "Devuelve verdadero o falso si el String contiene algún carácter."],
+            ["length()", "Devuelve el tamaño de la cadena."],
+            ["replace(String cadenaBuscada, String remplazo)", "Devuelve la cadena sustituyendo las partes que coincide con la cadenaBuscada."],
+            ["substring(int posiciónInicial, int posiciónFinal)", "Devuelve la cadena comprendida entre las posiciones indicadas por parámetros."],
+            ["toCharArray()", "Devuelve el array de caracteres de la cadena."],
+            ["toLowerCase()", "Devuelve una cadena en minúscula."],
+            ["toUpperCase()", "Devuelve una cadena en mayúscula."],
+            ["trim()", "Devuelve una cadena sin espacios al principio y final."]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Ejemplos de uso:"
+        },
+        {
+          "type": "code",
+          "content": "String ejemploCadenaString = \" Ejemplo cadena \";\nSystem.out.println(ejemploCadenaString.trim());\nSystem.out.println(ejemploCadenaString.toLowerCase());\nSystem.out.println(ejemploCadenaString.toUpperCase());\nSystem.out.println(ejemploCadenaString.length());\nSystem.out.println(ejemploCadenaString.substring(0, 8));\nSystem.out.println(ejemploCadenaString.replace(\"a\",\"1\"));\nSystem.out.println(ejemploCadenaString.concat(\"contenido nuevo\"));\nSystem.out.println(ejemploCadenaString.compareToIgnoreCase(\" Ejemplo cadena \"));\nResultado:\nEjemplo cadena\n ejemplo cadena \n EJEMPLO CADENA \n16\n Ejemplo\n Ejemplo c1den1 \n Ejemplo cadena contenido nuevo"
+        },
+        {
+          "type": "text",
+          "content": "⚠ Ojo: el Resultado impreso en el PDF muestra 7 líneas, pero el código tiene 8 llamadas a println. Falta la salida de compareToIgnoreCase (no se puede deducir el valor exacto desde el propio ejemplo)."
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "label": "8.3.3. Conversiones",
+      "short": "8.3.3 Conversiones",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "A partir de una cadena de caracteres que contienen dígitos podemos convertirlo a un tipo primitivo de uso numérico o viceversa. Las conversiones se realizan usando la clase envoltorio de cada tipo."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "De String a tipo primitivo",
+              "kicker": ".parse<Tipo>",
+              "desc": "Byte.parseByte(cadena);\nShort.parseShort(cadena);\nInteger.parseInteger(cadena);\nLong.parseLong(cadena);\nFloat.parseFloat(cadena);\nDouble.parseDouble(cadena);"
+            },
+            {
+              "title": "De String a clase envoltorio",
+              "kicker": ".valueOf",
+              "desc": "Byte.valueOf(cadena);\nShort.valueOf(cadena);\nInteger.valueOf(cadena);\nLong.valueOf(cadena);\nFloat.valueOf(cadena);\nDouble.valueOf(cadena);"
+            },
+            {
+              "title": "De valor numérico a cadena",
+              "kicker": "String.valueOf",
+              "desc": "String.valueOf(numero);"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "⚠ Ojo: en la tabla anterior el PDF indica Integer.parseInteger(cadena), pero ese método no existe en Java. El método correcto es Integer.parseInt(cadena), tal como aparece en el ejemplo de código a continuación."
+        },
+        {
+          "type": "text",
+          "content": "Ejemplos de conversión:"
+        },
+        {
+          "type": "code",
+          "content": "int valorNumerico = 100;\nString cadenaNumerica = String.valueOf(valorNumerico);\nint entero = Integer.parseInt(cadenaNumerica);\nfloat decimal = Float.parseFloat(cadenaNumerica);\ndouble doble = Double.parseDouble(cadenaNumerica);"
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Array",
+      "def": "Objeto estático que almacena o contiene elementos de forma secuencial con un número fijo de valores del mismo tipo, primitivos o abstractos."
+    },
+    {
+      "term": "Dimensional",
+      "def": "Indica la profundidad que puede tener un array. Puede ser unidimensional (una fila lineal) o multidimensional (tabla con filas y columnas)."
+    },
+    {
+      "term": "null",
+      "def": "Palabra reservada para indicar vacío o la nada. Los elementos de un array de tipo abstracto se inicializan a null al crear el array."
+    },
+    {
+      "term": "new",
+      "def": "Palabra reservada para instanciar un nuevo objeto. Se usa obligatoriamente al crear un array."
+    },
+    {
+      "term": "length",
+      "def": "Campo del array que devuelve su longitud total. Se usa para conocer el número de elementos y así poder recorrer el array."
+    },
+    {
+      "term": "java.util.Arrays",
+      "def": "Clase de la librería estándar de Java que contiene funcionalidad para operar con arrays: binarySearch, toString, sort, equals, fill, copyOf, etc."
+    },
+    {
+      "term": "Copia deep o profunda",
+      "def": "Método de copiado que genera una copia exacta de los mismos valores. El elemento copiado y el original son independientes. Se aplica cuando el tipo de datos del array es primitivo."
+    },
+    {
+      "term": "Copia shallow o poco profunda",
+      "def": "Método de copiado que replica las direcciones de memoria de los elementos, no sus valores. Cualquier cambio en uno de los dos arrays afecta al otro. Se aplica cuando el tipo de datos no es primitivo."
+    },
+    {
+      "term": "String",
+      "def": "Tipo de datos no primitivo de Java para representar una cadena de caracteres. Proporciona métodos para operar con la cadena (trim, replace, substring, etc.)."
+    },
+    {
+      "term": "Concatenar",
+      "def": "Unir el valor de varios elementos. En Java se puede hacer con el método concat() o con el operador +."
+    },
+    {
+      "term": "Clase envoltorio",
+      "def": "Clases de Java (Byte, Short, Integer, Long, Float, Double) que envuelven los tipos primitivos y proporcionan métodos de conversión como parseTipo() y valueOf()."
+    },
+    {
+      "term": "binarySearch(Array, valor)",
+      "def": "Método de java.util.Arrays que busca un valor dentro del array y devuelve la posición en que se encuentra el elemento."
+    },
+    {
+      "term": "sort(Array)",
+      "def": "Método de java.util.Arrays que ordena ascendentemente los valores de los elementos de un array."
+    },
+    {
+      "term": "clone()",
+      "def": "Método del array que realiza una copia del mismo. Si el tipo es primitivo, la copia es deep; si no es primitivo, la copia es shallow."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "¿Qué es un array en Java según el temario?",
+      "options": [
+        "Una lista dinámica que puede cambiar de tamaño en tiempo de ejecución.",
+        "Un objeto estático que almacena elementos de forma secuencial con un número fijo de valores del mismo tipo.",
+        "Un tipo primitivo que agrupa valores de diferentes tipos.",
+        "Una clase que solo puede almacenar objetos, no tipos primitivos."
+      ],
+      "correct": 1,
+      "explanation": "El temario define un array como un objeto estático que almacena o contiene elementos de forma secuencial un número fijo de valores del mismo tipo. No es dinámico: su tamaño es fijo desde la creación."
+    },
+    {
+      "question": "¿Cuál es el índice del primer y del último elemento de un array de longitud N?",
+      "options": [
+        "El primero es 1 y el último es N.",
+        "El primero es 0 y el último es N-1.",
+        "El primero es 0 y el último es N.",
+        "El primero es 1 y el último es N-1."
+      ],
+      "correct": 1,
+      "explanation": "El índice va desde la primera posición 0 hasta la última que será la cantidad total - 1. Por eso el último elemento de un array de longitud N está en la posición N-1."
+    },
+    {
+      "question": "¿Qué tipo de copia se realiza con clone() sobre un array cuyos elementos son objetos (no primitivos)?",
+      "options": [
+        "Copia deep o profunda: original y copia son independientes.",
+        "No se puede usar clone() con tipos no primitivos.",
+        "Copia shallow o poco profunda: cualquier cambio en uno afecta al otro.",
+        "Copia profunda, pero solo del primer nivel de la jerarquía."
+      ],
+      "correct": 2,
+      "explanation": "Si el tipo de datos no es primitivo, clone() hará una copia shallow o poco profunda: se copian las direcciones de memoria donde apuntan los elementos, no los valores en sí. Cualquier modificación en el original o en la copia afecta a ambas partes."
+    },
+    {
+      "question": "¿Qué método de java.util.Arrays permite ordenar ascendentemente un array?",
+      "options": [
+        "java.util.Arrays.equals(array)",
+        "java.util.Arrays.fill(array, valor)",
+        "java.util.Arrays.sort(array)",
+        "java.util.Arrays.toString(array)"
+      ],
+      "correct": 2,
+      "explanation": "java.util.Arrays.sort(array) ordena ascendentemente los valores de los elementos del array. fill inicializa todos los elementos con un valor; equals compara dos arrays; toString devuelve una representación en cadena."
+    },
+    {
+      "question": "¿Qué devuelve el método isEmpty() de la clase String?",
+      "options": [
+        "El tamaño de la cadena.",
+        "La cadena sin espacios al principio y al final.",
+        "Verdadero o falso si el String contiene algún carácter.",
+        "Un array de caracteres de la cadena."
+      ],
+      "correct": 2,
+      "explanation": "Según la tabla de métodos del temario, isEmpty() devuelve verdadero o falso si el String contiene algún carácter. length() devuelve el tamaño, trim() elimina espacios y toCharArray() devuelve el array de caracteres."
+    },
+    {
+      "question": "¿Cómo se convierte el valor de una variable int al tipo String?",
+      "options": [
+        "Integer.parseInt(numero)",
+        "String.valueOf(numero)",
+        "Double.parseDouble(numero)",
+        "Integer.valueOf(numero)"
+      ],
+      "correct": 1,
+      "explanation": "Para convertir un valor numérico a cadena se usa String.valueOf(numero). Integer.parseInt y Double.parseDouble convierten en la dirección contraria (de String a primitivo). Integer.valueOf convierte de String a clase envoltorio."
+    },
+    {
+      "question": "¿Qué diferencia existe entre comparar dos arrays con == y con java.util.Arrays.equals()?",
+      "options": [
+        "No hay diferencia, ambos comparan el contenido.",
+        "== compara el contenido y equals compara la dirección de memoria.",
+        "== compara si apuntan a la misma dirección de memoria; equals compara si tienen los mismos valores.",
+        "equals no está disponible para arrays de String."
+      ],
+      "correct": 2,
+      "explanation": "Internamente un array se representa como un objeto. == compara si dos arrays apuntan a la misma dirección de memoria, mientras que java.util.Arrays.equals compara si sus valores son iguales, aunque estén en posiciones de memoria distintas."
+    },
+    {
+      "question": "¿Qué ocurre si se quiere insertar un nuevo elemento en un array estático en Java?",
+      "options": [
+        "Se puede insertar directamente indicando la posición con el índice.",
+        "Hay que declarar un nuevo array con tamaño incrementado, copiar los elementos anteriores y añadir el nuevo elemento.",
+        "Java lanza una excepción automática y redimensiona el array.",
+        "Solo es posible insertar al final del array usando el método add()."
+      ],
+      "correct": 1,
+      "explanation": "Los arrays son estáticos: no se puede cambiar su tamaño en ejecución. Para insertar un nuevo elemento hay que declarar un nuevo array incrementando su tamaño, copiar los elementos anteriores y añadir el nuevo elemento en la posición que corresponda."
+    }
+  ],
+  "_sources": {
+    "s1": "U8 Estructura de almacenamiento Arrays y cadenas de caracteres.pdf — p. 4",
+    "s2": "U8 Estructura de almacenamiento Arrays y cadenas de caracteres.pdf — p. 5; U8 DIAPOSITIVAS — p. 3; U8 RESUMEN — p. 1",
+    "s3": "U8 Estructura de almacenamiento Arrays y cadenas de caracteres.pdf — p. 5; U8 DIAPOSITIVAS — p. 3 (Dimensiones)",
+    "s4": "U8 Estructura de almacenamiento Arrays y cadenas de caracteres.pdf — p. 6; U8 DIAPOSITIVAS — p. 4",
+    "s5": "U8 Estructura de almacenamiento Arrays y cadenas de caracteres.pdf — p. 6; U8 DIAPOSITIVAS — p. 5",
+    "s6": "U8 Estructura de almacenamiento Arrays y cadenas de caracteres.pdf — p. 6",
+    "s7": "U8 Estructura de almacenamiento Arrays y cadenas de caracteres.pdf — pp. 7–11; U8 DIAPOSITIVAS — pp. 5–6",
+    "s8": "U8 Estructura de almacenamiento Arrays y cadenas de caracteres.pdf — p. 12; U8 RESUMEN — p. 1",
+    "s9": "U8 Estructura de almacenamiento Arrays y cadenas de caracteres.pdf — p. 12; U8 DIAPOSITIVAS — p. 7",
+    "s10": "U8 Estructura de almacenamiento Arrays y cadenas de caracteres.pdf — pp. 12–13 (tabla Imagen 3, código y resultado); U8 DIAPOSITIVAS — p. 8",
+    "s11": "U8 Estructura de almacenamiento Arrays y cadenas de caracteres.pdf — pp. 14–15; U8 DIAPOSITIVAS — p. 9; U8 RESUMEN — p. 1"
+  }
+}
