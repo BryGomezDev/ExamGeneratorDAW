@@ -1,0 +1,467 @@
+{
+  "subject": "lm",
+  "unit": 5,
+  "title": "Conversión y adaptación de documentos XML",
+  "intro": "En esta unidad se estudia la transformación de documentos XML mediante XSLT (extensible stylesheet language transformations), un lenguaje que permite convertir un árbol de origen XML en un árbol de destino con un formato distinto, como HTML o XHTML. Se analizan las diferencias entre las versiones XSLT 1.0, 2.0 y 3.0, la estructura de los ficheros XML y XSL, las principales etiquetas de plantilla (xsl:value-of, xsl:for-each, xsl:sort, xsl:if, xsl:choose) y las herramientas disponibles para procesar, verificar y depurar transformaciones XSLT.",
+  "objectives": [
+    "Comprender el proceso de transformación XSLT y distinguirlo de la presentación con CSS.",
+    "Identificar las diferencias entre las versiones XSLT 1.0, 2.0 y 3.0 y sus nuevas instrucciones.",
+    "Describir la estructura y sintaxis de los ficheros XML y XSL necesarios para una transformación.",
+    "Utilizar las etiquetas de plantilla xsl:value-of, xsl:for-each, xsl:sort, xsl:if y xsl:choose.",
+    "Aplicar expresiones XPath para navegar y seleccionar nodos en documentos XML.",
+    "Conocer las principales herramientas de procesamiento, verificación y depuración de XSLT."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "5.1. Técnicas de transformación de documentos XML",
+      "short": "5.1 Transformación XSLT",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las transformaciones XSLT permiten la modificación de elementos, atributos, etc., así como modificar la estructura con el fin de reestructurar y ordenar los elementos del sistema. También permite la unión de dos archivos: un árbol de origen con una hoja de estilo, con el fin de crear un árbol de destino.\n\nLa hoja de estilo, o style sheets, permite añadir al documento XML (el árbol de origen) una serie de características y reglas a la hora de visualizarlo, como pueden ser: el color, el fondo, el tipo de fuente, la apariencia de los bordes, los márgenes y la alineación y espacio entre caracteres.\n\nEl árbol de destino incluirá todas estas normas de estilo incluidas en su código. Las hojas de estilo más usadas son XSL y CSS, aunque la transformación XSLT aceptará archivos XML y XSL, pero no CSS, lo que dará como resultado un archivo de salida. El software XSLT puede encontrarse en editores XML o en el propio navegador."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Árbol de origen",
+              "desc": "El documento XML con los datos. Es la entrada del proceso de transformación XSLT."
+            },
+            {
+              "title": "Hoja de estilo (XSL)",
+              "desc": "Contiene las reglas y características de presentación. Se combina con el árbol de origen a través del procesador XSLT."
+            },
+            {
+              "title": "Árbol de destino",
+              "desc": "El documento de salida resultante de la transformación. Puede ser HTML, XHTML u otro formato XML."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "⚠ Ojo: en el diagrama del temario (Imagen 1, pág. 4) los tres nodos del gráfico están rotulados «Hoja de estilo». Según las diapositivas de la unidad, el proceso correcto es: Hoja de estilo + XML → XSLT → Árbol de destino. Los tres nodos del temario deberían llamarse «Hoja de estilo» (entrada), «XSLT» (procesador) y «Árbol de destino» (salida)."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "5.1.1. Diferencias entre las versiones de XSLT 1.0, 2.0 y 3.0",
+      "short": "5.1.1 Versiones XSLT",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La primera versión de XSLT surgió en 1999 y hasta 2007 no surgió una nueva versión. En esa época se creó XSLT 2.0, que mejoró sus prestaciones aunque seguía siendo retrocompatible. Los procesadores XSLT más usados son Xalan, Saxon y MSXML.\n\nExiste una versión 3.0, pero la más actual es la segunda edición de la versión 2.0 (marzo de 2021).\n\nXPath es un lenguaje que permite seleccionar y navegar entre los distintos nodos de XML."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Novedades de XSLT 2.0",
+              "content": "Mejora del sistema de tipos con una gran ampliación de su oferta. Mejora de las funciones. Mejora del modelo de datos. Introducción de soporte para expresiones regulares. Posibilidad de crear múltiples árboles simultáneamente. Uso de la etiqueta <xsl:function> para expresiones XPath. Mayor calidad del sistema de errores. Mejora en la agrupación."
+            },
+            {
+              "title": "Streaming en XSLT 2.0",
+              "content": "Se creó la posibilidad de streaming de documentos con el fin de trabajar con el documento aún incompleto. Para ello se crearon las instrucciones: <xsl:source-document>, <xsl:iterate>, <xsl:merge> y <xsl:fork>. También se añadió el concepto de paquete para trabajar sobrescribiendo datos aunque ya se estén visualizando, lo que favorece el mantenimiento del código."
+            },
+            {
+              "title": "Expresiones destacadas de XSLT 3.0",
+              "content": "xsl:evaluate: evalúa expresiones XPath constituidas por strings. xsl:try: evita el bloqueo a causa de errores. xsl:global-context-item: permite especificar un elemento en un contexto global. xsl:assert: permite construir un código más robusto libre de errores paralizantes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "5.2. Formatos de salida y ámbitos de aplicación",
+      "short": "5.2 Formatos de salida",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La transformación XSLT da como resultado un documento de salida, el cual puede ser de varios formatos, como pueden ser el XML y el XHTML."
+        },
+        {
+          "type": "chips",
+          "items": [
+            "XML — el propio formato de marcado extensible",
+            "XHTML — versión HTML adaptada a las reglas de XML",
+            "HTML — mediante <xsl:output method=\"html\"/> en la hoja de estilo",
+            "Texto plano — mediante <xsl:output method=\"text\"/>"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "5.3. Descripción de la estructura y la sintaxis",
+      "short": "5.3 Estructura y sintaxis",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Una transformación XSLT requiere dos archivos: el fichero XML con los datos y la hoja de estilo XSL con las reglas de transformación. Ambos comienzan con la misma línea de declaración XML."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "5.3.1. Fichero XML",
+      "short": "5.3.1 Fichero XML",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La asociación del XSL al XML se realizará mediante la siguiente línea, que se escribirá bajo la primera línea común a ambos archivos (versión y encoding):\n\n<?xml-stylesheet type=\"text/xsl\" href=\"XYZ.xsl\"?>\n\nEl lugar que ocupa \"XYZ.xsl\" en el atributo \"href\" es el que expresará el nombre del archivo XSL; no se debe olvidar que es necesario escribir también la extensión."
+        },
+        {
+          "type": "code",
+          "content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"Formato de estilo.xsl\"?>\n<xsl:output method=\"html\"/>\n<inventario>\n  <plantas>\n    <especie>Rosa</especie>\n    <precio>1 €</precio>\n  </plantas>\n  <plantas>\n    <especie>clavel</especie>\n    <precio>0.75 €</precio>\n  </plantas>\n</inventario>"
+        },
+        {
+          "type": "text",
+          "content": "Anotaciones del temario a las líneas del ejemplo anterior:\n1. Tipo de documento XML.\n2. Referencia del documento XSL.\n3. Indica el formato de salida en una transformación XSLT."
+        },
+        {
+          "type": "text",
+          "content": "⚠ Ojo: el temario coloca <xsl:output method=\"html\"/> dentro del documento XML y lo llama «línea imprescindible» del fichero XML. En realidad <xsl:output> es un elemento de XSLT y va en la hoja de estilo .xsl, dentro de <xsl:stylesheet>. (Esta corrección no la da el temario; viene del funcionamiento de XSLT.)"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "5.3.2. Hoja de estilo XSL",
+      "short": "5.3.2 Hoja XSL",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los archivos XSL deben comenzar con la misma línea que los archivos XML:\n\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\nPero a diferencia de ellos deberán contener una segunda línea que los marcará como archivos XSL:\n\n<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\">\n\nLa siguiente parte será la línea <xsl:template match=\"/\">, la cual, con el atributo \"match\", indica a qué elementos del archivo XML se asociará el formato del XSL. La expresión XPath \"/\" indica que se asocia a toda la raíz y, por ende, a todo el documento."
+        },
+        {
+          "type": "table",
+          "headers": ["Expresión", "Elementos seleccionados"],
+          "rows": [
+            ["/", "La raíz y, por tanto, todo el documento"],
+            ["/Objeto", "Solo el especificado, en este caso \"Objeto\""],
+            ["//Objeto", "Todos los \"Objeto\" del documento"],
+            ["/Objeto/*/Objeto2", "El especificado \"Objeto2\" que tienen como padre \"Objeto\""]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "label": "5.4. Utilización de plantillas",
+      "short": "5.4 Plantillas XSL",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La creación de plantillas para archivos XML es sencilla gracias a las etiquetas específicas que se verán a continuación y que reducen su dificultad significativamente."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "label": "5.4.1. <xsl:value-of>",
+      "short": "5.4.1 xsl:value-of",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La etiqueta <xsl:value-of> extrae el valor del elemento referenciado en ella desde el archivo XML. Su único uso es la selección."
+        },
+        {
+          "type": "code",
+          "content": "<xsl:value-of select=\"especie/precio\"/>"
+        },
+        {
+          "type": "text",
+          "content": "⚠ Ojo: el temario dice que esta línea extraería «especie» y «precio», pero según su propia tabla de expresiones XPath, una ruta a/b selecciona el elemento b que tiene como padre a. Así, especie/precio seleccionaría un precio hijo de especie; para obtener los dos valores harían falta dos <xsl:value-of>."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "label": "5.4.2. <xsl:for-each>",
+      "short": "5.4.2 xsl:for-each",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Esta etiqueta selecciona todos los elementos especificados en el conjunto de nodos que abarquen."
+        },
+        {
+          "type": "code",
+          "content": "<xsl:for-each select=\"especie/precio\">\n</xsl:for-each>"
+        },
+        {
+          "type": "text",
+          "content": "Es posible acotar la selección con una instrucción añadida que limitará la búsqueda según el campo seleccionado y el filtro usado:"
+        },
+        {
+          "type": "code",
+          "content": "<xsl:for-each select=\"especie/precio[flores='Rosa']\">\n</xsl:for-each>"
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "label": "5.4.3. Filtrando contenido",
+      "short": "5.4.3 Filtros",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Gracias a los códigos de filtrado de la etiqueta <xsl:for-each> podemos filtrar el documento, de modo que podamos trabajar con una parte del archivo, lo que facilita su elaboración."
+        },
+        {
+          "type": "table",
+          "headers": ["Filtro", "Significado"],
+          "rows": [
+            ["=", "Igual"],
+            ["!=", "Desigual"],
+            ["<", "Menos que"],
+            [">", "Mayor que"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "label": "5.4.4. Ordenando el contenido",
+      "short": "5.4.4 Ordenar",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La etiqueta <xsl:sort> permite ordenar el contenido según el valor añadido al atributo \"select\". En el caso de tratarse de números se ordenará desde menor a mayor, y si se tratase de nombres se agruparían los campos repetidos."
+        },
+        {
+          "type": "code",
+          "content": "<xsl:sort select=\"Precio\"/>"
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "label": "5.4.5. Selección avanzada IF",
+      "short": "5.4.5 xsl:if",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Para un filtrado de mayor precisión podemos emplear la etiqueta <xsl:if>, la cual, con el atributo \"test\" y los caracteres numéricos, nos permite delimitar los filtrados. Siempre debe encontrarse dentro de la etiqueta <xsl:for-each>."
+        },
+        {
+          "type": "code",
+          "content": "<xsl:for-each select=\"especie/precio\">\n  <xsl:if test=\"precio&lt;1\">\n    <tr>\n      <td><xsl:value-of select=\"especie\"/></td>\n      <td><xsl:value-of select=\"precio\"/></td>\n    </tr>\n  </xsl:if>\n</xsl:for-each>"
+        },
+        {
+          "type": "text",
+          "content": "⚠ Ojo: en el temario (pág. 9) el código del ejemplo usa la sintaxis <xs1:value-of> (con el número 1 en lugar de la letra l), lo cual es un error tipográfico. La sintaxis correcta es <xsl:value-of>."
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "label": "5.4.6. Selección avanzada CHOOSE",
+      "short": "5.4.6 xsl:choose",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La etiqueta <xsl:choose> permite seleccionar un conjunto de elementos delimitados por la etiqueta que la acompaña, <xsl:when test=\"...\">. El atributo test señala un atributo que se delimitará de la misma manera que en <xsl:if>. Esta delimitación permite realizar ciertas acciones con esas celdas delimitadas, como colorearlas de cierto color.\n\nSe puede incluir la etiqueta <xsl:otherwise></xsl:otherwise> para delimitar el resto de campos no delimitados por <xsl:when>."
+        },
+        {
+          "type": "code",
+          "content": "<xsl:choose>\n  <xsl:when test=\"precio&gt;10\">\n    ...\n  </xsl:when>\n  <xsl:otherwise>\n    ...\n  </xsl:otherwise>\n</xsl:choose>"
+        },
+        {
+          "type": "text",
+          "content": "Con esta estructura se señalarán, por un lado, los elementos con un precio superior a 10 y, por otro, los elementos con un precio inferior a 10."
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "label": "5.5. Utilización de herramientas de procesamiento: verificación, depuración y generación de documentación",
+      "short": "5.5 Herramientas XSLT",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Con el fin de facilitar el trabajo con los archivos XML se han creado una multitud de herramientas, tanto de pago como de código abierto (open source). Una de las herramientas más utilizadas son los depuradores, los cuales permiten revisar los documentos en busca de errores al permitir visualizar la transformación de los códigos XML. Estos elementos no suelen estar en las herramientas de libre código, pero sí en las de pago."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "5.5.1",
+              "title": "Oxygen XML Editor",
+              "desc": "Uno de los editores XML más usados. Proporciona una amplia gama de herramientas de creación y desarrollo XML en múltiples plataformas. Características: edición XML estructurada, compatibilidad multiplataforma, herramientas de validación y depuración XSLT."
+            },
+            {
+              "kicker": "5.5.2",
+              "title": "Altova Editor XSLT",
+              "desc": "Editor con gran cantidad de herramientas avanzadas: evaluador de XPath, explorador web integrado y transformación de alta velocidad. Permite la generación automática de hojas de estilo XSLT 1.0/2.0/3.0 y XSL:FO, creación de diseños a partir de XSLT existentes, diseño de formularios interactivos y generación de aplicaciones web ASPX."
+            },
+            {
+              "kicker": "5.5.3",
+              "title": "Saxon",
+              "desc": "Procesador XSLT desarrollado por Saxonica Limited. Permite trabajar en múltiples plataformas con varios lenguajes. Tres ediciones: Home Edition (HE, código abierto y gratuito), Professional Edition (PE, con características adicionales) y Enterprise Edition (EE, optimizada para alto rendimiento)."
+            },
+            {
+              "kicker": "5.5.4",
+              "title": "XPontus XML Editor",
+              "desc": "Editor XML sencillo de código abierto, alternativa gratuita a los programas de pago. Características: validación, transformaciones XSL y generación de esquemas."
+            },
+            {
+              "kicker": "5.5.5",
+              "title": "Herramientas online",
+              "desc": "Alternativa a los programas de escritorio. Poseen muchas características de los programas de escritorio con la comodidad que ofrecen las herramientas online. Uno de los programas recomendados es XSL Test Online. Desventaja: para programación profesional pueden no ser ideales, ya que suelen tener menos prestaciones y carecen de depuradores, imprescindibles para archivos de gran envergadura."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "XSLT",
+      "def": "Extensible Stylesheet Language Transformations. Lenguaje que permite transformar documentos XML en otros formatos (HTML, XHTML, XML, texto). Combina un árbol de origen (XML) con una hoja de estilo (XSL) para producir un árbol de destino."
+    },
+    {
+      "term": "Hoja de estilo (XSL)",
+      "def": "Archivo con extensión .xsl que contiene las reglas y características de presentación a aplicar sobre un documento XML. Define color, fondo, fuente, márgenes, alineación, etc."
+    },
+    {
+      "term": "Árbol de origen",
+      "def": "El documento XML con los datos que actúa como entrada en el proceso de transformación XSLT."
+    },
+    {
+      "term": "Árbol de destino",
+      "def": "El documento de salida resultante de aplicar una transformación XSLT sobre el árbol de origen con la hoja de estilo."
+    },
+    {
+      "term": "XPath",
+      "def": "Lenguaje que permite seleccionar y navegar entre los distintos nodos de un documento XML. Se usa en los atributos select, match y test de las etiquetas XSLT."
+    },
+    {
+      "term": "xsl:template",
+      "def": "Etiqueta XSL que define una plantilla de transformación. El atributo match (con una expresión XPath) indica a qué elementos del XML se aplica la plantilla."
+    },
+    {
+      "term": "xsl:value-of",
+      "def": "Etiqueta XSL que extrae y muestra el valor textual del elemento XML referenciado en el atributo select. Su único uso es la selección de contenido."
+    },
+    {
+      "term": "xsl:for-each",
+      "def": "Etiqueta XSL que selecciona todos los elementos especificados en el atributo select y repite el bloque de transformación para cada uno de ellos (bucle iterativo)."
+    },
+    {
+      "term": "xsl:sort",
+      "def": "Etiqueta XSL que ordena los elementos del bucle xsl:for-each según el atributo select. Los números se ordenan de menor a mayor; los nombres se agrupan por campos repetidos."
+    },
+    {
+      "term": "xsl:if",
+      "def": "Etiqueta XSL para filtrado condicional. Usa el atributo test con una expresión XPath para aplicar la transformación solo a los nodos que cumplan la condición. Debe usarse dentro de xsl:for-each."
+    },
+    {
+      "term": "xsl:choose / xsl:when",
+      "def": "Etiquetas XSL para selección avanzada múltiple. xsl:when funciona como xsl:if pero permite múltiples ramas. xsl:otherwise captura todos los casos no cubiertos por ningún xsl:when."
+    },
+    {
+      "term": "Retrocompatibilidad",
+      "def": "Capacidad de una nueva versión de un lenguaje o software de funcionar correctamente con documentos y código creados para versiones anteriores. XSLT 2.0 es retrocompatible con XSLT 1.0."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "¿Cuál es el resultado de aplicar una transformación XSLT a un documento XML?",
+      "options": [
+        "Un árbol de destino en un formato como HTML o XHTML",
+        "Un fichero DTD con la estructura del documento original",
+        "Un archivo CSS con las reglas de presentación del documento"
+      ],
+      "correct": 0,
+      "explanation": "La transformación XSLT combina un árbol de origen (XML) con una hoja de estilo (XSL) para producir un árbol de destino. Los formatos posibles de salida son XML, XHTML o HTML, entre otros. CSS no es un resultado de XSLT sino una tecnología de presentación diferente."
+    },
+    {
+      "question": "¿En qué año surgió XSLT 2.0 y cuál fue una de sus novedades principales?",
+      "options": [
+        "En 2007; introdujo entre otras cosas la posibilidad de streaming de documentos",
+        "En 1999; introdujo XPath como lenguaje de selección de nodos",
+        "En 2021; introdujo las instrucciones xsl:evaluate y xsl:try"
+      ],
+      "correct": 0,
+      "explanation": "XSLT 1.0 surgió en 1999. XSLT 2.0 apareció en 2007 e introdujo numerosas mejoras, entre ellas la posibilidad de streaming de documentos (trabajar con el documento aún incompleto) mediante instrucciones como xsl:source-document, xsl:iterate, xsl:merge y xsl:fork."
+    },
+    {
+      "question": "¿Qué línea se añade al fichero XML para asociarlo a una hoja de estilo XSL?",
+      "options": [
+        "<?xml-stylesheet type=\"text/xsl\" href=\"archivo.xsl\"?>",
+        "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\">",
+        "<xsl:template match=\"/\">"
+      ],
+      "correct": 0,
+      "explanation": "La asociación del XSL al XML se realiza mediante la instrucción de procesamiento <?xml-stylesheet type=\"text/xsl\" href=\"archivo.xsl\"?>, que se escribe bajo la primera línea de declaración XML. Las otras dos líneas pertenecen al fichero XSL, no al XML."
+    },
+    {
+      "question": "¿Qué expresión XPath selecciona todos los elementos de un tipo en cualquier lugar del documento?",
+      "options": [
+        "/Objeto",
+        "//Objeto",
+        "/Objeto/*/Objeto2"
+      ],
+      "correct": 1,
+      "explanation": "La expresión //Objeto selecciona todos los elementos llamados \"Objeto\" del documento, independientemente de su posición en el árbol. /Objeto selecciona solo el elemento raíz con ese nombre, y /Objeto/*/Objeto2 selecciona Objeto2 que tiene como padre a Objeto."
+    },
+    {
+      "question": "¿Cuál es la función de la etiqueta <xsl:for-each>?",
+      "options": [
+        "Extrae el valor textual de un único elemento XML especificado",
+        "Ordena los nodos del documento según el atributo select",
+        "Selecciona todos los elementos especificados e itera sobre ellos"
+      ],
+      "correct": 2,
+      "explanation": "La etiqueta <xsl:for-each select=\"...\"> selecciona todos los elementos especificados en el conjunto de nodos y repite el bloque de transformación para cada uno. xsl:value-of extrae el valor de un único elemento y xsl:sort ordena el contenido."
+    },
+    {
+      "question": "¿Qué etiqueta XSLT permite realizar una selección condicional avanzada con múltiples ramas, similar a un switch?",
+      "options": [
+        "<xsl:sort>",
+        "<xsl:choose> junto con <xsl:when>",
+        "<xsl:if>"
+      ],
+      "correct": 1,
+      "explanation": "La etiqueta <xsl:choose> junto con <xsl:when test=\"...\"> permite seleccionar un conjunto de elementos con múltiples condiciones, funcionando como un switch. <xsl:otherwise> captura los casos no cubiertos por ningún <xsl:when>. <xsl:if> solo admite una condición y no tiene rama alternativa."
+    },
+    {
+      "question": "¿Qué procesador XSLT de Saxonica Limited ofrece una edición de código abierto y gratuita llamada Home Edition?",
+      "options": [
+        "Altova Editor XSLT",
+        "XPontus XML Editor",
+        "Saxon"
+      ],
+      "correct": 2,
+      "explanation": "Saxon, desarrollado por Saxonica Limited, ofrece tres ediciones: Home Edition (HE, código abierto y gratuito), Professional Edition (PE) y Enterprise Edition (EE). Altova es un editor de pago con evaluador XPath y XPontus es otro editor de código abierto pero distinto."
+    },
+    {
+      "question": "¿Cuál es la principal desventaja de las herramientas online para trabajar con XSLT frente a los programas de escritorio?",
+      "options": [
+        "No admiten el formato XSL, solo CSS",
+        "Suelen tener menos prestaciones y carecen de depuradores",
+        "Son de pago, a diferencia de los editores de escritorio que son gratuitos"
+      ],
+      "correct": 1,
+      "explanation": "Según el temario, la principal desventaja de las herramientas online es que para una programación profesional pueden no ser ideales, ya que suelen contar con menos prestaciones y, en especial, carecen de depuradores, que son imprescindibles para archivos de gran envergadura."
+    }
+  ],
+  "_sources": {
+    "s1": "U5 Conversión y adaptación de documentos XML.pdf §5.1, pág. 4 | U5 Conversion y adaptación de documentos XML.pdf (diapositivas) pág. 2",
+    "s2": "U5 Conversión y adaptación de documentos XML.pdf §5.1.1, pág. 5 | U5 Conversion y adaptación de documentos XML.pdf (diapositivas) pág. 3 | U5 Síntesis (7).pdf pág. 1",
+    "s3": "U5 Conversión y adaptación de documentos XML.pdf §5.2, pág. 6 | U5 Síntesis (7).pdf pág. 1",
+    "s4": "U5 Conversión y adaptación de documentos XML.pdf §5.3 introducción, pág. 6",
+    "s5": "U5 Conversión y adaptación de documentos XML.pdf §5.3.1, pág. 6 | U5 Conversion y adaptación de documentos XML.pdf (diapositivas) pág. 4",
+    "s6": "U5 Conversión y adaptación de documentos XML.pdf §5.3.2, pág. 7 | U5 Conversion y adaptación de documentos XML.pdf (diapositivas) pág. 4",
+    "s7": "U5 Conversión y adaptación de documentos XML.pdf §5.4 introducción, pág. 8",
+    "s8": "U5 Conversión y adaptación de documentos XML.pdf §5.4.1, pág. 8 | U5 Conversion y adaptación de documentos XML.pdf (diapositivas) pág. 5",
+    "s9": "U5 Conversión y adaptación de documentos XML.pdf §5.4.2, pág. 8 | U5 Conversion y adaptación de documentos XML.pdf (diapositivas) págs. 5-6",
+    "s10": "U5 Conversión y adaptación de documentos XML.pdf §5.4.3, pág. 8",
+    "s11": "U5 Conversión y adaptación de documentos XML.pdf §5.4.4, pág. 8 | U5 Conversion y adaptación de documentos XML.pdf (diapositivas) pág. 6",
+    "s12": "U5 Conversión y adaptación de documentos XML.pdf §5.4.5, pág. 9 | U5 Conversion y adaptación de documentos XML.pdf (diapositivas) pág. 6",
+    "s13": "U5 Conversión y adaptación de documentos XML.pdf §5.4.6, pág. 9 | U5 Conversion y adaptación de documentos XML.pdf (diapositivas) pág. 7",
+    "s14": "U5 Conversión y adaptación de documentos XML.pdf §5.5–5.5.5, págs. 10-11 | U5 Conversion y adaptación de documentos XML.pdf (diapositivas) pág. 8 | U5 Síntesis (7).pdf pág. 1"
+  }
+}

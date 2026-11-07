@@ -35,6 +35,7 @@ const UNITS = [
   { subject: 'lm',   unit: '2' },
   { subject: 'lm',   unit: '3' },
   { subject: 'lm',   unit: '4' },
+  { subject: 'lm',   unit: '5' },
   { subject: 'prog', unit: '0' },
   { subject: 'prog', unit: '1' },
   { subject: 'prog', unit: '2' },
