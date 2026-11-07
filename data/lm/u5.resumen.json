@@ -84,11 +84,13 @@
         {
           "type": "chips",
           "items": [
-            "XML — el propio formato de marcado extensible",
-            "XHTML — versión HTML adaptada a las reglas de XML",
-            "HTML — mediante <xsl:output method=\"html\"/> en la hoja de estilo",
-            "Texto plano — mediante <xsl:output method=\"text\"/>"
+            "XML",
+            "XHTML"
           ]
+        },
+        {
+          "type": "text",
+          "content": "En el ejemplo del temario (5.3.1), la transformación termina en un archivo con formato HTML."
         }
       ]
     },
@@ -247,11 +249,11 @@
         },
         {
           "type": "code",
-          "content": "<xsl:for-each select=\"especie/precio\">\n  <xsl:if test=\"precio&lt;1\">\n    <tr>\n      <td><xsl:value-of select=\"especie\"/></td>\n      <td><xsl:value-of select=\"precio\"/></td>\n    </tr>\n  </xsl:if>\n</xsl:for-each>"
+          "content": "<xsl:for-each select=\"especie/precio\">\n  <xsl:if test=\"precio<1\">\n    <tr>\n      <td><xs1:value-of select=\"especie\"/></td>\n      <td><xs1:value-of select=\"precio\"/></td>\n    </tr>\n  </xsl:if>\n</xsl:for-each>"
         },
         {
           "type": "text",
-          "content": "⚠ Ojo: en el temario (pág. 9) el código del ejemplo usa la sintaxis <xs1:value-of> (con el número 1 en lugar de la letra l), lo cual es un error tipográfico. La sintaxis correcta es <xsl:value-of>."
+          "content": "⚠ Ojo: el ejemplo del temario tiene dos errores. 1) Escribe <xs1:value-of> (con el número 1) en vez de <xsl:value-of>; así no es una instrucción XSLT. 2) Dentro de un atributo XML el carácter < no puede ir tal cual: debe escribirse test=\"precio &lt; 1\" (esto no lo dice el temario; es una regla de XML)."
         }
       ]
     },
@@ -266,7 +268,7 @@
         },
         {
           "type": "code",
-          "content": "<xsl:choose>\n  <xsl:when test=\"precio&gt;10\">\n    ...\n  </xsl:when>\n  <xsl:otherwise>\n    ...\n  </xsl:otherwise>\n</xsl:choose>"
+          "content": "<xsl:choose>\n  <xsl:when test=\"precio>10\">\n    …\n  </xsl:when>\n  <xsl:otherwise>\n    …\n  </xsl:otherwise>\n</xsl:choose>"
         },
         {
           "type": "text",
