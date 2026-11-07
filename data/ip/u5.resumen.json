@@ -1,0 +1,412 @@
+{
+  "subject": "ip",
+  "unit": 5,
+  "title": "What would you do if…?",
+  "intro": "En esta unidad estudiaremos estructuras gramaticales clave para comunicarnos con precisión en inglés. Aprenderemos la diferencia entre los adjetivos terminados en -ed (que expresan cómo nos sentimos) y los terminados en -ing (que describen la causa de ese sentimiento). Veremos cómo usar too y enough para indicar exceso o suficiencia, y cómo los demostrativos this, that, these y those señalan objetos o personas según su proximidad. Trabajaremos también las oraciones de relativo con who, which, that, whose, when y where, distinguiendo entre las defining y las non-defining. Por último, estudiaremos los cuatro tipos de oraciones condicionales y el past perfect simple, necesario para construir el tercer condicional. El vocabulario de la unidad se centra en la ciberseguridad y el cibercrimen.",
+  "objectives": [
+    "Distinguir y usar correctamente los adjetivos terminados en -ed y en -ing según expresen un sentimiento o su causa",
+    "Aplicar las estructuras too + adjective, too much, too many, enough + noun y adjective + enough para expresar exceso o suficiencia",
+    "Usar los demostrativos this, that, these y those atendiendo a la distancia (near/far) y al número (singular/plural)",
+    "Construir oraciones de relativo con who, which, that, whose, when y where, y diferenciar entre defining y non-defining relative clauses",
+    "Formar y usar los cuatro tipos de condicionales (0, 1, 2 y 3) según el grado de realidad o hipótesis de la situación",
+    "Identificar y usar el vocabulario de ciberseguridad: tipos de cibercrimen, tipos de malware y medidas de protección"
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "5.1. Adjectives ending in -ed and -ing",
+      "short": "Adj. -ed and -ing",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los adjetivos terminados en -ed y en -ing provienen del mismo verbo pero tienen significados distintos. Los adjetivos en -ed describen cómo se siente una persona (el estado interno). Los adjetivos en -ing describen qué causa ese sentimiento (una característica externa de algo o alguien).\n\nTIP del temario: usamos -ed cuando queremos decir ESTAR (to be = estar). Usamos -ing cuando queremos decir SER (to be = ser)."
+        },
+        {
+          "type": "table",
+          "headers": ["-ED (feeling — cómo se siente alguien)", "-ING (cause of feeling — qué lo causa)"],
+          "rows": [
+            ["Bored", "Boring"],
+            ["Excited", "Exciting"],
+            ["Confused", "Confusing"],
+            ["Annoyed", "Annoying"],
+            ["Surprised", "Surprising"],
+            ["Tired", "Tiring"],
+            ["Worried", "Worrying"],
+            ["Interested", "Interesting"],
+            ["Amazed", "Amazing"]
+          ]
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Adjetivos en -ed",
+              "kicker": "Sentimiento de la persona",
+              "desc": "Se usan para decir cómo se siente alguien. Equivalen al verbo ESTAR.",
+              "example": "I am bored. / She is worried about her son. / I'm excited to see the concert."
+            },
+            {
+              "title": "Adjetivos en -ing",
+              "kicker": "Causa del sentimiento",
+              "desc": "Se usan para describir algo externo que provoca un sentimiento en nosotros. Equivalen al verbo SER.",
+              "example": "The movie was boring. / Last night the concert was amazing. / That book is too interesting."
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Regla clave de uso (de las diapositivas)",
+              "content": "Usamos los adjetivos que acaban en -ed para describir cómo nos sentimos:\n  She is worried about her son.\n\nUsamos los adjetivos que acaban en -ing para expresar que algo externo a nosotros es la causa de lo que sentimos:\n  Last night the concert was amazing.\n\nTrucos para no confundirse:\n- Si el sujeto es una persona que siente → -ed (I am bored, she is tired).\n- Si el sujeto es una cosa o situación que provoca el sentimiento → -ing (the movie is boring, the work is tiring)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "5.2. Too vs. Enough",
+      "short": "Too vs. Enough",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Too y enough sirven para indicar si algo supera o alcanza la cantidad o el grado necesario. Too expresa exceso (más de lo necesario o un problema); enough expresa suficiencia (justo lo necesario, ni más ni menos)."
+        },
+        {
+          "type": "table",
+          "headers": ["Uso en español", "Estructura", "Ejemplo literal de las diapositivas"],
+          "rows": [
+            ["Nombres contables en plural (exceso)", "Too many + plural countable noun", "There were too many people at the concert."],
+            ["Suficiente o bastante (con sustantivo)", "Enough + noun", "There aren't enough chairs in the classroom."],
+            ["Es demasiado o un problema (con adjetivo)", "Too + adjective", "I'm too tired to do this now."],
+            ["Nombres incontables (exceso)", "Too much + uncountable noun", "Rich watches too much football."],
+            ["Suficiente o bastante (cualidad)", "Adjective + enough", "This coat is warm enough for winter."],
+            ["Suficiente cantidad de algo incontable", "Enough + uncountable noun", "I don't have enough money."]
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Too + adjective",
+              "content": "We use too + adjective to say that something is more than necessary or a problem.\n\nEjemplos de las diapositivas:\nI'm too tired to do this now.\nThis bag is too heavy. (It's heavier than I can carry)\nThe music is too loud. (It's louder than I like)"
+            },
+            {
+              "title": "Too much + uncountable noun",
+              "content": "We use too much + uncountable noun to express an excessive amount of something uncountable.\n\nEjemplos de las diapositivas:\nRich watches too much football. (Football = uncountable in this use)\nThere is too much sugar in the cake.\nShe spends too much time on her phone. (Time = uncountable noun)"
+            },
+            {
+              "title": "Too many + plural countable noun",
+              "content": "We use too many + plural countable noun to express an excessive quantity of countable things.\n\nEjemplos de las diapositivas:\nThere were too many people at the concert.\nThere are too many students in the classroom."
+            },
+            {
+              "title": "Enough + noun (countable y uncountable)",
+              "content": "We use enough + noun to say there is a sufficient amount. It works with both countable and uncountable nouns.\n\nCon sustantivo contable:\nThere aren't enough chairs in the classroom.\nThere aren't enough books in the classroom.\n\nCon sustantivo incontable:\nI don't have enough money.\nWe have enough time to finish."
+            },
+            {
+              "title": "Adjective + enough",
+              "content": "We use adjective + enough to say if something has the necessary amount of a quality. The adjective always comes BEFORE enough.\n\nEjemplos de las diapositivas:\nThis coat is warm enough for winter.\nThe house is big enough to live.\n\nOjo con el orden: big enough (correcto) — enough big (incorrecto)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "5.3. Demonstratives",
+      "short": "Demonstratives",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los demostrativos son palabras que usamos en inglés para señalar personas, cosas/objetos o lugares. En inglés utilizamos this, that, these, those para indicar lejanía o proximidad a personas, cosas o lugares en singular y plural."
+        },
+        {
+          "type": "table",
+          "headers": ["", "Near (próximo a nosotros)", "Far (lejos de nosotros)"],
+          "rows": [
+            ["Singular", "This", "That"],
+            ["Plural", "These", "Those"]
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Ejemplos con demostrativos (de las diapositivas)",
+              "content": "This book is interesting. (Near, singular)\nThat car is fast. (Far, singular)\nThese apples are fresh. (Near, plural)\nThose dogs are barking. (Far, plural)\n\nEjemplos adicionales de las diapositivas (práctica):\nThis is my brother. (Near: próximo a nosotros)\nI don't like those books. (Far: lejos de nosotros)\nAre these your shoes? (Near: próximo a nosotros)\nThat is not my bag. (Far: lejos de nosotros)"
+            },
+            {
+              "title": "Demostrativos solos (sin sustantivo)",
+              "content": "Se pueden usar solos cuando el contexto deja claro de qué se habla.\n\nThis is my favourite song.\nThat looks expensive!\nThese are my keys.\nThose were amazing holidays."
+            },
+            {
+              "title": "Demostrativos en preguntas",
+              "content": "Se usan para preguntar sobre cosas o personas.\n\nWhat is this? (Near, singular)\nWhat are those? (Far, plural)\nWho is that? (Far, singular)\nAre these yours? (Near, plural)"
+            }
+          ]
+        },
+        {
+          "type": "chips",
+          "items": [
+            "this — singular near (próximo)",
+            "that — singular far (lejos)",
+            "these — plural near (próximo)",
+            "those — plural far (lejos)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "5.4. Relative clauses sentences",
+      "short": "Relative clauses",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Una oración de relativo nos da información adicional sobre un nombre en una frase. Usamos los pronombres relativos who, which, that, whose, when y where para conectar ideas y ampliar información sobre personas, cosas, lugares o momentos. Los pronombres relativos hacen la función de unir dos oraciones; la segunda oración que va después del pronombre relativo se llama oración de relativo."
+        },
+        {
+          "type": "table",
+          "headers": ["Pronombre relativo", "Uso", "Ejemplo literal de las diapositivas"],
+          "rows": [
+            ["who", "Para personas", "The man who lives next door is kind."],
+            ["which", "Para cosas y animales", "This is the book which I like."],
+            ["that", "Para personas, cosas y animales", "The dog that I found is very cute."],
+            ["whose", "Para indicar posesión (personas y cosas)", "She is the girl whose father works in an NGO."],
+            ["when", "Para referirse a un tiempo concreto", "That was the year when I started learning English."],
+            ["where", "Para lugares", "This is the park where we play football."]
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "5.4.1 Defining relative clause",
+              "content": "Las defining relative clauses dan información necesaria y esencial para entender la frase. Si eliminamos la defining relative clause, la frase quedaría incompleta y no tendría sentido.\n\nEjemplo de las diapositivas:\nThis is the designer. She did the drawings.\n→ This is the designer who did the drawings.\n\nCaracterísticas:\n- Van inmediatamente después del nombre al que se refieren.\n- Se pueden usar who, which o that.\n- El pronombre relativo puede omitirse cuando es el objeto de la cláusula.\n\nMás ejemplos de las diapositivas (práctica):\nThe people who live there are very friendly.\nI stayed in a house that had a beautiful garden.\nOne day, we visited a castle which was built in the 12th century."
+            },
+            {
+              "title": "5.4.1 Non-defining relative clause",
+              "content": "Las non-defining relative clauses añaden información extra a la oración principal, pero esta información no es clave para entender el significado completo. Si eliminamos la cláusula, la frase queda aún completa.\n\nCaracterísticas:\n- Siempre aparecen entre comas.\n- No usan el pronombre 'that'.\n- El pronombre relativo no se puede omitir.\n\nEjemplo de las diapositivas:\nLisa is 65 years old. She is still working in the firm.\n→ Lisa, who is still working in the firm, is 65 years old.\n\nMás ejemplos de las diapositivas (práctica):\nMy neighbour, whose dog barked every morning, was very kind.\n\nEjemplos de uso de when y where:\nLast summer, I visited a village where my grandparents were born.\nI remember the day when we went hiking in the hills."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "5.5. Conditional Types 0, 1, 2, 3",
+      "short": "Conditionals 0–3",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las oraciones condicionales se usan para hablar de situaciones reales o hipotéticas y sus consecuencias. Existen cuatro tipos: el condicional cero para verdades generales, el primero para posibilidades reales en el futuro, el segundo para situaciones imaginarias o improbables, y el tercero para situaciones pasadas que no ocurrieron."
+        },
+        {
+          "type": "table",
+          "headers": ["Tipo", "Estructura", "Uso", "Ejemplo literal de las diapositivas"],
+          "rows": [
+            ["Zero Conditional (tipo 0)", "If + subject + present simple, present simple", "Hechos, leyes naturales y verdades genéricas", "If you heat water, it boils. / If we mix blue and yellow, we get green."],
+            ["First Conditional (tipo 1)", "If + subject + present simple, will + verb", "Situaciones reales y posibles en el futuro", "If it rains tomorrow, I will take an umbrella. / If she invites me, I will go to the party."],
+            ["Second Conditional (tipo 2)", "If + subject + past simple, would + verb", "Situaciones imaginarias, irreales o poco probables", "If we had more time, we would visit the museum. / If I were you, I would take that job."],
+            ["Third Conditional (tipo 3)", "If + past perfect simple, would have + past participle", "Situaciones pasadas que no llegaron a ocurrir y sus resultados imaginarios", "If I had arrived in time, I wouldn't have missed the flight. / If I had studied more, I would have passed the exam."]
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Zero Conditional — hechos y verdades genéricas",
+              "content": "Usamos el condicional Zero para expresar hechos, leyes naturales y verdades genéricas.\n\nStructure: If + subject + present simple, present simple\n\nEjemplos de las diapositivas:\nIf you heat water, it boils. (Fact)\nIf it rains, the ground gets wet. (General truth)\nIf we mix blue and yellow, we get green. (Fact)"
+            },
+            {
+              "title": "First Conditional — situaciones reales y posibles en el futuro",
+              "content": "Usamos el condicional 1 cuando nos encontramos en situaciones reales y/o posibles en el futuro.\n\nStructure: If + subject + present simple, will + verb\n\nEjemplos de las diapositivas:\nIf it rains tomorrow, I will take an umbrella.\nIf you study, you will pass the exam.\nIf she invites me, I will go to the party.\nIf he goes outside, he will get wet."
+            },
+            {
+              "title": "Second Conditional — situaciones imaginarias o improbables",
+              "content": "Usamos el condicional 2 para situaciones imaginarias, irreales o improbables de que sucedan.\n\nStructure: If + subject + past simple, would + verb\n\nEjemplos de las diapositivas:\nIf we had more time, we would visit the museum.\nIf I won the lottery, I would buy a big house. (But I probably won't win.)\nIf she had a car, she would drive to work. (But she doesn't have a car.)\nIf I were you, I would take that job.\n\nNota: en el segundo condicional, con el verbo 'to be' se puede usar 'were' para todas las personas (If I were you / If she were here). Esta forma es especialmente frecuente en la expresión 'If I were you...' para dar consejos."
+            },
+            {
+              "title": "5.5.1 Third Conditional and Past Perfect Simple",
+              "content": "Usamos el condicional 3 para hablar de situaciones en el pasado que no llegaron a ocurrir y sobre resultados imaginarios.\n\nPast Perfect Simple: had + past participle\n\nStructure: If + past perfect simple, would have + past participle\n\nEjemplos de las diapositivas:\nIf I had arrived in time, I wouldn't have missed the flight. (But I didn't arrive in time, so I missed it.)\nIf she had left earlier, she wouldn't have missed the train. (But she left late and missed it.)\nIf I had studied more, I would have passed the exam. (But I didn't study enough, so I failed.)\nIf I had studied harder, I would have passed the exam.\n\nEjemplo adicional del temario:\nIf I had had enough money, I would have repaired my car."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "Vocabulario — Unit 5",
+      "short": "Vocabulario — Unit 5",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El vocabulario de la unidad 5 gira en torno a la ciberseguridad y el cibercrimen. Se trabajan tres bloques principales: los tipos de cibercrimen, los tipos de software malicioso (malware) y las medidas de prevención y protección."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "5.1.1 Types of cybercrime",
+              "content": "Cybercrime is any illegal activity that happens on the internet or uses a computer. People who do cybercrime are called cybercriminals or hackers.\n\nHacking: entering a computer system or network without permission to steal, delete, or change important information.\nPhishing: sending fake emails or messages pretending to be from a real company to get passwords or credit card numbers.\nIdentity theft: using someone's personal information (name, bank account) without permission to steal money or commit crimes.\nOnline scams: tricks to get people to give money or information (e.g., a fake online shop).\nSpreading malware: distributing bad software (viruses, spyware) by email, downloads, or fake websites.\nCyberbullying: using the internet to hurt, threaten, or embarrass another person on social media or messaging apps.\nRansomware Attacks: a virus locks your files and asks for money (a ransom) to unlock them.\nData diddling: changing data in a computer, usually before or during entry, to steal money.\nSlander: writing false and damaging things about a person to hurt their reputation.\nCracking: breaking into computer systems or software to change or steal data.\nDoxing: publishing personal information about someone online without permission.\nHarvesting: collecting email addresses or other data without permission, usually to send spam.\nCybersquatting: registering a website domain name similar to a famous brand to sell it for money.\nSpamming: sending many unwanted emails, often with ads or scams.\nSoftware piracy / IPR violation: copying, sharing, or using software without a license.\nWiretapping: listening to or recording phone calls or online conversations without permission."
+            },
+            {
+              "title": "5.1.2 Malicious software (malware)",
+              "content": "Malicious software, commonly known as malware, is any type of software designed to intentionally perform harmful actions on a computer system, often without the user's knowledge.\n\nVirus: attaches itself to a file or program and spreads to other files; can delete data, slow down or stop your computer.\nWorm: spreads on its own through the internet or networks without attaching to a file; can quickly infect many devices.\nTrojan Horse (Trojan): looks like a normal file (game or app) but once opened it secretly harms your system or lets hackers in.\nSpyware: secretly collects information about what you do online, like websites visited or passwords.\nAdware: shows unwanted ads and can track your online activity.\nRansomware: locks your files and asks for money to unlock them.\nKeylogger: records what you type on your keyboard, including usernames and passwords."
+            },
+            {
+              "title": "5.1.3 Prevention and protection measures",
+              "content": "1. Use Strong Passwords: long, hard to guess; mix letters, numbers and symbols; never reuse them.\n2. Install Antivirus Software: protects from viruses, trojans, worms and other malware; keep it updated.\n3. Keep Software Updated: install the latest updates — they often fix security problems.\n4. Don't Click Suspicious Links or Attachments: don't open emails from unknown senders or suspicious links.\n5. Use a Firewall: helps block unauthorized access to your computer or network.\n6. Backup Your Data: save copies of important files on an external drive or cloud.\n7. Avoid Public Wi-Fi for Sensitive Actions: don't do online banking on public Wi-Fi unless using a VPN.\n8. Be Careful on Social Media: don't share too much personal information.\n9. Recognize Phishing: check the sender's email address; be careful with urgent messages asking for personal info.\n10. Use Two-Factor Authentication (2FA): adds an extra security layer — even if someone knows your password, they also need a code from your phone or email.\n11. Lock Your Devices: use a PIN, password or fingerprint.\n12. Don't Download from Unknown Sources: only download from trusted websites or official stores like Google Play or the Apple App Store.\n13. Log Out of Accounts: when using a shared or public computer, always log out.\n14. Check Website Security: check that the website starts with https:// and shows a padlock icon.\n15. Educate Yourself: stay informed about common scams and new threats."
+            }
+          ]
+        },
+        {
+          "type": "flipcards",
+          "items": [
+            {"term": "Cybercrime", "def": "Any illegal activity that happens on the internet or uses a computer."},
+            {"term": "Hacking", "def": "Entering a computer system or network without permission to steal, delete, or change important information."},
+            {"term": "Phishing", "def": "Sending fake emails or messages pretending to be from a real company to steal passwords or credit card numbers."},
+            {"term": "Identity theft", "def": "Using someone's personal information (name, bank account) without permission to steal money or commit crimes."},
+            {"term": "Ransomware", "def": "A type of malware that locks your files and asks for money (a ransom) to unlock them."},
+            {"term": "Malware", "def": "Software designed to intentionally perform harmful actions on a computer system, often without the user's knowledge."},
+            {"term": "Virus", "def": "Malware that attaches itself to a file or program and spreads to other files; can delete data or slow down your computer."},
+            {"term": "Worm", "def": "Malware that spreads on its own through the internet or networks without attaching to a file."},
+            {"term": "Trojan Horse (Trojan)", "def": "Malware that looks like a normal file or app but secretly harms your system or lets hackers in once opened."},
+            {"term": "Spyware", "def": "Malware that secretly collects information about what you do online, like websites visited or passwords."},
+            {"term": "Keylogger", "def": "Software that records what you type on your keyboard, including usernames and passwords."},
+            {"term": "Firewall", "def": "A tool that helps block unauthorized access to your computer or network."},
+            {"term": "Two-Factor Authentication (2FA)", "def": "An extra security layer: even if someone knows your password, they also need a code from your phone or email."},
+            {"term": "Doxing", "def": "Publishing personal information about someone online without their permission, like their address or phone number."},
+            {"term": "Cybersquatting", "def": "Registering a website domain name similar to a famous brand or company name in order to sell it for money."},
+            {"term": "Harvesting", "def": "Collecting email addresses or other data without permission, usually to send spam or sell the information."},
+            {"term": "Cracking", "def": "Breaking into computer systems or software to change or steal data."},
+            {"term": "Software piracy", "def": "Copying, sharing, or using software without a license."},
+            {"term": "Adware", "def": "Malware that shows you unwanted ads and may also track your online activity."},
+            {"term": "VPN (Virtual Private Network)", "def": "A tool that encrypts your internet connection, allowing safe use of public Wi-Fi for sensitive actions."}
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {"term": "Adjective -ed", "def": "Adjetivo derivado de un verbo que describe cómo se siente una persona (estado interno). Equivale al verbo ESTAR. Ej.: bored, excited, worried."},
+    {"term": "Adjective -ing", "def": "Adjetivo derivado de un verbo que describe la causa de un sentimiento (característica externa). Equivale al verbo SER. Ej.: boring, exciting, amazing."},
+    {"term": "Too + adjective", "def": "Estructura para indicar que algo supera el nivel necesario o es un problema. Ej.: I'm too tired to do this now."},
+    {"term": "Too much", "def": "Exceso de algo incontable. Ej.: Rich watches too much football."},
+    {"term": "Too many", "def": "Exceso de algo contable en plural. Ej.: There were too many people at the concert."},
+    {"term": "Enough", "def": "Palabra que indica cantidad suficiente. Va antes del sustantivo (enough time / enough money) o después del adjetivo (warm enough). Ej.: I don't have enough money. / This coat is warm enough for winter."},
+    {"term": "Demonstratives", "def": "Palabras que señalan personas, cosas o lugares según su proximidad y número: this (singular near/próximo), that (singular far/lejos), these (plural near/próximo), those (plural far/lejos)."},
+    {"term": "Relative clause", "def": "Oración subordinada que aporta información adicional sobre un sustantivo. Se introduce con who, which, that, whose, when o where."},
+    {"term": "Defining relative clause", "def": "Oración de relativo que aporta información esencial para entender la frase. Sin ella, la frase queda incompleta. No va entre comas. Ej.: This is the designer who did the drawings."},
+    {"term": "Non-defining relative clause", "def": "Oración de relativo que añade información extra pero no esencial. Va siempre entre comas, no usa 'that' y el pronombre no puede omitirse. Ej.: Lisa, who is still working in the firm, is 65 years old."},
+    {"term": "Zero Conditional", "def": "Condicional tipo 0: If + present simple, present simple. Expresa hechos y verdades genéricas. Ej.: If we mix blue and yellow, we get green."},
+    {"term": "First Conditional", "def": "Condicional tipo 1: If + present simple, will + verb. Situaciones reales y posibles en el futuro. Ej.: If it rains tomorrow, I will take an umbrella."},
+    {"term": "Second Conditional", "def": "Condicional tipo 2: If + past simple, would + verb. Describe situaciones imaginarias o poco probables. Ej.: If we had more time, we would visit the museum."},
+    {"term": "Third Conditional", "def": "Condicional tipo 3: If + past perfect simple, would have + past participle. Habla de situaciones pasadas que no ocurrieron. Ej.: If I had arrived in time, I wouldn't have missed the flight."},
+    {"term": "Past Perfect Simple", "def": "Tiempo verbal formado con had + past participle. Necesario para construir el tercer condicional. Expresa una acción completada antes de otro momento en el pasado."},
+    {"term": "Malware", "def": "Software malicioso diseñado para dañar un sistema informático, robar datos o extorsionar al usuario. Incluye virus, worms, trojans, spyware, ransomware y keyloggers."},
+    {"term": "Phishing", "def": "Tipo de cibercrimen que consiste en enviar correos o mensajes falsos suplantando a una empresa real para robar contraseñas o datos bancarios."},
+    {"term": "Firewall", "def": "Herramienta de seguridad que bloquea accesos no autorizados a un ordenador o red."}
+  ],
+  "quiz": [
+    {
+      "question": "¿Cuál de las siguientes frases usa correctamente un adjetivo en -ed?",
+      "options": [
+        "I am bored. (I feel bored.)",
+        "The movie was bored.",
+        "The book is interesting me."
+      ],
+      "correct": 0,
+      "explanation": "Según el temario y las diapositivas, los adjetivos en -ed describen cómo se siente una persona: 'I am bored' significa que la persona se siente aburrida. 'The movie was bored' es incorrecto porque una película no siente; debería ser 'boring'. La tercera opción tiene estructura incorrecta."
+    },
+    {
+      "question": "¿Qué estructura se usa para expresar que hay una cantidad excesiva de un sustantivo contable en plural?",
+      "options": [
+        "Too much + uncountable noun",
+        "Too many + plural countable noun",
+        "Adjective + enough"
+      ],
+      "correct": 1,
+      "explanation": "Las diapositivas establecen que 'too many + plural countable noun' expresa una cantidad excesiva de algo contable y plural. Ejemplo: 'There were too many people at the concert.' 'Too much' se usa con sustantivos incontables; 'adjective + enough' expresa suficiencia, no exceso."
+    },
+    {
+      "question": "Which demonstrative is used for a singular object that is far from the speaker?",
+      "options": [
+        "This",
+        "These",
+        "That"
+      ],
+      "correct": 2,
+      "explanation": "Las diapositivas indican que 'that' se usa para un objeto singular que está lejos del hablante (Far, singular). 'This' es singular pero cercano (near); 'these' es plural y cercano. Ejemplo: 'That car is fast. (Far, singular)' / 'That is not my bag. (Far)'."
+    },
+    {
+      "question": "¿Qué pronombre relativo se usa para indicar posesión, tanto de personas como de cosas?",
+      "options": [
+        "whose",
+        "which",
+        "where"
+      ],
+      "correct": 0,
+      "explanation": "Las diapositivas establecen que 'whose' se usa para personas y cosas indicando posesión. Ejemplo: 'She is the girl whose father works in an NGO.' / 'My neighbour, whose dog barked every morning, was very kind.' 'Which' se usa para cosas y animales; 'where' se usa para lugares."
+    },
+    {
+      "question": "¿Cuál es la estructura correcta del segundo condicional?",
+      "options": [
+        "If + present simple, will + verb",
+        "If + past simple, would + verb",
+        "If + past perfect simple, would have + past participle"
+      ],
+      "correct": 1,
+      "explanation": "Las diapositivas definen el segundo condicional con 'If + past simple, would + verb' para situaciones imaginarias, irreales o improbables. Ejemplos: 'If we had more time, we would visit the museum.' / 'If I were you, I would take that job.' La primera estructura corresponde al primer condicional; la tercera al tercer condicional."
+    },
+    {
+      "question": "¿Cuál es la diferencia principal entre una defining y una non-defining relative clause?",
+      "options": [
+        "La non-defining usa siempre el pronombre 'that' y va entre comas",
+        "La defining da información esencial sin la cual la frase no tiene sentido completo; la non-defining da información extra y va entre comas",
+        "La defining va entre comas y la non-defining no"
+      ],
+      "correct": 1,
+      "explanation": "Las diapositivas explican que la defining relative clause aporta información necesaria y esencial: si se elimina, la frase queda incompleta. La non-defining añade información extra, siempre va entre comas, no usa 'that' y el pronombre no puede omitirse. Ejemplo de non-defining: 'Lisa, who is still working in the firm, is 65 years old.'"
+    },
+    {
+      "question": "According to the vocabulary PDF, what does a keylogger do?",
+      "options": [
+        "It locks your files and asks for money to unlock them.",
+        "It spreads on its own through networks without attaching to any file.",
+        "It records what you type on your keyboard, including usernames and passwords."
+      ],
+      "correct": 2,
+      "explanation": "El PDF de vocabulario define el keylogger como el software que registra todo lo que se escribe en el teclado, incluyendo nombres de usuario y contraseñas. El primer comportamiento corresponde al ransomware; el segundo al worm."
+    },
+    {
+      "question": "¿Qué condicional se usa para hablar de situaciones pasadas que no ocurrieron y sus resultados imaginarios?",
+      "options": [
+        "El condicional cero, con If + present simple, present simple",
+        "El segundo condicional, con If + past simple, would + verb",
+        "El tercer condicional, con If + past perfect simple, would have + past participle"
+      ],
+      "correct": 2,
+      "explanation": "Las diapositivas definen el tercer condicional para hablar de situaciones en el pasado que no llegaron a ocurrir y sobre resultados imaginarios. Ejemplo: 'If I had arrived in time, I wouldn't have missed the flight.' Para construirlo se necesita el past perfect simple (had + past participle)."
+    },
+    {
+      "question": "¿Cuál de estas medidas añade una capa extra de seguridad exigiendo un código adicional aunque el atacante ya conozca la contraseña?",
+      "options": [
+        "Instalar un antivirus",
+        "Usar Two-Factor Authentication (2FA)",
+        "Usar un firewall"
+      ],
+      "correct": 1,
+      "explanation": "El PDF de vocabulario explica que la autenticación de dos factores (2FA) añade una capa extra de seguridad: aunque alguien conozca la contraseña, también necesita un código enviado al teléfono o correo del usuario. El antivirus protege contra malware; el firewall bloquea accesos no autorizados a la red."
+    }
+  ],
+  "_sources": {
+    "s1": "U5 What would you do if.pdf — sección 5.1, página 4; Summary U5 What would you do if.pdf — sección 1, página 1; Adjectives ending in -ed -ing.pdf — pp. 3–4",
+    "s2": "U5 What would you do if.pdf — sección 5.2, página 5; Summary U5 What would you do if.pdf — sección 2, páginas 1; Too vs. enough.pdf — pp. 3–5",
+    "s3": "U5 What would you do if.pdf — sección 5.3, página 6; Summary U5 What would you do if.pdf — sección 3, páginas 1–2; Demonstratives.pdf — pp. 3–5",
+    "s4": "U5 What would you do if.pdf — sección 5.4–5.4.1, página 7; Summary U5 What would you do if.pdf — sección 4–4.1, página 2; Relative clauses sentences.pdf — pp. 3–8",
+    "s5": "U5 What would you do if.pdf — secciones 5.5–5.5.1, páginas 8–9; Summary U5 What would you do if.pdf — sección 5–5.4, páginas 2–3; Conditional types 0, 1, 2 3.pdf — pp. 3–8",
+    "s6": "U5 What would you do if... (Vocabulario).pdf — secciones 5.1.1–5.1.3, páginas 3–8"
+  }
+}
