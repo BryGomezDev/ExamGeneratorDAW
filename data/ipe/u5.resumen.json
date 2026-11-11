@@ -268,7 +268,7 @@
             ],
             [
               "B. Programación",
-              "Establecer un plan de actuación sobre la previsión realizada, para que el personal esté ajustado tanto cuantitativa como cualitativamente a los objetivos planteados. El plan incluirá: prioridades, temporalización, asignación de presupuestos y responsabilidades. Es una tarea conjunta de todos los responsables de las diversas áreas de la organización, dado que son los que saben exactamente qué necesitan y cuándo."
+              "Establecer un plan de actuación sobre la previsión realizada, para que el personal esté ajustado tanto cuantitativa como cualitativamente a los objetivos planteados. El plan incluirá: prioridades, temporalización, asignación de presupuestos y responsabilidades. Es una tarea conjunta de todos los responsables de las diversas áreas de la organización, dado que son los que saben exactamente qué necesitan y cuándo. Deben transmitirlo al director de RRHH."
             ],
             [
               "C. Ejecución",
@@ -362,7 +362,7 @@
             },
             {
               "title": "Ficha de descripción del puesto de trabajo",
-              "content": "Este documento contendrá las características, funciones y responsabilidades del puesto. En general, suele contener:\n• Formación requerida.\n• Experiencia mínima.\n• Departamento al que pertenece el puesto.\n• Lugar dentro del organigrama.\n• Funciones, tareas y responsabilidades.\n• Localización del lugar de trabajo.\n• Jornada laboral.\n• Sueldo, pluses e incentivos.\n• Riesgos laborales.\n• Disponibilidad para viajes, traslados y similares.\n• Categoría profesional y convenio colectivo."
+              "content": "Este documento contendrá las características, funciones y responsabilidades del puesto. Cada empresa incluirá los datos que considere necesarios, pero en general, suele contener:\n• Formación requerida.\n• Experiencia mínima.\n• Departamento al que pertenece el puesto.\n• Lugar dentro del organigrama.\n• Funciones, tareas y responsabilidades.\n• Localización del lugar de trabajo.\n• Jornada laboral.\n• Sueldo, pluses e incentivos.\n• Riesgos laborales.\n• Disponibilidad para viajes, traslados y similares.\n• Categoría profesional y convenio colectivo."
             },
             {
               "title": "Objetivos del análisis de los puestos de trabajo",
@@ -443,7 +443,7 @@
     },
     {
       "term": "Outsourcing",
-      "def": "Externalización de tareas que son encomendadas a terceros. En el contexto de los RRHH, consiste en externalizar las funciones del departamento a empresas especializadas."
+      "def": "Externalización de tareas que son encomendadas a terceros. También se puede optar por externalizar las funciones de RRHH."
     },
     {
       "term": "Modelos tradicionales",
@@ -525,7 +525,7 @@
         "Outsourcing"
       ],
       "correct": 3,
-      "explanation": "Las externalizaciones de tareas que son encomendadas a terceros tienen el nombre de outsourcing. En pymes, cuando no existe departamento de RRHH, puede optarse por externalizar sus funciones mediante outsourcing."
+      "explanation": "Las externalizaciones de tareas que son encomendadas a terceros tienen el nombre de outsourcing. En las pymes puede que el departamento de RRHH no exista como tal y esté asumido por algún directivo o por el propietario; también se puede optar por externalizar las funciones de RRHH."
     },
     {
       "question": "En los modelos actuales de gestión de RRHH, ¿qué se tiene en cuenta además de los resultados inmediatos?",
