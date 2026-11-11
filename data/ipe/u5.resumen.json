@@ -1,0 +1,605 @@
+{
+  "subject": "ipe",
+  "unit": 5,
+  "title": "Los RRHH en la empresa",
+  "intro": "El departamento de Recursos Humanos es el encargado de la gestión de las personas que componen una organización. Esta gestión incluye desde el reclutamiento hasta la formación, pasando por la tramitación de las nóminas y los despidos. Dada la relevancia que esta área tiene en la empresa, es de gran importancia conocer los distintos enfoques que se pueden adoptar para regir su funcionamiento, prestando atención a la diferencia entre la organización formal y la informal y procurando que no se produzcan contradicciones con el modelo de gestión adoptado por empresa.",
+  "objectives": [
+    "Conocer la importancia de los recursos humanos en cualquier organización",
+    "Distinguir las estructuras organizativas que se dan dentro de una empresa",
+    "Profundizar en los modelos de gestión de personal existentes",
+    "Saber realizar el análisis de las necesidades de personal de la empresa"
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "5.1. Los recursos humanos en la empresa. Organización formal e informal",
+      "short": "5.1. Org. formal/informal",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los recursos humanos (RRHH) son los empleados de la empresa, el personal que ejerce su labor profesional en ella. Se constituyen como un factor primordial de toda organización, con influencia directa en los resultados y el éxito empresarial. Las empresas se componen de cuatro elementos fundamentales:"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Elementos materiales",
+            "Elementos intangibles",
+            "Capital social",
+            "Personal"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Los RRHH se conciben desde tres enfoques:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Enfoque administrativo-legal",
+              "content": "Gestiones necesarias para su utilización, como son la firma de contratos, el alta en la Seguridad Social, las retenciones del IRPF, etc."
+            },
+            {
+              "title": "Enfoque contable-costes",
+              "content": "Gastos que las personas suponen para la organización, como los salarios y las cotizaciones."
+            },
+            {
+              "title": "Enfoque de gestión",
+              "content": "Actividades necesarias para dirigir y aprovechar a los trabajadores (motivación, coordinación, formación...). Es el enfoque que más tiene que ver con la satisfacción y la productividad de los empleados."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "En la toma de decisiones empresariales, hay cuestiones relacionadas con los RRHH que tienen una relevancia destacada:"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "La cantidad de trabajadores que la empresa necesita",
+            "Las cualificaciones y competencias necesarias en los puestos de trabajo",
+            "La organización departamental",
+            "Las funciones y responsabilidades vinculadas al puesto",
+            "Las fórmulas de motivación, formación y promoción"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Una empresa contiene dos tipos de organizaciones en su interior:"
+        },
+        {
+          "type": "table",
+          "headers": ["Tipo", "Definición", "Ventajas", "Inconvenientes"],
+          "rows": [
+            [
+              "Formal",
+              "Estructura que definen los directivos para desarrollar la actividad de la empresa. Se refleja en el organigrama, una representación gráfica en la que se presentan los puestos de trabajo, las personas, las relaciones jerárquicas y las funciones.",
+              "Los empleados tienen clara su posición en la empresa, quiénes son sus superiores y cómo se dirige su desempeño.",
+              "Es rígida y poco flexible, no hay rotación en los puestos, el trabajo es rutinario y las personas pueden desmotivarse."
+            ],
+            [
+              "Informal",
+              "Se constituye a través de las relaciones personales que surgen de forma natural entre los trabajadores. Puede aparecer dentro o fuera de la empresa, pero los directivos no tienen ningún tipo de control sobre estas relaciones, porque son independientes de la organización empresarial.",
+              "Las relaciones entre empleados son positivas y el buen ambiente de trabajo mejora la productividad y la satisfacción.",
+              "Es incontrolable y puede haber problemas entre compañeros que afecten a la actividad de la empresa."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "5.2. El departamento de Recursos Humanos y funciones del departamento de RRHH",
+      "short": "5.2. Depto. de RRHH",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El departamento de RRHH se encarga de los asuntos relacionados con los trabajadores de la empresa. En las pymes puede que no exista como tal y esté asumido por algún directivo o por el propietario. También se puede optar por externalizar las funciones de RRHH. Dichas externalizaciones de tareas que son encomendadas a terceros tienen el nombre de outsourcing."
+        },
+        {
+          "type": "text",
+          "content": "Teniendo en cuenta que las personas son el mayor recurso de la empresa, quien gestione todo ese capital humano se convierte en primordial para la organización. Por tanto, al responsable de RRHH se le presuponen varias habilidades:"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Conocer internamente a la organización (principios, organización, gestión, misión, etc.)",
+            "Tener motivación y ser capaz de transmitirla al equipo",
+            "Comunicar efectivamente",
+            "Ser resolutivo y determinado en la toma de decisiones",
+            "Estar formado y actualizado",
+            "Poseer habilidades de negociación y resolución de problemas y conflictos",
+            "Tener capacidad para tratar con personas diversas"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "En la actualidad, las principales funciones que asume un departamento de RRHH son las siguientes:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Función de empleo",
+              "content": "Procura que la empresa esté en todo momento provista de personal, en sentido tanto cuantitativo como cualitativo, de manera que pueda llevar a cabo el desarrollo de los procesos productivos de manera óptima. Las tareas más habituales son la planificación de plantillas, la descripción de puestos de trabajo, el estudio del mercado laboral, la búsqueda de fuentes de reclutamiento, la selección de personal, la creación de planes de acogida para nuevos empleados y los estudios para reducir plantilla."
+            },
+            {
+              "title": "Función de administración del personal",
+              "content": "Se centra en la gestión burocrática de toda la documentación que generan los empleados, desde el comienzo de la relación laboral hasta el cese del contrato (redactar, firmar y registrar los contratos, entregar y hacer firmar las nóminas, solicitud y justificante de ausencias y vacaciones, informes de las jornadas laborales, documentación de las bajas, etc.)."
+            },
+            {
+              "title": "Función de retribución o contraprestación de servicios",
+              "content": "Calcula las nóminas y realiza el pago a los trabajadores. La retribución salarial deberá ser equitativa a nivel interno, competitiva a nivel externo y satisfactoria para el empleado."
+            },
+            {
+              "title": "Función de desarrollo y servicios sociales",
+              "content": "Su finalidad es la proyección y el progreso de los trabajadores dentro de la empresa, para que sean más productivos, mejoren su desempeño en el puesto y alcancen una mayor satisfacción, consiguiendo cargos con más responsabilidad. Las tareas más habituales son la creación de planes de motivación, la mejora del clima laboral, la formación, el establecimiento de planes de carrera y la evaluación del desempeño."
+            },
+            {
+              "title": "Función de relaciones laborales",
+              "content": "Persigue el establecimiento de relaciones laborales sanas y legales con los empleados y la resolución de conflictos individuales y colectivos (gestión de quejas, negociación de convenios, prevención de riesgos laborales, etc.)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "5.3. Modelos de gestión",
+      "short": "5.3. Modelos de gestión",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Una buena gestión de los RRHH es clave para la competitividad de la organización y su rápida adaptación a los cambios. El mejor punto de partida es mantener a los trabajadores motivados, comprometidos y en línea con los objetivos de la empresa, de manera que se conviertan en una auténtica ventaja competitiva, capaz de ser fuente de ingresos. La evolución de los modelos en la gestión de RRHH ha dado lugar a dos grandes categorías:"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Modelos tradicionales",
+              "desc": "Las personas son vistas como un instrumento para conseguir resultados y solo son eficientes si son rentables para la empresa. Cuando el negocio no va bien, el recorte de personal se convierte en la primera opción. No se considera el aspecto humano y solo se miden los resultados a corto plazo, por lo que los sentimientos y las motivaciones de los empleados no se tienen en cuenta (solo se valora la capacidad para ejecutar el trabajo en el menor tiempo y al menor coste). En este tipo de modelos no se retiene el talento."
+            },
+            {
+              "title": "Modelos actuales",
+              "desc": "Están centrados en las personas. Se busca que compartan los principios de la organización y se sientan orgullosas de formar parte del equipo. No solo se miran los resultados inmediatos, sino también las competencias, las motivaciones y las aspiraciones, para conseguir que los empleados se sientan realizados en su trabajo. Además, se utilizan técnicas para retener y fidelizar al talento humano. Cuando los empleados luchan por objetivos comunes y reconocen y valoran la empresa, la rentabilidad crece."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Los objetivos de un modelo de gestión de RRHH son:"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Atraer el talento. Facilitar la permanencia. Formar a los empleados para mejorar los perfiles profesionales y adaptarlos a los cambios.",
+            "Dar los medios necesarios para que el personal lleve a cabo sus tareas. Fidelizar a los empleados facilitando su trabajo diario.",
+            "Buscar un equilibrio entre las ambiciones personales y profesionales de los trabajadores y los objetivos empresariales."
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Modelo de gestión por competencias: en este modelo, que se sitúa dentro de los modelos actuales, las competencias están por encima de otros elementos, como son los títulos académicos o las experiencias previas. Los puestos de trabajo se estructuran según las competencias necesarias para desarrollarlos (trabajo en equipo, comunicación en varios idiomas, competencias digitales, creatividad…)."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "5.4. Grupos profesionales",
+      "short": "5.4. Grupos profesionales",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Todas las empresas tienen diferentes puestos de trabajo, con una forma determinada de acceso, funciones propias y retribución asignada. Un grupo profesional sería la forma de clasificación profesional que organiza el acceso a los distintos puestos de trabajo. Según el artículo 22 del Estatuto de los Trabajadores, se define por las características del trabajador, la titulación que posee y las aptitudes."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Artículo 22. Sistema de clasificación profesional",
+              "content": "Mediante la negociación colectiva o, en su defecto, tras acuerdo entre la empresa y los representantes de los trabajadores, se establecerá el sistema de clasificación profesional de los trabajadores por medio de grupos profesionales. Se entenderá por grupo profesional el que agrupe unitariamente las aptitudes profesionales, titulaciones y contenido general de la prestación, aunque podrá incluir distintas tareas, funciones, especialidades profesionales o responsabilidades asignadas.\n\nPor acuerdo entre trabajador y empresario, se asignará al trabajador un grupo profesional. Cuando se acuerde la realización de funciones propias de más de un grupo, la equiparación se realizará en virtud de las funciones que se desempeñen durante mayor tiempo."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Las categorías o grupos profesionales vendrán establecidas en el convenio colectivo específico del puesto al que se quiera acceder. Cabe señalar que, si se habla de grupos profesionales, se recurre a la legislación laboral, pero al hablar de grupo de cotización hay que acudir a lo establecido por la Seguridad Social para cada categoría profesional."
+        },
+        {
+          "type": "table",
+          "headers": ["Grupo de cotización", "Categorías profesionales"],
+          "rows": [
+            ["1", "Ingenieros y Licenciados. Personal de alta dirección no incluido en el artículo 1.3.c) del Estatuto de los Trabajadores."],
+            ["2", "Ingenieros Técnicos, Peritos y Ayudantes Titulados."],
+            ["3", "Jefes Administrativos y de Taller."],
+            ["4", "Ayudantes no Titulados."],
+            ["5", "Oficiales Administrativos."],
+            ["6", "Subalternos."],
+            ["7", "Auxiliares Administrativos."],
+            ["8", "Oficiales de primera y segunda."],
+            ["9", "Oficiales de tercera y Especialistas."],
+            ["10", "Peones."],
+            ["11", "Trabajadores menores de dieciocho años, cualquiera que sea su categoría profesional."]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "5.5. Necesidades de personal",
+      "short": "5.5. Nec. de personal",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Seleccionar adecuadamente al personal es decisivo para un proyecto empresarial. El proceso necesario para ello se considera una inversión y no un gasto, ya que una correcta elección favorecerá la productividad del negocio y su rentabilidad."
+        },
+        {
+          "type": "text",
+          "content": "5.5.1. Planificación de los recursos humanos\n\nLa planificación para establecer el personal de la organización se realiza en dos direcciones:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Dos direcciones de planificación",
+              "content": "• Aumento del personal: seleccionar y contratar.\n• Reducción de personal: despedir y prejubilar.\n\nSe trata de una previsión que no siempre terminará ajustándose a la realidad."
+            },
+            {
+              "title": "Desviaciones en la planificación",
+              "content": "Las desviaciones pueden deberse a dos motivos:\n• Ordinarios: bajas, absentismo, vacaciones, etc.\n• Extraordinarios: abrir una sucursal, cierre de parte de la empresa, traslado de una instalación, fusión de empresas, etc."
+            },
+            {
+              "title": "Objetivos de la planificación del personal",
+              "content": "• Logísticos: a corto plazo, para tener el número adecuado de personas, con la cualificación ajustada al puesto.\n• Estratégicos: a largo plazo, para prever los cambios de la propia empresa o en el entorno que puedan afectar a las necesidades de personal."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "5.5.2. Fases del proceso de planificación del personal"
+        },
+        {
+          "type": "table",
+          "headers": ["Fase", "Descripción"],
+          "rows": [
+            [
+              "A. Establecimiento del escenario futuro",
+              "Se realiza un análisis del entorno económico y laboral en el que la empresa se mueve, con una previsión a corto, medio y largo plazo que contemple tres escenarios: un escenario optimista, un escenario pesimista y un escenario intermedio. También se calcula el índice de sustitución y rotación del personal que se espera."
+            ],
+            [
+              "B. Programación",
+              "Establecer un plan de actuación sobre la previsión realizada, para que el personal esté ajustado tanto cuantitativa como cualitativamente a los objetivos planteados. El plan incluirá: prioridades, temporalización, asignación de presupuestos y responsabilidades. Es una tarea conjunta de todos los responsables de las diversas áreas de la organización, dado que son los que saben exactamente qué necesitan y cuándo."
+            ],
+            [
+              "C. Ejecución",
+              "El plan de actuación se pone en marcha, siguiendo los plazos establecidos y bajo tres principios: flexibilidad (dejar un margen para adaptarse a las circunstancias que surjan de manera imprevista), exactitud (lo ejecutado se parecerá lo máximo posible a lo planificado) y economía (los costes de la ejecución serán menores que los beneficios que se espera conseguir)."
+            ],
+            [
+              "D. Control",
+              "Revisión periódica de las diferentes partes del plan para conseguir retroalimentación y tomar medidas correctoras, si fuera necesario."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "5.5.3. La evaluación de los recursos humanos\n\nEvaluar al personal permite realizar una planificación mucho más precisa de las necesidades de la empresa. Conocer ciertos aspectos puede hacer más fácil el trabajo del departamento de RRHH:"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "La cantidad de personal necesaria en cada momento",
+            "Si son personas cualificadas",
+            "Si existe la posibilidad de promocionar a alguna persona en particular",
+            "Si es necesario contratar personal externo",
+            "Si es necesario aumentar el salario de alguna persona",
+            "Si es necesario que se forme a algún empleado"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Por otro lado, evaluar el desempeño en el puesto de trabajo también es muy útil para empresa y empleado, ya que se puede observar el rendimiento y su evolución, valorando las posibilidades de crecimiento que puede tener en el futuro."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "5.5.4–5.5.7. Análisis del puesto de trabajo",
+      "short": "5.5.4. Análisis puestos",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "5.5.4. Análisis de los puestos de trabajo\n\nLa calidad del personal está estrechamente vinculada con la contratación de empleados preparados para cubrir los puestos de trabajo. Cuando hay una elección correcta del empleado, se adquiere una persona motivada, satisfecha e implicada con la organización. Todo esto va a depender de que el análisis del puesto de trabajo se haya hecho de manera correcta con anterioridad. Se requiere la identificación de las particularidades del puesto:"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Funciones",
+            "Responsabilidades",
+            "Localización del trabajo",
+            "Equipo que necesita",
+            "Riesgos del puesto",
+            "Condiciones salariales",
+            "Lugar en el organigrama empresarial",
+            "Personal de quien depende",
+            "Personal que tiene a cargo, si lo hubiera"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Relación entre motivación y adecuación al puesto:"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Empleado",
+              "title": "Cualificaciones profesionales y personales"
+            },
+            {
+              "kicker": "Organización",
+              "title": "Requisitos de los puestos de trabajo"
+            },
+            {
+              "kicker": "Sí coinciden →",
+              "title": "Motivación · Satisfacción · Compromiso"
+            },
+            {
+              "kicker": "No coinciden →",
+              "title": "Desmotivación · Insatisfacción · Abandono temprano · Fracaso"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "5.5.5. Definición de las características y requisitos para ocupar un puesto de trabajo\n\nAl definir las características y requisitos para ocupar un puesto de trabajo, se pueden dar dos circunstancias:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Circunstancias en la definición del perfil",
+              "content": "1. Que el puesto haya sido ocupado por otra persona en el pasado, supuesto en el que es mucho más fácil definir el perfil profesional que se demandará.\n2. Si el puesto es de nueva creación, será más difícil describir las funciones, la relación que tendrá con otras personas del organigrama y las cualificaciones requeridas."
+            },
+            {
+              "title": "Ficha de descripción del puesto de trabajo",
+              "content": "Este documento contendrá las características, funciones y responsabilidades del puesto. En general, suele contener:\n• Formación requerida.\n• Experiencia mínima.\n• Departamento al que pertenece el puesto.\n• Lugar dentro del organigrama.\n• Funciones, tareas y responsabilidades.\n• Localización del lugar de trabajo.\n• Jornada laboral.\n• Sueldo, pluses e incentivos.\n• Riesgos laborales.\n• Disponibilidad para viajes, traslados y similares.\n• Categoría profesional y convenio colectivo."
+            },
+            {
+              "title": "Objetivos del análisis de los puestos de trabajo",
+              "content": "• Ayudar al reclutamiento y selección de personal.\n• Diseñar un plan de prevención de riesgos laborales adaptado.\n• Determinar los planes de carrera dentro de la organización.\n• Detectar necesidades de formación.\n• Controlar al personal y saber si se están realizando las funciones asignadas.\n• Prever los costes salariales, en base a los sueldos establecidos para cada puesto."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "5.5.6. Métodos de análisis de los puestos de trabajo\n\nUna vez elaborada la ficha de descripción del puesto de trabajo, se debe fijar la forma y los medios más apropiados para obtener la información. Los métodos más comunes son:"
+        },
+        {
+          "type": "table",
+          "headers": ["Método", "Descripción", "Ventajas", "Inconvenientes"],
+          "rows": [
+            [
+              "Observación directa",
+              "El analista deberá visualizar personalmente las tareas que desempeña el trabajador en su puesto y anotar los datos claves.",
+              "Ideal en trabajos manuales o repetitivos. Se podrá llevar a cabo la observación de varios puestos a la vez. Contacto directo entre quien realiza la observación y los empleados.",
+              "Es insuficiente para analizar un puesto en profundidad. Es costosa y lleva tiempo. El empleado puede sentirse incómodo y vigilado."
+            ],
+            [
+              "Cuestionarios",
+              "El empleado que desempeña el puesto responderá un test sobre sus funciones y tareas.",
+              "Rápido y económico. Abarca muchos puestos en poco tiempo.",
+              "Para su efectividad debe tener preguntas adecuadas, relacionadas con la información que se quiere conseguir. No habrá contacto entre la persona que realiza el análisis y los trabajadores."
+            ],
+            [
+              "Entrevista",
+              "El entrevistador tendrá un encuentro con el empleado y le preguntará sobre su puesto para recopilar información (se contrastará con entrevistas posteriores con sus superiores para confirmar o aclarar cuestiones que puedan surgir).",
+              "Contacto directo entre el entrevistador y el entrevistado. Se entrevista a una muestra representativa de los empleados. Se podrá utilizar para todo tipo de puestos.",
+              "Los empleados pueden dar información subjetiva. Existen empleados que no pueden expresar sus tareas de manera verbal. Requerirá tiempo si hay que entrevistar a muchas personas."
+            ],
+            [
+              "Diarios de trabajo",
+              "Los empleados registrarán a diario sus tareas, el tiempo dedicado a ellas, las personas a las que dan feedback de su trabajo y todas las observaciones que consideren relevantes.",
+              "Funciona bien con puestos rutinarios o administrativos en los que haya repetición de tareas. Los trabajadores podrían preferir este método escrito. El analista ahorrará tiempo.",
+              "La información puede estar manipulada por el trabajador. No es adecuado para trabajos diversos, creativos o de responsabilidad. No hay contacto con el trabajador."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "La fórmula más correcta sería realizar una combinación de varios métodos acordes con las necesidades de la organización, los llamados métodos mixtos. Así se compensan los inconvenientes de cada proceso."
+        },
+        {
+          "type": "text",
+          "content": "5.5.7. Determinación del perfil profesional y el profesiograma"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Perfil profesional",
+              "desc": "Combinación de las competencias profesionales y las habilidades que requerirá una empresa a la hora de cubrir un puesto de trabajo. Los perfiles vienen determinados por el análisis previo que se haga del puesto, además de incluir particularidades basadas en la cultura y valores empresariales."
+            },
+            {
+              "title": "Profesiograma",
+              "desc": "Tabla o gráfica que representará el perfil profesional de un puesto de trabajo, valorando por grados los requisitos del puesto a nivel de funciones, aptitudes y capacidades. Ha de ser claro y conciso, además de incorporar los máximos detalles posibles. Este documento lo elaborará el departamento de RRHH, en colaboración con el jefe de departamento del puesto en cuestión."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Recursos humanos (RRHH)",
+      "def": "Los empleados de la empresa, el personal que ejerce su labor profesional en ella. Se constituyen como un factor primordial de toda organización, con influencia directa en los resultados y el éxito empresarial."
+    },
+    {
+      "term": "Organización formal",
+      "def": "Estructura que definen los directivos para desarrollar la actividad de la empresa. Se refleja en el organigrama, una representación gráfica en la que se presentan los puestos de trabajo, las personas, las relaciones jerárquicas y las funciones."
+    },
+    {
+      "term": "Organización informal",
+      "def": "Se constituye a través de las relaciones personales que surgen de forma natural entre los trabajadores. Puede aparecer dentro o fuera de la empresa, pero los directivos no tienen ningún tipo de control sobre estas relaciones, porque son independientes de la organización empresarial."
+    },
+    {
+      "term": "Outsourcing",
+      "def": "Externalización de tareas que son encomendadas a terceros. En el contexto de los RRHH, consiste en externalizar las funciones del departamento a empresas especializadas."
+    },
+    {
+      "term": "Modelos tradicionales",
+      "def": "Modelos de gestión de RRHH en los que las personas son vistas como un instrumento para conseguir resultados y solo son eficientes si son rentables para la empresa. No se considera el aspecto humano y solo se miden los resultados a corto plazo. En este tipo de modelos no se retiene el talento."
+    },
+    {
+      "term": "Modelos actuales",
+      "def": "Modelos de gestión de RRHH centrados en las personas. Se busca que compartan los principios de la organización y se sientan orgullosas de formar parte del equipo. No solo se miran los resultados inmediatos, sino también las competencias, las motivaciones y las aspiraciones. Se utilizan técnicas para retener y fidelizar al talento humano."
+    },
+    {
+      "term": "Modelo de gestión por competencias",
+      "def": "Modelo actual en el que las competencias están por encima de otros elementos, como los títulos académicos o las experiencias previas. Los puestos de trabajo se estructuran según las competencias necesarias para desarrollarlos efectivamente (trabajo en equipo, comunicación en varios idiomas, competencias digitales, creatividad…)."
+    },
+    {
+      "term": "Grupo profesional",
+      "def": "Forma de clasificación profesional que organiza el acceso a los distintos puestos de trabajo. Según el artículo 22 del ET, agrupa unitariamente las aptitudes profesionales, titulaciones y contenido general de la prestación."
+    },
+    {
+      "term": "Grupo de cotización",
+      "def": "Clasificación establecida por la Seguridad Social para cada categoría profesional. Se diferencia del grupo profesional, que pertenece a la legislación laboral."
+    },
+    {
+      "term": "Perfil profesional",
+      "def": "Combinación de las competencias profesionales y las habilidades que requerirá una empresa a la hora de cubrir un puesto de trabajo. Los perfiles vienen determinados por el análisis previo que se haga del puesto, además de incluir particularidades basadas en la cultura y valores empresariales."
+    },
+    {
+      "term": "Profesiograma",
+      "def": "Tabla o gráfica que representa el perfil profesional de un puesto de trabajo, valorando por grados los requisitos del puesto a nivel de funciones, aptitudes y capacidades. Ha de ser claro y conciso, además de incorporar los máximos detalles posibles."
+    },
+    {
+      "term": "Ficha de descripción del puesto de trabajo",
+      "def": "Documento que contiene las características, funciones y responsabilidades del puesto. Incluye formación requerida, experiencia mínima, departamento, lugar en el organigrama, funciones, jornada, sueldo, riesgos laborales y categoría profesional, entre otros."
+    },
+    {
+      "term": "Métodos mixtos",
+      "def": "Combinación de varios métodos de análisis de puestos de trabajo (observación directa, cuestionarios, entrevista, diarios de trabajo) acordes con las necesidades de la organización, con el fin de compensar los inconvenientes de cada proceso."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Según la unidad, ¿cuáles son los cuatro elementos fundamentales de los que se componen las empresas?",
+      "options": [
+        "Elementos materiales, elementos intangibles, capital social y personal",
+        "Capital humano, capital financiero, infraestructura tecnológica y procesos de negocio",
+        "Productos, servicios, empleados y directivos",
+        "Activos fijos, activos circulantes, pasivos y patrimonio neto"
+      ],
+      "correct": 0,
+      "explanation": "Según la unidad, las empresas se componen de cuatro elementos fundamentales: elementos materiales, elementos intangibles, capital social y personal."
+    },
+    {
+      "question": "¿Cuál de los tres enfoques de los RRHH es el que más tiene que ver con la satisfacción y la productividad de los empleados?",
+      "options": [
+        "Enfoque administrativo-legal",
+        "Enfoque de gestión",
+        "Enfoque contable-costes",
+        "Enfoque estratégico"
+      ],
+      "correct": 1,
+      "explanation": "El enfoque de gestión se centra en las actividades necesarias para dirigir y aprovechar a los trabajadores (motivación, coordinación, formación...) y es el que más tiene que ver con la satisfacción y la productividad de los empleados."
+    },
+    {
+      "question": "¿Qué es el organigrama en el contexto de la organización formal?",
+      "options": [
+        "El conjunto de normas que rigen la relación laboral en la empresa",
+        "La tabla de grupos de cotización establecida por la Seguridad Social",
+        "Una representación gráfica en la que se presentan los puestos de trabajo, las personas, las relaciones jerárquicas y las funciones",
+        "El documento que contiene las características y responsabilidades de cada puesto de trabajo"
+      ],
+      "correct": 2,
+      "explanation": "El organigrama es una representación gráfica propia de la organización formal, en la que se presentan los puestos de trabajo, las personas, las relaciones jerárquicas y las funciones."
+    },
+    {
+      "question": "¿Cómo se denomina la externalización de tareas de RRHH encomendadas a terceros?",
+      "options": [
+        "Benchmarking",
+        "Downsizing",
+        "Reclutamiento externo",
+        "Outsourcing"
+      ],
+      "correct": 3,
+      "explanation": "Las externalizaciones de tareas que son encomendadas a terceros tienen el nombre de outsourcing. En pymes, cuando no existe departamento de RRHH, puede optarse por externalizar sus funciones mediante outsourcing."
+    },
+    {
+      "question": "En los modelos actuales de gestión de RRHH, ¿qué se tiene en cuenta además de los resultados inmediatos?",
+      "options": [
+        "Solo la reducción de costes laborales a corto plazo",
+        "Las competencias, las motivaciones y las aspiraciones de los empleados",
+        "Únicamente la productividad y la rentabilidad del negocio",
+        "La antigüedad y el título académico del trabajador por encima de todo"
+      ],
+      "correct": 1,
+      "explanation": "En los modelos actuales no solo se miran los resultados inmediatos, sino también las competencias, las motivaciones y las aspiraciones, para conseguir que los empleados se sientan realizados en su trabajo."
+    },
+    {
+      "question": "Según el artículo 22 del Estatuto de los Trabajadores, ¿cómo se define un grupo profesional?",
+      "options": [
+        "El que agrupa unitariamente las aptitudes profesionales, titulaciones y contenido general de la prestación",
+        "El conjunto de trabajadores que realizan las mismas tareas en distintas empresas del sector",
+        "La categoría que determina exclusivamente el salario del trabajador según convenio",
+        "La clasificación que hace la Seguridad Social para determinar las cotizaciones de cada empleado"
+      ],
+      "correct": 0,
+      "explanation": "Según el artículo 22 del ET, el grupo profesional es el que agrupa unitariamente las aptitudes profesionales, titulaciones y contenido general de la prestación, aunque podrá incluir distintas tareas, funciones, especialidades profesionales o responsabilidades asignadas."
+    },
+    {
+      "question": "¿Qué fase del proceso de planificación del personal consiste en revisar periódicamente las partes del plan para obtener retroalimentación y tomar medidas correctoras?",
+      "options": [
+        "Establecimiento del escenario futuro",
+        "Programación",
+        "Ejecución",
+        "Control"
+      ],
+      "correct": 3,
+      "explanation": "La fase D (Control) consiste en la revisión periódica de las diferentes partes del plan para conseguir retroalimentación y tomar medidas correctoras, si fuera necesario."
+    },
+    {
+      "question": "Según el diagrama de la unidad, ¿qué ocurre cuando las cualificaciones del empleado coinciden con los requisitos del puesto de trabajo?",
+      "options": [
+        "Se produce desmotivación, insatisfacción y abandono temprano",
+        "El departamento de RRHH debe revisar el profesiograma",
+        "Se genera motivación, satisfacción y compromiso",
+        "Se recomienda al trabajador cambiar de departamento para evitar el estancamiento"
+      ],
+      "correct": 2,
+      "explanation": "Cuando las cualificaciones profesionales y personales del empleado coinciden con los requisitos de los puestos de trabajo, el resultado es motivación, satisfacción y compromiso. En caso contrario, surgen desmotivación, insatisfacción, abandono temprano y fracaso."
+    },
+    {
+      "question": "¿Cuál de los siguientes métodos de análisis de puestos de trabajo es ideal para trabajos manuales o repetitivos y permite el contacto directo entre el analista y los empleados?",
+      "options": [
+        "Cuestionarios",
+        "Observación directa",
+        "Diarios de trabajo",
+        "Entrevista"
+      ],
+      "correct": 1,
+      "explanation": "La observación directa es ideal en trabajos manuales o repetitivos, permite llevar a cabo la observación de varios puestos a la vez y facilita el contacto directo entre quien realiza la observación y los empleados."
+    },
+    {
+      "question": "¿Qué es el profesiograma?",
+      "options": [
+        "La tabla o gráfica que representa el perfil profesional de un puesto de trabajo, valorando por grados los requisitos del puesto a nivel de funciones, aptitudes y capacidades",
+        "El documento que contiene las características, funciones y responsabilidades de un puesto de trabajo elaborado por RRHH",
+        "La combinación de las competencias profesionales y las habilidades que requerirá una empresa para cubrir un puesto",
+        "El sistema de clasificación profesional establecido mediante negociación colectiva"
+      ],
+      "correct": 0,
+      "explanation": "El profesiograma es la tabla o gráfica que representa el perfil profesional de un puesto de trabajo, valorando por grados los requisitos del puesto a nivel de funciones, aptitudes y capacidades. Ha de ser claro y conciso, e incorporar los máximos detalles posibles."
+    }
+  ],
+  "_sources": {
+    "s1": "U5 Los RRHH en la empresa.pdf §5.1 (pp. 4-5); diagrama 'Elementos empresariales' p. 4 (sin capa de texto, transcripción literal: Elementos materiales, Elementos intangibles, Capital social, Personal); U5 Síntesis. Los recursos humanos en la empresa.pdf §Conceptos fundamentales",
+    "s2": "U5 Los RRHH en la empresa.pdf §5.2 (pp. 6-7); U5 DIAPOSITIVAS Los recursos humanos en la empresa.pdf diap. 3",
+    "s3": "U5 Los RRHH en la empresa.pdf §5.3 (p. 8); diagrama 'Objetivos de un modelo de gestión' p. 8 (sin capa de texto, transcripción literal de los 3 objetivos); U5 Síntesis. Los recursos humanos en la empresa.pdf §Resumen y §Conceptos fundamentales",
+    "s4": "U5 Los RRHH en la empresa.pdf §5.4 (p. 9); tabla grupos de cotización 1-11 p. 9",
+    "s5": "U5 Los RRHH en la empresa.pdf §5.5-§5.5.1-§5.5.2-§5.5.3 (pp. 10-11); tabla 'Fases del proceso de planificación del personal' p. 11",
+    "s6": "U5 Los RRHH en la empresa.pdf §5.5.4-§5.5.5-§5.5.6-§5.5.7 (pp. 12-15); diagrama 'Relación entre motivación y adecuación al puesto' p. 12 (sin capa de texto, transcripción literal: Empleado/Organización/¿Coinciden?/Sí→Motivación-Satisfacción-Compromiso/No→Desmotivación-Insatisfacción-Abandono temprano-Fracaso); tablas ventajas/inconvenientes métodos pp. 14-15"
+  }
+}
