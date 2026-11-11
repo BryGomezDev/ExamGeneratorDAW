@@ -2,7 +2,7 @@
   "subject": "ipe",
   "unit": 6,
   "title": "La importancia de las habilidades interpersonales",
-  "intro": "La motivación es un motor esencial que impulsa a las personas a alcanzar sus objetivos y a desempeñarse de manera efectiva en su entorno laboral. Comprenderla y cómo influye en el comportamiento de los empleados es fundamental para cualquier organización que aspire a maximizar su potencial humano. El liderazgo es otro pilar fundamental: no basta con que los jefes y directivos tengan autoridad; es vital que también sean capaces de inspirar y guiar a sus equipos. Finalmente, las habilidades interpersonales —la empatía, la comunicación efectiva y la capacidad para resolver conflictos— determinan la cohesión y eficiencia del equipo y el éxito organizacional.",
+  "intro": "La motivación es un motor esencial que impulsa a las personas a alcanzar sus objetivos y a desempeñarse de manera efectiva en su entorno laboral. Comprender qué es la motivación y cómo influye en el comportamiento de los empleados es fundamental para cualquier organización que aspire a maximizar su potencial humano. En este sentido, analizaremos diversas teorías de la motivación propuestas por autores destacados, y cómo estas pueden aplicarse en el contexto empresarial para fomentar un ambiente de trabajo productivo y satisfactorio.\n\nFinalmente, discutiremos la importancia de las habilidades interpersonales en el ámbito laboral. Las personas son el alma de las empresas, y su bienestar y capacidad para trabajar en armonía determinan el éxito organizacional. La empatía, la comunicación efectiva y la capacidad para resolver conflictos son habilidades esenciales que contribuyen significativamente a la cohesión y eficiencia del equipo. Fomentar estas habilidades a todos los niveles de la organización no solo mejora la dinámica interna, sino que también refuerza la satisfacción y el compromiso de los empleados.\n\nEl liderazgo es otro pilar fundamental en el éxito de una empresa. No basta con que los jefes y directivos tengan autoridad; es vital que también sean capaces de inspirar y guiar a sus equipos con eficacia. Introduciremos el concepto de liderazgo, diferenciándolo de la mera figura de jefe, y exploraremos la importancia de que los líderes desarrollen y utilicen herramientas de comunicación adecuadas.",
   "objectives": [
     "Explorar las distintas teorías de la motivación",
     "Distinguir entre la figura de jefe y la de líder",
@@ -318,8 +318,8 @@
     },
     {
       "id": "s5",
-      "label": "6.2.1. La comunicación interna",
-      "short": "6.2.1. Com. interna",
+      "label": "6.2. Comunicación del departamento de recursos humanos",
+      "short": "6.2. Comunicación RRHH",
       "blocks": [
         {
           "type": "text",
@@ -397,7 +397,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "6.2.2. La comunicación efectiva y la estrategia de aplicación\n\nLa comunicación es el proceso por el que dos o más personas intercambian información. Un emisor formula un mensaje usando un código, que el destinatario debe descodificar e interpretar para poder formular una respuesta a modo de feedback. Es un proceso dinámico que se desarrolla en un contexto determinado.\n\nLa comunicación será efectiva en el momento que el emisor sepa que el mensaje se ha recibido e interpretado de manera correcta por el receptor, ya que ha escogido el canal adecuado y ha eliminado los posibles ruidos o barreras.\n\nEl fin de una estrategia de comunicación no es solo publicar la información, sino asegurarse de que es recibida por las personas adecuadas e interpretada adecuadamente. Esta será, al fin y al cabo, la diferencia entre informar y comunicar. En el caso de las empresas, la comunicación será efectiva cuando el trabajador haga lo que se le indica porque haya comprendido la finalidad de la tarea y su misión dentro de la organización, con un nivel de malestar mínimo o nulo."
+          "content": "6.2.2. La comunicación efectiva y la estrategia de aplicación\n\nLa comunicación es el proceso por el que dos o más personas intercambian información. Un emisor formula un mensaje usando un código, que el destinatario debe descodificar e interpretar para poder formular una respuesta a modo de feedback. Es un proceso dinámico que se desarrolla en un contexto determinado.\n\nLa comunicación será efectiva en el momento que el emisor sepa que el mensaje se ha recibido e interpretado de manera correcta por el receptor, ya que ha escogido el canal adecuado y ha eliminado los posibles ruidos o barreras.\n\nEl fin de una estrategia de comunicación no es solo publicar la información, sino asegurarse de que es recibida por las personas adecuadas e interpretada adecuadamente. Esta será, al fin y al cabo, la diferencia entre informar y comunicar. Para cumplir este objetivo, el primer paso es elaborar un mensaje claro y conciso. En el caso de las empresas, la comunicación será efectiva cuando el trabajador haga lo que se le indica porque haya comprendido la finalidad de la tarea y su misión dentro de la organización, con un nivel de malestar mínimo o nulo."
         },
         {
           "type": "table",
