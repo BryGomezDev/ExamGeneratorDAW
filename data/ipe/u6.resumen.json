@@ -1,0 +1,725 @@
+{
+  "subject": "ipe",
+  "unit": 6,
+  "title": "La importancia de las habilidades interpersonales",
+  "intro": "La motivación es un motor esencial que impulsa a las personas a alcanzar sus objetivos y a desempeñarse de manera efectiva en su entorno laboral. Comprenderla y cómo influye en el comportamiento de los empleados es fundamental para cualquier organización que aspire a maximizar su potencial humano. El liderazgo es otro pilar fundamental: no basta con que los jefes y directivos tengan autoridad; es vital que también sean capaces de inspirar y guiar a sus equipos. Finalmente, las habilidades interpersonales —la empatía, la comunicación efectiva y la capacidad para resolver conflictos— determinan la cohesión y eficiencia del equipo y el éxito organizacional.",
+  "objectives": [
+    "Explorar las distintas teorías de la motivación",
+    "Distinguir entre la figura de jefe y la de líder",
+    "Analizar los distintos tipos de comunicación que asume el departamento de recursos humanos",
+    "Identificar los canales de comunicación más efectivos en la empresa",
+    "Analizar la importancia de las habilidades interpersonales en el ambiente laboral"
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "6.1. Liderazgo y motivación",
+      "short": "6.1. Motivación",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La motivación es el factor que impulsa a las personas a iniciar, mantener o terminar una actividad, un comportamiento o una actitud. Se trata de un estímulo que empuja a la persona a cubrir sus necesidades y encontrar satisfacción. A nivel laboral, un trabajador motivado con su labor será más productivo y fomentará un mejor clima de trabajo. Existen diversas teorías de la motivación, pero podrían destacarse las siguientes:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Teoría de Maslow",
+              "content": "Abraham Maslow diseñó una pirámide de necesidades en la que las necesidades expuestas en la base eran de supervivencia y, a medida que se ascendía, se desarrollaban nociones relativas al crecimiento personal y social del individuo. Maslow planteaba que las necesidades deben satisfacerse de manera progresiva, comenzando por las básicas. Cuando las necesidades de un nivel se han satisfecho, se pasa al siguiente. Para su aplicación empresarial, sería necesario saber en qué nivel está cada empleado y determinar qué le motiva.\n\nNiveles de la pirámide (base → cima):\n• Necesidades fisiológicas: Son las necesidades básicas como alimentación, respiración, etc.\n• Necesidades de seguridad: Está relacionado con la seguridad de la persona. La seguridad, protección, moral, etc.\n• Necesidades de aceptación social: Tiene que ver con las relaciones y las emociones. Afecto, amor, pertenencia, amistad, etc.\n• Necesidades de autoestima: Tiene que ver con la confianza, el éxito, el respeto, etc. La persona debe sentirse aceptada y con confianza, esto ayudará a elevar su autoestima.\n• Necesidades de autorrealización: Tendrá que ver con el desarrollo personal, moralidad, creatividad, espontaneidad, etc."
+            },
+            {
+              "title": "Teoría ERG",
+              "content": "Es una modificación de la jerarquía de Maslow que clasifica las necesidades básicas en tres subgrupos: existencia, relación y crecimiento. Esta teoría plantea que, en un momento específico, puede operar más de una necesidad. Su aplicación reside en localizar las múltiples necesidades que pueden conducir la conducta de las personas en un momento dado, para comprender su comportamiento y motivarlas adecuadamente."
+            },
+            {
+              "title": "Teoría de McClelland",
+              "content": "McClelland afirmaba que existen tres necesidades clave en la vida personal que tienen influencia en el trabajo:\n• Necesidad de motivación para el rendimiento: predisposición para lograr objetivos prestablecidos, progresar y llegar a resultados óptimos.\n• Necesidad de afiliación o pertenencia: predisposición por gustar y buscar aceptación del equipo.\n• Necesidad de poder: predisposición por tener influencia y control sobre otras personas."
+            },
+            {
+              "title": "Teoría de Herzberg",
+              "content": "Según Herzberg, hay dos factores que influyen en la motivación laboral:\n• Factores higiénicos: no producen motivación por sí mismos, pero en caso de no tenerlos sí producirán insatisfacción. Entre ellos están el salario, la cultura empresarial, el ambiente físico, la estabilidad laboral, etc.\n• Factores motivacionales: tienen capacidad para motivar a las personas, como la promoción, la responsabilidad, el logro, el reconocimiento, etc."
+            },
+            {
+              "title": "Teoría de Adams",
+              "content": "Adams defiende que los trabajadores suelen compararse con otras personas tanto en esfuerzo como en resultados. Cuando creen que son tratados de manera injusta, se desmotivan (ya sea una percepción real o no). Si esto pasa, la productividad baja."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "¿Cuáles serían los incentivos que puede utilizar la dirección para motivar a sus empleados?"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Delegación de responsabilidades y autoridad",
+            "Creación de expectativas comunicando lo que se espera de los empleados",
+            "Reconocimiento de méritos y logros",
+            "Fijación de objetivos para favorecer la visualización de los progresos",
+            "Participación en la toma de decisiones acerca de su trabajo",
+            "Formación y desarrollo personal",
+            "Mejora de salario y promoción acorde a los méritos",
+            "Fomento de la creatividad"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Para evaluar si los incentivos que ha programado la empresa son efectivos, se medirá la satisfacción de los empleados mediante:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Instrumentos directos",
+              "content": "Encuestas, reuniones, entrevistas individuales, buzones de quejas, etc."
+            },
+            {
+              "title": "Instrumentos indirectos",
+              "content": "Análisis de las condiciones de trabajo, el clima laboral, los comportamientos individuales, etc."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Conciliación familiar y laboral\n\nLa conciliación familiar y laboral incluye las acciones que se realizan para establecer ciertas condiciones en las que el empleado pueda compaginar su vida familiar con su vida profesional (jornada flexible, teletrabajo, guardería…). Estas acciones influyen en la satisfacción de los empleados y son claves para que se fidelicen y sigan en la empresa. Además, influyen de manera positiva en la imagen pública de la entidad."
+        },
+        {
+          "type": "text",
+          "content": "Principales técnicas de motivación laboral (RESUMEN «Técnicas de motivación laboral»):"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Definir objetivos alcanzables",
+            "Mejorar las condiciones laborales",
+            "Liderazgos que reconozcan los méritos y el esfuerzo",
+            "Canales de comunicación efectivos",
+            "Programas de recompensa",
+            "Programas de promoción y crecimiento",
+            "Acciones de fortalecimiento del ambiente laboral"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "6.1.1–6.1.2. ¿Qué es un líder? y ¿Qué diferencia hay entre líder y jefe?",
+      "short": "6.1.1–2. Líder vs jefe",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "6.1.1. ¿Qué es un líder?\n\nSegún la RAE, un líder sería la persona a la que un grupo sigue, reconociéndola como guía y orientadora. El líder tiene capacidad de influencia y, aunque nadie le haya dotado de autoridad, la genera por sí mismo, tiene carisma y una personalidad que hace que otros le sigan. Puede ser que posea atributos innatos de líder en su personalidad o que haya ido adquiriendo dichos atributos a través de la experiencia o la formación. Algunas de las características de un buen líder serían:"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Positividad",
+              "desc": "Es optimista y tiene una actitud favorable para abordar tanto los proyectos encomendados como los problemas y conflictos. Es capaz de contagiar a sus subordinados esta actitud positiva."
+            },
+            {
+              "title": "Enfoque",
+              "desc": "Sabe hacia dónde se dirige y los motivos que justifican sus objetivos."
+            },
+            {
+              "title": "Entusiasta",
+              "desc": "Demuestra ánimo y ganas a la hora de abordar las tareas y sabe contagiar ese entusiasmo al resto del equipo."
+            },
+            {
+              "title": "Habilidades comunicativas",
+              "desc": "Tiene buena oratoria, es empático, entiende a los demás y aplica la escucha activa."
+            },
+            {
+              "title": "Autoconocimiento",
+              "desc": "Sabe cuáles son sus debilidades y fortalezas y es consciente de cuándo debe delegar."
+            },
+            {
+              "title": "Trabajo en equipo",
+              "desc": "Es capaz de colaborar con los trabajadores a su cargo."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "6.1.2. ¿Qué diferencia hay entre líder y jefe?\n\nUn jefe es la persona que posee la autoridad jerárquica para dirigir y organizar a sus subordinados, de los que debe extraer resultados. Sin embargo, un líder va más allá: coopera con el grupo, promueve actitudes, desarrolla motivaciones, incentiva el rendimiento y ayuda y apoya a todo su equipo. El líder tiene una visión que es capaz de transmitir y compartir, guiando a quienes trabajan con él hacia una meta común.\n\nResulta evidente que no todos los líderes ostentan el puesto de jefe y viceversa. Teniendo en cuenta las relaciones informales que se establecen en la organización, puede generar conflicto que la empresa le otorgue el cargo de jefe a una persona a quienes los trabajadores no consideren su líder. Por este motivo, las empresas han de esforzarse en que los jefes se conviertan en auténticos líderes."
+        },
+        {
+          "type": "text",
+          "content": "Diferencias entre líder y jefe según el RESUMEN «Jefe y líder» — «Cuando dirige a su equipo»:"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "kicker": "Líder",
+              "title": "Quiere comprometer a todos para que se superen y crezcan"
+            },
+            {
+              "kicker": "Jefe",
+              "title": "Solo le preocupa que el rendimiento sea adecuado, despersonaliza a los empleados y los ve como números"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "6.1.3. Estilos de dirección",
+      "short": "6.1.3. Estilos de dir.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Para profundizar en el concepto de liderazgo, resulta imprescindible conocer los diferentes estilos de dirección. La elección de un estilo u otro de liderazgo está condicionada por la cultura empresarial, las metas empresariales y la personalidad de los empleados. Un liderazgo adecuado mejora el rendimiento de los trabajadores, además de su compromiso y bienestar, mientras que uno negativo provocará estrés, burnout, baja autoestima e, incluso, la renuncia al puesto de trabajo.\n\nEn general, se suelen distinguir seis estilos de liderazgo:"
+        },
+        {
+          "type": "table",
+          "headers": ["Estilo", "Descripción"],
+          "rows": [
+            [
+              "Liderazgo paternalista",
+              "El líder toma todas las decisiones con respecto al trabajo, aunque puede llegar a pedirle opinión a los demás en algunas cuestiones. Tiene una actitud de protección hacia los miembros de su equipo y se involucra en sus problemas personales y laborales para ayudarles a desarrollarse."
+            ],
+            [
+              "Liderazgo autocrático o autoritario",
+              "Es un liderazgo extremo, ya que el líder toma las decisiones y fija las directrices sin que nadie se involucre. El resto del equipo se limita a obedecer sus órdenes. No es recomendable, ya que destruye la motivación e impide la creatividad y la participación de los empleados. Produce fuga de talentos."
+            ],
+            [
+              "Liderazgo de no intervención (laissez faire)",
+              "También denominado delegativo, el líder interviene solo cuando lo cree conveniente, dejando máxima libertad a sus empleados y controlando lo mínimo imprescindible. Suele darse cuando los empleados tienen experiencia y/o son muy creativos. Hay falta de feedback regular."
+            ],
+            [
+              "Liderazgo democrático o participativo",
+              "El líder crea entusiasmo y sabe delegar. Fomenta la comunicación y toma en cuenta la opinión del equipo a la hora de tomar decisiones. Se utiliza cuando el trabajo en equipo y la calidad son más importantes que la cantidad y la velocidad."
+            ],
+            [
+              "Liderazgo visionario",
+              "El líder moviliza al equipo transmitiendo con claridad una meta común. Tiene claro dónde quiere ir e intenta que el equipo visualice su meta y la comparta. Favorece el buen ambiente de trabajo."
+            ],
+            [
+              "Liderazgo del entrenador personal o coaching",
+              "Es más informal. El líder conversa con el equipo para delegar el trabajo y ayudar a que sus miembros encuentren sus fortalezas, debilidades y metas. Genera un ambiente laboral de constante aprendizaje y crecimiento y existe mucha lealtad entre los miembros."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Estilos de liderazgo según el RESUMEN «Jefe y líder» (presentación alternativa, diapositiva «Estilos de liderazgo»):"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Liderazgo autoritario",
+            "Liderazgo visionario",
+            "Liderazgo dominante",
+            "Liderazgo paternalista",
+            "Liderazgo democrático",
+            "Liderazgo transformacional",
+            "Liderazgo liberal"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "⚠ El RESUMEN «Jefe y líder» enumera 7 estilos que no coinciden con los 6 del tema (6.1.3). «Dominante», «transformacional» y «liberal» no se describen en ningún PDF de la unidad."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "6.1.4–6.1.5. Enfoques y teorías de liderazgo",
+      "short": "6.1.4–5. Enfoques/teorías",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "6.1.4. Enfoques de liderazgo\n\nSe distinguen tres grandes enfoques de liderazgo:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Enfoque situacional",
+              "content": "Defiende que la efectividad del liderazgo depende de la naturaleza de la circunstancia en la que se ejerza, por lo que un líder ha de saber entender la situación en la que se encuentra para ejercer un liderazgo apropiado al caso. Es un enfoque flexible, en comparación con las teorías basadas en las características y estilos personales del líder. Prioriza la capacidad de adaptación y la pericia para sacar provecho del trabajo en equipo."
+            },
+            {
+              "title": "Enfoque funcional",
+              "content": "Considera al líder como una figura primordial en la organización, teniendo una función imprescindible para la supervivencia del equipo. Por tanto, asume la dirección de la empresa y procura su correcto funcionamiento. Este enfoque afirma que la función del líder será la de facilitador y responsable de las metas marcadas y el bienestar de equipo."
+            },
+            {
+              "title": "Enfoque empírico",
+              "content": "El líder es elegido por sus compañeros, adquiriendo un estatus de prestigio y valor que se asociará al puesto de trabajo. Es evaluado por el resto del equipo, que lo considera una persona con habilidades, destrezas, conocimientos y capacidades para asumir este papel con eficacia."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "6.1.5. Teorías de liderazgo\n\nUna de las grandes aportaciones sobre el liderazgo fue la realizada por D. Goleman, R. Boyatzis y A. McKee:\n\n«Los auténticos líderes no se distinguen por su talento innato o su dominio técnico, sino por su capacidad de inspirar en otros energía, pasión y entusiasmo. Y estos sentimientos se extienden rápidamente en los equipos de trabajo, estimulando a los demás. Las emociones clave de la motivación, y ser sensible a ellas, es una tarea esencial del líder. Una parte fundamental del liderazgo efectivo es saber direccionar y usar adecuadamente las propias emociones, y potenciar sentimientos positivos en los equipos, es decir, crear resonancia. Sin tener en cuenta las emociones, no puede obtenerse lo mejor de las personas y conseguir que las organizaciones prosperen».\n\nComo se expondrá a continuación, existen diversas teorías del liderazgo, muchas de ellas con puntos en común con esta definición."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Teoría del gran hombre o de rasgos",
+              "content": "Defiende que los rasgos del líder son innatos y no se pueden adquirir ni con entrenamiento ni con experiencia. Es un planteamiento rígido, según el cual los líderes nacen, no se hacen. Asume que los líderes tienen ciertas características comunes (físicas, sociales, profesionales, etc.), aunque no las concreta. En definitiva, los autores que defienden esta teoría creen que hay una mejor manera de liderar y que variables de la personalidad profundamente enraizadas permiten que ciertas personas ejerzan un mejor liderazgo."
+            },
+            {
+              "title": "Teoría X e Y de McGregor o del liderazgo personal",
+              "content": "McGregor sostiene que los directivos pueden seguir un estilo autocrático o participativo, lo que llama X o Y. La elección va a depender de la percepción que el líder tenga de la naturaleza de sus subordinados, es decir, que su concepción del equipo condiciona su estilo de dirección.\n\nTeoría X: más tradicional, el líder ejerce un liderazgo autocrático que infravalora las capacidades de los subordinados, a los que considera irresponsables y poco activos. El equipo estará desmotivado, debido a que no se sentirá responsable de su trabajo. Los empleados se sienten bajo vigilancia, pierden el interés y disminuyen su capacidad productiva. El eje de la motivación es el binomio recompensa-penalización.\n\nTeoría Y: el líder es integrador y fomenta las condiciones idóneas para que los trabajadores consigan sus objetivos y contribuyan al correcto funcionamiento de la empresa. El líder ayuda, fomenta el buen ambiente, reconoce el trabajo bien hecho y estimula el trabajo en equipo. El compromiso de los trabajadores con los objetivos se asocia a compensaciones por su logro (satisfacción de las necesidades personales y autorrealización)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Teoría de la malla gerencial de Blake y Mouton\n\nTambién conocida como red administrativa, es una herramienta que se usa para describir el estilo de liderazgo, mediante la identificación de cinco niveles que mezclan diferentes rangos de preocupación por las personas y las tareas. La representación gráfica tiene eje Y «Interés por las personas» y eje X «Orientación a la tarea»: Estilo 1,9 (arriba a la izquierda), Estilo 9,9 (arriba a la derecha), Estilo 5,5 (centro), Estilo 1,1 (abajo a la izquierda), Estilo 9,1 (abajo a la derecha)."
+        },
+        {
+          "type": "table",
+          "headers": ["Estilo", "Descripción"],
+          "rows": [
+            [
+              "Estilo 1.1",
+              "El líder mostrará escasa preocupación por las tareas y por las relaciones con los trabajadores. Realizará un esfuerzo mínimo para la consecución de los objetivos y transmitirá información sin implicarse realmente con el proyecto."
+            ],
+            [
+              "Estilo 1.9",
+              "Muestra una alta preocupación por sus trabajadores, pero no por la consecución de los objetivos. Genera una gran sensación de pertenencia al equipo, pero no llega al nivel productivo deseado."
+            ],
+            [
+              "Estilo 5.5",
+              "Existe un equilibrio entre la preocupación por los empleados y la realización de las tareas. Se conseguirán los objetivos, pero sin aspirar a resultados de gran éxito."
+            ],
+            [
+              "Estilo 9.1",
+              "La máxima preocupación es la consecución de las metas, dejando de lado la relación con los empleados. Se impone una fuerte autoridad."
+            ],
+            [
+              "Estilo 9.9",
+              "Mantiene un alto grado de compromiso tanto en la consecución de las tareas como en la preocupación por los empleados, lo que conlleva grandes resultados para las organizaciones y confianza e implicación con el equipo."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Teoría del liderazgo situacional de Hersey y Blanchard\n\nRealiza una clasificación del liderazgo en base a tres dimensiones, dos de ellas relacionadas con la manera de actuar del líder y una con la manera de trabajar del empleado:\n• Conducta de tarea: forma en la que el líder dirige a los trabajadores, indicándoles la manera de realizar las tareas, el lugar donde deben hacerlo y el tiempo con el que cuentan.\n• Conducta de relación: nivel de apoyo que aportará el líder a sus empleados.\n• Nivel de madurez: capacidad, habilidad y voluntad del trabajador para la consecución de sus tareas. Tiene un plano psicológico (motivación) y un plano laboral (experiencia).\n\nCuando mayor sea el nivel de madurez del empleado, el líder podrá ir aminorando sus conductas de tarea y de relación. Así, en esta teoría se pueden distinguir cuatro estilos de dirección (autoritario-E1, persuasivo-E2, participativo-E3 y delegativo-S4), que vendrán determinados por los cuatro niveles de madurez de los empleados:"
+        },
+        {
+          "type": "table",
+          "headers": ["Estilo", "Nombre del diagrama", "Conducta de relación", "Conducta de tarea", "Madurez"],
+          "rows": [
+            ["E1", "Ordena", "Baja", "Alta", "M1 — Baja"],
+            ["E2", "Persuade", "Alta", "Alta", "M2 — Moderada"],
+            ["E3", "Participa", "Alta", "Baja", "M3 — Moderada"],
+            ["E4", "Delega", "Baja", "Baja", "M4 — Alta"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "⚠ El temario escribe «delegativo-S4», pero su propio diagrama lo marca como E4 (E1–E4)."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "6.2.1. La comunicación interna",
+      "short": "6.2.1. Com. interna",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "6.2. Comunicación del departamento de recursos humanos\n\nUna mala comunicación en la empresa puede afectar a: los propietarios y sus ganancias; los trabajadores y el clima laboral en el que realizan su labor; los ejecutivos y la eficacia de su toma de decisiones; y la Administración Pública y las obligaciones fiscales de la empresa.\n\nLas normas internas que son establecidas por la dirección para determinar objetivos y prácticas de comunicación comunes para toda la empresa son lo que se denomina política de comunicación. Esta política se recoge en una memoria en la que constan directrices, indicadores cuantitativos y cualitativos y métodos de registro de comentarios y situaciones que aporten información sobre la comunicación empresarial."
+        },
+        {
+          "type": "text",
+          "content": "6.2.1. La comunicación interna\n\nLa comunicación interna reúne los flujos de información emitidos y recibidos dentro de la propia organización, que tienen como destino a sus miembros. Es importante que la empresa se implique en trabajar en una comunicación interna lo más productiva y eficaz posible. Sus objetivos son:"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Proporcionar identidad y coherencia mediante la política de comunicación.",
+            "Motivar y hacer que el capital humano se comprometa con la misión, visión y valores de la empresa.",
+            "Transmitir a los trabajadores una buena imagen de la empresa y comunicar de manera estratégica las acciones de RSC.",
+            "Hacer llegar información que reduzca la incertidumbre de los empleados cuando hay una crisis y que mejore el clima laboral."
+          ]
+        },
+        {
+          "type": "text",
+          "content": "La comunicación interna se clasifica mediante dos criterios:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Según el grado de control de la información",
+              "content": "• Comunicación formal: fluye por los canales fijados por la organización, sigue una jerarquía y debe adaptarse a las reglas preestablecidas. Es bastante eficiente para transmitir instrucciones o resolver dudas, pero no es demasiado ágil.\n• Comunicación informal: surge de manera espontánea entre los integrantes de la organización y por canales propios, diferentes a los medios que utiliza la directiva. Es rápida y de feedback sencillo, pero la información no es fiable y no se puede controlar."
+            },
+            {
+              "title": "Según la dirección del mensaje",
+              "content": "• Comunicación vertical: se da entre personas con diferentes niveles jerárquicos dentro de la organización, pero que son dependientes. Puede ser descendente (los niveles jerárquicos superiores transmiten información a sus subordinados) o ascendente (los niveles jerárquicos inferiores transmiten información a sus superiores).\n• Comunicación horizontal: los emisores y receptores están en el mismo nivel jerárquico en la empresa.\n• Comunicación diagonal: se da entre niveles distintos de la jerarquía organizacional que no tienen relación de dependencia directa."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Los flujos de información en los tipos de comunicación (Imagen 3) se representan en un organigrama de cuatro niveles: la comunicación vertical ascendente y descendente se produce entre niveles; la comunicación diagonal ocurre entre un nodo de un nivel 2 y un nodo de nivel 3 de otra rama del organigrama; y la comunicación horizontal se establece entre dos nodos del mismo nivel 3."
+        },
+        {
+          "type": "text",
+          "content": "Algunas herramientas para ayudar a la comunicación interna son los eventos, las reuniones, las intranets corporativas, la newsletter interna o las redes sociales corporativas. Tendencias actuales relativas a la comunicación interna:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Motor de digitalización",
+              "content": "La comunicación interna impulsa la transformación digital dentro de la organización, implicando a todos los integrantes en el uso de la tecnología para fomentar un ecosistema abierto y digitalizado."
+            },
+            {
+              "title": "Employer branding",
+              "content": "Los empleados de una organización son excelentes embajadores de la compañía cuando comunican al exterior, pero también pueden realizar esa actividad internamente como altavoces de las políticas internas."
+            },
+            {
+              "title": "Lugares de trabajo digitales",
+              "content": "Son nuevos espacios de trabajo donde se fomenta la co-creación de contenidos, la colaboración y la transparencia."
+            },
+            {
+              "title": "Apps internas",
+              "content": "Canal interactivo para comunicarse con otros compañeros y acceder a toda la información necesaria para el correcto desarrollo del trabajo diario. Este tipo de aplicaciones mejoran el sentimiento de permanencia."
+            },
+            {
+              "title": "Comunicación inside out",
+              "content": "La comunicación en la organización no depende solo de un departamento o personal concreto, sino que implica a toda la plantilla en los sistemas de comunicación y canales disponibles para aumentar su compromiso."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "6.2.2–6.2.3. La comunicación efectiva y canales",
+      "short": "6.2.2–3. Com. efectiva",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "6.2.2. La comunicación efectiva y la estrategia de aplicación\n\nLa comunicación es el proceso por el que dos o más personas intercambian información. Un emisor formula un mensaje usando un código, que el destinatario debe descodificar e interpretar para poder formular una respuesta a modo de feedback. Es un proceso dinámico que se desarrolla en un contexto determinado.\n\nLa comunicación será efectiva en el momento que el emisor sepa que el mensaje se ha recibido e interpretado de manera correcta por el receptor, ya que ha escogido el canal adecuado y ha eliminado los posibles ruidos o barreras.\n\nEl fin de una estrategia de comunicación no es solo publicar la información, sino asegurarse de que es recibida por las personas adecuadas e interpretada adecuadamente. Esta será, al fin y al cabo, la diferencia entre informar y comunicar. En el caso de las empresas, la comunicación será efectiva cuando el trabajador haga lo que se le indica porque haya comprendido la finalidad de la tarea y su misión dentro de la organización, con un nivel de malestar mínimo o nulo."
+        },
+        {
+          "type": "table",
+          "headers": ["Criterio", "Tipos de comunicación"],
+          "rows": [
+            [
+              "Según la forma del mensaje",
+              "Escrita: mediante palabras en un informe, acta o email. / Oral: mediante palabras en una conversación. Puede ser una entrevista o discusión entre compañeros."
+            ],
+            [
+              "Según el código usado",
+              "Verbal: mediante palabras. / No verbal: mediante gestos y movimientos."
+            ],
+            [
+              "Según el emisor o receptor",
+              "Formal: entre empleados según el organigrama formal. Podrá ser ascendente, descendente u horizontal. / Informal: entre empleados del organigrama formal, pero para cuestiones personales."
+            ],
+            [
+              "Según el tipo de canal utilizado",
+              "Personal: cara a cara. / Telefónica: mediante el teléfono. / Tecnológica: correo electrónico, chat, videoconferencia."
+            ],
+            [
+              "Según el destino de la comunicación",
+              "Interna: la que se envía y recibe entre los integrantes de la organización o empresa. / Externa: la que se envía o recibe entre los integrantes de la organización o empresa y otros miembros, personas o empresas externas a la organización."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Flujos de comunicación\n\nLa manera de mejorar el diálogo dentro de la organización es prestar atención a los flujos de la comunicación, la forma en la que información se mueve por la estructura organizativa (por dónde pasa y cuál es su destino). Los flujos de comunicación se clasifican según la dirección que sigan:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Flujo de comunicación ascendente",
+              "content": "Suele corresponder al proceso de feedback de los trabajadores. Sus funciones son: dar a los jefes información sobre lo que opinan los empleados; ayudar a que los directivos estén informados para poder solventar los conflictos; aliviar las tensiones permitiendo a los empleados compartir impresiones con sus superiores; y estimular la participación y el compromiso de toda la organización."
+            },
+            {
+              "title": "Flujo de comunicación descendente",
+              "content": "Es de tipo formal, donde los directivos comparten información con los empleados sobre instrucciones técnicas, estrategias, planificaciones, objetivos, o procedimientos. El fin es que el equipo esté informado y pueda realizar sus tareas conforme a lo previsto."
+            },
+            {
+              "title": "Flujo de comunicación horizontal",
+              "content": "Favorece el entendimiento entre iguales y en el equipo de trabajo y ayuda a que haya mayor inclusión, control y afecto entre compañeros. Sus funciones son: facilitar la organización y coordinación de tareas; fomentar el establecimiento de relaciones interpersonales; e instaurar un medio donde el empleado pueda compartir información de la organización."
+            },
+            {
+              "title": "Flujo de comunicación transversal",
+              "content": "Utiliza todos los flujos y canales existentes en la empresa sin ningún tipo de división jerárquica. Es habitual en empresas descentralizadas y organizaciones modernizadas que buscan ser más flexibles, fomentando una gestión participativa e integrada. Permite a los profesionales de la entidad trabajar en varias áreas e interactuar con facilidad."
+            },
+            {
+              "title": "Flujo de comunicación circular u oblicua",
+              "content": "Se da en organizaciones de un tamaño más pequeño y con un carácter muy informal. La comunicación circula por todos los niveles."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "6.2.3. Canales de comunicación interna\n\nHay diferentes canales para la comunicación interna, por lo que para determinar el tipo de canal que se ha de elegir, se debe atender a criterios como la cantidad de personas a las que se les quiere comunicar algo o el tipo de mensaje que se va a emitir. Algunos de los canales habituales de comunicación interna son:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Canales escritos",
+              "content": "Los más comunes y efectivos en la mayoría de las circunstancias. Su principal ventaja es que todo queda reflejado y se da respaldo a ese tema en particular, evitando conflictos por malentendidos."
+            },
+            {
+              "title": "Canales orales",
+              "content": "Las reuniones serían un claro ejemplo de este tipo de canales. El hecho de que se mantenga un contacto personal y directo entre los miembros del equipo fomentará las relaciones humanas."
+            },
+            {
+              "title": "Canales tecnológicos",
+              "content": "Es el grupo más amplio, ya que incluye muchas vías de comunicación (intranet, correo electrónico, redes sociales corporativas, etc.). Una de sus ventajas es la rapidez en la transmisión."
+            },
+            {
+              "title": "Otros canales",
+              "content": "Eventos participativos o sociales de la organización, las ferias, las convenciones, las cenas de empresa u otras actividades. Los trabajadores tienen la posibilidad de establecer relaciones personales y consolidar habilidades como el trabajo en equipo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "label": "6.3. Las habilidades interpersonales en los empleados",
+      "short": "6.3. Hab. interpersonales",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las habilidades interpersonales son esenciales para el funcionamiento eficaz de cualquier organización. No solo los líderes y jefes deben poseer estas habilidades, sino que es fundamental que todos los empleados las desarrollen y apliquen en su día a día. Las habilidades interpersonales facilitan la comunicación, la colaboración y la creación de un ambiente de trabajo positivo, lo que a su vez contribuye al éxito organizacional."
+        },
+        {
+          "type": "text",
+          "content": "6.3.1. Definición y componentes de las habilidades interpersonales\n\nLas habilidades interpersonales, también conocidas como habilidades blandas, se refieren a la capacidad de una persona para interactuar de manera efectiva con los demás. Entre las habilidades interpersonales más destacadas se encuentran:"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Empatía",
+              "desc": "La capacidad de comprender y compartir los sentimientos de otros. La empatía permite a los empleados relacionarse mejor con sus compañeros y clientes, fomentando un ambiente de apoyo y cooperación."
+            },
+            {
+              "title": "Comunicación efectiva",
+              "desc": "La habilidad para expresar ideas claramente y escuchar activamente. Una comunicación efectiva evita malentendidos y mejora la eficiencia en el trabajo en equipo."
+            },
+            {
+              "title": "Resolución de conflictos",
+              "desc": "La capacidad de manejar y resolver desacuerdos de manera constructiva. Esto es muy importante para mantener la armonía y la productividad en el lugar de trabajo."
+            },
+            {
+              "title": "Trabajo en equipo",
+              "desc": "La habilidad para colaborar y trabajar bien con otros. El trabajo en equipo es esencial para lograr objetivos comunes y fomentar la innovación."
+            },
+            {
+              "title": "Adaptabilidad",
+              "desc": "La capacidad de ajustarse a nuevas situaciones y cambios. La adaptabilidad es vital en entornos de trabajo dinámicos y en constante evolución."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "6.3.2. Beneficios de las habilidades interpersonales para los empleados y la organización\n\nDesarrollar y fomentar las habilidades interpersonales en todos los niveles de la organización trae consigo numerosos beneficios:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Mejora del ambiente laboral",
+              "content": "Un entorno de trabajo donde los empleados se comunican efectivamente y resuelven conflictos de manera constructiva es más agradable y productivo."
+            },
+            {
+              "title": "Aumento de la satisfacción y el compromiso",
+              "content": "Los empleados que se sienten escuchados y valorados tienden a estar más satisfechos y comprometidos con su trabajo, lo que reduce la rotación de personal."
+            },
+            {
+              "title": "Fomento de la colaboración y el trabajo en equipo",
+              "content": "Las habilidades interpersonales facilitan la colaboración y el trabajo en equipo, lo que puede conducir a mejores resultados y a una mayor innovación."
+            },
+            {
+              "title": "Incremento de la eficiencia y la productividad",
+              "content": "Una comunicación clara y la capacidad para resolver problemas rápidamente mejora la eficiencia y la productividad de los equipos."
+            },
+            {
+              "title": "Mejora de la reputación y relaciones externas",
+              "content": "Los empleados con buenas habilidades interpersonales pueden mejorar las relaciones con clientes, proveedores y otros socios, beneficiando la reputación y el éxito a largo plazo de la organización."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Motivación",
+      "def": "Factor que impulsa a las personas a iniciar, mantener o terminar una actividad, un comportamiento o una actitud. Se trata de un estímulo que empuja a la persona a cubrir sus necesidades y encontrar satisfacción."
+    },
+    {
+      "term": "Factores higiénicos",
+      "def": "Factores que no producen motivación por sí mismos, pero en caso de no tenerlos sí producirán insatisfacción. Entre ellos están el salario, la cultura empresarial, el ambiente físico, la estabilidad laboral, etc. (Teoría de Herzberg)"
+    },
+    {
+      "term": "Factores motivacionales",
+      "def": "Factores que tienen capacidad para motivar a las personas, como la promoción, la responsabilidad, el logro, el reconocimiento, etc. (Teoría de Herzberg)"
+    },
+    {
+      "term": "Líder",
+      "def": "Persona a la que un grupo sigue, reconociéndola como guía y orientadora. Tiene capacidad de influencia y, aunque nadie le haya dotado de autoridad, la genera por sí mismo, tiene carisma y una personalidad que hace que otros le sigan."
+    },
+    {
+      "term": "Jefe",
+      "def": "Persona que posee la autoridad jerárquica para dirigir y organizar a sus subordinados, de los que debe extraer resultados."
+    },
+    {
+      "term": "Liderazgo autocrático o autoritario",
+      "def": "El líder toma las decisiones y fija las directrices sin que nadie se involucre. El resto del equipo se limita a obedecer sus órdenes. No es recomendable, ya que destruye la motivación e impide la creatividad y la participación de los empleados. Produce fuga de talentos."
+    },
+    {
+      "term": "Liderazgo democrático o participativo",
+      "def": "El líder crea entusiasmo y sabe delegar. Fomenta la comunicación y toma en cuenta la opinión del equipo a la hora de tomar decisiones. Se utiliza cuando el trabajo en equipo y la calidad son más importantes que la cantidad y la velocidad."
+    },
+    {
+      "term": "Liderazgo de no intervención (laissez faire)",
+      "def": "También denominado delegativo, el líder interviene solo cuando lo cree conveniente, dejando máxima libertad a sus empleados y controlando lo mínimo imprescindible. Suele darse cuando los empleados tienen experiencia y/o son muy creativos. Hay falta de feedback regular."
+    },
+    {
+      "term": "Política de comunicación",
+      "def": "Normas internas que son establecidas por la dirección para determinar objetivos y prácticas de comunicación comunes para toda la empresa. Se recoge en una memoria en la que constan directrices, indicadores cuantitativos y cualitativos y métodos de registro."
+    },
+    {
+      "term": "Comunicación interna",
+      "def": "Reúne los flujos de información emitidos y recibidos dentro de la propia organización, que tienen como destino a sus miembros."
+    },
+    {
+      "term": "Flujos de comunicación",
+      "def": "Forma en la que la información se mueve por la estructura organizativa (por dónde pasa y cuál es su destino). Se clasifican según la dirección que sigan, pudiendo ser ascendentes, descendentes, horizontales, transversales y circulares."
+    },
+    {
+      "term": "Habilidades interpersonales",
+      "def": "También conocidas como habilidades blandas, se refieren a la capacidad de una persona para interactuar de manera efectiva con los demás. Entre las más destacadas se encuentran la empatía, la comunicación efectiva, la resolución de conflictos, el trabajo en equipo y la adaptabilidad."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "¿Qué plantea la teoría de Maslow sobre la satisfacción de necesidades?",
+      "options": [
+        "Que varias necesidades pueden operar simultáneamente en un mismo momento",
+        "Que solo importan las necesidades de autorrealización en el ámbito laboral",
+        "Que las necesidades deben satisfacerse de manera progresiva, comenzando por las básicas, y cuando un nivel se satisface se pasa al siguiente",
+        "Que las necesidades de los trabajadores son siempre las mismas independientemente de su nivel jerárquico"
+      ],
+      "correct": 2,
+      "explanation": "Maslow planteaba que las necesidades deben satisfacerse de manera progresiva, comenzando por las básicas (fisiológicas). Cuando las necesidades de un nivel se han satisfecho, se pasa al siguiente, hasta llegar a las de autorrealización, en la cima de la pirámide."
+    },
+    {
+      "question": "Según Herzberg, ¿qué son los factores higiénicos?",
+      "options": [
+        "Factores que por sí mismos producen alta motivación en los empleados",
+        "Factores que no producen motivación por sí mismos, pero cuya ausencia sí genera insatisfacción",
+        "Factores relacionados exclusivamente con el ambiente físico y la higiene del lugar de trabajo",
+        "Factores motivacionales vinculados al logro, la responsabilidad y el reconocimiento"
+      ],
+      "correct": 1,
+      "explanation": "Los factores higiénicos (salario, cultura empresarial, ambiente físico, estabilidad laboral...) no producen motivación por sí mismos, pero en caso de no tenerlos sí producirán insatisfacción."
+    },
+    {
+      "question": "¿Qué defiende la teoría de Adams respecto a la motivación laboral?",
+      "options": [
+        "Que los trabajadores se comparan con otros en esfuerzo y resultados, y si perciben un trato injusto, se desmotivan y baja su productividad",
+        "Que las necesidades se organizan en tres subgrupos: existencia, relación y crecimiento",
+        "Que los directivos deben elegir entre un estilo autocrático (X) o participativo (Y) según cómo perciben a sus subordinados",
+        "Que las necesidades de poder, afiliación y rendimiento son las clave en la motivación laboral"
+      ],
+      "correct": 0,
+      "explanation": "Adams defiende que los trabajadores suelen compararse con otras personas tanto en esfuerzo como en resultados. Cuando creen que son tratados de manera injusta, se desmotivan (ya sea una percepción real o no), lo que hace bajar la productividad."
+    },
+    {
+      "question": "¿Qué diferencia clave establece el temario entre un líder y un jefe?",
+      "options": [
+        "El jefe desarrolla motivaciones y coopera con el grupo, mientras que el líder solo gestiona resultados económicos",
+        "El jefe tiene más carisma y personalidad que el líder en la mayoría de las organizaciones",
+        "El líder posee autoridad jerárquica formal, a diferencia del jefe que actúa por influencia",
+        "El jefe posee autoridad jerárquica para dirigir y extraer resultados, mientras que el líder coopera, promueve actitudes, desarrolla motivaciones y guía al equipo hacia una meta común"
+      ],
+      "correct": 3,
+      "explanation": "El jefe es la persona que posee la autoridad jerárquica para dirigir y organizar a sus subordinados, de los que debe extraer resultados. El líder va más allá: coopera con el grupo, promueve actitudes, desarrolla motivaciones, incentiva el rendimiento y comparte su visión para guiar hacia una meta común."
+    },
+    {
+      "question": "¿Cuántos estilos de liderazgo distingue el temario en el apartado 6.1.3?",
+      "options": [
+        "Cinco",
+        "Seis",
+        "Siete",
+        "Cuatro"
+      ],
+      "correct": 1,
+      "explanation": "El apartado 6.1.3 distingue seis estilos de liderazgo: paternalista, autocrático o autoritario, de no intervención (laissez faire), democrático o participativo, visionario y del entrenador personal o coaching."
+    },
+    {
+      "question": "En la teoría de la malla gerencial de Blake y Mouton, ¿qué caracteriza al estilo 9.9?",
+      "options": [
+        "Mantiene un alto grado de compromiso tanto en la consecución de las tareas como en la preocupación por los empleados, generando grandes resultados y confianza e implicación con el equipo",
+        "Muestra alta preocupación por los trabajadores, pero no por la consecución de los objetivos de la empresa",
+        "La máxima preocupación es la consecución de las metas, dejando de lado la relación con los empleados",
+        "El líder realizará un esfuerzo mínimo para la consecución de los objetivos, transmitiendo información sin implicarse realmente"
+      ],
+      "correct": 0,
+      "explanation": "El estilo 9.9 de Blake y Mouton mantiene un alto grado de compromiso tanto en la consecución de las tareas como en la preocupación por los empleados, lo que conlleva grandes resultados para las organizaciones y confianza e implicación con el equipo."
+    },
+    {
+      "question": "Según el enfoque empírico del liderazgo, ¿cómo es elegido el líder?",
+      "options": [
+        "Es designado por la dirección de la empresa según sus títulos académicos y experiencia previa",
+        "Se elige al líder en función exclusiva de su capacidad de adaptación a distintas situaciones",
+        "El líder es elegido por sus compañeros, que lo consideran una persona con habilidades, destrezas, conocimientos y capacidades para asumir ese papel con eficacia",
+        "La dirección lo selecciona como figura imprescindible para la supervivencia y correcto funcionamiento del equipo"
+      ],
+      "correct": 2,
+      "explanation": "Según el enfoque empírico, el líder es elegido por sus compañeros, adquiriendo un estatus de prestigio y valor que se asociará al puesto de trabajo. Es evaluado por el resto del equipo, que lo considera una persona con habilidades, destrezas, conocimientos y capacidades para asumir este papel con eficacia."
+    },
+    {
+      "question": "¿Según qué dos criterios clasifica el temario la comunicación interna?",
+      "options": [
+        "Según el tipo de canal y según el destino de la comunicación (interna o externa)",
+        "Según la velocidad de transmisión y según el número de receptores del mensaje",
+        "Según la formalidad del lenguaje y según el medio tecnológico utilizado",
+        "Según el grado de control de la información por parte de la empresa, y según la dirección del mensaje"
+      ],
+      "correct": 3,
+      "explanation": "La comunicación interna se clasifica mediante dos criterios: según el grado de control de la información por parte de la empresa (formal o informal) y según la dirección del mensaje (vertical, horizontal o diagonal)."
+    },
+    {
+      "question": "¿Cuándo se considera que la comunicación es efectiva en el contexto empresarial, según el temario?",
+      "options": [
+        "Cuando se utilizan exclusivamente canales escritos para evitar malentendidos entre compañeros",
+        "Cuando el trabajador hace lo que se le indica porque ha comprendido la finalidad de la tarea y su misión dentro de la organización, con un nivel de malestar mínimo o nulo",
+        "Cuando la empresa dispone de múltiples canales tecnológicos de comunicación simultáneos",
+        "Cuando el mensaje se transmite de manera descendente a toda la plantilla en el menor tiempo posible"
+      ],
+      "correct": 1,
+      "explanation": "En el caso de las empresas, la comunicación será efectiva cuando el trabajador haga lo que se le indica porque haya comprendido la finalidad de la tarea y su misión dentro de la organización, con un nivel de malestar mínimo o nulo."
+    },
+    {
+      "question": "¿Cómo define el temario la habilidad de empatía en el ámbito de las habilidades interpersonales?",
+      "options": [
+        "La capacidad de comprender y compartir los sentimientos de otros, que permite a los empleados relacionarse mejor con sus compañeros y clientes, fomentando un ambiente de apoyo y cooperación",
+        "La habilidad para expresar ideas claramente y escuchar activamente, evitando malentendidos en el trabajo en equipo",
+        "La capacidad de ajustarse a nuevas situaciones y cambios en entornos de trabajo dinámicos y en constante evolución",
+        "La habilidad para colaborar y trabajar bien con otros para lograr objetivos comunes y fomentar la innovación"
+      ],
+      "correct": 0,
+      "explanation": "La empatía es la capacidad de comprender y compartir los sentimientos de otros. Permite a los empleados relacionarse mejor con sus compañeros y clientes, fomentando un ambiente de apoyo y cooperación."
+    }
+  ],
+  "_sources": {
+    "s1": "U6 La importancia de las habilidades interpersonales.pdf §6.1 (pp. 4-6); Imagen 1 'Pirámide de necesidades de Maslow' p. 4 (sin capa de texto, transcripción literal de los 5 niveles); RESUMEN Técnicas de motivación laboral.pdf §'Principales técnicas de motivación laboral' (solo imagen, transcripción literal); U6. Síntesis. La importancia de las habilidades interpersonales.pdf §Resumen",
+    "s2": "U6 La importancia de las habilidades interpersonales.pdf §6.1.1-§6.1.2 (p. 7); p. 7 imagen características de un buen líder (sin capa de texto, transcripción literal de las 6 características); RESUMEN Jefe y líder.pdf §'Diferencias entre líder y jefe — Cuando dirige a su equipo' (solo imagen, transcripción literal)",
+    "s3": "U6 La importancia de las habilidades interpersonales.pdf §6.1.3 (p. 8); RESUMEN Jefe y líder.pdf §'Estilos de liderazgo' (solo imagen, transcripción literal de los 7 estilos); U6. Síntesis. La importancia de las habilidades interpersonales.pdf §Conceptos fundamentales",
+    "s4": "U6 La importancia de las habilidades interpersonales.pdf §6.1.4-§6.1.5 (pp. 9-11); Imagen 2 'Representación de la Teoría de la malla gerencial' p. 11 (sin capa de texto, descripción literal de ejes y posiciones 1,1/1,9/5,5/9,1/9,9); diagrama Hersey y Blanchard p. 11 (sin capa de texto, transcripción literal: ejes, estilos E1–E4 y tabla de madurez M1–M4)",
+    "s5": "U6 La importancia de las habilidades interpersonales.pdf §6.2-§6.2.1 (pp. 12-14); p. 12 objetivos de la comunicación interna (sin capa de texto, transcripción literal de los 4 objetivos); p. 13 Imagen 3 'Flujos de información en los tipos de comunicación' (sin capa de texto, descripción del organigrama de 4 niveles)",
+    "s6": "U6 La importancia de las habilidades interpersonales.pdf §6.2.2-§6.2.3 (pp. 15-17); p. 17 canales de comunicación interna (sin capa de texto, transcripción literal de los 4 tipos de canal)",
+    "s7": "U6 La importancia de las habilidades interpersonales.pdf §6.3-§6.3.1-§6.3.2 (pp. 18-19); p. 18 habilidades interpersonales (sin capa de texto, transcripción literal de las 5 habilidades con definición y aporte)"
+  }
+}
