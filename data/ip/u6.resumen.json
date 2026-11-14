@@ -26,15 +26,15 @@
           "type": "table",
           "headers": ["Type", "Quantifier", "Use", "Example"],
           "rows": [
-            ["Countable", "many", "Large quantity", "Many companies are implementing the use of AI."],
-            ["Countable", "a few", "Moderate quantity (there is some)", "There are a few platforms focused on professional networking."],
-            ["Countable", "few", "Small quantity (negative meaning)", "Few people are aware of the privacy settings on different apps."],
-            ["Uncountable", "much", "Large quantity", "Much information is shared on social media."],
-            ["Uncountable", "a little", "Moderate quantity (there is some)", "A little time spent on social media can help you stay updated."],
-            ["Uncountable", "little", "Small quantity (negative meaning)", "There's little control over fake news on the internet."],
+            ["Countable", "many", "Big number", "Many companies are implementing the use of AI."],
+            ["Countable", "a few", "Moderate number", "There are a few platforms focused on professional networking."],
+            ["Countable", "few", "Small number", "Few people are aware of the privacy settings on different apps."],
+            ["Uncountable", "much", "Big number", "Much information is shared on social media."],
+            ["Uncountable", "a little", "Moderate number", "A little time spent on social media can help you stay updated."],
+            ["Uncountable", "little", "Small number", "There's little control over fake news on the internet."],
             ["Both", "some", "Affirmative sentences / offers and requests", "Some documents must be read before creating a profile online."],
             ["Both", "any", "Negative sentences / questions", "There aren't any new posts today."],
-            ["Both", "a lot of / lots of", "Large quantity", "A lot of users spend hours scrolling through online content every day."]
+            ["Both", "a lot of / lots of", "Large quantity or amount", "A lot of users spend hours scrolling through online content every day."]
           ]
         },
         {
@@ -45,12 +45,12 @@
               "content": "Usamos many y much para indicar una gran cantidad.\n- Many se usa con sustantivos contables.\n- Much se usa con sustantivos incontables.\n\nEjemplos del temario:\nMany companies are implementing the use of AI.\nMuch information is shared on social media."
             },
             {
-              "title": "A few / A little — cantidad moderada (positivo)",
-              "content": "Usamos a few y a little para indicar una cantidad moderada (hay algo, aunque no mucho).\n- A few se usa con sustantivos contables.\n- A little se usa con sustantivos incontables.\n\nEjemplos del temario:\nThere are a few platforms focused on professional networking.\nA little time spent on social media can help you stay updated."
+              "title": "A few / A little — cantidad moderada",
+              "content": "Usamos a few y a little para indicar una cantidad moderada.\n- A few se usa con sustantivos contables.\n- A little se usa con sustantivos incontables.\n\nEjemplos del temario:\nThere are a few platforms focused on professional networking.\nA little time spent on social media can help you stay updated."
             },
             {
-              "title": "Few / Little — cantidad escasa (negativo)",
-              "content": "Usamos few y little para indicar una cantidad escasa (casi ninguno / casi nada). Tienen connotación negativa.\n- Few se usa con sustantivos contables.\n- Little se usa con sustantivos incontables.\n\nEjemplos del temario:\nFew people are aware of the privacy settings on different apps.\nThere's little control over fake news on the internet."
+              "title": "Few / Little — cantidad pequeña",
+              "content": "Usamos few y little para indicar una cantidad pequeña.\n- Few se usa con sustantivos contables.\n- Little se usa con sustantivos incontables.\n\nEjemplos del temario:\nFew people are aware of the privacy settings on different apps.\nThere's little control over fake news on the internet."
             },
             {
               "title": "Some — oraciones afirmativas y ofertas/peticiones",
@@ -58,7 +58,7 @@
             },
             {
               "title": "Any — oraciones negativas e interrogativas",
-              "content": "Usamos any con sustantivos contables e incontables. Se usa especialmente en oraciones negativas y en preguntas. También puede aparecer en oraciones afirmativas con el significado de \"no importa quién/cuál/dónde\".\n\nEjemplos del temario:\nThere aren't any new posts today.\nIs there any way to automate that task?"
+              "content": "Usamos any con sustantivos contables e incontables. Se usa especialmente en oraciones negativas y en preguntas.\n\nEjemplos del temario:\nThere aren't any new posts today.\nIs there any way to automate that task?"
             },
             {
               "title": "A lot of / Lots of — gran cantidad (contable e incontable)",
@@ -83,48 +83,14 @@
         },
         {
           "type": "table",
-          "headers": ["Use", "Modal verb(s)", "Example"],
+          "headers": ["Category", "Modal verbs", "Usage", "Example"],
           "rows": [
-            ["Ability", "can, can't, could, couldn't", "She can play the piano."],
-            ["Permission", "can, may, could", "Can I go to the toilet, please?"],
-            ["Offer and Request", "can, could, would", "Can I help you?"],
-            ["Probability", "may, might, could", "It might rain tomorrow."],
-            ["Advice", "should, ought to", "You should visit a doctor."],
-            ["Obligation", "must, have to / has to", "I have to work tomorrow."],
-            ["Deduction", "must, can't", "She must be tired after working all day."]
-          ]
-        },
-        {
-          "type": "accordion",
-          "items": [
-            {
-              "title": "ABILITY — Habilidad",
-              "content": "Verbos: can / can't / could / couldn't\nUso: Express ability or lack of it (expresar habilidad o su ausencia)\n\nEjemplos:\nShe can play the piano.\nI can't swim.\nHe could speak three languages when he was young."
-            },
-            {
-              "title": "PERMISSION — Permiso",
-              "content": "Verbos: can / may / could\nUso: Ask for or give permission (pedir o dar permiso)\n\nEjemplos:\nCan I go to the toilet, please?\nYou may leave early today.\nCould I use your computer?"
-            },
-            {
-              "title": "OFFER AND REQUEST — Ofrecimiento y petición",
-              "content": "Verbos: can / could / would\nUso: Make offers or polite requests (hacer ofrecimientos o peticiones formales)\n\nEjemplos:\nCan I help you?\nCould you send me the report?\nWould you like some help?"
-            },
-            {
-              "title": "PROBABILITY — Probabilidad",
-              "content": "Verbos: may / might / could\nUso: Express possibility or uncertainty (expresar posibilidad o incertidumbre)\n\nEjemplos:\nIt might rain tomorrow.\nShe may be in a meeting.\nHe could be the right candidate."
-            },
-            {
-              "title": "ADVICE — Consejo",
-              "content": "Verbos: should / ought to\nUso: Give recommendations (dar recomendaciones o consejos)\n\nEjemplos:\nYou should visit a doctor.\nYou ought to study more.\nShe shouldn't work so many hours."
-            },
-            {
-              "title": "OBLIGATION — Obligación",
-              "content": "Verbos: must / have to\nUso: Express necessity or obligation (expresar necesidad u obligación)\n\nEjemplos:\nI have to work tomorrow.\nYou must wear a helmet.\nShe has to finish the project today."
-            },
-            {
-              "title": "DEDUCTION — Deducción",
-              "content": "Verbos: must / can't\nUso: Express logical deduction (expresar deducción lógica: certeza positiva o negativa)\n\nEjemplos:\nShe must be tired after working all day.\nHe can't be at home — his car isn't there.\nThey must have finished the meeting."
-            }
+            ["Ability", "can (can't), could (couldn't)", "Express Ability or lack of it", "She can play the piano."],
+            ["Possibility", "may, might, could", "Express possibility or uncertainty", "It might rain tomorrow."],
+            ["Permission", "can, may, could", "Ask for or give permission", "Can I go to the toilet, please?"],
+            ["Obligation", "must, have to", "Express necessity or obligation", "I have to work tomorrow."],
+            ["Prohibition", "must not, can't", "Express prohibition", "You can't smoke in this area."],
+            ["Advice", "should, ought to", "Give recommendations", "You should visit a doctor."]
           ]
         },
         {
@@ -458,13 +424,13 @@
             {"term": "AI Specialist", "def": "Designs and implements artificial intelligence and machine learning models. Creates algorithms that automate tasks, recognize patterns, and make decisions."},
             {"term": "Mobile App Developer", "def": "Creates apps for smartphones and tablets using platforms like iOS or Android."},
             {"term": "UX/UI Designer", "def": "Focuses on user experience (UX) and user interface (UI). Designs layouts, navigation, and interactions to make digital products easy to use."},
-            {"term": "Vacancy", "def": "Vacante: puesto de trabajo disponible en una empresa al que pueden postularse candidatos."},
-            {"term": "Internship", "def": "Prácticas: período de trabajo formativo en una empresa, habitualmente remunerado o como parte de los estudios."},
-            {"term": "Driven", "def": "Motivado, ambicioso: que toma iniciativa y siempre busca alcanzar sus objetivos."},
-            {"term": "Detail-oriented", "def": "Detallista, meticuloso: que presta mucha atención a los pequeños detalles en su trabajo."},
-            {"term": "Team player", "def": "Buen compañero de equipo: persona que trabaja bien con otros y contribuye al éxito del grupo."},
-            {"term": "Adaptable", "def": "Adaptable, flexible: capacidad de ajustarse a nuevas situaciones o cambios en el entorno laboral."},
-            {"term": "Multitasking", "def": "Realizar varias tareas a la misma vez: capacidad de gestionar múltiples responsabilidades simultáneamente."}
+            {"term": "Vacancy", "def": "Vacante"},
+            {"term": "Internship", "def": "Prácticas"},
+            {"term": "Driven", "def": "Motivado, ambicioso"},
+            {"term": "Detail-oriented", "def": "Detallista, meticuloso"},
+            {"term": "Team player", "def": "Buen compañero de equipo"},
+            {"term": "Adaptable", "def": "Adaptable, flexible"},
+            {"term": "Multitasking", "def": "Realizar varias tareas a la misma vez"}
           ]
         }
       ]
