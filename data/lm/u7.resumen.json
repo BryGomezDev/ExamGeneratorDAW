@@ -55,7 +55,7 @@
           "headers": ["Año", "Versión / hecho"],
           "rows": [
             ["1997", "Dave Winer, un creador de software, crea RSS."],
-            ["~1999", "Netscape, con las siglas significando rich site summary, resumen óptimo del sitio, crea las versiones RSS 0.90 y RSS 0.91."],
+            ["1999 (dos años después)", "Netscape, con las siglas significando rich site summary, resumen óptimo del sitio, crea las versiones RSS 0.90 y RSS 0.91."],
             ["2000", "Dave Winer lanza RSS 0.92 con nuevas características."],
             ["2000", "O'Reilly desarrolla RSS 1.0, el cual significaba RDF site summary, ya que el formato utilizado era RDF."],
             ["2002", "Dave Winer crea RSS 2.0, Really Simple Syndication, es el que se sigue empleando hoy en día."]
@@ -557,7 +557,7 @@
     },
     {
       "term": "RSS",
-      "def": "Really Simple Syndication o sindicalizaión realmente simple. Lenguaje proveniente del XML, el más usado de los formatos de sindicación, que marca el estándar al resto. Es considerablemente sencillo de manejar para la escritura de texto plano, en especial si se posee una plantilla preprogramada. La versión actual es RSS 2.0, creada por Dave Winer en 2002."
+      "def": "Really Simple Syndication o sindicalización realmente simple. Lenguaje proveniente del XML, el más usado de los formatos de sindicación, que marca el estándar al resto. Es considerablemente sencillo de manejar para la escritura de texto plano, en especial si se posee una plantilla preprogramada. La versión actual es RSS 2.0, creada por Dave Winer en 2002."
     },
     {
       "term": "Atom",
@@ -573,7 +573,7 @@
     },
     {
       "term": "GUID",
-      "def": "Globally Unique Identifier (Identificador global único). Subelemento de <item> en RSS. Puede contener el atributo «isPermaLink» cuyo valor será «true» si el código es una URL, y «false» en caso contrario."
+      "def": "Identificador global único. Subelemento de <item> en RSS. Puede contener el atributo «isPermaLink» cuyo valor será «true» si el código es una URL, y «false» en caso contrario."
     },
     {
       "term": "enclosure",
@@ -586,15 +586,15 @@
   ],
   "quiz": [
     {
-      "question": "¿Cuáles son las tres tecnologías de sindicación mencionadas en el temario?",
+      "question": "¿Qué ventaja de la sindicación de contenidos recoge el temario?",
       "options": [
-        "HTML, XML y JSON",
-        "RSS, Atom y RDF",
-        "XML, RSS y HTML",
-        "RSS, Atom y CSV"
+        "Obliga a visitar cada página para comprobar si hay noticias nuevas",
+        "Evita el Spam, la publicidad excesiva y posibles virus a los que nos expondríamos buscando en diferentes páginas",
+        "Solo funciona con noticias de un único sitio web",
+        "Sustituye por completo a los navegadores web"
       ],
       "correct": 1,
-      "explanation": "El temario menciona que Feed Validator permite comprobar errores en RSS, Atom y RDF Site Summary. RSS y Atom son los dos formatos principales de sindicación estudiados en la unidad, ambos basados en XML."
+      "explanation": "Entre las ventajas de la sindicación, el temario indica que evita el Spam, la publicidad excesiva y posibles virus a los que nos expondríamos buscando en diferentes páginas a través de buscadores."
     },
     {
       "question": "¿En qué año creó Dave Winer la primera versión de RSS?",
