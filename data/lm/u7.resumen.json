@@ -1,0 +1,708 @@
+{
+  "subject": "lm",
+  "unit": 7,
+  "title": "Aplicación de los lenguajes de marcas a la sindicación de contenidos",
+  "intro": "Vivimos en un mundo donde la globalización y la web 2.0 han hecho que la información sea una mercancía extremadamente abundante, tanto que se entrega en una cantidad ingente que como personas no somos capaces de procesar.\n\nCon el fin de poder estar informados es imprescindible cribar dicha información para poder alcanzar aquella que realmente nos interesa, pero si tuviéramos que descubrir el contenido de cada noticia sería imposible, ahí es donde la sindicación de contenidos muestra su valor.\n\nLa sindicación permite la creación de feed, pequeños extractos de noticia, con título y breve introducción, que nos permiten navegar rápidamente entre las distintas noticias hasta alcanzar aquellas que nos interesan. Aún con esto puede resultar una tarea tediosa, por lo que usando este mismo sistema se han creado numerosas herramientas como los agregadores para facilitar esta tarea.\n\nLos agregadores permiten crear un perfil del usuario y la información que desea para después filtrar la información y ofrecérsela al usuario, con solo las noticias relevantes para él y actualizadas.\n\nEn este tema veremos las dos caras de la misma moneda, cómo crear feeds de noticias y cómo automatizar su recepción para que tan solo nos llegue lo que realmente nos interesa.",
+  "objectives": [
+    "Estudiaremos los lenguajes de marcas usados en la sindicación de contenidos.",
+    "Describiremos cuál es la estructura y sintaxis de los dos lenguajes de marcas usados en la sindicación de contenidos como son RSS y Atom.",
+    "Conoceremos las distintas herramientas existentes para la creación automática de feeds, su edición y validación.",
+    "Descubriremos los distintos medios y herramientas con los que podemos recibir y filtrar los feeds publicados."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "7.1. Ventajas y ámbitos de aplicación",
+      "short": "7.1 Ventajas",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En un mundo como el nuestro que avanza tan rápidamente, la información queda desactualizada con gran rapidez, en ocasiones en horas, lo que supone para las personas que buscan estar el día un gran problema a la hora de buscar información o más bien lo harían, si no existiera la sindicación de los contenidos, la cual nos permite encontrar en una única página web la información más nueva siempre primero.\n\nEsta sindicación actúa de la misma manera que nuestra bandeja de entrada de correo, manteniendo siempre lo más nuevo e importante siempre a la vista.\n\nEs, en definitiva, el acto de compartir publicaciones de otras páginas en una sola, de modo que visitando una única página podemos enterarnos de todas las noticias actuales y, si alguna nos interesara, visitar la página de la que proviene a través de un enlace.\n\nEsta manera de organización, entre otras ventajas que se comentarán a continuación, la principal razón del uso de este tipo de organización es el intento de facilitar a los usuarios a la información más actual y relevante.\n\nLas ventajas más relevantes de la sindicación de los contenidos son:"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "La actualización periódica automática ahorra una gran cantidad de tiempo de búsqueda a los usuarios.",
+            "Es más preciso que el uso de buscadores.",
+            "Acelera la búsqueda de noticias.",
+            "Permite el filtrado, personalizando así los temas de los contenidos recibidos.",
+            "Evita el Spam, la publicidad excesiva y posibles virus a los que nos expondríamos buscando en diferentes páginas a través de buscadores.",
+            "Permite acceder a noticias en tiempo real.",
+            "La subscripción en una única página."
+          ]
+        },
+        {
+          "type": "text",
+          "content": "La RSS, Really Simple Syndication, utilizan el texto plano para distribuir las noticias en la red con un formato XML."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "7.2. Tecnologías y estándares de canales de contenidos",
+      "short": "7.2 Tecnologías",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La sindicación usa distintos formatos, pero entre ellos destacan RSS y ATOM, los cuales estudiaremos a continuación. Ambos están basados en el lenguaje XML, por lo que son lenguajes de marcas, y se usan para la difusión rápida de información, principalmente en el ámbito mediático.\n\nSe suele emplear un icono de RSS o ATOM por parte de la propia página para marcar que usan un sistema de sindicación de contenido, ya sea uno genérico, o especificando el formato usado. Este icono posee siempre un color naranja.\n\nEs común que las páginas que usan este elemento utilicen también un feed, conocido como fuente web o canal. Este feed es un XML con la información necesaria, que permite a los usuarios visitar la página de la que proviene la información."
+        },
+        {
+          "type": "text",
+          "content": "7.2.1. RSS\n\nLas RSS, Really Simple Syndication o sindicalización realmente simple, es el más usado y, por tanto, el que marca el estándar al resto de formatos usados. Es un lenguaje proveniente del XML por lo que es considerablemente sencillo de manejar para la escritura de texto plano, en especial si se posee una plantilla preprogramada, ahorrando mucho tiempo y agilizando el proceso.\n\nEl formato RSS ha ido evolucionando a lo largo de los años, llegando a cambiar de nombre."
+        },
+        {
+          "type": "table",
+          "headers": ["Año", "Versión / hecho"],
+          "rows": [
+            ["1997", "Dave Winer, un creador de software, crea RSS."],
+            ["~1999", "Netscape, con las siglas significando rich site summary, resumen óptimo del sitio, crea las versiones RSS 0.90 y RSS 0.91."],
+            ["2000", "Dave Winer lanza RSS 0.92 con nuevas características."],
+            ["2000", "O'Reilly desarrolla RSS 1.0, el cual significaba RDF site summary, ya que el formato utilizado era RDF."],
+            ["2002", "Dave Winer crea RSS 2.0, Really Simple Syndication, es el que se sigue empleando hoy en día."]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "7.2.2. Atom\n\nEs un formato muy similar al RSS, ya que ambos proceden de XML y tienen el mismo uso. Fue creado con la intención de arreglar fallos de RSS y simplificarlo. Fue creado en 2005 por Internet Engineering Task Force, IETF, pero a pesar de considerarse mejor, ya que soluciona fallos y aumenta las características de RSS, sigue siendo menos utilizado."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "7.3.1. Estructura y elementos de RSS 2.0",
+      "short": "7.3.1 RSS 2.0",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Como un derivado de XML, requiere de una sintaxis rígida con unas normas muy claras. Además, dado que tiene una función específica, cuenta con determinados elementos obligatorios. Casi podemos decir que es un simple XML con una plantilla específica.\n\nLos elementos que destacan en la estructura de los ficheros RSS, e importantísimos para una noticia, son los siguientes:"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Título. Obligatorio.",
+            "Resumen. Obligatorio.",
+            "Enlace o hipervínculo a la noticia completa. Obligatorio.",
+            "Autor. Opcional."
+          ]
+        },
+        {
+          "type": "text",
+          "content": "La estructura básica y obligatoria de un RSS es la siguiente:"
+        },
+        {
+          "type": "code",
+          "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<rss version=\"2.0\">\n  <channel>\n    <title></title>\n    <link></link>\n    <description></description>\n  </channel>\n</rss>"
+        },
+        {
+          "type": "text",
+          "content": "Como XML debe comenzar siempre, como ya hemos estudiado, con la línea introductoria que marca su versión.\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n\nLa segunda línea marca el archivo como un fichero RSS, marcando la versión utilizada.\n\n<rss version=\"2.0\">\n\nLa siguiente es la raíz, sus elementos son los que darán la información relevante, existen tres elementos obligatorios y 16 opcionales.\n\n<channel>"
+        },
+        {
+          "type": "text",
+          "content": "Existen tres elementos obligatorios en este apartado:\n\n1. <title> Marca el título de la noticia o anuncio.\n2. <link> Contiene un enlace o hipervínculo que nos redirige con una URL estructurada como una URI, uniform resource identifier.\n3. <description> Introduce el recurso con un breve resumen."
+        },
+        {
+          "type": "code",
+          "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<rss version=\"2.0\">\n  <channel>\n    <title>Identificador de recursos uniforme</title>\n    <link>https://es.wikipedia.org/wiki/Identificador_de_recursos_uniforme</link>\n    <description>Esta página web nos introducirá en el concepto de RLI</description>\n  </channel>\n</rss>"
+        },
+        {
+          "type": "text",
+          "content": "⚠ La descripción del ejemplo dice «concepto de RLI», pero la página enlazada trata del URI (Identificador de recursos uniforme)."
+        },
+        {
+          "type": "text",
+          "content": "Existen un total de 16 elementos secundarios u opcionales, los cuales añaden información a los feed. Estos elementos son los siguientes:"
+        },
+        {
+          "type": "table",
+          "headers": ["Elemento", "Descripción"],
+          "rows": [
+            ["<category>", "Con el atributo opcional «domain» incluye diversas categorías del feed."],
+            ["<docs>", "La URL con el documento que contiene el formato del feed."],
+            ["<ttl>", "Marca el tiempo, en minutos, que permanecerá en el caché antes de ser actualizado."],
+            ["<pubDate>", "En formato RFC 822, señala la última fecha de publicación."],
+            ["<image>", "Elemento GIF, PNG o JPEG, que representa el feed, contiene tres subelementos obligatorios y otros tres opcionales."],
+            ["<copyright>", "Derechos de autor del contenido de la publicación."],
+            ["<lastBuildDate>", "En formato RFC 822, la fecha y hora de la última modificación."],
+            ["<rating>", "Clasificación PICS, platform for internet content selection, del feed."],
+            ["<skipDays>", "Pudiendo introducir como subelementos hasta los siete días de la semana, con <day>, determina los días en los que no se debe actualizar el feed."],
+            ["<skipHours>", "Pudiendo introducir como subelementos hasta las 24 horas del día, con <hour>, determina los días en los que no se debe actualizar el feed. Las horas se numeran desde el 0 al 23."],
+            ["<generator>", "Indica el programa que ha creado el fichero RSS."],
+            ["<language>", "Indica el lenguaje del feed. Se debe usar un código aprobado."],
+            ["<cloud>", "Para registrar, mediante atributos, procesos en la nube y recibir notificaciones de las actualizaciones del feed."],
+            ["<managingEditor>", "Informa del correo del editor, para posibles consultas."],
+            ["<webMaster>", "Informa del correo del webmaster o responsable de la web, para posibles consultas."],
+            ["<textInput>", "Define un campo de texto de entrada con cuatro subelementos obligatorios, este elemento es poco usado."]
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "<category>",
+              "content": "Con el atributo opcional «domain» incluye diversas categorías del feed.\n\n<category domain=\" \"> plantas/flores </category>"
+            },
+            {
+              "title": "<docs>",
+              "content": "La URL con el documento que contiene el formato del feed.\n\n<docs>http://blogs.law.harvard.edu/tech/rss</docs>"
+            },
+            {
+              "title": "<ttl>",
+              "content": "Marca el tiempo, en minutos que permanecerá en el caché antes de ser actualizado.\n\n<ttl>60</ttl>"
+            },
+            {
+              "title": "<pubDate>",
+              "content": "En formato RFC 822, señala la última fecha de publicación.\n\n<pubDate>Wed, 16 Mar 2022 12:16:10 +0100</pubDate>"
+            },
+            {
+              "title": "<image>",
+              "content": "Elemento GIF, PNG o JPEG, que representa el feed, contiene tres subelementos obligatorios y otros tres opcionales.\n\nObligatorios:\n• <url> URL del elemento.\n• <title> título de la imagen o descripción.\n• <link> Enlace al sitio web.\n\nOpcionales:\n• <description> En el atributo de título HTML del enlace de la imagen, descripción que precisa el texto.\n• <height> Alto de la imagen en píxeles, cuenta por defecto con el valor de 31, hasta un valor máximo de 400.\n• <width> Ancho de la imagen en píxeles, cuenta por defecto con el valor de 88, hasta un máximo de 144.\n\n<image>\n  <url>http://www.butanic.com/imagenes/rosa.jpg</url>\n  <title>Rosa en flor</title>\n  <link>http://www.butanic.com</link>\n  <description>florecimiento de las flores</description>\n  <height>200</height>\n  <width>88</width>\n</image>"
+            },
+            {
+              "title": "<copyright>",
+              "content": "Derechos de autor del contenido de la publicación.\n\n<copyright>Copyright 2022 butanic</copyright>"
+            },
+            {
+              "title": "<lastBuildDate>",
+              "content": "En formato RFC 822, la fecha y hora de la última modificación.\n\n<lastBuildDate>Wed, 16 Mar 2022 12:16:10 +0100</lastBuildDate>"
+            },
+            {
+              "title": "<rating>",
+              "content": "Clasificación PICS, platform for internet content selection, del feed. Puedes encontrar más información sobre los PICS en la página https://www.w3.org/PICS/."
+            },
+            {
+              "title": "<skipDays>",
+              "content": "Pudiendo introducir como subelementos hasta los siete días de la semana, con <day>, determina los días en los que no se debe actualizar el feed.\n\n<skipDays>\n  <day>Monday</day>\n  <day>Saturday</day>\n  <day>Sunday</day>\n</skipDays>"
+            },
+            {
+              "title": "<skipHours>",
+              "content": "Pudiendo introducir como subelementos hasta las 24 horas del día, con <hour>, determina los días en los que no se debe actualizar el feed. Las horas se numeran desde el 0 al 23.\n\n<skipHours>\n  <hour>0</hour>\n  <hour>1</hour>\n  <hour>2</hour>\n  <hour>3</hour>\n  <hour>4</hour>\n</skipHours>\n\n⚠ El temario dice que <skipHours> «determina los días»; por lo que explica el propio apartado (subelementos <hour> del 0 al 23), son las horas en las que no se debe actualizar el feed."
+            },
+            {
+              "title": "<generator>",
+              "content": "Indica el programa que ha creado el fichero RSS."
+            },
+            {
+              "title": "<language>",
+              "content": "Indica el lenguaje del feed. Se debe usar un código aprobado.\n\n<language>es</language>"
+            },
+            {
+              "title": "<cloud>",
+              "content": "Para registrar, mediante atributos, procesos en la nube y recibir notificaciones de las actualizaciones del feed. Es necesario que el servicio web especificado admita la interfaz rssCloud y sea capaz de implementar HTTP-POST, XML-RPC o SOAP 1.1.\n\n<cloud domain=\" \" port=\" \" path=\" \" registerProcedure=\" \" protocol=\" \"/>"
+            },
+            {
+              "title": "<managingEditor>",
+              "content": "Informa del correo del editor, para posibles consultas.\n\n<managingEditor>12345@Editors.com</managingEditor>"
+            },
+            {
+              "title": "<webMaster>",
+              "content": "Informa del correo del webmaster o responsable de la web, para posibles consultas.\n\n<webMaster>00002@Editor.com</webMaster>"
+            },
+            {
+              "title": "<textInput>",
+              "content": "Define un campo de texto de entrada con cuatro subelementos obligatorios, este elemento es poco usado.\n\n• <description> Descripción de la entrada de texto con un máximo de 500 caracteres.\n• <link> URL del script CGI el cual se encarga de procesar el ingreso de texto.\n• <title> Determina la etiqueta del botón enviar con un máximo de 100 caracteres.\n• <name> Indica el nombre del objeto de texto."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Elementos de <item>\n\nLos elementos <item> guardan información relacionada con el feed, aumentando su valor informativo, y manteniéndolo actualizado y contextualizado, aunque es muy común no es obligatorio. La información en él es visible en el feed, y consta de diez elementos opcionales, aunque es obligatorio que uno de estos dos <title> o <description> aparezca."
+        },
+        {
+          "type": "table",
+          "headers": ["Elemento", "Descripción"],
+          "rows": [
+            ["<title>", "Título del ítem."],
+            ["<link>", "Contiene un enlace o hipervínculo que nos redirige con una URL."],
+            ["<guid>", "Identificador global único, puede contener un atributo «isPermaLink=\" \"» cuyo valor será «true» si el código es una URL, en caso contrario será «false»."],
+            ["<enclosure>", "Es usado para añadir archivos multimedia. Contiene tres atributos: url (dirección URL del elemento), length (tamaño en bytes) y type (tipo de archivo)."],
+            ["<author>", "Dirección de correo del autor del artículo para posibles consultas."],
+            ["<source>", "Título del RSS del que proviene el artículo. Contiene de manera obligatoria el atributo «url», con la dirección de dicho artículo."],
+            ["<comments>", "Especifica una URL donde los lectores pueden dejar comentarios."],
+            ["<pubDate>", "En formato RFC 822, la fecha y hora de publicación."],
+            ["<category>", "Determina la categoría, pueden aparecer varias."],
+            ["<description>", "Un resumen del artículo o incluso algunas frases extraídas de él. Se escribe en texto plano o usando un formato HTML."]
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "<title>",
+              "content": "Título del ítem."
+            },
+            {
+              "title": "<link>",
+              "content": "Contiene un enlace o hipervínculo que nos redirige con una URL."
+            },
+            {
+              "title": "<guid>",
+              "content": "Identificador global único, puede contener un atributo «isPermaLink=\" \"» cuyo valor será «true» si el código es una URL, en caso contrario será «false».\n\n<guid isPermaLink=\" \"> </guid>"
+            },
+            {
+              "title": "<enclosure>",
+              "content": "Es usado para añadir archivos multimedia. Contiene tres atributos:\n• url: dirección URL del elemento.\n• lenght; tamaño en bytes.\n• type: tipo de archivo.\n\n<enclosure url=\" \" length=\" \" type=\" \"/>\n\n⚠ El temario escribe el atributo como «lenght»; el nombre correcto es «length», como aparece en su propio código (<enclosure url=\" \" length=\" \" type=\" \"/>). Lo mismo pasa con el atributo «lenght» de <link> en Atom."
+            },
+            {
+              "title": "<author>",
+              "content": "Dirección de correo del autor del artículo para posibles consultas."
+            },
+            {
+              "title": "<source>",
+              "content": "Título del RSS del que proviene el artículo. Contiene de manera obligatoria el atributo «url», con la dirección de dicho artículo.\n\n<source url=\" \"> </source>"
+            },
+            {
+              "title": "<comments>",
+              "content": "Especifica una URL donde los lectores pueden dejar comentarios."
+            },
+            {
+              "title": "<pubDate>",
+              "content": "En formato RFC 822, la fecha y hora de publicación."
+            },
+            {
+              "title": "<category>",
+              "content": "Determina la categoría, pueden aparecer varias."
+            },
+            {
+              "title": "<description>",
+              "content": "Un resumen del artículo o incluso algunas frases extraídas de él. Se escribe en texto plano o usando un formato HTML."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<rss version=\"2.0\">\n  <channel>\n    <title></title>\n    <link></link>\n    <description></description>\n    <item>\n      <title></title>\n      <link></link>\n      <description></description>\n    </item>\n    <item>\n      <title></title>\n      <link></link>\n      <description></description>\n      <author></author>\n    </item>\n  </channel>\n</rss>"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "7.3.2. Estructura y elementos de Atom",
+      "short": "7.3.2 Atom",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La estructura de Atom, en su versión actual ATOM 1.0, es similar a la de RSS."
+        },
+        {
+          "type": "code",
+          "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<feed xmlns=\"http://www.w3.org/2005/Atom\">\n  <title>\n  </title>\n  <entry>\n  </entry>\n  <entry>\n  </entry>\n</feed>"
+        },
+        {
+          "type": "text",
+          "content": "Como XML sigue manteniendo la primera línea, pero la segunda se cambia para reflejar que es un elemento Atom mediante la siguiente frase:\n\n<feed xmlns=\"http://www.w3.org/2005/Atom\">\n\nEs seguido por la raíz <feed> la cual, obligatoriamente, contiene el atributo «xmlns» la cual define el tipo de documento:\n\n<feed xmlns=\"http://www.w3.org/2005/Atom\">"
+        },
+        {
+          "type": "text",
+          "content": "Elementos de <feed>\n\nTodos los elementos de <feed> que posean texto pueden contener el atributo «type» el cual marca el tipo de texto con los valores «text», «html» y «xhtml».\n\nLos elementos de <feed> son los siguientes:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "<id>",
+              "content": "Muestra la URI del canal."
+            },
+            {
+              "title": "<title>",
+              "content": "El nombre del canal, es obligatorio."
+            },
+            {
+              "title": "<updated>",
+              "content": "Marca la última modificación en formato RFC 3339. La fecha y hora se separan con una «T» mayúscula y la «Z» final nos indica que nos guiamos por la hora universal, en caso contrario se especifica la zona horaria.\n\n<updated>2022-03-18T08:16:12Z</updated>"
+            },
+            {
+              "title": "<link>",
+              "content": "Páginas web relacionadas. Posee un atributo obligatorio y varios opcionales.\n\n• href: Obligatorio, URI del recurso empleado.\n• rel: URI con uno de los siguientes valores:\n  + alternate. El usado por defecto.\n  + enclosure.\n  + related.\n  + self.\n  + via.\n• type: El tipo de recurso empleado.\n• hreflang: Idioma del recurso empleado.\n• title: Título del recurso.\n• lenght: En bytes, el tamaño del recurso.\n\n<link href=\" \" type=\" \" hreflang=\"es\" title=\" \"/>"
+            },
+            {
+              "title": "<author>",
+              "content": "Autor del canal, puede contener tres subelementos, uno obligatorio y dos opcionales.\n\n• <name> Obligatorio, Identifica el nombre del autor.\n• <email> Correo del autor para posibles consultas.\n• <uri> URI de la página web del autor.\n\n< autor>\n  <name></name>\n  <email></email>\n  <uri></uri>\n</ author>\n\n⚠ En el código del temario aparecen < autor> y </ author>: en XML no puede haber espacio después de < ni de </, y el elemento se llama <author>."
+            },
+            {
+              "title": "<subtitle>",
+              "content": "Determina el subtítulo y su creación posee la misma estructura que <title> con su atributo opcional «type», por ser un elemento con texto, y sus valores «text», «html» y «xhtml»."
+            },
+            {
+              "title": "<rights>",
+              "content": "Contiene los derechos de autor del canal."
+            },
+            {
+              "title": "<contributor>",
+              "content": "Identifica a un colaborador del canal, cuenta con la misma estructura que el elemento <author>.\n\n• <name> Obligatorio, Identifica el nombre del autor.\n• <email> Correo del autor para posibles consultas.\n• <uri> URI de la página web del autor.\n\n<contributor>\n  <name></name>\n  <email></email>\n  <uri></uri>\n</contributor>"
+            },
+            {
+              "title": "<generator>",
+              "content": "Software usado para la creación del canal, cuenta con dos atributos opcionales: «uri» y «version».\n\n<generator> uri=\" \" versión=\" \"></generator>\n\n⚠ El código del temario <generator> uri=\" \" versión=\" \"></generator> pone los atributos fuera de la etiqueta y con tilde. La forma correcta es <generator uri=\" \" version=\" \"></generator>."
+            },
+            {
+              "title": "<logo>",
+              "content": "Dirección de una imagen insertada."
+            },
+            {
+              "title": "<icon>",
+              "content": "Dirección de una imagen insertada."
+            },
+            {
+              "title": "<category>",
+              "content": "Especifica la categoría del canal, cuenta con tres atributos, uno de ellos obligatorio:\n• term: obligatorio, en él se especifica la categoría del elemento.\n• scheme\n• label\n\n<category term=\" \"/>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Elementos de <entry>\n\nEl feed, puede contener una o varias entradas <entry>, estos elementos constan de los siguientes subelementos:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "<id>",
+              "content": "Identificador URI."
+            },
+            {
+              "title": "<title>",
+              "content": "Obligatorio, Marca el título del elemento."
+            },
+            {
+              "title": "<updated>",
+              "content": "Ultima fecha de modificación en formato RFC 3339. La fecha y hora se separan con una «T» mayúscula y la «Z» final nos indica que nos guiamos por la hora universal, en caso contrario se especifica la zona horaria.\n\n<updated>2022-03-18T08:16:12Z</updated>"
+            },
+            {
+              "title": "<content>",
+              "content": "Muestra el contenido, escribiéndolo o con un enlace, es obligatorio si no hay elemento <summary> u otro enlace alternativo que muestre el contenido."
+            },
+            {
+              "title": "<summary>",
+              "content": "Resumen o algunas líneas del contenido de la publicación."
+            },
+            {
+              "title": "<rights>",
+              "content": "Contiene los derechos de autor del canal."
+            },
+            {
+              "title": "<contributor>",
+              "content": "Identifica a un colaborador del canal, cuenta con la misma estructura que el elemento <author>.\n\n• <name> Obligatorio, Identifica el nombre del autor.\n• <email> Correo del autor para posibles consultas.\n• <uri> URI de la página web del autor.\n\n<contributor>\n  <name></name>\n  <email></email>\n  <uri></uri>\n</contributor>"
+            },
+            {
+              "title": "<published>",
+              "content": "Fecha de publicación en formato RFC 3339. La fecha y hora se separan con una «T» mayúscula y la «Z» final nos indica que nos guiamos por la hora universal, en caso contrario se especifica la zona horaria.\n\n<published>2022-03-18T08:16:12+0100</published>\n\n⚠ En RFC 3339 la zona horaria se escribe con dos puntos: +01:00, no +0100."
+            },
+            {
+              "title": "<source>",
+              "content": "Especificas los datos de otros elementos si el elemento <entry> es una copia.\n\n<source>\n  <id><id>\n  <title></title>\n  <updated></updated>\n  <rights></rights>\n</source>\n\n⚠ En el código, <id><id> debería ser <id></id> (falta la barra de cierre)."
+            },
+            {
+              "title": "<author>",
+              "content": "Autor del canal, puede contener tres subelementos, uno obligatorio y dos opcionales.\n\n• <name> Obligatorio, Identifica el nombre del autor.\n• <email> Correo del autor para posibles consultas.\n• <uri> URI de la página web del autor.\n\n< author>\n  <name></name>\n  <email></email>\n  <uri></uri>\n</ author>\n\n⚠ En el código del temario aparecen < autor> y </ author>: en XML no puede haber espacio después de < ni de </, y el elemento se llama <author>."
+            },
+            {
+              "title": "<link>",
+              "content": "Páginas web relacionadas. Posee un atributo obligatorio y varios opcionales.\n\n• href: Obligatorio, URI del recurso empleado.\n• rel: URI con uno de los siguientes valores:\n  + alternate. El usado por defecto.\n  + enclosure.\n  + related.\n  + self.\n  + via.\n• type: El tipo de recurso empleado.\n• hreflang: Idioma del recurso empleado.\n• title: Título del recurso.\n• lenght: En bytes, el tamaño del recurso.\n\n<link href=\" \" type=\" \" hreflang=\"es\" title=\" \"/>"
+            },
+            {
+              "title": "<category>",
+              "content": "Especifica la categoría del canal, cuenta con tres atributos, uno de ellos obligatorio:\n• term: obligatorio, en él se especifica la categoría del elemento.\n• scheme\n• label\n\n<category term=\" \"/>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "7.4. Creación, validación y comprobación de funcionalidades de los canales de contenidos",
+      "short": "7.4 Creación",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Es común que los ficheros RSS se creen de manera automática usando otro tipo de lenguaje, en especial en lugares como blog, por lo que es recomendable revisar esos ficheros en busca de errores producidos por la incompatibilidad o durante el proceso de traducción."
+        },
+        {
+          "type": "text",
+          "content": "7.4.1. Creación de un feed RSS\n\nLa manera más sencilla de crear un feed es el uso de una herramienta que lo genere automáticamente, por lo que solo deberemos rellenar las casillas que el programa nos indique con la información deseada y la herramienta traducirá esos datos en un fichero RSS funcional, lo que nos ahorrará mucho tiempo y evitará errores.\n\nOtra forma, mucho más laboriosa, es crearlo desde cero usando programas de escritura XML, como es Notepad++, donde deberemos crear la estructura y añadir el contenido. Esta última nos da mucha más libertad al costo de un mayor trabajo y riesgo de errores, aunque esto último se puede paliar si prefabricamos una estructura y la usamos de «molde» para nuestros ficheros RSS.\n\nLos pasos que debemos seguir para crear un fichero RSS de forma manual son los siguientes:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Paso 1",
+              "content": "Tener clara la estructura que debemos elaborar en función de la información y referencias que vayamos a añadir, como, por ejemplo, el número de <item>."
+            },
+            {
+              "title": "Paso 2",
+              "content": "Crear el documento XML y añadir las líneas iniciales que lo marquen como un fichero con formato RSS, incluyendo su versión y demás elementos obligatorios. Si disponemos de ella es aconsejable usar una plantilla, ya que ahorraremos tiempo y evitaremos errores."
+            },
+            {
+              "title": "Paso 3",
+              "content": "Añadir los datos del feed comprobando que todos los campos obligatorios se hayan rellenado."
+            },
+            {
+              "title": "Paso 4",
+              "content": "Insertar los elementos opcionales y subelementos deseados."
+            },
+            {
+              "title": "Paso 5",
+              "content": "Guardar el archivo como un fichero con extensión .rss o, en su defecto, .xml."
+            },
+            {
+              "title": "Paso 6",
+              "content": "Validar el feed, tal como veremos en el siguiente punto."
+            },
+            {
+              "title": "Paso 7",
+              "content": "Publicar el feed con FTP o un gestor de archivos."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "7.4.2. Validación y comprobación\n\nComo todo elemento creado por manos humanas existe la posibilidad de que se hayan cometido errores durante su fabricación. Estos errores pueden no ocasionarnos problemas, pero también pueden provocar que el archivo no se cargue bien o no pueda ser leído directamente, por lo que es muy importante revisar nuestro trabajo en busca de los posibles fallos cometidos.\n\nCon el fin de llevar a cabo esta tarea existen diversos métodos.\n\nServicio de validación online del W3C: A través de URI o con una entrada directa, este servicio gratuito nos permite verificar la sintaxis de los archivos RSS y Atom. Esta validación no corregirá los errores si los hay, pero nos señalará dónde está, a través del número de línea, y qué tipo de errores. Además de los errores, la aplicación nos puede dar consejos sobre ciertos asuntos si lo ve oportuno, basándose en nuestros errores.\n\nFeed Validator: Otra herramienta es Feed Validator, que al igual que la herramienta de W3C, nos permite comprobar los errores en RSS, Atom y RDF Site Summary, marcando los errores para que podamos corregirlos nosotros mismos.\n\nHerramienta software FeedForAll: Esta herramienta de creación de feed incorpora su propio validador, lo que nos permite crear y corregir con la misma herramienta. Puedes encontrar esta herramienta en su página digital: https://www.feedforall.com/"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "7.5. Utilización de herramientas",
+      "short": "7.5 Herramientas",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Debido a la gran difusión de los ficheros RSS la demanda de su creación se disparó, lo que a su vez provoca que se creen diversas herramientas para su creación.\n\nDebemos tener en cuenta que la mayoría de los ficheros RSS son creado por personas que no saben cómo crear o escribir un archivo en formato XML, por lo que tampoco son capaces de trabajar con ficheros RSS o Atom.\n\nLa solución a este problema es la creación de herramientas que faciliten la creación de esos feed, un intermediario que convierta las ideas de los usuarios en feed de manera sencilla. Estas herramientas permiten que los usuarios puedan crear sus feed, rellenando únicamente diferentes casillas de texto que después la propia herramienta se encargará de traducir a lenguaje RSS o Atom de manera automática, permitiendo que los usuarios se centren únicamente en el contenido y no en la creación en sí."
+        },
+        {
+          "type": "text",
+          "content": "7.5.1. Herramientas de creación y edición de feeds RSS\n\nExisten numerosas herramientas para la creación de ficheros RSS, algunas de las más conocidas son las siguientes:"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "FeedForAll",
+              "kicker": "https://www.feedforall.com/",
+              "desc": "Una herramienta bastante completa que nos permite crear, editar, validar y publicar en formato RSS. Su uso es bastante sencillo debido a su asistente que nos guiará por los campos que debemos o podemos rellenar."
+            },
+            {
+              "title": "RSS Builder",
+              "kicker": "https://rss-builder.softonic.com/?ex=CAT-3508.5",
+              "desc": "Una herramienta freeware para la creación de ficheros RSS. Es muy sencillo de usar, tan solo se deben rellenar los campos indicados, incorporando, para el campo <description> un editor HTML. Permite la publicación a través de un cliente FTP."
+            },
+            {
+              "title": "ListGarden",
+              "kicker": "http://softwaregarden.com/products/listgarden/",
+              "desc": "Programa de código abierto para la creación de feed RSS y podcasts. Se ejecuta sobre el navegador web, no sobre el escritorio. De fácil uso permite el almacenamiento local o remoto con un FTP."
+            },
+            {
+              "title": "Absolute RSS Editor",
+              "kicker": "https://www.alentum.com/rsseditor/",
+              "desc": "Herramienta diseñada para crear y editar RSS 2.0 y podcasts para iTunes. Se rellena mediante campos de texto. Incorpora un validador, y permite una vista previa y la publicación."
+            },
+            {
+              "title": "RSS Feed Creator",
+              "kicker": "https://rss-feed-creator.softonic.com/?ex=CAT-3508.5",
+              "desc": "Permite crear y editar ficheros RSS y podcasts. Un diseño sencillo e intuitivo."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "7.5.2. Agregadores o lectores de feeds\n\nEste tipo de software permite al usuario, previa subscripción, leer y administrar las noticias que un blog, medio de comunicación o cualquier otra página web que use feed contiene. Esta herramienta permite seleccionar dichas noticias y filtrarlas con las preferencias personales del usuario, como por ejemplo solo noticias de deporte, de modo que al usuario tan solo llegan los artículos deseados, sin que tenga que buscarlos entre el resto de los artículos.\n\nLos navegadores suelen contener este tipo de herramienta para poder personalizar la experiencia del usuario, pero existen diversas herramientas de escritorio diseñadas para cumplir esta misma función.\n\nEs, en definitiva, un paso intermedio entre los artículos y el usuario que le ayuda a filtrar las noticias no deseadas y eliminando las ya leídas o con contenido repetido, evitando que este se abrume por la sobre información."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Online o web",
+              "content": "Cuentan con la ventaja de permitir el uso de esta herramienta sin ningún tipo de instalación y, vinculándola a una cuenta, usarla indistintamente en diversos equipos.\n\n• Feedly: disponible también para móviles permite la gestión actualizada y personalizada de feeds. Requiere un registro con una cuenta de cuenta, y nos permite visualizar la información de diversas páginas en varios formatos a nuestra elección.\n• Inoreader: disponible también para móviles. Requiere un registro con una cuenta de cuenta, y nos permite etiquetar diversas páginas con el fin de organizar de manera automática los artículos. Podemos poseer cuentas sin límites gratuitamente.\n• Digg Reader: disponible también para móviles. Permite dos modos de lectura y se caracteriza por su sencillez. Requiere registro.\n• The Old Reader: Fácil de usar y gratuito por debajo de los 100 feeds. Requiere de registro, y pago en caso de cuenta premium, cuenta con una app para la mayoría de las gestiones importantes."
+            },
+            {
+              "title": "De escritorio",
+              "content": "Requieren de instalación y aunque algunos de ellos poseen aplicaciones para móviles y tabletas, no todos las poseen. Suelen contar con una interfaz intuitiva y generalmente conocida, como es la del correo electrónico.\n\n• Omea Reader: Es gratuito y actúa como agregador, gestor de tareas, agenda, etc. Es de fácil uso y se recomienda por su clasificación y organización.\n• Liferea: su nombre completo es Linux Feed Reader, software libre con licencia GNU de Linux. Soporta podcasts y se adapta a GNOME.\n• FeedReader: agregador que dispone tanto de versión de escritorio como online.\n• FeedDemon: agregador para RSS y ATOM en Windows, con una interfaz «amigable» permite la filtración de feed más antiguos.\n• NewzCrawler: agregador para RSS y ATOM en Windows.\n• RSSReader: agregador freeware para RSS y ATOM en Windows.\n• NewsFire: agregador RSS para Mac Os X."
+            },
+            {
+              "title": "En navegador",
+              "content": "Vienen ya incluidos en el propio navegador y cuentan con las mismas ventajas que los Agregadores online o web.\n\n• Mozilla Firefox: permite la subscripción con solo pulsar el icono de feed, por lo que su uso es extremadamente sencillo.\n• Opera: Permite recibir como si de correos electrónicos se tratase las últimas noticias de los sitios en los que nos hemos subscrito."
+            },
+            {
+              "title": "En clientes de correo",
+              "content": "Los correos electrónicos se han convertido en un recurso indispensable para el día a día de una gran multitud de personas, llegando a extraer los clientes de correos del navegador para llevarlos al fácil acceso del escritorio junto con una multitud de servicios que siguen aumentando. Una de esas nuevas funciones son los agregadores que algunos clientes de correo ya incluyen.\n\n• Canal RSS en Outlook Express: Outlook es uno de los más, sino el más, importante de los clientes de correo electrónico. Su función canal RSS permite la recepción de noticias con la comodidad con la que recibimos el correo.\n• Canal RSS en Mozilla Thunderbird: Al igual que Outlook el cliente de correo Mozilla Thunderbird ofrece un servicio de agregadores."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "label": "7.6. Directorios de canales de contenidos",
+      "short": "7.6 Directorios",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Estos directorios sirven para dar a conocer los ficheros RSS publicados, son un escaparate donde los feeds se pueden registrar con el fin de obtener visualización ante los usuarios y aplicaciones usadas por estos.\n\nUno de estos directorios es Busca Zoom, en el cual los autores de los feeds pueden publicar sus escritos de modo que puedan ser visualizados.\n\nPuedes acceder a esta página desde: https://www.buscazoom.com/."
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "sindicación de contenidos",
+      "def": "El acto de compartir publicaciones de otras páginas en una sola, de modo que visitando una única página podemos enterarnos de todas las noticias actuales. Permite encontrar en una única página web la información más nueva siempre primero, actuando como la bandeja de entrada de correo."
+    },
+    {
+      "term": "feed",
+      "def": "Pequeños extractos de noticia, con título y breve introducción, que nos permiten navegar rápidamente entre las distintas noticias hasta alcanzar aquellas que nos interesan. Es un XML con la información necesaria que permite a los usuarios visitar la página de la que proviene la información. También conocido como fuente web o canal."
+    },
+    {
+      "term": "agregador",
+      "def": "Software que permite al usuario, previa subscripción, leer y administrar las noticias que un blog, medio de comunicación o cualquier otra página web que use feed contiene. Permite crear un perfil del usuario y la información que desea para después filtrar la información y ofrecérsela al usuario, con solo las noticias relevantes para él y actualizadas."
+    },
+    {
+      "term": "RSS",
+      "def": "Really Simple Syndication o sindicalizaión realmente simple. Lenguaje proveniente del XML, el más usado de los formatos de sindicación, que marca el estándar al resto. Es considerablemente sencillo de manejar para la escritura de texto plano, en especial si se posee una plantilla preprogramada. La versión actual es RSS 2.0, creada por Dave Winer en 2002."
+    },
+    {
+      "term": "Atom",
+      "def": "Formato de sindicación muy similar al RSS, ya que ambos proceden de XML y tienen el mismo uso. Fue creado en 2005 por Internet Engineering Task Force (IETF) con la intención de arreglar fallos de RSS y simplificarlo. A pesar de considerarse mejor, sigue siendo menos utilizado."
+    },
+    {
+      "term": "canal",
+      "def": "Elemento raíz de un fichero RSS, representado por <channel>. Sus elementos son los que dan la información relevante del feed. Existen tres elementos obligatorios (<title>, <link>, <description>) y 16 opcionales."
+    },
+    {
+      "term": "elemento requerido",
+      "def": "En RSS 2.0, los tres elementos obligatorios de <channel> son: <title> (marca el título de la noticia o anuncio), <link> (contiene un hipervínculo que redirige con una URL estructurada como URI) y <description> (introduce el recurso con un breve resumen)."
+    },
+    {
+      "term": "GUID",
+      "def": "Globally Unique Identifier (Identificador global único). Subelemento de <item> en RSS. Puede contener el atributo «isPermaLink» cuyo valor será «true» si el código es una URL, y «false» en caso contrario."
+    },
+    {
+      "term": "enclosure",
+      "def": "Subelemento de <item> en RSS, usado para añadir archivos multimedia. Contiene tres atributos: url (dirección URL del elemento), length (tamaño en bytes) y type (tipo de archivo)."
+    },
+    {
+      "term": "xmlns",
+      "def": "Atributo obligatorio del elemento raíz <feed> en Atom que define el tipo de documento. Su valor es «http://www.w3.org/2005/Atom»."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "¿Cuáles son las tres tecnologías de sindicación mencionadas en el temario?",
+      "options": [
+        "HTML, XML y JSON",
+        "RSS, Atom y RDF",
+        "XML, RSS y HTML",
+        "RSS, Atom y CSV"
+      ],
+      "correct": 1,
+      "explanation": "El temario menciona que Feed Validator permite comprobar errores en RSS, Atom y RDF Site Summary. RSS y Atom son los dos formatos principales de sindicación estudiados en la unidad, ambos basados en XML."
+    },
+    {
+      "question": "¿En qué año creó Dave Winer la primera versión de RSS?",
+      "options": [
+        "1999",
+        "2000",
+        "1997",
+        "2002"
+      ],
+      "correct": 2,
+      "explanation": "Según el temario, Dave Winer, un creador de software, crea RSS en el año 1997. Dos años después, en 1999, Netscape crearía las versiones RSS 0.90 y RSS 0.91."
+    },
+    {
+      "question": "¿Qué organización creó el formato Atom en 2005?",
+      "options": [
+        "El W3C (World Wide Web Consortium)",
+        "O'Reilly",
+        "Netscape",
+        "Internet Engineering Task Force (IETF)"
+      ],
+      "correct": 3,
+      "explanation": "Según el temario, Atom fue creado en 2005 por Internet Engineering Task Force, IETF. Fue creado con la intención de arreglar fallos de RSS y simplificarlo."
+    },
+    {
+      "question": "¿Cuáles son los tres elementos obligatorios de <channel> en RSS 2.0?",
+      "options": [
+        "<title>, <link> y <description>",
+        "<title>, <author> y <pubDate>",
+        "<link>, <guid> y <description>",
+        "<title>, <description> y <image>"
+      ],
+      "correct": 0,
+      "explanation": "Según el temario, existen tres elementos obligatorios en <channel>: <title> (marca el título), <link> (contiene un hipervínculo con una URL estructurada como URI) y <description> (introduce el recurso con un breve resumen)."
+    },
+    {
+      "question": "¿Qué hace el elemento <ttl> en RSS 2.0?",
+      "options": [
+        "Indica el título del canal.",
+        "Marca el tiempo, en minutos, que permanecerá en el caché antes de ser actualizado.",
+        "Especifica la fecha de la última publicación.",
+        "Define la URL del documento con el formato del feed."
+      ],
+      "correct": 1,
+      "explanation": "Según el temario, <ttl> marca el tiempo, en minutos, que permanecerá en el caché antes de ser actualizado. Por ejemplo: <ttl>60</ttl>."
+    },
+    {
+      "question": "¿Qué atributo define el tipo de documento en el elemento raíz <feed> de Atom?",
+      "options": [
+        "version",
+        "type",
+        "xmlns",
+        "rel"
+      ],
+      "correct": 2,
+      "explanation": "Según el temario, la raíz <feed> contiene obligatoriamente el atributo «xmlns» la cual define el tipo de documento: <feed xmlns=\"http://www.w3.org/2005/Atom\">."
+    },
+    {
+      "question": "¿Cuáles son los tipos de agregadores mencionados en el temario?",
+      "options": [
+        "Online o web, de escritorio, en navegador y en clientes de correo",
+        "Gratuitos, de pago, de escritorio y en la nube",
+        "Para Windows, para Mac, para Linux y para móvil",
+        "RSS, Atom, RDF y JSON"
+      ],
+      "correct": 0,
+      "explanation": "Según el temario, los tipos de agregadores son: agregadores online o web, agregadores de escritorio, agregadores en navegador web y agregadores en clientes de correo electrónico."
+    },
+    {
+      "question": "¿Cuál de estas herramientas de edición de feeds es de código abierto y se ejecuta sobre el navegador web?",
+      "options": [
+        "FeedForAll",
+        "RSS Builder",
+        "Absolute RSS Editor",
+        "ListGarden"
+      ],
+      "correct": 3,
+      "explanation": "Según el temario, ListGarden es un programa de código abierto para la creación de feed RSS y podcasts que se ejecuta sobre el navegador web, no sobre el escritorio."
+    },
+    {
+      "question": "¿Con qué extensión de archivo se debe guardar un fichero RSS?",
+      "options": [
+        ".xml o .rss",
+        ".rss o .atom",
+        ".feed o .xml",
+        ".txt o .rss"
+      ],
+      "correct": 0,
+      "explanation": "Según el temario, en el paso 5 de la creación manual de un feed RSS se indica: guardar el archivo como un fichero con extensión .rss o, en su defecto, .xml."
+    },
+    {
+      "question": "¿Para qué sirven los directorios de canales de contenidos como Busca Zoom?",
+      "options": [
+        "Para validar la sintaxis de los ficheros RSS y Atom.",
+        "Para crear feeds de manera automática rellenando casillas de texto.",
+        "Para registrar los feeds publicados con el fin de obtener visualización ante los usuarios.",
+        "Para filtrar las noticias según las preferencias personales del usuario."
+      ],
+      "correct": 2,
+      "explanation": "Según el temario, los directorios sirven para dar a conocer los ficheros RSS publicados, son un escaparate donde los feeds se pueden registrar con el fin de obtener visualización ante los usuarios y aplicaciones usadas por estos."
+    }
+  ],
+  "_sources": {
+    "s1": "U7 Aplicación de los lenguajes de marcas a la sindicación de con.pdf §7.1, pág. 4",
+    "s2": "U7 Aplicación de los lenguajes de marcas a la sindicación de con.pdf §7.2, §7.2.1, §7.2.2, pág. 5",
+    "s3": "U7 Aplicación de los lenguajes de marcas a la sindicación de con.pdf §7.3.1, págs. 6–10",
+    "s4": "U7 Aplicación de los lenguajes de marcas a la sindicación de con.pdf §7.3.2, págs. 11–14",
+    "s5": "U7 Aplicación de los lenguajes de marcas a la sindicación de con.pdf §7.4, §7.4.1, §7.4.2, págs. 15–16",
+    "s6": "U7 Aplicación de los lenguajes de marcas a la sindicación de con.pdf §7.5, §7.5.1, §7.5.2, págs. 17–20",
+    "s7": "U7 Aplicación de los lenguajes de marcas a la sindicación de con.pdf §7.6 [numerado 7.7 en el PDF], pág. 21"
+  }
+}
