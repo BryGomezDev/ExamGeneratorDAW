@@ -1,0 +1,79 @@
+PREGUNTA: Choose the correct passive form of the active sentence: "The children broke the window".
+A: The window is broken by the children.
+B: The window broke the children.
+C: The window was break by the children.
+D: The window was broken by the children.
+RESPUESTA: D
+EXPLICACION: La voz pasiva en past simple se forma con "was/were + participio pasado". "Broke" es past simple de "break", cuyo participio es "broken", no "break". La opción A usa present simple ("is broken"), que sería la pasiva de "The children break the window" en presente. La opción B invierte el sujeto y objeto sin sentido.
+
+PREGUNTA: Choose the correct reported speech for the sentence: John said: "I am tired today".
+A: John said that he was tired today.
+B: John said that he is tired that day.
+C: John said that he was tired that day.
+D: John says that he is tired today.
+RESPUESTA: C
+EXPLICACION: En reported speech, los tiempos verbales retroceden (backshift): present simple → past simple ("am" → "was"). Los pronombres cambian ("I" → "he") y los adverbios de tiempo también cambian ("today" → "that day"). La opción A mantiene "today" en lugar de "that day". La opción B no hace backshift del verbo y mantiene "that day" inconsistentemente.
+
+PREGUNTA: Choose the correct sentence using quantifiers with uncountable nouns.
+A: We don't have many time left.
+B: We don't have much time left.
+C: We don't have a few time left.
+D: We don't have a lot time left.
+RESPUESTA: B
+EXPLICACION: "Time" es un sustantivo incontable, por lo que usa "much" en frases negativas e interrogativas, y "a lot of" en afirmativas. "Many" y "a few" se usan con sustantivos contables en plural. La opción D falta "of" después de "a lot" (debería ser "a lot of time").
+
+PREGUNTA: The agent in the passive voice is introduced by the preposition:
+A: for
+B: by
+C: from
+D: of
+RESPUESTA: B
+EXPLICACION: En la voz pasiva en inglés, el agente (quien realiza la acción) siempre se introduce con la preposición "by": "The report was written by the manager". Las preposiciones "for", "from" y "of" tienen otros usos gramaticales pero no introducen el agente en construcciones pasivas.
+
+PREGUNTA: Which indefinite pronoun refers to ALL people?
+A: Anybody
+B: Nobody
+C: Everyone
+D: Someone
+RESPUESTA: C
+EXPLICACION: Los pronombres indefinidos de "every-" (everyone, everybody, everything, everywhere) tienen significado universal y se refieren a la totalidad. "Someone/anybody" se refieren a una persona indeterminada, y "nobody" indica ausencia total de personas. "Everyone" = todas las personas, equivalente a "all people".
+
+PREGUNTA: Which modal verb expresses ability in the present?
+A: Must
+B: Should
+C: Might
+D: Can
+RESPUESTA: D
+EXPLICACION: "Can" expresa capacidad o habilidad en el presente (I can swim = sé nadar). "Must" expresa obligación o deducción lógica. "Should" expresa consejo o recomendación. "Might" expresa posibilidad con baja probabilidad. Para habilidad en el pasado se usa "could", y en el futuro "will be able to".
+
+PREGUNTA: Which of these indefinite pronouns refers to a place?
+A: Someone
+B: Anything
+C: Nothing
+D: Everywhere
+RESPUESTA: D
+EXPLICACION: Los pronombres indefinidos se clasifican por lo que designan: "some-/any-/no-/every-" + "one/body" (personas), "-thing" (cosas) o "-where" (lugares). "Everywhere" = en todos los lugares. "Someone" es persona, "anything" y "nothing" son cosas. También existen "somewhere", "anywhere" y "nowhere" para lugares.
+
+PREGUNTA: Which sentence correctly uses a modal verb?
+A: She must to finish the report today.
+B: He cans speak three languages.
+C: You should see a doctor.
+D: They might goes to the party.
+RESPUESTA: C
+EXPLICACION: Los verbos modales (can, must, should, might, will...) van siempre seguidos de infinitivo sin "to" y no tienen conjugación de tercera persona (-s). La opción A usa "must to" (incorrecto, no lleva "to"). La opción B conjuga "can" como "cans" (incorrecto). La opción D añade "-es" a "go" después de "might" (incorrecto).
+
+PREGUNTA: Which sentence is an example of direct speech?
+A: "I will help you," she promised.
+B: She promised that she would help me.
+C: She said me to help.
+D: She told me that she will help me.
+RESPUESTA: A
+EXPLICACION: El discurso directo (direct speech) reproduce las palabras exactas del hablante entre comillas. El discurso indirecto (reported speech) las parafrasea con cambios de pronombres, tiempos y adverbios. La opción B es reported speech correcto. La opción C es incorrecta gramaticalmente ("said me" → debería ser "told me to help"). La opción D mezcla "told" con "will" sin hacer backshift.
+
+PREGUNTA: Which sentence uses the Saxon genitive correctly?
+A: David's and Sarah's car is parked outside.
+B: David and Sarah's car is parked outside.
+C: David and Sarahs' car is parked outside.
+D: Davids' and Sarah's car is parked outside.
+RESPUESTA: B
+EXPLICACION: Cuando dos personas comparten un objeto en común, el genitivo sajón ('s) se añade solo al último nombre: "David and Sarah's car" (un coche que comparten). Si cada uno tiene el suyo, se añade a ambos: "David's and Sarah's cars". La opción C aplica el apóstrofo incorrectamente a un nombre sin "s" al final. La opción D añade apóstrofo a "Davids" sin la "s" correspondiente.

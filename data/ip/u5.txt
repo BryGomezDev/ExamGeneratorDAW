@@ -1,0 +1,79 @@
+PREGUNTA: Choose the correct adjective to complete the sentence: "The instructions for this new smart TV are very _________. I don't understand them at all."
+A: confused
+B: confuse
+C: confusing
+D: confusingly
+RESPUESTA: C
+EXPLICACION: Los adjetivos terminados en "-ing" (confusing, boring, interesting) describen la característica de algo o alguien que causa esa sensación. Los terminados en "-ed" (confused, bored) describen cómo se siente una persona. Las instrucciones causan confusión, por eso son "confusing"; si yo no las entiendo, yo estoy "confused".
+
+PREGUNTA: Choose the correct answer about relative clauses with possession.
+A: The woman whose car was stolen is talking to the police.
+B: The woman who car was stolen is talking to the police.
+C: The woman which car was stolen is talking to the police.
+D: The woman that car was stolen is talking to the police.
+RESPUESTA: A
+EXPLICACION: "Whose" es el pronombre relativo de posesión y sustituye a "her/his/their" en la cláusula relativa. Se usa tanto para personas como para cosas. Las opciones B, C y D son incorrectas porque "who", "which" y "that" no indican posesión y la frase quedaría gramaticalmente incompleta.
+
+PREGUNTA: Choose the correct relative pronoun: "That is the hospital ________ I was born."
+A: which
+B: when
+C: where
+D: who
+RESPUESTA: C
+EXPLICACION: "Where" se usa como pronombre relativo para referirse a lugares (sustituye a "there/in which"). "Which" se usa para cosas, "who" para personas, y "when" para momentos de tiempo. Un hospital es un lugar, así que "where" es el pronombre correcto.
+
+PREGUNTA: Choose the correct relative pronoun: "The man ________ lives next door is a famous actor."
+A: which
+B: who
+C: where
+D: whose
+RESPUESTA: B
+EXPLICACION: "Who" se usa para referirse a personas en cláusulas relativas de sujeto (the man who lives = él vive). "Which" se usa para cosas o animales, "where" para lugares, y "whose" indica posesión. Como "the man" es una persona y es el sujeto de la cláusula, "who" es correcto.
+
+PREGUNTA: Choose the correct Second conditional sentence:
+A: If I won the lottery, I will buy an island.
+B: If I win the lottery, I would buy an island.
+C: If I won the lottery, I would buy an island.
+D: If I would win the lottery, I bought an island.
+RESPUESTA: C
+EXPLICACION: El Second Conditional expresa situaciones hipotéticas o improbables en el presente/futuro. La estructura es: "If + past simple, would + infinitivo". La opción A mezcla past simple con "will" (First Conditional). La opción B mezcla present simple con "would". La opción D usa "would" en la cláusula "if", lo cual es incorrecto en inglés.
+
+PREGUNTA: Complete the sentence correctly: "I can't finish this soup because there is __________ salt in it."
+A: too many
+B: enough
+C: too much
+D: very many
+RESPUESTA: C
+EXPLICACION: "Too much" se usa con sustantivos incontables (salt, water, sugar) para indicar exceso. "Too many" se usa con sustantivos contables en plural (too many people). "Enough" indica cantidad suficiente, no exceso. "Very many" no es una construcción estándar en inglés moderno.
+
+PREGUNTA: Complete the sentence with the correct demonstrative: "Look at ________ birds in the sky over there!"
+A: this
+B: these
+C: those
+D: that
+RESPUESTA: C
+EXPLICACION: Los demostrativos dependen de distancia y número: "this/these" para cosas cercanas, "that/those" para cosas lejanas. "Over there" indica distancia, así que descartamos "this" y "these". "Birds" es plural, así que descartamos "that" (singular). "Those" es plural y lejano, que es la combinación correcta.
+
+PREGUNTA: What sentence follows the Third conditional structure?
+A: If they had trained harder, they would won the match.
+B: If they trained harder, they would have won the match.
+C: If they had trained harder, they will have won the match.
+D: If they had trained harder, they would have won the match.
+RESPUESTA: D
+EXPLICACION: El Third Conditional expresa situaciones hipotéticas en el pasado (que no ocurrieron). La estructura es: "If + past perfect (had + participio), would have + participio". La opción A omite "have" después de "would". La opción B usa past simple en lugar de past perfect. La opción C usa "will have" en lugar de "would have".
+
+PREGUNTA: Which is the right quantifier for adjectives?
+A: The soup is too much hot to eat.
+B: The soup is too hot to eat.
+C: The soup is a lot hot to eat.
+D: The soup is enough hot to eat.
+RESPUESTA: B
+EXPLICACION: "Too" (sin "much") se usa directamente antes de adjetivos para indicar exceso (too hot, too cold, too expensive). "Too much" se usa antes de sustantivos incontables o como expresión sola, nunca antes de adjetivos. "A lot" y "enough" tampoco se colocan directamente antes de adjetivos de esta forma.
+
+PREGUNTA: Which sentence uses the -ing/-ed adjective correctly?
+A: I am very boring with this movie.
+B: This movie is very bored.
+C: This movie is very boring.
+D: I am very boringly with this movie.
+RESPUESTA: C
+EXPLICACION: Los adjetivos "-ing" describen la causa de la emoción (the movie is boring = la película causa aburrimiento), mientras que los "-ed" describen cómo se siente la persona (I am bored = yo me siento aburrido). La película no puede sentirse aburrida ("bored"), y una persona no es "boring" por ver una película. La opción D usa un adverbio donde se necesita adjetivo.
