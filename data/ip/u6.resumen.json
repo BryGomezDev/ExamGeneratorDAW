@@ -1,0 +1,614 @@
+{
+  "subject": "ip",
+  "unit": 6,
+  "title": "Work smarter",
+  "intro": "En esta unidad estudiaremos estructuras gramaticales esenciales para comunicarnos con precisión y fluidez en inglés. Comenzaremos con los cuantificadores, que nos permiten expresar cantidades sin especificar un número exacto, distinguiendo entre sustantivos contables e incontables. A continuación, profundizaremos en los verbos modales para expresar habilidad, posibilidad, permiso, obligación, prohibición y consejo. También veremos los pronombres indefinidos, utilizados para hablar de personas, cosas o lugares de forma general. Estudiaremos el genitivo sajón para indicar posesión, la voz pasiva para centrar la atención en la acción más que en el sujeto, y finalmente el estilo indirecto (reported speech), que nos permite transmitir lo que otra persona ha dicho ajustando tiempos verbales, pronombres y expresiones de tiempo y lugar. El vocabulario se centra en los empleos del sector tecnológico y el vocabulario de las entrevistas de trabajo.",
+  "objectives": [
+    "Usar correctamente los cuantificadores many, much, a few, a little, few, little, some, any y a lot of según el tipo de sustantivo (contable o incontable) y el contexto (afirmativo, negativo o interrogativo)",
+    "Identificar y aplicar los verbos modales can, could, may, might, must, have to, must not y should según su función: habilidad, posibilidad, permiso, obligación, prohibición o consejo",
+    "Usar los pronombres indefinidos some-, any-, no- y every- correctamente para referirse a personas, cosas o lugares no específicos",
+    "Aplicar las reglas del genitivo sajón para expresar posesión con personas, animales y expresiones de tiempo, y reconocer cuándo se prefiere la estructura con 'of'",
+    "Transformar oraciones de voz activa a voz pasiva usando la estructura sujeto + to be + participio + agente, y realizar los cambios de pronombres necesarios",
+    "Convertir oraciones del estilo directo al indirecto aplicando el backshift de tiempos verbales y de verbos modales, los cambios de pronombres, y los ajustes en las expresiones de tiempo y lugar",
+    "Reconocer y usar el vocabulario de los empleos tecnológicos (IT jobs) y el vocabulario habitual de las entrevistas de trabajo en inglés"
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "6.1. Quantifiers",
+      "short": "Quantifiers",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los cuantificadores (quantifiers) son palabras que indican la cantidad de algo sin proporcionar un número exacto. Ejemplos: some, many, few, a lot of, much, etc.\n\nLos cuantificadores acompañan a un sustantivo y varían según si ese sustantivo es contable (countable) o incontable (uncountable)."
+        },
+        {
+          "type": "table",
+          "headers": ["Type", "Quantifier", "Use", "Example"],
+          "rows": [
+            ["Countable", "many", "Large quantity", "Many companies are implementing the use of AI."],
+            ["Countable", "a few", "Moderate quantity (there is some)", "There are a few platforms focused on professional networking."],
+            ["Countable", "few", "Small quantity (negative meaning)", "Few people are aware of the privacy settings on different apps."],
+            ["Uncountable", "much", "Large quantity", "Much information is shared on social media."],
+            ["Uncountable", "a little", "Moderate quantity (there is some)", "A little time spent on social media can help you stay updated."],
+            ["Uncountable", "little", "Small quantity (negative meaning)", "There's little control over fake news on the internet."],
+            ["Both", "some", "Affirmative sentences / offers and requests", "Some documents must be read before creating a profile online."],
+            ["Both", "any", "Negative sentences / questions", "There aren't any new posts today."],
+            ["Both", "a lot of / lots of", "Large quantity", "A lot of users spend hours scrolling through online content every day."]
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Many / Much — gran cantidad",
+              "content": "Usamos many y much para indicar una gran cantidad.\n- Many se usa con sustantivos contables.\n- Much se usa con sustantivos incontables.\n\nEjemplos del temario:\nMany companies are implementing the use of AI.\nMuch information is shared on social media."
+            },
+            {
+              "title": "A few / A little — cantidad moderada (positivo)",
+              "content": "Usamos a few y a little para indicar una cantidad moderada (hay algo, aunque no mucho).\n- A few se usa con sustantivos contables.\n- A little se usa con sustantivos incontables.\n\nEjemplos del temario:\nThere are a few platforms focused on professional networking.\nA little time spent on social media can help you stay updated."
+            },
+            {
+              "title": "Few / Little — cantidad escasa (negativo)",
+              "content": "Usamos few y little para indicar una cantidad escasa (casi ninguno / casi nada). Tienen connotación negativa.\n- Few se usa con sustantivos contables.\n- Little se usa con sustantivos incontables.\n\nEjemplos del temario:\nFew people are aware of the privacy settings on different apps.\nThere's little control over fake news on the internet."
+            },
+            {
+              "title": "Some — oraciones afirmativas y ofertas/peticiones",
+              "content": "Usamos some con sustantivos contables e incontables. Se usa principalmente en oraciones afirmativas, pero también en interrogativas cuando se ofrece o solicita algo.\n\nEjemplos del temario:\nSome documents must be read before creating a profile online.\nWould you like some help managing the company's social media accounts?"
+            },
+            {
+              "title": "Any — oraciones negativas e interrogativas",
+              "content": "Usamos any con sustantivos contables e incontables. Se usa especialmente en oraciones negativas y en preguntas. También puede aparecer en oraciones afirmativas con el significado de \"no importa quién/cuál/dónde\".\n\nEjemplos del temario:\nThere aren't any new posts today.\nIs there any way to automate that task?"
+            },
+            {
+              "title": "A lot of / Lots of — gran cantidad (contable e incontable)",
+              "content": "Usamos a lot of o lots of con sustantivos contables e incontables para indicar una gran cantidad o volumen.\n\nEjemplo del temario:\nA lot of users spend hours scrolling through online content every day."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "RECUERDA: Los quantifiers son palabras que indican la cantidad de algo sin especificar un número exacto. Se usan con sustantivos contables o incontables y varían según el tipo de sustantivo. Ejemplos incluyen many, few, some, much y a lot of, entre otros, y su uso depende del contexto (afirmativo, negativo o interrogativo)."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "6.2. Modal verbs",
+      "short": "Modal verbs",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los verbos modales son verbos auxiliares que expresan habilidad, posibilidad, necesidad, permiso, obligación o consejo. No cambian su forma según el sujeto (I can, you can, she can…), salvo el verbo «have to» (has to, had to), y siempre van seguidos de la forma base del verbo principal.\n\nEjemplo correcto: I should spend less time on my phone.\nEjemplos incorrectos: I should studying. / I should studies."
+        },
+        {
+          "type": "table",
+          "headers": ["Use", "Modal verb(s)", "Example"],
+          "rows": [
+            ["Ability", "can, can't, could, couldn't", "She can play the piano."],
+            ["Permission", "can, may, could", "Can I go to the toilet, please?"],
+            ["Offer and Request", "can, could, would", "Can I help you?"],
+            ["Probability", "may, might, could", "It might rain tomorrow."],
+            ["Advice", "should, ought to", "You should visit a doctor."],
+            ["Obligation", "must, have to / has to", "I have to work tomorrow."],
+            ["Deduction", "must, can't", "She must be tired after working all day."]
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "ABILITY — Habilidad",
+              "content": "Verbos: can / can't / could / couldn't\nUso: Express ability or lack of it (expresar habilidad o su ausencia)\n\nEjemplos:\nShe can play the piano.\nI can't swim.\nHe could speak three languages when he was young."
+            },
+            {
+              "title": "PERMISSION — Permiso",
+              "content": "Verbos: can / may / could\nUso: Ask for or give permission (pedir o dar permiso)\n\nEjemplos:\nCan I go to the toilet, please?\nYou may leave early today.\nCould I use your computer?"
+            },
+            {
+              "title": "OFFER AND REQUEST — Ofrecimiento y petición",
+              "content": "Verbos: can / could / would\nUso: Make offers or polite requests (hacer ofrecimientos o peticiones formales)\n\nEjemplos:\nCan I help you?\nCould you send me the report?\nWould you like some help?"
+            },
+            {
+              "title": "PROBABILITY — Probabilidad",
+              "content": "Verbos: may / might / could\nUso: Express possibility or uncertainty (expresar posibilidad o incertidumbre)\n\nEjemplos:\nIt might rain tomorrow.\nShe may be in a meeting.\nHe could be the right candidate."
+            },
+            {
+              "title": "ADVICE — Consejo",
+              "content": "Verbos: should / ought to\nUso: Give recommendations (dar recomendaciones o consejos)\n\nEjemplos:\nYou should visit a doctor.\nYou ought to study more.\nShe shouldn't work so many hours."
+            },
+            {
+              "title": "OBLIGATION — Obligación",
+              "content": "Verbos: must / have to\nUso: Express necessity or obligation (expresar necesidad u obligación)\n\nEjemplos:\nI have to work tomorrow.\nYou must wear a helmet.\nShe has to finish the project today."
+            },
+            {
+              "title": "DEDUCTION — Deducción",
+              "content": "Verbos: must / can't\nUso: Express logical deduction (expresar deducción lógica: certeza positiva o negativa)\n\nEjemplos:\nShe must be tired after working all day.\nHe can't be at home — his car isn't there.\nThey must have finished the meeting."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Modal verbs (infografía) — Referencia visual rápida por función:"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "ABILITY",
+              "kicker": "can · could · will be able to",
+              "desc": "Can (present ability). Could (past ability). Will be able to (future ability)."
+            },
+            {
+              "title": "PERMISSION",
+              "kicker": "could · may",
+              "desc": "Could or may (this form is more polite and formal)."
+            },
+            {
+              "title": "OFFER AND REQUEST",
+              "kicker": "can · may · could",
+              "desc": "Can, may and could (these last two are more formal)."
+            },
+            {
+              "title": "PROBABILITY",
+              "kicker": "may · might",
+              "desc": "May and might are used for this use. Might is less probable."
+            },
+            {
+              "title": "ADVICE",
+              "kicker": "should · ought to",
+              "desc": "Should and ought to to recommend something."
+            },
+            {
+              "title": "OBLIGATION",
+              "kicker": "must · have to / has to",
+              "desc": "Must (it expresses an obligation imposed by the speaker) and have to/has to (it expresses an external obligation for the speaker). In negative, the meaning is different: Mustn't: it means prohibition. Don't/doesn't have to: it means lack of obligation."
+            },
+            {
+              "title": "DEDUCTION",
+              "kicker": "must · can't",
+              "desc": "Must (it is used when we feel sure that something is true) or can't (it is used when we feel sure that something is not possible)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "RECUERDA: Los verbos modales son verbos auxiliares que expresan habilidad, posibilidad, necesidad, permiso, obligación o consejo. No cambian según el sujeto y siempre van seguidos por la forma base del verbo principal. Ejemplos incluyen can, may, must, should y could, entre otros, y se agrupan según su función: habilidad, permiso, obligación, prohibición o consejo."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "6.3. Indefinite pronouns",
+      "short": "Indefinite pronouns",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los pronombres indefinidos son palabras que se refieren a personas, cosas o lugares no específicos. Se usan cuando la identidad exacta de lo que hablamos es desconocida o no importante. Nos permiten hablar en términos generales sin especificar detalles exactos.\n\nEjemplo del temario: Somebody stole my Facebook account.\n\nEstos pronombres pueden referirse a personas (someone, anyone, nobody), cosas (something, anything, nothing) o lugares (somewhere, anywhere, nowhere)."
+        },
+        {
+          "type": "table",
+          "headers": ["Category", "Some-", "Any-", "No-", "Every-"],
+          "rows": [
+            ["People", "someone, somebody", "anyone, anybody", "no one, nobody", "everyone, everybody"],
+            ["Things", "something", "anything", "nothing", "everything"],
+            ["Places", "somewhere", "anywhere", "nowhere", "everywhere"]
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Some- — oraciones afirmativas y ofertas/peticiones",
+              "content": "Usamos los pronombres some- principalmente en oraciones afirmativas. También se usan en interrogativas cuando se ofrece o solicita algo.\n\nEjemplos del temario:\nSomeone liked my post just a few seconds ago.\nWould you like something to drink?"
+            },
+            {
+              "title": "Any- — oraciones negativas e interrogativas",
+              "content": "Usamos los pronombres any- en oraciones negativas e interrogativas. También pueden aparecer en afirmativas con el significado de «no importa quién/qué/dónde».\n\nEjemplos del temario:\nI didn't find anything interesting to share today.\nWith a smartphone, you can access your social media anywhere.\nAnybody can create an account on this platform for free."
+            },
+            {
+              "title": "No- — solo en oraciones afirmativas (sin verbo negativo)",
+              "content": "Usamos los pronombres no- únicamente en oraciones afirmativas; no pueden ir seguidos de un verbo negativo. A veces aparecen solos como respuesta corta.\n\nEjemplos del temario:\nNobody has the right software for this task.\nIs there anything new on her feed? —Nothing."
+            },
+            {
+              "title": "Every- — afirmativas, negativas e interrogativas (grupo completo)",
+              "content": "Usamos los pronombres every- en oraciones afirmativas, negativas e interrogativas para referirse a un grupo completo.\n\nEjemplos del temario:\nEverybody can benefit from cloud storage.\nSocial media influences everything we do nowadays."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "RECUERDA: Los pronombres indefinidos se usan para referirse a personas, cosas o lugares no específicos. Se emplean según el contexto (afirmativo, negativo o interrogativo) y pueden ser someone, anything, nothing, entre otros."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "6.4. The Saxon Genitive",
+      "short": "Saxon Genitive",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El genitivo sajón es una estructura gramatical del inglés que se usa para mostrar posesión o una relación entre dos sustantivos. La regla general consiste en añadir 's al sustantivo que posee algo.\n\nEjemplo del temario: John has a new phone. → This is John's new phone."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Regla 1 — Sustantivos singulares (aunque terminen en -s)",
+              "content": "Añadimos 's a los sustantivos singulares, aunque ya terminen en -s.\n\nEjemplos del temario:\nThe boy's personal computer was stolen last week.\nRoss's decision helped boost productivity."
+            },
+            {
+              "title": "Regla 2 — Sustantivos plurales no terminados en -s",
+              "content": "Añadimos 's a los sustantivos plurales que no terminan en -s.\n\nEjemplo del temario:\nThe children's use of social media should be monitored by parents."
+            },
+            {
+              "title": "Regla 3 — Más de un propietario (posesión compartida)",
+              "content": "Cuando hay más de un propietario, añadimos 's solo al último nombre.\n\nEjemplo del temario:\nThomas and Walter's profiles are very popular."
+            },
+            {
+              "title": "Regla 4 — Sustantivos plurales terminados en -s",
+              "content": "A los sustantivos plurales que ya terminan en -s, añadimos solo el apóstrofe (').\n\nEjemplo del temario:\nMy parents' car has the newest technology."
+            },
+            {
+              "title": "¿Cuándo usar el genitivo sajón y cuándo usar «of»?",
+              "content": "El genitivo sajón se usa principalmente con personas, animales y expresiones de tiempo. Para objetos, se prefiere la estructura con «of».\n\nEjemplos del temario:\nThe phone's speaker is broken. ✗\nThe speaker of the phone is broken. ✓\n\nSin embargo, cuando el objeto está personificado o se refiere a instituciones, lugares o medios de comunicación, el genitivo sajón también es aceptable:\nThe company's reputation. / The reputation of the company.\nThe city's streets. / The streets of the city.\nThe newspaper's editor. / The editor of the newspaper."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "RECUERDA: El genitivo sajón se usa en inglés para mostrar posesión, agregando 's al sustantivo que posee algo. Se aplica con sustantivos singulares, sustantivos plurales no terminados en -s, y para más de un propietario se añade 's al último nombre. En sustantivos plurales terminados en -s, solo se usa el apóstrofe. Se utiliza principalmente con personas, animales y expresiones de tiempo, mientras que con objetos se prefiere la estructura con «of»."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "6.5. The Passive Voice",
+      "short": "Passive Voice",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Antes de estudiar la voz pasiva, es importante recordar la diferencia entre oraciones activas y pasivas.\n\n- Oraciones activas (active sentences): el sujeto realiza la acción descrita por el verbo.\n  Ejemplo del temario: Tom uses many digital tools.\n\n- Oraciones pasivas (passive sentences): el sujeto recibe la acción descrita por el verbo. La voz pasiva se usa cuando el foco está en la acción y no en quien la realiza. Frecuentemente incluye un complemento llamado agente, introducido por la preposición «by».\n  Ejemplo del temario: Many digital tools are used by Tom."
+        },
+        {
+          "type": "text",
+          "content": "Estructura de la voz pasiva:\n\nSubject + verb to be (in the same tense as the active voice) + verb (in participle) + agent\n\nEjemplo del temario:\nMark created an account. → Active voice\nAn account was created by Mark. → Passive voice\n(subject) + (be) + (participle) + (agent)\n\nEl sujeto de la voz activa se convierte en el agente de la pasiva (siempre con la preposición «by»). El objeto de la voz activa se convierte en el sujeto de la pasiva. El verbo to be se conjuga en el mismo tiempo que el verbo principal de la activa, y el verbo principal va en participio pasado."
+        },
+        {
+          "type": "table",
+          "headers": ["Subject pronouns", "Object pronouns"],
+          "rows": [
+            ["I", "Me"],
+            ["You", "You"],
+            ["He", "Him"],
+            ["She", "Her"],
+            ["It", "It"],
+            ["We", "Us"],
+            ["They", "Them"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Al transformar una oración de voz activa a pasiva, los pronombres cambian porque el sujeto de la activa pasa a la posición de objeto en la pasiva (y viceversa). En una oración activa, el sujeto usa un pronombre sujeto (I, you, he, she, it, we, they); el objeto usa un pronombre objeto (me, you, him, her, it, us, them). Al pasar a pasiva, se sustituye el pronombre sujeto por el pronombre objeto correspondiente.\n\nRECUERDA: La voz pasiva se usa cuando el enfoque está en la acción y no en quien la realiza. En la voz activa, el sujeto realiza la acción, mientras que, en la pasiva, el sujeto recibe la acción. Para convertir una oración activa en pasiva, se usa la estructura: sujeto + verbo «to be» + verbo en participio + agente (introducido por «by»)."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "6.6. Reported Speech",
+      "short": "Reported Speech",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El estilo indirecto (reported speech, también llamado indirect speech) se usa para relatar lo que otra persona ha dicho sin citar sus palabras exactas, a diferencia del estilo directo (direct speech), donde se usan comillas.\n\nEjemplos del temario:\n- Direct speech: She said, \"I love social media.\"\n- Reported speech: She said that she loved social media.\n\nAl pasar del estilo directo al indirecto, los verbos de reporte (reporting verbs) introducen el estilo indirecto. Estos verbos nos indican cómo dijo algo alguien: state, ask, explain, claim, tell, say, promise, warn, suggest, entre otros."
+        },
+        {
+          "type": "text",
+          "content": "RECUERDA: Para cambiar de estilo directo a indirecto se suele hacer un cambio en el tiempo verbal de la oración, que da un salto atrás al pasado, lo que en inglés se llama backshift. Este backshift solo se hace cuando el reporting verb está en pasado. Por el contrario, si el reporting verb está en presente, el tiempo verbal de la oración se mantiene.\n\n+ Reporting verb in past: He said, \"I want a new phone\" → He said that he wanted a new phone.\n+ Reporting verb in present: He says, \"I love this song\" → He says that he loves this song."
+        },
+        {
+          "type": "table",
+          "headers": ["Direct Speech (tense)", "Reported Speech (backshift)", "Example"],
+          "rows": [
+            ["Present Simple", "Past Simple", "She said, \"I like my new phone.\" → She said that she liked her new phone."],
+            ["Present Continuous", "Past Continuous", "She said, \"I'm using my phone.\" → She said that she was using her phone."],
+            ["Present Perfect", "Past Perfect", "She said, \"I've used my phone.\" → She said that she had used her phone."],
+            ["Past Simple", "Past Perfect", "She said, \"I used my phone.\" → She said that she had used her phone."],
+            ["Past Continuous", "Past Perfect Continuous", "She said, \"I was using my phone.\" → She said that she had been using her phone."],
+            ["Past Perfect", "Past Perfect (no change)", "She said, \"I had used my phone.\" → She said that she had used her phone."],
+            ["Future Simple (will)", "Conditional Simple (would)", "She said, \"I will use my phone.\" → She said that she would use her phone."],
+            ["Future Perfect (will have)", "Conditional Perfect (would have)", "She said, \"I will have used my phone.\" → She said that she would have used her phone."]
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Direct Speech (modal)", "Reported Speech (backshift)", "Example"],
+          "rows": [
+            ["Can", "Could", "He said \"I can speak five languages\" → He said that he could speak five languages."],
+            ["Have to", "Had to", "She said, \"I have to work tomorrow\" → She said that she had to work the following day."],
+            ["Must", "Had to", "They said, \"We must study more\" → The said that they had to study more."],
+            ["May", "Might", "Sarah said, \"It may rain tomorrow\" → Sarah said that it might rain the following day."]
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "⚠ Errata en el temario (fila Must → Had to)",
+              "content": "⚠ El temario escribe «The said that they had to study more»; el sujeto correcto es «They»."
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Backshift in questions — Yes/No questions",
+              "content": "Para las preguntas de respuesta sí/no (yes/no questions) usamos «if» o «whether» para introducirlas, y cambiamos el orden de la oración a formato afirmativo.\n\nEjemplo del temario:\nDirect speech: He asked, \"Did she call?\"\nReported speech: He asked if she had called."
+            },
+            {
+              "title": "Backshift in questions — Wh-questions",
+              "content": "Para las preguntas con palabra interrogativa (wh-questions) conservamos la wh-word y cambiamos el tiempo verbal, además de invertir el orden de la oración al formato afirmativo.\n\nEjemplo del temario:\nDirect speech: She asked me, \"Where do you live?\"\nReported speech: He asked me where I lived."
+            },
+            {
+              "title": "⚠ Errata en el temario (Wh-questions)",
+              "content": "⚠ En el temario la pregunta la hace «She» («She asked me, \"Where do you live?\"») y la versión indirecta dice «He asked me where I lived». Para reportar la misma frase debería ser «She asked me where I lived»."
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Pronoun changes — Subject pronouns",
+              "content": "Los pronombres sujeto (I, you, he, she, it, we, they) cambian según quién reporta el discurso.\n\nEjemplos del temario:\nHe said, \"I am tired.\" → He said that he was tired.\nShe said, \"We love technology.\" → She said that they loved technology.\nThey said, \"You are late.\" → They said that I was late."
+            },
+            {
+              "title": "Pronoun changes — Object pronouns",
+              "content": "Los pronombres objeto (me, you, him, her, us, them) también cambian según el contexto.\n\nEjemplos del temario:\nShe said, \"He helped me.\" → She said that he had helped her.\nHe told me, \"I will call you.\" → He told me that he would call me."
+            },
+            {
+              "title": "Pronoun changes — Possessive pronouns and adjectives",
+              "content": "Los pronombres posesivos (mine, yours, his, hers, ours, theirs) y los adjetivos posesivos (my, your, his, her, our, their) también cambian en consecuencia.\n\nEjemplos del temario:\nShe said, \"This is my phone\" → She said that that was her phone.\nHe said, \"These tablets are ours\" → He said that those tablets were theirs."
+            },
+            {
+              "title": "Pronoun changes — Reflexive pronouns",
+              "content": "Los pronombres reflexivos (myself, yourself, himself, herself, itself, ourselves, yourselves, themselves) siguen la misma lógica.\n\nEjemplos del temario:\nShe said, \"I hurt myself\" → She said that she had hurt herself.\nHe said, \"You should take care of yourself\" → He said that I should take care of myself."
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Reporting commands — órdenes (told + (not) to + infinitive)",
+              "content": "Para las órdenes (commands) usamos la estructura: told + (not) to + verb (infinitive).\n\nEjemplos del temario:\n\"Close the door!\" → She told me to close the door.\n\"Don't touch that!!\" → He told me not to touch that."
+            },
+            {
+              "title": "Reporting requests — peticiones (asked + (not) to + infinitive)",
+              "content": "Para las peticiones (requests) usamos la estructura: asked + (not) to + verb (infinitive).\n\nEjemplos del temario:\n\"Can you help me?\" → She asked me to help her.\n\"Please don't go\" → He asked me not to go."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Direct Speech (time expression)", "Reported Speech"],
+          "rows": [
+            ["Now", "Then"],
+            ["Today", "That day"],
+            ["Tonight", "That night"],
+            ["Yesterday", "The day before / The previous day"],
+            ["Tomorrow", "The next day / The following day"],
+            ["Next (week, month, year…)", "The following (week, month, year…)"],
+            ["Last (week, month, year…)", "The previous (week, month, year…)"],
+            ["Ago", "Before"]
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Direct Speech (place expression)", "Reported Speech"],
+          "rows": [
+            ["Here", "There"],
+            ["This", "That"],
+            ["These", "Those"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "RECUERDA: Al convertir una oración del estilo directo al indirecto, no solo es necesario modificar el tiempo verbal, sino también ajustar otros elementos, como los pronombres y las expresiones de tiempo y lugar. Estos cambios permiten que la oración se adapte correctamente a la nueva perspectiva del hablante."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "label": "Vocabulario — Unit 6",
+      "short": "Vocabulario — Unit 6",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El vocabulario de la unidad 6 se centra en dos grandes bloques: los empleos del sector tecnológico (IT jobs) y el vocabulario esencial para desenvolverse en una entrevista de trabajo en inglés (job interviews)."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "6.1.1 IT jobs — empleos tecnológicos",
+              "content": "Los IT jobs (Information Technology jobs) incluyen muchos roles relacionados con sistemas informáticos, software, hardware, redes y otras tecnologías para gestionar y mantener la infraestructura digital de empresas y organizaciones.\n\nSoftware Developer: They design, develop, test, and maintain software applications and systems. They write code in programming languages like Java, Python, or C++, and work in teams to create software that meets users' needs.\n\nSystems Administrator: They manage and maintain the IT infrastructure of an organization. They configure and maintain servers, ensure network security, and troubleshoot hardware or software issues.\n\nNetwork Engineer: They design, implement, and maintain networks for organizations. They ensure that computers, servers, and other devices can communicate securely and efficiently across local area networks (LANs), wide area networks (WANs), and the internet.\n\nCybersecurity Analyst: They focus on protecting an organization's computer systems and networks from cyberattacks, malware, and data breaches. They monitor systems for security weaknesses, assess risks, and implement security measures.\n\nDatabase Administrator: They manage and secure databases. They ensure that databases run smoothly, perform backups, and help retrieve and store data efficiently.\n\nCloud Engineer: They build and manage cloud-based infrastructure. They help companies move their services and applications to cloud platforms like AWS, Microsoft Azure, or Google Cloud.\n\nIT Support Specialist: They assist end users with technical problems. They troubleshoot hardware, software, and network issues and provide help to users who have technical difficulties.\n\nWeb Developer: They create and maintain websites. They design the user interface, code the site, and make sure it works well on different devices and browsers.\n\nBusiness Analyst: They work to connect technology with business needs. They collect information from stakeholders, analyse data, and suggest technology solutions to improve business processes.\n\nDevOps Engineer: They work to improve the collaboration between software development and IT operations. They focus on automating processes, ensuring continuous integration and continuous delivery (CI/CD), and monitoring system performance.\n\nArtificial Intelligence (AI) Specialist: AI specialists design and implement artificial intelligence and machine learning models. They work with large datasets to create algorithms that can automate tasks, recognize patterns, and make decisions.\n\nMobile App Developer: They create apps for smartphones and tablets. They work with platforms like iOS or Android to design apps that provide functions, entertainment, or services to users.\n\nUX/UI Designer: They focus on the user experience (UX) and the user interface (UI) of websites and apps. They design layouts, navigation, and interactions to make digital products easy to use and visually attractive."
+            },
+            {
+              "title": "6.1.2 Job interviews — vocabulario de entrevistas",
+              "content": "Professional profile (perfil profesional):\nJob title – título del puesto\nResponsibilities – responsabilidades\nWork experience – experiencia laboral\nBackground – formación y experiencia\nEducation – formación académica\nDegree – título universitario\nQualification – cualificación\nCertificate – certificado\nInternship – prácticas\nCareer – carrera profesional\n\nIn the interview (en la entrevista):\nJob interview – entrevista de trabajo\nApply for a job – postularse a un trabajo\nCandidate – candidato\nRecruiter – reclutador\nVacancy – vacante\nRequirements – requisitos\nJob offer – oferta de trabajo\nContract – contrato\nSalary – salario\nWork hours / Working schedule – horario laboral\n\nDescribing Yourself (cómo describirse):\nDriven – motivado, ambicioso\nDetail-oriented – detallista, meticuloso\nTeam player – buen compañero de equipo\nAdaptable – adaptable, flexible\nReliable – fiable, responsable\nSelf-motivated – con iniciativa propia\nOrganized – organizado\nCreative – creativo\n\nTalking About Experience (hablar de la experiencia):\nI have experience in... – Tengo experiencia en...\nI was responsible for... – Me encargaba de... / Era responsable de...\nI managed / led / coordinated... – Gestioné / dirigí / coordiné...\nI developed skills in... – Desarrollé habilidades en...\nI handled tasks such as... – Me ocupé de tareas como...\n\nDescribing Skills (habilidades):\nStrong communication skills – buenas habilidades de comunicación\nProblem-solving abilities – capacidad para resolver problemas\nLeadership / management skills – habilidades de liderazgo / gestión\nTime management – gestión del tiempo\nCustomer service expertise – experiencia en atención al cliente\nFluent in... / Proficient in... – fluido en... / competente en...\nTeamwork – trabajo en equipo\nAttention to detail – atención al detalle\nAdaptability – capacidad de adaptación\nMultitasking – realizar varias tareas a la misma vez\n\nTalking About Achievements (logros):\nI successfully completed... – Terminé con éxito...\nI exceeded my targets by... – Superé mis objetivos en...\nI was promoted after... – Fui ascendido después de...\nI improved efficiency by... – Mejoré la eficiencia en...\nI implemented a new system that... – Implementé un nuevo sistema que...\n\nCommon Questions (preguntas habituales):\n\"Tell me about yourself\" – «Háblame de ti»\n\"Why should we hire you?\" – «¿Por qué deberíamos contratarte?»\n\"What are your strengths?\" – «¿Cuáles son tus puntos fuertes?»\n\"What are your weaknesses?\" – «¿Cuáles son tus puntos débiles?»\n\nClosing the Interview (cerrar la entrevista):\nThank you for the opportunity. – Gracias por la oportunidad.\nI'm really excited about this role. – Estoy muy ilusionado con este puesto.\nI look forward to hearing from you. – Quedo a la espera de su respuesta.\nPlease let me know if you need anything else from me. – Por favor, dígame si necesita algo más de mi parte."
+            }
+          ]
+        },
+        {
+          "type": "flipcards",
+          "items": [
+            {"term": "Software Developer", "def": "Designs, develops, tests, and maintains software applications. Writes code in languages like Java, Python, or C++."},
+            {"term": "Systems Administrator", "def": "Manages and maintains the IT infrastructure of an organization. Configures servers, ensures network security, and troubleshoots issues."},
+            {"term": "Network Engineer", "def": "Designs, implements, and maintains networks (LANs, WANs, internet) so that computers and devices can communicate securely and efficiently."},
+            {"term": "Cybersecurity Analyst", "def": "Protects an organization's computer systems and networks from cyberattacks, malware, and data breaches."},
+            {"term": "Database Administrator", "def": "Manages and secures databases, performs backups, and helps retrieve and store data efficiently."},
+            {"term": "Cloud Engineer", "def": "Builds and manages cloud-based infrastructure on platforms like AWS, Microsoft Azure, or Google Cloud."},
+            {"term": "IT Support Specialist", "def": "Assists end users with technical problems: hardware, software, and network issues."},
+            {"term": "Web Developer", "def": "Creates and maintains websites. Designs the user interface and codes the site to work on different devices and browsers."},
+            {"term": "Business Analyst", "def": "Connects technology with business needs. Collects information from stakeholders, analyses data, and suggests technology solutions."},
+            {"term": "DevOps Engineer", "def": "Improves collaboration between software development and IT operations. Focuses on automating processes and ensuring CI/CD."},
+            {"term": "AI Specialist", "def": "Designs and implements artificial intelligence and machine learning models. Creates algorithms that automate tasks, recognize patterns, and make decisions."},
+            {"term": "Mobile App Developer", "def": "Creates apps for smartphones and tablets using platforms like iOS or Android."},
+            {"term": "UX/UI Designer", "def": "Focuses on user experience (UX) and user interface (UI). Designs layouts, navigation, and interactions to make digital products easy to use."},
+            {"term": "Vacancy", "def": "Vacante: puesto de trabajo disponible en una empresa al que pueden postularse candidatos."},
+            {"term": "Internship", "def": "Prácticas: período de trabajo formativo en una empresa, habitualmente remunerado o como parte de los estudios."},
+            {"term": "Driven", "def": "Motivado, ambicioso: que toma iniciativa y siempre busca alcanzar sus objetivos."},
+            {"term": "Detail-oriented", "def": "Detallista, meticuloso: que presta mucha atención a los pequeños detalles en su trabajo."},
+            {"term": "Team player", "def": "Buen compañero de equipo: persona que trabaja bien con otros y contribuye al éxito del grupo."},
+            {"term": "Adaptable", "def": "Adaptable, flexible: capacidad de ajustarse a nuevas situaciones o cambios en el entorno laboral."},
+            {"term": "Multitasking", "def": "Realizar varias tareas a la misma vez: capacidad de gestionar múltiples responsabilidades simultáneamente."}
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {"term": "Quantifier", "def": "Palabra que indica la cantidad de algo sin especificar un número exacto. Se usa con sustantivos contables o incontables. Ej.: many, few, some, much, a lot of."},
+    {"term": "Many / Much", "def": "Cuantificadores que indican una gran cantidad. Many se usa con contables; much con incontables. Ej.: Many companies use AI. / Much information is shared online."},
+    {"term": "A few / A little", "def": "Cuantificadores que indican una cantidad moderada (hay algo). A few con contables; a little con incontables. Ej.: There are a few platforms. / A little time can help."},
+    {"term": "Few / Little", "def": "Cuantificadores con connotación negativa: indican una cantidad escasa (casi nada). Few con contables; little con incontables. Ej.: Few people know this. / There's little control."},
+    {"term": "Modal verb", "def": "Verbo auxiliar que expresa habilidad, posibilidad, permiso, obligación, prohibición o consejo. No cambia con el sujeto y va seguido de la forma base del verbo. Ej.: can, must, should, may, could."},
+    {"term": "Indefinite pronoun", "def": "Pronombre que se refiere a personas, cosas o lugares no específicos. Ej.: someone, anything, nobody, everywhere."},
+    {"term": "Saxon Genitive", "def": "Estructura gramatical del inglés para expresar posesión añadiendo 's al sustantivo poseedor. Ej.: John's phone. Se usa principalmente con personas, animales y expresiones de tiempo."},
+    {"term": "Passive Voice", "def": "Construcción en la que el sujeto recibe la acción. Estructura: sujeto + to be + participio + by + agente. Ej.: An account was created by Mark."},
+    {"term": "Reported Speech", "def": "Estilo indirecto: forma de relatar lo que alguien ha dicho sin citar sus palabras exactas, ajustando tiempos verbales, pronombres y expresiones de tiempo y lugar."},
+    {"term": "Backshift", "def": "Retroceso de los tiempos verbales al pasar del estilo directo al indirecto. Solo ocurre cuando el reporting verb está en pasado. Ej.: \"I like\" → said that she liked."},
+    {"term": "Reporting verb", "def": "Verbo que introduce el estilo indirecto e indica cómo se dijo algo. Ej.: said, told, asked, explained, warned, suggested."},
+    {"term": "IT Support Specialist", "def": "Especialista de soporte informático: asiste a usuarios finales con problemas técnicos de hardware, software y redes."},
+    {"term": "DevOps Engineer", "def": "Ingeniero DevOps: mejora la colaboración entre desarrollo de software y operaciones TI, automatizando procesos y asegurando la entrega continua (CI/CD)."},
+    {"term": "UX/UI Designer", "def": "Diseñador de experiencia e interfaz de usuario: diseña la apariencia y la usabilidad de webs y aplicaciones para hacerlas intuitivas y atractivas."},
+    {"term": "Vacancy", "def": "Vacante: puesto de trabajo disponible en una empresa al que pueden postularse candidatos."},
+    {"term": "Internship", "def": "Prácticas profesionales: período de trabajo formativo en una empresa, habitualmente vinculado a los estudios."},
+    {"term": "Driven", "def": "Motivado, ambicioso: que toma iniciativa y siempre busca alcanzar sus objetivos."},
+    {"term": "Multitasking", "def": "Capacidad de realizar varias tareas al mismo tiempo de forma eficiente."}
+  ],
+  "quiz": [
+    {
+      "question": "¿Qué cuantificador se usa con sustantivos contables para indicar una gran cantidad?",
+      "options": [
+        "Many",
+        "Much",
+        "Little",
+        "A little"
+      ],
+      "correct": 0,
+      "explanation": "El temario establece que 'many' se usa con sustantivos contables para indicar una gran cantidad. Ejemplo: 'Many companies are implementing the use of AI.' 'Much' se usa con incontables; 'little' y 'a little' indican cantidades pequeñas o moderadas con incontables."
+    },
+    {
+      "question": "¿Cuál es la estructura correcta de la voz pasiva?",
+      "options": [
+        "Subject + main verb + past participle + by + agent",
+        "Subject + verb to be (same tense) + past participle + by + agent",
+        "Agent + verb to be + subject + past participle",
+        "Subject + have + past participle + agent"
+      ],
+      "correct": 1,
+      "explanation": "El temario define la estructura de la voz pasiva como: sujeto + verbo 'to be' (en el mismo tiempo que la activa) + verbo en participio + agente (introducido por 'by'). Ejemplo: 'An account was created by Mark.' El verbo 'to be' adopta el tiempo de la oración activa original."
+    },
+    {
+      "question": "Al convertir 'She said, \"I will use my phone\"' al estilo indirecto, ¿cuál es el resultado correcto?",
+      "options": [
+        "She said that she will use her phone.",
+        "She said that she used her phone.",
+        "She said that she would use her phone.",
+        "She said that she had used her phone."
+      ],
+      "correct": 2,
+      "explanation": "El temario indica que el Future Simple (will) se convierte en Conditional Simple (would) al aplicar el backshift. El pronombre 'I' cambia a 'she' y 'my' a 'her'. Resultado: 'She said that she would use her phone.'"
+    },
+    {
+      "question": "¿Qué regla del genitivo sajón se aplica en la frase 'My parents' car'?",
+      "options": [
+        "Se añade 's a un sustantivo singular",
+        "Se añade solo el apóstrofe (') a sustantivos plurales que ya terminan en -s",
+        "Se añade 's al último nombre cuando hay varios propietarios",
+        "Se añade 's a sustantivos plurales no terminados en -s"
+      ],
+      "correct": 1,
+      "explanation": "El temario establece que a los sustantivos plurales que ya terminan en -s se añade únicamente el apóstrofe ('). 'Parents' termina en -s, por lo que el resultado es 'parents''. Las otras opciones corresponden a otras reglas del genitivo sajón."
+    },
+    {
+      "question": "¿Qué pronombre indefinido completa correctamente la frase del temario: «[blank] can create an account on this platform for free»?",
+      "options": [
+        "Nobody",
+        "Somebody",
+        "Everywhere",
+        "Anybody"
+      ],
+      "correct": 3,
+      "explanation": "El temario indica que los pronombres 'any-' pueden usarse en oraciones afirmativas con el significado de 'no importa quién'. El ejemplo literal del temario es: 'Anybody can create an account on this platform for free.' 'Nobody' significaría que nadie puede; 'somebody' sería demasiado específico; 'everywhere' es un pronombre de lugar."
+    },
+    {
+      "question": "¿Qué verbos modales se usan para dar recomendaciones o consejos según el temario?",
+      "options": [
+        "Should / ought to",
+        "Must / have to",
+        "Can / may",
+        "Must not / can't"
+      ],
+      "correct": 0,
+      "explanation": "El temario clasifica 'should' y 'ought to' en la categoría 'Advice' con el uso 'Give recommendations'. Ejemplo del temario: 'You should visit a doctor.' 'Must/have to' expresan obligación; 'can/may' expresan habilidad o permiso; 'must not/can't' expresan prohibición."
+    },
+    {
+      "question": "Al pasar 'Here' a estilo indirecto, ¿qué expresión de lugar se usa?",
+      "options": [
+        "There",
+        "This",
+        "That",
+        "Those"
+      ],
+      "correct": 0,
+      "explanation": "El temario incluye una tabla de cambios en las expresiones de lugar: 'Here' → 'There'. 'This' → 'That' y 'These' → 'Those' son los otros cambios de lugar recogidos en la misma tabla."
+    },
+    {
+      "question": "¿Cuál de estas descripciones corresponde a un DevOps Engineer?",
+      "options": [
+        "Protects an organization's systems from cyberattacks and data breaches.",
+        "Designs layouts and interactions to make digital products easy to use.",
+        "Works to improve collaboration between software development and IT operations, automating processes and ensuring CI/CD.",
+        "Manages and secures databases, performing backups and data retrieval."
+      ],
+      "correct": 2,
+      "explanation": "El PDF de vocabulario define al DevOps Engineer como el profesional que mejora la colaboración entre el desarrollo de software y las operaciones TI, centrándose en la automatización de procesos, la integración continua y la entrega continua (CI/CD). La primera opción corresponde al Cybersecurity Analyst; la segunda al UX/UI Designer; la cuarta al Database Administrator."
+    },
+    {
+      "question": "En reported speech, ¿cómo cambia el modal 'must' al aplicar el backshift?",
+      "options": [
+        "Must → Might",
+        "Must → Couldn't",
+        "Must → Should",
+        "Must → Had to"
+      ],
+      "correct": 3,
+      "explanation": "El temario incluye en la tabla de backshift de verbos modales: 'Must → Had to'. Ejemplo del temario: 'They said, \"We must study more\" → The said that they had to study more.' (Nota: el temario escribe «The said» por error; el sujeto correcto es «They».) Los otros modales tienen sus propios equivalentes."
+    },
+    {
+      "question": "¿Qué expresión en inglés se usa para reportar una orden como «¡Cierra la puerta!»?",
+      "options": [
+        "She asked me if I closed the door.",
+        "She told me to close the door.",
+        "She said me close the door.",
+        "She told me closing the door."
+      ],
+      "correct": 1,
+      "explanation": "El temario establece que para las órdenes (commands) en estilo indirecto se usa la estructura: told + (not) to + verb (infinitive). Ejemplo literal del temario: '\"Close the door!\" → She told me to close the door.' Las otras opciones usan estructuras incorrectas o corresponden a peticiones, no a órdenes."
+    }
+  ],
+  "_sources": {
+    "s1": "U6 Work smarter.pdf — sección 6.1, páginas 4–5; Quantifiers.pdf",
+    "s2": "U6 Work smarter.pdf — sección 6.2, página 6; Modal verbs.pdf; U6 Modal verbs.pdf (transcripción de infografía)",
+    "s3": "U6 Work smarter.pdf — sección 6.3, página 7; Indefinite pronouns.pdf",
+    "s4": "U6 Work smarter.pdf — sección 6.4, página 8; Saxon Genitive.pdf",
+    "s5": "U6 Work smarter.pdf — secciones 6.5, páginas 9–10; The Passive Voice.pdf",
+    "s6": "U6 Work smarter.pdf — sección 6.6, páginas 11–14; Reported speech.pdf",
+    "s7": "U6 Vocabulary Work smarter.pdf — secciones 6.1.1–6.1.2, páginas 3–8"
+  }
+}
