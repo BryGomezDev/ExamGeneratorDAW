@@ -1,0 +1,559 @@
+{
+  "subject": "lm",
+  "unit": 6,
+  "title": "Almacenamiento de información",
+  "intro": "En esta unidad se estudian las bases de datos como herramientas que permiten almacenar datos en formato XML para que puedan ser consultados posteriormente con la mayor facilidad posible. Se analizan los tres sistemas de almacenamiento de información XML (ficheros, bases de datos enabled y bases de datos nativas), la herramienta ImportXML de Google Sheets, los lenguajes de consulta XPath y XQuery, y la instalación y uso de las bases de datos nativas eXist-db y BaseX.",
+  "objectives": [
+    "Distinguir los tres sistemas de almacenamiento de información XML: ficheros, bases de datos enabled y bases de datos nativas.",
+    "Identificar las cuatro bases de datos nativas XML más utilizadas y sus licencias.",
+    "Utilizar la función ImportXML de Google Sheets para extraer información de documentos XML.",
+    "Comprender el modelo de árbol de nodos de XPath y los siete tipos de nodos.",
+    "Aplicar expresiones de ruta, predicados, operadores y comodines de XPath.",
+    "Conocer la sintaxis FLWOR de XQuery y las diferencias con XPath.",
+    "Instalar y configurar eXist-db, y conocer las opciones de memoria recomendadas.",
+    "Conocer BaseX como alternativa de código abierto para el almacenamiento XML nativo."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "6.1. Bases de datos nativas XML",
+      "short": "6.1 BD nativas XML",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La información XML posee múltiples maneras de almacenamiento: en ficheros, en XML enabled (bases de datos no nativas) y en bases de datos nativas XML. Las bases de datos nativas XML se basan en XML y usan el documento XML como unidad de almacenamiento. A diferencia de las bases XML enabled, las nativas no suelen crear problemas aunque los documentos XML sean extensos, ya que no modifican los documentos XML originales, que pueden ser recuperados en su estado original sin problemas. Además, al igual que los documentos XML, trabajan de manera jerárquica, lo que evita tener que realizar transformaciones que pueden desencadenar ciertos fallos. Los entornos nativos usan lenguajes como XQuery 1.0 y XPath 2.0."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Ficheros",
+              "content": "Aunque es uno de los sistemas usados para el almacenamiento, su uso no se recomienda, ya que no puede mantener los estándares de los demás sistemas de almacenamiento en materias como la concurrencia."
+            },
+            {
+              "title": "XML enabled — bases de datos no nativas",
+              "content": "Son bases de datos relacionales que transforman en esquemas relacionales los archivos XML para, después, volcar esos datos en el propio esquema. No requieren middleware para trabajar con XML y pueden aceptar XML como formato de entrada y generar XML como salida. Sus desventajas: ante futuros cambios es imposible restaurar el documento original, y presentan problemas con la estructura porque este tipo de base es relacional mientras que el XML es jerárquico."
+            },
+            {
+              "title": "Bases de datos XML nativas",
+              "content": "Se basan en XML y usan el documento XML como unidad de almacenamiento. Trabajan de manera jerárquica, evitan transformaciones problemáticas y permiten recuperar el documento original. Usan lenguajes como XQuery 1.0 y XPath 2.0."
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Oracle Berkeley DB XML",
+              "kicker": "Licencia: Código abierto",
+              "desc": "Base de datos XML nativa de Oracle. Es de código abierto y una de las más difundidas para el almacenamiento nativo de documentos XML."
+            },
+            {
+              "title": "BaseX",
+              "kicker": "Licencia: BSD",
+              "desc": "Base de datos XML nativa muy fiable y muy utilizada para el desarrollo de aplicaciones web por su naturaleza de código abierto. Disponible en basex.org."
+            },
+            {
+              "title": "Sedna",
+              "kicker": "Licencia: LGPL",
+              "desc": "Base de datos XML nativa con licencia LGPL (Lesser General Public License), que permite su uso en software libre y propietario."
+            },
+            {
+              "title": "eXist",
+              "kicker": "Licencia: Apache",
+              "desc": "Base de datos XML nativa con licencia Apache. Es de las más difundidas entre las bases de datos que no usan SQL. Fácil instalación en Windows, macOS y Linux con Java 1.7 o posterior."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "6.2. Importación de datos XML con la función ImportXML",
+      "short": "6.2 ImportXML",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En la hoja de cálculo de Google Docs (Google Sheets) podemos encontrar la herramienta ImportXML, muy útil para cualquier programador. Su ventaja sobre otras herramientas es que trabaja con formatos estructurados, lo cual permite importar los diversos formatos que usan este sistema, como XML, HTML y CSV. Con esta herramienta es posible extraer información o estructuras de una página o archivo. Es un recurso imprescindible cuando se manejan grandes cantidades de datos con un estilo similar, como pueden ser las suscripciones o membresías."
+        },
+        {
+          "type": "text",
+          "content": "La sintaxis de ImportXML se basa en la siguiente estructura:\n\nIMPORTXML(\"url\"; \"consulta_xpath\")\n\nLa url, entre comillas, hace referencia a la página que desea examinarse, mientras que consulta_xpath, también entre comillas, hace referencia a lo que desea consultarse en dicha página, expresado en lenguaje XPath."
+        },
+        {
+          "type": "code",
+          "content": "IMPORTXML(\"https://www.w3schools.com/xml/default.asp\"; \"//a/@href\")"
+        },
+        {
+          "type": "text",
+          "content": "⚠ En el XML de ejemplo, el director de Harry Potter aparece como «J K. Rowling» cuando debería ser «J. K. Rowling»."
+        },
+        {
+          "type": "code",
+          "content": "IMPORTXML(A2; B2)"
+        },
+        {
+          "type": "text",
+          "content": "En el segundo ejemplo, la URL se lee de la celda A2 y la consulta XPath de la celda B2, lo que permite reutilizar la función de forma dinámica con valores variables almacenados en otras celdas."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "6.3. XPath",
+      "short": "6.3 XPath",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "XPath (XML Path Language) es un lenguaje path language con una sintaxis path like que permite buscar y seleccionar nodos en archivos con lenguajes XML. Posee más de 200 comandos predefinidos y es el recomendado por el W3C. Puede trabajar con JavaScript, Java, XML Schema, PHP, Python, C y C++, entre otros.\n\nXPath analiza el documento XML con el fin de crear árboles de nodos de siete tipos: nodo raíz, elemento, texto, atributo, namespace (espacio de nombres), instrucción procesable y comentario."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Nodo raíz",
+              "desc": "El nodo principal que inicia el archivo. En el ejemplo: Almacén."
+            },
+            {
+              "title": "Nodo / Elemento",
+              "desc": "Los valores intermedios del árbol. Por ejemplo: películas, título, director, año."
+            },
+            {
+              "title": "Nodo texto",
+              "desc": "El contenido de texto de un elemento. Por ejemplo: Titanic, James Cameron, 1997."
+            },
+            {
+              "title": "Atributo",
+              "desc": "Propiedad de un elemento. Por ejemplo: lang=\"es\" en el elemento título."
+            },
+            {
+              "title": "Namespace",
+              "desc": "Espacio de nombres que permite evitar conflictos entre elementos con el mismo nombre de distintos vocabularios XML."
+            },
+            {
+              "title": "Instrucción procesable y Comentario",
+              "desc": "Instrucción procesable: instrucción dirigida a la aplicación que procesa el XML. Comentario: texto ignorado por el procesador XML, delimitado por <!-- y -->."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Las relaciones entre los nodos son las siguientes: padre (parent) es el nodo del que desciende otro; hijo (children) es el nodo que desciende de otro; hermanos (siblings) son nodos que comparten un mismo padre; antecesores (ancestors) es el nodo padre de otro nodo padre; descendientes (descendant) es el nodo hijo de otro nodo hijo."
+        },
+        {
+          "type": "text",
+          "content": "El lenguaje XPath usa expresiones de ruta para navegar por el documento. Se usará como ejemplo el siguiente XML:\n\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Almacén>\n  <películas>\n    <título lang=\"es\">Harry Potter</título>\n    <director>J K. Rowling</director>\n    <año>2005</año>\n  </películas>\n  ...\n</Almacén>"
+        },
+        {
+          "type": "table",
+          "headers": ["Expresión", "Descripción"],
+          "rows": [
+            ["nodename", "Selects all nodes with the name «nodename»"],
+            ["/", "Selects from the root node"],
+            ["//", "Selects nodes in the document from the current node that match the selection, no matter where they are"],
+            [".", "Selects the current node"],
+            ["..", "Selects the parent of the current node"],
+            ["@", "Selects attributes"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "⚠ La descripción está incompleta: «//» selecciona todos los nodos del documento que cumplen el criterio, no solo los del nodo actual."
+        },
+        {
+          "type": "table",
+          "headers": ["Path Expression", "Result"],
+          "rows": [
+            ["Almacén", "Selects all nodes with the name «Almacén»"],
+            ["/Almacén", "Selects the root element Almacén"],
+            ["Almacén//película", "Selects all película elements that are descendants of Almacén, no matter where they are"],
+            ["//película", "Selects all película elements no matter where they are in the document"],
+            ["//título[@lang]", "Selects all título elements that have an attribute named lang"],
+            ["//título[@lang='es']", "Selects all título elements that have a \"lang\" attribute with a value of \"es\""]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "⚠ Así no es una expresión XPath válida. La expresión correcta sería: //título[@lang='es']."
+        },
+        {
+          "type": "text",
+          "content": "Los predicados permiten extraer un nodo concreto de un conjunto de nodos. Se escriben entre corchetes [ ]."
+        },
+        {
+          "type": "table",
+          "headers": ["Path Expression", "Result"],
+          "rows": [
+            ["/Almacén/películas[1]", "Selects the first película element that is the child of Almacén"],
+            ["/Almacén/películas[last()]", "Selects the last película element that is the child of Almacén"],
+            ["/Almacén/películas[last()-1]", "Selects the last but one película element that is the child of Almacén"],
+            ["/Almacén/películas[position()<3]", "Selects the first two película elements that are children of Almacén"],
+            ["//título[@lang]", "Selects all título elements that have an attribute named lang"],
+            ["//título[@lang='es']", "Selects all título elements that have a \"lang\" attribute with a value of \"es\""],
+            ["/Almacén/películas[precio>35.00]", "Selects all películas elements of Almacén that have a precio element with a value greater than 35.00"],
+            ["/Almacén/películas[precio>35.00]/título", "Selects all título elements of películas elements of Almacén that have a precio element with a value greater than 35.00"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "⚠ En el estándar XPath, [1] es el primer nodo del conjunto, no el índice 0. Este comportamiento es correcto, pero puede ser confuso para desarrolladores acostumbrados a arrays basados en 0."
+        },
+        {
+          "type": "text",
+          "content": "Algunos de los operadores empleados por XPath son los siguientes:"
+        },
+        {
+          "type": "table",
+          "headers": ["Operador", "Descripción", "Ejemplo"],
+          "rows": [
+            ["|", "Computes two node-sets", "//libro | //cd"],
+            ["+", "Addition", "6 + 4"],
+            ["-", "Subtraction", "6 - 4"],
+            ["*", "Multiplication", "6 * 4"],
+            ["div", "Division", "8 div 4"],
+            ["=", "Equal", "precio=9.80"],
+            ["!=", "Not equal", "precio!=9.80"],
+            ["<", "Less than", "precio<9.80"],
+            ["<=", "Less than or equal to", "precio<=9.80"],
+            [">", "Greater than", "precio>9.80"],
+            [">=", "Greater than or equal to", "precio>=9.80"],
+            ["or", "Or", "precio=9.80 or precio=9.70"],
+            ["and", "And", "precio>9.00 and precio<9.90"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "⚠ Los ejemplos están escritos en castellano («precio», «libro») mezclando con el XML de ejemplo del tema. Conviene practicar adaptando los ejemplos al XML real que se esté usando."
+        },
+        {
+          "type": "text",
+          "content": "Para seleccionar nodos desconocidos, XPath cuenta con expresiones específicas llamadas comodines:"
+        },
+        {
+          "type": "table",
+          "headers": ["Wildcard", "Description"],
+          "rows": [
+            ["*", "Matches any element node"],
+            ["@*", "Matches any attribute node"],
+            ["node()", "Matches any node of any kind"]
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Path Expression", "Result"],
+          "rows": [
+            ["/Almacén/*", "Selects all child elements of Almacén"],
+            ["//*", "Selects all elements in the document"],
+            ["//título[@*]", "Selects all título elements that have any attribute"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "⚠ Con el XML del tema la raíz es «Almacén», no «películas». La expresión correcta sería /Almacén/* para seleccionar todos los hijos de la raíz."
+        },
+        {
+          "type": "text",
+          "content": "Con el operador | podemos combinar varias rutas, por ejemplo:\n\npath = \"Almacén/películas/director | Almacén/películas/año\"\n\nMostrando así todos los directores y después todos los años."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "6.4. XQuery",
+      "short": "6.4 XQuery",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "XQuery es un lenguaje de consulta y extracción de información y atributos de archivos XML. Es un superconjunto de XPath, ya que usa las expresiones de XPath, con una sintaxis FLWOR. Posee una semántica semejante a SQL y es recomendado por el W3C.\n\nEntre otras cosas XQuery permite: extraer información de XML, generar informes con datos resumidos, transformar datos XML a XHTML y buscar información específica en documentos web."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Es un lenguaje de consulta",
+              "kicker": "XQuery"
+            },
+            {
+              "title": "Es un superconjunto de XPath",
+              "kicker": "XQuery"
+            },
+            {
+              "title": "Permite extraer y manipular datos en documentos XML",
+              "kicker": "XQuery"
+            },
+            {
+              "title": "XQuery es a XML lo que SQL es a las bases de datos relacionales",
+              "kicker": "XQuery"
+            },
+            {
+              "title": "Se utiliza para seleccionar nodos",
+              "kicker": "XPath"
+            },
+            {
+              "title": "Se basa en la estructura de árbol de un documento XML",
+              "kicker": "XPath"
+            },
+            {
+              "title": "7 tipos de nodos: Raíz, Elemento, Atributo, Comentario, Instrucción de procesamiento, Espacio de nombres, Texto",
+              "kicker": "XPath"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "La sintaxis FLWOR es un acrónimo de For, Let, Where, Order by, Return:"
+        },
+        {
+          "type": "flipcards",
+          "items": [
+            {
+              "term": "For",
+              "def": "Selecciona una secuencia de nodos del documento XML."
+            },
+            {
+              "term": "Let",
+              "def": "Enlaza una secuencia a una variable."
+            },
+            {
+              "term": "Where",
+              "def": "Filtra los nodos según una condición."
+            },
+            {
+              "term": "Order by",
+              "def": "Ordena los nodos seleccionados."
+            },
+            {
+              "term": "Return",
+              "def": "Devuelve el resultado; se evalúa en todos los nódulos."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Ejemplo de consulta XQuery que genera una lista HTML con títulos de películas posteriores a 1990:"
+        },
+        {
+          "type": "code",
+          "content": "<html>\n<body>\n<hl>Almacenaje de filmpedia</hl>\n<ul>\n<script>\n{ for $x in doc(\"Inventario21.xml\")/Almacén/películas\nwhere $x/año>1990\norder by $x/título Lang=\"es\"\nreturn <li>{data($x/título)}</li>\n}\n</script>\n</ul>\n</body>\n</html>"
+        },
+        {
+          "type": "text",
+          "content": "⚠ «order by $x/título Lang=\"es\"» no es válido en XQuery. El atributo se selecciona con @: order by $x/título/@lang. Además, los valores de atributo son sensibles a mayúsculas: «es» ≠ «Es»."
+        },
+        {
+          "type": "text",
+          "content": "El resultado de la consulta anterior sería una lista HTML con los títulos: El silencio de los corderos, El cabo del miedo, Tacones lejanos, La bella y la bestia."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "6.5. eXist-db y BaseX",
+      "short": "6.5 eXist-db y BaseX",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Entre las bases de datos que no usan SQL, una de las más difundidas es eXist-db. Es de fácil instalación y requiere un sistema operativo Windows, macOS o Linux con Java 1.7 o posterior."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Descarga e instalación de eXist-db",
+              "content": "Descarga la última versión (extensión .jar) desde exist-db.org. Coloca el archivo en la carpeta donde se instalará. Abre la consola de comandos y ejecuta:\n\njava -jar exist-db-setup-xxx.jar\n\nDonde xxx es el número de versión completo. Se abrirá la interfaz gráfica de instalación para elegir el directorio."
+            },
+            {
+              "title": "Advertencia sobre la ruta de instalación",
+              "content": "Nunca instalar eXist-db en «Program Files» o «Archivos de Programa» en entornos Windows, ya que generará conflictos con los permisos del sistema operativo. Elegir una carpeta sin restricciones de permisos."
+            },
+            {
+              "title": "Configuración de memoria",
+              "content": "Durante la instalación se pedirá la configuración de memoria del servicio. Las tres opciones recomendadas son:\n\n1. 512 MB de memoria máxima y 64 MB de caché — mínimo necesario.\n2. 1024 MB de memoria máxima y 128 MB de caché — opción por defecto, ideal para pequeñas bases de datos.\n3. 2048 MB o superior de memoria máxima y 256 MB o superior de caché — máximo rendimiento, recomendable si el ordenador lo soporta y se trabajará con grandes bases de datos."
+            },
+            {
+              "title": "Inicio del servicio",
+              "content": "Para iniciar el servicio escribir en la consola:\n\njava -jar start.jar\n\nLos puertos de interfaz web que eXist-db usa son el 8080 para HTTP y el 8443 para HTTPS si se requiere una interfaz SSL."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Parámetro de memoria", "Valor", "Uso recomendado"],
+          "rows": [
+            ["Memoria máxima / Caché", "512 MB / 64 MB", "Mínimo necesario"],
+            ["Memoria máxima / Caché", "1024 MB / 128 MB", "Por defecto; pequeñas bases de datos"],
+            ["Memoria máxima / Caché", "≥2048 MB / ≥256 MB", "Máximo rendimiento; grandes bases de datos"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "BaseX es una base de datos XML bastante fiable, muy utilizada para el desarrollo de aplicaciones web por tratarse de código abierto. Puede encontrarse en basex.org. Al igual que eXist-db, usa una licencia libre (BSD) y es compatible con XQuery 1.0 y XPath 2.0."
+        },
+        {
+          "type": "text",
+          "content": "Entre las herramientas de tratamiento y almacenamiento de información en formato XML destaca eXide, que es la herramienta usada por eXist-db para trabajar con sus bases de datos. También pueden usarse editores generales como Notepad o Gedit, así como editores XML especializados. Es fundamental encontrar las herramientas idóneas para las necesidades del proyecto, ya que no todas poseen las mismas características ni son capaces de trabajar entre sí sin conflictos."
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Base de datos XML nativa",
+      "def": "Base de datos que usa el documento XML como unidad de almacenamiento y trabaja de manera jerárquica. No modifica los documentos originales, que pueden recuperarse en su estado original. Usa lenguajes como XQuery 1.0 y XPath 2.0."
+    },
+    {
+      "term": "XML enabled (base de datos no nativa)",
+      "def": "Base de datos relacional que transforma en esquemas relacionales los archivos XML para volcar esos datos en el propio esquema. No puede restaurar el documento original ante futuros cambios y presenta problemas de estructura por la incompatibilidad entre el modelo relacional y el jerárquico de XML."
+    },
+    {
+      "term": "ImportXML",
+      "def": "Función de Google Sheets que permite importar datos de documentos con formato estructurado (XML, HTML, CSV) mediante una URL y una consulta XPath. Sintaxis: IMPORTXML(\"url\"; \"consulta_xpath\")."
+    },
+    {
+      "term": "XPath",
+      "def": "XML Path Language. Lenguaje que permite buscar y seleccionar nodos en archivos XML mediante expresiones de ruta. Analiza el documento XML creando un árbol de siete tipos de nodos. Es recomendado por el W3C y posee más de 200 comandos predefinidos."
+    },
+    {
+      "term": "XQuery",
+      "def": "Lenguaje de consulta y extracción de información de archivos XML. Es un superconjunto de XPath con sintaxis FLWOR. Tiene semántica similar a SQL y es recomendado por el W3C."
+    },
+    {
+      "term": "FLWOR",
+      "def": "Acrónimo de For, Let, Where, Order by, Return. Es la sintaxis característica de XQuery: For selecciona una secuencia de nodos, Let enlaza a una variable, Where filtra, Order by ordena y Return devuelve el resultado."
+    },
+    {
+      "term": "Nodo raíz",
+      "def": "El nodo principal que inicia el documento XML en el árbol XPath. Es el antecesor de todos los demás nodos. En el ejemplo del temario: Almacén."
+    },
+    {
+      "term": "Predicado XPath",
+      "def": "Expresión entre corchetes [ ] que permite filtrar y extraer un nodo concreto de un conjunto de nodos. Por ejemplo: /Almacén/películas[1] selecciona la primera película."
+    },
+    {
+      "term": "Wildcard (comodín XPath)",
+      "def": "Expresión especial de XPath para seleccionar nodos desconocidos: * selecciona cualquier elemento, @* cualquier atributo, y node() cualquier nodo de cualquier tipo."
+    },
+    {
+      "term": "eXist-db",
+      "def": "Base de datos XML nativa con licencia Apache, una de las más difundidas entre las NoSQL. Se instala con «java -jar exist-db-setup-xxx.jar» y se inicia con «java -jar start.jar». Usa los puertos 8080 (HTTP) y 8443 (HTTPS)."
+    },
+    {
+      "term": "BaseX",
+      "def": "Base de datos XML nativa con licencia BSD, muy fiable y utilizada para el desarrollo de aplicaciones web por ser de código abierto. Disponible en basex.org."
+    },
+    {
+      "term": "eXide",
+      "def": "Herramienta de edición y consulta integrada en eXist-db. Es la herramienta principal usada con la base de datos eXist-db para trabajar con documentos XML."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "¿Cuál es la principal ventaja de las bases de datos XML nativas frente a las bases de datos XML enabled?",
+      "options": [
+        "Trabajan de manera jerárquica, no modifican el documento original y permiten recuperarlo en su estado inicial",
+        "Son bases de datos relacionales que transforman el XML en esquemas relacionales más eficientes",
+        "No requieren ningún lenguaje de consulta para acceder a los datos almacenados"
+      ],
+      "correct": 0,
+      "explanation": "Las bases de datos XML nativas trabajan de manera jerárquica (igual que el XML) y no modifican los documentos originales, que pueden recuperarse sin problemas. Las XML enabled sí los modifican y no permiten restaurar el original. Los entornos nativos usan XQuery 1.0 y XPath 2.0 como lenguajes de consulta."
+    },
+    {
+      "question": "¿Qué licencia tiene la base de datos XML nativa Sedna?",
+      "options": [
+        "Apache",
+        "BSD",
+        "LGPL"
+      ],
+      "correct": 2,
+      "explanation": "Según el temario, las cuatro bases de datos nativas y sus licencias son: Oracle Berkeley DB XML (código abierto), BaseX (BSD), Sedna (LGPL) y eXist (Apache). LGPL es la Lesser General Public License."
+    },
+    {
+      "question": "¿Cuál es la sintaxis correcta de la función ImportXML de Google Sheets?",
+      "options": [
+        "IMPORTXML(\"url\"; \"consulta_xpath\")",
+        "=IMPORTXML(url, xpath_query)",
+        "ImportXML(\"consulta_xpath\"; \"url\")"
+      ],
+      "correct": 0,
+      "explanation": "La sintaxis correcta es IMPORTXML(\"url\"; \"consulta_xpath\"), donde la url entre comillas hace referencia a la página que se examina y consulta_xpath, también entre comillas, es la expresión XPath que indica qué se desea consultar."
+    },
+    {
+      "question": "¿Qué expresión XPath selecciona todos los elementos título que tengan el atributo lang con valor \"es\"?",
+      "options": [
+        "//título[@lang='es']",
+        "//título[lang='es']",
+        "/título/@lang='es'"
+      ],
+      "correct": 0,
+      "explanation": "La expresión XPath correcta para seleccionar elementos con un atributo de valor específico usa la sintaxis [@atributo='valor']. Por tanto, //título[@lang='es'] selecciona todos los elementos título en cualquier parte del documento que tengan el atributo lang con valor 'es'. Sin la @ no se hace referencia al atributo sino a un elemento hijo."
+    },
+    {
+      "question": "En XPath, ¿qué expresión selecciona el último elemento películas hijo de Almacén?",
+      "options": [
+        "/Almacén/películas[-1]",
+        "/Almacén/películas[last()]",
+        "//películas[end()]"
+      ],
+      "correct": 1,
+      "explanation": "La función last() de XPath devuelve el número del último nodo en el conjunto de nodos seleccionado. Por tanto, /Almacén/películas[last()] selecciona el último elemento películas hijo de Almacén. Los índices en XPath comienzan en 1, no en 0, y no existe la expresión [-1] ni la función end()."
+    },
+    {
+      "question": "¿Qué significa el acrónimo FLWOR en XQuery?",
+      "options": [
+        "Filter, List, Where, Output, Result",
+        "For, Let, Where, Order by, Return",
+        "Find, Load, Write, Order, Render"
+      ],
+      "correct": 1,
+      "explanation": "FLWOR es el acrónimo de For (selecciona una secuencia de nodos), Let (enlaza una secuencia a una variable), Where (filtra los nodos), Order by (ordena los nodos) y Return (devuelve el resultado). Es la sintaxis característica de XQuery."
+    },
+    {
+      "question": "¿En qué directorio NO se debe instalar eXist-db en Windows?",
+      "options": [
+        "En la carpeta del usuario (C:\\Users\\...)",
+        "En «Program Files» o «Archivos de Programa»",
+        "En el escritorio (Desktop)"
+      ],
+      "correct": 1,
+      "explanation": "El temario advierte expresamente que nunca se debe instalar eXist-db en «Program Files» o «Archivos de Programa» en entornos Windows, ya que generará conflictos con los permisos del sistema operativo. Se recomienda elegir otra carpeta sin restricciones de permisos."
+    },
+    {
+      "question": "¿Cuál de los siguientes comodines XPath selecciona cualquier nodo de cualquier tipo?",
+      "options": [
+        "@*",
+        "*",
+        "node()"
+      ],
+      "correct": 2,
+      "explanation": "node() es el comodín que selecciona cualquier nodo de cualquier tipo (elemento, atributo, texto, etc.). El comodín * selecciona cualquier elemento (nodo de tipo elemento), y @* selecciona cualquier atributo."
+    },
+    {
+      "question": "¿A qué puertos de interfaz web se conecta eXist-db por defecto?",
+      "options": [
+        "80 para HTTP y 443 para HTTPS",
+        "3000 para HTTP y 3443 para HTTPS",
+        "8080 para HTTP y 8443 para HTTPS"
+      ],
+      "correct": 2,
+      "explanation": "eXist-db usa el puerto 8080 para todo HTTP y el puerto 8443 para HTTPS si se requiere una interfaz SSL. Estos son sus puertos de interfaz web predeterminados, distintos de los puertos estándar 80 y 443 usados por servidores web convencionales."
+    },
+    {
+      "question": "¿Cuántos tipos de nodos analiza XPath al crear el árbol de un documento XML?",
+      "options": [
+        "5 tipos: raíz, elemento, texto, atributo y comentario",
+        "4 tipos: raíz, elemento, atributo y texto",
+        "6 tipos: raíz, elemento, texto, atributo, namespace e instrucción procesable",
+        "7 tipos: raíz, elemento, texto, atributo, namespace, instrucción procesable y comentario"
+      ],
+      "correct": 3,
+      "explanation": "XPath analiza el documento XML creando árboles de nodos de exactamente siete tipos: nodo raíz, elemento, texto, atributo, namespace (espacio de nombres), instrucción procesable y comentario. Esta clasificación completa permite a XPath navegar con precisión por cualquier parte del documento XML."
+    }
+  ],
+  "_sources": {
+    "s1": "U6 Almacenamiento de información.pdf §6.1–6.1.3, págs. 4 | U6 DIAPOSITIVAS Almacenamiento de información.pdf pág. 2 | U6 Síntesis (7).pdf pág. 1",
+    "s2": "U6 Almacenamiento de información.pdf §6.2, pág. 5 | U6 DIAPOSITIVAS Almacenamiento de información.pdf pág. 3",
+    "s3": "U6 Almacenamiento de información.pdf §6.3.1, págs. 6–10 | U6 DIAPOSITIVAS Almacenamiento de información.pdf págs. 5–7 | U6 Síntesis (7).pdf pág. 1",
+    "s4": "U6 Almacenamiento de información.pdf §6.3.2, págs. 10–11 | U6 DIAPOSITIVAS Almacenamiento de información.pdf pág. 8 | U6 Síntesis (7).pdf pág. 1 | U6 XPath y XQuery.pdf (infografía transcrita)",
+    "s5": "U6 Almacenamiento de información.pdf §6.4–6.5, págs. 12–13 | U6 DIAPOSITIVAS Almacenamiento de información.pdf págs. 9–10"
+  }
+}
