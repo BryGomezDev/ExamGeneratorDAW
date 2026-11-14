@@ -136,24 +136,24 @@
               "content": "Puede ser tanto un nodo como un valor atómico."
             },
             {
-              "title": "Padre",
-              "content": "«películas» es padre de «título», «director» y «año»."
+              "title": "Padre (parent)",
+              "content": "Es el nodo del que desciende otro, «películas» es padre de «título», «director» y «año»."
             },
             {
-              "title": "Hijo",
-              "content": "«título», «director» y «año» son hijos de «películas»."
+              "title": "Hijo (children)",
+              "content": "Es el nodo que desciende de otro, «título» es hijo de «película»."
             },
             {
-              "title": "Hermanos",
-              "content": "«título», «director» y «año» son hermanos entre sí."
+              "title": "Hermanos (siblings)",
+              "content": "Nodos que comparten un mismo padre."
             },
             {
-              "title": "Antecesores",
-              "content": "«Almacén» es el antecesor de «título»."
+              "title": "Antecesores (ancestors)",
+              "content": "Es el nodo padre de otro nodo padre, el abuelo; así el elemento «Almacén» es el antecesor de «título»."
             },
             {
-              "title": "Descendientes",
-              "content": "«título», «director» y «año» son descendientes de «películas»."
+              "title": "Descendientes (descendant)",
+              "content": "Es el nodo hijo de otro nodo hijo, «título» es descendiente de «Almacén»."
             }
           ]
         },
@@ -305,7 +305,7 @@
             },
             {
               "term": "Return",
-              "def": "Devolver, lo que nos dará como resultado, se evalúa en todos los nódulos."
+              "def": "Devolver, lo que nos dará como resultado, se evalúa en todos los nodos."
             }
           ]
         },
@@ -367,7 +367,11 @@
       "blocks": [
         {
           "type": "text",
-          "content": "De entro de las bases de datos, que no usan SQL, una de las más difundidas es eXist-db.\n\nEs de fácil instalación, se requiere un sistema operativo Windows, MAC OS, o Linux y poseer Java 1.7 o posterior.\n\nPodemos descargar la última versión, en una extensión .jar, disponible en la sección de descargas de exist-db.org. Debemos introducir el archivo en la carpeta donde se instalarán. Abriendo la consola de comandos escribiremos la siguiente instrucción:"
+          "content": "A continuación, veremos cómo se instala una base de datos XML nativa.\n\n6.4.1. Instalación y ejecución de una base de datos XML nativa: eXist-db"
+        },
+        {
+          "type": "text",
+          "content": "Dentro de las bases de datos que no usan SQL, una de las más difundidas es eXist-db.\n\nEs de fácil instalación, se requiere un sistema operativo Windows, MAC OS, o Linux y poseer Java 1.7 o posterior.\n\nPodemos descargar la última versión, en una extensión .jar, disponible en la sección de descargas de exist-db.org. Debemos introducir el archivo en la carpeta donde se instalarán. Abriendo la consola de comandos escribiremos la siguiente instrucción:"
         },
         {
           "type": "code",
@@ -396,7 +400,7 @@
         },
         {
           "type": "text",
-          "content": "BaseX es una base de datos XML bastante fiable muy utilizada para el desarrollo de aplicaciones web por el hecho de tratarse de un código abierto. Podrás encontrarla en basex.org."
+          "content": "6.4.2. BaseX\n\nBaseX es una base de datos XML bastante fiable muy utilizada para el desarrollo de aplicaciones web por el hecho de tratarse de un código abierto. Podrás encontrarla en basex.org."
         }
       ]
     },
@@ -431,7 +435,7 @@
     },
     {
       "term": "FLWOR",
-      "def": "Acrónimo de For, Let, Where, Order by, Return. For selecciona una secuencia de nodos. Let enlaza una secuencia a una variable. Where filtra los nodos. Order by ordena los nodos. Return devuelve el resultado y se evalúa en todos los nódulos."
+      "def": "Acrónimo de For, Let, Where, Order by, Return. For selecciona una secuencia de nodos. Let enlaza una secuencia a una variable. Where filtra los nodos. Order by ordena los nodos. Return devuelve el resultado y se evalúa en todos los nodos."
     },
     {
       "term": "Nodo raíz",
