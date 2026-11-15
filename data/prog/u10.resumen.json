@@ -293,7 +293,7 @@
     {"term": "pila de llamadas", "def": "Flujo de llamadas a otras clases y métodos según la funcionalidad que se establece cuando se ejecuta un programa desde la clase que contiene el método main."},
     {"term": "Throwable", "def": "Clase raíz de la jerarquía de excepciones en Java. Toda excepción debe heredar de ella o de cualquiera de sus hijos."},
     {"term": "Exception", "def": "Clase hija de Throwable que actúa como raíz de las excepciones checked y de RuntimeException."},
-    {"term": "Error", "def": "Clase hija de Throwable que representa errores graves del sistema o la JVM de los que no se recomienda hacer tratamiento."},
+    {"term": "Error", "def": "Clase hija de Throwable de la que heredan las excepciones de consideración grave (unchecked). No se recomienda hacer su tratamiento."},
     {"term": "checked", "def": "Tipo de excepción de consideración leve y controlada que hereda de Exception. Es obligatorio hacer su tratamiento para permitir continuar con el programa."},
     {"term": "unchecked", "def": "Tipo de excepción grave que hereda de RuntimeException o Error. No es recomendable hacer su tratamiento porque puede dejar el programa inestable."},
     {"term": "throws", "def": "Palabra reservada que se indica en la cabecera de un método para propagar una excepción al método que lo llamó."},
