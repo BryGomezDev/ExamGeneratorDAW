@@ -1,0 +1,79 @@
+PREGUNTA: ¿Qué es una colección?
+A: Una estructura estática que almacena elementos de forma secuencial con un tamaño ilimitado de valores.
+B: Una estructura estática que almacena elementos con un tamaño limitado de valores.
+C: Una estructura dinámica que almacena un grupo de elementos limitado.
+D: Una estructura dinámica que almacena un grupo de elementos ilimitado.
+RESPUESTA: D
+EXPLICACION: Las colecciones en Java son estructuras dinámicas: su tamaño crece o decrece automáticamente en tiempo de ejecución según se añadan o eliminen elementos. Esto las diferencia de los arrays, que son estáticos (tamaño fijo declarado al crear). El framework Collections de Java (java.util) proporciona estas estructuras listas para usar sin gestionar memoria manualmente.
+
+PREGUNTA: Collection es la interfaz de:
+A: Set, List y Queue
+B: Map
+C: TreeMap
+D: Ninguna de las anteriores
+RESPUESTA: A
+EXPLICACION: La jerarquía del Java Collections Framework tiene dos ramas raíz: la interfaz Collection (de la que heredan Set, List y Queue) y la interfaz Map (que almacena pares clave-valor y no extiende Collection). TreeMap implementa Map, no Collection. Por eso Map queda fuera de la interfaz Collection aunque forma parte del framework.
+
+PREGUNTA: Con ArrayDeque se puede implementar:
+A: Una cola.
+B: Una pila.
+C: Una cola y pila simultáneamente.
+D: Todas las opciones son correctas.
+RESPUESTA: D
+EXPLICACION: ArrayDeque implementa la interfaz Deque (double-ended queue), lo que permite operar por ambos extremos. Usada con addLast/removeFirst se comporta como cola FIFO; con addFirst/removeFirst se comporta como pila LIFO. Puede actuar como ambas en la misma instancia o como una estructura de doble entrada, siendo más eficiente que Stack o LinkedList para estos usos.
+
+PREGUNTA: Indica la principal característica de una colección Set.
+A: Puede tener elementos repetidos.
+B: Ordena sus elementos.
+C: Permite tener valores null.
+D: No puede tener elementos repetidos.
+RESPUESTA: D
+EXPLICACION: La característica definitoria de Set es que no admite elementos duplicados: si intentas añadir un elemento que ya existe, la operación no tiene efecto. No garantiza orden (eso es TreeSet o LinkedHashSet). HashSet permite un null, pero no es su característica principal. Set es ideal cuando necesitas unicidad, como un conjunto matemático.
+
+PREGUNTA: La interfaz Map almacena siempre sus elementos haciendo uso de:
+A: Una clave como identificador y el valor del elemento.
+B: Una tabla hash.
+C: Índices.
+D: No usa nada para almacenar sus elementos.
+RESPUESTA: A
+EXPLICACION: Map almacena pares clave-valor (key-value): cada elemento tiene una clave única que lo identifica y un valor asociado. La clave no puede repetirse (aunque los valores sí). La tabla hash es la implementación interna de HashMap, no la definición de Map. Los índices son propios de List. Ejemplos de Map: HashMap, TreeMap, LinkedHashMap.
+
+PREGUNTA: PriorityQueue se puede definir por:
+A: Es una cola que hace uso de la interfaz Collection, almacenando elementos duplicados y ordenándolos por su orden natural o definido por el usuario.
+B: Es una cola que hace uso de la interfaz Collection, almacenando elementos únicos, sin duplicados y ordenándolos según una prioridad.
+C: Es una cola que hace uso de la interfaz Collection, almacenando elementos duplicados, y ordenándolos según una prioridad.
+D: Es una cola que hace uso de la interfaz Map, almacenando elementos únicos, sin duplicados y ordenándolos según una prioridad.
+RESPUESTA: A
+EXPLICACION: PriorityQueue implementa Queue (que extiende Collection, no Map) y sí permite elementos duplicados. Los ordena por su orden natural (si implementan Comparable) o por un Comparator definido por el usuario, de modo que el elemento con mayor prioridad (el menor según el orden) siempre está en la cabeza. No garantiza orden total, solo que el primero en salir es el de mayor prioridad.
+
+PREGUNTA: ¿Qué estructura permite almacenar los elementos ordenados en una colección Set?
+A: HashSet.
+B: LinkedHashSet.
+C: TreeSet.
+D: Ninguna de las anteriores.
+RESPUESTA: C
+EXPLICACION: Las implementaciones de Set difieren en orden: HashSet no garantiza ningún orden, LinkedHashSet mantiene el orden de inserción, y TreeSet ordena los elementos según su orden natural (Comparable) o un Comparator. TreeSet usa internamente un árbol rojo-negro, lo que garantiza orden ascendente pero con coste O(log n) en inserción y búsqueda frente a O(1) de HashSet.
+
+PREGUNTA: ¿Qué hace el método int lastIndexOf(E elemento) de la clase ArrayList?
+A: Devuelve la posición de la primera ocurrencia del elemento.
+B: Devuelve la posición de la última ocurrencia del elemento.
+C: Devuelve un valor mayor de 0 si encuentra el elemento.
+D: Devuelve un valor menor de 0 si encuentra el elemento.
+RESPUESTA: B
+EXPLICACION: ArrayList tiene dos métodos para buscar por valor: indexOf(E) devuelve el índice de la primera ocurrencia, y lastIndexOf(E) devuelve el índice de la última ocurrencia. Ambos devuelven -1 si el elemento no existe (no un valor mayor o menor que cero). Es útil cuando el ArrayList puede contener duplicados y necesitas localizar el último.
+
+PREGUNTA: ¿Qué tipo de interfaces raíces existen para implementar colecciones?
+A: ArrayList y LinkedList
+B: Collection y Map
+C: Collection y ArrayDeque
+D: Ninguna de las anteriores
+RESPUESTA: B
+EXPLICACION: El Java Collections Framework tiene dos interfaces raíz independientes: Collection (para conjuntos de elementos individuales: List, Set, Queue) y Map (para pares clave-valor: HashMap, TreeMap). ArrayList y LinkedList son implementaciones concretas de List, no interfaces raíz. ArrayDeque implementa Deque que extiende Queue, subordinada a Collection.
+
+PREGUNTA: Se puede definir un ArrayList como:
+A: Un array estático que no se puede modificar su tamaño en ejecución.
+B: Un array dinámico que se puede modificar su tamaño en ejecución.
+C: Un array estático ordenado que se puede modificar su tamaño en ejecución.
+D: Un array dinámico ordenado que se puede modificar su tamaño en ejecución.
+RESPUESTA: B
+EXPLICACION: ArrayList es un array dinámico: internamente usa un array que se redimensiona automáticamente cuando se queda sin capacidad (duplica su tamaño). No mantiene orden natural de los elementos (los ordena por índice de inserción, no por valor). La diferencia clave con array[] es que ArrayList puede crecer o decrecer en ejecución, mientras que un array tiene tamaño fijo desde su creación.

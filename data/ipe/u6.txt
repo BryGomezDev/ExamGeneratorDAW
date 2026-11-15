@@ -1,0 +1,79 @@
+PREGUNTA: A las personas que, sin haber sido dotadas de autoridad, tienen la capacidad de influenciar sobre los demás por su carisma y personalidad, se les denomina:
+A: Líderes
+B: Directores
+C: Jefes
+D: Mandos
+RESPUESTA: A
+EXPLICACION: El liderazgo informal se basa en la influencia personal (carisma, credibilidad, personalidad) sin necesidad de autoridad formal. Los directores, jefes y mandos tienen autoridad conferida por la organización (poder formal). Un líder puede no tener cargo jerárquico y, al revés, un jefe puede no ser un líder si no genera influencia natural en su equipo.
+
+PREGUNTA: ¿Cuál de las siguientes es una tendencia actual relativa a la comunicación interna?
+A: Motor de digitalización
+B: Employer Branding
+C: Apps internas
+D: Todas son correctas
+RESPUESTA: D
+EXPLICACION: Las tendencias actuales en comunicación interna son diversas y complementarias: las empresas usan la comunicación interna como motor de digitalización (impulsar el cambio digital), desarrollan Employer Branding (proyectar una imagen atractiva como empleador) e implementan apps internas (canales digitales ágiles para empleados). Las tres conviven en las organizaciones modernas.
+
+PREGUNTA: El estilo de liderazgo en el que el líder interviene solo cuando lo cree conveniente, dejando máxima libertad a sus empleados y controlando lo mínimo imprescindible, se denomina:
+A: Liderazgo laissez faire
+B: Liderazgo democrático
+C: Liderazgo paternalista
+D: Liderazgo visionario
+RESPUESTA: A
+EXPLICACION: "Laissez faire" (del francés "dejar hacer") es el estilo de no intervención: el líder delega totalmente, apenas supervisa y actúa solo cuando es imprescindible. El liderazgo democrático consulta al equipo antes de decidir. El paternalista cuida al empleado pero de forma directiva. El visionario marca una dirección clara hacia una meta compartida.
+
+PREGUNTA: El estilo de liderazgo en el que el líder tiene claro dónde quiere ir e intenta que el equipo visualice su meta y la comparta, se denomina:
+A: Liderazgo laissez faire
+B: Liderazgo democrático
+C: Liderazgo paternalista
+D: Liderazgo visionario
+RESPUESTA: D
+EXPLICACION: El liderazgo visionario se caracteriza porque el líder tiene una visión clara del futuro y trabaja para que el equipo la comprenda, la adopte y se movilice hacia ella. Es eficaz en contextos de cambio o cuando se necesita dar dirección estratégica. Se diferencia del democrático (que prioriza la participación en la decisión) y del laissez faire (que cede el control).
+
+PREGUNTA: El enfoque de liderazgo que defiende que la efectividad del liderazgo depende de la naturaleza de la circunstancia en la que se ejerza, lo conocemos como:
+A: Enfoque situacional
+B: Enfoque funcional
+C: Enfoque empírico
+D: Ninguna es correcta
+RESPUESTA: A
+EXPLICACION: El enfoque situacional (Hersey y Blanchard) sostiene que no existe un estilo de liderazgo universalmente válido: el líder eficaz adapta su estilo (directivo, persuasivo, participativo, delegador) según la madurez y competencia del colaborador y la situación concreta. Contrasta con enfoques de rasgos (el líder nace) o funcionales (el líder hace ciertas funciones).
+
+PREGUNTA: Según la teoría de Herzberg, las variables que por sí mismas no producen motivación, pero cuya ausencia sí produce insatisfacción, se conocen como:
+A: Factores motivacionales
+B: Factores higiénicos
+C: Factores laborales
+D: Factores de afiliación
+RESPUESTA: B
+EXPLICACION: Herzberg distingue dos tipos de factores: los higiénicos (salario, condiciones físicas, supervisión) que no motivan por sí solos pero su ausencia genera insatisfacción, y los motivacionales (logro, reconocimiento, responsabilidad) que sí generan satisfacción y motivación activa. La satisfacción y la insatisfacción son para Herzberg dimensiones independientes, no opuestas.
+
+PREGUNTA: La teoría que describe el estilo de liderazgo mediante la identificación de cinco niveles que mezclan diferentes rangos de preocupación por las personas y las tareas, se denomina:
+A: Teoría del gran hombre o de rasgos
+B: Teoría X e Y de McGregor
+C: Teoría de Boyatzis y McKee
+D: Teoría de la malla gerencial de Blake y Mouton
+RESPUESTA: D
+EXPLICACION: La malla gerencial (managerial grid) de Blake y Mouton (1964) cruza dos ejes — preocupación por las personas y preocupación por la producción — generando una cuadrícula de 9×9 con cinco estilos principales de liderazgo. La Teoría X/Y de McGregor clasifica las suposiciones del directivo sobre la motivación del empleado, no los estilos de liderazgo en una matriz.
+
+PREGUNTA: Este autor diseñó una pirámide de necesidades en la que las necesidades expuestas en la base eran de supervivencia y, a medida que se ascendía, se desarrollaban nociones relativas al crecimiento personal y social del individuo:
+A: Abraham Maslow
+B: McClelland
+C: Herzberg
+D: McGregor
+RESPUESTA: A
+EXPLICACION: La Pirámide de Maslow (1943) jerarquiza las necesidades humanas en cinco niveles: fisiológicas (base) → seguridad → afiliación/sociales → reconocimiento/estima → autorrealización (cima). La teoría afirma que solo cuando se satisfacen las necesidades de un nivel se activan las del siguiente. McClelland propuso tres necesidades (logro, poder, afiliación) sin jerarquía piramidal.
+
+PREGUNTA: Las habilidades interpersonales, también conocidas como habilidades ________, se refieren a la capacidad de una persona para interactuar de manera efectiva con los demás:
+A: Duras
+B: Ásperas
+C: Blandas
+D: Opacas
+RESPUESTA: C
+EXPLICACION: Las habilidades blandas (soft skills) son las competencias interpersonales y emocionales: comunicación, empatía, trabajo en equipo, liderazgo, adaptabilidad. Se oponen a las habilidades duras (hard skills), que son los conocimientos técnicos y específicos de un puesto (programar, contabilidad, idiomas). Las empresas valoran cada vez más las soft skills como factor diferenciador.
+
+PREGUNTA: La capacidad de comprender y compartir los sentimientos de otros se denomina:
+A: Comunicación efectiva
+B: Empatía
+C: Resolución de conflictos
+D: Adaptabilidad
+RESPUESTA: B
+EXPLICACION: La empatía es la capacidad de ponerse en el lugar del otro, comprendiendo y compartiendo sus emociones y perspectivas. Es una habilidad blanda fundamental para el liderazgo y el trabajo en equipo. Se diferencia de la comunicación efectiva (transmitir mensajes con claridad), la resolución de conflictos (gestionar desacuerdos) y la adaptabilidad (ajustarse a cambios del entorno).

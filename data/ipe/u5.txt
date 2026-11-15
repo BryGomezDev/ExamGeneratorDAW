@@ -1,0 +1,79 @@
+PREGUNTA: Al responsable de recursos humanos se le presuponen varias habilidades, entre ellas:
+A: Tener motivación y ser capaz de trasmitirla al equipo.
+B: Comunicar efectivamente.
+C: Ser resolutivo y determinado en la toma de decisiones.
+D: Todas son correctas.
+RESPUESTA: D
+EXPLICACION: El responsable de RRHH necesita un perfil competencial amplio que combina habilidades interpersonales (motivar y comunicar) con capacidad ejecutiva (ser resolutivo en la toma de decisiones). Ninguna de las tres es excluyente: todas forman parte del perfil ideal de un profesional de recursos humanos que debe gestionar personas y procesos simultáneamente.
+
+PREGUNTA: Calcular las nóminas y realizar el pago a los trabajadores se ubica dentro de la siguiente función:
+A: Función de empleo.
+B: Función de administración del personal.
+C: Función de retribución o contraprestación de servicios.
+D: Función de desarrollo y servicios sociales.
+RESPUESTA: C
+EXPLICACION: La función de retribución o contraprestación de servicios abarca todo lo relacionado con la compensación económica: nóminas, salarios, pagas extra y beneficios. La función de empleo gestiona selección y contratación. La función de administración del personal gestiona la burocracia (contratos, bajas). La función de desarrollo se centra en formación, motivación y bienestar.
+
+PREGUNTA: El modelo de gestión por competencias forma parte de los:
+A: Modelos tradicionales.
+B: Modelos actuales.
+C: Modelos históricos.
+D: Ninguna es correcta.
+RESPUESTA: B
+EXPLICACION: La gestión por competencias es un modelo actual de RRHH que evalúa a los trabajadores no solo por su titulación o antigüedad, sino por las competencias (conocimientos, habilidades y actitudes) que demuestran en el desempeño. Los modelos tradicionales se centraban en la descripción de puestos y la jerarquía, sin un enfoque basado en competencias.
+
+PREGUNTA: El plan de actuación, para que el personal esté ajustado tanto cuantitativa como cualitativamente a los objetivos planteados en la previsión previa, incluirá:
+A: Prioridades y temporalización.
+B: Asignación de presupuestos.
+C: Responsabilidades.
+D: Todas son correctas.
+RESPUESTA: D
+EXPLICACION: Un plan de actuación de RRHH completo debe incluir tres elementos: prioridades y temporalización (qué se hace y cuándo), asignación de presupuestos (con qué recursos) y responsabilidades (quién lo ejecuta). La omisión de cualquiera de estos tres elementos dejaría el plan incompleto e inoperativo.
+
+PREGUNTA: La función de desarrollo y servicios sociales del departamento de RRHH se encarga de:
+A: Proveer a la empresa de personal.
+B: La gestión burocrática de contratos, justificantes, bajas, etc.
+C: Motivación, satisfacción y correcto desempeño en el puesto.
+D: Nóminas y realización del pago a los trabajadores.
+RESPUESTA: C
+EXPLICACION: La función de desarrollo y servicios sociales abarca el bienestar del trabajador: formación, motivación, satisfacción laboral y desempeño. No debe confundirse con: función de empleo (proveer personal), función de administración del personal (gestión burocrática) ni función de retribución (nóminas y pagos).
+
+PREGUNTA: La metodología de análisis de puestos de trabajo en la que el empleado que desempeña el puesto responde a un test sobre sus funciones y tareas, se denomina:
+A: Observación directa.
+B: Cuestionarios.
+C: Entrevista.
+D: Diarios de trabajo.
+RESPUESTA: B
+EXPLICACION: Los cuestionarios son formularios o tests que el propio trabajador cumplimenta respondiendo preguntas sobre sus tareas, responsabilidades y competencias requeridas. Se diferencia de la observación directa (un observador externo ve trabajar al empleado), la entrevista (conversación oral con el empleado o su superior) y los diarios de trabajo (registro diario de tareas realizado por el empleado).
+
+PREGUNTA: La metodología de análisis de puestos de trabajo en la que los empleados registran cada jornada sus tareas, el tiempo dedicado a ellas y las personas a las que dan feedback, se denomina:
+A: Observación directa.
+B: Cuestionarios.
+C: Entrevista.
+D: Diarios de trabajo.
+RESPUESTA: D
+EXPLICACION: Los diarios de trabajo son registros sistemáticos que el propio empleado elabora durante cada jornada laboral, anotando tareas realizadas, tiempo empleado, interacciones y observaciones relevantes. Aportan información detallada y longitudinal sobre el puesto, aunque pueden ser subjetivos y suponen una carga adicional para el trabajador.
+
+PREGUNTA: Los grupos profesionales se definen por:
+A: Las características del trabajador.
+B: La titulación del trabajador.
+C: Las aptitudes del trabajador.
+D: Todas son correctas.
+RESPUESTA: D
+EXPLICACION: Los grupos profesionales, regulados en el Estatuto de los Trabajadores, se determinan combinando varios criterios: las características personales, la titulación o formación acreditada y las aptitudes demostradas. Esta clasificación multidimensional permite una asignación más justa y flexible del trabajador al puesto, superando el antiguo sistema de categorías laborales rígidas.
+
+PREGUNTA: Para la planificación de los recursos humanos:
+A: Es necesario plantear constantes aumentos de personal.
+B: Se marcan objetivos logísticos y estratégicos.
+C: Las desviaciones tienen siempre motivos extraordinarios.
+D: Todas son correctas.
+RESPUESTA: B
+EXPLICACION: La planificación de RRHH define objetivos logísticos (operativos, a corto plazo) y estratégicos (alineados con la visión de la empresa, a largo plazo). No implica necesariamente aumentos de plantilla (también puede haber ajustes o reducciones) ni las desviaciones son siempre por motivos extraordinarios (pueden deberse a cambios del mercado, rotación, etc.).
+
+PREGUNTA: Una organización informal:
+A: Es aquella donde la estructura la define la dirección y se refleja en un organigrama con puestos y relaciones jerárquicas.
+B: Es aquella donde la estructura está conformada según las relaciones personales que surgen de forma natural entre los trabajadores.
+C: Es aquella que procura que su estructura esté provista de personal en sentido cuantitativo y cualitativo.
+D: Es aquella que impulsa la transformación digital implicando a todos los integrantes en el uso de la tecnología.
+RESPUESTA: B
+EXPLICACION: La organización informal emerge espontáneamente de las relaciones personales, afinidades y redes de comunicación no oficiales entre los trabajadores, sin que la dirección la diseñe. Se contrapone a la organización formal (opción A), que es la estructura oficial definida por la dirección y plasmada en el organigrama con jerarquías y funciones establecidas.
