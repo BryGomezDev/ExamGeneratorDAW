@@ -53,3 +53,14 @@ En cada hallazgo se indica si está **(comprobado)**, es decir, visto en el cód
 ## Arreglos antes de publicar
 
 **Ninguno es obligatorio.** Opcional, para más adelante: convertir las opciones de los dos quizzes en un grupo de radios accesible (`role="radiogroup"` / `role="radio"` + `aria-checked`), es decir, E1.
+
+---
+
+## Anexo (24/10/2026, tarde): saltos de línea en el visor + ip/u4
+
+**Cambio auditado:** en `public/summaries.html`, `white-space: pre-line` en `.block-text`, `.block-card .card-d` y `.accordion-body` (líneas 193, 199 y 211), y el contenido del accordion insertado en línea con la etiqueta (línea 911). Además, el contenido nuevo de `data/ip/u4.resumen.json`.
+
+- **(comprobado)** Seguridad: no cambia nada. El contenido sigue pasando por `esc()` (línea 911) y el cambio es solo de CSS y de colocación en la plantilla.
+- **(comprobado)** Render: lo he probado en local con Playwright sobre los ficheros del repo, en ip/u4 s2, prog/u6 s4 y lm/u4 s3 con accordions abiertos. Los saltos `\n` se ven como líneas separadas y no aparecen líneas en blanco extra en accordions ni tarjetas. Las capturas son de 1280 px de ancho.
+- **(interpretación)** Responsive: `pre-line` mantiene el ajuste de línea automático, así que el texto largo no desborda a 375 px. No lo he probado en un navegador a 375 px.
+- **Resultado:** sin hallazgos nuevos.
