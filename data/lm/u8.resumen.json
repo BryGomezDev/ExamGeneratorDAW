@@ -1,0 +1,490 @@
+{
+  "subject": "lm",
+  "unit": 8,
+  "title": "Sistemas de gestión empresarial",
+  "intro": "En una época como la nuestra, donde las empresas son cada vez más grandes y las transacciones y pagos se pueden realizar en tiempo real y de manera online, es imprescindible el empleo de un sistema que permita a la empresa mantenerse al día con los distintos cambios.\n\nBuscando solucionar estos problemas surgen los sistemas de gestión empresarial, que buscan facilitar esta labor automatizando la mayoría de los procesos, de modo que se agilice y simplifique.\n\nOtra de las ventajas es el uso de un sistema con múltiples herramientas, en lugar de diversas herramientas individuales, lo cual permite el intercambio de datos entre ellas con gran facilidad, evitando los problemas de cambios de formato y de incompatibilidades que se dan en el uso de múltiples herramientas individuales.\n\nEn definitiva, como veremos a continuación el objetivo de este sistema de gestión es la optimización y maximización de los beneficios de una empresa a través de la buena gestión, la cual reducirá costes al evitar gastos innecesarios.",
+  "objectives": [
+    "Conoceremos los ERP, el sistema de gestión usado por muchas empresas.",
+    "Estudiaremos los sistemas CRM de marketing y fidelización de clientes.",
+    "Describiremos qué es el data mining y cómo se realiza, así como las herramientas OLAP.",
+    "Definiremos los conceptos de dashboard o scorecard.",
+    "Descubriremos los sistemas de seguridad de los ERP, los fallos más comunes y cómo evitarlos."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "8.1. Los CRM",
+      "short": "8.1 Los CRM",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Existen diversos sistemas de gestión de la información, los cuales se adaptan a las necesidades particulares de las empresas, así como a sus capacidades y las de sus clientes.\n\nUno de los sistemas más usados es el llamado CRM, Customer Relationship Management, ya que nos otorga un equilibrio entre el mantenimiento de los clientes que poseemos y la búsqueda de otros nuevos, permitiendo que la empresa se amplíe mientras posee un colchón de seguridad en sus clientes fieles. Además, como beneficio, existe constancia de que mejora la experiencia para los clientes al tiempo que reduce el costo de marketing.\n\nEl CRM, de manera general, se basa en tres pilares, el marketing, la venta y la atención postventa:"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Marketing",
+              "desc": "El marketing permite dar a conocer el producto entre los posibles nuevos clientes."
+            },
+            {
+              "title": "Venta",
+              "desc": "La venta genera el beneficio para la empresa, su aumento es el objetivo final."
+            },
+            {
+              "title": "Servicio postventa",
+              "desc": "El servicio postventa permite crear una fidelidad en los clientes al tiempo que permite conocer las características de los compradores de nuestro producto, lo que a su vez nos permite enfocar el marketing de manera más eficiente."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Imagen 1. Estructura general de un CRM: Marketing → Venta → Servicio postventa."
+        },
+        {
+          "type": "text",
+          "content": "El sistema postventa exige que la empresa se mantenga en contacto con el cliente, por lo que la información personal y los canales para hacerlo son imprescindibles, por suerte elementos como los SMS o las páginas web permiten a las empresas mantener este contacto de manera sencilla y barata."
+        },
+        {
+          "type": "chips",
+          "items": [
+            "SugarCRM",
+            "ZOHO",
+            "Microsoft Dynamics CRM",
+            "SalesBoom",
+            "Salesforce"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "8.2. ERP",
+      "short": "8.2 ERP",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Los ERP, enterprise resource planning, son programas informáticos que permiten a una empresa gestionar toda su información como la financiera, la logística o la de marketing. Muchos ERP ya cuentan con sistemas CRM integrados.\n\nAunque existen ERP de código abierto estas no salen del todo gratis, ya que suelen contener contenido tan solo accesible mediante pago, es decir, tan solo las funciones principales son de uso libre. Los ERP más utilizados siguen siendo los de pago, o propietarios, ya que permiten interactuar con diversas herramientas que facilitarán el trabajo de recopilación o gestión de la información.\n\nEn el caso de intentar trabajar con diversas herramientas no compatibles, la pérdida de tiempo y esfuerzo en el traspaso de información de una a la otra puede ser superior al beneficio obtenido de trabajar con dos herramientas especializadas, lo que pone en relevancia la importancia de usar un ERP, como ya se ha mencionado, compatible con las diversas herramientas la empresa usará en su gestión."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Dolibarr",
+              "desc": "Es de código abierto pero modular que incluye un CRM, por lo que tendremos que activar los servicios individualmente, lo que puede ser beneficioso para las pymes, ya que su reducido tamaño puede hacer que ciertas funciones resulten inútiles o engorrosas. Se debe ejecutar en un servidor web Apache y usa una base de datos MySQL."
+            },
+            {
+              "title": "Odoo",
+              "desc": "De código abierto con licencia GNU con una versión de pago y otra gratuita permite a las empresas ajustar su coste en función de sus necesidades."
+            },
+            {
+              "title": "SAP Business ByDesign",
+              "desc": "Manteniéndose en la nube se considera uno de los más avanzados. Posee una gran seguridad y permite ajustar el precio a las necesidades, su estancia en la nube permite que elementos como las redes de negocios o el big data con gran facilidad."
+            },
+            {
+              "title": "Tryton",
+              "desc": "De código abierto con licencia GNU cuenta con un gran equilibrio en lo relacionado con la calidad/precio, permitiendo la elección del precio por su sistema modular."
+            },
+            {
+              "title": "WorkPLAN",
+              "desc": "Especializado para empresas de fabricación a medida como talleres, permite la gestión completa de la empresa con un único programa, es de pago."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "8.2.1. Integración de módulos\n\nLos ERP son programas con una gran cantidad de características con las cuales poder amoldarse a las necesidades de las empresas. Pero tantas características pueden ser contraproducentes para una empresa si no las usará, además provocan un mayor precio que no todas las empresas se pueden permitir. Con el fin de solventar ambos problemas se emplea el sistema de modularidad permitiendo a la empresa contratar solo los servicios necesarios."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Módulo de ventas",
+              "content": "Imprescindible para cualquier empresa, en especial aquellas con un gran volumen de ventas, permite mantener y gestionar un inventario actualizado de las mercancías de la empresa. Con respecto a este inventario es común que las empresas usen sistemas JIT, just in time, que le permiten conocer cuál es la cantidad óptima de mercancía por fabricar con el fin de que no se produzca ni una escasez ni un desperdicio. Este módulo, además de permitir un seguimiento del inventario, incluirá las distintas transacciones realizadas por los clientes, incluyendo los modelos de pago, cuantías, descuentos, etc. En definitiva, toda la información necesaria para conocer qué se ha vendido, cómo se ha comprado y los posibles motivos de estos dos hechos. Con el fin de realizar estas operaciones los ERP suelen contener e-commerce, lo que añade la posibilidad de la realización de ventas online."
+            },
+            {
+              "title": "Módulo de compras",
+              "content": "Los módulos de compra permiten recopilar la información de los distintos elementos de compra de elementos por parte de la empresa a distribuidores, tanto de las estadísticas de compras como de las distintas características de estas, como pueden ser los precios, entregas, códigos de barras, etc."
+            },
+            {
+              "title": "Módulo de gestión financiera y contabilidad",
+              "content": "Este módulo permite el control de uno de los pilares imprescindibles de las empresas como es la gestión y la contabilidad, la cual, sobre todo en grandes empresas, se vuelve insostenible para las manos humanas debido a la rapidez e inmediatez que elementos como las transacciones online han agravado. Esta gestión automatizada permite a los contables validar las cuentas tan solo revisando las facturas, con un sistema de doble entrada, agilizando así en gran medida el proceso."
+            },
+            {
+              "title": "Módulo CRM",
+              "content": "El módulo CRM, ya explicado anteriormente, es uno de los más usado por las empresas con el fin de obtener la fidelidad de los clientes, de modo que la empresa pueda poseer una base estable."
+            }
+          ]
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Data Storage",
+            "Increase Sales",
+            "Customer",
+            "Sales",
+            "Marketing",
+            "Management",
+            "Communication",
+            "Customer Support",
+            "Analysis",
+            "Service",
+            "Strategy",
+            "Business Process",
+            "Interaction"
+          ]
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Módulo de recursos humanos",
+              "content": "El principal recurso de cualquier empresa es el elemento humano, ya que sin su participación es imposible llevar a cabo ninguna de las funciones de la empresa, lo que provoca que los recursos humanos, sean uno de los departamentos más importantes una vez que el número de empleados ha alcanzado un cierto límite. Desde gestionar contratos, renovaciones, bajas médicas, vacaciones, despidos, etc. los encargados de recursos humanos se responsabilizan de los distintos procesos por los que los empleados pasan, pero no solo eso, sino que también controlan, normalmente con sistemas de marcajes, la asistencia diaria de dichos empleados a su puesto de trabajo."
+            },
+            {
+              "title": "Módulo de gestión de almacenes",
+              "content": "El almacenaje de mercancías cuesta dinero, desde la contratación del propio almacén, los empleados los gastos de materiales y energía para el mantenimiento del producto en óptimas condiciones. Todos ellos cuestan un dinero que la empresa puede optimizar si gestiona sus recursos de manera precisa, no habilitar más espacio del necesario, mantener todas las mercancías refrigeradas en un único almacén, etc. Además de este tipo de gestión este módulo se encarga además de la creación de los inventarios necesarios."
+            },
+            {
+              "title": "Módulo de proyectos",
+              "content": "Existen una gran multitud de herramientas de proyectos, como puede ser Trello, pero la inclusión de un módulo específico dentro del ERP nos permite trabajar con la distinta información, intercambiándola, con gran facilidad, en el caso de usar una herramienta como es Trello nos encontraremos con el problema de trasladar los datos desde nuestra base de datos hasta dicha herramienta y viceversa, proceso que puede resultar laborioso y que se omite si empleamos un módulo de proyectos en lugar de una herramienta externa."
+            },
+            {
+              "title": "Módulo de marketing",
+              "content": "Con el empleo de redes sociales y sistemas de mensajería como los SMS el marketing ha evolucionado desde los antiguos anuncios. Una de las maneras más baratas y prácticas es la automatización de este tipo de marketing, enviando mensajes, en la medida de lo posible personalizados, a los posibles clientes, publicando en diversos medios de transmisión, entregando cualquier tipo de información solicitada por los clientes al instante, etc. En definitiva, no solo nos permite automatizar este proceso, sino también el enfoque en una clientela objetivo-precisa, en función de la probabilidad de ventas; y, además, la personalización, en la medida de lo posible, de la publicidad para cada usuario."
+            },
+            {
+              "title": "Módulo TPV",
+              "content": "El TPV, Terminal Punto de Venta, permite la venta online con gran facilidad, y es imprescindible para una empresa con distintas tiendas ya que permite tener el inventario actualizado, y en definitiva nos permite comprar y pagar electrónicamente desde cualquier dispositivo conectado a la red, ordenadores, móviles, tabletas, etc. Al tiempo que tramita la compra a la empresa de manera inmediata y automática."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "8.2.2. Implantación, adaptación y configuración\n\nLa implantación de un ERP trae numerosos beneficios a una empresa, pero, por otro lado, conlleva dos grandes inconvenientes.\n\nEl primero de estos problemas es su elevado coste de contratación e instalación, son sistemas entrelazados y complejos por lo que su instalación también resulta complicada.\n\nEl segundo de estos problemas vuelve a derivarse de su complejidad, ya que su funcionamiento puede resultar complicado a los empleados que estén acostumbrados a trabajar con herramientas más sencillas, provocando que sea necesario el empleo de especialistas para su enseñanza.\n\nA pesar de estos inconvenientes, una vez implantados, los ERP implantados los ERP demuestran su valor a las empresas rápidamente, ya que permite la reducción de la plantilla necesaria y agiliza la obtención de datos."
+        },
+        {
+          "type": "text",
+          "content": "8.2.3. Importación y exportación de información: generación de informes\n\nEl uso del ERP permite mantener todos los datos de una empresa en un único programa del que todas las herramientas podrán tomar lo que necesiten, esto elimina la necesidad de transportar los datos a herramientas individuales, proceso en el que los datos se pueden perder por culpa de los cambios de formato ocurridos."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Ficheros CSV (comma-separated values)",
+              "content": "Empleado por su sencillez, trabaja con texto plano en forma tabular. Requiere que se use una plantilla, ya que los archivos deberán contener el mismo número de campos y en la misma posición."
+            },
+            {
+              "title": "Ficheros XML",
+              "content": "Los ya vistos XML destacan por su rígida sintaxis que permite un almacenamiento de información claro y libre de errores, y sobre todo es compatible con una gran cantidad de sistemas, incluso es legible por el propio usuario."
+            },
+            {
+              "title": "Documentos ofimáticos",
+              "content": "Siendo por lo general Microsoft office o PDF, permiten la lectura y modificación de los propios datos."
+            },
+            {
+              "title": "Programas de conexión a la base de datos del sistema",
+              "content": "Usado por los usuarios avanzados de ERP, acceden directamente a las bases de datos para trabajar. Aunque más complicado es el más eficiente para trabajo e intercambio de datos, y, en caso de tener que mudar la información de un sistema a otro, es el aconsejado."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "8.3. Minería de datos",
+      "short": "8.3 Minería de datos",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Procedente de los estudios de laboratorios, la minería de datos consiste en el acopio de toda la información posible para, después, encontrar patrones con dicha información.\n\nEsta información se recoge cada vez que efectuamos un trámite con una empresa, desde los que hemos comprado, cantidad, precio, modo de compra, hora y día, lugar donde se ha comprado, etc. Reuniendo toda esta información es posible encontrar patrones de comportamiento dentro del público, lo que nos ayuda, entre otras cosas a precisar el público objetivo de un producto, con el fin de enfocar el marketing en él; qué días u horas aumenta la actividad, con el fin de reforzar esos turnos; qué productos son más vendidos en función del lugar o época, con el fin de abastecerse de ellos; etc.\n\nEs, en definitiva, un intento de predecir el comportamiento humano para adaptar los servicios de la empresa a las necesidades del comprador, maximizando así los beneficios.\n\nAunque esta práctica está ampliamente extendida roza la ilegalidad en lo referente a la protección de datos, por lo que se controla que estos datos recopilados no sean vendidos a terceros ni se usen para otros fines que el citado."
+        },
+        {
+          "type": "text",
+          "content": "8.3.1. El proceso de descubrimiento de conocimiento y la minería de datos\n\nLos procesos y técnicas de la minería de datos son los siguientes:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Datos",
+              "content": "Recopilación de los datos en bruto para su posterior uso."
+            },
+            {
+              "title": "Paso A",
+              "content": "Limpieza, clasificación y agrupación de los datos para su incorporación al data warehouse, mediante filtración de los datos útiles de los no útiles o atípicos, al tiempo que se clasifican y agrupan para su posterior uso."
+            },
+            {
+              "title": "Paso B",
+              "content": "Preparación de datos. Los datos se pasan a un formato utilizable, reduciendo su peso y mejorando la eficiencia del proceso al homologar el formato de todos los datos. Se selecciona el modelo de análisis y se presenta una hipótesis en función de los datos. Este paso suele ser el más largo y laborioso."
+            },
+            {
+              "title": "Paso C",
+              "content": "data mining. Mediante algoritmos y técnicas aplicados a los datos se buscan conocer patrones de comportamientos, con el método descriptivo; y sucesos futuros, con el método predictivo.\n\nDebemos diferenciar modelos y patrones, ya que un patrón es un suceso recurrente y un modelo es un conjunto de datos que nos permite hacer predicciones en función de los patrones."
+            },
+            {
+              "title": "Paso D",
+              "content": "evaluación de los patrones y su verificación. Una hipótesis, aunque bien fundamentada, no es válida hasta que se haya demostrado, por lo que este último paso de implementación termina el proceso."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "8.4. OLAP",
+      "short": "8.4 OLAP",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "OLAP u online analytical processing, es el modo de extraer y visualizar datos seleccionados desde las bases de datos, pudiendo realizar data mining.\n\nEn primer lugar, debemos conocer qué tipo de base de datos estamos usando, relacional o jerárquica. En la relacional tendremos una inconsistencia en función del tipo de dato deseado, ya que unos serán más fáciles de encontrar que otros ya que las bases de datos OLAP son multidimensionales, y no bidimensionales.\n\nDebido a su carácter multidimensional se prefiere trabajar con bases de datos transaccionales residentes en servidores relacionales, usando intermediarios como ODBC.\n\nDentro de los sistemas OLAP destacan dos de ellos, Oracle Express Server e Hyperion Solution Essbase."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "8.5. Dashboard y scorecard: business intelligence e informes",
+      "short": "8.5 Dashboard/scorecard",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "También conocidos como cuadros de mando, son herramientas analíticas que permiten a las empresas descifrar los patrones, no solo para conocer estos, sino para descubrir el cómo y el porqué de estos, de modo que las empresas puedan tener toda la información posible con la que trabajar.\n\nEl dashboard muestra una serie de métricas, puede ser en tiempo real, en función de los datos obtenidos. Por otro lado, el scorecard es un registro de patrones e información anterior con la que comparar la nueva información."
+        },
+        {
+          "type": "text",
+          "content": "⚠ La Síntesis de la unidad define el scorecard como «capacidad para informar a la empresa de su propio estado». El tema (8.5) lo define como un registro de patrones e información anterior con la que comparar la nueva; esa capacidad de informar a la empresa de su estado la atribuye a los informes (8.5.1)."
+        },
+        {
+          "type": "text",
+          "content": "8.5.1. La evolución de los informes\n\nLos informes, debido al avance de las nuevas tecnologías que permiten su actualización en tiempo real, han pasado de ser una hoja de papel estática a una visualización real de la empresa. Los informes permiten el uso de otras herramientas como el scorecard, pero su principal valor radica en su capacidad para informar a la empresa de su propio estado, desde incidencias, o ventas hasta la satisfacción del cliente, los informes permiten a la empresa conocer su estado y tomar las acciones más acordes y beneficiosas en consecuencia."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "8.6. Seguridad en sistemas de gestión empresarial",
+      "short": "8.6 Seguridad ERP",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "No importa el negocio o actividad ejercida la seguridad ante el robo siempre será una prioridad, en este caso ya sea por el robo de información que produzca pérdidas directas o que provoque el descontento y desconfianza de los usuarios es imprescindible para las empresas resguardarse adecuadamente.\n\nLos ERP ya suelen contar con un nivel de seguridad bastante alto, pero se debe tener en cuenta también la seguridad de la propia empresa, tanto en el ámbito virtual como en el físico, ya que un desperfecto en el hardware puede llevarnos a una pérdida de datos o un empleado descontento o ingenuo puede dejar vulnerable el equipo ante ataques de virus."
+        },
+        {
+          "type": "text",
+          "content": "Con el fin de llevar a cabo un control básico, además de antivirus y demás programas, es común que se lleve un registro de las acciones, con la siguiente información:"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Usuario que realiza la acción",
+            "Acción realizada",
+            "Fecha y hora de dicha acción",
+            "Dirección IP o identificador del equipo usado",
+            "Tabla campo y dato accedido",
+            "Valor anterior y actual del dato"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Es común mantener copias de seguridad en el caso de que una modificación deba deshacerse.\n\nOtros métodos de seguridad son:"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Implantación de niveles de seguridad",
+              "content": "lo que idealmente cada usuario tan solo tenga acceso a los datos que pueda o deba usar, sin conocer o poder interferir con los demás datos."
+            },
+            {
+              "title": "Inclusión de perfiles, roles y grupos",
+              "content": "a los niveles de acceso con el fin de precisar aún más a la información a la que puede tener acceso."
+            },
+            {
+              "title": "Contraseña de usuario y cifrado",
+              "content": "Lo más común es que cada empleado posea su propia cuenta, de modo que sea imposible, si el propio empleado no divulga su información, que un empleado sea suplantado en su acceso."
+            },
+            {
+              "title": "Personalización de menús",
+              "content": "permite que según el nivel de acceso un usuario solo pueda acceder a cierta información o herramientas, tan solo a las que necesita y requiere."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "CRM",
+      "def": "Customer Relationship Management. Sistema de gestión de la información que busca un equilibrio entre el mantenimiento de los clientes que se poseen y la búsqueda de nuevos, permitiendo que la empresa se amplíe manteniendo una base de clientes fieles. Mejora la experiencia del cliente y reduce el coste de marketing."
+    },
+    {
+      "term": "ERP",
+      "def": "Enterprise Resource Planning. Programa informático que permite a una empresa gestionar toda su información (financiera, logística, marketing, etc.). Muchos ERP ya cuentan con sistemas CRM integrados y funcionan con un sistema de módulos contratables."
+    },
+    {
+      "term": "JIT",
+      "def": "Just in Time. Sistema de gestión de inventario que permite conocer cuál es la cantidad óptima de mercancía por fabricar con el fin de que no se produzca ni una escasez ni un desperdicio."
+    },
+    {
+      "term": "TPV",
+      "def": "Terminal Punto de Venta. Módulo ERP que permite la venta online con gran facilidad, teniendo el inventario actualizado y tramitando la compra de forma inmediata y automática desde cualquier dispositivo conectado a la red."
+    },
+    {
+      "term": "CSV",
+      "def": "Comma-Separated Values. Formato de intercambio de datos empleado por su sencillez; trabaja con texto plano en forma tabular y requiere que los archivos contengan el mismo número de campos en la misma posición."
+    },
+    {
+      "term": "Minería de datos",
+      "def": "Procedimiento que consiste en el acopio de toda la información posible para, después, encontrar patrones de comportamiento. Es un intento de predecir el comportamiento humano para adaptar los servicios de la empresa a las necesidades del comprador, maximizando los beneficios."
+    },
+    {
+      "term": "Patrón",
+      "def": "Suceso recurrente identificado a partir del análisis de datos en el proceso de minería de datos."
+    },
+    {
+      "term": "Modelo",
+      "def": "Conjunto de datos que permite hacer predicciones en función de los patrones identificados en el proceso de minería de datos."
+    },
+    {
+      "term": "OLAP",
+      "def": "Online Analytical Processing. Modo de extraer y visualizar datos seleccionados desde las bases de datos, pudiendo realizar data mining. Las bases de datos OLAP son multidimensionales, y se trabaja con ellas mediante intermediarios como ODBC."
+    },
+    {
+      "term": "ODBC",
+      "def": "Intermediario utilizado en OLAP para trabajar con bases de datos transaccionales residentes en servidores relacionales."
+    },
+    {
+      "term": "Dashboard",
+      "def": "Herramienta analítica que muestra una serie de métricas, puede ser en tiempo real, en función de los datos obtenidos."
+    },
+    {
+      "term": "Scorecard",
+      "def": "Registro de patrones e información anterior con la que comparar la nueva información."
+    },
+    {
+      "term": "Data warehouse",
+      "def": "Repositorio donde se incorporan los datos una vez han sido limpiados, clasificados y agrupados en el Paso A del proceso de minería de datos."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "¿Qué es el CRM?",
+      "options": [
+        "Un sistema de gestión que busca un equilibrio entre el mantenimiento de clientes existentes y la captación de nuevos, mejorando su experiencia y reduciendo el coste de marketing",
+        "Un módulo de gestión financiera y contabilidad automatizada para grandes empresas",
+        "Un sistema de intercambio de datos entre herramientas no compatibles",
+        "Un programa especializado en la gestión de almacenes y logística"
+      ],
+      "correct": 0,
+      "explanation": "El CRM (Customer Relationship Management) nos otorga un equilibrio entre el mantenimiento de los clientes que poseemos y la búsqueda de otros nuevos; además mejora la experiencia del cliente y reduce el coste de marketing (p.4)."
+    },
+    {
+      "question": "¿Cuáles son los tres pilares del CRM según el temario?",
+      "options": [
+        "Producción, distribución y venta",
+        "Finanzas, recursos humanos y logística",
+        "Marketing, venta y servicio postventa",
+        "Compras, almacén y atención al cliente"
+      ],
+      "correct": 2,
+      "explanation": "El CRM se basa en tres pilares: el marketing (dar a conocer el producto), la venta (generar beneficio) y el servicio postventa (fidelizar clientes y conocer al comprador) (p.4)."
+    },
+    {
+      "question": "¿Qué significa ERP?",
+      "options": [
+        "Enterprise Revenue Planning",
+        "Enterprise Resource Planning",
+        "Extended Retail Platform",
+        "Electronic Resource Program"
+      ],
+      "correct": 1,
+      "explanation": "ERP son las siglas de Enterprise Resource Planning; son programas que permiten a una empresa gestionar toda su información (financiera, logística, marketing, etc.) (p.5)."
+    },
+    {
+      "question": "¿Cuál de los siguientes ERP está especializado para empresas de fabricación a medida y es de pago?",
+      "options": [
+        "Dolibarr",
+        "Odoo",
+        "Tryton",
+        "WorkPLAN"
+      ],
+      "correct": 3,
+      "explanation": "WorkPLAN está especializado para empresas de fabricación a medida como talleres y es de pago (p.5)."
+    },
+    {
+      "question": "¿Qué módulo ERP incorpora el sistema JIT para gestionar el inventario óptimo de mercancías?",
+      "options": [
+        "Módulo de ventas",
+        "Módulo de compras",
+        "Módulo de gestión de almacenes",
+        "Módulo de gestión financiera y contabilidad"
+      ],
+      "correct": 0,
+      "explanation": "El módulo de ventas menciona que las empresas usan sistemas JIT (just in time) para conocer la cantidad óptima de mercancía a fabricar, evitando escasez y desperdicio (p.6)."
+    },
+    {
+      "question": "¿Qué formato de intercambio de datos en ERP es el más recomendado cuando se debe migrar información de un sistema a otro?",
+      "options": [
+        "Ficheros CSV",
+        "Documentos ofimáticos",
+        "Programas de conexión a la base de datos del sistema",
+        "Ficheros XML"
+      ],
+      "correct": 2,
+      "explanation": "Los programas de conexión a la base de datos del sistema son los más eficientes para el intercambio de datos y, en caso de tener que mudar la información de un sistema a otro, son los aconsejados (p.8)."
+    },
+    {
+      "question": "En minería de datos, ¿cómo diferencia el temario un patrón de un modelo?",
+      "options": [
+        "Un patrón permite hacer predicciones; un modelo es un suceso recurrente",
+        "Un patrón es un suceso recurrente; un modelo es un conjunto de datos que permite hacer predicciones en función de los patrones",
+        "Patrón y modelo son sinónimos en el contexto de la minería de datos",
+        "Un patrón clasifica los datos; un modelo los almacena en el data warehouse"
+      ],
+      "correct": 1,
+      "explanation": "Según el Paso C, un patrón es un suceso recurrente y un modelo es un conjunto de datos que nos permite hacer predicciones en función de los patrones (p.9)."
+    },
+    {
+      "question": "¿Cuál es la característica principal de las bases de datos que usa OLAP?",
+      "options": [
+        "Son unidimensionales",
+        "Son bidimensionales",
+        "Son estrictamente jerárquicas",
+        "Son multidimensionales"
+      ],
+      "correct": 3,
+      "explanation": "Las bases de datos OLAP son multidimensionales, no bidimensionales, lo que hace que se prefiera trabajar con bases de datos transaccionales en servidores relacionales usando intermediarios como ODBC (p.10)."
+    },
+    {
+      "question": "¿Qué es el dashboard según el temario?",
+      "options": [
+        "Un registro de patrones e información anterior con la que comparar la nueva información",
+        "Una herramienta que muestra una serie de métricas, puede ser en tiempo real, en función de los datos obtenidos",
+        "Un sistema de copias de seguridad para los datos del ERP",
+        "Un módulo ERP de gestión de proyectos integrado en el sistema"
+      ],
+      "correct": 1,
+      "explanation": "El dashboard muestra una serie de métricas, puede ser en tiempo real, en función de los datos obtenidos (p.10). El registro de información anterior para comparar es el scorecard."
+    },
+    {
+      "question": "Según el temario, ¿cuántos datos recoge el registro de acciones de seguridad de un ERP?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "8"
+      ],
+      "correct": 2,
+      "explanation": "El registro de acciones incluye 6 datos: usuario que realiza la acción, acción realizada, fecha y hora, dirección IP o identificador del equipo, tabla campo y dato accedido, y valor anterior y actual del dato (p.11)."
+    }
+  ],
+  "_sources": {
+    "s1": "U8 Sistemas de gestión empresarial.pdf — 8.1 Los CRM, p.4",
+    "s2": "U8 Sistemas de gestión empresarial.pdf — 8.2 ERP, pp.5-8",
+    "s3": "U8 Sistemas de gestión empresarial.pdf — 8.3 Minería de datos, p.9",
+    "s4": "U8 Sistemas de gestión empresarial.pdf — 8.4 OLAP, p.10",
+    "s5": "U8 Sistemas de gestión empresarial.pdf — 8.5 Dashboard y scorecard, p.10",
+    "s6": "U8 Sistemas de gestión empresarial.pdf — 8.6 Seguridad, p.11",
+    "intro": "U8 Sistemas de gestión empresarial.pdf — Introducción / Al finalizar esta unidad, p.3"
+  }
+}
