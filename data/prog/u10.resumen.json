@@ -1,0 +1,429 @@
+{
+  "subject": "prog",
+  "unit": 10,
+  "title": "Control y manejo de excepciones",
+  "intro": "Una parte fundamental en el desarrollo de un programa es tener controlado cualquier situación anómala que pueda producirse en nuestro programa. Imaginemos que un usuario está rellenando un formulario y al enviarlo se produce un error por introducir incorrectamente los datos solicitados, si nuestro programa no es capaz de responder en exactitud ante ese error y el usuario no puede conocer cuál ha sido el error, tenemos un programa que no cumple con su función. Para ello disponemos de las excepciones para captar cualquier error que se pueda producir, dar un tratamiento a ese error para corregirlo o realizar alguna actuación para interrumpir el proceso.",
+  "objectives": [
+    "Conoceremos qué son las excepciones, cuándo se producen y cómo tratarlas.",
+    "Expondremos su clasificación y jerarquía.",
+    "Los diferentes tratamientos que se pueden dar cuando sucede una excepción.",
+    "Sabremos recomendaciones de uso para aplicar correctamente las excepciones."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "10.1. Excepciones",
+      "short": "10.1. Excepciones",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Una excepción es un evento ante una situación no prevista por un error funcional o lógico, unos parámetros con valores no definidos, un flujo incorrecto, una acción no prevista o cualquier problema externo de conectividad, hardware, etc. Que se produce en tiempo de ejecución. Por ejemplo, no se pueda establecer una conexión a una base de datos, no se pueda abrir un fichero, el programa se quede sin memoria, se trate un tipo de dato incorrecto, intentar acceder a una posición de un array inexistente, etc.\n\nLas excepciones son gestionadas en la mayoría de los lenguajes de programación, en concreto, java ya dispone de unas excepciones predefinidas que se explicará en los siguientes puntos."
+        },
+        {
+          "type": "text",
+          "content": "Cuando se ejecuta un programa se empieza desde la clase que contiene el método main y se establece un flujo de llamadas a otras clases y métodos según la funcionalidad, denominado pila de llamadas. Cuando se produce una excepción en cualquier punto del código se propagará por toda la pila hasta llegar al método main y finalizar el programa."
+        },
+        {
+          "type": "text",
+          "content": "Para evitar que cada vez que se produzca una excepción, recorra toda la pila de llamadas y termine el programa, se realizará un tratamiento de excepciones para realizar acciones de corrección o alternativas para seguir con el correcto funcionamiento del programa."
+        },
+        {
+          "type": "code",
+          "content": "public static void main(String[] args) {\n\n    System.out.println(\"Empieza nuestro software\");\n    Clase1 clase1 = new Clase1();\n    clase1.metodoClase1(2,0);\n    System.out.println(\"Termina n…\n\n}\n\npublic class Clase1 {\n\n    public void metodoClase1(int param1, int param2) {\n        new Clase2().metodoClase2(param1, param2);\n    }\n}\n\npublic class Clase2 {\n\n    public void metodoClase2(int param1, int param2) {\n        new Clase3().metodoClase3(param1, param2);\n    }\n}\n\npublic class Clase3 {\n\n    public void metodoClase3(int param1, int param2) {\n        System.out.println(param1/param2);\n    }\n}"
+        },
+        {
+          "type": "code",
+          "content": "Empieza nuestro software\nException in thread \"main\" java.lang.ArithmeticException: / by zero\n    at Clase3.metodoClase3(Clase3.java:7)\n    at Clase2.metodoClase2(Clase2.java:6)\n    at Clase1.metodoClase1(Clase1.java:8)\n    at EjemploExcepciones.main(EjemploExcepciones.java:8)"
+        },
+        {
+          "type": "code",
+          "content": "Pila de llamadas (de arriba abajo):\nClase3.metodoClase3(int, int) line: 7\nClase2.metodoClase2(int, int) line: 6\nClase1.metodoClase1(int, int) line: 8\nEjemploExcepciones.main(String[]) line: 8"
+        },
+        {
+          "type": "text",
+          "content": "Hacer un buen desarrollo y control de excepciones permitirá tener un programa más robusto y evitará cualquier anomalía que haga que no funcione correctamente. Desde la etapa de codificación es recomendable tener un listado de todos los puntos donde puede producirse una excepción y diseñar su tratamiento si es necesario. Para ello es recomendable:"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Tener listado todas las excepciones posibles.",
+            "Poner un identificador exclusivo de cada excepción.",
+            "Saber el flujo de llamadas y como se propagará la excepción",
+            "Separar el código destinado a controlar errores del resto de código."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "10.2. Jerarquía de excepciones",
+      "short": "10.2. Jerarquía",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En java por defecto se dispone de un conjunto de excepciones predefinidas con las que controlar ciertas situaciones, aun así, se puede definir nuestras propias excepciones."
+        },
+        {
+          "type": "table",
+          "headers": ["Excepción", "Descripción error"],
+          "rows": [
+            ["FileNotFoundException", "No encuentra un fichero"],
+            ["ClassNotFoundException", "No existe o no encuentra una clase"],
+            ["EOFException", "Se intenta acceder a una parte final de un fichero"],
+            ["ArrayIndexOutOfBoundException", "Posición inexistente de un array"],
+            ["NumberFormatException", "Número en otro tipo de formato no esperado"],
+            ["NullPointerException", "Se intenta acceder a un objeto no inicializado"],
+            ["IOException", "Error de entrada o salida"],
+            ["ArithmeticException", "Operación aritmética incorrecta"],
+            ["OutOfMemoryError", "No hay suficiente memoria para su ejecución"],
+            ["StackOverFlowError", "Sobrecarga de la pila de ejecución"]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "⚠ Dos nombres están mal escritos en la tabla: es `ArrayIndexOutOfBoundsException` (con «s», como lo escribe el propio temario en las Imágenes 5 y 6) y `StackOverflowError` (con «flow» en minúscula)."
+        },
+        {
+          "type": "text",
+          "content": "Todas las excepciones tienen una jerarquía usando como raíz java.lang.Throwable y por debajo Exception y Error. Si se define una nueva excepción ha de heredar obligatoriamente de Throwable o cualquiera de sus hijos. Por recomendación todas las excepciones que hereden de Exception su nomenclatura será \"nombreException\" y las que hereden de Error será \"nombreError\"."
+        },
+        {
+          "type": "text",
+          "content": "Imagen 3. Jerarquía de excepciones: Throwable → Exception (RuntimeException, PrintException, …) y Error (…)."
+        },
+        {
+          "type": "text",
+          "content": "Las excepciones se pueden clasificar según el tipo de grado de error:\n\nChecked: Son excepciones de consideración leve y controladas. En el caso que se produzca no debería de afectar al resto del programa. Es obligatorio hacer tratamiento de este tipo de excepción para permitir continuar con el programa. Son las excepciones que heredan de Exception. Por ejemplo, un usuario intenta hacer una división por cero en una calculadora."
+        },
+        {
+          "type": "text",
+          "content": "⚠ El ejemplo no encaja con la definición del propio temario: una división por cero lanza `ArithmeticException` (Imagen 1), que hereda de `RuntimeException`, así que es una excepción unchecked. Las diapositivas repiten el error al poner `ArithmeticException` entre las checked."
+        },
+        {
+          "type": "text",
+          "content": "Unchecked: Son excepciones graves que pueden afectar a todo el programa y que interrumpa su ejecución. No es recomendable hacer un tratamiento a este tipo de excepciones, de hacerlo puede hacer que el programa no se ejecute correctamente. Son las excepciones que heredan de RuntimeException o Error. Por ejemplo, un objeto no esté inicializado y esté null. Que no se encuentre una clase."
+        },
+        {
+          "type": "text",
+          "content": "⚠ «Que no se encuentre una clase» con `ClassNotFoundException` (la de la tabla) es una excepción checked: hereda de `Exception`, no de `RuntimeException`. El error unchecked equivalente es `NoClassDefFoundError`, que es el que citan las diapositivas."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "10.3. Miembros de una excepción",
+      "short": "10.3. Miembros",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Las excepciones se representan mediante clases, y pueden tener atributos y métodos que sean necesarios. Por defecto y al heredar de java.lang.Throwable están disponible los siguientes métodos:"
+        },
+        {
+          "type": "text",
+          "content": "Métodos disponibles al heredar de Throwable"
+        },
+        {
+          "type": "table",
+          "headers": ["Método", "Descripción"],
+          "rows": [
+            ["Throwable getCause()", "Devuelve un objeto Throwable con los datos de la casuística de la excepción."],
+            ["String getMessage()", "Devuelve el mensaje de la excepción."],
+            ["printStackTrace()", "Imprime todo el flujo de llamadas a los métodos hasta donde se ha producido el error."],
+            ["StackTraceElement[] getStackTrace()", "Obtiene una colección de StackTraceElement con cada flujo de excepción."],
+            ["setStackTrace(StackTraceElement[])", "Establece una colección de StackTraceElement para indicar el flujo de la excepción."]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "10.4.1. Captura de excepciones",
+      "short": "10.4.1. Captura",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Como hemos explicado anteriormente las excepciones se pueden tratar e incluso en algunos casos es una acción obligatoria, pero antes de hacer el tratamiento hay que determinar que parte de código puede producir una excepción, si es necesario realizar alguna validación previa o incluso provocar o invocar una excepción por iniciativa nuestra. A continuación, se detalla diferentes formas de manejar excepciones."
+        },
+        {
+          "type": "text",
+          "content": "Se indicará que código va a producir una excepción, el tratamiento que se vaya a hacer si se produce y opcionalmente podemos indicar un tratamiento final se produzca o no la excepción. Estas capturas se realizarán con los bloques try/catch/finally"
+        },
+        {
+          "type": "code",
+          "content": "try {\n// Código que puede producir una excepción.\n} catch (Tipo excepcion) {\n// Código para dar tratamiento a la excepción.\n} [catch (Tipo excepcion1)] {\n// ..\n} finally {\n// Código que se realizará si se produce la excepción o no.\n}"
+        },
+        {
+          "type": "code",
+          "content": "public static void main(String[] args) {\n\n    float resultado = 0;\n    int dividendo = 10;\n    int divisor = 0;\n\n    try {\n        System.out.println(\"- Inicio de una división\");\n        resultado = dividendo / divisor;\n        System.out.println(\"El resultado es: \"+ resultado);\n    } catch (ArithmeticException e1) {\n        System.out.println(\"Se ha producido un error aritmético\");\n        System.out.println(\"Se ha intentado hacer la siguiente división: \"+ dividendo +\"/\"+ divisor);\n    } finally {\n        System.out.println(\"- Fin de la división\");\n    }\n\n}"
+        },
+        {
+          "type": "code",
+          "content": "- Inicio de una división\nSe ha producido un error aritmético\nSe ha intentado hacer la siguiente división: 10/0\n- Fin de la división"
+        },
+        {
+          "type": "text",
+          "content": "La parte del catch es posible definir más de un bloque para capturar diferentes excepciones del bloque try. El orden en que se especifique cada catch es importante según la jerarquía de excepciones. Si se indica como primera excepción la raíz todos los catch anteriores no se usarán nunca. Hay que especificar en orden de menor rango de la jerarquía a mayor."
+        },
+        {
+          "type": "text",
+          "content": "⚠ Donde dice «todos los catch anteriores» debe decir «posteriores»: si el primer catch es la raíz (`Exception`), los que vienen detrás nunca se usarán. De hecho, en Java ese orden da error de compilación (catch inalcanzable)."
+        },
+        {
+          "type": "code",
+          "content": "// Orden correcto de los catch:\ntry {\n\n} catch (ArithmeticException e1) {\n\n} catch (ArrayIndexOutOfBoundsException e2) {\n\n} catch (Exception e) {\n\n}"
+        },
+        {
+          "type": "code",
+          "content": "// Orden incorrecto de los catch (en la imagen, los dos últimos catch aparecen tachados):\ntry {\n\n} catch (Exception e) {\n\n} catch (ArithmeticException e1) {\n\n} catch (ArrayIndexOutOfBoundsException e2) {\n\n}"
+        },
+        {
+          "type": "text",
+          "content": "Dependiendo de la versión de java es posible realizar multicatch. Multicatch permite en un mismo bloque catch capturar más de una excepción."
+        },
+        {
+          "type": "code",
+          "content": "try {\n\n} catch (ArithmeticException | ArrayIndexOutOfBoundsException e ) {\n    // Código para la excepciones Arithmetic y ArrayIndexOutOfBounds\n} catch (Exception e) {\n    // Código para el resto de excepciones de la clase padre de Exception\n}"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "10.4.2. Propagación de excepciones",
+      "short": "10.4.2. Propagación",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Si hay varias partes del código en diferentes métodos que contemplan que se pueda producir una misma excepción, no es necesario que se declare una sentencia try/catch en cada una de ellas. Se puede propagar la excepción para que sea el método principal que hizo la llamada para que pueda tratar la excepción.\n\nPara propagar una excepción hay que indicar en la cabecera del método en la parte final la palabra reservada throws y el nombre de la clase de la excepción"
+        },
+        {
+          "type": "code",
+          "content": "public static void main(String[] args) {\n    try {\n        // Calculadora con las operaciones de: 0 - Suma, 1 - Resta, 2- Producto, 3- División\n        calculadora(3, 0, 0);\n    } catch (ArithmeticException e) {\n        System.out.println(\"Se ha producido el siguiente error: \"+e.getMessage());\n        System.out.println(\"En: \"+e.getClass());\n        for (StackTraceElement traceElement : e.getStackTrace())\n            System.out.println(\"\\tat \" + traceElement);\n    }\n}\n\npublic static int calculadora(int operacion, int param, int param2)\n        throws ArithmeticException {\n\n    switch (operacion) {\n        case 0:\n            return param + param2;\n        case 1:\n            return param - param2;\n        case 2:\n            return param * param2;\n        case 3:\n            return param / param2;\n\n    }\n\n    return -0;\n}"
+        },
+        {
+          "type": "code",
+          "content": "Se ha producido el siguiente error: / by zero\nEn: class java.lang.ArithmeticException\n    at EjemploPropagacion.calculadora(EjemploPropagacion.java:30)\n    at EjemploPropagacion.main(EjemploPropagacion.java:8)"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "10.4.3. Lanzamiento de excepciones",
+      "short": "10.4.3. Lanzamiento",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Otra opción que se dispone es de lanzar nosotros mismos una excepción ante un error que tenemos contemplado. Para lanzar una excepción tenemos que usar la palabra reservada throw junto con una instanciación de una excepción. Hay que ir con cuidado al confundir la propagación de excepciones con el lanzamiento. La propagación se usa la palabra throws y en el lanzamiento throw."
+        },
+        {
+          "type": "code",
+          "content": "public static void main(String[] args) {\n    try {\n        // Calculadora con las operaciones de: 0 - Suma, 1 - Resta, 2- Producto, 3- División\n        calculadora(9, 0, 0);\n    } catch (Exception e) {\n        System.out.println(\"Se ha producido el siguiente error: \"+e.getMessage());\n        System.out.println(\"En: \"+e.getClass());\n        for (StackTraceElement traceElement : e.getStackTrace())\n            System.out.println(\"\\tat \" + traceElement);\n    }\n}\n\npublic static int calculadora(int operacion, int param, int param2) throws IllegalArgumentException {\n\n    switch (operacion) {\n        case 0:\n            return param + param2;\n        case 1:\n            return param - param2;\n        case 2:\n            return param * param2;\n        case 3:\n            return param / param2;\n        default:\n            throw new IllegalArgumentException(\"Operacion no reconocida\");\n    }\n\n}"
+        },
+        {
+          "type": "code",
+          "content": "Se ha producido el siguiente error: Operacion no reconocida\nEn: class java.lang.IllegalArgumentException\n    at EjemploPropagacion.calculadora(EjemploPropagacion.java:28)\n    at EjemploPropagacion.main(EjemploPropagacion.java:7)"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "label": "10.4.4. Creación de clases de excepciones",
+      "short": "10.4.4. Creación",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Aparte de las excepciones que vienen predefinidas en java, podemos crear nuevas excepciones según las necesidades que tenga nuestro programa."
+        },
+        {
+          "type": "code",
+          "content": "public class Ejemplo {\n\n    public static void main(String[] args) {\n        try {\n            // Calculadora con las operaciones de: 0 - Suma, 1 - Resta, 2- Producto, 3- División\n            calculadora(9, 5, 2);\n        } catch (OperacionException e) {\n            System.out.println(\"Se ha producido el siguiente error: \"+e.getMessage());\n            System.out.println(\"Código de error: \"+ e.CODIGO);\n            System.out.println(\"En: \"+e.getClass());\n            for (StackTraceElement traceElement : e.getStackTrace())\n                System.out.println(\"\\tat \" + traceElement);\n        }\n    }\n\n    public static int calculadora(int operacion, int param, int param2)  {\n\n        switch (operacion) {\n            case 0:\n                return param + param2;\n            case 1:\n                return param - param2;\n            case 2:\n                return param * param2;\n            case 3:\n                return param / param2;\n            default:\n                throw new OperacionException(\"Operacion no reconocida\");\n        }\n\n    }\n}\n\n@SuppressWarnings(\"serial\")\npublic class OperacionException extends IllegalArgumentException {\n\n    public final static int CODIGO = -1;\n\n    public OperacionException(String mensaje) {\n        super(mensaje);\n    }\n\n}"
+        },
+        {
+          "type": "code",
+          "content": "Se ha producido el siguiente error: Operacion no reconocida\nCódigo de error: 1\nEn: class OperacionException\n    at EjemploPropagacion.calculadora(EjemploPropagacion.java:30)\n    at EjemploPropagacion.main(EjemploPropagacion.java:8)"
+        },
+        {
+          "type": "text",
+          "content": "⚠ La salida no corresponde exactamente a este código: `CODIGO` vale `-1`, pero la salida muestra «Código de error: 1», y la clase se llama `Ejemplo` mientras la traza muestra `EjemploPropagacion`."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "label": "10.5. Recomendaciones de uso de excepciones",
+      "short": "10.5. Recomendaciones",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El uso de excepciones es un buen mecanismo para tener controlada cualquier situación anómala que se pueda producir y afectar a la ejecución. Para ello es necesario tener un conocimiento previo de que situaciones anómalas se pueden producir y la mejor forma de gestionar esos errores. Si se hace un mal uso de las excepciones o no aplicamos correctamente su tratamiento se producirá el efecto contrario y nuestro programa aun será más inestable y complejo de desarrollar."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "No abusar de excepciones",
+              "content": "En la mayoría de los casos se puede evitar excepciones estableciendo requisitos previos y validaciones. Es recomendable hacer un diseño de código sencillo, legible, optimo y reutilizable para evitar la mayor cantidad de excepciones."
+            },
+            {
+              "title": "Emplear correctamente los bloques try/catch",
+              "content": "Emplear los bloques justo en la parte de código que puede producirse el error. Un error inicial es pensar en poner todo el código de nuestro programa en un solo bloque de try/catch, de esta forma no podríamos tener el control de donde se produce el fallo e intentar recuperar la estabilidad del programa."
+            },
+            {
+              "title": "Usar siempre finally en el bloque try/catch para objetos de entrada y salida o conexiones",
+              "content": "Siempre que hay una conexión a una base de datos, red o nuestro programa haga uso de ficheros de entrada y salida es necesario abrir y cerrar este tipo de conexiones. Cuando se produce una excepción muchas veces no se puede cerrar la conexión establecida y se sigue consumiendo recursos. Al usar finally garantizamos que pase lo que pase se cerrarán las conexiones y liberaremos recursos."
+            },
+            {
+              "title": "No crear nuevas excepciones y reutilizar las existentes",
+              "content": "Java aporta la mayoría de las excepciones que pueden producirse, solo en caso de que sea necesario por la funcionalidad de nuestro programa se recomienda crear nuevas excepciones"
+            },
+            {
+              "title": "Evitar tratar excepciones genéricas",
+              "content": "No hacer uso de captación de errores las clases padre como Throwable, Exception, Error. Es recomendable captar la excepción más detallada posible."
+            },
+            {
+              "title": "Cualquier situación anómala de consideración grave, no hacer tratamiento",
+              "content": "Si se produce una excepción grave que pueda dejar inestable nuestro programa se recomienda no hacer tratamiento. Por ejemplo, un error producido por falta de memoria, aunque se haga tratamiento no hay garantías que el programa siga funcionando correctamente."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {"term": "excepción", "def": "Evento ante una situación no prevista por un error funcional o lógico, unos parámetros con valores no definidos, un flujo incorrecto, una acción no prevista o cualquier problema externo que se produce en tiempo de ejecución."},
+    {"term": "pila de llamadas", "def": "Flujo de llamadas a otras clases y métodos según la funcionalidad que se establece cuando se ejecuta un programa desde la clase que contiene el método main."},
+    {"term": "Throwable", "def": "Clase raíz de la jerarquía de excepciones en Java. Toda excepción debe heredar de ella o de cualquiera de sus hijos."},
+    {"term": "Exception", "def": "Clase hija de Throwable que actúa como raíz de las excepciones checked y de RuntimeException."},
+    {"term": "Error", "def": "Clase hija de Throwable que representa errores graves del sistema o la JVM de los que no se recomienda hacer tratamiento."},
+    {"term": "checked", "def": "Tipo de excepción de consideración leve y controlada que hereda de Exception. Es obligatorio hacer su tratamiento para permitir continuar con el programa."},
+    {"term": "unchecked", "def": "Tipo de excepción grave que hereda de RuntimeException o Error. No es recomendable hacer su tratamiento porque puede dejar el programa inestable."},
+    {"term": "throws", "def": "Palabra reservada que se indica en la cabecera de un método para propagar una excepción al método que lo llamó."},
+    {"term": "throw", "def": "Palabra reservada que se usa junto con una instanciación de una excepción para lanzarla explícitamente."},
+    {"term": "multicatch", "def": "Funcionalidad que permite capturar más de una excepción en un mismo bloque catch, separando los tipos con el operador |."},
+    {"term": "finally", "def": "Bloque opcional del try/catch que se ejecuta siempre, tanto si se produce la excepción como si no."},
+    {"term": "RuntimeException", "def": "Clase hija de Exception de la que heredan las excepciones unchecked."},
+    {"term": "printStackTrace()", "def": "Método heredado de Throwable que imprime todo el flujo de llamadas a los métodos hasta donde se ha producido el error."}
+  ],
+  "quiz": [
+    {
+      "question": "¿Qué es una excepción en Java?",
+      "options": [
+        "Un tipo de clase abstracta que no puede instanciarse",
+        "Un evento ante una situación no prevista que se produce en tiempo de ejecución",
+        "Un método especial que detiene la ejecución del programa",
+        "Una variable que almacena mensajes de error"
+      ],
+      "correct": 1,
+      "explanation": "Una excepción es un evento ante una situación no prevista por un error funcional o lógico que se produce en tiempo de ejecución."
+    },
+    {
+      "question": "¿Cómo se denomina el flujo de llamadas a clases y métodos que se establece cuando se ejecuta un programa?",
+      "options": [
+        "Árbol de métodos",
+        "Cadena de herencia",
+        "Pila de llamadas",
+        "Cola de ejecución"
+      ],
+      "correct": 2,
+      "explanation": "El flujo de llamadas a otras clases y métodos según la funcionalidad se denomina pila de llamadas."
+    },
+    {
+      "question": "¿Cuál es la clase raíz de la jerarquía de excepciones en Java?",
+      "options": [
+        "Exception",
+        "Error",
+        "RuntimeException",
+        "Throwable"
+      ],
+      "correct": 3,
+      "explanation": "Todas las excepciones tienen una jerarquía usando como raíz java.lang.Throwable."
+    },
+    {
+      "question": "¿Qué tipo de excepciones son las que heredan de RuntimeException o Error?",
+      "options": [
+        "Unchecked",
+        "Checked",
+        "Handled",
+        "Declared"
+      ],
+      "correct": 0,
+      "explanation": "Las excepciones unchecked son las que heredan de RuntimeException o Error."
+    },
+    {
+      "question": "¿Qué método de Throwable devuelve el mensaje de la excepción?",
+      "options": [
+        "getCause()",
+        "getStackTrace()",
+        "getMessage()",
+        "printStackTrace()"
+      ],
+      "correct": 2,
+      "explanation": "El método getMessage() devuelve el mensaje de la excepción."
+    },
+    {
+      "question": "¿Para qué sirve el bloque finally en un try/catch?",
+      "options": [
+        "Para capturar excepciones de tipo Error",
+        "Para lanzar una nueva excepción si no se captura ninguna",
+        "Para ejecutar código solo si no se produce una excepción",
+        "Para ejecutar código tanto si se produce la excepción como si no"
+      ],
+      "correct": 3,
+      "explanation": "El bloque finally contiene código que se realizará tanto si se produce la excepción como si no."
+    },
+    {
+      "question": "¿En qué orden deben especificarse los bloques catch según la jerarquía de excepciones?",
+      "options": [
+        "De mayor rango a menor rango",
+        "De menor rango de la jerarquía a mayor",
+        "En cualquier orden, el compilador los reorganiza automáticamente",
+        "El bloque con Exception siempre debe ir primero"
+      ],
+      "correct": 1,
+      "explanation": "Hay que especificar los catch en orden de menor rango de la jerarquía a mayor."
+    },
+    {
+      "question": "¿Qué palabra reservada se usa para propagar una excepción en la cabecera de un método?",
+      "options": [
+        "throws",
+        "throw",
+        "catch",
+        "propagate"
+      ],
+      "correct": 0,
+      "explanation": "Para propagar una excepción hay que indicar en la cabecera del método la palabra reservada throws y el nombre de la clase de la excepción."
+    },
+    {
+      "question": "¿Qué permite el multicatch en Java?",
+      "options": [
+        "Lanzar múltiples excepciones simultáneamente desde un mismo método",
+        "Capturar más de una excepción en un mismo bloque catch",
+        "Crear jerarquías de excepciones automáticamente",
+        "Propagar excepciones a múltiples métodos a la vez"
+      ],
+      "correct": 1,
+      "explanation": "Multicatch permite en un mismo bloque catch capturar más de una excepción."
+    },
+    {
+      "question": "¿De qué clase debe heredar toda nueva excepción creada en Java?",
+      "options": [
+        "Exception",
+        "Error",
+        "RuntimeException",
+        "Throwable o cualquiera de sus hijos"
+      ],
+      "correct": 3,
+      "explanation": "Si se define una nueva excepción ha de heredar obligatoriamente de Throwable o cualquiera de sus hijos."
+    }
+  ],
+  "_sources": {
+    "intro": "U10 Control y manejo de excepciones.pdf, p.3",
+    "s1": "U10 Control y manejo de excepciones.pdf, p.4",
+    "s2": "U10 Control y manejo de excepciones.pdf, pp.5-6",
+    "s3": "U10 Control y manejo de excepciones.pdf, p.7",
+    "s4": "U10 Control y manejo de excepciones.pdf, p.8",
+    "s5": "U10 Control y manejo de excepciones.pdf, p.9",
+    "s6": "U10 Control y manejo de excepciones.pdf, p.9",
+    "s7": "U10 Control y manejo de excepciones.pdf, p.10",
+    "s8": "U10 Control y manejo de excepciones.pdf, p.11"
+  }
+}
