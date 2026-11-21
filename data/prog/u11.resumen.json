@@ -1,0 +1,367 @@
+{
+  "subject": "prog",
+  "unit": 11,
+  "title": "Recursividad y complejidad algorítmica",
+  "intro": "Un programa tiene un punto de inicio en código para iniciarse en ejecución, usando el método main de la clase principal y posteriormente sigue un flujo lineal de llamadas entre métodos aplicando una lógica iterativa para realizar su funcionalidad.\n\nExiste otro concepto de desarrollo que puede facilitar el diseño de ciertos algoritmos, aplicando unos flujos de llamada diferentes a lo que hasta ahora habíamos visto y que requiere una comprensión algorítmica de mayor complejidad. Este concepto, denominado recursividad, es lo que se verá en este tema.\n\nExisten diferentes maneras de realizar la codificación de un algoritmo y obtener el mismo resultado. Siempre hay que pensar que aunque se llegue al mismo resultado, no todas las opciones son válidas, debido a que una solución puede ser más lenta que la otra o consuma más recursos. La complejidad algorítmica permite valorar el consumo que puede tener nuestro programa y buscar alternativas mejores.",
+  "objectives": [
+    "Conoceremos qué es la recursividad y para qué se emplea.",
+    "Distinguiremos su clasificación.",
+    "Aplicaremos los diferentes beneficios de la recursividad.",
+    "Entenderemos el concepto de complejidad algorítmica.",
+    "Aprenderemos a analizar el consumo de recursos para un algoritmo."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "11.1. Concepto de recursividad",
+      "short": "11.1. Recursividad",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La recursividad es un mecanismo de programación por el que un método puede llamarse a sí mismo dentro de su propia definición. A cada llamada que un método se realiza a sí mismo se le denomina llamada recursiva.\n\nUn método recursivo debe definir siempre una condición de parada llamada caso base, que determine cuándo la recursión debe dejar de ejecutarse. Sin un caso base, el método se llamaría a sí mismo de forma indefinida hasta que la pila de llamadas se desborde, provocando una excepción StackOverflowError.\n\nAl igual que la iteración, la recursividad puede utilizarse para resolver problemas que implican la repetición de una misma operación. La diferencia radica en que la recursividad expresa esa repetición mediante llamadas al propio método en lugar de bucles."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "11.2. Utilización de la recursividad",
+      "short": "11.2. Utilización",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Para utilizar la recursividad correctamente es fundamental definir el caso base, que es la condición que detiene las llamadas recursivas. Por ejemplo, si se quiere implementar un método que imprima los números desde un límite hasta 1, el caso base sería cuando el límite valga 1 y la llamada recursiva se realizaría con «límite - 1»."
+        },
+        {
+          "type": "code",
+          "content": "// Iterativo\npublic static double factorial(int n) {\n\n    double resultado = 1;\n\n    for (int i = 1; i <= n; i++) {\n        resultado = resultado * i;\n    }\n\n    return resultado;\n}\n\n// Recursivo\npublic static double factorialRecursivo(int n) {\n\n    if(n == 0)\n        return 1;\n    else\n        return  n * factorialRecursivo(n-1);\n\n}"
+        },
+        {
+          "type": "text",
+          "content": "⚠ El texto describe un algoritmo que imprime números hasta un límite (caso base 1, llamada con «límite -1»), pero la Imagen 1 muestra el factorial (caso base `n == 0`, llamada con `n-1`), el mismo código que la Imagen 2."
+        },
+        {
+          "type": "text",
+          "content": "El caso base representa la solución más sencilla e inmediata del problema, aquella que no requiere llamada recursiva. La llamada recursiva debe acercarse progresivamente al caso base para garantizar que la recursión termine en algún momento."
+        },
+        {
+          "type": "text",
+          "content": "Cualquier algoritmo resuelto con recursividad tiene su forma iterativa equivalente. La elección entre una implementación recursiva o iterativa dependerá de la claridad del código y del rendimiento que se necesite."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "11.3. Tipos de recursividad",
+      "short": "11.3. Tipos",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Recursividad simple\n\nSe produce cuando un método realiza una única llamada a sí mismo dentro de su cuerpo. Es el tipo más habitual y el más sencillo de implementar."
+        },
+        {
+          "type": "code",
+          "content": "// Iterativo\npublic static double factorial(int n) {\n\n    double resultado = 1;\n\n    for (int i = 1; i <= n; i++) {\n        resultado = resultado * i;\n    }\n\n    return resultado;\n}\n\n// Recursivo\npublic static double factorialRecursivo(int n) {\n\n    if(n == 0)\n        return 1;\n    else\n        return  n * factorialRecursivo(n-1);\n\n}"
+        },
+        {
+          "type": "text",
+          "content": "Recursividad múltiple\n\nSe produce cuando un método realiza más de una llamada a sí mismo en el mismo cuerpo. Este tipo de recursividad puede consumir considerablemente más recursos, ya que en cada llamada se generan múltiples ramas de ejecución."
+        },
+        {
+          "type": "code",
+          "content": "// Iterativo\nprivate static int fibonacci(int n) {\n\n    int siguiente = 1, actual = 0, temporal = 0;\n\n    for (int i = 1; i <= n; i++) {\n        temporal = actual;\n        actual = siguiente;\n        siguiente = siguiente + temporal;\n    }\n\n    return actual;\n\n}\n\n// Recursivo\nprivate static int fibonacciRecursivo(int n) {\n    if (n <= 2) {\n        return 1;\n    } else {\n        return fibonacciRecursivo(n - 1) + fibonacciRecursivo(n - 2);\n    }\n}"
+        },
+        {
+          "type": "text",
+          "content": "Imagen 3. Ejemplo de recursividad múltiple: serie de Fibonacci"
+        },
+        {
+          "type": "text",
+          "content": "⚠ En el PDF el pie de esta imagen repite el de la Imagen 2 («recursividad simple para el cálculo del factorial»), pero el código es Fibonacci con recursividad múltiple: dos llamadas a sí mismo en el mismo cuerpo."
+        },
+        {
+          "type": "text",
+          "content": "Recursividad cruzada o indirecta\n\nSe produce cuando más de dos métodos se llaman entre sí de forma recursiva. Por ejemplo, el método A llama al método B, y el método B llama al método A."
+        },
+        {
+          "type": "text",
+          "content": "⚠ El temario dice «más de dos métodos», pero su propia descripción (A llama a B y B llama a A) y su ejemplo (`par` e `impar`) usan dos: basta con dos o más métodos que se llamen entre sí. La Síntesis lo describe así: «hay dos métodos con una llamada al otro y viceversa»."
+        },
+        {
+          "type": "code",
+          "content": "// Iterativo\nprivate static int parImpar(int num) {\n    return num%2;\n}\n\n// Recursivo\nprivate static int par(int num) {\n    if (num == 0)\n        return (1);\n    return (impar(num - 1));\n}\n\nprivate static int impar(int num) {\n    if (num == 0)\n        return (0);\n    return (par(num - 1));\n}"
+        },
+        {
+          "type": "text",
+          "content": "⚠ Los dos ejemplos no devuelven lo mismo: `parImpar` devuelve 0 si el número es par y 1 si es impar (`num%2`), mientras que `par(num)` devuelve 1 si el número es par."
+        },
+        {
+          "type": "text",
+          "content": "Recursividad anidada\n\nSe produce cuando uno de los argumentos de la llamada recursiva es a su vez una llamada recursiva al mismo método, como en `metodoA(metodoA(n));`. Es el tipo más complejo de analizar."
+        },
+        {
+          "type": "code",
+          "content": "private static int ackermann(int n, int m) {\n    if (n == 0)\n        return (m + 1);\n    else if (m == 0)\n        return (ackermann(n - 1, 1));\n    return (ackermann(n - 1, ackermann(n, m - 1)));\n}"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "11.4. Ventajas e inconvenientes",
+      "short": "11.4. Ventajas",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La recursividad ofrece ventajas e inconvenientes que conviene tener en cuenta para aplicarla de forma adecuada.\n\nVentajas:\n- Permite simplificar el código de algoritmos que tienen una estructura naturalmente recursiva, haciéndolos más legibles y fáciles de mantener.\n- Facilita el diseño de algoritmos sobre estructuras de datos que se definen de forma recursiva.\n\nInconvenientes:\n- Cada llamada recursiva genera un nuevo marco en la pila de llamadas, lo que supone un mayor consumo de memoria que un equivalente iterativo.\n- Si el número de llamadas recursivas es muy elevado, puede producirse un desbordamiento de pila (StackOverflowError).\n- En algunos casos no siempre es posible aplicar la recursividad para resolver un problema, siendo necesario utilizar la forma iterativa."
+        },
+        {
+          "type": "text",
+          "content": "⚠ Esto contradice al apartado 11.2, que dice que «cualquier algoritmo resuelto con recursividad tiene su forma iterativa equivalente», y esa es la afirmación correcta: siempre hay versión iterativa, aunque a veces es mucho más difícil de plantear. La ventaja real es que la recursividad simplifica esos algoritmos."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "11.5. Complejidad algorítmica",
+      "short": "11.5. Complejidad",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La complejidad algorítmica permite estimar el consumo de recursos, ya sea tiempo de ejecución o memoria, que necesita un algoritmo para resolver un problema en función del tamaño de los datos de entrada. Para ello se utiliza la notación O grande (Big O), que expresa el peor caso posible del consumo de recursos de un algoritmo.\n\nEl análisis de la complejidad se realiza contando las instrucciones u operaciones que ejecuta el algoritmo según el tamaño de entrada «n». Gracias a esta medida es posible comparar distintas soluciones de un mismo problema y elegir la más eficiente."
+        },
+        {
+          "type": "table",
+          "headers": ["Orden", "Nombre", "Descripción"],
+          "rows": [
+            ["O(1)", "Constante", "Es la más rápida. El tiempo es constante y no varía según el tamaño de los datos."],
+            ["O(log n)", "Logarítmica", "Divide el problema en partes más pequeñas, simplificando su resolución. Normalmente se aplica en recursividad. Por ejemplo, la búsqueda dicotómica."],
+            ["O(n)", "Lineal", "Depende del tamaño de los datos. Se suele encontrar en bucles simples de N iteraciones, por ejemplo, algoritmos de búsqueda lineal, cálculo de factorial."],
+            ["O(n log n)", "Cuasi lineal", "Es similar a la orden logarítmica. Divide el problema en partes más pequeñas pero es necesario la unión de cada parte para llegar a la solución final. Ejemplos, ordenación rápida (Quicksort) o la ordenación por mezcla (merge sort)."],
+            ["O(n²)", "Cuadrática", "Se usa recorrer todos los elementos de un conjunto. Aparece cuando hay bucles anidados de 2 niveles. Un bucle dentro de otro, por ejemplo recorrer un array bidimensional (matriz)."],
+            ["O(n³)", "Cúbica", "Igual que la cuadrática. Aparecen bucles anidados de 3 niveles. Por ejemplo, recorrer un array multidimensional."],
+            ["O(nᵃ)", "Polinomial", "Igual que las anteriores pero los niveles son mayores de 2. La orden cúbica también sería polinomial."],
+            ["O(aⁿ)", "Exponencial", "A mayor datos de uso peor se comporta. Se suele dar en la recursividad múltiple. Por ejemplo, el algoritmo Fibonacci en forma de recursividad."],
+            ["O(n!)", "Factorial", "Es la peor orden. Solo se aplica a algoritmos mediante fuerza bruta."]
+          ]
+        },
+        {
+          "type": "code",
+          "content": "O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(n³) < O(nᵃ) < O(aⁿ) < O(n!)"
+        },
+        {
+          "type": "text",
+          "content": "Imagen 6. Gráfico del orden de consumo según los datos de entrada y las instrucciones: eje horizontal «Datos» (0 a 25) y eje vertical «Instrucciones» (0 a 300). Curvas, de la que más crece a la que menos: O(n!), O(2ⁿ) y O(n²) se disparan antes de 10 datos; después, O(n log n) y O(n), que crecen de forma gradual; y O(log n) y O(1), casi planas."
+        },
+        {
+          "type": "text",
+          "content": "Para determinar el orden de un algoritmo se analizan sus instrucciones y se calcula cuántas veces se ejecutan en función de «n». Puede haber un caso mejor, cuando los datos son los más favorables para el algoritmo, y un caso peor, cuando los datos provocan el mayor número de operaciones. Habitualmente el análisis de complejidad se realiza sobre el caso peor, para garantizar que el algoritmo funcione dentro de un tiempo aceptable en cualquier situación."
+        },
+        {
+          "type": "code",
+          "content": "private static void cadenaInvertida(String cadena) {\n\n    String cadenaOriginal = cadena;\n    StringBuilder strb = new StringBuilder(cadenaOriginal);\n    String cadenaInvertida = strb.reverse().toString();\n\n}"
+        },
+        {
+          "type": "text",
+          "content": "Imagen 7. Ejemplo de algoritmo para invertir una cadena de caracteres. El algoritmo realiza tres operaciones de asignación de tipo constante, por lo que su orden de complejidad es O(1)."
+        },
+        {
+          "type": "text",
+          "content": "⚠ Matiz: `reverse()` recorre toda la cadena, así que su coste depende de la longitud de la cadena, O(n). El temario solo cuenta las 3 instrucciones; según su propia regla, O(1) es para las instrucciones que trabajan sobre un tamaño de datos constante."
+        },
+        {
+          "type": "code",
+          "content": "private static void recorrerArray(Object[] lista) {\n\n    for (int i=0;i<lista.length;i++) {\n        System.out.println(lista[i]);\n    }\n\n}"
+        },
+        {
+          "type": "text",
+          "content": "Imagen 8. Ejemplo de algoritmo para recorrer un array. El bucle `for` itera desde 0 hasta `lista.length`, por lo que el número de iteraciones depende directamente del tamaño del array. Su orden de complejidad es O(n)."
+        },
+        {
+          "type": "code",
+          "content": "private static void recorrerArrayInversaNoLineal(Object[] lista) {\n\n    int n = lista.length;\n\n    while(n>0) {\n        System.out.println(lista[n]);\n        n /= 2;\n    }\n\n}"
+        },
+        {
+          "type": "text",
+          "content": "Imagen 9. Ejemplo de algoritmo para recorrer un array desde el final en delante de forma no lineal. En cada iteración del bucle `while` el índice `n` se divide entre 2, por lo que el número de iteraciones crece de forma logarítmica respecto al tamaño del array. Su orden de complejidad es O(log n)."
+        },
+        {
+          "type": "text",
+          "content": "⚠ El código no funciona tal cual: `n` empieza en `lista.length` y `lista[n]` no existe (las posiciones van de 0 a length-1), así que en la primera vuelta se lanza `ArrayIndexOutOfBoundsException`. Debería empezar en `lista.length - 1`. La conclusión O(log n) sí es correcta: `n` se divide entre 2 en cada vuelta."
+        },
+        {
+          "type": "text",
+          "content": "NOTA: El análisis de complejidad no pretende obtener el tiempo exacto de ejecución de un algoritmo, ya que este depende del hardware y de la implementación concreta. Su objetivo es comparar algoritmos entre sí y detectar cuál escala mejor ante un crecimiento de los datos de entrada."
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Regla 1: Sentencias simples → O(1)",
+              "content": "Las asignaciones, operaciones aritméticas y comparaciones simples son de orden constante O(1). No dependen del tamaño de los datos."
+            },
+            {
+              "title": "Regla 2: Sentencia if-else → máximo de las ramas",
+              "content": "El orden de una sentencia if-else es el mayor de los órdenes de sus dos ramas."
+            },
+            {
+              "title": "Regla 3: Bucle simple → O(n)",
+              "content": "Un bucle de N iteraciones es de orden O(n). El número de veces que se ejecuta el cuerpo del bucle depende directamente del tamaño de los datos."
+            },
+            {
+              "title": "Regla 4: Bucles consecutivos → el mayor",
+              "content": "Cuando dos bucles aparecen uno detrás del otro (consecutivos), el orden del conjunto es el mayor de los dos órdenes individuales."
+            },
+            {
+              "title": "Regla 5: Bucles anidados → producto de los órdenes",
+              "content": "Cuando un bucle está dentro de otro, los órdenes se multiplican. Dos bucles anidados dan O(n²), tres dan O(n³), y así sucesivamente."
+            },
+            {
+              "title": "Regla 6: Llamadas a métodos → orden del método",
+              "content": "El orden de una llamada a un método equivale al orden de ese método. Hay que sustituir la llamada por el orden del método para calcular el orden del bloque que lo contiene."
+            },
+            {
+              "title": "Regla 7: Bucle con división → O(log n)",
+              "content": "Cuando el bucle divide el tamaño del problema en cada iteración (por ejemplo, dividiendo el índice entre 2), su orden es logarítmico O(log n)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Conocer la complejidad algorítmica de las soluciones que se implementen permite tomar decisiones de diseño más acertadas. Ante dos algoritmos que resuelven el mismo problema, siempre se preferirá el de menor orden de complejidad, especialmente cuando el volumen de datos de entrada sea grande."
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {"term": "Recursividad", "def": "Técnica que permite resolver determinados problemas de forma cíclica o circular, dividiendo el problema en subproblemas más pequeños hasta una condición de finalización. Se detecta cuando un método se llama a sí mismo."},
+    {"term": "Caso base", "def": "Condición de terminación de los subproblemas más pequeños. En código se representa con una sentencia de control y hace que termine el flujo de llamadas."},
+    {"term": "Recursividad simple", "def": "Solo existe una sola llamada a sí mismo en el cuerpo del método."},
+    {"term": "Recursividad múltiple", "def": "Existe más de una llamada a sí mismo en el cuerpo del método."},
+    {"term": "Recursividad cruzada o indirecta", "def": "El método A en su cuerpo llama al método B y el método B en su cuerpo llama al método A."},
+    {"term": "Recursividad anidada", "def": "En los parámetros de la llamada se incluye otra llamada a sí mismo, por ejemplo metodoA(metodoA(n))."},
+    {"term": "Complejidad algorítmica", "def": "Estudia la cantidad de recursos que puede consumir una solución en base al tiempo que tarda y la cantidad de memoria que necesita."},
+    {"term": "Notación Big-O", "def": "Forma de medir la complejidad algorítmica (también Notación Asintótica o Notación Landau). Mide cómo se va a comportar un algoritmo en función de los argumentos que se le pasen. Se suele representar de la forma O( )."},
+    {"term": "Búsqueda dicotómica", "def": "También conocida como búsqueda binaria, algoritmo que busca un elemento dividiendo en dos partes y por cada parte las vuelve a dividir; su flujo se representa en árbol de dos ramificaciones."},
+    {"term": "Quick sort", "def": "Algoritmo de ordenación rápida que elige un pivote o referencia y empieza a ordenar por cada lado del pivote. Es un típico algoritmo para realizar con recursividad."},
+    {"term": "Merge sort", "def": "Algoritmo de ordenación que divide la colección en dos partes iguales y, con los elementos mezclados, los va uniendo en una única lista ordenada."}
+  ],
+  "quiz": [
+    {
+      "question": "¿Qué es la recursividad en programación?",
+      "options": [
+        "Un bucle que se ejecuta un número fijo de veces",
+        "Un mecanismo por el que un método puede llamarse a sí mismo",
+        "Una técnica para reutilizar código mediante herencia",
+        "Un tipo especial de estructura de datos en árbol"
+      ],
+      "correct": 1,
+      "explanation": "La recursividad es un mecanismo de programación por el que un método puede llamarse a sí mismo dentro de su propia definición."
+    },
+    {
+      "question": "Según el temario, ¿qué ocurre si no se definen correctamente el caso base y la llamada a sí mismo?",
+      "options": [
+        "El compilador lo corrige automáticamente",
+        "El método se ejecuta una sola vez",
+        "El comportamiento será un bucle infinito a sí mismo",
+        "Se convierte en un algoritmo iterativo"
+      ],
+      "correct": 2,
+      "explanation": "El temario indica que es importante definir correctamente el caso base y la llamada a sí mismo; si no se descompone correctamente, el comportamiento será un bucle infinito a sí mismo."
+    },
+    {
+      "question": "¿Qué caracteriza a la recursividad múltiple?",
+      "options": [
+        "El método llama a otro método distinto",
+        "El método realiza más de una llamada a sí mismo en el mismo cuerpo",
+        "Varios métodos se llaman entre sí",
+        "El argumento de la llamada es a su vez una llamada recursiva"
+      ],
+      "correct": 1,
+      "explanation": "La recursividad múltiple se produce cuando un método realiza más de una llamada a sí mismo en el mismo cuerpo, generando múltiples ramas de ejecución."
+    },
+    {
+      "question": "¿Qué tipo de recursividad se da en la implementación recursiva de Fibonacci?",
+      "options": [
+        "Simple",
+        "Cruzada",
+        "Anidada",
+        "Múltiple"
+      ],
+      "correct": 3,
+      "explanation": "Fibonacci recursivo realiza dos llamadas a sí mismo en el mismo cuerpo (fibonacciRecursivo(n-1) + fibonacciRecursivo(n-2)), lo que lo convierte en recursividad múltiple."
+    },
+    {
+      "question": "Según el temario, ¿qué mide la notación Big-O?",
+      "options": [
+        "El número de líneas de código del programa",
+        "El tamaño en disco del programa compilado",
+        "Cómo se va a comportar un algoritmo en función de los argumentos que se le pasen",
+        "La cantidad de métodos que tiene una clase"
+      ],
+      "correct": 2,
+      "explanation": "La notación Big-O (Notación Asintótica o Notación Landau) mide cómo se va a comportar un algoritmo en función de los argumentos que se le pasen."
+    },
+    {
+      "question": "¿Qué orden de complejidad tiene un algoritmo con dos bucles anidados de N iteraciones cada uno?",
+      "options": [
+        "O(n²)",
+        "O(2n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "correct": 0,
+      "explanation": "Los bucles anidados multiplican sus órdenes. Dos bucles anidados de N iteraciones dan una complejidad cuadrática O(n²)."
+    },
+    {
+      "question": "¿Qué orden de complejidad tienen los algoritmos Quicksort y Merge sort?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n²)",
+        "O(log n)"
+      ],
+      "correct": 1,
+      "explanation": "Quicksort y Merge sort tienen orden O(n log n), la complejidad cuasi lineal, pues dividen el problema en partes más pequeñas pero necesitan unirlas para llegar a la solución."
+    },
+    {
+      "question": "¿Cuál es el orden de complejidad más eficiente?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "correct": 0,
+      "explanation": "O(1) es la complejidad constante: el tiempo no varía según el tamaño de los datos, lo que la convierte en la más eficiente."
+    },
+    {
+      "question": "¿Con qué tipo de recursividad se asocia la complejidad exponencial O(aⁿ)?",
+      "options": [
+        "Recursividad simple",
+        "Recursividad anidada",
+        "Recursividad cruzada",
+        "Recursividad múltiple"
+      ],
+      "correct": 3,
+      "explanation": "La complejidad exponencial O(aⁿ) se suele dar en la recursividad múltiple, como el algoritmo Fibonacci en su forma recursiva."
+    },
+    {
+      "question": "¿Qué orden de complejidad tiene un bucle que divide el índice entre 2 en cada iteración?",
+      "options": [
+        "O(log n)",
+        "O(n)",
+        "O(n²)",
+        "O(1)"
+      ],
+      "correct": 0,
+      "explanation": "Un bucle que divide el tamaño del problema en cada iteración (como dividir el índice entre 2) tiene orden logarítmico O(log n)."
+    }
+  ],
+  "_sources": {
+    "intro": "U11 Recursividad y complejidad algorítmica.pdf, p.3",
+    "s1": "U11 Recursividad y complejidad algorítmica.pdf, p.4",
+    "s2": "U11 Recursividad y complejidad algorítmica.pdf, p.4",
+    "s3": "U11 Recursividad y complejidad algorítmica.pdf, pp.5-6",
+    "s4": "U11 Recursividad y complejidad algorítmica.pdf, p.6",
+    "s5": "U11 Recursividad y complejidad algorítmica.pdf, pp.7-10"
+  }
+}
