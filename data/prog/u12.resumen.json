@@ -1,0 +1,532 @@
+{
+  "subject": "prog",
+  "unit": 12,
+  "title": "Lectura y escritura de información",
+  "intro": "Gran parte de la lógica de un programa es el tratamiento de la información, por ejemplo, para realizar una operación en una calculadora, tenemos que conocer qué operación quiere el usuario y los valores de los operandos a calcular, y mostrarle el resultado. Toda la información tiene que estar definida por un flujo y conocer si la información ha de ser conservada, puede ser modificada o simplemente se usa y se descarta. En esta unidad se profundizará en el acceso a datos, su tratamiento y las distintas formas de conservación.",
+  "objectives": [
+    "Sabremos los flujos de datos y los distintos tipos.",
+    "Aprenderemos a aplicar el tipo de flujo más adecuado según la situación.",
+    "Conoceremos los sistemas de ficheros.",
+    "Aplicaremos la persistencia y el uso de la serialización.",
+    "Conoceremos las principales herramientas para trabajar con ficheros."
+  ],
+  "sections": [
+    {
+      "id": "s1",
+      "label": "12.1. Flujos de comunicación",
+      "short": "12.1. Flujos",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En cualquier programa existe una interacción con elementos externos para la entrada de información y/o salida. Por ejemplo, cualquier entrada de información puede ser por teclado, fichero, red, etc. y de salida, por pantalla, fichero, etc.\n\nTodos los lenguajes de programación ofrecen herramientas o mecanismos para poder hacer uso de elementos de entrada y salida. Estas herramientas trabajan sobre flujos de datos, que son una secuencia ordenada de datos que se transmiten desde una fuente hacia un destino, en Java se denomina Stream."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "12.1.1. Tipos de flujo",
+      "short": "12.1.1. Tipos",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Se pueden clasificar los tipos de flujos según el tipo de datos, la dirección del flujo o la forma en que se accede."
+        },
+        {
+          "type": "table",
+          "headers": ["Criterio", "Tipos"],
+          "rows": [
+            ["1. Según el tipo de datos", "a. Flujos de bytes o byte streams: lectura y escritura de 0 a 255 bytes. Se suele usar para envío de datos binarios.\nb. Flujo de caracteres o character streams: transmite datos tipo carácter codificados en Unicode. Se suele usar para ficheros de texto plano.\nc. Flujos estándar o predeterminados: entrada por teclado y salida por pantalla."],
+            ["2. Según la dirección del flujo de datos", "Puede ser flujos de entrada, flujos de salida o entrada/salida."],
+            ["3. Según la forma en que se accede", "Puede ser forma secuencial o acceso directo."]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "⚠ «De 0 a 255 bytes» no es una cantidad: cada byte toma un valor de 0 a 255. Por eso en los ejemplos `read()` devuelve ese valor como `int`, y -1 cuando no quedan datos (`while ((i = fis.read()) != -1)`)."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "12.1.2. Flujos predeterminados",
+      "short": "12.1.2. Predeterminados",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ya existen algunos flujos estándar de datos definidos sin necesidad de crearlos. En este caso son los flujos de entrada y salida de datos por teclado, haciendo uso de (System.out, System.err y System.in)."
+        },
+        {
+          "type": "text",
+          "content": "⚠ Solo la entrada es por teclado (System.in); System.out y System.err son salida por pantalla. Así lo dicen el propio apartado 12.1.1 («entrada por teclado y salida por pantalla») y las diapositivas («Entrada y salida de datos por teclado y pantalla»)."
+        },
+        {
+          "type": "text",
+          "content": "Imagen 1. Ejemplo de flujos predeterminados"
+        },
+        {
+          "type": "code",
+          "content": "Scanner sc = new Scanner(System.in);\nSystem.out.println(\"Escriba un dato:\");\nString dato = sc.nextLine();\nSystem.out.println(\"El dato introducido es: \" + dato);\n// La salida err es independiente de out puede ejecutarse antes que out\nSystem.err.println(\"FIN\");"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "12.1.3. Utilización de flujos",
+      "short": "12.1.3. Utilización",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "El funcionamiento de utilización de flujos se basa en la apertura inicial, hay que conectar con la fuente del flujo, la transmisión del flujo y su utilización, lectura o escritura y finalmente el cierre de la fuente de transmisión."
+        },
+        {
+          "type": "timeline",
+          "items": [
+            { "year": "1", "label": "Abrir el flujo", "detail": "Crear el stream" },
+            { "year": "2", "label": "Uso del flujo", "detail": "Leer o escribir" },
+            { "year": "3", "label": "Cortar el flujo", "detail": "Cerrar el stream" }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Para los flujos predeterminados o estándar no es necesario crear o cerrar el stream debido a que estas herramientas ya están desarrolladas."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "12.1.4. Clases relativas a flujos",
+      "short": "12.1.4. Clases",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En Java disponemos de funcionalidad para trabajar con flujos. En el paquete java.io se encuentran todas las clases que implementan la funcionalidad de entrada y salida para abstraernos y no tener que configurar los dispositivos."
+        },
+        {
+          "type": "table",
+          "headers": ["Clase", "Descripción"],
+          "rows": [
+            ["FileOutputStream y FileInputStream", "Permite escribir y leer bytes en un fichero binario."],
+            ["BufferedOutputStream y BufferedInputStream", "Se usa un buffer intermedio para mejorar el rendimiento."],
+            ["DataOutputStream y DataInputStream", "En un fichero binario todos sus datos están representados por bytes, con esta clase, es posible trabajar directamente con tipos de datos primitivos sobre un fichero binario."],
+            ["ByteArrayOutputStream y ByteArrayInputStream", "Con estas clases podemos trabajar directamente con arrays de Byte y luego cargarlas al flujo para que se escriba o se lea. Para este tipo de clases hace falta invocar el método flush para consolidar los datos escritos en el fichero."],
+            ["PrintStream", "Permite agregar la capacidad de imprimir datos a un flujo de bytes de datos concreto."]
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Clase", "Descripción"],
+          "rows": [
+            ["FileWriter y FileReader", "Permite escribir y leer de un fichero de texto."],
+            ["BufferedWriter y BufferedReader", "Igual que la anterior, pero haciendo uso de un buffer intermedio para mejorar el rendimiento."],
+            ["CharArrayWriter y CharArrayReader", "Con estas clases podemos trabajar directamente con arrays de caracteres y luego cargarlas al flujo para que se escriba o se lea. Para este tipo de clases hace falta invocar el método flush para consolidar los datos escritos en el fichero."],
+            ["PrintWriter", "Tiene la capacidad de imprimir datos a un flujo de caracteres de datos concreto. Como se puede ver en la imagen, puede imprimir en un fichero o consola."]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "⚠ Lo que vuelca el array al fichero es `writeTo()`, no `flush()`: la Imagen 10 no llama a `flush()` y el fichero muestra «Hola Mundo» igualmente. En Java, `flush()` de ByteArrayOutputStream y de CharArrayWriter no hace nada."
+        },
+        {
+          "type": "text",
+          "content": "Ejemplos de flujos de bytes"
+        },
+        {
+          "type": "text",
+          "content": "Imagen 3. Ejemplo de FileOutputStream y FileInputStream"
+        },
+        {
+          "type": "code",
+          "content": "// Escritura\nchar[] vocales = { 'A', 'E', 'I', 'O', 'U' };\nString rutaFichero = \"C:\\\\documentos\\\\fichero.bin\";\nFileOutputStream fos = new FileOutputStream(rutaFichero);\nfor (int i = 0; i < vocales.length; i++) {\n    fos.write((byte) vocales[i]);\n}\nfos.close();\n\n// Lectura\n// Tiene que existir previamente el fichero, si no, lanzará una excepción\nString rutaFichero = \"C:\\\\documentos\\\\fichero.bin\";\nFileInputStream fis = new FileInputStream(rutaFichero);\nint i;\nwhile ((i = fis.read()) != -1) {\n    System.out.print((char) i);\n}\nfis.close();"
+        },
+        {
+          "type": "text",
+          "content": "Resultado: fichero.bin → AEIOU · Consola → AEIOU"
+        },
+        {
+          "type": "text",
+          "content": "Imagen 4. Ejemplo de BufferedOutputStream y BufferedInputStream"
+        },
+        {
+          "type": "code",
+          "content": "// Escritura\nchar[] vocales = { 'A', 'E', 'I', 'O', 'U' };\nString rutaFichero = \"C:\\\\documentos\\\\fichero.bin\";\nFileOutputStream fos = new FileOutputStream(rutaFichero);\nBufferedOutputStream bos = new BufferedOutputStream(fos);\nfor (int i = 0; i < vocales.length; i++) {\n    bos.write((byte) vocales[i]);\n}\nbos.close();\nfos.close();\n\n// Lectura\n// Tiene que existir previamente el fichero, si no, lanzará una excepción\nString rutaFichero = \"C:\\\\documentos\\\\fichero.bin\";\nFileInputStream fis = new FileInputStream(rutaFichero);\nBufferedInputStream bis = new BufferedInputStream(fis);\nint i;\nwhile ((i = bis.read()) != -1) {\n    System.out.println((char) i);\n}\nbis.close();\nfis.close();"
+        },
+        {
+          "type": "text",
+          "content": "Resultado: fichero.bin → AEIOU · Consola → A, E, I, O, U (una por línea)"
+        },
+        {
+          "type": "text",
+          "content": "Imagen 5. Ejemplo de DataOutputStream y DataInputStream"
+        },
+        {
+          "type": "code",
+          "content": "// Escritura\n//Tiene que existir previamente el fichero, si no, lanzará una excepción\nString rutaFichero=\"C:\\\\documentos\\\\fichero.bin\";\nFileOutputStream fos = new FileOutputStream(rutaFichero);\nDataOutputStream dos = new DataOutputStream(fos);\ndos.writeChars(\"AEIOU\");\ndos.close();\nfos.close();\n\n// Lectura\nString rutaFichero=\"C:\\\\documentos\\\\fichero.bin\";\nFileInputStream fis = new FileInputStream(rutaFichero);\nDataInputStream dis = new DataInputStream(fis);\nwhile(dis.available()>0) {\n    System.out.print(dis.readChar());\n}\ndis.close();\nfis.close();"
+        },
+        {
+          "type": "text",
+          "content": "Resultado: fichero.bin → NUL A NUL E NUL I NUL O NUL U · Consola → AEIOU"
+        },
+        {
+          "type": "text",
+          "content": "⚠ El comentario de la escritura está cambiado de sitio: FileOutputStream crea el fichero si no existe (lo dice el propio 12.2.3: «Si no existe el fichero, se creará y se abrirá para la escritura»). El aviso de que tiene que existir corresponde a la lectura."
+        },
+        {
+          "type": "text",
+          "content": "Imagen 6. Ejemplo de ByteArrayOutputStream y ByteArrayInputStream"
+        },
+        {
+          "type": "code",
+          "content": "// Escritura\nchar[] vocales = { 'A', 'E', 'I', 'O', 'U' };\nString rutaFichero = \"C:\\\\documentos\\\\fichero.bin\";\nFileOutputStream fos = new FileOutputStream(rutaFichero);\nByteArrayOutputStream bos = new ByteArrayOutputStream();\nfor (int i = 0; i < vocales.length; i++) {\n    bos.write((byte) vocales[i]);\n}\nbos.writeTo(fos);\nbos.flush();\nbos.close();\nfos.close();\n\n// Lectura\n// Tiene que existir previamente el fichero, si no, lanzará una excepción\nString rutaFichero = \"C:\\\\documentos\\\\fichero.bin\";\nFileInputStream fis = new FileInputStream(rutaFichero);\nByteArrayInputStream bis = new ByteArrayInputStream(fis.readAllBytes());\nint contenido = 0;\nwhile ((contenido = bis.read()) != -1) {\n    System.out.print((char) contenido);\n}\nbis.close();\nfis.close();"
+        },
+        {
+          "type": "text",
+          "content": "Resultado: fichero.bin → AEIOU · Consola → AEIOU"
+        },
+        {
+          "type": "text",
+          "content": "Imagen 7. Ejemplo de PrintStream"
+        },
+        {
+          "type": "code",
+          "content": "String rutaFichero = \"C:\\\\documentos\\\\fichero.bin\";\nFileOutputStream fos = new FileOutputStream(rutaFichero);\nPrintStream ps = new PrintStream(fos);\nps.println(\"AEIOU\");\nps.printf(\"AE%sOU\", 'I');\nps.close();\nfos.close();\nps = new PrintStream(System.out);\nps.println(\"AEIOU\");\nps.close();\nfos.close();"
+        },
+        {
+          "type": "text",
+          "content": "Resultado: fichero.bin → AEIOU / AEIOU (2 líneas) · Consola → AEIOU"
+        },
+        {
+          "type": "text",
+          "content": "Ejemplos de flujos de caracteres"
+        },
+        {
+          "type": "text",
+          "content": "Imagen 8. Ejemplo de FileWriter y FileReader"
+        },
+        {
+          "type": "code",
+          "content": "// Escritura\nString rutaFichero = \"C:\\\\documentos\\\\fichero.txt\";\nFileWriter fw = new FileWriter(rutaFichero);\nfw.write(\"Hola Mundo\");\nfw.close();\n\n// Lectura\n// Tiene que existir previamente el fichero, si no, lanzará una excepción\nString rutaFichero = \"C:\\\\documentos\\\\fichero.txt\";\nFileReader fr = new FileReader(rutaFichero);\nint i;\nwhile ((i = fr.read()) != -1) {\n    System.out.print((char) i);\n}\nfr.close();"
+        },
+        {
+          "type": "text",
+          "content": "Resultado: fichero.txt → Hola Mundo · Consola → Hola Mundo"
+        },
+        {
+          "type": "text",
+          "content": "Imagen 9. Ejemplo de BufferedWriter y BufferedReader"
+        },
+        {
+          "type": "code",
+          "content": "// Escritura\nString rutaFichero = \"C:\\\\documentos\\\\fichero.txt\";\nFileWriter fw = new FileWriter(rutaFichero);\nBufferedWriter bw = new BufferedWriter(fw);\nbw.write(\"Hola Mundo\");\nbw.newLine();\nbw.write(\"Uso de bufferedWriter\");\nbw.close();\nfw.close();\n\n// Lectura\n// Tiene que existir previamente el fichero, si no, lanzará una excepción\nString rutaFichero = \"C:\\\\documentos\\\\fichero.txt\";\nFileReader fr = new FileReader(rutaFichero);\nBufferedReader br = new BufferedReader(fr);\nint i;\nwhile ((i = br.read()) != -1) {\n    System.out.print((char) i);\n}\nbr.close();\nfr.close();"
+        },
+        {
+          "type": "text",
+          "content": "Resultado: fichero.txt y Consola → Hola Mundo / Uso de bufferedWriter"
+        },
+        {
+          "type": "text",
+          "content": "Imagen 10. Ejemplo de CharArrayWriter y CharArrayReader"
+        },
+        {
+          "type": "code",
+          "content": "// Escritura\nchar[] array = {'H','o','l','a',' ','M','u','n','d','o'};\nString rutaFichero = \"C:\\\\documentos\\\\fichero.txt\";\nFileWriter fw = new FileWriter(rutaFichero);\nCharArrayWriter caw = new CharArrayWriter();\ncaw.write(array);\ncaw.writeTo(fw);\ncaw.close();\nfw.close();\n\n// Lectura\nString rutaFichero = \"C:\\\\documentos\\\\fichero.txt\";\nFileReader fr = new FileReader(rutaFichero);\nchar[] lista = new char[20];\nint i, x = 0;\nwhile ((i = fr.read()) != -1) {\n    lista[x] = ((char) i);\n    x++;\n}\nCharArrayReader car = new CharArrayReader(lista);\nint contenido = 0;\nwhile ((contenido = car.read()) != -1) {\n    System.out.print((char) contenido);\n}\ncar.close();\nfr.close();"
+        },
+        {
+          "type": "text",
+          "content": "Resultado: fichero.txt → Hola Mundo · Consola → Hola Mundo"
+        },
+        {
+          "type": "text",
+          "content": "Imagen 11. Ejemplo de PrintWriter"
+        },
+        {
+          "type": "code",
+          "content": "String rutaFichero = \"C:\\\\documentos\\\\fichero.txt\";\nFileWriter fw = new FileWriter(rutaFichero);\nPrintWriter pw = new PrintWriter(fw);\npw.println(\"Hola mundo\");\npw.printf(\"Soy %s\", \"Pepe\");\npw.flush();\npw.close();\nfw.close();\n\npw = new PrintWriter(System.out);\npw.println(\"Hola mundo\");\npw.printf(\"Soy %s\", \"Pepe\");\npw.flush();\npw.close();"
+        },
+        {
+          "type": "text",
+          "content": "Resultado: fichero.txt y Consola → Hola mundo / Soy Pepe"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "12.2. Aplicaciones del almacenamiento de información en ficheros",
+      "short": "12.2. Ficheros",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Una vez visto los flujos de datos, usando diferentes interfaces como consola, fichero, red, etc., nos vamos a centrar en el almacenamiento en ficheros.\n\nLos ficheros permiten almacenar datos y darles persistencia, pudiendo ser consultados en otro momento o por diferentes programas, sin tenerlo en memoria principal constantemente.\n\nLos ficheros también almacenan metainformación, como propietario del fichero, tamaño, permisos, fecha, etc., necesarios para el sistema operativo y útil para nuestro programa si tenemos que hacer uso de esta información.\n\nLos tipos de ficheros que se verán serán ficheros de texto, que contienen texto legible, y ficheros binarios, con contenido legible por programas o sistemas."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "label": "12.2.1. Tipos de ficheros. Registro",
+      "short": "12.2.1. Tipos. Registro",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dependiendo del tipo de ficheros se tendrá que manejar de una forma u otra."
+        },
+        {
+          "type": "table",
+          "headers": ["Tipo", "Características"],
+          "rows": [
+            ["Ficheros de texto", "Almacena cadena de caracteres. Su acceso habitual es de forma secuencial. Si se quiere acceder al final del fichero hay que recorrer todo el fichero."],
+            ["Ficheros binarios", "Almacena bytes. El acceso puede realizarse de forma secuencial o acceso directo."]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "El bloque de datos que permanecen juntos al ser leídos o escritos se le denomina registro."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "label": "12.2.2. Creación y eliminación de ficheros y directorios",
+      "short": "12.2.2. Crear/eliminar",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Para la creación, eliminación y manejo de ficheros-directorios se usará la clase File con los siguientes métodos:"
+        },
+        {
+          "type": "table",
+          "headers": ["Operación", "Descripción"],
+          "rows": [
+            ["File(String pathname)", "Constructor, inicializa el objeto file con la ruta indicada."],
+            ["boolean createNewFile()", "Crea un fichero vacío en la ruta que contiene File."],
+            ["boolean mkdir()", "Crea un directorio en la ruta que contiene File."],
+            ["boolean delete()", "Elimina el fichero o directorio en la ruta que contiene File."]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Imagen 12. Creación de directorios y ficheros"
+        },
+        {
+          "type": "code",
+          "content": "String ruta = \"C:\\\\documentos\\\\configuracion\";\n\nFile rutaPrincipal = new File(ruta);\nSystem.out.println(\"Creando directorio: \"+ rutaPrincipal.mkdir());\n\nFile ficheroConfiguracion = new File(ruta, \"config.txt\");\nSystem.out.println(\"Creando fichero: \"+ ficheroConfiguracion.createNewFile());\n\n// Consola:\n// Creando directorio: true\n// Creando fichero: true\n// Resultado: C:\\Documentos\\configuracion contiene config.txt"
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "label": "12.2.3. Apertura y cierre de ficheros. Modo de acceso",
+      "short": "12.2.3. Apertura/cierre",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La apertura de un fichero consta en crear el fichero si no existe y abrirlo para su lectura o escritura. Dependiendo de la acción la apertura también determina desde donde empieza a escribir o leer.\n\nEl cierre consta de terminar de usar el fichero, liberando la memoria, punteros, cerrando el flujo de datos y otras referencias.\n\nLa apertura y cierre de ficheros dependerá del modo de acceso."
+        },
+        {
+          "type": "table",
+          "headers": ["Modo de acceso", "Apertura y cierre"],
+          "rows": [
+            ["Secuencial", "Clases FileReader, FileWriter, BufferedReader y BufferedWriter para ficheros tipo texto y FileInputStream, FileOutputStream, BufferedInputStream y BufferedOutputStream para ficheros tipo binario.\nApertura: si no existe el fichero, se creará y se abrirá para la escritura. Si existe el fichero se abrirá para la escritura. Y si se indicó previamente el argumento append como true, la escritura empezará al final del fichero. De lo contrario el fichero será sobrescrito.\nCierre: solo se invocará el método close().\nLos ejemplos de apertura y cierre están en el apartado 12.1.4."],
+            ["Directo", "El acceso directo solo se puede realizar para tipo de ficheros binarios, y se usará la clase RandomAccessFile.\nSe podrán crear objetos de RandomAccessFile a partir de la ruta o un objeto File y añadiremos el modo, si es para lectura (r) o lectura y escritura (rw)."]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Imagen 13. Ejemplo de instanciación de RandomAccessFile"
+        },
+        {
+          "type": "code",
+          "content": "String ruta = \"C:\\\\documentos\\\\configuracion\\\\config.bin\";\nRandomAccessFile raf = new RandomAccessFile(ruta, \"rw\");\n\nraf.writeChars(\"HOLA MUNDO\");\n\nraf.seek(0);\nfor (int i = 0; i < raf.length() / 2; i++)\n    System.out.print(\"\" + raf.readChar());\n\nraf.close();"
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "label": "12.2.4. Escritura y lectura de información en ficheros",
+      "short": "12.2.4. Escritura/lectura",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Una vez el fichero esté abierto se puede proceder a su lectura o escritura, la forma de proceder dependerá del tipo de acceso y de información.\n\nModo de acceso secuencial: se podrán usar las clases FileReader, FileWriter, BufferedReader y BufferedWriter para ficheros tipo texto y FileInputStream, FileOutputStream, BufferedInputStream y BufferedOutputStream para ficheros tipo binario. Los ejemplos de lectura y escritura están en el apartado 12.1.4.\n\nModo de acceso directo: se usará la clase RandomAccessFile."
+        },
+        {
+          "type": "text",
+          "content": "⚠ En el PDF, la «Imagen 14. Ejemplo de RandomAccessFile» repite el mismo código que la Imagen 13. El ejemplo completo de acceso directo (escribir, volver con seek y reescribir) aparece en la página 11 con un pie equivocado, «Imagen 15. Ejemplo de serialización». Es este:"
+        },
+        {
+          "type": "code",
+          "content": "String ruta = \"C:\\\\documentos\\\\configuracion\\\\config.bin\";\nRandomAccessFile raf = new RandomAccessFile(ruta, \"rw\");\n\n// ESCRITURA\nraf.writeChars(\"HOLA MUNDO\");\n\n// LECTURA\nraf.seek(0);\nfor (int i = 0; i < raf.length() / 2; i++)\n    System.out.print(\"\" + raf.readChar());\nSystem.out.println();\n\n// ESCRITURA\n// Cambiamos MUNDO por A TODOS\nraf.seek(8);\nraf.writeChars(\" A TODOS\");\n\n// LECTURA\nraf.seek(0);\nfor (int i = 0; i < raf.length() / 2; i++) {\n    System.out.print(\"\" + raf.readChar());\n}\n\nraf.close();\n\n// Consola:\n// HOLA MUNDO\n// HOLA A TODOS"
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "label": "12.2.5. Almacenamiento de objetos en ficheros. Serialización",
+      "short": "12.2.5. Serialización",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Hemos visto que podemos guardar en ficheros cualquier tipo de datos, en un tipo de fichero de texto podemos guardar cualquier información legible y en un tipo de fichero binario cualquier representación de tipos primitivos. También es posible guardar objetos de una clase transformándolo a un conjunto de bytes. Esta transformación se consigue con la serialización.\n\nNo todos los objetos se pueden serializar; para poder aplicar la serialización se tienen que cumplir las siguientes condiciones:"
+        },
+        {
+          "type": "timeline",
+          "items": [
+            { "year": "1", "label": "La clase tiene que implementar la interfaz java.io.Serializable." },
+            { "year": "2", "label": "Todos los campos tienen que ser serializables. Los tipos primitivos ya son serializables y las clases compuestas por otras clases tienen que implementar serializable." },
+            { "year": "3", "label": "Para campos que no sean serializables hay que declararlos como transient. Los campos static no serán serializados." },
+            { "year": "4", "label": "Tiene que existir un campo estático y privado llamado serialVersionUID. Este campo establece un número de versión de la clase serializable que se usa para deserializar." }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "⚠ En Java, serialVersionUID no es obligatorio: si no se declara, Java calcula uno automáticamente. Se recomienda declararlo, como en el ejemplo: private static final long serialVersionUID."
+        },
+        {
+          "type": "text",
+          "content": "Para escribir o leer se usarán las clases ObjectOutputStream y ObjectInputStream. Con el método writeObject() se realizará la serialización y con readObject() la deserialización."
+        },
+        {
+          "type": "text",
+          "content": "⚠ El PDF escribe «writeObjet()» y «readObjet()»; los métodos son writeObject() y readObject(), como aparecen en las diapositivas y en el ejemplo."
+        },
+        {
+          "type": "text",
+          "content": "Serialización. Ejemplo (diapositiva 12). El código que el PDF muestra como «Imagen 15. Ejemplo de serialización» es en realidad de RandomAccessFile (ver 12.2.4)."
+        },
+        {
+          "type": "code",
+          "content": "import java.io.Serializable;\n\npublic class Persona implements Serializable {\n\n    private static final long serialVersionUID = 284796237982514963L;\n\n    private String nombre;\n    private int edad;\n\n    public Persona(String nombre, int edad) {\n        this.nombre = nombre;\n        this.edad = edad;\n    }\n\n    public String getNombre() {\n        return nombre;\n    }\n\n    public void setNombre(String nombre) {\n        this.nombre = nombre;\n    }\n\n    public int getEdad() {\n        return edad;\n    }\n\n    public void setEdad(int edad) {\n        this.edad = edad;\n    }\n\n}"
+        },
+        {
+          "type": "code",
+          "content": "String rutaFichero = \"C:\\\\documentos\\\\Persona.bin\";\n\n// Escritura\nFileOutputStream fos = new FileOutputStream(rutaFichero);\nObjectOutputStream oos = new ObjectOutputStream(fos);\nPersona persona = new Persona(\"Pepe\", 25);\noos.writeObject(persona);\noos.close();\n\n// Lectura\nFileInputStream fis = new FileInputStream(rutaFichero);\nObjectInputStream ois = new ObjectInputStream(fis);\nPersona objeto = (Persona) ois.readObject();\nSystem.out.println(\"Nombre: \" + objeto.getNombre() + \" Edad: \" + objeto.getEdad());\nois.close();"
+        },
+        {
+          "type": "text",
+          "content": "Persona.bin: bytes no legibles (NUL, ENQ…) entre los que se leen «Persona», «edad», «nombre», «java/lang/String» y «Pepe»."
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "label": "12.2.6. Utilización de los sistemas de ficheros",
+      "short": "12.2.6. Sist. ficheros",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La clase File tiene más métodos de utilidad para operar con sistemas de ficheros. En el siguiente cuadro se pueden ver los métodos más comunes."
+        },
+        {
+          "type": "table",
+          "headers": ["Operación", "Descripción"],
+          "rows": [
+            ["boolean exists()", "Comprueba si la ruta existe."],
+            ["boolean isFile()", "Comprueba si es un fichero."],
+            ["boolean isDirectory()", "Comprueba si es un directorio."],
+            ["File[] listFiles()", "Obtiene un listado de tipo File de los ficheros que hay en la ruta."],
+            ["String getName()", "Obtiene el nombre del fichero o directorio."],
+            ["String getParent()", "Obtiene el directorio padre."],
+            ["String getPath()", "Obtiene la ruta."],
+            ["Boolean canRead()", "Comprueba si se puede leer."],
+            ["Boolean canWrite()", "Comprueba si se puede escribir."],
+            ["Boolean canExecute()", "Comprueba si se puede ejecutar."]
+          ]
+        },
+        {
+          "type": "text",
+          "content": "⚠ En el PDF, isDirectory() aparece como «Comprueba si es un fichero» (copiado de isFile()). Comprueba si es un directorio."
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Flujo (Stream)", "def": "Secuencia de datos que se transmite por un elemento de entrada y se dirige a un elemento de salida. En Java se denomina Stream." },
+    { "term": "Flujo de bytes", "def": "Byte stream. Se suele usar para envío de datos binarios. Sus clases heredan de InputStream y OutputStream." },
+    { "term": "Flujo de caracteres", "def": "Character stream. Transmite datos tipo carácter codificados en Unicode; se suele usar para ficheros de texto plano. Sus clases heredan de Writer y Reader." },
+    { "term": "Buffer", "def": "Contenedor de datos de forma temporal para ser leído en cualquier momento." },
+    { "term": "Path", "def": "Ruta o dirección donde se encuentra un fichero o directorio." },
+    { "term": "Registro", "def": "Bloque de datos que permanecen juntos al ser leídos o escritos." },
+    { "term": "Fichero binario", "def": "Almacena bytes. El acceso puede realizarse de forma secuencial o acceso directo." },
+    { "term": "RandomAccessFile", "def": "Clase para el acceso directo, solo para ficheros binarios. Modo lectura (r) o lectura y escritura (rw)." },
+    { "term": "Serialización", "def": "Transformación de un objeto de una clase a un conjunto de bytes para guardarlo en un fichero." },
+    { "term": "Deserialización", "def": "Transformación de una secuencia de bytes a objeto." },
+    { "term": "transient", "def": "Modificador con el que se declaran los campos que no sean serializables." }
+  ],
+  "quiz": [
+    {
+      "question": "¿Cómo se denomina en Java un flujo de datos?",
+      "options": ["Buffer", "Registro", "Stream", "Path"],
+      "correct": 2,
+      "explanation": "Los flujos de datos son una secuencia ordenada de datos que se transmiten desde una fuente hacia un destino; en Java se denomina Stream."
+    },
+    {
+      "question": "¿De qué clases heredan todas las clases que manejan flujos de caracteres?",
+      "options": ["Writer y Reader", "InputStream y OutputStream", "File y RandomAccessFile", "ObjectInputStream y ObjectOutputStream"],
+      "correct": 0,
+      "explanation": "Todas las clases que manejan flujos de caracteres heredan de Writer y Reader; las de flujos de bytes, de InputStream y OutputStream."
+    },
+    {
+      "question": "¿En qué paquete se encuentran las clases de entrada y salida de Java?",
+      "options": ["java.util", "java.io", "java.lang", "java.net"],
+      "correct": 1,
+      "explanation": "En el paquete java.io se encuentran todas las clases que implementan la funcionalidad de entrada y salida."
+    },
+    {
+      "question": "¿Qué clase se usa para el acceso directo a un fichero?",
+      "options": ["BufferedReader", "FileWriter", "PrintWriter", "RandomAccessFile"],
+      "correct": 3,
+      "explanation": "El acceso directo solo se puede realizar para ficheros binarios, y se usará la clase RandomAccessFile."
+    },
+    {
+      "question": "¿Qué modo se indica al crear un RandomAccessFile para lectura y escritura?",
+      "options": ["\"r\"", "\"w\"", "\"rw\"", "\"a\""],
+      "correct": 2,
+      "explanation": "Al crear un RandomAccessFile se añade el modo: lectura (r) o lectura y escritura (rw)."
+    },
+    {
+      "question": "En acceso secuencial, si el fichero existe y se indicó append como true, ¿qué ocurre al escribir?",
+      "options": ["La escritura empieza al final del fichero", "El fichero se sobrescribe", "Se lanza una excepción", "El fichero se abre solo para lectura"],
+      "correct": 0,
+      "explanation": "Si se indicó previamente el argumento append como true, la escritura empezará al final del fichero. De lo contrario el fichero será sobrescrito."
+    },
+    {
+      "question": "¿Cómo se declaran los campos que no sean serializables?",
+      "options": ["static", "transient", "final", "private"],
+      "correct": 1,
+      "explanation": "Para campos que no sean serializables hay que declararlos como transient. Los campos static no serán serializados."
+    },
+    {
+      "question": "¿Qué clases se usan para escribir y leer objetos serializados?",
+      "options": ["DataOutputStream y DataInputStream", "PrintStream y PrintWriter", "CharArrayWriter y CharArrayReader", "ObjectOutputStream y ObjectInputStream"],
+      "correct": 3,
+      "explanation": "Para escribir o leer se usan ObjectOutputStream y ObjectInputStream: writeObject() serializa y readObject() deserializa."
+    },
+    {
+      "question": "¿Qué método de la clase File crea un directorio?",
+      "options": ["createNewFile()", "listFiles()", "mkdir()", "getParent()"],
+      "correct": 2,
+      "explanation": "boolean mkdir() crea un directorio en la ruta que contiene File; createNewFile() crea un fichero vacío."
+    },
+    {
+      "question": "¿Qué tipo de fichero almacena bytes y admite acceso secuencial o directo?",
+      "options": ["Fichero de texto", "Fichero binario", "Directorio", "Flujo estándar"],
+      "correct": 1,
+      "explanation": "Los ficheros binarios almacenan bytes y su acceso puede ser secuencial o directo; los de texto almacenan cadenas de caracteres y su acceso habitual es secuencial."
+    }
+  ],
+  "_sources": {
+    "intro": "PDF principal p.3",
+    "objectives": "PDF principal p.3",
+    "s1": "p.4",
+    "s2": "p.4",
+    "s3": "p.4 (+ diap. 4 para el ⚠)",
+    "s4": "p.5",
+    "s5": "pp.5-7",
+    "s6": "p.8",
+    "s7": "p.8",
+    "s8": "p.8",
+    "s9": "p.9",
+    "s10": "pp.10-11",
+    "s11": "pp.10-11 + diap. 11-12",
+    "s12": "p.11",
+    "glossary": "PDF principal + Síntesis («Conceptos fundamentales»)"
+  }
+}
